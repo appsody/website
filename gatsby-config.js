@@ -2,5 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Appsody`
   },
-  plugins: []
+  plugins: [
+    `gatsby-plugin-react-helmet`
+  ]
 }
