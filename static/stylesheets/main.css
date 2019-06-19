@@ -1,5 +1,37 @@
 :root {
+  --primary-colour: lightgrey;
   --links-colour: black;
+}
+
+.bg-primary {
+  background-color: var(--primary-colour) !important;
+}
+
+.btn-primary {
+  color: var(--links-colour) !important;
+  background-color: var(--primary-colour) !important;
+  border: 2px solid var(--primary-colour);
+}
+
+.btn-clear {
+  color: var(--links-colour);
+  border: 2px solid var(--primary-colour);
+}
+
+.btn-clear:hover {
+  color: var(--links-colour);
+}
+
+section.landing-section {
+  padding: 4em 0;
+}
+
+section.landing-section:not(:last-child) {
+  border-bottom: 2px solid black;
+}
+
+section.landing-section .btn {
+  border-radius: 2px;
 }
 
 .nav-link {
@@ -24,3 +56,4 @@
     flex-direction: row;
   }
 }
+
