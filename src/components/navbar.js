@@ -5,9 +5,8 @@ import twitterIcon from "../../static/images/header_twitter_icon.svg";
 import slackIcon from "../../static/images/header_slack_icon.svg";
 
 const NavBar = () => (
-    <nav className="navbar navbar-expand-md bg-primary">
+    <nav className="navbar navbar-expand-md navbar-light bg-light">
         <a className="navbar-brand d-md-none" href="/">
-            <img src="/images/appsody_logo.png" width="30" height="30" alt="Appsody Logo"></img>
             Appsody
         </a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
@@ -24,18 +23,18 @@ const NavBar = () => (
             </ul>
             <ul className="navbar-nav ml-auto">
                 <li>
-                    <a className="nav-link" href="/">
-                        <img className="svg-primary" src={ githubIcon } alt=""></img>
+                    <a className="nav-link" href="https://github.com/appsody">
+                        <img className="navbar-img" src={ githubIcon } alt=""></img>
                     </a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="/">
-                        <img src={ twitterIcon } alt=""></img>
+                    <a className="nav-link" href="https://twitter.com/appsodydev">
+                        <img className="navbar-img" src={ twitterIcon } alt=""></img>
                     </a>
                 </li>
                 <li>
                     <a className="nav-link" href="/">
-                        <img src={ slackIcon } alt=""></img>
+                        <img className="navbar-img" src={ slackIcon } alt=""></img>
                     </a>
                 </li>
             </ul>
