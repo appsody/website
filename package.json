@@ -5,8 +5,10 @@
   "version": "0.1.0",
   "dependencies": {
     "gatsby": "^2.9.6",
+    "gatsby-plugin-react-helmet": "^3.0.12",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
