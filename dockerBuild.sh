@@ -24,7 +24,7 @@ while [[ $# -gt 0 ]]; do
     shift
     groupId=$1
   ;;
-  shell|gulp)
+  shell|gatsby)
     ACTION=$1
   ;;
   *)
@@ -77,7 +77,7 @@ case "$ACTION" in
     docker_run /bin/bash
   ;;
   gulp)
-    docker_run npx gulp ${args}
+    docker_run npx gatsby ${args}
   ;;
   *)
     docker_run npm install
