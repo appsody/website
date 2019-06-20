@@ -78,11 +78,6 @@ section.landing-section .btn {
   height: 14em;
 }
 
-@media only screen and (max-width: 767px) {
-  width: 7em;
-  height: 7em;
-}
-
 #application-stacks {
   width: 100%;
   display: flex;
