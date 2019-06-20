@@ -1,5 +1,7 @@
 import React from "react"
 import Layout from "../components/layout";
+import Tile from "../components/tile"
+
 import { Link } from "gatsby";
 
 const IndexPage = () => (
@@ -26,7 +28,20 @@ const IndexPage = () => (
           </div>
       </section>
       <section className="landing-section">
+      <div id="application-stack">
         <h1>Application Stacks</h1>
+        <p id="application-stack-info">Select the application pack to view details, then copy the command toclone it using your CLI or view the packs in GitHub.</p>
+      </div>
+      <div className="container">
+        <div id="application-stacks" className="row">
+            <Tile heading="Java MicroProfile"/>
+            <Tile heading="Java Spring"/>
+            <Tile heading="Node.js"/>
+            <Tile heading="Swift"/>
+        </div>
+      </div>
+
+
       </section>
     </div>
   </Layout>
