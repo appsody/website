@@ -1,7 +1,6 @@
 :root {
   --primary-colour: lightgrey;
   --links-colour: black;
-  --white-buttons: white;
 }
 
 .bg-primary {
@@ -56,34 +55,4 @@ section.landing-section .btn {
   .navbar-nav.ml-auto{
     flex-direction: row;
   }
-}
-
-#application-stack {
-  text-align: center;
-}
-
-.card {
-  background-color: var(--primary-colour);
-  padding: 2em;
-  margin: 0.7em;
-  width: 14em;
-  height: 14em;
-}
-
-@media only screen and (max-width: 767px) {
-  width: 7em;
-  height: 7em;
-}
-
-#application-stacks {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.btn.btn-clear.w-70 {
-  background-color: var(--white-buttons) !important;
-  border: 4px solid var(--white-buttons) !important;
 }
