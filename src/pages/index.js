@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout";
+import { Link } from "gatsby";
 
 const IndexPage = () => (
   <Layout>
@@ -15,8 +16,8 @@ const IndexPage = () => (
                 Adipisicing eiusmod laborum laboris sunt labore est est ad Lorem est. Magna enim adipisicing veniam ea velit velit aute. Commodo irure anim nisi nulla reprehenderit ipsum. Quis et Lorem officia nulla nostrud Lorem nulla in exercitation deserunt.
               </p>
               <div className="d-flex">
-                <a href="/" className="btn btn-primary mr-2 w-50" role="button">Get Started</a>
-                <a href="/" className="btn btn-clear w-50" role="button">Why Appsody</a>
+                <Link to="/" className="btn btn-primary mr-2 w-50" role="button">Get Started</Link>
+                <Link to="/" className="btn btn-clear w-50" role="button">Why Appsody</Link>
               </div>
             </div>
             <div className="col d-none d-md-inline border border-dark">

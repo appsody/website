@@ -1,13 +1,23 @@
 import React from "react";
+import * as loadScript from 'simple-load-script';
 import { Helmet } from "react-helmet";
 
-import 'bootstrap/dist/js/bootstrap.bundle';
+class Head extends React.Component {
 
-export default () => (
-    <Helmet>
-      <meta charset="UTF-8"></meta>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
-      <link rel="stylesheet" type="text/css" href="../stylesheets/main.css"></link>
-      <title>Appsody</title>
-    </Helmet>
-)
+    async componentDidMount() {
+        await loadScript('https://code.jquery.com/jquery-3.3.1.slim.min.js', { inBody: true });
+        await loadScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', { inBody: true });
+        await loadScript('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', { inBody: true });
+    }
+
+    render() {
+        return (
+            <Helmet>
+                <meta charset="UTF-8"></meta>
+                <title>Appsody</title>
+            </Helmet>
+        )
+    }
+}
+
+export default Head;
