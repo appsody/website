@@ -35,6 +35,10 @@ section.landing-section .btn {
   border-radius: 2px;
 }
 
+section.landing-section h2 {
+  font-size: 2.5em !important;
+}
+
 .nav-link {
   color: var(--links-colour) !important;
 }
