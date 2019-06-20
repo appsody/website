@@ -70,6 +70,14 @@ section.landing-section .btn {
   height: 14em;
 }
 
+.card.flip {
+  background-color: var(--white-buttons);
+  padding: 2em;
+  margin: 0.7em;
+  width: 14em;
+  height: 14em;
+}
+
 @media only screen and (max-width: 767px) {
   width: 7em;
   height: 7em;
@@ -86,4 +94,10 @@ section.landing-section .btn {
 .btn.btn-clear.w-70 {
   background-color: var(--white-buttons) !important;
   border: 4px solid var(--white-buttons) !important;
+}
+
+input{
+  padding-right: 0.8em;
+  padding-left: 0,8em;
+  text-align: center;
 }
