@@ -36,7 +36,7 @@ const IndexPage = () => (
         <div id="application-stacks" className="row">
             <Tile heading="Java MicroProfile"/>
             <Tile heading="Java Spring"/>
-            <Tile heading="Node.JS"/>
+            <Tile heading="Node.js"/>
             <Tile heading="Swift"/>
         </div>
       </div>

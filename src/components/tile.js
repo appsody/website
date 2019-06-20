@@ -1,5 +1,4 @@
 import React from "react";
-// import Head from "./head"
 
 class Tile extends React.Component {
   constructor(props) {
@@ -39,16 +38,5 @@ class Tile extends React.Component {
     }
   }
 }
-// <button onClick={this.handleClick}>
-//   {this.state.isToggleOn ? 'ON' : 'OFF'}
-// </button>
 
 export default Tile;
-
-// export default (props) => (
-//   <React.Fragment>
-//     <Head/>
-
-//   </React.Fragment>
-//
-// )
