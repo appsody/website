@@ -28,20 +28,35 @@ const IndexPage = () => (
           </div>
       </section>
       <section className="landing-section">
-      <div id="application-stack">
-        <h1>Application Stacks</h1>
-        <p id="application-stack-info">Select the application pack to view details, then copy the command toclone it using your CLI or view the packs in GitHub.</p>
-      </div>
-      <div className="container">
-        <div id="application-stacks" className="row">
-            <Tile heading="Java MicroProfile"/>
-            <Tile heading="Java Spring"/>
-            <Tile heading="Node.js"/>
-            <Tile heading="Swift"/>
+        <div id="application-stack">
+          <h2>Application Stacks</h2>
+          <p id="application-stack-info">Select the application pack to view details, then copy the command toclone it using your CLI or view the packs in GitHub.</p>
         </div>
-      </div>
+        <div className="container">
+          <div id="application-stacks" className="row">
+              <Tile heading="Java MicroProfile"/>
+              <Tile heading="Java Spring"/>
+              <Tile heading="Node.js"/>
+              <Tile heading="Swift"/>
+          </div>
+        </div>
+      </section>
+      <section className="landing-section">
 
-
+      </section>
+      <section className="landing-section text-center">
+        <h2 className="mb-5">Why Appsody?</h2>
+        <div className="row">
+          <div className="col border mx-4 py-5">
+            Graph or graphic and information
+          </div>
+          <div className="col border mx-4 py-5">
+            Graph or graphic and information
+          </div>
+          <div className="col border mx-4 py-5">
+            Graph or graphic and information
+          </div>
+        </div>
       </section>
     </div>
   </Layout>
