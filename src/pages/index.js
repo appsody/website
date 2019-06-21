@@ -2,6 +2,10 @@ import React from "react"
 import Layout from "../components/layout";
 import Tile from "../components/tile"
 
+import githubIcon from "../../static/images/header_github_icon.svg";
+import twitterIcon from "../../static/images/header_twitter_icon.svg";
+import slackIcon from "../../static/images/header_slack_icon.svg";
+
 import { Link } from "gatsby";
 
 const IndexPage = () => (
@@ -28,9 +32,16 @@ const IndexPage = () => (
           </div>
       </section>
       <section className="landing-section">
-        <div id="application-stack">
-          <h2>Application Stacks</h2>
-          <p id="application-stack-info">Select the application pack to view details, then copy the command toclone it using your CLI or view the packs in GitHub.</p>
+      <div id="application-stack">
+        <h1>Application Stacks</h1>
+        <p id="application-stack-info">Select the application pack to view details, then copy the command toclone it using your CLI or view the packs in GitHub.</p>
+      </div>
+      <div className="container">
+        <div id="application-stacks" className="row">
+            <Tile id="java-MicroProfile" heading="Java MicroProfile" image={githubIcon}/>
+            <Tile id="java-spring" heading="Java Spring" image={twitterIcon}/>
+            <Tile id="node" heading="Node.js" image={slackIcon}/>
+            <Tile id="swift" heading="Swift" image={slackIcon}/>
         </div>
         <div className="container">
           <div id="application-stacks" className="row">

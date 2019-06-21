@@ -7,6 +7,16 @@ class Tile extends React.Component {
 
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
+    this.copy = this.copy.bind(this);
+  }
+
+  copy() {
+    const id = this.props.id
+    let copyText = document.querySelector(`#${id} input`);
+    console.log(`#${id} input`);
+    console.log(copyText);
+    copyText.select();
+    document.execCommand("copy");
   }
 
   handleClick(e) {
@@ -20,19 +30,23 @@ class Tile extends React.Component {
     if (this.state.isToggleOn) {
       return (
         <div className="card">
-        <h5 id="tile-head">{this.props.heading}</h5>
-        <p id="tile-text">Description goes in space</p>
-        <a href="/" onClick={this.handleClick} className="btn btn-clear w-70" role="button">Select</a>
+          <img id="tile-img" src={this.props.image} alt=""></img>
+          <h5 id="tile-heading">{this.props.heading}</h5>
+        <a href="/" onClick={this.handleClick} className="btn btn-clear w-50 mx-auto" role="button">Select</a>
         </div>
       );
     } else {
       return (
-        <div className="card flip">
-        <h5 id="tile-head">{this.props.heading}</h5>
-        <p id="tile-text">Command for CLI</p>
-        <input type="text" name="cli" value="url-link-goes-here" readOnly></input>
+        <div id={this.props.id} className="card flip">
+          <i onClick={this.handleClick} className="fas fa-arrow-left" title="flip card"></i>
+          <h5 id="tile-heading">{this.props.heading}</h5>
+
+        <div id="command-input">
+          <input id="input-cli" type="text" name="cli" value="url-link-goes-here" readOnly></input>
+          <i onClick={this.copy} className="far fa-copy"></i>
+        </div>
         <br/>
-        <a href="/" onClick={this.handleClick} className="btn btn-primary w-70" role="button">View in GitHub</a>
+        <a href="/" className="btn btn-primary w-70 flipped" role="button">View in GitHub</a>
         </div>
       );
     }
