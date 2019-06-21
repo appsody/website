@@ -13,8 +13,6 @@ class Tile extends React.Component {
   copy() {
     const id = this.props.id
     let copyText = document.querySelector(`#${id} input`);
-    console.log(`#${id} input`);
-    console.log(copyText);
     copyText.select();
     document.execCommand("copy");
   }
@@ -32,7 +30,7 @@ class Tile extends React.Component {
         <div className="card">
           <img id="tile-img" src={this.props.image} alt=""></img>
           <h5 id="tile-heading">{this.props.heading}</h5>
-        <a href="/" onClick={this.handleClick} className="btn btn-clear w-50 mx-auto" role="button">Select</a>
+          <a href="/" onClick={this.handleClick} className="btn btn-clear w-50 mx-auto" role="button">Select</a>
         </div>
       );
     } else {
