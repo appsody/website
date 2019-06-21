@@ -43,14 +43,7 @@ const IndexPage = () => (
             <Tile id="node" heading="Node.js" image={slackIcon}/>
             <Tile id="swift" heading="Swift" image={slackIcon}/>
         </div>
-        <div className="container">
-          <div id="application-stacks" className="row">
-              <Tile heading="Java MicroProfile"/>
-              <Tile heading="Java Spring"/>
-              <Tile heading="Node.js"/>
-              <Tile heading="Swift"/>
-          </div>
-        </div>
+      </div>
       </section>
       <section className="landing-section">
 
