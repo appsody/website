@@ -27,6 +27,10 @@ section.landing-section {
   padding: 4em 0;
 }
 
+section.landing-section:first-child {
+  padding: 6em 0;
+}
+
 section.landing-section:not(:last-child) {
   border-bottom: 2px solid black;
 }
@@ -87,7 +91,6 @@ section.landing-section h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .btn.btn-clear.w-50 {
