@@ -1,6 +1,10 @@
 import React from "react";
 import Tile from "../components/tile";
 
+import kubeLogo from "../images/kubernetes_logo.png";
+import promLogo from "../images/prometheus_logo.png";
+import tektonLogo from "../images/tekton_logo.png";
+
 import githubIcon from "../images/header_github_icon.svg";
 import twitterIcon from "../images/header_twitter_icon.svg";
 import slackIcon from "../images/header_slack_icon.svg";
@@ -24,35 +28,42 @@ const IndexPage = () => (
             <Link to="/" className="btn btn-clear w-50" role="button">Why Appsody</Link>
           </div>
         </div>
+        <div className="col d-none d-md-inline border border-dark">
+          Gif
+        </div>
       </div>
     </section>
     <section className="landing-section">
-    <div id="application-stack">
-      <h1>Application Stacks</h1>
-      <p id="application-stack-info">Select the application pack to view details, then copy the command toclone it using your CLI or view the packs in GitHub.</p>
-    </div>
-    <div className="container">
-      <div id="application-stacks" className="row">
+      <div id="application-stack">
+        <h2>Application Stacks</h2>
+        <p id="application-stack-info">Select the application pack to view details, then copy the command toclone it using your CLI or view the packs in GitHub.</p>
+      </div>
+      <div className="container">
+        <div id="application-stacks" className="row mx-auto">
           <Tile id="java-MicroProfile" heading="Java MicroProfile" image={githubIcon}/>
           <Tile id="java-spring" heading="Java Spring" image={twitterIcon}/>
           <Tile id="node" heading="Node.js" image={slackIcon}/>
           <Tile id="swift" heading="Swift" image={slackIcon}/>
+        </div>
       </div>
-    </div>
     </section>
     <section className="landing-section">
-
+      <div className="d-flex flex-wrap justify-content-center">
+        <img className="m-3" src={ kubeLogo } alt="Kubernetes Logo"></img>
+        <img className="m-3" src={ promLogo } alt="Prometheus Logo"></img>
+        <img className="m-3" src={ tektonLogo } alt="Tekton Logo"></img>
+      </div>
     </section>
     <section className="landing-section text-center">
       <h2 className="mb-5">Why Appsody?</h2>
-      <div className="row">
-        <div className="col border mx-4 py-5">
+      <div className="d-flex flex-wrap justify-content-center w-100">
+        <div className="border my-3 p-4">
           Graph or graphic and information
         </div>
-        <div className="col border mx-4 py-5">
+        <div className="border m-3 p-4">
           Graph or graphic and information
         </div>
-        <div className="col border mx-4 py-5">
+        <div className="border my-3 p-4">
           Graph or graphic and information
         </div>
       </div>
