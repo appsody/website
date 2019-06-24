@@ -38,10 +38,10 @@ const DocSidebar = ({ data }) => {
 
     for (let section in sections) {
         list.push(<DocSection key={sections[section].title} title={section} data={sections[section]}/>)
-    }    
-   
+    }
+
     return (
-        <nav id="docs-sidebar" className="sidebar bg-light">
+        <nav id="docs-sidebar" className="sidenav">
             {list}
         </nav>
     )
