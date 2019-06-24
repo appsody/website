@@ -7,7 +7,7 @@ export default function Template({
   const { markdownRemark } = data 
   const { html } = markdownRemark
   return (
-    <div dangerouslySetInnerHTML={{ __html: html }} />
+      <div dangerouslySetInnerHTML={{ __html: html }} />
   )
 }
 
