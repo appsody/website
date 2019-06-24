@@ -155,3 +155,18 @@ section.landing-section h2 {
 #error404 {
   margin: 3em;
 }
+
+#docs {
+  display: grid;
+  grid-template-columns: 20em auto;
+  grid-template-rows: 100vh;
+}
+
+#docs main, #docs-sidebar {
+  padding: 1em;
+}
+
+#docs-sidebar ul {
+  padding: 0;
+  list-style-type: none;
+}
