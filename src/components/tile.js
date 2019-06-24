@@ -40,7 +40,7 @@ class Tile extends React.Component {
           <h5 id="tile-heading">{this.props.heading}</h5>
 
         <div id="command-input">
-          <input id="input-cli" type="text" name="cli" value="url-link-goes-here" readOnly></input>
+          <input id="input-cli" type="text" name="cli" value={this.props.cmd} readOnly></input>
           <i onClick={this.copy} className="far fa-copy"></i>
         </div>
         <br/>
