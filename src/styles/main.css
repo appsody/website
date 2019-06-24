@@ -148,3 +148,7 @@ section.landing-section h2 {
 .fa-arrow-left:hover, .fa-copy:hover {
   cursor: pointer;
 }
+
+#error404 {
+  margin: 3em ;
+}
