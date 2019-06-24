@@ -8,12 +8,12 @@ export default function Template({
   const { html } = markdownRemark
   return (
     <div className="blog-post-container">
-    <div className="blog-post">
-        <div
-        className="blog-post-content"
-        dangerouslySetInnerHTML={{ __html: html }}
-        />
-    </div>
+      <div className="blog-post">
+          <div
+          className="blog-post-content"
+          dangerouslySetInnerHTML={{ __html: html }}
+          />
+      </div>
     </div>
   )
 }
