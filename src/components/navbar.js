@@ -2,9 +2,9 @@ import React from "react";
 
 import { Link } from "gatsby";
 
-import githubIcon from "../../static/images/header_github_icon.svg";
-import twitterIcon from "../../static/images/header_twitter_icon.svg";
-import slackIcon from "../../static/images/header_slack_icon.svg";
+import githubIcon from "../images/header_github_icon.svg";
+import twitterIcon from "../images/header_twitter_icon.svg";
+import slackIcon from "../images/header_slack_icon.svg";
 
 const NavBar = () => (
     <nav className="navbar navbar-expand-md navbar-light bg-primary">
