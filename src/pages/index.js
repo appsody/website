@@ -40,10 +40,10 @@ const IndexPage = () => (
       </div>
       <div className="container">
         <div id="application-stacks" className="row mx-auto">
-          <Tile id="java-MicroProfile" heading="Java MicroProfile" image={githubIcon}/>
-          <Tile id="java-spring" heading="Java Spring" image={twitterIcon}/>
-          <Tile id="node" heading="Node.js" image={slackIcon}/>
-          <Tile id="swift" heading="Swift" image={slackIcon}/>
+          <Tile id="java-MicroProfile" heading="Java MicroProfile" image={githubIcon} cmd="appsody init java-microprofile"/>
+          <Tile id="java-spring" heading="Java Spring" image={twitterIcon} cmd="appsody init java-spring-boot2"/>
+          <Tile id="node" heading="Node.js" image={slackIcon} cmd="appsody init nodejs"/>
+          <Tile id="node-express" heading="Node.js Express" image={slackIcon}cmd="appsody init nodejs-express"/>
         </div>
       </div>
     </section>

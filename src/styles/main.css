@@ -119,6 +119,10 @@ section.landing-section h2 {
   justify-content: center;
 }
 
+#command-input input{
+  padding: 0 .5em;
+}
+
 .fas.fa-arrow-left {
   position: absolute;
   top: 7px;
