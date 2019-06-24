@@ -57,7 +57,6 @@ export default (props) => (
                         section
                         title
                         path
-                        weight
                     }
                 }
             }
