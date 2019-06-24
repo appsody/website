@@ -4,17 +4,23 @@ import Layout from "../components/layout";
 import DocSidebar from "../components/docSidebar.js";
 
 export default ({ children, pageContext }) => {
-    if (pageContext.layout === "docs") {
-      return (
-        <Layout>
-            <DocSidebar/>
-            {children}
-        </Layout>
-      )
-    }
+  if (pageContext.layout === "docs") {
     return (
-        <Layout>
-            {children}
-        </Layout>
+      <Layout>
+          <div id="docs">
+            <DocSidebar/>
+            <main>
+              {children}
+            </main>
+          </div>
+      </Layout>
     )
   }
+  return (
+      <Layout>
+        <main>
+          {children}
+        </main>
+      </Layout>
+  )
+}
