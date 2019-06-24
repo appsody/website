@@ -158,7 +158,7 @@ section.landing-section h2 {
 
 #docs {
   display: grid;
-  grid-template-columns: 20em auto;
+  grid-template-columns: 15em auto;
   grid-template-rows: 100vh;
 }
 
@@ -166,7 +166,37 @@ section.landing-section h2 {
   padding: 1em;
 }
 
+#docs main {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin-top: 4em;
+}
+
 #docs-sidebar ul {
   padding: 0;
   list-style-type: none;
+}
+
+#docs-sidebar{
+  position: fixed;
+  left: 0;
+  width: 15em;
+  padding-top: 5em;
+  background-color: #f1f1f1;
+  height: 100%;
+  left: 0;
+}
+
+#docs-sidebar a {
+  color: black;
+}
+
+#docs h2 {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+#docs h3 {
+  font-size: 1.2em;
+  font-weight: bold;
 }

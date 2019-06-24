@@ -7,7 +7,7 @@ import twitterIcon from "../images/header_twitter_icon.svg";
 import slackIcon from "../images/header_slack_icon.svg";
 
 const NavBar = () => (
-    <nav className="navbar navbar-expand-md navbar-light bg-primary">
+    <nav className="navbar navbar-expand-md navbar-light bg-primary fixed-top">
         <Link className="navbar-brand d-md-none" to="/">
             Appsody
         </Link>

@@ -9,10 +9,10 @@ export default ({ children, pageContext }) => {
       <Layout>
           <div id="docs">
             <DocSidebar/>
-            <main>
-              {children}
-            </main>
-          </div>
+              <main>
+                {children}
+              </main>
+            </div>
       </Layout>
     )
   }
