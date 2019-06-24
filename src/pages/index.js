@@ -43,7 +43,7 @@ const IndexPage = () => (
           <Tile id="java-MicroProfile" heading="Java MicroProfile" image={githubIcon} cmd="appsody init java-microprofile"/>
           <Tile id="java-spring" heading="Java Spring" image={twitterIcon} cmd="appsody init java-spring-boot2"/>
           <Tile id="node" heading="Node.js" image={slackIcon} cmd="appsody init nodejs"/>
-          <Tile id="node-express" heading="Node.js Express" image={slackIcon}cmd="appsody init nodejs-express"/>
+          <Tile id="node-express" heading="Node.js Express" image={slackIcon} cmd="appsody init nodejs-express"/>
         </div>
       </div>
     </section>
