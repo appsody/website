@@ -41,7 +41,7 @@ const DocSidebar = ({ data }) => {
     }
 
     return (
-        <nav id="docs-sidebar" className="sidenav">
+        <nav id="docs-sidebar">
             {list}
         </nav>
     )
