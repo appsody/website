@@ -5,9 +5,7 @@ import kubeLogo from "../images/kubernetes_logo.png";
 import promLogo from "../images/prometheus_logo.png";
 import tektonLogo from "../images/tekton_logo.png";
 
-import githubIcon from "../images/header_github_icon.svg";
-import twitterIcon from "../images/header_twitter_icon.svg";
-import slackIcon from "../images/header_slack_icon.svg";
+import appsodyFullLogo from "../images/appsody_full_logo.svg";
 
 import { Link } from "gatsby";
 
@@ -16,7 +14,7 @@ const IndexPage = () => (
     <section className="landing-section">
       <div className="row w-100 mx-auto">
         <div className="col">
-          <h1>Appsody</h1>
+          <img className="w-75 my-4" src={ appsodyFullLogo } alt="Appsody Logo"></img>
           <p className="lead">
             Eagles bowtie dirty durham pride slow-food.
           </p>
@@ -28,8 +26,8 @@ const IndexPage = () => (
             <Link to="/" className="btn btn-clear w-50" role="button">Why Appsody</Link>
           </div>
         </div>
-        <div className="col d-none d-md-inline border border-dark">
-          Gif
+        <div className="col d-none d-md-inline">
+
         </div>
       </div>
     </section>
@@ -40,14 +38,15 @@ const IndexPage = () => (
       </div>
       <div className="container">
         <div id="application-stacks" className="row mx-auto">
-          <Tile id="java-MicroProfile" heading="Java MicroProfile" image={githubIcon} cmd="appsody init java-microprofile"/>
-          <Tile id="java-spring" heading="Java Spring" image={twitterIcon} cmd="appsody init java-spring-boot2"/>
-          <Tile id="node" heading="Node.js" image={slackIcon} cmd="appsody init nodejs"/>
-          <Tile id="node-express" heading="Node.js Express" image={slackIcon} cmd="appsody init nodejs-express"/>
+          <Tile id="java-MicroProfile" heading="Java MicroProfile" desc="Microprofile using Adopt OpenJDK and Maven" cmd="appsody init java-microprofile" github="https://github.com/appsody/stacks/tree/master/incubator/java-microprofile"/>
+          <Tile id="java-spring" heading="Java Spring" desc="Spring Boot using IBM Java SDK and Maven" cmd="appsody init java-spring-boot2" github="https://github.com/appsody/stacks/tree/master/incubator/java-spring-boot2"/>
+          <Tile id="node" heading="Node.js" desc="Node.js runtime" cmd="appsody init nodejs" github="https://github.com/appsody/stacks/tree/master/incubator/nodejs"/>
+          <Tile id="node-express" heading="Node.js Express" desc="Express web framework for Node.js" cmd="appsody init nodejs-express" github="https://github.com/appsody/stacks/tree/master/incubator/nodejs-express"/>
         </div>
       </div>
     </section>
-    <section className="landing-section">
+    <section className="landing-section text-center">
+      <h2 >Built on open source</h2>
       <div className="d-flex flex-wrap justify-content-center">
         <img className="m-3" src={ kubeLogo } alt="Kubernetes Logo"></img>
         <img className="m-3" src={ promLogo } alt="Prometheus Logo"></img>
@@ -55,16 +54,19 @@ const IndexPage = () => (
       </div>
     </section>
     <section className="landing-section text-center">
-      <h2 className="mb-5">Why Appsody?</h2>
-      <div className="d-flex flex-wrap justify-content-center w-100">
-        <div className="border my-3 p-4">
-          Graph or graphic and information
+      <h2 className="mb-2">Why Appsody?</h2>
+      <div className="row w-100 mx-auto">
+        <div className="col m-3 p-4">
+          <h3>CLI</h3>
+          <p>Qui et ad mollit nulla ea qui. Enim culpa labore excepteur sunt nostrud. Commodo culpa et non officia cillum irure pariatur ea qui tempor id non. Fugiat cupidatat reprehenderit labore irure tempor aliqua commodo aliquip esse sint voluptate. Quis et officia officia ut incididunt excepteur aute exercitation deserunt voluptate fugiat pariatur sunt. Esse minim ullamco occaecat reprehenderit esse laboris.</p>
         </div>
-        <div className="border m-3 p-4">
-          Graph or graphic and information
+        <div className="col m-3 p-4">
+          <h3>Stacks</h3>
+          <p>Qui et ad mollit nulla ea qui. Enim culpa labore excepteur sunt nostrud. Commodo culpa et non officia cillum irure pariatur ea qui tempor id non. Fugiat cupidatat reprehenderit labore irure tempor aliqua commodo aliquip esse sint voluptate. Quis et officia officia ut incididunt excepteur aute exercitation deserunt voluptate fugiat pariatur sunt. Esse minim ullamco occaecat reprehenderit esse laboris.</p>
         </div>
-        <div className="border my-3 p-4">
-          Graph or graphic and information
+        <div className="col m-3 p-4">
+          <h3>Hub</h3>
+          <p>Qui et ad mollit nulla ea qui. Enim culpa labore excepteur sunt nostrud. Commodo culpa et non officia cillum irure pariatur ea qui tempor id non. Fugiat cupidatat reprehenderit labore irure tempor aliqua commodo aliquip esse sint voluptate. Quis et officia officia ut incididunt excepteur aute exercitation deserunt voluptate fugiat pariatur sunt. Esse minim ullamco occaecat reprehenderit esse laboris.</p>
         </div>
       </div>
     </section>

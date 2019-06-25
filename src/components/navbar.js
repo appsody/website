@@ -6,8 +6,13 @@ import githubIcon from "../images/header_github_icon.svg";
 import twitterIcon from "../images/header_twitter_icon.svg";
 import slackIcon from "../images/header_slack_icon.svg";
 
+import appsodyLogo from "../images/appsody_logo.svg";
+
 const NavBar = () => (
-    <nav className="navbar navbar-expand-md navbar-light bg-primary fixed-top">
+    <nav id="main-nav" className="navbar navbar-expand-md navbar-light fixed-top px-md-5">
+        <Link class="navbar-brand" href="#">
+            <img src={ appsodyLogo } width="30" height="30" class="d-inline-block align-top mr-4" alt="Appsody Logo"></img>
+        </Link>
         <Link className="navbar-brand d-md-none" to="/">
             Appsody
         </Link>
