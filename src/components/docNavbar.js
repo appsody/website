@@ -10,12 +10,9 @@ import appsodyLogo from "../images/appsody_logo.svg";
 
 const NavBar = () => (
 
-    <nav id="main-nav" className="navbar navbar-expand-md navbar-light fixed-top px-md-5">
-        <Link class="navbar-brand m-0" href="#">
-            <img src={ appsodyLogo } width="30" height="30" class="d-inline-block align-top mr-4" alt="Appsody Logo"></img>
-        </Link>
-        <Link id="docs-nav-heading" className="navbar-brand d-md-none" to="/">
-            Appsody
+    <nav id="main-nav" className="navbar navbar-expand navbar-light fixed-top">
+        <Link class="navbar-brand" href="#">
+            <img src={ appsodyLogo } width="30" height="30" class="d-inline-block align-top mr-md-4" alt="Appsody Logo"></img>
         </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
           <span className="navbar-toggler-icon"></span>
