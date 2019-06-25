@@ -56,7 +56,7 @@ export default (props) => (
     <StaticQuery
       query={graphql`
         query {
-            allMarkdownRemark(sort: {fields: frontmatter___section}) {
+            allMarkdownRemark {
                 nodes {
                     frontmatter {
                         section

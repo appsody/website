@@ -27,24 +27,23 @@ class Tile extends React.Component {
   render() {
     if (this.state.isToggleOn) {
       return (
-        <div className="card">
-          <img id="tile-img" src={this.props.image} alt=""></img>
-          <h5 id="tile-heading">{this.props.heading}</h5>
-          <a href="/" onClick={this.handleClick} className="btn btn-clear w-50 mx-auto" role="button">Select</a>
+        <div className="tile card text-center">
+          <h5>{this.props.heading}</h5>
+          <p>{this.props.desc}</p>
+          <a href="/" onClick={this.handleClick} className="btn btn-primary w-50 mx-auto" role="button">Select</a>
         </div>
       );
     } else {
       return (
-        <div id={this.props.id} className="card flip">
+        <div id={this.props.id} className="tile card flip">
           <i onClick={this.handleClick} className="fas fa-arrow-left" title="flip card"></i>
           <h5 id="tile-heading">{this.props.heading}</h5>
 
-        <div id="command-input">
-          <input id="input-cli" type="text" name="cli" value={this.props.cmd} readOnly></input>
-          <i onClick={this.copy} className="far fa-copy"></i>
-        </div>
-        <br/>
-        <a href="/" className="btn btn-primary w-70 flipped" role="button">View in GitHub</a>
+          <div id="command-input">
+            <input id="input-cli" type="text" name="cli" value={this.props.cmd} readOnly></input>
+            <i onClick={this.copy} className="far fa-copy"></i>
+          </div>
+          <a href={this.props.github} className="btn btn-clear w-75 mx-auto" role="button">View in GitHub</a>
         </div>
       );
     }
