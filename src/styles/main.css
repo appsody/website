@@ -267,6 +267,7 @@ section.landing-section h2 {
     position: static;
     grid-row-start: 1;
     grid-row-end: 2;
+    background-color: white;
   }
 }
 footer {
@@ -298,4 +299,8 @@ footer a {
 
 footer a:hover {
   color: white;
+}
+
+#docs-sidebar li {
+  display: block !important;
 }
