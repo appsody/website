@@ -183,7 +183,6 @@ section.landing-section h2 {
 
 #docs-sidebar{
   position: fixed;
-  left: 0;
   width: 15em;
   padding-top: 5em;
   background-color: #f1f1f1;
@@ -203,4 +202,32 @@ section.landing-section h2 {
 #docs h3 {
   font-size: 1.2em;
   font-weight: bold;
+}
+
+#docs-nav-heading {
+  justify-content: center;
+}
+
+@media only screen and (max-width: 767px) {
+  img.navbar-img {
+    margin: 0em;
+  }
+
+  #docs {
+    grid-template-columns: 0;
+    grid-template-rows: auto auto;
+  }
+
+  #docs main {
+    margin-top: 0;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  #docs-sidebar{
+    width: 100vw;
+    position: static;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
 }
