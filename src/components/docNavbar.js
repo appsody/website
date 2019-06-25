@@ -10,7 +10,7 @@ import appsodyLogo from "../images/appsody_logo.svg";
 
 const DocNavBar = () => (
 
-    <nav id="main-nav" className="navbar navbar-expand navbar-light fixed-top">
+    <nav id="main-nav" className="navbar navbar-expand navbar-light fixed-top px-md-5">
         <Link className="navbar-brand" to="/">
             <img src={ appsodyLogo } width="30" height="30" className="d-inline-block align-top mr-md-4" alt="Appsody Logo"></img>
         </Link>
