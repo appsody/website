@@ -8,11 +8,11 @@ import slackIcon from "../images/header_slack_icon.svg";
 
 import appsodyLogo from "../images/appsody_logo.svg";
 
-const NavBar = () => (
+const DocNavBar = () => (
 
     <nav id="main-nav" className="navbar navbar-expand navbar-light fixed-top">
-        <Link class="navbar-brand" href="#">
-            <img src={ appsodyLogo } width="30" height="30" class="d-inline-block align-top mr-md-4" alt="Appsody Logo"></img>
+        <Link className="navbar-brand" to="/">
+            <img src={ appsodyLogo } width="30" height="30" className="d-inline-block align-top mr-md-4" alt="Appsody Logo"></img>
         </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
           <span className="navbar-toggler-icon"></span>
@@ -47,4 +47,4 @@ const NavBar = () => (
   </nav>
 )
 
-export default NavBar;
+export default DocNavBar;
