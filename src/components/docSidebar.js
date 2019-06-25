@@ -8,9 +8,9 @@ const DocSection = (props) => {
             {
                 (props.title !== "null") ? <h4>{props.title}</h4> : null
             }
-            <ul className="navbar-nav">
+            <ul>
                 {
-                    props.data.map(doc => <li className="nav-link"><Link to={doc.path}>{doc.title}</Link></li>)
+                    props.data.map(doc => <li className="my-1"><Link to={doc.path}>{doc.title}</Link></li>)
                 }
             </ul>
         </React.Fragment>
@@ -41,7 +41,7 @@ const DocSidebar = ({ data }) => {
     }
 
     return (
-        <nav className="navbar-expand-md navbar-light" id="docs-sidebar">
+        <nav className="navbar-expand-md navbar-light border-bottom" id="docs-sidebar">
           <button className="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#collapsingSideNavbar">
               <span className="navbar-toggler-icon"></span>
           </button>
