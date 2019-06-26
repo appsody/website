@@ -201,7 +201,7 @@ section.landing-section h2 {
 #docs {
   display: grid;
   grid-template-columns: 15em auto;
-  grid-template-rows: 100vh;
+  /* grid-template-rows: 100vh; */
 }
 
 #docs main, #docs-sidebar {
@@ -270,11 +270,18 @@ section.landing-section h2 {
     background-color: white;
   }
 }
+
 footer {
   background-color: var(--colour-scheme-1);
   box-shadow: 0 6px 29px #9B9B9B;
   padding: 1em;
   text-align: center;
+}
+
+#docs footer {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  z-index: 1;
 }
 
 footer ul {
