@@ -40,7 +40,7 @@ const NavBar = () => (
                     </a>
                 </li>
                 <li>
-                    <a className="nav-link" href="/">
+                    <a className="nav-link" href="http://appsody-slack.eu-gb.mybluemix.net">
                         <img className="navbar-img ml-2-md" src={ slackIcon } alt=""></img>
                     </a>
                 </li>
