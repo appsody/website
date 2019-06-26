@@ -19,7 +19,7 @@ const IndexPage = () => (
             Compose a cloud native masterpiece.
           </p>
           <p>
-            Infused with cloud native capabilities from the moment you start, Appsody provides everything you need to iteratively develop applications, ready for deployment to Kubernetes environments. Teams are empowered with sharable technology stacks, configurable and controllable through a central hub. 
+            Infused with cloud native capabilities from the moment you start, Appsody provides everything you need to iteratively develop applications, ready for deployment to Kubernetes environments. Teams are empowered with sharable technology stacks, configurable and controllable through a central hub.
           </p>
           <div className="d-flex">
             <Link to="/" className="btn btn-primary mr-2 w-50" role="button">Get Started</Link>
@@ -55,18 +55,20 @@ const IndexPage = () => (
     </section>
     <section className="landing-section text-center">
       <h2 className="mb-2">Why Appsody?</h2>
-      <div className="row w-100 mx-auto">
-        <div className="col m-3 p-4">
-          <h3>CLI</h3>
-          <p>Intuitive and powerful. The Appsody CLI allows you to connect to a Hub, pull down a stack, and create, build, test and deploy your application.</p>
-        </div>
-        <div className="col m-3 p-4">
-          <h3>Stacks</h3>
-          <p>Create, modify and share technology stacks with inbuilt cloud native capabilities, such as health checks, monitoring and OpenAPI descriptions.</p>
-        </div>
-        <div className="col m-3 p-4">
-          <h3>Hub</h3>
-          <p>A central repository of available stacks, enabling a single point of control for applications built from these foundations.</p>
+      <div className="container">
+        <div className="row w-100 mx-auto">
+          <div className="col m-3 p-4">
+            <h3>CLI</h3>
+            <p>Intuitive and powerful. The Appsody CLI allows you to connect to a Hub, pull down a stack, and create, build, test and deploy your application.</p>
+          </div>
+          <div className="col m-3 p-4">
+            <h3>Stacks</h3>
+            <p>Create, modify and share technology stacks with inbuilt cloud native capabilities, such as health checks, monitoring and OpenAPI descriptions.</p>
+          </div>
+          <div className="col m-3 p-4">
+            <h3>Hub</h3>
+            <p>A central repository of available stacks, enabling a single point of control for applications built from these foundations.</p>
+          </div>
         </div>
       </div>
     </section>
