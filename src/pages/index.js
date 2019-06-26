@@ -16,10 +16,10 @@ const IndexPage = () => (
         <div className="col">
           <img className="w-75 my-4" src={ appsodyFullLogo } alt="Appsody Logo"></img>
           <p className="lead">
-            Eagles bowtie dirty durham pride slow-food.
+            Compose a cloud native masterpiece.
           </p>
           <p>
-            Adipisicing eiusmod laborum laboris sunt labore est est ad Lorem est. Magna enim adipisicing veniam ea velit velit aute. Commodo irure anim nisi nulla reprehenderit ipsum. Quis et Lorem officia nulla nostrud Lorem nulla in exercitation deserunt.
+            Infused with cloud native capabilities from the moment you start, Appsody provides everything you need to iteratively develop applications, ready for deployment to Kubernetes environments. Teams are empowered with sharable technology stacks, configurable and controllable through a central hub. 
           </p>
           <div className="d-flex">
             <Link to="/" className="btn btn-primary mr-2 w-50" role="button">Get Started</Link>
@@ -34,7 +34,7 @@ const IndexPage = () => (
     <section className="landing-section">
       <div id="application-stack">
         <h2>Application Stacks</h2>
-        <p id="application-stack-info">Select the application pack to view details, then copy the command toclone it using your CLI or view the packs in GitHub.</p>
+        <p id="application-stack-info">Select the application pack to view details, then copy the command to clone it using your CLI or view the packs in GitHub.</p>
       </div>
       <div className="container">
         <div id="application-stacks" className="row mx-auto">
@@ -58,15 +58,15 @@ const IndexPage = () => (
       <div className="row w-100 mx-auto">
         <div className="col m-3 p-4">
           <h3>CLI</h3>
-          <p>Qui et ad mollit nulla ea qui. Enim culpa labore excepteur sunt nostrud. Commodo culpa et non officia cillum irure pariatur ea qui tempor id non. Fugiat cupidatat reprehenderit labore irure tempor aliqua commodo aliquip esse sint voluptate. Quis et officia officia ut incididunt excepteur aute exercitation deserunt voluptate fugiat pariatur sunt. Esse minim ullamco occaecat reprehenderit esse laboris.</p>
+          <p>Intuitive and powerful. The Appsody CLI allows you to connect to a Hub, pull down a stack, and create, build, test and deploy your application.</p>
         </div>
         <div className="col m-3 p-4">
           <h3>Stacks</h3>
-          <p>Qui et ad mollit nulla ea qui. Enim culpa labore excepteur sunt nostrud. Commodo culpa et non officia cillum irure pariatur ea qui tempor id non. Fugiat cupidatat reprehenderit labore irure tempor aliqua commodo aliquip esse sint voluptate. Quis et officia officia ut incididunt excepteur aute exercitation deserunt voluptate fugiat pariatur sunt. Esse minim ullamco occaecat reprehenderit esse laboris.</p>
+          <p>Create, modify and share technology stacks with inbuilt cloud native capabilities, such as health checks, monitoring and OpenAPI descriptions.</p>
         </div>
         <div className="col m-3 p-4">
           <h3>Hub</h3>
-          <p>Qui et ad mollit nulla ea qui. Enim culpa labore excepteur sunt nostrud. Commodo culpa et non officia cillum irure pariatur ea qui tempor id non. Fugiat cupidatat reprehenderit labore irure tempor aliqua commodo aliquip esse sint voluptate. Quis et officia officia ut incididunt excepteur aute exercitation deserunt voluptate fugiat pariatur sunt. Esse minim ullamco occaecat reprehenderit esse laboris.</p>
+          <p>A central repository of available stacks, enabling a single point of control for applications built from these foundations.</p>
         </div>
       </div>
     </section>
