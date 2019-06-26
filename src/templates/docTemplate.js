@@ -1,13 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import Doc from "../components/doc";
+
 export default function Template({
   data, 
 }) {
   const { markdownRemark } = data 
   const { html } = markdownRemark
+
   return (
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Doc html={html}/>
   )
 }
 
