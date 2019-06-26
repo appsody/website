@@ -5,8 +5,8 @@ const Footer = () => {
         <footer>
             <ul>
                 <li><a href="https://github.com/appsody/website/blob/master/LICENSE">License</a></li>
-                <li><a href="/">Notice</a></li>
-                <li><a href="/">Privacy</a></li>
+                <li><a href="https://github.com/appsody/website/blob/master/NOTICE.md">Notice</a></li>
+                <li><a href="https://github.com/appsody/website/blob/master/PRIVACY.md">Privacy</a></li>
             </ul>
         </footer>
     )
