@@ -6,6 +6,7 @@ import promLogo from "../images/prometheus_logo.png";
 import tektonLogo from "../images/tekton_logo.png";
 
 import appsodyFullLogo from "../images/appsody_full_logo.svg";
+import appsodyHello from "../images/appsody_hello.svg";
 
 import { Link } from "gatsby";
 
@@ -19,7 +20,7 @@ const IndexPage = () => (
             Compose a cloud native masterpiece.
           </p>
           <p>
-            Infused with cloud native capabilities from the moment you start, Appsody provides everything you need to iteratively develop applications, ready for deployment to Kubernetes environments. Teams are empowered with sharable technology stacks, configurable and controllable through a central hub. 
+            Infused with cloud native capabilities from the moment you start, Appsody provides everything you need to iteratively develop applications, ready for deployment to Kubernetes environments. Teams are empowered with sharable technology stacks, configurable and controllable through a central hub.
           </p>
           <div className="d-flex">
             <Link to="/" className="btn btn-primary mr-2 w-50" role="button">Get Started</Link>
@@ -27,7 +28,7 @@ const IndexPage = () => (
           </div>
         </div>
         <div className="col d-none d-md-inline">
-
+          <img id="appssody-hello" className="w-75 mr-5" src={ appsodyHello } alt="Appsody Logo"></img>
         </div>
       </div>
     </section>
