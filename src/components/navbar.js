@@ -31,17 +31,17 @@ const NavBar = () => (
             <ul className="navbar-nav ml-auto">
                 <li>
                     <a className="nav-link" href="https://github.com/appsody">
-                        <img className="navbar-img" src={ githubIcon } alt=""></img>
+                        <img className="navbar-img mr-2-md" src={ githubIcon } alt=""></img>
                     </a>
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" href="https://twitter.com/appsodydev">
-                        <img className="navbar-img" src={ twitterIcon } alt=""></img>
+                        <img className="navbar-img mx-2-md" src={ twitterIcon } alt=""></img>
                     </a>
                 </li>
                 <li>
                     <a className="nav-link" href="/">
-                        <img className="navbar-img" src={ slackIcon } alt=""></img>
+                        <img className="navbar-img ml-2-md" src={ slackIcon } alt=""></img>
                     </a>
                 </li>
             </ul>

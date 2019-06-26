@@ -290,3 +290,10 @@ footer a {
 footer a:hover {
   color: white;
 }
+
+#docs main pre, #docs main :not(pre) > code  {
+  padding: 0.3em;
+  background-color: #F1F1F1;
+  border-radius: 0.1em;
+  color: black
+}
