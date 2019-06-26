@@ -301,9 +301,9 @@ footer a:hover {
   color: white;
 }
 
-#docs main pre, #docs main code {
+#docs main pre, #docs main :not(pre) > code  {
   padding: 0.3em;
-  background-color: rgb(224,224,224);
+  background-color: #F1F1F1;
   border-radius: 0.1em;
   color: black
 }

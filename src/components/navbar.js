@@ -41,7 +41,7 @@ const NavBar = () => (
                 </li>
                 <li>
                     <a className="nav-link" href="/">
-                        <img className="navbar-img mx-2-md" src={ slackIcon } alt=""></img>
+                        <img className="navbar-img ml-2-md" src={ slackIcon } alt=""></img>
                     </a>
                 </li>
             </ul>
