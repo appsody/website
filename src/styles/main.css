@@ -122,25 +122,9 @@ section.landing-section h2 {
   justify-content: center;
 }
 
-/* .btn.btn-clear.w-50 {
-  background-color: var(--white-buttons) !important;
-  border: 4px solid var(--white-buttons) !important;
-  border-radius: 10px;
-  padding: 0px;
-} */
-
-/* .btn.btn-primary.w-70.flipped{
-  margin-top: 1em;
-  border-radius: 10px;
-  padding: 0px;
-  height: 50em;
-} */
-
 #input-cli{
   text-align: center;
   width: 65%;
-  /* margin: 0 .5em; */
-  /* margin-right: 0.3em; */
 }
 
 #command-input{
@@ -201,7 +185,6 @@ section.landing-section h2 {
 #docs {
   display: grid;
   grid-template-columns: 15em auto;
-  /* grid-template-rows: 100vh; */
 }
 
 #docs main, #docs-sidebar {
