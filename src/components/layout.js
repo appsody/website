@@ -9,6 +9,6 @@ export default ({ children }) => (
         <Head/>
         <Navbar/>
         { children }
-        <Footer></Footer>
+        <Footer/>
     </React.Fragment>
 )
