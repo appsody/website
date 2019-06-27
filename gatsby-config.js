@@ -19,6 +19,12 @@ module.exports = {
         anonymize: true,
       }
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/images/favicon.svg`
+      },
+    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-layout`
   ]
