@@ -14,7 +14,12 @@ class Head extends React.Component {
         return (
             <Helmet>
                 <meta charset="UTF-8"></meta>
-                <title>Appsody</title>
+                <title>Appsody - Compose a Cloud Native Masterpiece</title>
+                <meta name="description" content="Infused with cloud native capabilities from the moment you start, Appsody provides everything you need to iteratively develop applications, ready for deployment to Kubernetes environments. Teams are empowered with sharable technology stacks, configurable and controllable through a central hub." />
+                <meta name="keywords" content="appsody, development, microservice, kubernetes, cloud-native, cloud, java, nodejs, swift, spring, microprofile" />
+                <meta property="og:title" content="Appsody - Compose a Cloud Native Masterpiece" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="http://appsody.dev/" />
             </Helmet>
         )
     }
