@@ -9,7 +9,7 @@ Infused with cloud native capabilities from the moment you start, Appsody provid
 
 # Website
 
-
+This repo holds the source for the website.
 
 ## Contributing
 
