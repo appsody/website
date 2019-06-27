@@ -27,8 +27,8 @@ const IndexPage = () => (
             <Link to="/docs" className="btn btn-clear w-50" role="button">Overview</Link>
           </div>
         </div>
-        <div className="col d-none d-md-inline">
-          <img id="appssody-hello" className="mr-5" src={ appsodyHello } alt="Appsody Logo"></img>
+        <div className="col d-none d-md-inline text-center">
+          <img id="appsody-hello" className="mt-3" src={ appsodyHello } alt="Appsody Logo"></img>
         </div>
       </div>
     </section>
