@@ -39,7 +39,7 @@ const IndexPage = () => (
       </div>
       <div className="container">
         <div id="application-stacks" className="row mx-auto">
-          <Tile id="java-MicroProfile" heading="Java MicroProfile" desc="Microprofile using Adopt OpenJDK and Maven" cmd="appsody init java-microprofile" github="https://github.com/appsody/stacks/tree/master/incubator/java-microprofile"/>
+          <Tile id="java-MicroProfile" heading="Java MicroProfile" desc="Microprofile using AdoptOpenJDK and Maven" cmd="appsody init java-microprofile" github="https://github.com/appsody/stacks/tree/master/incubator/java-microprofile"/>
           <Tile id="java-spring" heading="Java Spring" desc="Spring Boot using IBM Java SDK and Maven" cmd="appsody init java-spring-boot2" github="https://github.com/appsody/stacks/tree/master/incubator/java-spring-boot2"/>
           <Tile id="node" heading="Node.js" desc="Node.js runtime" cmd="appsody init nodejs" github="https://github.com/appsody/stacks/tree/master/incubator/nodejs"/>
           <Tile id="node-express" heading="Node.js Express" desc="Express web framework for Node.js" cmd="appsody init nodejs-express" github="https://github.com/appsody/stacks/tree/master/incubator/nodejs-express"/>
