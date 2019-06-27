@@ -35,7 +35,7 @@ const IndexPage = () => (
     <section className="landing-section">
       <div id="application-stack">
         <h2>Application Stacks</h2>
-        <p id="application-stack-info">Select the application pack to view details, then copy the command to clone it using your CLI or view the packs in GitHub.</p>
+        <p id="application-stack-info">Select the application stack to view details, then copy the command to clone it using your CLI or view the stacks in GitHub.</p>
       </div>
       <div className="container">
         <div id="application-stacks" className="row mx-auto">
