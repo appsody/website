@@ -35,12 +35,12 @@ const IndexPage = () => (
     <section className="landing-section">
       <div id="application-stack">
         <h2>Application Stacks</h2>
-        <p id="application-stack-info">Select the application pack to view details, then copy the command to clone it using your CLI or view the packs in GitHub.</p>
+        <p id="application-stack-info">Select the application stack to view further details on GitHub or copy the command to start using the stack with our CLI.</p>
       </div>
       <div className="container">
         <div id="application-stacks" className="row mx-auto">
-          <Tile id="java-MicroProfile" heading="Java MicroProfile" desc="Microprofile using Adopt OpenJDK and Maven" cmd="appsody init java-microprofile" github="https://github.com/appsody/stacks/tree/master/incubator/java-microprofile"/>
-          <Tile id="java-spring" heading="Java Spring" desc="Spring Boot using IBM Java SDK and Maven" cmd="appsody init java-spring-boot2" github="https://github.com/appsody/stacks/tree/master/incubator/java-spring-boot2"/>
+          <Tile id="java-MicroProfile" heading="Java MicroProfile&reg;" desc="Microprofile using AdoptOpenJDK and Maven" cmd="appsody init java-microprofile" github="https://github.com/appsody/stacks/tree/master/incubator/java-microprofile"/>
+          <Tile id="java-spring" heading="Java Spring&reg;" desc="Spring Boot using IBM Java SDK and Maven" cmd="appsody init java-spring-boot2" github="https://github.com/appsody/stacks/tree/master/incubator/java-spring-boot2"/>
           <Tile id="node" heading="Node.js" desc="Node.js runtime" cmd="appsody init nodejs" github="https://github.com/appsody/stacks/tree/master/incubator/nodejs"/>
           <Tile id="node-express" heading="Node.js Express" desc="Express web framework for Node.js" cmd="appsody init nodejs-express" github="https://github.com/appsody/stacks/tree/master/incubator/nodejs-express"/>
         </div>

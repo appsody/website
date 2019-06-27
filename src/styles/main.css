@@ -211,6 +211,10 @@ section.landing-section h2 {
   left: 0;
 }
 
+#docs-sidebar li {
+  margin-top: 2em;
+}
+
 #docs-sidebar a {
   color: black;
 }
