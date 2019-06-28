@@ -301,6 +301,14 @@ footer a:hover {
   border-radius: 0.1em;
   color: black
 }
+#docs pre, #docs code{
+  overflow-x: scroll;
+  width: 100%;
+}
+
+#docs main {
+  overflow-x: hidden;
+}
 
 #appsody-hello {
   position: relative;
