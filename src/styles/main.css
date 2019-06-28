@@ -302,7 +302,6 @@ footer a:hover {
   color: black
 }
 #docs pre, #docs code{
-  margin: 0;
   overflow-x: scroll;
   width: 100%;
 }
