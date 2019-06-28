@@ -307,9 +307,10 @@ footer a:hover {
   width: 100%;
 }
 
-main {
+#docs main {
   overflow-x: hidden;
 }
+
 #appsody-hello {
   position: relative;
   top: 50%;
