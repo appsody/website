@@ -1,6 +1,6 @@
 # Appsody.dev Development
 
-The Appsdy website is built with [Gatsby.Js](https://www.gatsbyjs.org/). To develop and test the website you will need to download the Gatsby cli with the following command:
+The Appsody website is built with [Gatsby.js](https://www.gatsbyjs.org/). To develop and test the website you will need to download the Gatsby CLI with the following command:
 
 ```
 npm install -g gatsby-cli
@@ -10,7 +10,14 @@ The Gatsby [quick start guide](https://www.gatsbyjs.org/docs/quick-start) highli
 
 ## Developing locally
 
-To run the website developement server run the following within the website directory:
+Make sure to run the following steps in the website directory.
+
+1. Install dependencies
+```
+npm install
+```
+
+2. Start the development server:
 
 ```
 gatsby develop
@@ -21,33 +28,20 @@ This will compile your changes as you develop and host the website at http://loc
 ### Viewing documentation
 Documentation will ultimately be retrieved from the [docs repository](https://github.com/appsody/docs). You can add local documentation to the docs page by doing the following:
 
-1. Make sure the `gatsby-source-filesystem` plugin is installed.
-```
-npm install gatsby-source-filesystem
-```
-2. Add directory of local documentation within `gatsby-config.js`
-```
-...
+1. Add documentation to the `src/docs` directory. There are 2 sample documents currently present there.
 
-{
-    resolve: `gatsby-source-filesystem`,
-    options: {
-        name: `docs-pages`,
-        path: `${__dirname}/src/docs`,
-    }
-},
-
-...
+2. Install dependencies
 ```
-3. Add local documentation to the `src/docs` directory. There are 2 sample documents currently present there.
+npm install 
+```
 
-4. Run the developement server
+3. Run the developement server
 ```
 gatsby develop
 ```
 5. View documentation at http://localhost:8000/docs
 
-Also see https://www.gatsbyjs.org/docs/adding-markdown-pages/
+For more information on adding markdown pages with Gatsby, see https://www.gatsbyjs.org/docs/adding-markdown-pages/
 
 ## Testing website ready for release
 
@@ -57,11 +51,11 @@ Before submitting a pull request you must have tested the website can build and 
 ```
 gatsby build
 ```
-The build needs to successful.
+This build needs to successful before continuing to serve the website.
 
 2. Serve the website
 ```
-gastby serve
+gatsby serve
 ```
 
 3. Access the website on http://localhost:9000 and complete any visual checks.
