@@ -13,7 +13,7 @@ import Nav from 'react-bootstrap/Nav';
 
 const DocNavBar = () => (
   <Navbar className="fixed-top" id="main-nav">
-    <Navbar.Brand href="#home">
+    <Navbar.Brand>
       <Link className="navbar-brand" to="/">
         <img src={ appsodyLogo } width="30" height="30" className="d-inline-block align-top mr-4" alt="Appsody Logo"></img>
       </Link>
