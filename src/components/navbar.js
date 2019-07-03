@@ -8,45 +8,33 @@ import slackIcon from "../images/header_slack_icon.svg";
 
 import appsodyLogo from "../images/appsody_logo.svg";
 
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+
+
 const NavBar = () => (
-    <nav id="main-nav" className="navbar navbar-expand-md navbar-light fixed-top px-md-5">
-        <Link className="navbar-brand" to="/">
-            <img src={ appsodyLogo } width="30" height="30" className="d-inline-block align-top mr-4" alt="Appsody Logo"></img>
-        </Link>
-        <Link className="navbar-brand d-md-none" to="/">
-            Appsody
-        </Link>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-            <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="navbar-collapse collapse" id="collapsingNavbar">
-            <ul className="navbar-nav">
-                <li className="nav-item">
-                    <Link className="nav-link" to="/">Home</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/docs">Docs</Link>
-                </li>
-            </ul>
-            <ul className="navbar-nav ml-auto">
-                <li>
-                    <a className="nav-link" href="https://github.com/appsody">
-                        <img className="navbar-img mr-2-md" src={ githubIcon } alt=""></img>
-                    </a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="https://twitter.com/appsodydev">
-                        <img className="navbar-img mx-2-md" src={ twitterIcon } alt=""></img>
-                    </a>
-                </li>
-                <li>
-                    <a className="nav-link" href="http://appsody-slack.eu-gb.mybluemix.net">
-                        <img className="navbar-img ml-2-md" src={ slackIcon } alt=""></img>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <Navbar className="fixed-top px-md-5" id="main-nav" expand="md">
+    <Navbar.Brand>
+      <Link to="/">
+        <img src={ appsodyLogo } width="30" height="30" className="d-inline-block align-top mr-4" alt="Appsody Logo"></img>
+      </Link>
+      <Link className="navbar-brand d-md-none" to="/">
+          Appsody
+      </Link>
+    </Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav>
+        <Nav.Link href="/">Home</Nav.Link>
+        <Nav.Link href="/docs">Docs</Nav.Link>
+      </Nav>
+      <Nav className="ml-auto">
+        <Nav.Link href="https://github.com/appsody"><img className="navbar-img" src={ githubIcon } alt=""></img></Nav.Link>
+        <Nav.Link href="https://twitter.com/appsodydev"><img id="twitter-nav" className="navbar-img" src={ twitterIcon } alt=""></img></Nav.Link>
+        <Nav.Link href="http://appsody-slack.eu-gb.mybluemix.net"><img className="navbar-img" src={ slackIcon } alt=""></img></Nav.Link>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>
 )
 
 export default NavBar;
