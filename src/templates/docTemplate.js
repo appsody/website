@@ -4,9 +4,9 @@ import { graphql } from "gatsby"
 import Doc from "../components/doc";
 
 export default function Template({
-  data, 
+  data,
 }) {
-  const { markdownRemark } = data 
+  const { markdownRemark } = data
   const { html } = markdownRemark
 
   return (
