@@ -332,3 +332,7 @@ footer a:hover {
 .navbar-brand {
   padding: 0;
 }
+
+#docs #brand-name {
+  display: none;
+}
