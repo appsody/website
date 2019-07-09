@@ -1,11 +1,11 @@
 <!--
-Please read the [Code of Conduct](https://github.com/appsody/docs/blob/master/CODE_OF_CONDUCT.md) and the [Contributing Guidelines](https://github.com/appsody/docs/blob/master/CONTRIBUTING.md) before opening a pull request.
+Please read the [Code of Conduct](https://github.com/appsody/website/blob/master/CODE_OF_CONDUCT.md) and the [Contributing Guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) before opening a pull request.
 -->
 
 ## Checklist
 <!-- For completed items, change [ ] to [x]. -->
 
-- [ ] commit message follows [commit guidelines](https://github.com/appsody/docs/blob/master/CONTRIBUTING.md#commit-message-guidelines).
+- [ ] commit message follows [commit guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md#commit-message-guidelines).
 - [ ] website builds and runs in production - for information on how to test locally go [here](../DEVELOPMENT.md).
 
 ## Description

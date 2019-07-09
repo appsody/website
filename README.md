@@ -13,7 +13,7 @@ This repository holds the source for the website along with Appsody's [documenta
 
 ## Contributing
 
-We welcome all contributions to the Appsody project. Please see our [Contributing guidelines](https://github.com/appsody/docs/blob/master/CONTRIBUTING.md)
+We welcome all contributions to the Appsody project. Please see our [Contributing guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md)
 
 ## Community
 
