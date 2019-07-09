@@ -1,27 +1,28 @@
 # Appsody.dev Development
 
-The Appsody website is built with [Gatsby.js](https://www.gatsbyjs.org/). To develop and test the website you will need to download the Gatsby CLI with the following command:
+The Appsody website is built with [Gatsby.js](https://www.gatsbyjs.org/). See the Gatsby [quick start guide](https://www.gatsbyjs.org/docs/quick-start) for the basics.
 
-```
-npm install -g gatsby-cli
-```
+## Prerequisites
 
-The Gatsby [quick start guide](https://www.gatsbyjs.org/docs/quick-start) highlights the key commands.
+- **Node 8+**
+  You can download Node.js from https://nodejs.org/en/
+  
+- [**Gatsby.js**](https://www.gatsbyjs.org)
+  Once you have Node installed run the following to install Gatsby.js:
+  ``` bash
+    npm install -g gatsby-cli
+  ```
+- **Clone website** and **install Node dependencies**
+  ``` bash
+    git clone https://github.com/appsody/website.git
+    cd website
+
+    npm install
+  ```
 
 ## Developing locally
 
-1. Clone the respository
-``` bash
-git clone https://github.com/appsody/website.git
-cd website
-```
-
-2. Install dependencies
-``` bash
-npm install
-```
-
-3. Start the development server:
+1. Run the development server:
 
 ``` bash
 gatsby develop
@@ -33,21 +34,8 @@ This will compile your changes as you develop and host the website at http://loc
 **Note:** If you are developing remotely, use `http://<hostname>:PORT` instead of `http://localhost:PORT` as described in this doc.
 
 ## Contributing Documentation
-Documentation for [Appsody](https://appsody.dev/docs) is found in `content/docs`. 
+1. Add documentation to the `content/docs` directory. This is where the documentation for [Appsody](https://appsody.dev/docs) is stored.
 
-1. Clone the respository
-``` bash
-git clone https://github.com/appsody/website.git
-cd website
-```
-
-2. Install dependencies
-``` bash
-npm install
-```
-
-3. Add documentation to the `content/docs` directory.
-    
 The documentation should follow the rough structure of the sidebar so that the docs are easy to find. The quick start guide, for example, is located in `content/docs/getting-started/quick-start`.
 
 At the top of each documentation page you should include frontmatter so that the website can render the page correctly. Include the following:
@@ -68,12 +56,11 @@ section: Getting Started
 ---
 ```
 
-
-4. Run the developement server
+2. Run the developement server
 ```
 gatsby develop
 ```
-5. View documentation at http://localhost:8000/docs
+3. View documentation at http://localhost:8000/docs
 
 For more information on adding markdown pages with Gatsby, see https://www.gatsbyjs.org/docs/adding-markdown-pages/
 
