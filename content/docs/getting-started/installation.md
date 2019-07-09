@@ -17,24 +17,20 @@ Currently, Appsody provides pre-built binary releases for four platforms:
 
 You should have [Docker](https://docs.docker.com/get-started/) installed and the Docker daemon running on your system. Appsody will install even if Docker isn't installed or running - however, you will not be able to use Appsody until Docker is running.
 
+### Prerequisites for macOS
+
+You should have Xcode Command Line Tools installed. To install the Xcode Command Line Tools, run:
+```
+xcode-select --install
+brew install appsody
+```
+
 ## Installing on macOS
 Ensure the [prerequisites](#Prerequisites) are met.
 
 Run these two commands:
 ```
 brew tap appsody/appsody
-brew install appsody
-```
-
-If you have not installed the Xcode Command Line Tools, you may see an error message stating:
-```
-Error: Xcode alone is not sufficient on Mojave.
-Install the Command Line Tools:
-  xcode-select --install
-```
-To install the Xcode Command Line Tools, run:
-```
-xcode-select --install
 brew install appsody
 ```
 
