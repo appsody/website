@@ -7,9 +7,9 @@
 
 Infused with cloud native capabilities from the moment you start, Appsody provides everything you need to iteratively develop applications, ready for deployment to Kubernetes environments. Teams are empowered with sharable technology stacks, configurable and controllable through a central hub.
 
-# Website
+# Documentation and Website
 
-This repo holds the source for the website.
+This repository holds the source for the website along with Appsody's [documentation](https://appsody.dev/docs/).
 
 ## Contributing
 
