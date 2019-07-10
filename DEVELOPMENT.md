@@ -81,4 +81,5 @@ gatsby serve
 
 3. Access the website on http://localhost:9000 and complete any visual checks.
    
-   
+## Need help?
+If you have a question that you can't find an answer to, we would also like to hear about that too. You can reach out to the community for assistance on [Slack](https://appsody-slack.eu-gb.mybluemix.net/).
