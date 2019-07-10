@@ -41,7 +41,7 @@ Built docker image appsody-project
 The `appsody deploy` command is provided as an example of how an application created with appsody can be deployed directly to a Kubernetes cluster. The deployment occurs in the form of a Knative Serving service.
 
 The **pre-requisites** to successfully run `appsody deploy` are:
-1) You must have access to a Kubernetes cluster, with Knative Serving (and its pre-requisites) installed and running (you can find what it takes to configure Knative [here](https://knative.dev/docs/install/))
+1) You must have access to a Kubernetes cluster, with Knative Serving (and its pre-requisites) installed and running. The following guide describes [Installing Knative Locally](/docs/using-appsody/local-development.md) using Kubernetes in Docker for Desktop, and the [Knative Install Docs](https://knative.dev/docs/install/) describe how to install Knative on other Kubernetes clusters.
 2) You must have configured your `kubectl` CLI to point to that cluster. The appsody CLI calls `kubectl` under the covers for you.
 3)  If you intend to push the Docker image containing your application to Docker Hub, your target cluster must be configured to be able to pull images from Docker Hub.
 
