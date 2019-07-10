@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, StaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
+import navStructure from "../../content/docs/sidebar.yaml";
 
 const DocSection = (props) => {
-
     return (
         <React.Fragment>
             {
@@ -10,34 +10,17 @@ const DocSection = (props) => {
             }
             <ul>
                 {
-                    props.data.map(doc => <li className="my-1"><Link to={doc.path}>{doc.title}</Link></li>)
+                    props.data.map(doc => <li key={doc.title} className="my-1"><Link to={doc.path}>{doc.title}</Link></li>)
                 }
             </ul>
         </React.Fragment>
     );
 }
 
-const DocSidebar = ({ data }) => {
-    const docs = data.allMarkdownRemark.nodes;
-    const sections = {};
-    sections["null"] = [];
-
-    docs.forEach(doc => {
-        const data = doc.frontmatter;
-        if (!sections[data.section]) sections[data.section] = [];
-        sections[data.section].push({
-            title: data.title,
-            path: data.path,
-            weight: data.weight
-        });
-    });
-
+const DocSidebar = () => {
     let list = [];
-    list.push(<DocSection key={sections["null"].title} title={"null"} data={sections["null"]}/>)
-    delete sections["null"];
-
-    for (let section in sections) {
-        list.push(<DocSection key={sections[section].title} title={section} data={sections[section]}/>)
+    for (let section of navStructure) {
+        list.push(<DocSection key={section.title} title={section.title} data={section.items}/>)
     }
 
     return (
@@ -52,21 +35,4 @@ const DocSidebar = ({ data }) => {
     )
 }
 
-export default (props) => (
-    <StaticQuery
-      query={graphql`
-        query {
-            allMarkdownRemark {
-                nodes {
-                    frontmatter {
-                        section
-                        title
-                        path
-                    }
-                }
-            }
-        }
-      `}
-      render={data => <DocSidebar data={data} {...props} />}
-    />
-  )
+export default DocSidebar;
