@@ -1,6 +1,4 @@
 ---
-title: Creating Projects
-section: Using Appsody
 path: /docs/using-appsody/creating-project
 ---
 

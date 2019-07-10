@@ -1,5 +1,4 @@
 ---
-title: "Overview"
 path: /docs
 ---
 # Welcome to Appsody
