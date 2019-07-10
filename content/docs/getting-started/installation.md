@@ -28,11 +28,11 @@ brew install appsody
 ## Installing on macOS
 Ensure the [prerequisites](#Prerequisites) are met.
 
-Run these two commands:
+Run this command: 
 ```
-brew tap appsody/appsody
-brew install appsody
+brew install appsody/appsody/appsody
 ```
+The command will create a brew tap for the `appsody/appsody` repo, and install the `appsody` formula for you.
 
 To remove Appsody, run `brew uninstall appsody`. You may also want to remove the `.appsody` directory that gets created under your home dir: `rm -rf ~/.appsody`.
 
