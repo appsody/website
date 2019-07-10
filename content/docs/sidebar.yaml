@@ -9,10 +9,10 @@
       path: /docs/getting-started/quick-start
 - title: Using Appsody
   items:
-    - title: Local Development
-      path: /docs/using-appsody/local-development
     - title: Creating Projects
       path: /docs/using-appsody/creating-project
+    - title: Local Development
+      path: /docs/using-appsody/local-development
     - title: Building and Deploying
       path: /docs/using-appsody/building-and-deploying
     - title: CLI Reference
@@ -21,7 +21,7 @@
   items:
     - title: Stacks Overview
       path: /docs/stacks/stacks-overview
-    - title: Creating and Modifying Stacks
+    - title: Creating and Modifying
       path: /docs/stacks/create-or-modify
     - title: Stack Structure
       path: /docs/stacks/stack-structure
