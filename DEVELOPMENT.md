@@ -4,7 +4,7 @@ The Appsody website is built with [Gatsby.js](https://www.gatsbyjs.org/). See th
 
 ## Prerequisites
 
-- **Node 8+**
+- **Node 10+**
   You can download Node.js from https://nodejs.org/en/
   
 - [**Gatsby.js**](https://www.gatsbyjs.org)
