@@ -62,7 +62,7 @@ gatsby develop
 ```
 3. View documentation at http://localhost:8000/docs
 
-For more information on adding markdown pages with Gatsby, see https://www.gatsbyjs.org/docs/adding-markdown-pages/
+For more information on adding Markdown pages with Gatsby, see https://www.gatsbyjs.org/docs/adding-markdown-pages/
 
 ## Testing website ready for release
 
@@ -72,7 +72,7 @@ Before submitting a pull request you must have tested the website can build and 
 ```
 gatsby build
 ```
-This build needs to successful before continuing to serve the website.
+This build needs to be successful before continuing to serve the website.
 
 2. Serve the website
 ```
