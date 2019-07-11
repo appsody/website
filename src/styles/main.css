@@ -336,3 +336,16 @@ footer a:hover {
 #docs #brand-name {
   display: none;
 }
+
+#tutorials {
+  padding: 6em 0 4em 0;
+}
+
+#tutorials ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#tutorials li {
+  color: var(--off-black-1) !important;
+}
