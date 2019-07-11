@@ -1,6 +1,4 @@
 ---
-title: "Local Development"
-section: Using Appsody
 path: /docs/using-appsody/local-development
 ---
 

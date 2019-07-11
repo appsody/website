@@ -42,19 +42,26 @@ At the top of each documentation page you should include frontmatter so that the
 
 ```
 ---
-title: This is what will be shown in the sidebar
 path: This is the route to the page that all links will be created from.
-section: This is the section that the doc will be created under in the sidebar.
 ---
 ```
 For example:
 ```
 ---
-title: "Installation"
-path: /docs/getting-started/installation
-section: Getting Started
+path: /docs/getting-started/quick-start
 ---
 ```
+
+To add the doc to the side menu you must add it to the `sidebar.yaml` in `content/docs`. A section is defined as followed:
+```
+- title (optional): Getting Started
+  items:
+    - title: Installation
+      path: /docs/getting-started/installation
+    - title: Quick Start
+      path: /docs/getting-started/quick-start
+```
+**Note:** `title` for the section is optional but the `title` for each menu item is required.
 
 2. Run the developement server
 ```

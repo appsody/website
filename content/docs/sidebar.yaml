@@ -1,0 +1,27 @@
+- items:
+    - title: Overview
+      path: /docs
+- title: Getting Started
+  items:
+    - title: Installation
+      path: /docs/getting-started/installation
+    - title: Quick Start
+      path: /docs/getting-started/quick-start
+- title: Using Appsody
+  items:
+    - title: Creating Projects
+      path: /docs/using-appsody/creating-project
+    - title: Local Development
+      path: /docs/using-appsody/local-development
+    - title: Building and Deploying
+      path: /docs/using-appsody/building-and-deploying
+    - title: CLI Reference
+      path: /docs/using-appsody/cli-commands
+- title: Appsody Stacks
+  items:
+    - title: Stacks Overview
+      path: /docs/stacks/stacks-overview
+    - title: Creating and Modifying
+      path: /docs/stacks/create-or-modify
+    - title: Stack Structure
+      path: /docs/stacks/stack-structure

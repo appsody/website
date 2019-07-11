@@ -1,7 +1,5 @@
 ---
-title: "Stacks Overview"
 path: /docs/stacks/stacks-overview
-section: Appsody Stacks
 ---
 # Appsody Stacks
 

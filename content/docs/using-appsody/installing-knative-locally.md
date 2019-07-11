@@ -1,6 +1,4 @@
 ---
-title: "Installing Knative Locally"
-section: Using Appsody
 path: /docs/using-appsody/installing-knative-locally
 ---
 
