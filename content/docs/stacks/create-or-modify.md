@@ -19,9 +19,9 @@ The quickest way to create an Appsody stack from scratch is to build from the [s
     cd docs/sample-stack
     ```
 
-1. Create your stack. See [structure of a stack](/docs/stacks/stack-structure.md) for a guide on what makes a stack.
+2. Create your stack. See [structure of a stack](/docs/stacks/stack-structure.md) for a guide on what makes a stack.
 
-2. In the image folder build your stack image:
+3. In the image folder build your stack image:
 
     ```bash
     docker build -t <user>/<my-stack> -f Dockerfile-stack .
