@@ -48,7 +48,7 @@ Follow the links to learn more about Appsody:
 - [Creating and Modifying Stacks](/docs/stacks/create-or-modify.md)
 - [Stack Structure](/docs/stacks/stack-structure.md)
 ### Using Appsody
-- [Creating Project](/docs/using-appsody/creating-project.md)
+- [Initializing Project](/docs/using-appsody/initializing-project.md)
 - [Local Development](/docs/using-appsody/local-development.md)
 - [Building and Deploying](/docs/using-appsody/building-and-deploying.md)
 - [CLI commands](/docs/using-appsody/cli-commands.md)
