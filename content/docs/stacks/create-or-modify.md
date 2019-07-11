@@ -1,7 +1,5 @@
 ---
-title: "Creating and Modifying Stacks"
 path: /docs/stacks/create-or-modify
-section: Appsody Stacks
 ---
 # Creating and Modifying Stacks
 
