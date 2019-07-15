@@ -9,7 +9,7 @@ Our aims were to simplify the experience for developers - now asked to have full
 There are 3 key components of Appsody:
 
 ### Appsody Stacks
-These are configurable technology stacks built with popular runtimes and frameworks, such as Java with Eclipse Microprofile and Node.js with Express, that provide the foundation for building applications which can be deployed and managed effectively in Kubernetes. Stacks allow for rapid development, whilst giving the stack provider the ability to control how the applications are composed, for example which security policies are applied, or which version of a dependency is pulled.
+These are configurable technology stacks built with popular runtimes and frameworks, such as Java with Eclipse MicroProfile and Node.js with Express, that provide the foundation for building applications which can be deployed and managed effectively in Kubernetes. Stacks allow for rapid development, whilst giving the stack provider the ability to control how the applications are composed, for example which security policies are applied, or which version of a dependency is pulled.
 
 [More info on Appsody Stacks](/docs/stacks/stacks-overview.md)
 

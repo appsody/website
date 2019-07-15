@@ -6,7 +6,7 @@ Prometheus®, Kubernetes®, Helm™, Tekton™
 
 MicroProfile®
 
-   * 'Microprofile' is a trademark of Eclipse Foundation, Inc.
+   * 'MicroProfile' is a trademark of Eclipse Foundation, Inc.
 
 Open Liberty
    * https://www.ibm.com/legal/copytrade
