@@ -338,6 +338,7 @@ footer a:hover {
 }
 
 #tutorials {
+  min-height: calc(100vh - 3.5em); /* TODO: remove hardcoded value for footer */ 
   padding: 6em 0 4em 0;
 }
 
@@ -347,5 +348,36 @@ footer a:hover {
 }
 
 #tutorials li {
-  color: var(--off-black-1) !important;
+  position: relative;
+  margin-top: 1.5em; 
+  margin-bottom: 2em;
+  box-shadow: 0 5px 10px #9B9B9B;
+}
+
+#tutorials li a {
+  display: block;
+  padding: 2em;
+  color: var(--off-black-1);
+  text-decoration: none;
+  transition: background-color .2s ease-in-out;
+  border-left: 5px solid var(--colour-scheme-1);
+}
+
+#tutorials li a:hover {
+  background-color: var(--colour-scheme-1);
+  color: white;
+}
+
+#tutorials li a p{
+  margin: 0;
+}
+
+#tutorials .link-footer {
+  padding-top: 1em;
+  border-top: 1px solid var(--light-grey);
+  margin-top: 1em;
+}
+
+#tutorials li a:hover .link-footer {
+  border-top: 1px solid white;
 }
