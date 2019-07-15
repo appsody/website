@@ -1,11 +1,11 @@
 ---
-path: /docs/using-appsody/creating-project
+path: /docs/using-appsody/initializing-project
 ---
 
-# Creating Appsody Projects
+# Initializing Appsody Projects
 
 ## New Project from Template
-The easiest way to create an Appsody project is to start a new project from a stack template. 
+The easiest way to initialize an Appsody project is to start a new project from a stack template. 
 
 First, give your project a name and create an empty directory for your new project. You may want to place the project directory next to your other source code projects or your IDE workspace.
 ```
