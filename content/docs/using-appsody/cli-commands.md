@@ -15,7 +15,7 @@ Complete documentation is available at https://appsody.dev
 ### Options
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -h, --help            help for appsody
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
@@ -57,7 +57,7 @@ appsody build [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -98,7 +98,7 @@ appsody completion [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -133,7 +133,7 @@ appsody debug [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -168,7 +168,7 @@ appsody deploy [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -201,7 +201,7 @@ appsody extract [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -241,7 +241,7 @@ appsody init [stack] [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -271,7 +271,7 @@ appsody list [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -297,7 +297,7 @@ Manage your Appsody repositories
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -330,7 +330,7 @@ appsody repo add <name> <url> [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -360,7 +360,7 @@ appsody repo list [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -390,7 +390,7 @@ appsody repo remove <name> [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -425,7 +425,7 @@ appsody run [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -456,7 +456,7 @@ appsody stop [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -491,7 +491,7 @@ appsody test [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -521,7 +521,7 @@ appsody version [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody.yaml)
+      --config string   config file (default is /.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
