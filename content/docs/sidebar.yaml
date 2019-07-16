@@ -9,8 +9,8 @@
       path: /docs/getting-started/quick-start
 - title: Using Appsody
   items:
-    - title: Creating Projects
-      path: /docs/using-appsody/creating-project
+    - title: Initializing Projects
+      path: /docs/using-appsody/initializing-project
     - title: Local Development
       path: /docs/using-appsody/local-development
     - title: Building and Deploying
