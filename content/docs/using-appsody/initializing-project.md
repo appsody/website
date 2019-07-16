@@ -16,14 +16,15 @@ cd my-project
 Alternatively, you could clone an empty git repository or create an empty project in an IDE, then navigate to that directory in the terminal. Appsody is tolerant of some hidden files in the project directory, such as .git, .project, .settings, etc. The `appsody init <stack>` command won't overwrite files without the `--overwrite` option.
 
 Next, choose a stack. Use `appsody list` to view the available stacks.
-```
-$ appsody list
 
+Here is an example of the output produced by the `appsody list` command:
+```
 NAME             	VERSION	DESCRIPTION                               
 nodejs           	0.2.0  	Node.js Runtime                           
 nodejs-express   	0.2.0  	Express web framework for Node.js         
 java-microprofile	0.2.0  	Eclipse MicroProfile using Adopt OpenJDK and Maven
-java-spring-boot2	0.2.0  	Spring Boot using IBM Java SDK and Maven
+java-spring-boot2	0.2.0   Spring Boot using IBM Java SDK and Maven
+swift               0.2.0   Swift runtime
 ```
 
 Then, run `appsody init <stack>` for the stack of your choice. This will download the default project template for the stack and initialize Appsody for your local development.
