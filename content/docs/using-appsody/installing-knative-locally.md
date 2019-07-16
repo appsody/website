@@ -11,9 +11,9 @@ Select the Docker icon in the Menu bar, click **Preferences** and select the **K
 
 Click **Install** on the dialog box asking, “Install the Kubernetes Cluster now?” to start the install. When it’s complete it will have installed Kubernetes along with the `kubectl` command line tool which `appsody` will use to deploy your applications.
 
-Next ensure that Kubernetes has enough resources to run your apps by selecting the Docker icon in the Menu bar, click **Preferences** and select the **Advanced** tab. Use the sliders to ensure that you have 6 CPUs and 8.0 GiB of memory assigned to Kubernetes and click **Apply & Restart**.
+Next ensure that Kubernetes has enough resources to run your apps by selecting the Docker icon in the Menu bar, click **Preferences** and select the **Advanced** tab. Use the sliders to ensure that you have **6 CPUs** and **8.0 GiB** of memory assigned to Kubernetes and click **Apply & Restart**.
 
-You can now use the following commands to install Knative Serving 0.6.0 (currently the latest version) and its Istio dependency using the following commands:
+You can now use the following commands to install Knative Serving 0.7.1 (currently the latest version) and its Istio dependency using the following commands:
 
 1. Install Istio:
 
@@ -36,10 +36,10 @@ You can now use the following commands to install Knative Serving 0.6.0 (current
 	
 	Once all of the components have reached `Running` or `COMPLETED` you can stop watching the status using `Ctrl-C`.
 	
-3. Install Knative Serving 0.6.0:
+3. Install Knative Serving 0.7.1:
 
 	```sh
-	curl -L https://github.com/knative/serving/releases/download/v0.6.0/serving.yaml \
+	curl -L https://github.com/knative/serving/releases/download/v0.7.1/serving.yaml \
 	  | kubectl apply --selector networking.knative.dev/certificate-provider!=cert-manager --filename -
 	```
 4. Verify the STATUS of the Knative Serving components:
