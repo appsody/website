@@ -40,7 +40,7 @@ If your Pull Request fixes an existing issue, use `Fixes:` to reference that iss
 
 Example commit message:
 ```
-java-MicroProfile: adding an rest sample template
+java-microprofile: adding an rest sample template
 
 This PR adds a simple RESTful web application using JAS-RS rest sample template.
 
