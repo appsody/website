@@ -83,3 +83,8 @@ Follow these steps:
 You can now use Appsody.
 
 To uninstall Appsody, delete the directory where you extracted the binaries. You may also want to remove the `.appsody` directory that gets created under your home folder. And finally, you may want to remove the Path entry that was created for you by the setup command (instructions on editing your Path env var can be found [here](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)).
+
+## Running Appsody with SELinux
+If you are running Security-Enhanced Linux, you may experience problems when running Appsody, because the Docker daemon - although it runs as `root` - may not be able to access the folders that are mounted from the host file system.
+
+This issue manifests itself... 
