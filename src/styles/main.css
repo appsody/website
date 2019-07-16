@@ -327,6 +327,14 @@ footer a:hover {
     margin-left: 0;
     margin-right: 0;
   }
+
+  #docs .navbar-brand img {
+    margin: 0 !important;
+  }
+
+   #docs .nav-link {
+    padding-left: 0; 
+  }
 }
 
 .navbar-brand {
