@@ -4,9 +4,9 @@ Prometheus®, Kubernetes®, Helm™, Tekton™
 
    * Prometheus, Kubernetes, Helm, and Tekton are trademarks of The Linux Foundation. 
 
-MicroProfile®
+Eclipse MicroProfile®
 
-   * 'Microprofile' is a trademark of Eclipse Foundation, Inc.
+   * 'Eclipse MicroProfile' is a trademark of Eclipse Foundation, Inc.
 
 Open Liberty
    * https://www.ibm.com/legal/copytrade
