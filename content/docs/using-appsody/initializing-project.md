@@ -22,11 +22,11 @@ Here is an example of the output produced by the `appsody list` command:
 $ appsody list
 
 NAME             	VERSION	DESCRIPTION                               
-nodejs           	0.2.0  	Node.js Runtime                           
-nodejs-express   	0.2.0  	Express web framework for Node.js         
-java-microprofile	0.2.0  	Eclipse MicroProfile using Adopt OpenJDK and Maven
-java-spring-boot2	0.2.0   Spring Boot using IBM Java SDK and Maven
-swift            	0.2.0   Swift runtime
+nodejs           	0.2.1  	Node.js Runtime                           
+nodejs-express   	0.2.1  	Express web framework for Node.js         
+java-microprofile	0.2.2  	Eclipse MicroProfile using Adopt OpenJDK and Maven
+java-spring-boot2	0.3.1   Spring Boot using IBM Java SDK and Maven
+swift            	0.1.0   Swift runtime
 ```
 
 Then, run `appsody init <stack>` for the stack of your choice. This will download the default project template for the stack and initialize Appsody for your local development.
