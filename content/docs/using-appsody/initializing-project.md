@@ -22,7 +22,7 @@ $ appsody list
 NAME             	VERSION	DESCRIPTION                               
 nodejs           	0.2.0  	Node.js Runtime                           
 nodejs-express   	0.2.0  	Express web framework for Node.js         
-java-microprofile	0.2.0  	MicroProfile using Adopt OpenJDK and Maven
+java-microprofile	0.2.0  	Eclipse MicroProfile using Adopt OpenJDK and Maven
 java-spring-boot2	0.2.0  	Spring Boot using IBM Java SDK and Maven
 ```
 
