@@ -27,7 +27,7 @@ const NavBarContent = () => (
       <Nav>
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/docs">Docs</Nav.Link>
-        <Nav.Link href="https://medium.com/appsody">Tutorials</Nav.Link>
+        <Nav.Link href="https://medium.com/appsody" target="_blank" rel="noopener noreferrer">Tutorials</Nav.Link>
       </Nav>
       <Nav className="ml-auto">
         <Nav.Link href="https://github.com/appsody"><img className="navbar-img" src={ githubIcon } alt=""></img></Nav.Link>
