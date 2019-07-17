@@ -28,8 +28,8 @@
 <p>In order to work with Kuberentes locally, it is recommended that you enable Kubernetes in Docker for Desktop. To do that, first make sure that Docker is running by running the Docker app which launches Docker and adds the Docker icon to the menu bar.</p>
 <p>Select the Docker icon in the Menu bar, click <strong>Preferences</strong> and select the <strong>Kubernetes</strong> tab. Here select the <strong>Enable Kubernetes</strong> checkbox and click <strong>Apply</strong>.</p>
 <p>Click <strong>Install</strong> on the dialog box asking, “Install the Kubernetes Cluster now?” to start the install. When it’s complete it will have installed Kubernetes along with the <code>kubectl</code> command line tool which <code>appsody</code> will use to deploy your applications.</p>
-<p>Next ensure that Kubernetes has enough resources to run your apps by selecting the Docker icon in the Menu bar, click <strong>Preferences</strong> and select the <strong>Advanced</strong> tab. Use the sliders to ensure that you have 6 CPUs and 8.0 GiB of memory assigned to Kubernetes and click <strong>Apply &#x26; Restart</strong>.</p>
-<p>You can now use the following commands to install Knative Serving 0.6.0 (currently the latest version) and its Istio dependency using the following commands:</p>
+<p>Next ensure that Kubernetes has enough resources to run your apps by selecting the Docker icon in the Menu bar, click <strong>Preferences</strong> and select the <strong>Advanced</strong> tab. Use the sliders to ensure that you have <strong>6 CPUs</strong> and <strong>8.0 GiB</strong> of memory assigned to Kubernetes and click <strong>Apply &#x26; Restart</strong>.</p>
+<p>You can now use the following commands to install Knative Serving 0.7.1 (currently the latest version) and its Istio dependency using the following commands:</p>
 <ol>
 <li>
 <p>Install Istio:</p>
@@ -47,8 +47,8 @@
 <p>Once all of the components have reached <code>Running</code> or <code>COMPLETED</code> you can stop watching the status using <code>Ctrl-C</code>.</p>
 </li>
 <li>
-<p>Install Knative Serving 0.6.0:</p>
-<pre><code class="language-sh">curl -L https://github.com/knative/serving/releases/download/v0.6.0/serving.yaml \
+<p>Install Knative Serving 0.7.1:</p>
+<pre><code class="language-sh">curl -L https://github.com/knative/serving/releases/download/v0.7.1/serving.yaml \
   | kubectl apply --selector networking.knative.dev/certificate-provider!=cert-manager --filename -
 </code></pre>
 </li>
