@@ -11,9 +11,9 @@ Use the following examples to help you get started creating, or modifying stacks
 
 ## Creating a stack
 
-The quickest way to create an Appsody stack from scratch is to build from the [sample stack](https://github.com/appsody/stacks/tree/master/samples/sample-stack/README.md) which is provided in this repository. Clone the sample:
+The quickest way to create an Appsody stack from scratch is to build from the [sample stack](https://github.com/appsody/stacks/tree/master/samples/sample-stack/README.md) which is provided in this repository. 
 
-1.
+1. Clone the sample:
     ```bash
     git clone https://github.com/appsody/docs
     cd docs/sample-stack
