@@ -26,6 +26,8 @@ mkdir my-project
 cd my-project
 appsody init nodejs-express
 ```
+**Note:** Project name must use lowercase letters
+
 **Tip:** You can view other available stacks with `appsody list`
 
 Now you have a fully functional Appsody project. Next, start the development container:
@@ -36,8 +38,8 @@ Great! Now the project is running in a docker container, and the container is li
 
 Finally, let's try changing the code. Edit the file `app.js` to output something other than "Hello World!". Upon saving the file, Appsody will pickup the change and automatically update the container. Refresh <http://localhost:3000> to see the new message!
 
-You are ready to continue developing your application. To stop the container, press `Ctrl-C` in the terminal. To enable the debugger, restart the container with `appsody debug`. 
+You are ready to continue developing your application. To stop the container, press `Ctrl-C` in the terminal. To enable the debugger, restart the container with `appsody debug`.
 
-Finally, when you are ready to publish a production docker image, run `appsody build`. 
+Finally, when you are ready to publish a production docker image, run `appsody build`.
 
 **Tip:** You can get more information about all the commands with `appsody help [command]` or `appsody <command> --help`.
