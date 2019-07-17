@@ -26,7 +26,6 @@ mkdir my-project
 cd my-project
 appsody init nodejs-express
 ```
-**Note:** Project name must use lowercase letters
 
 **Tip:** You can view other available stacks with `appsody list`
 
