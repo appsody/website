@@ -4,7 +4,7 @@ path: /docs
 # Welcome to Appsody
 Appsody has been designed to help you compose a masterpiece of an application for cloud.
 
-Our aims were to simplify the experience for developers, relieving them of full-stack expertise and responsibilities, and allowing them to focus on their application code development activities; enabling architects to curate an opinionated set of technologies - configurable, reusable and already infused with cloud native capabilities, making them seamlessly available to application developers
+Our aims were to simplify the experience for developers, relieving them of full-stack expertise and responsibilities, and allowing them to focus on their application code development activities; enabling architects to curate an opinionated set of technologies - configurable, reusable and already infused with cloud native capabilities, making them seamlessly available to application developers.
 
 There are 3 key components of Appsody:
 
