@@ -26,8 +26,9 @@ mkdir my-project
 cd my-project
 appsody init nodejs-express
 ```
-**Tip:** You can view other available stacks with `appsody list`
 **Note:** Project name must use lowercase letters
+
+**Tip:** You can view other available stacks with `appsody list`
 
 Now you have a fully functional Appsody project. Next, start the development container:
 ```
