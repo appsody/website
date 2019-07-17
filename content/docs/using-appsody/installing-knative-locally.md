@@ -5,7 +5,7 @@ path: /docs/using-appsody/installing-knative-locally
 
 ## Setting up Knative Serving for Local Kubernetes Development
 
-In order to work with Kuberentes locally, it is recommended that you enable Kubernetes in Docker for Desktop. To do that, first make sure that Docker is running by running the Docker app which launches Docker and adds the Docker icon to the menu bar.
+In order to work with Kubernetes locally, it is recommended that you enable Kubernetes in Docker for Desktop. To do that, first make sure that Docker is running by running the Docker app which launches Docker and adds the Docker icon to the menu bar.
 
 Select the Docker icon in the Menu bar, click **Preferences** and select the **Kubernetes** tab. Here select the **Enable Kubernetes** checkbox and click **Apply**.
 
