@@ -1,7 +1,14 @@
 const path = require(`path`)
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+
+  createRedirect({
+    fromPath: '/tutorials',
+    isPermanent: true,
+    redirectInBrowser: true,
+    toPath: 'https://medium.com/appsody',
+  })
 
   const docTemplate = path.resolve(`src/templates/docTemplate.js`)
 
