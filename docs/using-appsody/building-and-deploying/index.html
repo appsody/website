@@ -36,11 +36,12 @@
 <h2>Building your runtime Docker image with appsody</h2>
 <p>When you use the appsody CLI to develop your applications, a "development" Docker image of the target runtime is downloaded and run for you. This image differs slightly from the image that is used at deployment time, in that it configures tools that are only useful during the development phase.</p>
 <p>If you want to generate a Docker image that matches what will be deployed on the target runtime platform, you can use the <code>appsody build</code> command.</p>
-<p>The <code>appsody build</code> command requires no parameters. It performs the following steps:</p>
+<p>The <code>appsody build</code> command performs the following steps:</p>
 <ol>
 <li>Extracts your code and other artifacts that are necessary to build the deployment image from the development image, and saves all that in a directory located under <code>~/.appsody/extract</code>.</li>
-<li>Runs a <code>docker build</code> against a Dockerfile that was extracted on the previous step. This step produces an image in your local Docker registry, with a name that matches the name of your project.</li>
+<li>Runs a <code>docker build</code> against a Dockerfile that was extracted on the previous step. This step produces an image in your local Docker registry. If you specified the <code>-t &#x3C;tag></code> parameter, the image will be tagged accordingly. If you ran <code>appsody build</code> with no parameters, the image will given a name that matches the name of your project.</li>
 </ol>
+<p>Note that - if your project directory includes uppercase characters - the name will be lowercased, since Docker does not accept uppercase characters in image tags.</p>
 <p>Here is an example of the output produced by the <code>appsody build</code> command on a project named <code>appsody-project</code>:</p>
 <pre><code>micheles-mbp:appsody-project mchilant$ appsody build
 Extracting project from development environment
@@ -84,7 +85,7 @@ Built docker image appsody-project
 <li>The appsody CLI creates a Knative Serving manifest file named <code>appsody-service-nnnnnn.yaml</code>, where <nnnnnn> is a random numerical value. This yaml file is then used to issue a <code>kubectl apply -f</code> command against the target Kubernetes cluster.</li>
 <li>Since <code>--namespace mynamespace</code> is specified, the Knative service is provisioned under the <code>mynamespace</code> namespace.</li>
 </ol>
-<p>Note that, if <code>--push</code> is not specified, the image is available on your local Docker registry only. In that case, the target Kubernetes cluster must be configured to have access to your local Docker registry.</p>
+<p>Note that, if <code>--push</code> is not specified, the image is available on your local Docker registry only. In that case, the target Kubernetes cluster must be configured to have access to your local Docker registry. Additionally, your image will be tagged as  <code>local.dev/&#x3C;project-name></code>, and referenced in the Knative service manifest that way.</p>
 <h2>Deploying your app through a Tekton pipeline</h2>
 <p>Most likely, the deployment of apps created with the appsody CLI is going to occur through the invocation of a CI/CD build pipeline.</p>
 <p>As a developer, you develop your app using the appsody CLI, and - once you are ready to deploy - push your code to a repo or create a pull request on GitHub.</p>
