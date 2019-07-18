@@ -31,8 +31,8 @@ const NavBarContent = () => (
       </Nav>
       <Nav className="ml-auto">
         <Nav.Link href="https://github.com/appsody"><img className="navbar-img" src={ githubIcon } alt=""></img></Nav.Link>
-        <Nav.Link href="https://twitter.com/appsodydev"><img id="twitter-nav" className="navbar-img" src={ twitterIcon } alt=""></img></Nav.Link>
         <Nav.Link href="http://appsody-slack.eu-gb.mybluemix.net"><img className="navbar-img" src={ slackIcon } alt=""></img></Nav.Link>
+        <Nav.Link href="https://twitter.com/appsodydev"><img id="twitter-nav" className="navbar-img" src={ twitterIcon } alt=""></img></Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </React.Fragment>
