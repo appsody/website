@@ -55,7 +55,7 @@ appsody deploy
 This command does the following:
 1) It calls `appsody build` and creates a deployment image, as described in the previous section.
 2) It tags the image with the special prefix `local.dev`, making it accessible to your Kubernetes cluster.
-3) It creates a Knative Serving manifest file named `appsody-service-nnnnnn.yaml`, where <nnnnnn> is a random numerical value. This yaml file is then used to issue a `kubectl apply -f` command against the target Kubernetes cluster. This yaml file is then used to issue a `kubectl apply -f` command against the target Kubernetes cluster.
+3) It creates a Knative Serving manifest file named `appsody-service-nnnnnn.yaml`, where nnnnnn is a random numerical value. This yaml file is then used to issue a `kubectl apply -f` command against the target Kubernetes cluster. This yaml file is then used to issue a `kubectl apply -f` command against the target Kubernetes cluster.
 
 ### Deploying your application by pushing your image to Docker Hub
 If your cluster is configured to pull images from Docker Hub, here is how you would deploy your application:
@@ -66,7 +66,7 @@ The command shown above does the following:
 1) It calls `appsody build` and creates a deployment image, as described in the previous section.
 2) Since we specified the `-t myaccount/appsody-project` option, the image is also tagged accordingly.
 3) The `--push` flag tells the appsody CLI to push the image to Docker Hub.
-4) The appsody CLI creates a Knative Serving manifest file named `appsody-service-nnnnnn.yaml`, where <nnnnnn> is a random numerical value. This yaml file is then used to issue a `kubectl apply -f` command against the target Kubernetes cluster.
+4) The appsody CLI creates a Knative Serving manifest file named `appsody-service-nnnnnn.yaml`, where nnnnnn is a random numerical value. This yaml file is then used to issue a `kubectl apply -f` command against the target Kubernetes cluster.
 5) Since `--namespace mynamespace` is specified, the Knative service is provisioned under the `mynamespace` namespace.
 
 Note that, if `--push` is not specified, the image is available on your local Docker registry only. In that case, the target Kubernetes cluster must be configured to have access to your local Docker registry. Additionally, your image will be tagged as  `local.dev/<project-name>`, and referenced in the Knative service manifest that way.
@@ -81,7 +81,7 @@ We have provided an example of how you could take advantage of Tekton pipelines 
 
 In order to run the example pipeline, you need to ensure that the following pre-requisites are fulfilled:
 1) You must have developed a project with the appsody CLI, and you must have checked your project into a GitHub repository.
-2) Your Kubernetes cluster must be configured to run Knative (instructions [here](https://knative.dev/docs/install/) and the Tekton pipelines, as documented [here](https://github.com/tektoncd/pipeline/blob/master/docs/install.md).
+2) Your Kubernetes cluster must be configured to run Knative (instructions [here](https://knative.dev/docs/install/) and the Tekton pipelines, as documented [here](https://github.com/tektoncd/pipeline/blob/master/docs/install.md)).
 3) Your project must include a Knative Serving deployment manifest called `appsody-service.yaml`. This is a pre-requisite now if you want to run the pipeline with minimal changes. A quick way to obtain such a manifest is to run the `appsody deploy` command described in the previous section. You need to rename the `appsody-service-nnnnnn.yaml` to `appsody-service.yaml`.
 
 More details on running the Tekton pipeline example for Appsody can be found in the [repo readme](https://github.com/appsody/tekton-example).
