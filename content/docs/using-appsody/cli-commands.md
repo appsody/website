@@ -1,5 +1,7 @@
 ---
+title: CLI Reference
 path: /docs/using-appsody/cli-commands
+section: Using Appsody
 ---
 # Appsody CLI
 ## appsody
@@ -51,7 +53,8 @@ appsody build [flags]
 ### Options
 
 ```
-  -h, --help   help for build
+  -h, --help         help for build
+  -t, --tag string   Docker image name and optionally a tag in the 'name:tag' format
 ```
 
 ### Options inherited from parent commands
@@ -297,7 +300,7 @@ Manage your Appsody repositories
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is$HOME/.appsody/.appsody.yaml)
+      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
       --dryrun          Turns on dry run mode
   -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
