@@ -6,7 +6,7 @@ Please read the [Code of Conduct](https://github.com/appsody/website/blob/master
 <!-- For completed items, change [ ] to [x]. -->
 
 - [ ] commit message follows [commit guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md#commit-message-guidelines).
-- [ ] website builds and runs in production - for information on how to test locally go [here](../DEVELOPMENT.md).
+- [ ] website builds and runs in production - for information on how to test locally go [here](https://github.com/appsody/website/blob/master/DEVELOPMENT.md).
 
 ## Description
 <!-- Write a brief description of the changes introduced by this PR -->
