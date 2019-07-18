@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - 10
+
+os:
+  - linux
+
+script:
+  - npm install -g gatsby-cli
+  - gatsby build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: public
+  on:
+    branch: master
