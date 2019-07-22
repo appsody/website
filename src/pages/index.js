@@ -39,11 +39,11 @@ const IndexPage = () => (
       </div>
       <div className="container">
         <div id="application-stacks" className="row mx-auto">
-          <Tile id="java-microprofile" heading="Java MicroProfile&reg;" desc="Eclipse MicroProfile using AdoptOpenJDK and Maven" cmd="appsody init java-microprofile" github="https://github.com/appsody/stacks/tree/master/incubator/java-microprofile"/>
-          <Tile id="java-spring" heading="Java Spring&reg;" desc="Spring Boot using IBM Java SDK and Maven" cmd="appsody init java-spring-boot2" github="https://github.com/appsody/stacks/tree/master/incubator/java-spring-boot2"/>
-          <Tile id="node" heading="Node.js" desc="Node.js runtime" cmd="appsody init nodejs" github="https://github.com/appsody/stacks/tree/master/incubator/nodejs"/>
-          <Tile id="node-express" heading="Node.js Express" desc="Express web framework for Node.js" cmd="appsody init nodejs-express" github="https://github.com/appsody/stacks/tree/master/incubator/nodejs-express"/>
-          <Tile id="swift" heading="Swift" desc="Swift runtime" cmd="appsody init swift" github="https://github.com/appsody/stacks/tree/master/incubator/swift"/>
+          <Tile id="java-microprofile" heading="Java MicroProfile&reg;" desc="Eclipse MicroProfile using AdoptOpenJDK and Maven" status="Incubator" cmd="appsody init java-microprofile" github="https://github.com/appsody/stacks/tree/master/incubator/java-microprofile"/>
+          <Tile id="java-spring" heading="Java Spring&reg;" desc="Spring Boot using IBM Java SDK and Maven" status="Incubator" cmd="appsody init java-spring-boot2" github="https://github.com/appsody/stacks/tree/master/incubator/java-spring-boot2"/>
+          <Tile id="node" heading="Node.js" desc="Node.js runtime" status="Incubator" cmd="appsody init nodejs"  github="https://github.com/appsody/stacks/tree/master/incubator/nodejs"/>
+          <Tile id="node-express" heading="Node.js Express" desc="Express web framework for Node.js" status="Incubator" cmd="appsody init nodejs-express" github="https://github.com/appsody/stacks/tree/master/incubator/nodejs-express"/>
+          <Tile id="swift" heading="Swift" desc="Swift runtime" status="Incubator" cmd="appsody init swift" github="https://github.com/appsody/stacks/tree/master/incubator/swift"/>
         </div>
       </div>
     </section>

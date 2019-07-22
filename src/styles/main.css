@@ -157,7 +157,7 @@ section.landing-section h2 {
 }
 
 .tile h5 {
-  margin-top: 0em;
+  margin-top: 0.7em;
   margin-bottom: 1em;
   padding: 0em;
   text-align: center;
@@ -165,9 +165,17 @@ section.landing-section h2 {
 
 .tile a.btn {
   position: absolute;
-  bottom: 2em;
+  bottom: 1.6em;
   left: 0;
   right: 0;
+}
+.tile .status {
+  position: absolute;
+  font-size: 80%;
+  top: 0.8em;
+  left: 0;
+  right: 0;
+  color:#999999;
 }
 
 .flip a.btn {

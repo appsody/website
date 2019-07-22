@@ -28,9 +28,10 @@ class Tile extends React.Component {
     if (this.state.isToggleOn) {
       return (
         <div className="tile card text-center">
-          <h5>{this.props.heading}</h5>
+          <h5><b>{this.props.heading}</b></h5>
           <p>{this.props.desc}</p>
           <a href="/" onClick={this.handleClick} className="btn btn-primary w-50 mx-auto" role="button">Select</a>
+          <p className="status">{this.props.status}</p>
         </div>
       );
     } else {
