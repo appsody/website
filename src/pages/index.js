@@ -39,9 +39,9 @@ const IndexPage = () => (
       </div>
       <div className="container">
         <div id="application-stacks" className="row mx-auto">
-          <Tile id="java-microprofile" heading="Java MicroProfile&reg;" desc="Eclipse MicroProfile using AdoptOpenJDK and Maven" status="Incubator" cmd="appsody init java-microprofile" github="https://github.com/appsody/stacks/tree/master/incubator/java-microprofile"/>
-          <Tile id="java-spring" heading="Java Spring&reg;" desc="Spring Boot using IBM Java SDK and Maven" status="Incubator" cmd="appsody init java-spring-boot2" github="https://github.com/appsody/stacks/tree/master/incubator/java-spring-boot2"/>
-          <Tile id="node" heading="Node.js" desc="Node.js runtime" status="Incubator" cmd="appsody init nodejs"  github="https://github.com/appsody/stacks/tree/master/incubator/nodejs"/>
+          <Tile id="java-microprofile" heading="Eclipse MicroProfile&reg;" desc="Eclipse MicroProfile using OpenJ9 and Maven" status="Incubator" cmd="appsody init java-microprofile" github="https://github.com/appsody/stacks/tree/master/incubator/java-microprofile"/>
+          <Tile id="java-spring" heading="Spring Boot&reg;" desc="Spring Boot using OpenJ9 and Maven" status="Incubator" cmd="appsody init java-spring-boot2" github="https://github.com/appsody/stacks/tree/master/incubator/java-spring-boot2"/>
+          <Tile id="node" heading="Node.js" desc="Node.js runtime" status="Incubator" cmd="appsody init nodejs" github="https://github.com/appsody/stacks/tree/master/incubator/nodejs"/>
           <Tile id="node-express" heading="Node.js Express" desc="Express web framework for Node.js" status="Incubator" cmd="appsody init nodejs-express" github="https://github.com/appsody/stacks/tree/master/incubator/nodejs-express"/>
           <Tile id="swift" heading="Swift" desc="Swift runtime" status="Incubator" cmd="appsody init swift" github="https://github.com/appsody/stacks/tree/master/incubator/swift"/>
         </div>

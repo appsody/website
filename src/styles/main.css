@@ -175,7 +175,7 @@ section.landing-section h2 {
   top: 0.8em;
   left: 0;
   right: 0;
-  color:#999999;
+  color: var(--light-grey);
 }
 
 .flip a.btn {
