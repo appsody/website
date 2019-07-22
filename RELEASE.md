@@ -1,7 +1,7 @@
-# Appsody Website and Documentation Release Process
+# Website and Documentation Release Process
 This document outlines the release process for both the website and the documentation.
 
-Both the website and the documentation are combined and theirfore will be released at the same time when either of the projects are modified.
+Documentation is stored within the website repository, the website will be redeployed when a change is made to either the website itself or the documentation.
 
 ## How to make this asset available
 ### Build Release
@@ -22,7 +22,7 @@ cd website
 ```
 "deploy": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public -o <remote>"
 ```
-The remote needs to be set to the upstream project, but my default points to a `staging` remote.
+The remote needs to be set to the upstream project, but the default points to a `staging` remote.
 
 3. Deploy website manually
 ```
@@ -30,7 +30,7 @@ npm run deploy
 ```
 
 ## Release schedule
-The website and documentation is released after every pull request merge. The website is currently **not** versioned and their for an offical release is not cut.
+The website and documentation gets released when a pull request is merged. The website is currently **not** versioned and therefore an offical release is not cut.
 
 **Note:** this frequent release process requires each pull request to be thoroughly checked as the result will be pushed into production.
 
