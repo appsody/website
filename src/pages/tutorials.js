@@ -1,5 +1,5 @@
 import React from "react"
-import Redirect from "../components/myRedirect";
+import Redirect from "../components/redirect";
 
 
 const Tutorials = () => (
@@ -21,7 +21,7 @@ const Tutorials = () => (
                 </section>
             </div>
         </div>
-        <Redirect/>
+        <Redirect to="https://medium.com/appsody"/>
     </React.Fragment>
 )
 
