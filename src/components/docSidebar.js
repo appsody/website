@@ -10,7 +10,7 @@ const DocSection = (props) => {
             }
             <ul>
                 {
-                    props.data.map(doc => <li key={doc.title} className="my-1"><Link to={doc.path} activeStyle={{ color: "#BB417C" }}>{doc.title}</Link></li>)
+                    props.data.map(doc => <li key={doc.title} className="my-1"><Link activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
                 }
             </ul>
         </React.Fragment>
