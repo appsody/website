@@ -70,3 +70,12 @@ If you want to modify an existing Appsody stack, clone the stacks repo and then 
     ```
 
 Contribute the stack by opening a PR to the stacks repo!
+
+## Extending a stack
+
+We inherit from other stacks by providing the stack you want to inherit from in the `Dockerfile-stack`.
+
+For example, the nodejs-express stack inherits from the nodejs stack image, specified in the Dockerfile-stack like so:
+```
+From appsody/nodejs:0.2
+```
