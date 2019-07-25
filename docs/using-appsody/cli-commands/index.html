@@ -47,7 +47,7 @@
 <li><a href="#appsody-list">appsody list</a>	 - List the Appsody stacks available to init</li>
 <li><a href="#appsody-repo">appsody repo</a>	 - Manage your Appsody repositories</li>
 <li><a href="#appsody-run">appsody run</a>	 - Run the local Appsody environment for your project</li>
-<li><a href="#appsody-stop">appsody stop</a>	 - Stop the local Appsody environment for your project</li>
+<li><a href="#appsody-stop">appsody stop</a>	 - Stops the local Appsody docker container for your project</li>
 <li><a href="#appsody-test">appsody test</a>	 - Test your project in the local Appsody environment</li>
 <li><a href="#appsody-version">appsody version</a>	 - Show Appsody CLI version</li>
 </ul>
@@ -307,9 +307,12 @@ setup the local dev environment.</p>
 <li><a href="#appsody">appsody</a>	 - Appsody CLI</li>
 </ul>
 <h2>appsody stop</h2>
-<p>Stop the local Appsody environment for your project</p>
+<p>Stops the local Appsody docker container for your project</p>
 <h3>Synopsis</h3>
-<p>Stop the local Appsody environment for your project</p>
+<p>Stop the local Appsody docker container for your project.</p>
+<p>Stops the docker container specified by the --name flag.
+If --name is not specified, the container name is determined from the current working directory (see default below).
+To see a list of all your running docker containers, run the command "docker ps". The name is in the last column.</p>
 <pre><code>appsody stop [flags]
 </code></pre>
 <h3>Options</h3>
