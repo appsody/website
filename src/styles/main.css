@@ -350,6 +350,6 @@ footer a:hover {
   display: none;
 }
 
-.active{
-  color: var( --colour-scheme-1) !important;
+#docs-sidebar .active{
+  color: var( --colour-scheme-1);
 }
