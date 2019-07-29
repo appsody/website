@@ -368,3 +368,8 @@ footer a:hover {
 .doc-content table tr:nth-child(even) {
   background: var(--primary-colour);
 }
+
+#docs-sidebar .active{
+  color: var( --colour-scheme-1);
+}
+
