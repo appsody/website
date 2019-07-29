@@ -27,3 +27,6 @@
       path: /docs/stacks/create-or-modify#Modifying-a-stack
     - title: Stack Structure
       path: /docs/stacks/stack-structure
+- items:
+    - title: FAQ
+      path: /docs/faq
