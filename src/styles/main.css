@@ -92,6 +92,11 @@ section.landing-section h2 {
   text-align: center;
 }
 
+#redirect-page{
+  position: relative;
+  min-height: calc(100vh - 3.5em);
+}
+
 .card {
   padding: 0.5em 1em 1em 1em;
   margin: 0.7em;
@@ -343,4 +348,8 @@ footer a:hover {
 
 #docs #brand-name {
   display: none;
+}
+
+#docs-sidebar .active{
+  color: var( --colour-scheme-1);
 }
