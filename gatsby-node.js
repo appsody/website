@@ -1,7 +1,7 @@
 const path = require(`path`)
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
   const docTemplate = path.resolve(`src/templates/docTemplate.js`)
 
