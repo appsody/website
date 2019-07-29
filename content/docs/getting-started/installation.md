@@ -20,7 +20,6 @@ You should have [Docker](https://docs.docker.com/get-started/) installed and the
 You should have Xcode Command Line Tools installed. To install the Xcode Command Line Tools, run:
 ```
 xcode-select --install
-brew install appsody
 ```
 
 ## Installing on macOS

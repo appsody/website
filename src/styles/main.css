@@ -349,3 +349,7 @@ footer a:hover {
 #docs #brand-name {
   display: none;
 }
+
+#docs-sidebar .active{
+  color: var( --colour-scheme-1);
+}
