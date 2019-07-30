@@ -349,3 +349,11 @@ footer a:hover {
 #docs #brand-name {
   display: none;
 }
+
+#docs-sidebar .active{
+  color: var( --colour-scheme-1);
+}
+
+.doc-content {
+  min-height: calc(100vh - 10.5em);
+}
