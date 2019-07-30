@@ -29,3 +29,7 @@
       path: /docs/stacks/stack-structure
     - title: Environment Variables
       path: /docs/stacks/environment-variables
+- items:
+    - title: FAQ
+      path: /docs/faq
+
