@@ -353,3 +353,7 @@ footer a:hover {
 #docs-sidebar .active{
   color: var( --colour-scheme-1);
 }
+
+.doc-content {
+  min-height: calc(100vh - 10.5em);
+}
