@@ -4,16 +4,18 @@ path: /docs/using-appsody/initializing-project
 
 # Initializing Appsody Projects
 
-## New Project from Template
-The easiest way to initialize an Appsody project is to start a new project from a stack template. 
+The easiest way to initialize an Appsody project is to start a new source code project from a stack template. However, you can also configure an existing source code project to use an appropriate Appsody stack.  
 
-First, give your project a name and create an empty directory for your new project. You may want to place the project directory next to your other source code projects or your IDE workspace.
+## Creating a new project
+
+The first step to creating a new project is to create an empty directory and give your project a name. You might want to place the project directory next to your other source code projects or your IDE workspace. For example:
+
 ```
 cd /path/to/your/project/workspace
 mkdir my-project
 cd my-project
 ```
-Alternatively, you could clone an empty git repository or create an empty project in an IDE, then navigate to that directory in the terminal. Appsody is tolerant of some hidden files in the project directory, such as .git, .project, .settings, etc. The `appsody init <stack>` command won't overwrite files without the `--overwrite` option.
+Alternatively, you could clone an empty git repository or create an empty project in an IDE, then navigate to that directory in the terminal. Appsody is tolerant of some hidden files in the project directory, such as .git, .project, or .settings files. The `appsody init <stack>` command won't overwrite files without the `--overwrite` option.
 
 Next, choose a stack. Use `appsody list` to view the available stacks.
 
@@ -29,18 +31,19 @@ java-spring-boot2	0.3.1   Spring Boot using IBM Java SDK and Maven
 swift            	0.1.0   Swift runtime
 ```
 
-Then, run `appsody init <stack>` for the stack of your choice. This will download the default project template for the stack and initialize Appsody for your local development.
+When you have chosen your stack, run `appsody init <stack>` for the stack of your choice. This command downloads the default project template for the stack and initializes Appsody for local development.
 
-Now you have a fully functional Appsody project. See the [Local Development](/docs/using-appsody/local-development.md) document for more details on running the project.
+Now you have a fully functional Appsody project. For more details on running the project, see [Local Development](/docs/using-appsody/local-development.md).
 
 
-## Existing Project to Appsody
-You can configure an existing project to use Appsody, however you may have to manually adjust the project structure.
+## Configuring an existing project
 
-First, choose a stack that closely resembles your existing project. Use `appsody list` to view the available stacks, and review their documentation at <https://github.com/appsody/stacks/tree/master/incubator>.
+You can configure an existing project to use Appsody, which typically involves adjusting the project structure.
 
-Next, from the project directory, run `appsody init <stack> --no-template` to initialize Appsody on the existing project.
+First, choose a stack that closely resembles your existing project. Use `appsody list` to view the available stacks, and review the [documentation](https://github.com/appsody/stacks/tree/master/incubator) for the appropriate stack.
 
-Now you will likely need to update the structure of your project so the stack can find and run your code. Each stack has a different structure, so you will need to study your chosen stack's documentation and project template for guidance.
+Next, from your project directory, run `appsody init <stack> --no-template` to initialize Appsody without using a template on the existing project.
 
-Once the project structure is updated, you should try `appsody run` to verify it is working. See more about running an Appsody project in the [Local Development](/docs/using-appsody/local-development.md) document.
+You might need to update the structure of your project so that the stack can find and run your code. Because each stack has a different structure, refer to the documentation for your stack and review the project template for guidance.
+
+When you have updated the project structure, start the development container to verify that it is working with `appsody run`. For more details on running the project, see [Local Development](/docs/using-appsody/local-development.md).
