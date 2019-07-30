@@ -21,7 +21,7 @@ brew install appsody/appsody/appsody
 
 This command creates a brew tap for the `appsody/appsody` repo and installs the `appsody` formula.
 
-That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start) instructions to create your first containerized development environment with a running *Hello World!* application.
+That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
 
 To remove Appsody, run `brew uninstall appsody`. Optionally, remove the `.appsody` directory that gets created under your home directory: `rm -rf ~/.appsody`.
 
@@ -38,7 +38,7 @@ sudo apt install -f <path>/appsody_v.r.m_amd64.deb
 ```
 Where `<path>` is the fully qualified path to the package.
 
-That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start) instructions to create your first containerized development environment with a running *Hello World!* application.
+That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
 
 To remove Appsody, run `sudo apt remove appsody`. Optionally, remove the `.appsody` directory that gets created under your home directory: `rm -rf ~/.appsody`.
 
@@ -56,7 +56,7 @@ sudo yum install <path>/appsody-v.r.m-1.x86_64.rpm
 
 Where `<path>` is the fully qualified path to the package.
 
-That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start) instructions to create your first containerized development environment with a running *Hello World!* application.
+That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
 
 To remove Appsody, run `sudo yum remove appsody`. Optionally, remove the `.appsody` directory that gets created under your home directory: `rm -rf ~/.appsody`.
 
@@ -75,7 +75,7 @@ Follow these steps:
 appsody-setup.bat
 ```
 
-That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start) instructions to create your first containerized development environment with a running *Hello World!* application.
+That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
 
 To uninstall Appsody, delete the directory where you extracted the binaries. Optionally, remove the `.appsody` directory that gets created under your home folder and the **PATH** entry that was created by the setup command (see [Modifying the PATH on Windows 10](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)).
 
