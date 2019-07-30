@@ -356,5 +356,5 @@ footer a:hover {
 
 .doc-content {
   position: relative;
-  min-height: calc(100vh - 9.5em);
+  min-height: calc(100vh - 10.5em);
 }
