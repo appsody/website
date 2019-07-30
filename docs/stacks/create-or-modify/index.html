@@ -58,7 +58,7 @@ appsody run
 <li>
 <p>Clone the GitHub repository:</p>
 <pre><code class="language-bash">git clone https://github.com/appsody/stacks
-cd incubator/java-spring-boot2/image
+cd stacks/incubator/java-spring-boot2/image
 </code></pre>
 </li>
 <li>
@@ -66,15 +66,14 @@ cd incubator/java-spring-boot2/image
 </li>
 <li>
 <p>Build the <code>java-spring-boot2</code> stack image:</p>
-<pre><code class="language-bash">cd incubator/java-spring-boot2/stack
-docker build -t &#x3C;user>/spring-boot2-image -f Dockerfile-stack .
+<pre><code class="language-bash">docker build -t &#x3C;user>/spring-boot2-image:0.2 -f Dockerfile-stack .
 </code></pre>
 </li>
 <li>
 <p>Change the stack image in <code>.appsody-config.yaml</code> to point to your image:</p>
 <pre><code class="language-bash">cd ../templates/default
 </code></pre>
-<p><code>stack: &#x3C;user>/spring-boot2-image:0.2</code></p>
+<p>Change <code>.appsody-config.yaml</code> to your image: <code>stack: &#x3C;user>/spring-boot2-image:0.2</code></p>
 </li>
 <li>
 <p>Save and run the application in the default template:</p>
