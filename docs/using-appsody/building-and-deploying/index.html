@@ -41,7 +41,7 @@ such as a cloud platform that hosts a Kubernetes cluster.</p>
 <li>Extracts your code and other artifacts, including a new Dockerfile, which are required to build the <em>deployment</em> image from the <em>development</em> image. These files are saved to the <code>~/.appsody/extract</code> directory.</li>
 <li>Runs a <code>docker build</code> against the Dockerfile that was extracted on the previous step to produce a <em>deployment</em> image in your local Docker registry. If you want to give the image a name, specify the <code>-t &#x3C;tag></code> parameter. If you run <code>appsody build</code> with no parameters, the image is given a name that matches the name of your project.</li>
 </ul>
-<p>Note: If your project includes uppercase characters these are converted to lowercase characters in the image name because Docker does not accept uppercase characters in image tags.</p>
+<p><strong>Note:</strong> If your project includes uppercase characters these are converted to lowercase characters in the image name because Docker does not accept uppercase characters in image tags.</p>
 <p>Here is an example of the output produced by the <code>appsody build</code> command on a project named <code>appsody-project</code>:</p>
 <pre><code>micheles-mbp:appsody-project mchilant$ appsody build
 Extracting project from development environment
@@ -55,7 +55,7 @@ Running command: docker[build -t appsody-project -f /Users/mchilant/.appsody/ext
 Built docker image appsody-project
 </code></pre>
 <h2>Deploying your app directly to a Kubernetes cluster</h2>
-<p>Note: This deployment option is under development</p>
+<p><strong>Note:</strong> This deployment option is under development</p>
 <p>The <code>appsody deploy</code> command provides an example of how an application that you create with Appsody can be deployed directly to a Kubernetes cluster. The deployment occurs in the form of a Knative Serving service.</p>
 <p>To successfully run <code>appsody deploy</code> the following <strong>pre-requisites</strong> apply:</p>
 <ul>
@@ -86,9 +86,9 @@ Built docker image appsody-project
 <li>The Appsody CLI creates a Knative Serving manifest file named <code>appsody-service-&#x3C;nnnnnn>.yaml</code>, where <code>&#x3C;nnnnnn></code> is a random numerical value. This yaml file is used to issue a <code>kubectl apply -f</code> command against the target Kubernetes cluster.</li>
 <li>The <code>--namespace mynamespace</code> option provisions the Knative service under the <code>mynamespace</code> namespace.</li>
 </ul>
-<p>Note: If you don't specify <code>--push</code>, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry. Additionally, your image will be tagged as  <code>local.dev/&#x3C;project-name></code> and referenced in the Knative service manifest.</p>
+<p><strong>Note:</strong> If you don't specify <code>--push</code>, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry. Additionally, your image will be tagged as  <code>local.dev/&#x3C;project-name></code> and referenced in the Knative service manifest.</p>
 <h2>Deploying your app through a Tekton pipeline</h2>
-<p>Note: This deployment option is under development</p>
+<p><strong>Note:</strong> This deployment option is under development</p>
 <p>Most likely, the deployment of apps created with the appsody CLI is going to occur through the invocation of a CI/CD build pipeline.</p>
 <p>As a developer, you develop your app using the appsody CLI, and when you are ready to deploy, you push your code to a repo or create a pull request on GitHub.</p>
 <p>This <a href="https://github.com/appsody/tekton-example">example</a> shows you how to use Tekton pipelines to deploy your app as a Knative Serving service to a Kubernetes cluster.</p>

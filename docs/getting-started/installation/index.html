@@ -37,7 +37,6 @@
 </code></pre>
 <p>This command creates a brew tap for the <code>appsody/appsody</code> repo and installs the <code>appsody</code> formula.</p>
 <p>That's all there is to it! You can now follow our <a href="/docs/getting-started/quick-start.md">Quick Start</a> instructions to create your first containerized development environment with a running <em>Hello World!</em> application.</p>
-<p>To remove Appsody, run <code>brew uninstall appsody</code>. Optionally, remove the <code>.appsody</code> directory that gets created under your home directory: <code>rm -rf ~/.appsody</code>.</p>
 <h2>Installing on Ubuntu</h2>
 <p>Follow these steps:</p>
 <ol>
@@ -49,7 +48,6 @@
 </code></pre>
 <p>Where <code>&#x3C;path></code> is the fully qualified path to the package.</p>
 <p>That's all there is to it! You can now follow our <a href="/docs/getting-started/quick-start.md">Quick Start</a> instructions to create your first containerized development environment with a running <em>Hello World!</em> application.</p>
-<p>To remove Appsody, run <code>sudo apt remove appsody</code>. Optionally, remove the <code>.appsody</code> directory that gets created under your home directory: <code>rm -rf ~/.appsody</code>.</p>
 <h2>Installing on RHEL</h2>
 <p>Follow these steps:</p>
 <ol>
@@ -61,7 +59,6 @@
 </code></pre>
 <p>Where <code>&#x3C;path></code> is the fully qualified path to the package.</p>
 <p>That's all there is to it! You can now follow our <a href="/docs/getting-started/quick-start.md">Quick Start</a> instructions to create your first containerized development environment with a running <em>Hello World!</em> application.</p>
-<p>To remove Appsody, run <code>sudo yum remove appsody</code>. Optionally, remove the <code>.appsody</code> directory that gets created under your home directory: <code>rm -rf ~/.appsody</code>.</p>
 <h2>Installing on Windows</h2>
 <p>Note: Appsody runs only on Windows 10.</p>
 <p>Follow these steps:</p>
@@ -106,4 +103,60 @@ Running command: docker[run --rm -p 3000:3000 -p 9229:9229 --name my-project-dev
 <li>/home/ibmadmin/appsody/my-project/</li>
 <li>/home/ibmadmin/.appsody/appsody-controller</li>
 </ul>
-<p>In this case, whitelisting the home directory (<code>/home/ibmadmin</code>) would be sufficient.</p></div></main><footer><ul><li><a href="https://github.com/appsody/website/blob/master/LICENSE">License</a></li><li><a href="https://github.com/appsody/website/blob/master/NOTICE.md">Notice</a></li><li><a href="https://github.com/appsody/website/blob/master/PRIVACY.md">Privacy</a></li></ul></footer></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/docs/getting-started/installation";window.webpackCompilationHash="f881337633836ff4da96";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-b1b2a941e15509508859.js"],"component---src-templates-doc-template-js":["/component---src-templates-doc-template-js-7b470bc4a294602c968b.js"],"component---src-pages-404-js":["/component---src-pages-404-js-b8467013453e83545f7c.js"],"component---src-pages-index-js":["/component---src-pages-index-js-17fba902a39145af85b8.js"],"component---src-pages-tutorials-js":["/component---src-pages-tutorials-js-3a59043eeb59d5c4051f.js"]};/*]]>*/</script><script src="/webpack-runtime-12527da929b01725b330.js" async=""></script><script src="/app-b1b2a941e15509508859.js" async=""></script><script src="/styles-ac1f07f98a55d5558d8f.js" async=""></script><script src="/component---src-templates-doc-template-js-7b470bc4a294602c968b.js" async=""></script></body></html>
+<p>In this case, whitelisting the home directory (<code>/home/ibmadmin</code>) would be sufficient.</p>
+<h1>Upgrading Appsody</h1>
+<p>Here we cover the steps to upgrade Appsody on your system.</p>
+<h2>Upgrading on macOS</h2>
+<p>To upgrade Appsody on your system, run the following command: </p>
+<pre><code>brew upgrade appsody
+</code></pre>
+<p>This command checks the installed Appsody folder for outdated installations and replaces them with newer versions.</p>
+<h2>Upgrading on Ubuntu</h2>
+<p>To upgrade Appsody on your system, follow these steps: </p>
+<ol>
+<li>Download the most recently released <strong>Debian install package</strong> from the <a href="https://github.com/appsody/appsody/releases">Appsody releases page</a>. The file is named named <code>appsody_v.r.m_amd64.deb</code>, where v.r.m is the release number.</li>
+<li>Open your terminal and enter the directory in which you downloaded the file.</li>
+<li>
+<p>Run the following command:</p>
+<pre><code>sudo apt upgrade -f ./appsody_v.r.m_amd64.deb -y
+</code></pre>
+<p><strong>Note:</strong> The command uses <code>./</code> otherwise it will not work.</p>
+</li>
+</ol>
+<h2>Upgrading on RHEL</h2>
+<p>To upgrade Appsody on your system, follow these steps: </p>
+<ol>
+<li>Download the latest <strong>RPM install package</strong> from the <a href="https://github.com/appsody/appsody/releases">Appsody releases page</a>. The file is named <code>appsody-v.r.m-1.x86_64.rpm</code>, where v.r.m is the release number.</li>
+<li>Open your terminal and enter the directory in which you downloaded the file.</li>
+<li>
+<p>Run the following command:</p>
+<pre><code>sudo yum update appsody-v.r.m-1.x86_64.rpm -y
+</code></pre>
+</li>
+</ol>
+<h2>Upgrading on Windows</h2>
+<p>To upgrade Appsody on your system, follow these steps: </p>
+<ol>
+<li>Download the <strong>Appsody binaries for Windows</strong> from  <a href="https://github.com/appsody/appsody/releases">Appsody releases page</a>. The file is named <code>appsody-v.r.m-windows.tar</code>, where <code>v.r.m</code> indicates the release tag.</li>
+<li>Move the file to the directory where you stored the existing Appsody binaries.</li>
+<li>Untar the file there: <code>tar -xvf appsody-v.r.m-windows.tar</code>.</li>
+</ol>
+<h1>Uninstalling Appsody</h1>
+<p>Here we cover the steps to uninstalling Appsody on your system.</p>
+<h2>Uninstalling on macOS</h2>
+<p>To uninstall Appsody, run the following command:</p>
+<pre><code>brew uninstall appsody
+</code></pre>
+<p>You may also want to remove the <code>.appsody</code> directory that gets created under your home directory: <code>rm -rf ~/.appsody</code>.</p>
+<h2>Uninstalling on Ubuntu</h2>
+<p>To uninstall Appsody, run the following command: </p>
+<pre><code>sudo apt remove appsody
+</code></pre>
+<p>You may also want to remove the <code>.appsody</code> directory that gets created under your home directory: <code>rm -rf ~/.appsody</code>.</p>
+<h2>Uninstalling on RHEL</h2>
+<p>To uninstall Appsody, run the following command: </p>
+<pre><code>sudo yum remove appsody
+</code></pre>
+<p>You may also want to remove the <code>.appsody</code> directory that gets created under your home directory: <code>rm -rf ~/.appsody</code>.</p>
+<h2>Uninstalling on Windows</h2>
+<p>To uninstall Appsody, delete the directory where you extracted the binaries. You may also want to remove the <code>.appsody</code> directory that gets created under your home folder. And finally, you may want to remove the Path entry that was created for you by the setup command (instructions on editing your Path env var can be found <a href="https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/">here</a>).</p></div></main><footer><ul><li><a href="https://github.com/appsody/website/blob/master/LICENSE">License</a></li><li><a href="https://github.com/appsody/website/blob/master/NOTICE.md">Notice</a></li><li><a href="https://github.com/appsody/website/blob/master/PRIVACY.md">Privacy</a></li></ul></footer></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/docs/getting-started/installation";window.webpackCompilationHash="f881337633836ff4da96";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-b1b2a941e15509508859.js"],"component---src-templates-doc-template-js":["/component---src-templates-doc-template-js-7b470bc4a294602c968b.js"],"component---src-pages-404-js":["/component---src-pages-404-js-b8467013453e83545f7c.js"],"component---src-pages-index-js":["/component---src-pages-index-js-17fba902a39145af85b8.js"],"component---src-pages-tutorials-js":["/component---src-pages-tutorials-js-3a59043eeb59d5c4051f.js"]};/*]]>*/</script><script src="/webpack-runtime-12527da929b01725b330.js" async=""></script><script src="/app-b1b2a941e15509508859.js" async=""></script><script src="/styles-ac1f07f98a55d5558d8f.js" async=""></script><script src="/component---src-templates-doc-template-js-7b470bc4a294602c968b.js" async=""></script></body></html>
