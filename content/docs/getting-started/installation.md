@@ -171,4 +171,4 @@ sudo yum remove appsody
 You may also want to remove the `.appsody` directory that gets created under your home directory: `rm -rf ~/.appsody`.
 
 ## Uninstalling on Windows
-To uninstall Appsody, delete the directory where you extracted the binaries. You may also want to remove the `.appsody` directory that gets created under your home folder. And finally, you may want to remove the Path entry that was created for you by the setup command (instructions on editing your Path env var can be found [here](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)).
+To uninstall Appsody, delete the directory where you extracted the binaries. Optionally, remove the `.appsody` directory that gets created under your home folder and the **PATH** entry that was created by the setup command (see [Modifying the PATH on Windows 10](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)).
