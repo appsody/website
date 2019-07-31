@@ -23,8 +23,6 @@ This command creates a brew tap for the `appsody/appsody` repo and installs the 
 
 That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
 
-To remove Appsody, run `brew uninstall appsody`. Optionally, remove the `.appsody` directory that gets created under your home directory: `rm -rf ~/.appsody`.
-
 ## Installing on Ubuntu
 
 Follow these steps:
@@ -39,8 +37,6 @@ sudo apt install -f <path>/appsody_v.r.m_amd64.deb
 Where `<path>` is the fully qualified path to the package.
 
 That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
-
-To remove Appsody, run `sudo apt remove appsody`. Optionally, remove the `.appsody` directory that gets created under your home directory: `rm -rf ~/.appsody`.
 
 ## Installing on RHEL
 
@@ -57,8 +53,6 @@ sudo yum install <path>/appsody-v.r.m-1.x86_64.rpm
 Where `<path>` is the fully qualified path to the package.
 
 That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
-
-To remove Appsody, run `sudo yum remove appsody`. Optionally, remove the `.appsody` directory that gets created under your home directory: `rm -rf ~/.appsody`.
 
 ## Installing on Windows
 
@@ -116,3 +110,65 @@ In the example above, there are two binding mounts:
 * /home/ibmadmin/.appsody/appsody-controller
 
 In this case, whitelisting the home directory (`/home/ibmadmin`) would be sufficient.
+
+# Upgrading Appsody
+Here we cover the steps to upgrade Appsody on your system.
+
+## Upgrading on macOS
+To upgrade Appsody on your system, run the following command: 
+```
+brew upgrade appsody
+```
+This command checks the installed Appsody folder for outdated installations and replaces them with newer versions.
+
+## Upgrading on Ubuntu
+To upgrade Appsody on your system, follow these steps: 
+1) Download the most recently released **Debian install package** from the [Appsody releases page](https://github.com/appsody/appsody/releases). The file is named named `appsody_v.r.m_amd64.deb`, where v.r.m is the release number.
+2) Open your terminal and enter the directory in which you downloaded the file.
+3) Run the following command:
+```
+sudo apt upgrade -f ./appsody_v.r.m_amd64.deb -y
+```
+**Note:** The command uses `./` otherwise it will not work.
+
+## Upgrading on RHEL
+To upgrade Appsody on your system, follow these steps: 
+1) Download the latest **RPM install package** from the [Appsody releases page](https://github.com/appsody/appsody/releases). The file is named `appsody-v.r.m-1.x86_64.rpm`, where v.r.m is the release number.
+2) Open your terminal and enter the directory in which you downloaded the file.
+3) Run the following command:
+```
+sudo yum update appsody-v.r.m-1.x86_64.rpm -y
+```
+
+## Upgrading on Windows
+To upgrade Appsody on your system, follow these steps: 
+1) Download the **Appsody binaries for Windows** from  [Appsody releases page](https://github.com/appsody/appsody/releases). The file is named `appsody-v.r.m-windows.tar`, where `v.r.m` indicates the release tag.
+2) Move the file to the directory where you stored the existing Appsody binaries.
+3) Untar the file there: `tar -xvf appsody-v.r.m-windows.tar`.
+
+# Uninstalling Appsody
+Here we cover the steps to uninstalling Appsody on your system.
+
+## Uninstalling on macOS
+To uninstall Appsody, run the following command:
+ ```
+ brew uninstall appsody
+ ```
+You may also want to remove the `.appsody` directory that gets created under your home directory: `rm -rf ~/.appsody`.
+
+## Uninstalling on Ubuntu
+To uninstall Appsody, run the following command: 
+```
+sudo apt remove appsody
+```
+You may also want to remove the `.appsody` directory that gets created under your home directory: `rm -rf ~/.appsody`.
+
+## Uninstalling on RHEL
+To uninstall Appsody, run the following command: 
+```
+sudo yum remove appsody
+```
+You may also want to remove the `.appsody` directory that gets created under your home directory: `rm -rf ~/.appsody`.
+
+## Uninstalling on Windows
+To uninstall Appsody, delete the directory where you extracted the binaries. You may also want to remove the `.appsody` directory that gets created under your home folder. And finally, you may want to remove the Path entry that was created for you by the setup command (instructions on editing your Path env var can be found [here](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)).

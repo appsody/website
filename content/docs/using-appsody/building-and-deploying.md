@@ -25,7 +25,7 @@ The `appsody build` command completes the following actions:
 - Extracts your code and other artifacts, including a new Dockerfile, which are required to build the *deployment* image from the *development* image. These files are saved to the `~/.appsody/extract` directory.
 - Runs a `docker build` against the Dockerfile that was extracted on the previous step to produce a *deployment* image in your local Docker registry. If you want to give the image a name, specify the `-t <tag>` parameter. If you run `appsody build` with no parameters, the image is given a name that matches the name of your project.
 
-Note: If your project includes uppercase characters these are converted to lowercase characters in the image name because Docker does not accept uppercase characters in image tags.
+**Note:** If your project includes uppercase characters these are converted to lowercase characters in the image name because Docker does not accept uppercase characters in image tags.
 
 Here is an example of the output produced by the `appsody build` command on a project named `appsody-project`:
 ```
@@ -43,7 +43,7 @@ Built docker image appsody-project
 
 ## Deploying your app directly to a Kubernetes cluster
 
-Note: This deployment option is under development
+**Note:** This deployment option is under development
 
 The `appsody deploy` command provides an example of how an application that you create with Appsody can be deployed directly to a Kubernetes cluster. The deployment occurs in the form of a Knative Serving service.
 
@@ -81,12 +81,11 @@ The command completes the following actions:
 - The Appsody CLI creates a Knative Serving manifest file named `appsody-service-<nnnnnn>.yaml`, where `<nnnnnn>` is a random numerical value. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster.
 - The `--namespace mynamespace` option provisions the Knative service under the `mynamespace` namespace.
 
-Note: If you don't specify `--push`, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry. Additionally, your image will be tagged as  `local.dev/<project-name>` and referenced in the Knative service manifest.
-
+**Note:** If you don't specify `--push`, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry. Additionally, your image will be tagged as  `local.dev/<project-name>` and referenced in the Knative service manifest.
 
 ## Deploying your app through a Tekton pipeline
 
-Note: This deployment option is under development
+**Note:** This deployment option is under development
 
 Most likely, the deployment of apps created with the appsody CLI is going to occur through the invocation of a CI/CD build pipeline.
 
