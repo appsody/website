@@ -5,7 +5,7 @@ path: /docs/stacks/create
 # Creating a Stack
 
 A stack is made up of two main components, the stack image and templates that 
-use the stack's image. The structure 
+use the stack's image.
 ## Getting started
 
 The quickest way to get started creating a new stack is to use the [sample stack](https://github.com/appsody/stacks/tree/master/samples/sample-stack).
@@ -61,20 +61,3 @@ stack: <org-name>/<stack-id>
 ``` 
 
 If the stack is intended to be contributed to the  [Appsody stacks repository](https://github.com/appsody/stacks) the stack image should be called `appsody/<stack-name>:<stack-version>`.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
