@@ -22,9 +22,11 @@
     - title: Stacks Overview
       path: /docs/stacks/stacks-overview
     - title: Creating Stacks
-      path: /docs/stacks/create-or-modify
+      path: /docs/stacks/create
     - title: Modifying Stacks
-      path: /docs/stacks/create-or-modify#Modifying-a-stack
+      path: /docs/stacks/modify
+    - title: REMOVE THIS ON MERGE
+      path: /docs/stacks/create-or-modify
     - title: Stack Structure
       path: /docs/stacks/stack-structure
 - items:
