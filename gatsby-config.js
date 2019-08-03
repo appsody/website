@@ -20,11 +20,19 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `sidebaryaml`,
+        path: `${__dirname}/content/docs`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         icon: `src/images/favicon.svg`
       },
     },
+    `gatsby-transformer-yaml`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-layout`
   ]
