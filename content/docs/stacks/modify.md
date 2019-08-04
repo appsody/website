@@ -45,12 +45,11 @@ appsody run
 
 **Note:** You should test other Appsody commands that the stack supports also.
 
-5. Update stack README.md
-When stack image changes are made, make sure to update `stack-name/README.md`. 
+5. When stack image changes are made, make sure to update `stack-name/README.md`. 
 You should include:
-* Dependency versions that would be useful to the developer
-* Any endpoints that are enforced or provided by the stack
-* Any restrictions/limitations of the stack
+   * Dependency versions that would be useful to the developer
+   * Any endpoints that are enforced or provided by the stack
+   * Any restrictions/limitations of the stack
 
 ## Modifying a template
 Modifying a template is simple and allows the developer to get started with their applications, quicker. Whilst modifying templates consider if the functionality may be better placed in the stack image itself to affect all templates.
