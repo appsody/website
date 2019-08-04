@@ -61,3 +61,40 @@ stack: <org-name>/<stack-id>
 ``` 
 
 If the stack is intended to be contributed to the  [Appsody stacks repository](https://github.com/appsody/stacks) the stack image should be called `appsody/<stack-name>:<stack-version>`.
+
+## Contributing a stack
+If you would like to contribute a new stack to the [stacks repository](https://github.com/appsody/stacks) the Appsody [contributing guildlines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) explains how.
+
+We welcome new contributions but before starting a large piece of work we recommend to reach out to us on [slack](http://appsody-slack.eu-gb.mybluemix.net/) or [raise an issue](https://github.com/appsody/stacks/issues/) to start a discussion.
+
+## Maintaining a separate repository
+In addition to the main Appsody stacks repository, you can maintain your own set of stacks. This is useful for developing stacks and separating sets of stacks for different uses.
+
+By default you have access to the `appsodyhub` repository:
+```
+$ appsody repo list
+NAME      	URL                                                               
+appsodyhub	https://raw.githubusercontent.com/appsody/stacks/master/index.yaml
+```
+A repository is defined by an `index.yaml`. This file lists all stacks and  templates it wants to make avalible.  See the `appsodyhub` [index](https://raw.githubusercontent.com/appsody/stacks/master/index.yaml) as an example.
+
+Each template section must include a link to its `.tar.gz` file. This will be used by `appsody init` to initalize a Appsody project. 
+
+You can add you repository by running:
+```
+appsody repo add <name> <index-url>
+```
+For example:
+```
+appsody repo add my-repo file:///Users/foo/index.yaml
+
+appsody repo list
+NAME      	URL                                                               
+appsodyhub	https://raw.githubusercontent.com/appsody/stacks/master/index.yaml
+my-repo   	file:///Users/foo/index.yaml
+```
+
+Once the repository has been added you can access the stacks by specifying the repository name during a `appsody init`. 
+```
+appsody init my-repo/<stack-name>
+```
