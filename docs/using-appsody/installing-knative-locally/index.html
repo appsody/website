@@ -64,7 +64,7 @@
 <p>Add <code>registriesSkippingTagResolving: "dev.local"</code> under <code>data</code> so that the top of your file becomes:</p>
 <pre><code class="language-sh">apiVersion: v1
 data:
- registriesSkippingTagResolving: "dev.local"
+  registriesSkippingTagResolving: "dev.local"
 </code></pre>
 <p>and use <code>ESCAPE</code> followed by <code>:wq</code> to save your changes.</p>
 </li>
@@ -76,12 +76,15 @@ data:
 </li>
 <li>
 <p>Edit your <code>config-domain</code> config map to set up the use of your "nip.io" domain:</p>
-<pre><code class="language-sh">kubectl edit cm config-domain -n knative-serving
+<pre><code>    ```sh
+    kubectl edit cm config-domain -n knative-serving
+    ```
+
+    Add and entry under `data` for your "nip.io" address so that the top of your file is similar to:
 </code></pre>
-<p>Add and entry under <code>data</code> for your "nip.io" address so that the top of your file is similar to:</p>
-<pre><code class="language-sh">apiVersion: v1
-data:
-      9.174.18.28.nip.io: ""
+<pre><code class="language-sh">        apiVersion: v1
+        data:
+          9.174.18.28.nip.io: ""
 </code></pre>
 <p>and use <code>ESCAPE</code> followed by <code>:wq</code> to save your changes.</p>
 </li>
