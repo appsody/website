@@ -7,7 +7,7 @@ import MyVerticallyCenteredModal from './modal';
 class Search extends Component {
 
   state = {
-    titleList: [],
+    pageList: [],
     search: [],
     searchResults: [],
     isLoading: true,
@@ -18,10 +18,9 @@ class Search extends Component {
    * React lifecycle method to fetch the data
    */
   componentDidMount() {
-    this.state.titleList= this.props.items;
+    console.log("In componentDidMount " + this.props.items);
+    this.state.pageList= this.props.items;
     // this.setState({titleList: [{title: "Overview"}]})
-    console.log(this.props.items);
-    console.log(this.state.titleList);
     this.rebuildIndex()
   }
 
@@ -29,8 +28,8 @@ class Search extends Component {
    * rebuilds the overall index based on the options
    */
   rebuildIndex = () => {
-    const { titleList } = this.state
-    const dataToSearch = new JsSearch.Search("title")
+    const { pageList } = this.state
+    const dataToSearch = new JsSearch.Search("html")
     /**
      *  defines a indexing strategy for the data
      * more more about it in here https://github.com/bvaughn/js-search#configuring-the-index-strategy
@@ -46,12 +45,12 @@ class Search extends Component {
      * defines the search index
      * read more in here https://github.com/bvaughn/js-search#configuring-the-search-index
      */
-    dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex("title")
+    dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex("html")
 
-    dataToSearch.addIndex("title") // sets the index attribute for the data
+    dataToSearch.addIndex("html") // sets the index attribute for the data
 
     // console.log(titleList);
-    dataToSearch.addDocuments(titleList) // adds the data to be searched
+    dataToSearch.addDocuments(pageList) // adds the data to be searched
 
     this.setState({ search: dataToSearch, isLoading: false })
   }
@@ -76,18 +75,17 @@ class Search extends Component {
     const { titleList, searchResults, searchQuery } = this.state
     // const queryResults = searchQuery === "" ? titleList : searchResults
     const queryResults = searchResults
-    console.log("Title List: " + titleList)
-    console.log("Search Results: " + searchResults)
     return (
+
       <div>
-        <form class="form-inline" onSubmit={this.handleSubmit}>
+        <form className="form-inline" onSubmit={this.handleSubmit}>
             <input className="form-control form-control-sm ml-3 w-75 mt-2" type="text" placeholder="Search"
               aria-label="Search"
               id="Search"
               value={searchQuery}
               onChange={this.searchData}
             />
-            <i class="fas fa-search ml-2 mt-2" aria-hidden="true"></i>
+            <i className="fas fa-search ml-2 mt-2" aria-hidden="true"></i>
         </form>
 
         <table>
@@ -101,7 +99,7 @@ class Search extends Component {
                 }}
               >
 
-                <Link to={item.path}>{item.title}</Link>
+                <Link to={item.frontmatter.path}>{item.frontmatter.path}</Link>
               </td>
 
             </tr>
@@ -118,20 +116,23 @@ export default () => (
     <StaticQuery
       query={graphql`
         query {
-          allSidebarYaml {
-             nodes {
-               items {
-                 path
-                 title
-               }
-             }
+          allMarkdownRemark {
+            edges {
+              node {
+                html
+                frontmatter {
+                  path
+                }
+              }
+            }
           }
         }
       `}
       render={data => {
+        console.log(data);
         let items = [];
-        data.allSidebarYaml.nodes.forEach(node => {
-            items = items.concat(node.items);
+        data.allMarkdownRemark.edges.forEach(node => {
+            items = items.concat(node.node);
         });
 
         return <Search items={items}/>
