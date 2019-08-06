@@ -5,7 +5,11 @@ import Tile from "../components/tile";
 const TileGrid = (props) => {
     
     const tiles = props.stacks.map(stack => {
-        return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github="google.com"/>
+        const templateURL = stack.templates[0].url;
+        const repo = templateURL.split("/").reverse()[0].split(".")[0];
+        const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
+
+        return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
     });
 
     return (
@@ -27,6 +31,9 @@ export default () => (
                         id
                         name
                         description
+                        templates {
+                            url
+                        }
                     }
                 }
             }
