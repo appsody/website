@@ -7,7 +7,7 @@ os:
 
 script:
   - npm install -g gatsby-cli
-  - rm -rf src/data/indexes/*
+  - . ./ci/get-indexes.sh
   - gatsby build
 
 deploy:
