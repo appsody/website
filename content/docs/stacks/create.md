@@ -25,7 +25,7 @@ The `/image` directory will contain everything that is needed for the stack's im
 
 You **must** include a `Dockerfile-stack` file in the `/image` directory. This file defines the stack and the commands to be used by Appsody. Appsody uses [enviroment variables](/docs/stacks/environment-variables) exposed by the stack image to define these commands.
 
-The `/image/project` directory contains the base of the application. You may decide not to include any application code here but it is recommended to add some value for the stack, by controlling dependency versions for example. The `project` must include a production `Dockerfile` here which will be used by the [`appsody build`](/docs/using-appsody/cli-commands/#appsody-build) command. 
+The `/image/project` directory contains the base of the application. You may decide not to include any application code here but it is recommended to add some value to the stack. For example, by controlling dependency versions. The `project` must include a production `Dockerfile` here which will be used by the [`appsody build`](/docs/using-appsody/cli-commands/#appsody-build) command. 
 
 ## Building a stack image
 To build your stack image locally follow the below steps:
