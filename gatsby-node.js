@@ -5,7 +5,7 @@ const fs = require('file-system');
 // Add URLs to v2 indexes to this array for them to be rendered on the website
 // If the index does not need to be downloaded, place the index.yaml in src/data/indexes
 const indexURLs = [
-  'https://github.com/neeraj-laad/stacks/releases/download/nodejs-v0.2.3/incubator-index.yaml'
+  'https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml'
 ]
 
 exports.onPreInit = () => {
