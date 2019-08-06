@@ -25,8 +25,6 @@
       path: /docs/stacks/create
     - title: Modifying Stacks
       path: /docs/stacks/modify
-    - title: REMOVE THIS ON MERGE
-      path: /docs/stacks/create-or-modify
     - title: Stack Structure
       path: /docs/stacks/stack-structure
 - items:
