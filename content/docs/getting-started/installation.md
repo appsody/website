@@ -61,8 +61,11 @@ Note: Appsody runs only on Windows 10.
 Follow these steps:
 
 1. Create a directory for Appsody on your Windows 10 system.
-2. Download the **Appsody binaries for Windows** from the [Appsody releases page](https://github.com/appsody/appsody/releases) into the directory. The file is named `appsody-v.r.m-windows.tar`, where `v.r.m` indicates the release tag.
-3. Extract the files by running `tar -xvf appsody-v.r.m-windows.tar`.
+2. Download the **Appsody binaries for Windows** from the [Appsody releases page](https://github.com/appsody/appsody/releases) into the directory. The file is named `appsody-v.r.m-windows.tar.gz`, where `v.r.m` indicates the release tag.
+3. Extract the files by running `tar -xvf appsody-v.r.m-windows.tar.gz`.
+
+Note: If you choose to extract the files using a GUI tool you may have to extract the `appsody-v.r.m-windows.tar.gz` file and extract the extracted `appsody-v.r.m-windows.tar` file afterwords.
+
 4. To install Appsody, run the following setup command:
 
 ```
