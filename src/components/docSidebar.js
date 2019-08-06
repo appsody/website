@@ -26,7 +26,7 @@ const DocSidebar = () => {
 
     return (
         <nav className="navbar-expand-md navbar-light border-bottom" id="docs-sidebar">
-          <SearchContainer className="blah"/>
+          <SearchContainer/>
           <button className="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#collapsingSideNavbar">
               <span className="navbar-toggler-icon"></span>
           </button>

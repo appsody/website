@@ -18,9 +18,7 @@ class Search extends Component {
    * React lifecycle method to fetch the data
    */
   componentDidMount() {
-    console.log("In componentDidMount " + this.props.items);
     this.state.pageList= this.props.items;
-    // this.setState({titleList: [{title: "Overview"}]})
     this.rebuildIndex()
   }
 
@@ -62,36 +60,41 @@ class Search extends Component {
   searchData = e => {
     const { search } = this.state
     const queryResult = search.search(e.target.value)
-    // console.log(search);
-    // console.log(queryResult);
-    // console.log('===');
+
     this.setState({ searchQuery: e.target.value, searchResults: queryResult })
   }
   handleSubmit = e => {
     e.preventDefault()
   }
 
+  closeDropdown() {
+    document.getElementById("search-dropdown").classList.add('hide');
+  }
+
+  openDropdown() {
+    document.getElementById("search-dropdown").classList.remove('hide');
+  }
+
   render() {
     const { titleList, searchResults, searchQuery } = this.state
-    // const queryResults = searchQuery === "" ? titleList : searchResults
     const queryResults = searchResults
     return (
       <div className="dropdown">
         <form className="form-inline" onSubmit={this.handleSubmit}>
-            <input className="form-control form-control-sm mt-2" type="text" placeholder="Search"
+            <input id="search-input" onClick={this.openDropdown} className="form-control form-control-sm mt-2" type="text" placeholder="Search"
               aria-label="Search"
               id="Search"
               value={searchQuery}
               onChange={this.searchData}
             />
         </form>
-        <div id="myDropdown" class="dropdown-content">
+        <div id="search-dropdown" className="dropdown-content hide">
           <table>
           {queryResults.map(item => {
               return (
               <tr key={`row_${item.title}`}>
                 <td>
-                  <Link to={item.frontmatter.path}>{item.frontmatter.path}</Link>
+                  <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.path}</Link>
                 </td>
 
               </tr>
@@ -121,7 +124,6 @@ export default () => (
         }
       `}
       render={data => {
-        console.log(data);
         let items = [];
         data.allMarkdownRemark.edges.forEach(node => {
             items = items.concat(node.node);
