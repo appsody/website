@@ -25,7 +25,7 @@ The `/image` directory will contain everything that is needed for the stack's im
 
 You **must** include a `Dockerfile-stack` file in the `/image` directory. This file defines the stack and the commands to be used by Appsody. Appsody uses [enviroment variables](/docs/stacks/environment-variables) exposed by the stack image to define these commands.
 
-The `/image/project` directory contains the base of the application. You may decide not to include any functionality for the application but you must include a `Dockerfile` here which will be used by the [`appsody build`](/docs/using-appsody/cli-commands/#appsody-build) command. 
+The `/image/project` directory contains the base of the application. You may decide not to include any application code here but it is recommended to add some value for the stack, by controlling dependency versions for example. The `project` must include a production `Dockerfile` here which will be used by the [`appsody build`](/docs/using-appsody/cli-commands/#appsody-build) command. 
 
 ## Building a stack image
 To build your stack image locally follow the below steps:
@@ -51,9 +51,9 @@ appsody run
 ``` 
 
 ## Creating a template
-Templates allow for an initial project to be created for the developers. They provide a starter that the developer can expand and adapt as they require.
+Templates provide an initial application to enable developers to get started with a stack. They provide a starter application that a developer can expand and adapt as they require.
 
-All templates should be created within `/templates`. Every template is contained within its own directory, `/templates/<stack-name>`.
+All templates should be created within `/templates`. Every template is contained within its own directory, `/templates/<template-name>`.
 
 Each template must contain `appsody-config.yaml` to specify what stack image the template will use. For example:
 ```
@@ -78,7 +78,7 @@ appsodyhub	https://raw.githubusercontent.com/appsody/stacks/master/index.yaml
 ```
 A repository is defined by an `index.yaml`. This file lists all stacks and  templates it wants to make avalible.  See the `appsodyhub` [index](https://raw.githubusercontent.com/appsody/stacks/master/index.yaml) as an example.
 
-Each template section must include a link to its `.tar.gz` file. This will be used by `appsody init` to initalize a Appsody project. 
+Each template section must include a link to its `.tar.gz` file. This will be used by `appsody init` to initialize a Appsody project. 
 
 You can add you repository by running:
 ```
@@ -94,7 +94,7 @@ appsodyhub	https://raw.githubusercontent.com/appsody/stacks/master/index.yaml
 my-repo   	file:///Users/foo/index.yaml
 ```
 
-Once the repository has been added you can access the stacks by specifying the repository name during a `appsody init`. 
+Once the repository has been added you can access the stacks in that repo by specifying the repository name when initializing your project:
 ```
 appsody init my-repo/<stack-name>
 ```

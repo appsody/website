@@ -33,7 +33,7 @@ You should now make sure that all the stack templates work with the modified sta
 cd ../templates/<template-name>
 ```
 
-3. Edit `.appsody-config.yaml` to use your stack:
+3. Edit `.appsody-config.yaml` to use your built stack:
 ```
 stack: <org-name>/<stack-id>
 ```
