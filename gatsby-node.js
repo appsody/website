@@ -4,6 +4,7 @@ const fs = require('file-system');
 
 // Add URLs to v2 indexes to this array for them to be rendered on the website
 // If the index does not need to be downloaded, place the index.yaml in src/data/indexes
+// Note: this is only for developement add URLs to /ci/get-indexes.sh to affect production
 const indexURLs = [
   'https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml'
 ]
