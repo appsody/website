@@ -23,15 +23,31 @@ Here is an example of the output produced by the `appsody list` command:
 ```
 $ appsody list
 
-NAME             	VERSION	DESCRIPTION                               
-nodejs           	0.2.1  	Node.js Runtime                           
-nodejs-express   	0.2.1  	Express web framework for Node.js         
-java-microprofile	0.2.2  	Eclipse MicroProfile using Adopt OpenJDK and Maven
-java-spring-boot2	0.3.1   Spring Boot using IBM Java SDK and Maven
-swift            	0.1.0   Swift runtime
+REPO        	ID               	VERSION	DESCRIPTION                                  
+appsodyhub  	java-microprofile	0.2.4  	Eclipse MicroProfile using OpenJ9 and Maven  
+appsodyhub  	java-spring-boot2	0.3.2  	Spring Boot using OpenJ9 and Maven           
+appsodyhub  	nodejs-express   	0.2.2  	Express web framework for Node.js            
+appsodyhub  	nodejs           	0.2.2  	Runtime for Node.js applications             
+appsodyhub  	swift            	0.1.0  	Runtime for Swift applications               
+experimental	nodejs-functions 	0.1.0  	Serverless runtime for Node.js functions     
+experimental	quarkus          	0.1.0  	Quarkus runtime for running Java applications
+
+```
+You can limit the `appsody list` output by specifying a `repository name` as shown below:
+```
+$ appsody list appsodyhub
+
+REPO        	ID               	VERSION	DESCRIPTION                                  
+appsodyhub  	java-microprofile	0.2.4  	Eclipse MicroProfile using OpenJ9 and Maven  
+appsodyhub  	java-spring-boot2	0.3.2  	Spring Boot using OpenJ9 and Maven           
+appsodyhub  	nodejs-express   	0.2.2  	Express web framework for Node.js            
+appsodyhub  	nodejs           	0.2.2  	Runtime for Node.js applications             
+appsodyhub  	swift            	0.1.0  	Runtime for Swift applications               
+
+
 ```
 
-When you have chosen your stack, run `appsody init <stack>` for the stack of your choice. This command downloads the default project template for the stack and initializes Appsody for local development.
+When you have chosen your stack, run `appsody init <repository-name>/<stack>` for the repository and stack of your choice. This command downloads the default project template for the stack and initializes Appsody for local development.  If you elect to only specify the stack, e.g. `appsody init <stacK>`, the default repository is assumed.
 
 Now you have a fully functional Appsody project. For more details on running the project, see [Local Development](/docs/using-appsody/local-development.md).
 
