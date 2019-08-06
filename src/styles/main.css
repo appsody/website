@@ -388,23 +388,16 @@ footer a:hover {
   width: 15em !important ;
 }
 
-#docs Navbar .dropdown input{
+#docs-sidebar div.dropdown {
   display: none;
 }
 
-@media (max-width: 767px) {
-  div:not(#docs) .dropdown input{
+@media only screen and (max-width: 767px) {
+  div .dropdown {
     display: none;
   }
-}
 
-@media (min-width: 768px){
-  .desktop-only {
-    display: none !important;
+  #docs-sidebar div.dropdown {
+    display: inline-block;
   }
-
-  #docs Navbar .dropdown input{
-    display: none !important;
-  }
-
 }
