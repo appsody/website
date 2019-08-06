@@ -76,37 +76,29 @@ class Search extends Component {
     // const queryResults = searchQuery === "" ? titleList : searchResults
     const queryResults = searchResults
     return (
-
-      <div>
+      <div className="dropdown">
         <form className="form-inline" onSubmit={this.handleSubmit}>
-            <input className="form-control form-control-sm ml-3 w-75 mt-2" type="text" placeholder="Search"
+            <input className="form-control form-control-sm mt-2" type="text" placeholder="Search"
               aria-label="Search"
               id="Search"
               value={searchQuery}
               onChange={this.searchData}
             />
-            <i className="fas fa-search ml-2 mt-2" aria-hidden="true"></i>
         </form>
+        <div id="myDropdown" class="dropdown-content">
+          <table>
+          {queryResults.map(item => {
+              return (
+              <tr key={`row_${item.title}`}>
+                <td>
+                  <Link to={item.frontmatter.path}>{item.frontmatter.path}</Link>
+                </td>
 
-        <table>
-        {queryResults.map(item => {
-            return (
-            <tr key={`row_${item.title}`}>
-              <td
-                style={{
-                  fontSize: "14px",
-                  border: "1px solid #d3d3d3",
-                }}
-              >
-
-                <Link to={item.frontmatter.path}>{item.frontmatter.path}</Link>
-              </td>
-
-            </tr>
-          )
-        })}
-        </table>
-
+              </tr>
+            )
+          })}
+          </table>
+        </div>
       </div>
     )
   }
