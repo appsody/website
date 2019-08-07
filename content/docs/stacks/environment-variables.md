@@ -4,6 +4,8 @@ path: /docs/stacks/environment-variables
 
 #Environment Variables
 
+Here you will find a list of environment variables alongside their default values. To use the controller, these Dockerfile environment variables need to be configured. Each stack image exposes environment variables to define commands to be used by Appsody.
+
 | Variable                       | Description                                                                                                                                                                                                                                                                                              | Example                                                           | Default   |
 |--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|-----------|
 | ```APPSODY_WATCH_DIR```        | This variable contains the watch directories to watch for changes in. There can be multple directories separated by a ';'. The format is dir1;dir2. The value of ```APPSODY_MOUNTS``` can be used in place of ```APPSODY_WATCH_DIR```.                                                                   | ```ENV APPSODY_WATCH_DIR=/project/user-app```                     |  N/A         |
