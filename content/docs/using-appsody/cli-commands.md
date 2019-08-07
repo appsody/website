@@ -1,5 +1,4 @@
 ---
-title: CLI Reference
 path: /docs/using-appsody/cli-commands
 ---
 # Appsody CLI
@@ -388,6 +387,36 @@ appsody repo remove <name> [flags]
 
 ```
   -h, --help   help for remove
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun          Turns on dry run mode
+  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+```
+
+### SEE ALSO
+
+* [appsody repo](#appsody-repo)	 - Manage your Appsody repositories
+
+## appsody repo set-default
+
+Set desired default repository
+
+### Synopsis
+
+Set desired default repository
+
+```
+appsody repo set-default <name> [flags]
+```
+
+### Options
+
+```
+  -h, --help   help for set-default
 ```
 
 ### Options inherited from parent commands
