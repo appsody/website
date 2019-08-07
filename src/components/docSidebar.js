@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby"
-import Search from "./Search";
+import Search from "./search";
 import navStructure from "../../content/docs/sidebar.yaml";
 
 const DocSection = (props) => {

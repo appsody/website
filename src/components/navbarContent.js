@@ -10,7 +10,7 @@ import appsodyLogo from "../images/appsody_logo.svg";
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Search from './Search';
+import Search from './search';
 
 const NavBarContent = () => (
   <React.Fragment>
