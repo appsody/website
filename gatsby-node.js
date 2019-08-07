@@ -6,7 +6,9 @@ const fs = require('file-system');
 // If the index does not need to be downloaded, place the index.yaml in src/data/indexes
 // Note: this is only for developement add URLs to /ci/get-indexes.sh to affect production
 const indexURLs = [
-  'https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml'
+  'https://github.com/appsody/stacks/releases/latest/download/stable-index.yaml',
+  'https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml',
+  'https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml'
 ]
 
 exports.onPreInit = () => {
