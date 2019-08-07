@@ -1,3 +1,4 @@
+# !/bin/sh
 # Remove all development indexes
 rm -rf src/data/indexes/*
 
