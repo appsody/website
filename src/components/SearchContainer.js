@@ -94,7 +94,7 @@ class Search extends Component {
               return (
               <tr key={`row_${item.title}`}>
                 <td>
-                  <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.path}</Link>
+                  <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.title}</Link>
                 </td>
 
               </tr>
@@ -117,6 +117,7 @@ export default () => (
                 html
                 frontmatter {
                   path
+                  title
                 }
               }
             }
