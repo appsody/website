@@ -1,4 +1,5 @@
 ---
+title: Creating and Modifying Stacks
 path: /docs/stacks/create-or-modify
 ---
 # Creating and Modifying Stacks

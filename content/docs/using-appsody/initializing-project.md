@@ -1,4 +1,5 @@
 ---
+title: Initializing Appsody Projects
 path: /docs/using-appsody/initializing-project
 ---
 

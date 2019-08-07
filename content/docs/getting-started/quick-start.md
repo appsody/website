@@ -1,4 +1,5 @@
 ---
+title: Quick Start
 path: /docs/getting-started/quick-start
 ---
 
