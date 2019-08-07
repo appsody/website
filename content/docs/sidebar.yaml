@@ -27,8 +27,6 @@
       path: /docs/stacks/create-or-modify#Modifying-a-stack
     - title: Stack Structure
       path: /docs/stacks/stack-structure
-    - title: Environment Variables
-      path: /docs/stacks/environment-variables
 - items:
     - title: FAQ
       path: /docs/faq
