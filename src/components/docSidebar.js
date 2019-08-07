@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby"
-import SearchContainer from "./SearchContainer";
+import Search from "./Search";
 import navStructure from "../../content/docs/sidebar.yaml";
 
 const DocSection = (props) => {
@@ -26,7 +26,7 @@ const DocSidebar = () => {
 
     return (
         <nav className="navbar-expand-md navbar-light border-bottom" id="docs-sidebar">
-          <SearchContainer/>
+          <Search/>
           <button className="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#collapsingSideNavbar">
               <span className="navbar-toggler-icon"></span>
           </button>
