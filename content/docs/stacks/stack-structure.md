@@ -1,4 +1,5 @@
 ---
+title: Stack structure
 path: /docs/stacks/stack-structure
 ---
 ## Stack structure

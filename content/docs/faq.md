@@ -1,4 +1,5 @@
 ---
+title: FAQ
 path: /docs/faq
 ---
 
