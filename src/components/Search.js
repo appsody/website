@@ -52,7 +52,6 @@ class Search extends Component {
 
     dataToSearch.addIndex("html") // sets the index attribute for the data
 
-    // console.log(titleList);
     dataToSearch.addDocuments(pageList) // adds the data to be searched
 
     this.setState({ search: dataToSearch, isLoading: false })
