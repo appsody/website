@@ -5,7 +5,13 @@ import MyVerticallyCenteredModal from './modal';
 
 
 class Search extends Component {
+  constructor(props) {
+    super(props);
 
+    // This binding is necessary to make `this` work in the callback
+    this.closeDropdown = this.closeDropdown.bind(this);
+    this.openDropdown = this.openDropdown.bind(this);
+  }
   state = {
     pageList: [],
     search: [],
@@ -13,6 +19,7 @@ class Search extends Component {
     isLoading: true,
     isError: false,
     searchQuery: "",
+    isOpen: false
   }
   /**
    * React lifecycle method to fetch the data
@@ -68,42 +75,77 @@ class Search extends Component {
   }
 
   closeDropdown() {
-    document.getElementById("search-dropdown").classList.add('hide');
+    this.setState(state => ({
+      isOpen: false
+    }));
   }
 
   openDropdown() {
-    document.getElementById("search-dropdown").classList.remove('hide');
+    this.setState(state => ({
+      isOpen: true
+    }));
   }
 
   render() {
     const { titleList, searchResults, searchQuery } = this.state
     const queryResults = searchResults
-    return (
-      <div className="dropdown">
-        <form className="form-inline" onSubmit={this.handleSubmit}>
-            <input id="search-input" onClick={this.openDropdown} className="form-control form-control-sm mt-2" type="text" placeholder="Search"
-              aria-label="Search"
-              id="Search"
-              value={searchQuery}
-              onChange={this.searchData}
-            />
-        </form>
-        <div id="search-dropdown" className="dropdown-content hide">
-          <table>
-          {queryResults.map(item => {
-              return (
-              <tr key={`row_${item.title}`}>
-                <td>
-                  <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.title}</Link>
-                </td>
+    if (this.state.isOpen) {
+      return (
+        <div className="dropdown">
+          <form className="form-inline" onSubmit={this.handleSubmit}>
+              <input id="search-input" onClick={this.openDropdown} className="form-control form-control-sm mt-2 mr-2" type="text" placeholder="Search"
+                aria-label="Search"
+                id="Search"
+                value={searchQuery}
+                onChange={this.searchData}
+              />
+              <i class="fa fa-search ml-2 mt-1 mr-3"></i>
+          </form>
+          <div id="search-dropdown" className="dropdown-content ">
+            <table>
+            {queryResults.map(item => {
+                return (
+                <tr key={`row_${item.title}`}>
+                  <td>
+                    <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.title}</Link>
+                  </td>
 
-              </tr>
-            )
-          })}
-          </table>
+                </tr>
+              )
+            })}
+            </table>
+          </div>
         </div>
-      </div>
-    )
+      )
+    } else {
+      return (
+        <div className="dropdown">
+          <form className="form-inline" onSubmit={this.handleSubmit}>
+              <input id="search-input" onClick={this.openDropdown} className="form-control form-control-sm mt-2 mr-2" type="text" placeholder="Search"
+                aria-label="Search"
+                id="Search"
+                value={searchQuery}
+                onChange={this.searchData}
+              />
+              <i class="fa fa-search ml-2 mt-1 mr-3"></i>
+          </form>
+          <div id="search-dropdown" className="dropdown-content hide">
+            <table>
+            {queryResults.map(item => {
+                return (
+                <tr key={`row_${item.title}`}>
+                  <td>
+                    <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.title}</Link>
+                  </td>
+
+                </tr>
+              )
+            })}
+            </table>
+          </div>
+        </div>
+      )
+    }
   }
 }
 
