@@ -169,13 +169,13 @@ in preparation to build the final docker image.</p>
 <p>Initialize an Appsody project with a stack and template app</p>
 <h3>Synopsis</h3>
 <p>This creates a new Appsody project in a local directory or sets up the local dev environment of an existing Appsody project.</p>
-<p>With the [stack] argument, this command will setup a new Appsody project. It will create an Appsody stack config file, unzip a template app, and
-run the stack init script to setup the local dev environment. It is typically run on an empty directory and may fail
+<p>If the [repository] is not specified the default repository will be used.
+With the [stack] or [repository]/[stack] argument, this command will setup a new Appsody project. It will create an Appsody stack config file, unzip a template app, and run the stack init script to setup the local dev environment. It is typically run on an empty directory and may fail
 if files already exist. See the --overwrite and --no-template options for more details.
 Use 'appsody list' to see the available stack options.</p>
 <p>Without the [stack] argument, this command must be run on an existing Appsody project and will only run the stack init script to
 setup the local dev environment.</p>
-<pre><code>appsody init [stack] [flags]
+<pre><code>appsody init [stack] or [repository]/[stack] [flags]
 </code></pre>
 <h3>Options</h3>
 <pre><code>  -h, --help          help for init
@@ -194,8 +194,8 @@ setup the local dev environment.</p>
 <h2>appsody list</h2>
 <p>List the Appsody stacks available to init</p>
 <h3>Synopsis</h3>
-<p>List the Appsody stacks available to init</p>
-<pre><code>appsody list [flags]
+<p>This command lists all the stacks available in your repositories. If you omit the  optional [repository] parameter, the stacks for all the repositories are listed. If you specify the repository name [repository], only the stacks in that repository will be listed.</p>
+<pre><code>appsody list [repository] [flags]
 </code></pre>
 <h3>Options</h3>
 <pre><code>  -h, --help   help for list
@@ -227,6 +227,7 @@ setup the local dev environment.</p>
 <li><a href="#appsody-repo-add">appsody repo add</a>	 - Add an Appsody repository</li>
 <li><a href="#appsody-repo-list">appsody repo list</a>	 - List configured Appsody repositories</li>
 <li><a href="#appsody-repo-remove">appsody repo remove</a>	 - Remove a configured Appsody repository</li>
+<li><a href="#appsody-repo-set-default">appsody repo set-default</a>	 - Set desired default repository</li>
 </ul>
 <h2>appsody repo add</h2>
 <p>Add an Appsody repository</p>
@@ -249,7 +250,7 @@ setup the local dev environment.</p>
 <h2>appsody repo list</h2>
 <p>List configured Appsody repositories</p>
 <h3>Synopsis</h3>
-<p>List configured Appsody repositories</p>
+<p>List configured Appsody repositories. An asterisk denotes the default repository.</p>
 <pre><code>appsody repo list [flags]
 </code></pre>
 <h3>Options</h3>
