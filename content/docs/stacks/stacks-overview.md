@@ -1,4 +1,5 @@
 ---
+title: Appsody Stacks
 path: /docs/stacks/stacks-overview
 ---
 # Appsody Stacks
