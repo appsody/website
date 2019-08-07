@@ -1,8 +1,6 @@
 import React, { Component } from "react"
 import { StaticQuery,Link } from "gatsby"
 import * as JsSearch from "js-search"
-import MyVerticallyCenteredModal from './modal';
-
 
 class Search extends Component {
   constructor(props) {
