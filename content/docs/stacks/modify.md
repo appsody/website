@@ -44,7 +44,7 @@ stack: <org-name>/<stack-id>
 appsody run 
 ``` 
 
-**Note:** You should test other Appsody commands that the stack supports also.
+**Note:** You should test all other Appsody commands that the stack supports also.
 
 5. When stack image changes are made, make sure to update `stack-name/README.md`. 
 You should include:
