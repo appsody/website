@@ -341,6 +341,16 @@ footer a:hover {
    #docs .nav-link {
     padding-left: 0; 
   }
+  
+   table {
+     width: 100%;
+     overflow-x: auto;
+  }
+  
+   td  {
+     width: 5em !important;
+     font-size: 0.8em;
+  }
 }
 
 .navbar-brand {
@@ -376,6 +386,11 @@ footer a:hover {
 
 .doc-content {
   min-height: calc(100vh - 10.5em);
+}
+
+.doc-content table {
+  display: block;
+  overflow: scroll;
 }
 
 .doc-content h1, .doc-content h2, .doc-content h3, .doc-content h4, .doc-content h5, .doc-content h6 {
