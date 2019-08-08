@@ -72,19 +72,19 @@ class Search extends Component {
   }
 
   closeDropdown() {
-    this.setState(state => ({
+    this.setState({
       isOpen: false
-    }));
+    });
   }
 
   openDropdown() {
-    this.setState(state => ({
+    this.setState({
       isOpen: true
-    }));
+    });
   }
 
   render() {
-    const { titleList, searchResults, searchQuery } = this.state
+    const { searchResults, searchQuery } = this.state
     const queryResults = searchResults
     if (this.state.isOpen) {
       return (
@@ -98,7 +98,7 @@ class Search extends Component {
               />
               <i class="fa fa-search ml-2 mt-1 mr-3"></i>
           </form>
-          <div id="search-dropdown" className="dropdown-content ">
+          <div id="search-dropdown" className="dropdown-content">
             <table>
             {queryResults.map(item => {
                 return (
@@ -106,7 +106,6 @@ class Search extends Component {
                   <td>
                     <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.title}</Link>
                   </td>
-
                 </tr>
               )
             })}
@@ -134,7 +133,6 @@ class Search extends Component {
                   <td>
                     <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.title}</Link>
                   </td>
-
                 </tr>
               )
             })}

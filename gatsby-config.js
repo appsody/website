@@ -20,13 +20,6 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `sidebaryaml`,
-        path: `${__dirname}/content/docs`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         icon: `src/images/favicon.svg`
