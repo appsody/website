@@ -1,4 +1,5 @@
 ---
+title: Modifying a Stack
 path: /docs/stacks/modify
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: Creating a Stack
 path: /docs/stacks/create
 ---
 
