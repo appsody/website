@@ -1,4 +1,5 @@
 ---
+title: CLI Reference
 path: /docs/using-appsody/cli-commands
 ---
 # Appsody CLI
@@ -219,8 +220,8 @@ Initialize an Appsody project with a stack and template app
 
 This creates a new Appsody project in a local directory or sets up the local dev environment of an existing Appsody project.
 
-With the [stack] argument, this command will setup a new Appsody project. It will create an Appsody stack config file, unzip a template app, and
-run the stack init script to setup the local dev environment. It is typically run on an empty directory and may fail
+If the [repository] is not specified the default repository will be used.
+With the [stack] or [repository]/[stack] argument, this command will setup a new Appsody project. It will create an Appsody stack config file, unzip a template app, and run the stack init script to setup the local dev environment. It is typically run on an empty directory and may fail
 if files already exist. See the --overwrite and --no-template options for more details.
 Use 'appsody list' to see the available stack options.
 
@@ -228,7 +229,7 @@ Without the [stack] argument, this command must be run on an existing Appsody pr
 setup the local dev environment.
 
 ```
-appsody init [stack] [flags]
+appsody init [stack] or [repository]/[stack] [flags]
 ```
 
 ### Options
@@ -257,10 +258,10 @@ List the Appsody stacks available to init
 
 ### Synopsis
 
-List the Appsody stacks available to init
+This command lists all the stacks available in your repositories. If you omit the  optional [repository] parameter, the stacks for all the repositories are listed. If you specify the repository name [repository], only the stacks in that repository will be listed.
 
 ```
-appsody list [flags]
+appsody list [repository] [flags]
 ```
 
 ### Options
@@ -309,6 +310,7 @@ Manage your Appsody repositories
 * [appsody repo add](#appsody-repo-add)	 - Add an Appsody repository
 * [appsody repo list](#appsody-repo-list)	 - List configured Appsody repositories
 * [appsody repo remove](#appsody-repo-remove)	 - Remove a configured Appsody repository
+* [appsody repo set-default](#appsody-repo-set-default)	 - Set desired default repository
 
 ## appsody repo add
 
@@ -346,7 +348,7 @@ List configured Appsody repositories
 
 ### Synopsis
 
-List configured Appsody repositories
+List configured Appsody repositories. An asterisk denotes the default repository.
 
 ```
 appsody repo list [flags]
@@ -386,6 +388,36 @@ appsody repo remove <name> [flags]
 
 ```
   -h, --help   help for remove
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun          Turns on dry run mode
+  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+```
+
+### SEE ALSO
+
+* [appsody repo](#appsody-repo)	 - Manage your Appsody repositories
+
+## appsody repo set-default
+
+Set desired default repository
+
+### Synopsis
+
+Set desired default repository
+
+```
+appsody repo set-default <name> [flags]
+```
+
+### Options
+
+```
+  -h, --help   help for set-default
 ```
 
 ### Options inherited from parent commands

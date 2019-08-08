@@ -1,4 +1,5 @@
 ---
+title: Setting up Knative Serving for Local Kubernetes Development
 path: /docs/using-appsody/installing-knative-locally
 ---
 
