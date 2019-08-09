@@ -39,6 +39,8 @@ Where `<path>` is the fully qualified path to the package.
 
 That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
 
+Alternatively, if you would like to build from the binaries, please take a look at [Building from Source] (https://github.com/appsody/appsody/blob/master/build.md).
+
 ## Installing on RHEL
 
 Follow these steps:
