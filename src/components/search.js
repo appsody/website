@@ -92,21 +92,22 @@ class Search extends Component {
           <form className="form-inline" onSubmit={this.handleSubmit}>
               <input id="search-input" onClick={this.openDropdown} className="form-control form-control-sm mt-2 mr-2" type="text" placeholder="Search"
                 aria-label="Search"
-                id="Search"
                 value={searchQuery}
                 onChange={this.searchData}
               />
-              <i class="fa fa-search ml-2 mt-1 mr-3"></i>
+              <i className="fa fa-search ml-2 mt-1 mr-3"></i>
           </form>
           <div id="search-dropdown" className="dropdown-content">
             <table>
             {queryResults.map(item => {
                 return (
-                <tr key={`row_${item.title}`}>
-                  <td>
-                    <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.title}</Link>
-                  </td>
-                </tr>
+                <tbody>
+                  <tr key={`row_${item.frontmatter.title}`}>
+                    <td>
+                      <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.title}</Link>
+                    </td>
+                  </tr>
+                </tbody>
               )
             })}
             </table>
@@ -119,21 +120,22 @@ class Search extends Component {
           <form className="form-inline" onSubmit={this.handleSubmit}>
               <input id="search-input" onClick={this.openDropdown} className="form-control form-control-sm mt-2 mr-2" type="text" placeholder="Search"
                 aria-label="Search"
-                id="Search"
                 value={searchQuery}
                 onChange={this.searchData}
               />
-              <i class="fa fa-search ml-2 mt-1 mr-3"></i>
+              <i className="fa fa-search ml-2 mt-1 mr-3"></i>
           </form>
           <div id="search-dropdown" className="dropdown-content hide">
             <table>
             {queryResults.map(item => {
                 return (
-                <tr key={`row_${item.title}`}>
-                  <td>
-                    <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.title}</Link>
-                  </td>
-                </tr>
+                <tbody>
+                  <tr key={`row_${item.frontmatter.title}`}>
+                    <td>
+                      <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.title}</Link>
+                    </td>
+                  </tr>
+                </tbody>
               )
             })}
             </table>
