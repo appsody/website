@@ -355,7 +355,7 @@ footer a:hover {
 }
 
 .doc-content {
-  min-height: calc(100vh - 10.5em);
+  min-height: calc(100vh - 4.25em);
 }
 
 .doc-content h1, .doc-content h2, .doc-content h3, .doc-content h4, .doc-content h5, .doc-content h6 {
