@@ -23,8 +23,9 @@ class Search extends Component {
    * React lifecycle method to fetch the data
    */
   componentDidMount() {
-    this.state.pageList= this.props.items;
-    this.rebuildIndex()
+    this.setState({ pageList: this.props.items }, () => {
+      this.rebuildIndex()
+    });
   }
 
   /**
