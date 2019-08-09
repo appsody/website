@@ -101,8 +101,8 @@ class Search extends Component {
             <table>
             {queryResults.map(item => {
                 return (
-                <tbody>
-                  <tr key={`row_${item.frontmatter.title}`}>
+                <tbody key={`row_${item.frontmatter.title}`}>
+                  <tr>
                     <td>
                       <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.title}</Link>
                     </td>
@@ -129,8 +129,8 @@ class Search extends Component {
             <table>
             {queryResults.map(item => {
                 return (
-                <tbody>
-                  <tr key={`row_${item.frontmatter.title}`}>
+                <tbody key={`row_${item.frontmatter.title}`}>
+                  <tr>
                     <td>
                       <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.title}</Link>
                     </td>
