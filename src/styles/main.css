@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito|Open+Sans&display=swap');
 
 :root {
+  --primary-colour: lightgrey;
   --links-colour: black;
   --white-buttons: white;
 
   --white: white;
-  --light-grey: #F1F1F1;
-  --dark-grey: #d3d3d3;
-  --darker-grey: #9B9B9B;
+  --light-grey: #9B9B9B;
   --off-black-1: #100F15;
   --colour-scheme-1: #BB417C;
   --colour-scheme-2: #ED8E00;
@@ -25,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #main-nav {
   background-color: var(--white);
-  box-shadow: 0 -6px 29px var(--darker-grey);
+  box-shadow: 0 -6px 29px #9B9B9B;
 }
 
 .btn-primary {
@@ -55,7 +54,7 @@ section.landing-section:first-child {
 }
 
 section.landing-section:not(:last-child) {
-  border-bottom: 2px solid var(--darker-grey);
+  border-bottom: 2px solid var(--light-grey);
 }
 
 section.landing-section .btn {
@@ -212,7 +211,7 @@ section.landing-section h2 {
   position: fixed;
   width: 15em;
   padding-top: 5em;
-  background-color: var(--light-grey);
+  background-color: #f1f1f1;
   height: 100%;
   left: 0;
 }
@@ -266,7 +265,7 @@ section.landing-section h2 {
 
 footer {
   background-color: var(--colour-scheme-1);
-  box-shadow: 0 6px 29px var(--darker-grey);
+  box-shadow: 0 6px 29px #9B9B9B;
   padding: 1em;
   text-align: center;
 }
@@ -303,7 +302,7 @@ footer a:hover {
 
 #docs main pre, #docs main :not(pre) > code  {
   padding: 0.3em;
-  background-color: var(--light-grey);
+  background-color: #F1F1F1;
   border-radius: 0.1em;
   color: black
 }
@@ -341,16 +340,6 @@ footer a:hover {
    #docs .nav-link {
     padding-left: 0;
   }
-  
-   table {
-     width: 100%;
-     overflow-x: auto;
-  }
-  
-   td  {
-     width: 5em !important;
-     font-size: 0.8em;
-  }
 }
 
 .navbar-brand {
@@ -361,42 +350,19 @@ footer a:hover {
   display: none;
 }
 
-.doc-content table tr td {
-  border: 0.1em solid var(--darker-grey);
-  margin: 0;
-  text-align: left;
-  padding: 0.5em 1em;
-}
-
-.doc-content table tr th {
-  border: 0.05em solid var(--darker-grey);
-  margin: 0;
-  column-width: 200em;
-  text-align: center;
-  font-size: 16pt;
-}
-
-.doc-content table tr:nth-child(even) {
-  background: var(--dark-grey);
-}
-
 #docs-sidebar .active{
-  color: var(--colour-scheme-1);
+  color: var( --colour-scheme-1);
 }
 
 .doc-content {
   min-height: calc(100vh - 10.5em);
 }
 
-.doc-content table {
-  display: block;
-  overflow: scroll;
-}
-
 .doc-content h1, .doc-content h2, .doc-content h3, .doc-content h4, .doc-content h5, .doc-content h6 {
   padding-top: 2.5em;
   margin-top: -2.5em;
 }
+
 .dropdown {
   position: relative;
   display: inline-block;

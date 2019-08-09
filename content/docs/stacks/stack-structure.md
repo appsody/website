@@ -49,5 +49,5 @@ A template is a pre-configured starter application that is ready to use with a p
 The `.appsody-config.yaml` allows you to specify the image which the template will use.
 For example, the following specifies that the template will use the nodejs-express image: 
 ```
-stack: nodejs-express:0.2.0
+image: nodejs-express:0.2.0
 ```
