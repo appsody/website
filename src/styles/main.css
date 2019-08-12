@@ -339,16 +339,15 @@ footer a:hover {
   }
 
    #docs .nav-link {
-    padding-left: 0; 
+    padding-left: 0;
   }
-  
+
    table {
      width: 100%;
      overflow-x: auto;
   }
-  
-   td  {
-     width: 5em !important;
+
+   code  {
      font-size: 0.8em;
   }
 }
@@ -396,4 +395,52 @@ footer a:hover {
 .doc-content h1, .doc-content h2, .doc-content h3, .doc-content h4, .doc-content h5, .doc-content h6 {
   padding-top: 2.5em;
   margin-top: -2.5em;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #f6f6f6;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+  max-width: 13.1em;
+  max-height: 60vh;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.dropdown input {
+  width: 15em !important ;
+}
+
+#docs-sidebar div.dropdown {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  div .dropdown {
+    display: none;
+  }
+
+  #docs-sidebar div.dropdown {
+    display: inline-block;
+  }
+}
+
+.hide {
+  display: none;
 }
