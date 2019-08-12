@@ -4,6 +4,7 @@ import Tile from "../components/tile";
 
 const TileGrid = (props) => {
     
+    const defaultRepo = "incubator"
     const tiles = props.stacks.map(stack => {
         if (stack == null) return null;
         
@@ -11,6 +12,9 @@ const TileGrid = (props) => {
         const repo = templateURL.split("/").reverse()[0].split(".")[0];
         const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
 
+        if (!stack.templates[0].url.includes(defaultRepo)) {
+            return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
+        }
         return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
     });
 
