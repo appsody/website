@@ -14,7 +14,7 @@ Enterprise Windows users very frequently authenticate through Azure Active Direc
 1. Create a new project (pick a folder that is outside of your home directory, or Docker will not have access to it).
 2. Go into that project directory and run ```appsody init <stack>```
 3. Create a new folder called ```C:\my-appsody-config-dir\```
-4. Run ```appsody init --config C:\my-appsody-config-dir.appsody-config.yaml```
+4. Run ```appsody init --config C:\my-appsody-config-dir\.appsody-config.yaml```
 
 5. ```notepad C:\my-appsody-config-dir\.appsody-config.yaml```
 
