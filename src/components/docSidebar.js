@@ -21,9 +21,13 @@ const DocSection = (props) => {
 const DocSidebar = () => {
     let list = [];
     for (let section of navStructure) {
-        list.push(<DocSection key={section.title} title={section.title} data={section.items}/>)
+        if (section.title == null) {
+            list.push(<DocSection key={section.items[0].title} title={section.title} data={section.items}/>)
+        } else {
+            list.push(<DocSection key={section.title} title={section.title} data={section.items}/>)
+        }
     }
-
+    
     return (
         <nav className="navbar-expand-md navbar-light border-bottom" id="docs-sidebar">
           <Search/>
