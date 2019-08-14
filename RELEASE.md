@@ -35,8 +35,17 @@ The website and documentation gets released when a pull request is merged. The w
 **Note:** this frequent release process requires each pull request to be thoroughly checked as the result will be pushed into production.
 
 ## Dependencies
-Website release depends on **all** pull request checks passing only.
-
+Website release depends on **all** pull request checks passing.
 It does not rely on another appsody or external asset being released.
+
+### Adding stack tiles to the index page
+Stack tiles are generated from index.yaml files. In developement you can place local files in `src/data/indexes`. You can also add urls in the `indexURLs` array in `gastby-node.js` to bring in index files dynamically. 
+
+The above is only for development. To add index.yaml files to be used in the production site it must be added to the CI system.
+In `ci/get-indexes.sh` add a `wget` command for Travis to use when it deploys the site. For example:
+```
+# Incubator
+wget https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml
+```
 
 

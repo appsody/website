@@ -1,5 +1,6 @@
 import React from "react";
-import Tile from "../components/tile";
+
+import TileGrid from "../components/tileGrid";
 
 import kubeLogo from "../images/kubernetes_logo.png";
 import promLogo from "../images/prometheus_logo.png";
@@ -37,15 +38,7 @@ const IndexPage = () => (
         <h2>Application Stacks</h2>
         <p id="application-stack-info">Select the application stack to view further details on GitHub or copy the command to start using the stack with our CLI.</p>
       </div>
-      <div className="container">
-        <div id="application-stacks" className="row mx-auto">
-          <Tile id="java-microprofile" heading="Eclipse MicroProfile&reg;" desc="Eclipse MicroProfile using OpenJ9 and Maven" cmd="appsody init java-microprofile" github="https://github.com/appsody/stacks/tree/master/incubator/java-microprofile"/>
-          <Tile id="java-spring" heading="Spring Boot&reg;" desc="Spring Boot using OpenJ9 and Maven" cmd="appsody init java-spring-boot2" github="https://github.com/appsody/stacks/tree/master/incubator/java-spring-boot2"/>
-          <Tile id="node" heading="Node.js" desc="Node.js runtime" cmd="appsody init nodejs" github="https://github.com/appsody/stacks/tree/master/incubator/nodejs"/>
-          <Tile id="node-express" heading="Node.js Express" desc="Express web framework for Node.js" cmd="appsody init nodejs-express" github="https://github.com/appsody/stacks/tree/master/incubator/nodejs-express"/>
-          <Tile id="swift" heading="Swift" desc="Swift runtime" cmd="appsody init swift" github="https://github.com/appsody/stacks/tree/master/incubator/swift"/>
-        </div>
-      </div>
+      <TileGrid/>
     </section>
     <section className="landing-section text-center">
       <h2 >Built on open source</h2>
