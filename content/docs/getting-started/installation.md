@@ -39,7 +39,7 @@ Where `<path>` is the fully qualified path to the package.
 
 That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
 
-Alternatively, if you would like to build the binaries from source code, please take a look at [Building from Source] (https://github.com/appsody/appsody/blob/master/build.md). If you would just like to download a pre-built binary, you will also need to download the [appsody-controller] (https://github.com/appsody/controller/releases).
+Alternatively, if you would like to build the binaries from source code, please take a look at [Building from Source] (https://github.com/appsody/appsody/blob/master/build.md). If you would just like to download a pre-built binary, you will also need to download the [appsody-controller](https://github.com/appsody/controller/releases).
 
 ## Installing on RHEL
 
