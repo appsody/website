@@ -5,7 +5,7 @@ path: /docs/stacks/create
 
 # Creating a Stack
 
-A stack is made up of two main components, the stack image and templates that 
+A stack is made up of two main components, the stack image and templates that
 use the stack's image.
 ## Getting started
 
@@ -14,7 +14,7 @@ The quickest way to get started creating a new stack is to use the [sample stack
 1. Clone the stacks repository:
    ```bash
    git clone https://github.com/appsody/stacks.git
-   cd samples/sample-stack
+   cd stacks/samples/sample-stack
    ```
 
 You now have the basic [structure](/docs/stacks/stack-structure) of a stack ready to create an Appsody stack.
@@ -28,7 +28,7 @@ Stack creators configure [enviroment variables](/docs/stacks/environment-variabl
 
 If a stack image is built upon another stack's image, it will inherit all the Appsody variables from the base stack. It can override the variables it wants to change. This allows users to create stacks with slightly different behaviour while still getting updates from the base stack.
 
-The `/image/project` directory contains the base of the application. You may decide not to include any application code here but it is recommended to add some value to the stack. For example, by controlling dependency versions. The `project` **must** include a production `Dockerfile` here which will be used by the [`appsody build`](/docs/using-appsody/cli-commands/#appsody-build) command. 
+The `/image/project` directory contains the base of the application. You may decide not to include any application code here but it is recommended to add some value to the stack. For example, by controlling dependency versions. The `project` **must** include a production `Dockerfile` here which will be used by the [`appsody build`](/docs/using-appsody/cli-commands/#appsody-build) command.
 
 ## Building a stack image
 To build your stack image locally follow the below steps:
@@ -50,8 +50,8 @@ stack: <org-name>/<stack-id>
 ```
 3. Run the template with the new stack image:
 ```
-appsody run 
-``` 
+appsody run
+```
 
 ## Creating a template
 Templates provide an initial application to enable developers to get started with a stack. They provide a starter application that a developer can expand and adapt as they require.
@@ -61,7 +61,7 @@ All templates should be created within `/templates`. Every template is contained
 Each template must contain `appsody-config.yaml` to specify what stack image the template will use. For example:
 ```
 stack: <org-name>/<stack-id>
-``` 
+```
 
 If the stack is intended to be contributed to the  [Appsody stacks repository](https://github.com/appsody/stacks) the stack image should be called `appsody/<stack-name>:<stack-version>`.
 
@@ -82,7 +82,7 @@ experimental    https://github.com/appsody/stacks/releases/latest/download/exper
 ```
 A repository is defined by an `index.yaml`. This file lists all stacks and  templates it wants to make avalible.  See the `appsodyhub` [index](https://raw.githubusercontent.com/appsody/stacks/master/index.yaml) as an example.
 
-Each template section must include a link to its `.tar.gz` file. This will be used by `appsody init` to initialize a Appsody project. 
+Each template section must include a link to its `.tar.gz` file. This will be used by `appsody init` to initialize a Appsody project.
 
 You can add you repository by running:
 ```
@@ -94,8 +94,8 @@ appsody repo add my-repo file:///Users/foo/index.yaml
 
 appsody repo list
 NAME      	   URL                                                               
-*appsodyhub	   https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml 
-experimental   https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml 
+*appsodyhub	   https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml
+experimental   https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
 my-repo        file:///Users/foo/index.yaml
 ```
 
