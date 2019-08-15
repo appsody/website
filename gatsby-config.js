@@ -12,6 +12,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `indexes`,
+        path: `${__dirname}/src/data/indexes`,
+      }
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-142751517-1",
@@ -38,8 +45,9 @@ module.exports = {
         gfm: true,
         // Plugins configs
         plugins: [],
-      },
+      }
     },
+    `gatsby-transformer-yaml`,
     `gatsby-plugin-layout`
   ]
 }
