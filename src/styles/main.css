@@ -16,6 +16,8 @@
 }
 
 body {
+  position: relative;
+  min-height: 100%;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -265,6 +267,10 @@ section.landing-section h2 {
 }
 
 footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: var(--colour-scheme-1);
   box-shadow: 0 6px 29px var(--darker-grey);
   padding: 1em;
@@ -385,6 +391,7 @@ footer a:hover {
 
 .doc-content {
   min-height: calc(100vh - 10.5em);
+  padding-bottom: 3em;
 }
 
 .doc-content table {
@@ -443,4 +450,8 @@ footer a:hover {
 
 .hide {
   display: none;
+}
+
+html {
+  height: 100%;
 }
