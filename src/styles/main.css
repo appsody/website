@@ -15,6 +15,10 @@
 
 }
 
+html {
+  height: 100%;
+}
+
 body {
   position: relative;
   min-height: 100%;
@@ -390,7 +394,6 @@ footer a:hover {
 }
 
 .doc-content {
-  min-height: calc(100vh - 10.5em);
   padding-bottom: 3em;
 }
 
@@ -450,8 +453,4 @@ footer a:hover {
 
 .hide {
   display: none;
-}
-
-html {
-  height: 100%;
 }
