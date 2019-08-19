@@ -29,7 +29,7 @@ The following are the currently supported Appsody environment variables and thei
 
   
     
-# Appsody Shell Variables
+## Appsody Shell Variables
   
 The following are the currently supported Appsody command shell environment variables and their default values:  
 
