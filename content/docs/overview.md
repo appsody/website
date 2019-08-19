@@ -1,59 +1,43 @@
 ---
+title: Appsody Overview
 path: /docs
 ---
 # Welcome to Appsody
-Appsody has been designed to help you compose a masterpiece of an application for cloud.
 
-Our aims were to simplify the experience for developers, relieving them of full-stack expertise and responsibilities, and allowing them to focus on their application code development activities; enabling architects to curate an opinionated set of technologies - configurable, reusable and already infused with cloud native capabilities, making them seamlessly available to application developers.
+Appsody is designed to help you develop containerized applications for the cloud.
 
-There are 3 key components of Appsody:
+If you're a software developer, our aim is to greatly improve your developer experience by removing the burden of managing the full software development stack. With Appsody,
+you can build applications for the cloud that are ready to be deployed to Kubernetes without being an expert on the underlying container technology. You can simply focus on the important stuff - developing application code!  
+
+If you're responsible for defining standards for application runtime environments such as software levels, Appsody allows you to control the stacks that your developers use. You can define a set of technologies that are configurable, reusable, and already infused with cloud native capabilities. You get to implement and maintain your standards, ensuring consistency and reliability.
+
+Appsody consists of 3 key components:
 
 ### Appsody Stacks
-These are configurable technology stacks built with popular runtimes and frameworks, such as Java with Eclipse MicroProfile and Node.js with Express, that provide the foundation for building applications which can be deployed and managed effectively in Kubernetes. Stacks allow for rapid development, whilst giving the stack provider the ability to control how the applications are composed, for example which security policies are applied, or which version of a dependency is pulled.
-
-[More info on Appsody Stacks](/docs/stacks/stacks-overview.md)
+These are configurable technology stacks built with popular runtimes and frameworks, such as *Java with Eclipse MicroProfile* and *Node.js with Express*. These stacks  provide the foundation for building applications that can be deployed and managed effectively in Kubernetes. Stacks allow for rapid development, whilst giving the stack provider the ability to control how the applications are composed. For example, which security policies are applied or which version of a dependency is used. For more
+information, see [Appsody Stacks](/docs/stacks/stacks-overview.md).
 
 ### Appsody Hub
-The central point of control for Appsody Stacks. This is where you can find available stacks, create new stacks or modify existing ones. You can utilize what's in the public repo, and/or clone to provide a private/internal Hub based on your requirements. By making changes to the Stacks in the Hub, you are able to mass-apply updates to applications which have been built on these, simply by restarting the application.
+The Hub is the central point of control for Appsody Stacks where you can find available stacks, create new stacks, or modify existing ones. You can use the Hub content in the public repo or clone it to provide a private Hub that's based on your requirements. By making changes to the Stacks in the Hub, you can deploy updates to any application that's been built on them, simply by restarting the application.
 
 ### Appsody CLI
-No project is complete without a nice new CLI to play with. The Appsody CLI is powerful and intuitive, and allows developers to discover available stacks, bring them into their local development environment, and build/run/test/deploy locally. The Docker container, which is built for your application, can be integrated with Tekton pipelines as described [here](/docs/using-appsody/building-and-deploying.md#Deploying-your-app-through-a-Tekton-pipeline) and deployed to Kubernetes cloud environments.
-
-[More info on Appsody CLI](/docs/using-appsody/cli-commands.md)
+No project is complete without a nice new CLI to play with. The [Appsody CLI](/docs/using-appsody/cli-commands.md) is powerful and intuitive, allowing developers to discover the available stacks and bring them into their local development environment. From here, they can build, run, test, and deploy applications locally. The Docker container that's built for an application can then be integrated with Tekton pipelines and deployed to Kubernetes cloud environments. For more information, see [Deploying your app through a Tekton pipeline](/docs/using-appsody/building-and-deploying.md#Deploying-your-app-through-a-Tekton-pipeline).
 
 ## How does it work?
 
-Appsody provides pre-configured application stacks, which use the well-known Dockerfile syntax to specify which language runtimes, frameworks, libraries and tools are included.
+Appsody provides pre-configured application stacks, which use the well-known Dockerfile syntax to specify which language runtimes, frameworks, libraries, and tools are included. Project templates build upon these stacks, providing developers with a templatized application to bring into their IDE of choice and begin development.
 
-Project templates build upon these stacks, and provide developers with a templatised application to bring into their IDE of choice and begin development.
-
-When developers run, debug or test their application using the Appsody CLI, it starts a container with the stack image, makes the development workspace available to the running container, and starts the Appsody controller. This is configurable through environment variables in the stack, and manages the application within the running container. For example, the controller can watch for changes in the application `/src` directory, and when these are saved - it will restart the application running in a docker container.
+When developers run, debug, or test their application using the Appsody CLI, it starts a container with the stack image, makes the development workspace available to the running container, and starts the Appsody controller. The controller is configurable through environment variables in the stack and manages the application within the running container. For example, the controller can watch for changes in the application `/src` directory. When these changes are saved, the controller restarts the application running in a docker container.
 
 ## Contributing
 
-We welcome all contributions, see [CONTRIBUTING](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) and come chat to us in [Slack](https://appsody-slack.eu-gb.mybluemix.net/) if you'd like to get involved).
+We welcome all contributions.
 
-Want to see your framework available as an Appsody Stack? See [Creating and Modifying Stacks](/docs/stacks/create-or-modify.md) and join the `#stack-providers` channel on the above Slack to introduce yourself!
+If you'd like to get involved, read our [Contribution guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) and come and chat to us in [Slack](https://appsody-slack.eu-gb.mybluemix.net/).
 
-## Documentation
-
-Follow the links to learn more about Appsody:
-
-### Getting Started
-- [Installing Appsody](/docs/getting-started/installation.md)
-- [Quick Start](/docs/getting-started/quick-start.md)
-### Stacks
-- [Stacks Overview](/docs/stacks/stacks-overview.md)
-- [Creating and Modifying Stacks](/docs/stacks/create-or-modify.md)
-- [Stack Structure](/docs/stacks/stack-structure.md)
-### Using Appsody
-- [Initializing Project](/docs/using-appsody/initializing-project.md)
-- [Local Development](/docs/using-appsody/local-development.md)
-- [Building and Deploying](/docs/using-appsody/building-and-deploying.md)
-- [CLI commands](/docs/using-appsody/cli-commands.md)
+Want to see your framework available as an Appsody Stack? See [Creating](/docs/stacks/create.md) and [Modifying](/docs/stacks/modify.md) Stacks and join the `#stack-providers` channel on Slack to introduce yourself!
 
 ## License
-This project is licensed under the Apache 2.0 license, and all contributed stacks must also be licensed under the Apache 2.0 license. Each contributed stack should include a LICENSE file containing the Apache 2.0 license. More information
-can be found in the LICENSE file or online at
+This project is licensed under the Apache 2.0 license, and all contributed stacks must also be licensed under the Apache 2.0 license. Each contributed stack should include a LICENSE file containing the Apache 2.0 license. More information can be found in the LICENSE file or online at
 
 http://www.apache.org/licenses/LICENSE-2.0

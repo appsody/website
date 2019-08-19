@@ -1,4 +1,5 @@
 ---
+title: Setting up Knative Serving for Local Kubernetes Development
 path: /docs/using-appsody/installing-knative-locally
 ---
 
@@ -80,12 +81,12 @@ You can now use the following commands to install Knative Serving 0.7.1 (current
 	
 	Add and entry under `data` for your "nip.io" address so that the top of your file is similar to:
    
-   ```sh
+    ```sh
 	apiVersion: v1
 	data:
   	  9.174.18.28.nip.io: ""
-   ```
-   and use `ESCAPE` followed by `:wq` to save your changes.
+    ```
+    and use `ESCAPE` followed by `:wq` to save your changes.
 
 You should now have Knative Serving installed in your Docker for Desktop based Kubernetes cluster.
 

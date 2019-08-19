@@ -2,3 +2,7 @@ node_modules/
 public/
 .cache/
 .DS_Store
+.idea/
+
+src/data/indexes/*
+!src/data/indexes/sample-index.yaml

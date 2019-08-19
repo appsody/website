@@ -1,0 +1,16 @@
+apiVersion: v2
+stacks:
+  - id: sample-stack
+    name: Sample Stack
+    version: 0.0.1
+    description: This sample stack
+    license: Apache-2.0
+    maintainers:
+      - name: appsody
+        email: appsody@example.com
+        github-id: appsody
+    default-template: default
+    templates:
+      - id: default
+        url: https://github.com/appsody/stacks/releases/download/sample-stack/incubator.sample-stack.templates.default.tar.gz
+  
