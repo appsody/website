@@ -14,7 +14,7 @@ Once you have updated/created a stack, using a build.sh script wrapper you can b
 ```
 
 
-By default all the stacks images will build.
+By default, all the stacks images will build.
 
 
 2. Run build.sh file
