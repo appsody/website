@@ -1,5 +1,5 @@
 ---
-title: Running stack locally
+title: Running Stacks Locally
 path: /docs/stacks/run-locally
 ---
 
