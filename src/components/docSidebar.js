@@ -5,7 +5,7 @@ import navStructure from "../../content/docs/sidebar.yaml";
 
 class DocSection extends Component {
   closeDocDropdown = () => {
-    console.log("hello");
+    document.getElementById("collapsingSideNavbar").classList.remove("show");
   }
 
   render() {
