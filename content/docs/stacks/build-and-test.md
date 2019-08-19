@@ -1,20 +1,20 @@
 ---
-title: Running Stacks Locally
+title: Building and Testing Stacks
 path: /docs/stacks/run-locally
 ---
 
-## Building a stack locally using build scripts
+# Building and Testing Stacks
 
 Once you have updated/created a stack, using a build.sh script wrapper you can build the specific stack images that you want to create/modify. It identifies which stacks need to be built, builds stack images and templates, generates all repo indexes and then tests the stacks and indexes locally.
 
+## Building a stack locally using build scripts
 
-1. Specify the stacks which need to build by setting Environment variable (STACKS_LIST)
+1. Specify the stacks which need to build by setting STACKS_LIST environment variable.
 ```
-  export STACKS_LIST="incubator/nodejs-loopback"
+export STACKS_LIST="incubator/nodejs-express"
 ```
 
-
-By default, all the stacks images will build.
+By default, all the stacks will be built.
 
 
 2. Run build.sh file
@@ -23,17 +23,17 @@ By default, all the stacks images will build.
 ```
 
 3. Add appsody repository by running:
-
 ```
 
-  appsody repo add <local-repo-name> file://$PWD/ci/assets/<local-stack-repo>
+appsody repo add <local-repo-name> file://$PWD/ci/assets/<local-stack-repo>
 ```
-Note: `<local-stack-repo>` can be `incubator-local.yaml` or `experimental-local.yaml` or `stable-local.yaml`
+
+Note: `<local-stack-repo>` can be `incubator-index-local.yaml` or `experimental-index-local.yaml` or `stable-index-local.yaml`
 
 
 For example:
 ```
-  appsody repo add my-repo file:///Users/foo/stacks/ci/assets/experimental-index-local.yaml
+appsody repo add my-repo file://$PWD/ci/assets/experimental-index-local.yaml
 ```
 
 Now that you have built the stack, you can run all the normal appsody commands on the local stack.
