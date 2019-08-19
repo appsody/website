@@ -30,6 +30,13 @@ gatsby develop
 
 This will compile your changes as you develop and host the website at http://localhost:8000. To explore GraphQL queries that Gatsby exposes, you can use http://localhost:8000/__graphql.
 
+### Clear Caching
+Sometimes when developing locally, the website shows cached content from previous versions of the website. You can clear the cache before developing by running:
+
+``` bash
+gatsby clean
+```
+
 ### Developing Remotely
 **Note:** If you are developing remotely, use `http://<hostname>:PORT` instead of `http://localhost:PORT` as described in this doc.
 
