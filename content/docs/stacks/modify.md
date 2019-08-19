@@ -19,9 +19,7 @@ cd stacks
 
 ## Modifying the stack image
 
-If you have modified files within `/image` you will need to build and test to make sure the stack and its templates are working as intended.
-
-Please see the steps to build stacks locally [here](/docs/stacks/run-locally).
+If you have modified files within `/image` you will need to [build and test](/docs/stacks/run-locally) to make sure the stack and its templates are working as intended.
 
 **Note:** You should test all other Appsody commands that the stack supports also.
 
@@ -43,3 +41,6 @@ cd templates/<template-name>
 ```
 appsody run
 ```
+
+## Building and testing stacks locally
+Now that have you have created a stack you can [build and test](/docs/stacks/run-locally) it locally.
