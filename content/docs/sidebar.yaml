@@ -27,6 +27,8 @@
       path: /docs/stacks/modify
     - title: Stack Structure
       path: /docs/stacks/stack-structure
+    - title: Running stack locally
+      path: /docs/stacks/run-locally
 - items:
     - title: FAQ
       path: /docs/faq

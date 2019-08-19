@@ -41,12 +41,12 @@ stack: <org-name>/<stack-id>
 
 4. Run the template with the modified stack image:
 ```
-appsody run 
-``` 
+appsody run
+```
 
 **Note:** You should test all other Appsody commands that the stack supports also.
 
-5. When stack image changes are made, make sure to update `stack-name/README.md`. 
+5. When stack image changes are made, make sure to update `stack-name/README.md`.
 You should include:
    * Dependency versions that would be useful to the developer
    * Any endpoints that are enforced or provided by the stack
@@ -64,4 +64,3 @@ cd templates/<template-name>
 ```
 appsody run
 ```
-
