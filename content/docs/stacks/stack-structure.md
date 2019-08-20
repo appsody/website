@@ -19,13 +19,15 @@ my-stack
 ## Stack.yaml
 The stack.yaml defines different components of the stack and which template the stack should use by default. See the example below:
 ```bash
-    id: sample-stack # short name for the stack, must be unique, will be used by the CLI
-    name: Sample Application Stack # concise one line name for the stack
-    version: 0.1.0 # version of the stack
-    description: sample stack to help creation of more appsody stacks # free form text explaining more about the capabilities of this stack and various templates
-    maintainer: John Smith <example@example.com> # comma separated list for more than one maintainer
-    default-template: my-template # name of default template
-    license: Apache-2.0 # license for the stack
+name: Sample Application Stack # concise one line name for the stack
+version: 0.1.0 # version of the stack
+description: sample stack to help creation of more appsody stacks # free form text explaining more about the capabilities of this stack and various templates
+license: Apache-2.0 # license for the stack
+maintainers: # list of maintainer(s) details
+  - name: John Smith
+    email: example@example.com 
+    github-id: jsmith
+default-template: my-template # name of default template
 ```
 
 ## Stack Image
