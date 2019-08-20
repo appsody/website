@@ -9,21 +9,13 @@ Once you have updated/created a stack, using a build.sh script wrapper you can b
 
 ## Building a stack locally using build scripts
 
-1. Specify the stacks which need to build by setting STACKS_LIST environment variable.
 
+1. Run build script and specify the stack which need to build as argument e.g.
     ```
-    export STACKS_LIST="incubator/nodejs-express"
-    ```
-
-    By default, all the stacks will be built.
-
-
-2. Run build.sh file
-    ```
-      ./ci/build.sh .
+      ./ci/build.sh . incubator/nodejs-express
     ```
 
-3. Add appsody repository by running:
+1. Add appsody repository by running:
     ```
 
     appsody repo add <local-repo-name> file://$PWD/ci/assets/<local-stack-repo>
@@ -53,11 +45,11 @@ To build your stack image locally follow the below steps:
     ```
     cd /templates/<template-name>
     ```
-2. Edit `.appsody-config.yaml` to use your stack:
+1. Edit `.appsody-config.yaml` to use your stack:
     ```
     stack: <org-name>/<stack-id>
     ```
-3. Run the template with the new stack image:
+1. Run the template with the new stack image:
     ```
     appsody run
     ```
