@@ -28,7 +28,7 @@ The following are the currently supported Appsody environment variables and thei
 | ```APPSODY_TEST_KILL```        | This variable is used to signal that when the mode is "test" the controller will kill the server process started by ```APPSODY_TEST``` prior to starting the watch action specified by ```APPSODY_TEST_ON_CHANGE```. The values supported are true or false.                                             | ```APPSODY_TEST_KILL=<true/false>```                              | true      |
 
   
-    
+ &nbsp;   
 ## Appsody Shell Variables
   
 The following are the currently supported Appsody command shell environment variables and their default values:  
