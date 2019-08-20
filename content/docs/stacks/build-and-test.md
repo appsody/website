@@ -1,6 +1,6 @@
 ---
 title: Building and Testing Stacks
-path: /docs/stacks/run-locally
+path: /docs/stacks/build-and-test
 ---
 
 # Building and Testing Stacks
