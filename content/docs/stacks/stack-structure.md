@@ -23,6 +23,7 @@ name: Sample Application Stack # concise one line name for the stack
 version: 0.1.0 # version of the stack
 description: sample stack to help creation of more appsody stacks # free form text explaining more about the capabilities of this stack and various templates
 license: Apache-2.0 # license for the stack
+language: nodejs # programming language the stack uses
 maintainers: # list of maintainer(s) details
   - name: John Smith
     email: example@example.com 
