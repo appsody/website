@@ -26,7 +26,7 @@ Note: `<local-stack-repo>` can be `incubator-index-local.yaml` or `experimental-
 
 For example:
     ```
-    appsody repo add my-repo file://$PWD/ci/assets/experimental-index-local.yaml
+    appsody repo add my-repo file://$PWD/ci/assets/incubator-index-local.yaml
     ```
 
 Now that you have built the stack, you can run all the normal appsody commands on the local stack.
@@ -43,7 +43,7 @@ To build your stack image locally follow the below steps:
 ### Pointing a template to use a specific stack image
 1. Navigate to template directory
     ```
-    cd /templates/<template-name>
+    cd templates/<template-name>
     ```
 1. Edit `.appsody-config.yaml` to use your stack:
     ```
