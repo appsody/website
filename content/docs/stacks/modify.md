@@ -19,34 +19,11 @@ cd stacks
 
 ## Modifying the stack image
 
-If you have modified files within `/image` you will need to build and test to make sure the stack and its templates are working as intended.
-
-1. Build the stack locally:
-```
-cd image
-docker build -t <org-name>/<stack-id> -f Dockerfile-stack .
-```
-
-You should now make sure that all the stack templates work with the modified stack image.
-
-2. Navigate to template directory
-```
-cd ../templates/<template-name>
-```
-
-3. Edit `.appsody-config.yaml` to use your built stack:
-```
-stack: <org-name>/<stack-id>
-```
-
-4. Run the template with the modified stack image:
-```
-appsody run 
-``` 
+If you have modified files within `/image` you will need to [build and test](/docs/stacks/run-locally) to make sure the stack and its templates are working as intended.
 
 **Note:** You should test all other Appsody commands that the stack supports also.
 
-5. When stack image changes are made, make sure to update `stack-name/README.md`. 
+When stack image changes are made, make sure to update `stack-name/README.md`.
 You should include:
    * Dependency versions that would be useful to the developer
    * Any endpoints that are enforced or provided by the stack
@@ -65,3 +42,5 @@ cd templates/<template-name>
 appsody run
 ```
 
+## Building and testing stacks locally
+Now that have you have created a stack you can [build and test](/docs/stacks/run-locally) it locally.
