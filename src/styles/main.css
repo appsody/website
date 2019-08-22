@@ -455,3 +455,7 @@ footer a:hover {
 .hide {
   display: none;
 }
+
+.tile.card.text-center p {
+  font-size: 0.9em !important;
+}
