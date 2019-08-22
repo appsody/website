@@ -13,7 +13,6 @@ my-stack
 │   └── Dockerfile-stack
 └── templates/
     └── my-template/
-            └── .appsody-config.yaml
 ```
 
 ## Stack.yaml
@@ -26,7 +25,7 @@ license: Apache-2.0 # license for the stack
 language: nodejs # programming language the stack uses
 maintainers: # list of maintainer(s) details
   - name: John Smith
-    email: example@example.com 
+    email: example@example.com
     github-id: jsmith
 default-template: my-template # name of default template
 ```
@@ -48,9 +47,6 @@ Environment variables can be set to alter the behaviour of the CLI and controlle
 ## Templates
 A template is a pre-configured starter application that is ready to use with a particular image. It has access to all the dependencies supplied by that image and is able to include new functionality and extra dependencies to enhance the image where allowed.
 
-### .appsody-config.yaml
-The `.appsody-config.yaml` allows you to specify the image which the template will use.
-For example, the following specifies that the template will use the nodejs-express image: 
 ```
 stack: nodejs-express:0.2.0
 ```
