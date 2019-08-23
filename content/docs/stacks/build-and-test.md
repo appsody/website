@@ -41,10 +41,11 @@ To build your stack image locally follow the below steps:
     You can now have access to the stack image to use and test locally.
 
 ### Pointing a template to use a specific stack image
-1. Navigate to template directory
+1. Go to your appsody project directory
+
+1. Edit `.appsody-config.yaml` to use your stack:
     ```
-    cd templates/<template-name>
-    ```
+    stack: <org-name>/<stack-id>
 
 1. Run the template with the new stack image:
     ```
