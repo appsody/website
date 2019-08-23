@@ -262,10 +262,12 @@ Initialize an Appsody project with a stack and template app
 
 This creates a new Appsody project in a local directory or sets up the local dev environment of an existing Appsody project.
 
-If the [repository] is not specified the default repository will be used. If no [template] is specified, the default template will be used.
+If the [repository] is not specified the default repository will be used. If no [template] is specified, the default template will be used. 
 With the [stack], [repository]/[stack], [stack] [template] or [repository]/[stack] [template] arguments, this command will setup a new Appsody project. It will create an Appsody stack config file, unzip a template app, and run the stack init script to setup the local dev environment. It is typically run on an empty directory and may fail
 if files already exist. See the --overwrite and --no-template options for more details.
 Use 'appsody list' to see the available stack options.
+
+If keyword "none" is specified instead of a [template], the project will be initialized to use Appsody, and no tempalte will be provided.
 
 Without the [stack] argument, this command must be run on an existing Appsody project and will only run the stack init script to
 setup the local dev environment.
