@@ -154,7 +154,7 @@ Build and deploy your Appsody project to your Kubernetes cluster
 ### Synopsis
 
 This command extracts the code from your project, builds a local Docker image for deployment,
-generates a deployment manifest (yaml) file if one is not present, and uses it to deploy your image to Kubernetes.
+generates a deployment manifest (yaml) file if one is not present, and uses it to deploy your image to Kubernetes or Knative.
 
 ```
 appsody deploy [flags]
