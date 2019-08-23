@@ -46,6 +46,7 @@ To build your stack image locally follow the below steps:
 1. Edit `.appsody-config.yaml` to use your stack:
     ```
     stack: <org-name>/<stack-id>
+    ```
 
 1. Run the template with the new stack image:
     ```
