@@ -46,7 +46,3 @@ Environment variables can be set to alter the behaviour of the CLI and controlle
 
 ## Templates
 A template is a pre-configured starter application that is ready to use with a particular image. It has access to all the dependencies supplied by that image and is able to include new functionality and extra dependencies to enhance the image where allowed.
-
-```
-stack: nodejs-express:0.2.0
-```
