@@ -30,29 +30,6 @@ If a stack image is built upon another stack's image, it will inherit all the Ap
 
 The `/image/project` directory contains the base of the application. You may decide not to include any application code here but it is recommended to add some value to the stack. For example, by controlling dependency versions. The `project` **must** include a production `Dockerfile` here which will be used by the [`appsody build`](/docs/using-appsody/cli-commands/#appsody-build) command.
 
-## Building a stack image
-To build your stack image locally follow the below steps:
-1. Navigate to the `/image` directory:
-2. Build stack image:
-```
-docker build -t <org-name>/<stack-id> -f Dockerfile-stack .
-```
-You can now have access to the stack image to use and test locally.
-
-### Pointing a template to use a specific stack image
-1. Navigate to template directory
-```
-cd /templates/<template-name>
-```
-2. Edit `.appsody-config.yaml` to use your stack:
-```
-stack: <org-name>/<stack-id>
-```
-3. Run the template with the new stack image:
-```
-appsody run
-```
-
 ## Creating a template
 Templates provide an initial application to enable developers to get started with a stack. They provide a starter application that a developer can expand and adapt as they require.
 
@@ -64,6 +41,9 @@ stack: <org-name>/<stack-id>
 ```
 
 If the stack is intended to be contributed to the  [Appsody stacks repository](https://github.com/appsody/stacks) the stack image should be called `appsody/<stack-name>:<stack-version>`.
+
+## Building and testing stacks locally
+Now that have you have created a stack you can [build and test](/docs/stacks/build-and-test) it locally.
 
 ## Contributing a stack
 If you would like to contribute a new stack to the [stacks repository](https://github.com/appsody/stacks) the Appsody [contributing guildlines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) explains how.
