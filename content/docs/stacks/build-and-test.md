@@ -7,12 +7,6 @@ path: /docs/stacks/build-and-test
 
 The instructions below will reference the "base directory", which will be the directory containing the clone or copy of the appsody/stacks git repository.
 
-```
-git clone https://github.com/appsody/stacks.git
-cd stacks
-export base_dir=$pwd
-```
-
 Once you have created or updated a stack, use scripts in the `ci/` directory to build stack images and templates, and to generate an appsody repository index you can use for local testing. From the base directory:
 
 * `./ci/build.sh` combines several operations (lint, package, test) for the specified stack
@@ -26,7 +20,7 @@ From the base directory:
 
 1. Run build script and specify the desired stack as a parameter, for example:
     ```
-      ./ci/build.sh . incubator/nodejs-express
+    ./ci/build.sh . incubator/nodejs-express
     ```
 
     Note that if a stack is not specified, all stacks in all repositories will be built.
@@ -48,7 +42,7 @@ From the base directory:
 
 You can now use the generated local repository to create new projects:
 ```
-appsody init incubator-index-local/nodejs
+appsody init incubator-index-local/nodejs-express
 ```
 
 Local appsody operations will also be performed against already pulled or rebuilt stack images.
@@ -82,7 +76,8 @@ Local appsody operations will also be performed against already pulled or rebuil
 
 For an alreading initialized project:
 
-1. Update the contents of `.appsody-conf.xml`
+1. Update the contents of `.appsody-config.yaml`
+
     ```
     stack: <org-name>/<stack-id>:<tag>
     ```
@@ -101,13 +96,12 @@ To initialize a new project:
     ./ci/build.sh . <repository>/<stack-id>
     ```
 
-    For example, `./ci/build.sh . incubator/nodejs`
+    For example, `./ci/build.sh . incubator/nodejs-express`
 
-2. Initialize a project new stack image, and run appsody commands as usual:
+2. Initialize a project with the new stack image, and run appsody commands as usual:
     ```
     mkdir -p /tmp/nodejs
     cd /tmp/nodejs
-    appsody init incubator-index-local/nodejs
-    appsody init incubator-index-local/nodejs <optional template>
+    appsody init incubator-index-local/nodejs-express <optional template>
     appsody test
     ```
