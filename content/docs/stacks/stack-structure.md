@@ -34,18 +34,18 @@ my-stack
 
 ```
 
-The structure above is then processed in the build step of the stack, to generate a docker image for the stack, along with tar files of each of the templates, which can then all be stored/referenced in a local or public appsody repo. Refer to the section on [Building and Testing Stacks](/docs/stacks/build-and-test.md) for more details. The appsody client can then access such a repo, to use the stack to initiali local development.
+The structure above is then processed in the build step of the stack, to generate a docker image for the stack, along with tar files of each of the templates, which can then all be stored/referenced in a local or public appsody repo. Refer to the section on [Building and Testing Stacks](/docs/stacks/build-and-test.md) for more details. The appsody client can then access such a repo, to use the stack to initiate local development.
 
 As described in the first section, the stack (in conjunction with the Appsody software) has different responsibilities, depending on which mode of operation is being carried out. To understand how the stack operates, we will delve into each of these scenarios separately, including the initial work required to initialize the project.
 
 ## Stack requirements during 'Initialization' mode
 
-This mode is triggered by a user issuing an 'appsdoy init' command in a new empty directory, in order to configure the new project. It might seem odd that there are any requirements on the stack for initialization, but since the goal is for the stack image to encapsulate *all* aspects of the stack, the configuration steps required (which are likely to be technology specific) are indeed contained within it. The following is a summary of what happens during initialization:
+This mode is triggered by a user issuing an `appsdoy init` command in a new empty directory, in order to configure the new project. It might seem odd that there are any requirements on the stack for initialization, but since the goal is for the stack image to encapsulate *all* aspects of the stack, the configuration steps required (which are likely to be technology specific) are indeed contained within it. The following is a summary of what happens during initialization:
 
 * Appsody client finds the yaml entry for the stack in the respective repo
-* Appsody client downloads the referenced tar file for the specified template to be used as a basis for the user application, and extracts the contents. This creates the directory structure within the current directory, including the '.appsody-config.yaml' file that specifies the stack image itself (which is usually stored in a docker repository)
+* Appsody client downloads the referenced tar file for the specified template to be used as a basis for the user application, and extracts the contents. This creates the directory structure within the current directory, including the `.appsody-config.yaml` file that specifies the stack image itself (which is usually stored in a docker repository)
 * Appsody client downloads this stack image
-* Appsody client inspects the stack image to see if it has an initialization file within it called `appsody-init.sh` (or 'appsody-init.bat' if running on Windows). If this file does it exist, it is executed to set up any further configuration. Note that it not recommended that this initialization installs new packages or modules in user space of the local machine. Any dependencies should be handled by ensuring this happens during the run and build modes, listed below.
+* Appsody client inspects the stack image to see if it has an initialization file within it called `appsody-init.sh` (or `appsody-init.bat` if running on Windows). If this file does it exist, it is executed to set up any further configuration. Note that it not recommended that this initialization installs new packages or modules in user space of the local machine. Any dependencies should be handled by ensuring this happens during the run and build modes, listed below.
 
 ## Stack operation during 'Rapid Local Development' mode
 
@@ -62,33 +62,33 @@ You will note that in Rapid Local Development mode, docker does not run the user
 
 There are three types of mount points used by appsody:
 
-1. Volume mounts specified in the 'APPSODY_MOUNTS' docker variable
+1. Volume mounts specified in the `APPSODY_MOUNTS` docker variable
 These will be processed by the appsody client. The primary use of this is to mount the directory holding the user application into the container, so that the appsody-controller can have access to your application (and run it inside the container). For example:
 
    ```bash
    ENV APPSODY_MOUNTS=/:/project/userapp
    ```
 
-   would map the current directory (where you performed the init), into '/project/userapp' in the container file system.
+   would map the current directory (where the init was performed), into `/project/userapp` in the container file system.
 
 2. Dependency directory mount
-This creates a directory (accessible in both the user file systems and the of the container), in which the cumulative set of dependencies can be stored. This is simply specified via the docker variable 'APPSODY_DEPS'. For example:
+This creates a directory (accessible in both the user file systems and the of the container), in which the cumulative set of dependencies can be stored. This is simply specified via the docker variable `APPSODY_DEPS`. For example:
 
    ```bash
    ENV APPSODY_DEPS=/project/deps
    ```
 
-   would cause the creation of a directory called 'deps' to be created in current dir, and mounted into the container file systems at '/project/deps'.
+   would cause the creation of a directory called `deps` to be created in current dir, and mounted into the container file systems at `/project/deps`.
 
 3. Appsody controller mount
-The appsody client will create this automatically, first checking you have the latest appsody-controller downloaded into the user file system (by default at '~/.appsody/appsody-controller'), and the mounting this into '/appsody/appsody-controller' in the container file system. The reason this approach is taken is so that stack images do not need to be updated simply to ensure the latest version of the appsody-controller will be used.
+The appsody client will create this automatically, first checking you have the latest appsody-controller downloaded into the user file system (by default at `~/.appsody/appsody-controller`), and the mounting this into `/appsody/appsody-controller` in the container file system. The reason this approach is taken is so that stack images do not need to be updated simply to ensure the latest version of the appsody-controller will be used.
 
 ### Enabling the software dependencies
 
 There are two types of dependencies that need to be handled by the stack.
 
 1. Dependencies required for the technology components included in the stack
-For efficiency, these only need to be installed when the image is launched. Hence, these are typically encoded as regular docker commands. For example, in the python-flask stack, these dependencies are defined in a `Pipfile` in the 'image/project' directory, and are processed by the following docker commands:
+For efficiency, these only need to be installed when the image is launched. Hence, these are typically encoded as regular docker commands. For example, in the python-flask stack, these dependencies are defined in a `Pipfile` in the `image/project` directory, and are processed by the following docker commands:
 
    ```bash
    RUN pipenv lock -r > requirements.txt
@@ -97,13 +97,13 @@ For efficiency, these only need to be installed when the image is launched. Henc
    ```
 
 2. Dependencies added by the developer for their application
-Since the developer might add these at any stage, these are generated each time an appsody command is executed by the controller. This is achieved by setting the 'ENV APPSODY_PREP' docker variable, which the appsody controller will execute. For example, again in the python-flask stack, these dependencies are defined in the user directory (created by the template) and are referenced by:
+Since the developer might add these at any stage, these are generated each time an appsody command is executed by the controller. This is achieved by setting the `ENV APPSODY_PREP` docker variable, which the appsody controller will execute. For example, again in the python-flask stack, these dependencies are defined in the user directory (created by the template) and are referenced by:
 
    ```bash
    ENV APPSODY_PREP="cd /project/userapp; pipenv lock -r > requirements.txt; python -m pip install -r requirements.txt -t /project/deps"
    ```
 
-   [Note that in older stacks this variable was called 'APPSODY_INSTALL', which has since been deprecated]
+   [Note that in older stacks this variable was called `APPSODY_INSTALL`, which has since been deprecated]
 
 ### Setting up any environment variables required
 
@@ -111,7 +111,7 @@ Any environment variables required by the technology in the stack itself are typ
 
 ### Passing control to the appsody controller to run the user application
 
-When an 'appsody run' command is issued, the stack image is launched in the local docker environment of the user machine and the appsody-controller is set as the entrypoint. The controller is also passed the appsody command being executed ('run' in this case). The appsody controller will then process the appsody-specifc docker variables to manage how the user application is run and managed. These appsody-specific variables are described in full in the section [Appsody Environment Variables](/docs/stacks/environment-variables.md), although the most important ones for the run case are (with examples from the python-flask stack):
+When an `appsody run` command is issued, the stack image is launched in the local docker environment of the user machine and the appsody-controller is set as the entrypoint. The controller is also passed the appsody command being executed (`run` in this case). The appsody controller will then process the appsody-specifc docker variables to manage how the user application is run and managed. These appsody-specific variables are described in full in the section [Appsody Environment Variables](/docs/stacks/environment-variables.md), although the most important ones for the run case are (with examples from the python-flask stack):
 
 ```bash
 ENV APPSODY_RUN="python -m flask run --host=0.0.0.0 --port=8080"
@@ -125,24 +125,25 @@ ENV APPSODY_WATCH_DIR=/project/userapp
 
 which specifies the directory for the appsody controller to watch for changes, so that the user application can be automatically re-launched for rapid local development. Since re-launching may required addition steps, the variable `APPSODY_RUN_ON_CHANGE` specifies the command that will be run to re-launch the application.
 
-The appsody controller remains running throughout rapid local development mode, and is terminated with the 'appsody stop' command (or simply killing the running appsody client process).
+The appsody controller remains running throughout rapid local development mode, and is terminated with the `appsody stop` command (or simply killing the running appsody client process).
 
 ## Stack operation during 'Build and Deploy' mode
 
 The build mode is designed to package up both the new user application and the technology components of the stack into a single docker image that can be deployed and run in any docker environment (often a local or public kubernetes cluster). From a stack point of view, the key requirement is to include a docker file which will build this combined image. This is the `Dockerfile` in the `project` directory in the stack source (as opposed to the `Dockerfile-stack` file in the `image` directory which builds the stack image itself).
 
-The steps undertaken when the 'appsody build' command is run are:
+The steps undertaken when the `appsody build` command is run are:
 
-* Appsody client extracts the contents of the stack into a local directory (by default ~/.appsody/extract) along with the user application.
+* Appsody client extracts the contents of the stack into a local directory (by default `~/.appsody/extract`) along with the user application.
 * Appssody client then runs, effectively, a docker build using the `Dockerfile` in the `project` directory of this extracted structure, resulting in a docker image for the combined application.
 
-The `Dockerfile` needs to build the dependencies for both the stack technology components as well as the user application, and set the entrypoint (or CMD) to an appropriate entrypoint for the user application. The appsody controller is not involved in the final application image.
+The `Dockerfile` needs to build the dependencies for both the stack technology components as well as the user application, and set the entrypoint (or `CMD`) to an appropriate entrypoint for the user application. The appsody controller is not involved in the final application image.
 
 ## Summary of files within the stack source and user directory structure
 
 ### Stack.yaml
 
 The stack.yaml defines different components of the stack and which template the stack should use by default. See the example below:
+
 ```bash
 name: Sample Application Stack # concise one line name for the stack
 version: 0.1.0 # version of the stack
@@ -168,13 +169,13 @@ Environment variables can be set to alter the behaviour of the CLI and controlle
 
 ### Templates
 
-A template is a pre-configured starter application that is ready to use with a particular image. It has access to all the dependencies supplied by that image and is able to include new functionality and extra dependencies to enhance the image where allowed.
+A template is a pre-configured starter application that is ready to use with the particular stack image. It has access to all the dependencies supplied by that image and is able to include new functionality and extra dependencies to enhance the image. A stack can have multiple templates, perhaps representing different classes of starter applications using the stack technology components.
 
 ### .appsody-config.yaml
 
-The `.appsody-config.yaml` is not part of the the source structure, but will be generated as part of the stack building process, and will hence be placed in the user directory by the 'appsody init', command. This file specifies the stack image that will be used, and can be overridden for testing purposes to a locally build stack.
+The `.appsody-config.yaml` is not part of the the source structure, but will be generated as part of the stack building process, and will hence be placed in the user directory by the `appsody init`, command. This file specifies the stack image that will be used, and can be overridden for testing purposes to a locally build stack.
 
-For example, the following specifies that the template will use the nodejs-express image: 
+For example, the following specifies that the template will use the nodejs-express image:
 
 ```bash
 stack: nodejs-express:0.2.0
