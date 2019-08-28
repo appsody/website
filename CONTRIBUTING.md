@@ -12,7 +12,7 @@ We welcome all contributions to the Appsody project and request you follow the g
 ## Code of conduct
 
 All members of the Appsody community must abide by the
-[Code of Conduct](./CODE-OF-CONDUCT.md). Only by respecting each other can we
+[Code of Conduct](https://github.com/appsody/website/blob/master/CODE_OF_CONDUCT.md). Only by respecting each other can we
 develop a productive, collaborative community.
 
 ## Raising issues
@@ -22,13 +22,6 @@ A great way to contribute to the project is to raise a detailed issue when you e
 Check that the list of project issues doesn't already include that problem or request before submitting an issue. If you find a matching issue, add a "+1" or comment indicating that you have the same issue, as this helps prioritize the most common problems and requests.
 
 A good bug report is one that make it easy for everyone to understand what you were trying to do and what went wrong. Provide as much context as possible so we can try to recreate the issue.
-
-## Setting up to contribute to Appsody
-
-Check out this
-[README](https://github.com/appsody/docs/blob/master/README.md) to learn
-about the Appsody source base and setting up your
-[development environment](https://github.com/appsody/docs/blob/master/docs/using-appsody/local-development.md).
 
 ## Commit message guidelines
 
@@ -80,7 +73,7 @@ Once the PR has been merged, the release job will automatically run in the CI pr
 Whether you are a user or contributor, official support channels include:
 
 - If you have any questions, or need any help, contact us on [Appsody Slack](https://appsody-slack.eu-gb.mybluemix.net/)
-- You can also comment on existing issues, or raise new ones on [GitHub](https://github.com/appsody/docs/issues)
+- You can also comment on existing issues, or raise new ones on any of our [GitHub repositories](https://github.com/appsody)
 
 ## License
 This project is licensed under the Apache 2.0 license, and all contributed stacks must also be licensed under the Apache 2.0 license. Each contributed stack should include a LICENSE file containing the Apache 2.0 license. More information

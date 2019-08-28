@@ -68,6 +68,11 @@ This command completes the following actions:
 - Tags the image with the special prefix `local.dev`, making it accessible to your Kubernetes cluster.
 - Creates a Knative Serving manifest file named `appsody-service-<nnnnnn>.yaml`, where `<nnnnnn>` is a random numerical value. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster.
 
+To delete your deployed Appsody project from a Kubernetes cluster use:
+```
+appsody deploy delete
+```
+
 ### Deploying your application to Docker Hub
 
 If your cluster is configured to pull images from Docker Hub, use the following command to deploy your application:

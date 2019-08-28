@@ -15,6 +15,10 @@
 
 }
 
+html {
+  height: 100%;
+}
+
 body {
   position: relative;
   min-height: 100%;
@@ -390,13 +394,17 @@ footer a:hover {
 }
 
 .doc-content {
+<<<<<<< HEAD
   min-height: calc(100vh - 10.5em);
+=======
+>>>>>>> dc4c353983fdde1ce404ff00384663221d4bc62e
   padding-bottom: 3em;
 }
 
 .doc-content table {
   display: block;
   overflow: scroll;
+  margin-bottom: 2em;
 }
 
 .doc-content h1, .doc-content h2, .doc-content h3, .doc-content h4, .doc-content h5, .doc-content h6 {
@@ -450,8 +458,11 @@ footer a:hover {
 
 .hide {
   display: none;
+<<<<<<< HEAD
 }
 
 html {
   height: 100%;
+=======
+>>>>>>> dc4c353983fdde1ce404ff00384663221d4bc62e
 }
