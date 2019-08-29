@@ -3,8 +3,9 @@ import React from "react";
 class Tile extends React.Component {
   constructor(props) {
     super(props);
-    if(this.props.desc.length > 75) {
-      let trimmedDesc = this.props.desc.substr(0, 75);
+    let maxLength = 75;
+    if(this.props.desc.length > maxLength) {
+      let trimmedDesc = this.props.desc.substr(0, maxLength);
       this.desc = this.props.desc.substr(0, Math.min(trimmedDesc.length, trimmedDesc.lastIndexOf(" "))) + "..."
     } else {
       this.desc = this.props.desc;
