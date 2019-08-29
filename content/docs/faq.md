@@ -35,3 +35,21 @@ Sometimes, when you run ```appsody deploy```, you may see a message that fails t
 ### 4. Is the HTTP_PROXY environment variable used by the CLI?
 
 Versions of Appsody at 0.2.5 and older do not support going through a HTTP proxy. However, newer versions do: Before launching Appsody, you just need to set the HTTP\_PROXY or HTTPS\_PROXY environment variable.
+
+### 5. Why can't the CLI read my index?
+
+When you encounter the following error
+```
+[Error] Could not read indices: Failed to get repository index: 404 Not Found response trying to download https://raw.githubusercontent.com/appsody/stacks/master/index.yaml
+```
+
+1. Go to your home directory and open the **repository.yaml** using an editor of your choice.
+
+    - `cd ~/.appsody/repository/` (macOS/Linux)
+    - `cd %HOMEPATH%/.appsody/repository/` (Windows)
+
+2. Replace the appsodyhub URL to use the latest appsodyhub index which is:
+
+`https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml`
+
+3. Save your changes and try running your command again.

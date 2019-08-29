@@ -35,11 +35,6 @@ Templates provide an initial application to enable developers to get started wit
 
 All templates should be created within `/templates`. Every template is contained within its own directory, `/templates/<template-name>`.
 
-Each template must contain `appsody-config.yaml` to specify what stack image the template will use. For example:
-```
-stack: <org-name>/<stack-id>
-```
-
 If the stack is intended to be contributed to the  [Appsody stacks repository](https://github.com/appsody/stacks) the stack image should be called `appsody/<stack-name>:<stack-version>`.
 
 ## Building and testing stacks locally
