@@ -148,6 +148,9 @@ The command completes the following actions:
 
 **Note:** If you don't specify `--push`, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry. Additionally, your image will be tagged as  `local.dev/<project-name>` and referenced in the deployment manifest.
 
+### Deploying multiple projects
+If you are running multiple Appsody projects on your workstation, you can use `appsody deploy` and `appsody operator` commands to get them deployed to a Kubernetes cluster. However, make sure that you run these commands one at a time, because those commands create temporary files that might lead to conflicts if created concurrently.
+
 ## Deploying your app through a Tekton pipeline
 
 **Note:** This deployment option is under development
