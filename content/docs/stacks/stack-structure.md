@@ -123,7 +123,7 @@ which specifies the command to be run by the appsody controller to start the use
 ENV APPSODY_WATCH_DIR=/project/userapp
 ```
 
-which specifies the directory for the appsody controller to watch for changes, so that the user application can be automatically re-launched for rapid local development. Since re-launching may required addition steps, the variable `APPSODY_RUN_ON_CHANGE` specifies the command that will be run to re-launch the application.
+which specifies the directory for the appsody controller to watch for changes, so that the user application can be automatically re-launched for rapid local development. Since re-launching may require addition steps, the variable `APPSODY_RUN_ON_CHANGE` specifies the command that will be run to re-launch the application.
 
 The appsody controller remains running throughout rapid local development mode, and is terminated with the `appsody stop` command (or simply killing the running appsody client process).
 
@@ -134,7 +134,7 @@ The build mode is designed to package up both the new user application and the t
 The steps undertaken when the `appsody build` command is run are:
 
 * Appsody client extracts the contents of the stack into a local directory (by default `~/.appsody/extract`) along with the user application.
-* Appssody client then runs, effectively, a Docker build using the `Dockerfile` in the `project` directory of this extracted structure, resulting in a Docker image for the combined application.
+* Appsody client then runs, effectively, a Docker build using the `Dockerfile` in the `project` directory of this extracted structure, resulting in a Docker image for the combined application.
 
 The `Dockerfile` needs to build the dependencies for both the stack technology components as well as the user application, and set the entrypoint (or `CMD`) to an appropriate entrypoint for the user application. The appsody controller is not involved in the final application image.
 
