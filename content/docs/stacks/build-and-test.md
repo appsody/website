@@ -74,7 +74,7 @@ Local appsody operations will also be performed against already pulled or rebuil
 
 ## Associating a template with a specific stack image
 
-For an alreading initialized project:
+For a project that has already been initialized:
 
 1. Update the contents of `.appsody-config.yaml`
 
