@@ -3,6 +3,13 @@ import React from "react";
 class Tile extends React.Component {
   constructor(props) {
     super(props);
+    if(this.props.desc.length > 75) {
+      let trimmedDesc = this.props.desc.substr(0, 75);
+      this.desc = this.props.desc.substr(0, Math.min(trimmedDesc.length, trimmedDesc.lastIndexOf(" "))) + "..."
+    } else {
+      this.desc = this.props.desc;
+    }
+
     this.state = {isToggleOn: true};
 
     // This binding is necessary to make `this` work in the callback
@@ -23,13 +30,12 @@ class Tile extends React.Component {
       isToggleOn: !state.isToggleOn
     }));
   }
-
   render() {
     if (this.state.isToggleOn) {
       return (
         <div className="tile card text-center">
-          <h5>{this.props.heading}</h5>
-          <p>{this.props.desc}</p>
+          <h5 className="heading-tile">{this.props.heading}</h5>
+          <p>{this.desc}</p>
           <a href="/" onClick={this.handleClick} className="btn btn-primary w-50 mx-auto" role="button">Select</a>
         </div>
       );
@@ -37,7 +43,7 @@ class Tile extends React.Component {
       return (
         <div id={this.props.id} className="tile card flip">
           <i onClick={this.handleClick} className="fas fa-arrow-left" title="flip card"></i>
-          <h5 id="tile-heading">{this.props.heading}</h5>
+          <h5 id="tile-heading" className="heading-tile">{this.props.heading}</h5>
 
           <div id="command-input">
             <input id="input-cli" type="text" name="cli" value={this.props.cmd} readOnly></input>

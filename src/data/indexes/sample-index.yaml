@@ -13,4 +13,3 @@ stacks:
     templates:
       - id: default
         url: https://github.com/appsody/stacks/releases/download/sample-stack/incubator.sample-stack.templates.default.tar.gz
-  
