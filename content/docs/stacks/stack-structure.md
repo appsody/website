@@ -8,6 +8,7 @@ my-stack
 ├── README.md
 ├── stack.yaml
 ├── image/
+|   ├── LICENSE
 |   ├── project/
 |   |   └── Dockerfile
 │   └── Dockerfile-stack
@@ -32,6 +33,9 @@ default-template: my-template # name of default template
 
 ## Stack Image
 Appsody application stacks are provided to developers as a Docker image and include a pre-configured technology stack ready to start application development. It also has mechanisms to control which aspects can and cannot be overridden by the developer.
+
+### LICENSE
+The image directory must include a Apache 2.0 License file.
 
 ### Project directory:
 The project folder should contain a production [Dockerfile](#Dockerfile) for your application and the project you are going to contribute as a content provider.
