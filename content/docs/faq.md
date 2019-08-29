@@ -46,7 +46,7 @@ When you encounter the following error
 1. Go to your home directory and open the **repository.yaml** using an editor of your choice.
 
     - `cd ~/.appsody/repository/` (macOS/Linux)
-    - `cd %HOMEPATH%/repository/` (Windows)
+    - `cd %HOMEPATH%/.appsody/repository/` (Windows)
 
 2. Replace the appsodyhub URL to use the latest appsodyhub index which is:
 
