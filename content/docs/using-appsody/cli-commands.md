@@ -32,6 +32,7 @@ Complete documentation is available at https://appsody.dev
 * [appsody init](#appsody-init)	 - Initialize an Appsody project with a stack and template app
 * [appsody list](#appsody-list)	 - List the Appsody stacks available to init
 * [appsody operator](#appsody-operator)	 - Install or uninstall the Appsody operator from your Kubernetes cluster.
+* [appsody ps](#appsody-ps)	 - List the appsody containers running in the local docker environment
 * [appsody repo](#appsody-repo)	 - Manage your Appsody repositories
 * [appsody run](#appsody-run)	 - Run the local Appsody environment for your project
 * [appsody stop](#appsody-stop)	 - Stops the local Appsody docker container for your project
@@ -154,7 +155,7 @@ Build and deploy your Appsody project to your Kubernetes cluster
 ### Synopsis
 
 This command extracts the code from your project, builds a local Docker image for deployment,
-generates a deployment manifest (yaml) file if one is not present, and uses it to deploy your image to Kubernetes or Knative.
+generates a deployment manifest (yaml) file if one is not present, and uses it to deploy your image to a Kubernetes cluster, either via the Appsody operator or as a Knative service.
 
 ```
 appsody deploy [flags]
@@ -262,12 +263,12 @@ Initialize an Appsody project with a stack and template app
 
 This creates a new Appsody project in a local directory or sets up the local dev environment of an existing Appsody project.
 
-If the [repository] is not specified the default repository will be used. If no [template] is specified, the default template will be used. 
+If the [repository] is not specified the default repository will be used. If no [template] is specified, the default template will be used.
 With the [stack], [repository]/[stack], [stack] [template] or [repository]/[stack] [template] arguments, this command will setup a new Appsody project. It will create an Appsody stack config file, unzip a template app, and run the stack init script to setup the local dev environment. It is typically run on an empty directory and may fail
 if files already exist. See the --overwrite and --no-template options for more details.
 Use 'appsody list' to see the available stack options.
 
-If keyword "none" is specified instead of a [template], the project will be initialized to use Appsody, and no tempalte will be provided.
+If keyword "none" is specified instead of a [template], the project will be initialized to use Appsody, and no template will be provided.
 
 Without the [stack] argument, this command must be run on an existing Appsody project and will only run the stack init script to
 setup the local dev environment.
@@ -337,9 +338,8 @@ This command allows you to "install" or "uninstall" the Appsody operator from th
 ### Options
 
 ```
-  -h, --help                help for operator
-  -n, --namespace string    The namespace in which the operator will run. (default "default")
-  -w, --watchspace string   The namespace which the operator will watch. Use '' for all namespaces. (default "''")
+  -h, --help               help for operator
+  -n, --namespace string   The namespace in which the operator will run. (default "default")
 ```
 
 ### Options inherited from parent commands
@@ -371,17 +371,18 @@ appsody operator install [flags]
 ### Options
 
 ```
-  -h, --help   help for install
+  -h, --help                help for install
+      --watch-all           The operator will watch all namespaces.
+  -w, --watchspace string   The namespace which the operator will watch.
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string       config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun              Turns on dry run mode
-  -n, --namespace string    The namespace in which the operator will run. (default "default")
-  -v, --verbose             Turns on debug output and logging to a file in $HOME/.appsody/logs
-  -w, --watchspace string   The namespace which the operator will watch. Use '' for all namespaces. (default "''")
+      --config string      config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun             Turns on dry run mode
+  -n, --namespace string   The namespace in which the operator will run. (default "default")
+  -v, --verbose            Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -403,22 +404,52 @@ appsody operator uninstall [flags]
 ### Options
 
 ```
-  -h, --help   help for uninstall
+      --force   Force removal of appsody apps if present
+  -h, --help    help for uninstall
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string       config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun              Turns on dry run mode
-  -n, --namespace string    The namespace in which the operator will run. (default "default")
-  -v, --verbose             Turns on debug output and logging to a file in $HOME/.appsody/logs
-  -w, --watchspace string   The namespace which the operator will watch. Use '' for all namespaces. (default "''")
+      --config string      config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun             Turns on dry run mode
+  -n, --namespace string   The namespace in which the operator will run. (default "default")
+  -v, --verbose            Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
 
 * [appsody operator](#appsody-operator)	 - Install or uninstall the Appsody operator from your Kubernetes cluster.
+
+## appsody ps
+
+List the appsody containers running in the local docker environment
+
+### Synopsis
+
+This command lists all stack-based containers, that are currently running in the local docker envionment.
+
+```
+appsody ps [flags]
+```
+
+### Options
+
+```
+  -h, --help   help for ps
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun          Turns on dry run mode
+  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+```
+
+### SEE ALSO
+
+* [appsody](#appsody)	 - Appsody CLI
 
 ## appsody repo
 
