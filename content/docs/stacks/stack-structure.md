@@ -60,7 +60,7 @@ You will note that in Rapid Local Development mode, Docker does not run the user
 
 ### Mounting the correct directories into the image
 
-There are three types of mount points used by appsody:
+There are three types of volume/mounts used by appsody:
 
 1. Volume mounts specified in the `APPSODY_MOUNTS` Docker variable  
 These will be processed by the appsody CLI. The primary use of this is to mount the directory holding the user application into the container, so that the appsody-controller can have access to your application (and run it inside the container). For example:
@@ -71,14 +71,14 @@ These will be processed by the appsody CLI. The primary use of this is to mount 
 
    would map the current directory (where the init was performed), into `/project/userapp` in the container file system.
 
-2. Dependency directory mount  
-This creates a directory (accessible in both the user file systems and the of the container), in which the cumulative set of dependencies can be stored. This is simply specified via the Docker variable `APPSODY_DEPS`. For example:
+2. Dependency directory volume  
+This creates a volume used to cache, for efficiency, the combined dependencies of the stack components and the user application between sequential runs of the application in rapid local development mode. It is not mounted into the user directory, since access to this is not required outside of the Docker environment. This is simply specified via the Docker variable `APPSODY_DEPS`. For example:
 
    ```bash
    ENV APPSODY_DEPS=/project/deps
    ```
 
-   would cause the creation of a directory called `deps` to be created in current dir, and mounted into the container file systems at `/project/deps`.
+   would cause the creation of a volume to b created and mounted into the container file systems at `/project/deps`.
 
 3. Appsody controller mount  
 The appsody CLI will create this automatically, first checking you have the latest appsody-controller downloaded into the user file system (by default at `~/.appsody/appsody-controller`), and then mounting this into `/appsody/appsody-controller` in the container file system. The reason this approach is taken is so that stack images do not need to be updated simply to ensure the latest version of the appsody-controller will be used.
