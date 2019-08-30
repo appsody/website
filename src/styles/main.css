@@ -164,7 +164,7 @@ section.landing-section h2 {
 }
 
 .tile {
-  padding: 2em 0.5em;
+  padding: 1.5em 0.5em;
   position: relative;
 }
 
@@ -175,11 +175,19 @@ section.landing-section h2 {
   text-align: center;
 }
 
+.heading-tile {
+  min-height: 2em;
+  max-height: 2em;
+}
 .tile a.btn {
   position: absolute;
-  bottom: 2em;
+  bottom: 1.5em;
   left: 0;
   right: 0;
+}
+
+.tile p {
+ line-height: 1.2;
 }
 
 .flip a.btn {
@@ -459,6 +467,7 @@ footer a:hover {
 .hide {
   display: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 html {
@@ -466,3 +475,6 @@ html {
 =======
 >>>>>>> dc4c353983fdde1ce404ff00384663221d4bc62e
 }
+=======
+}
+>>>>>>> f0ab66b21c8809cd9ef154e560bbf991ed67b0a6
