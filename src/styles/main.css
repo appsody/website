@@ -402,10 +402,6 @@ footer a:hover {
 }
 
 .doc-content {
-<<<<<<< HEAD
-  min-height: calc(100vh - 10.5em);
-=======
->>>>>>> dc4c353983fdde1ce404ff00384663221d4bc62e
   padding-bottom: 3em;
 }
 
@@ -466,15 +462,4 @@ footer a:hover {
 
 .hide {
   display: none;
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
-
-html {
-  height: 100%;
-=======
->>>>>>> dc4c353983fdde1ce404ff00384663221d4bc62e
-}
-=======
-}
->>>>>>> f0ab66b21c8809cd9ef154e560bbf991ed67b0a6
