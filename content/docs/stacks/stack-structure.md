@@ -78,7 +78,7 @@ This creates a volume used to cache, for efficiency, the combined dependencies o
    ENV APPSODY_DEPS=/project/deps
    ```
 
-   would cause the creation of a volume to b created and mounted into the container file systems at `/project/deps`.
+   would cause the creation of a volume to be created and mounted into the container file systems at `/project/deps`.
 
 3. Appsody controller mount  
 The appsody CLI will create this automatically, first checking you have the latest appsody-controller downloaded into the user file system (by default at `~/.appsody/appsody-controller`), and then mounting this into `/appsody/appsody-controller` in the container file system. The reason this approach is taken is so that stack images do not need to be updated simply to ensure the latest version of the appsody-controller will be used.
@@ -173,7 +173,7 @@ Environment variables can be set to alter the behaviour of the CLI and controlle
 
 ### Dockerfile
 
-The `Dockerfile` in the `image/project` directory defines the final image that will created by the `appsody build` command, which needs to contain the content from both the stack iteself along with the user application (typically modified from one of the templates). This is used to run the application as a whole, outside of appsody CLI control.
+The `Dockerfile` in the `image/project` directory defines the final image that will created by the `appsody build` command, which needs to contain the content from both the stack itself along with the user application (typically modified from one of the templates). This is used to run the application as a whole, outside of appsody CLI control.
 
 ### Templates
 
