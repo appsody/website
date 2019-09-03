@@ -21,14 +21,19 @@ Once you have created or updated a stack, use scripts in the `ci/` directory to 
 
 From the base directory:
 
-1. Run build script and specify the desired stack as a parameter, for example:
+1. Run the prefetch script first:
+    ```
+    ./ci/prefetch.sh
+    ```
+
+2. Run the build script and specify the desired stack as a parameter, for example:
     ```
     ./ci/build.sh . incubator/nodejs-express
     ```
 
     **Note:** If a stack is not specified, all stacks in all repositories will be built.
 
-2. Add the generated appsody repository to the repository list:
+3. Add the generated appsody repository to the repository list:
     ```
     appsody repo add <local-repo-name> file://$PWD/ci/assets/<local-stack-repo>
     ```
@@ -38,6 +43,7 @@ From the base directory:
     appsody repo add my-repo file://$PWD/ci/assets/incubator-index-local.yaml
     ```
 
+<<<<<<< HEAD
 3. Check the built stack has been added in that repository by running `appsody list my-repo`. Here is an example of the output you should get: 
     ```
     REPO   	ID            	VERSION  	TEMPLATES        	DESCRIPTION                      
@@ -45,6 +51,8 @@ From the base directory:
     ```
 
 
+=======
+>>>>>>> 0224b010c915a013e8384fb5f18a54f5bf6f4027
 4. Set an environment variable to use locally created images:
     ```
     export APPSODY_PULL_POLICY=IFNOTPRESENT
