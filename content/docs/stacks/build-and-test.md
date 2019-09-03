@@ -11,7 +11,7 @@ Once you have created or updated a stack, use scripts in the `ci/` directory to 
 
 * `./ci/build.sh` combines several operations (lint, package, test) for the specified stack
 * `./ci/env.sh` used for environment setup and holds environment variables that users can override (e.g. docker credentials for publishing images)
-* `./ci/list.sh` generates list of stacks to build if not stack is not specified
+* `./ci/list.sh` generates list of stacks to build if stack is not specified
 * `./ci/lint.sh` will verify your stack, linting the stack.yaml and verifying directory contents
 * `./ci/prefetch.sh` downloads the most recently released templates
 * `./ci/package.sh` builds the docker image for the specified stack, along with packaging templates and generating repository indexes.
@@ -68,8 +68,10 @@ To build your stack image locally follow the below steps:
     ```
     docker build -t <org-name>/<stack-id> -t <org-name>/<stack-id>:<tag> -f Dockerfile-stack .
     ```
+
     You now have access to the stack image to use and test locally. 
-    **Note:** The local image should be tagged with the desired release. The tag value is usually the the major and minor version of the stack, e.g. `appsody/nodejs-express:0.2`. If you do not specify the tag value, it will tag it as the latest version, e.g. `appsody/nodejs-express:latest`.
+    
+    **Note:** The local image should be tagged with the desired release. The tag value is usually the major and minor version of the stack, e.g. `appsody/nodejs-express:0.2`. If you do not specify the tag value, it will tag it as the latest version, e.g. `appsody/nodejs-express:latest`.
 
 3. Set an environment variable to use locally created image:
     ```
