@@ -43,7 +43,6 @@ From the base directory:
     appsody repo add my-repo file://$PWD/ci/assets/incubator-index-local.yaml
     ```
 
-<<<<<<< HEAD
 3. Check the built stack has been added in that repository by running `appsody list my-repo`. Here is an example of the output you should get: 
     ```
     REPO   	ID            	VERSION  	TEMPLATES        	DESCRIPTION                      
@@ -51,8 +50,6 @@ From the base directory:
     ```
 
 
-=======
->>>>>>> 0224b010c915a013e8384fb5f18a54f5bf6f4027
 4. Set an environment variable to use locally created images:
     ```
     export APPSODY_PULL_POLICY=IFNOTPRESENT
