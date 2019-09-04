@@ -7,7 +7,7 @@ path: /docs/stacks/build-and-test
 
 The instructions below will reference the "base directory", which will be the directory containing the clone or copy of the appsody/stacks git repository.
 
-Once you have created or updated a stack, use scripts in the `ci/` directory to build stack images and templates, and to generate an appsody repository index you can use for local testing. The script `./ci/build.sh` combines several operations (lint, package, test) for the specified stack. If you would like to learn more about the process for building, testing and releasing a stack, please see [Appsody Stacks Release Process](https://github.com/appsody/stacks/blob/master/RELEASE.md#appsody-stacks-release-process---technical-overview).
+Once you have created or updated a stack, use scripts in the `ci/` directory to build stack images and templates, and to generate an appsody repository index you can use for local testing. The script `./ci/build.sh` combines several operations (lint, prefetch, package, test) for the specified stack. If you would like to learn more about the process for building, testing and releasing a stack, please see [Appsody Stacks Release Process](https://github.com/appsody/stacks/blob/master/RELEASE.md#appsody-stacks-release-process---technical-overview).
 
 ## Building a stack locally using build scripts
 
@@ -30,7 +30,7 @@ From the base directory:
     appsody repo add my-repo-incubator file://$PWD/ci/assets/incubator-index-local.yaml
     ```
 
-1. Check the built stack has been added in that repository by running `appsody list my-repo`. Here is an example of the output you should get: 
+1. Check the built stack has been added in that repository by running `appsody list my-repo-incubator`. Here is an example of the output you should get: 
     ```
     REPO            	ID            	VERSION  	TEMPLATES        	DESCRIPTION                      
     my-repo-incubator	nodejs-express	0.2.5    	*simple, skaffold	Express web framework for Node.js
