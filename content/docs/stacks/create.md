@@ -24,7 +24,7 @@ The stack image contains everything that will be common throughout all templates
 
 The `/image` directory will contain everything that is needed for the stack's image. You **must** include a `Dockerfile-stack` file in the `/image` directory, which defines how the stack image is built.
 
-Stack creators configure [enviroment variables](/docs/stacks/environment-variables) in `Dockerfile-stack` to specify the behaviour they expect from the stack throughout the application development lifecycle. `Appsody CLI` and `Appsody controller` inspect these environment variables and then drive the expected behaviour for the developer.
+Stack creators configure [environment variables](/docs/stacks/environment-variables) in `Dockerfile-stack` to specify the behaviour they expect from the stack throughout the application development lifecycle. `Appsody CLI` and `Appsody controller` inspect these environment variables and then drive the expected behaviour for the developer.
 
 If a stack image is built upon another stack's image, it will inherit all the Appsody variables from the base stack. It can override the variables it wants to change. This allows users to create stacks with slightly different behaviour while still getting updates from the base stack.
 
