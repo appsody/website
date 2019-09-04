@@ -21,11 +21,13 @@ my-stack
 ├── README.md
 ├── stack.yaml
 ├── image/
-|   ├── LICENSE
+|   ├── config/
+|   |   └── app-deploy.yaml
 |   ├── project/
 |   |   ├── [files that provide the technology components of the stack]
 |   |   └── Dockerfile
-│   └── Dockerfile-stack
+│   ├── Dockerfile-stack
+|   └── LICENSE
 └── templates/
     ├── my-template-1/
     |       └── [example files as a starter for the application, e.g. "hello world"]
@@ -165,11 +167,15 @@ The top level directory must contain a `README.md` markdown file that describes 
 
 The `image` directory must contain a `LICENSE` file.
 
+### app-deploy.yaml
+
+The `app-deploy.yaml` is the configuration file for deploying an Appsody project using the Appsody Operator. For more information about specifics, see [Appsody Operator User Guide](https://github.com/appsody/appsody-operator/blob/master/doc/user-guide.md).
+
 ### Dockerfile-stack
 
 The `Dockerfile-stack` file in the `image` directory defines the foundation stack image, and a set of environment variables that specify the desired behaviour during the rapid local development cycle. It also defines what is exposed from the host machine to the container during this mode.
 
-Environment variables can be set to alter the behaviour of the CLI and controller (see [Appsody Environment Variables](/docs/stacks/environment-variables.md))
+Environment variables can be set to alter the behaviour of the CLI and controller (see [Appsody Environment Variables](/docs/stacks/environment-variables.md)).
 
 ### Dockerfile
 
