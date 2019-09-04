@@ -229,7 +229,7 @@ Extract the stack and your Appsody project to a local directory
 ### Synopsis
 
 This copies the full project, stack plus app, into a local directory
-in preparation to build the final docker image.
+in preparation to build the final container image.
 
 ```
 appsody extract [flags]
@@ -238,6 +238,7 @@ appsody extract [flags]
 ### Options
 
 ```
+      --buildah             Extract project using buildah primitives instead of docker.
   -h, --help                help for extract
       --name string         Assign a name to your development container. (default "my-project-extract")
       --target-dir string   Directory path to place the extracted files. This dir must not exist, it will be created.
