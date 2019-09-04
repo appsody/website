@@ -95,7 +95,6 @@ For efficiency, these only need to be installed when the image is launched. Henc
    ```bash
    RUN pipenv lock -r > requirements.txt
    RUN python -m pip install -r requirements.txt -t /project/deps
-   RUN python -m pip install ptvsd -t /project/deps
    ```
 
 2. Dependencies added by the developer for their application  
