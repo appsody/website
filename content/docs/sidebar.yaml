@@ -27,7 +27,7 @@
       path: /docs/stacks/modify
     - title: Stack Structure
       path: /docs/stacks/stack-structure
-    - title: Stack Environment Variables
+    - title: Stack Variables
       path: /docs/stacks/environment-variables
     - title: Building and Testing Stacks
       path: /docs/stacks/build-and-test
