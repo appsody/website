@@ -108,6 +108,72 @@ You can also install an Appsody operator that watches the entire cluster, using 
 appsody operator install --namespace <operator namespace> --watch-all
 ```
 
+#### RBAC considerations for the use of `appsody deploy` and `appsody operator` commands
+
+The `appsody deploy` and `appsody operator` commands involve the lookup and creation of a number of different resources, both in specific namespaces and at the cluster level. 
+
+In a typical local testing scenario, developers have full administrative rights on the entire cluster. In that case, no specific provisions need to be made in terms of granting permissions.
+
+However, if a single cluster is shared across many development groups, it is common practice to restrict full access to resources by limiting it to a single namespace. An individual developer or a group of developers would have the ability to create, modify, and delete resources only in a certain namespace. 
+
+The use of `appsody deploy` and `appsody operator` commands, however, requires granting the following permissions:
+1) Querying Appsody operator instances across namespaces
+2) Creating the `AppsodyApplication` CRDs
+3) Querying `RoleBindings` across namespaces
+4) Creating instances of the Appsody operator in a namespace
+5) Full access to resources in the watched namespace of the operator, if different from the namespace where the operator is installed
+
+In a shared cluster scenario, with developers limited to access their own namespace, we expect the most common pattern of usage will be the following:
+
+1) Developers can use `appsody deploy -n <namespace>` to target their own namespace. The first time `appsody deploy` is used, the operator is installed and it watches the namespace of choice.
+
+2) Only cluster administrators can use `appsody operator install -n <namespace> --watchspace <another namespace>` to enable operators to watch across namespaces. 
+
+Under these assumptions, developers need to be granted the following permissions:
+1) First, through a Role: 
+```
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: $NAMESPACE-user-full-access
+  namespace: $NAMESPACE
+rules:
+- apiGroups: ["", "extensions", "apps", "autoscaling", "appsody.dev", "rbac.authorization.k8s.io"]
+  resources: ["*"]
+  verbs: ["*"]
+- apiGroups: ["batch"]
+  resources:
+  - jobs
+  - cronjobs
+  verbs: ["*"]
+```
+This role grants full access to resources in a certain namespace (substitute the `$NAMESPACE` placeholder with the namespace name), including the Appsody operator resources.
+
+2) Second, through a ClusterRole:
+```
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: $NAMESPACE-user-node-readonly-access
+rules:
+- apiGroups: ["", "apps", "autoscaling", "extensions"]
+  resources: ["*"]
+  verbs: ["get", "watch", "list"]
+- apiGroups: ["apiextensions.k8s.io"]
+  resources: ["customresourcedefinitions"]
+  verbs: ["*"]
+- apiGroups: ["rbac.authorization.k8s.io"]
+  resources: ["rolebindings"]
+  verbs: ["get", "watch", "list"]  
+  ```
+  This ClusterRole allows users to lookup the necessary resources across namespaces, and to create CRDs anywhere in the cluster (which is required by the installation of the operator, in certain cases).
+
+  Once you have these roles in place, you need to create the appropriate RoleBinding and ClusterRoleBinding to bind your users or groups to them.
+
+
+
+
+
 ### Deployment as a Knative Service
 
 If the stack you are using for your Appsody project does not support the Appsody operator, `appsody deploy` will default to deploying your app as a Knative serving service.
