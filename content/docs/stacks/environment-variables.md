@@ -27,13 +27,4 @@ The following are the currently supported Appsody environment variables and thei
 | ```APPSODY_TEST```             | This is the command to run the test cases run after the ```APPSODY_PREP``` command, when the mode is 'test'. If your command involves complex environment variable expansions, it may be better to encapsulate your command into a script.                                                            | ```ENV APPSODY_TEST="npm test && npm test --prefix user-app"```   |   N/A        |
 | ```APPSODY_TEST_ON_CHANGE```   | This is the command run when a change is detected on the file system by the controller when the mode is 'test'. If your command involves complex environment variable expansions, it may be better to encapsulate your command into a script. If the file watching is disabled, the value should be "".  | ```ENV APPSODY_TEST_ON_CHANGE=""```                               |  N/A         |
 | ```APPSODY_TEST_KILL```        | This variable is used to signal that when the mode is "test" the controller will kill the server process started by ```APPSODY_TEST``` prior to starting the watch action specified by ```APPSODY_TEST_ON_CHANGE```. The values supported are true or false.                                             | ```APPSODY_TEST_KILL=<true/false>```                              | true      |
-
-     
-## Appsody Shell Variables
-  
-The following are the currently supported Appsody command shell environment variables and their default values:  
-
-| Variable                           | Description                                                                                                                                                                                                                                                                                              | Example                                                           | Default   |
-|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|-----------|
-| ```APPSODY_PROJECT_DIR```        | This variable allows override of the project directory while running  ```appsody run, appsody test or appsody debug```.                                              | ```export APPSODY_PROJECT_DIR=/<my-project-directory>```                              | /project      |
-
+| ```APPSODY_PROJECT_DIR```        | This variable allows override of the project directory while running  ```appsody extract, appsody build or appsody deploy```.                                              | ``` APPSODY_PROJECT_DIR=/<my-project-directory>```                              | /project      |
