@@ -184,6 +184,35 @@ In this case, the following **pre-requisites** apply:
 - You must configure your `kubectl` CLI to point to your Kubernetes cluster.
 - If you intend to push the Docker image containing your application to Docker Hub, your target cluster must be configured to pull images from Docker Hub.
 
+#### Using the createKnativeService option to deploy as a Knative Service  
+
+The appsody operator allows you to deploy as a Knative Service if your stack contains a config/app-deploy.yaml file. You can add the element `createKnativeService: true` to your `app-deploy.yaml` file in your project directory.
+
+Perform the following steps:
+1. `appsody deploy —generate-only` will create `app-deploy.yaml` for your project
+2. Edit your app-deploy.yaml file.
+   - Add the line `createKnativeService: true` in the spec definition section to the `app-deploy.yaml` file created above, 
+3. Deploy your application:
+
+   - For Local Docker:
+
+      - Run the command `appsody deploy —-tag dev.local/<projectName> --namespace your-namespace`
+
+      - Tagging with  `dev.local/` makes the image accessible to your Kubernetes cluster.
+
+   - For Docker Hub:
+
+      - Run the command `appsody deploy --push -—tag my-account/<projectName> --namespace your-namespace`
+      Notes:
+      - The --tag option tags the image.
+      - You must be logged in to your docker repo for --push to work. 
+      - The --push  flag tells the appsody CLI to push the image to Docker Hub
+      - You must be logged in to Docker Hub for --push to work. 
+      
+5. The Knative Service should now be operable at the URL specified in the output.
+
+
+
 ### Deploying your application to a local Kubernetes cluster
 
 If you have installed a Kubernetes cluster on your development workstation and want to use your local Docker image cache instead of pushing the image to Docker Hub, make sure you set up your Kubernetes cluster to consume images from the local Docker cache.
@@ -195,7 +224,7 @@ appsody deploy
 This command completes the following actions:
 
 - Calls `appsody build` and creates a *deployment* Docker image, as described in the previous section.
-- Tags the image with the special prefix `local.dev`, making it accessible to your Kubernetes cluster.
+- Tags the image with the special prefix `dev.local`, making it accessible to your Kubernetes cluster.
 - Creates a deployment manifest file named `app-deploy.yaml`, in a `/deploy` subdirectory of the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
 
 ### Deploying your application through Docker Hub
@@ -212,7 +241,7 @@ The command completes the following actions:
 - Creates a deployment manifest file named `app-deploy.yaml`, in a `/deploy` subdirectory of the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
 - The `--namespace mynamespace` option provisions the deployment under the `mynamespace` namespace.
 
-**Note:** If you don't specify `--push`, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry. Additionally, your image will be tagged as  `local.dev/<project-name>` and referenced in the deployment manifest.
+**Note:** If you don't specify `--push`, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry. Additionally, your image will be tagged as  `dev.local/<project-name>` and referenced in the deployment manifest.
 
 ### Deploying multiple projects
 If you are running multiple Appsody projects on your workstation, you can use `appsody deploy` and `appsody operator` commands to get them deployed to a Kubernetes cluster. However, make sure that you run these commands one at a time, because those commands create temporary files that might lead to conflicts if created concurrently.
