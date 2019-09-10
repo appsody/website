@@ -74,7 +74,7 @@ To add the doc to the side menu you must add it to the `sidebar.yaml` in `conten
 ```
 gatsby develop
 ```
-3. View documentation at http://localhost:8000/content/docs
+3. View documentation at http://localhost:8000/docs
 
 For more information on adding Markdown pages with Gatsby, see https://www.gatsbyjs.org/docs/adding-markdown-pages/
 
