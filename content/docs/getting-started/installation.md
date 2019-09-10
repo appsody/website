@@ -1,6 +1,6 @@
 ---
 title: Installing Appsody
-path: /docs/getting-started/installation
+path: /content/docs/getting-started/installation
 ---
 # Installing Appsody
 
@@ -22,7 +22,7 @@ brew install appsody/appsody/appsody
 
 This command creates a brew tap for the `appsody/appsody` repo and installs the `appsody` formula.
 
-That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
+That's all there is to it! You can now follow our [Quick Start](/content/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
 
 ## Installing on Ubuntu
 
@@ -37,7 +37,7 @@ sudo apt install -f <path>/appsody_v.r.m_amd64.deb
 ```
 Where `<path>` is the fully qualified path to the package.
 
-That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
+That's all there is to it! You can now follow our [Quick Start](/content/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
 
 Alternatively, if you would like to build the binaries from source code, please take a look at [Building from Source] (https://github.com/appsody/appsody/blob/master/build.md). If you would just like to download a pre-built binary, you will also need to download the [appsody-controller](https://github.com/appsody/controller/releases).
 
@@ -55,7 +55,7 @@ sudo yum install <path>/appsody-v.r.m-1.x86_64.rpm
 
 Where `<path>` is the fully qualified path to the package.
 
-That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
+That's all there is to it! You can now follow our [Quick Start](/content/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
 
 ## Installing on Windows
 
@@ -75,7 +75,7 @@ Note: If you choose to extract the files using a GUI tool you may have to extrac
 appsody-setup.bat
 ```
 
-That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
+That's all there is to it! You can now follow our [Quick Start](/content/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
 
 To uninstall Appsody, delete the directory where you extracted the binaries. Optionally, remove the `.appsody` directory that gets created under your home folder and the **PATH** entry that was created by the setup command (see [Modifying the PATH on Windows 10](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)).
 

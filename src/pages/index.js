@@ -24,8 +24,8 @@ const IndexPage = () => (
             Infused with cloud native capabilities from the moment you start, Appsody provides everything you need to iteratively develop applications, ready for deployment to Kubernetes environments. Teams are empowered with sharable technology stacks, configurable and controllable through a central hub.
           </p>
           <div className="d-flex">
-            <Link to="/docs/getting-started/quick-start" className="btn btn-primary mr-2 w-50" role="button">Get Started</Link>
-            <Link to="/docs" className="btn btn-clear w-50" role="button">Overview</Link>
+            <Link to="/content/docs/getting-started/quick-start" className="btn btn-primary mr-2 w-50" role="button">Get Started</Link>
+            <Link to="/content/docs" className="btn btn-clear w-50" role="button">Overview</Link>
           </div>
         </div>
         <div className="col d-none d-md-inline text-center">

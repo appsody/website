@@ -1,11 +1,11 @@
 ---
 title: Quick Start
-path: /docs/getting-started/quick-start
+path: /content/docs/getting-started/quick-start
 ---
 
 # Quick Start
 
-If you haven't already installed Appsody, follow the steps described in [Installation](/docs/getting-started/installation.md).
+If you haven't already installed Appsody, follow the steps described in [Installation](/content/docs/getting-started/installation.md).
 
 Creating a new Appsody project is easy! All you need is a few commands to create a containerized development environment running with the stack of your choice.
 
