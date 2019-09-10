@@ -26,7 +26,7 @@ const NavBarContent = () => (
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav>
         <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/content/docs">Docs</Nav.Link>
+        <Nav.Link href="/docs">Docs</Nav.Link>
         <Nav.Link href="https://medium.com/appsody" target="_blank" rel="noopener noreferrer">Tutorials</Nav.Link>
       </Nav>
       <Nav className="ml-auto">

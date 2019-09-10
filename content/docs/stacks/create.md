@@ -1,6 +1,6 @@
 ---
 title: Creating a Stack
-path: /content/docs/stacks/create
+path: /docs/stacks/create
 ---
 
 # Creating a Stack

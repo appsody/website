@@ -1,6 +1,6 @@
 ---
 title: Installing Appsody
-path: /content/docs/getting-started/installation
+path: /docs/getting-started/installation
 ---
 # Installing Appsody
 

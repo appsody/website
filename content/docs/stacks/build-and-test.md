@@ -1,6 +1,6 @@
 ---
 title: Building and Testing Stacks
-path: /content/docs/stacks/build-and-test
+path: /docs/stacks/build-and-test
 ---
 
 # Building and Testing Stacks

@@ -1,6 +1,6 @@
 ---
 title: Appsody Environment Variables
-path: /content/docs/stacks/environment-variables
+path: /docs/stacks/environment-variables
 ---
 # Appsody Environment Variables
 Stack creators configure Appsody environment variables to specify the behaviour they expect from the stack throughout the application development lifecycle. These variables are defined in ```Dockerfile-stack``` for the stack image. ```Appsody CLI``` and ```Appsody controller``` inspect these environment variables and then drive the expected behaviour for the developer.

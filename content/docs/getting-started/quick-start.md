@@ -1,6 +1,6 @@
 ---
 title: Quick Start
-path: /content/docs/getting-started/quick-start
+path: /docs/getting-started/quick-start
 ---
 
 # Quick Start

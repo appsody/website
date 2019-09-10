@@ -1,6 +1,6 @@
 ---
 title: Appsody Overview
-path: /content/docs
+path: /docs
 ---
 # Welcome to Appsody
 

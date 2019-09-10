@@ -1,6 +1,6 @@
 ---
 title: Appsody Stacks
-path: /content/docs/stacks/stacks-overview
+path: /docs/stacks/stacks-overview
 ---
 # Appsody Stacks
 

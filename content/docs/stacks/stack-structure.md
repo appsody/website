@@ -1,6 +1,6 @@
 ---
 title: Stack structure and requirements
-path: /content/docs/stacks/stack-structure
+path: /docs/stacks/stack-structure
 ---
 ## The role of a stack in the development process
 

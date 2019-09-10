@@ -1,6 +1,6 @@
 ---
 title: CLI Reference
-path: /content/docs/using-appsody/cli-commands
+path: /docs/using-appsody/cli-commands
 ---
 # Appsody CLI
 ## appsody

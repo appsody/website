@@ -1,6 +1,6 @@
 ---
 title: FAQ
-path: /content/docs/faq
+path: /docs/faq
 ---
 
 # FAQ

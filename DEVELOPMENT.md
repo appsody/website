@@ -41,7 +41,7 @@ gatsby clean
 **Note:** If you are developing remotely, use `http://<hostname>:PORT` instead of `http://localhost:PORT` as described in this doc.
 
 ## Contributing Documentation
-1. Add documentation to the `content/docs` directory. This is where the documentation for [Appsody](https://appsody.dev/content/docs) is stored.
+1. Add documentation to the `content/docs` directory. This is where the documentation for [Appsody](https://appsody.dev/docs) is stored.
 
 The documentation should follow the rough structure of the sidebar so that the docs are easy to find. The quick start guide, for example, is located in `content/docs/getting-started/quick-start`.
 
@@ -55,7 +55,7 @@ path: This is the route to the page that all links will be created from.
 For example:
 ```
 ---
-path: /content/docs/getting-started/quick-start
+path: /docs/getting-started/quick-start
 ---
 ```
 
@@ -64,9 +64,9 @@ To add the doc to the side menu you must add it to the `sidebar.yaml` in `conten
 - title (optional): Getting Started
   items:
     - title: Installation
-      path: /content/docs/getting-started/installation
+      path: /docs/getting-started/installation
     - title: Quick Start
-      path: /content/docs/getting-started/quick-start
+      path: /docs/getting-started/quick-start
 ```
 **Note:** `title` for the section is optional but the `title` for each menu item is required.
 

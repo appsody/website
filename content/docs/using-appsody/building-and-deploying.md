@@ -1,6 +1,6 @@
 ---
 title: Getting ready to deploy your Appsody project
-path: /content/docs/using-appsody/building-and-deploying
+path: /docs/using-appsody/building-and-deploying
 ---
 
 # Getting ready to deploy your Appsody project

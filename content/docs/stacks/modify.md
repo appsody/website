@@ -1,6 +1,6 @@
 ---
 title: Modifying a Stack
-path: /content/docs/stacks/modify
+path: /docs/stacks/modify
 ---
 
 # Modifying a Stack

@@ -13,7 +13,7 @@ class Doc extends React.Component {
         links.forEach(link => {
             const href = link.href;
             if (href.includes('appsody.dev') || href.includes('localhost')) {
-                link.href = href.replace(".md", "");
+                link.href = href.replace(".md", "").replace("/content/docs", "/docs");
             }
         })
     }

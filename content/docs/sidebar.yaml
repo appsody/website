@@ -1,34 +1,34 @@
 - items:
     - title: Overview
-      path: /content/docs
+      path: /docs
 - title: Getting Started
   items:
     - title: Installation
-      path: /content/docs/getting-started/installation
+      path: /docs/getting-started/installation
     - title: Quick Start
-      path: /content/docs/getting-started/quick-start
+      path: /docs/getting-started/quick-start
 - title: Using Appsody
   items:
     - title: Initializing Projects
-      path: /content/docs/using-appsody/initializing-project
+      path: /docs/using-appsody/initializing-project
     - title: Local Development
-      path: /content/docs/using-appsody/local-development
+      path: /docs/using-appsody/local-development
     - title: Building and Deploying
-      path: /content/docs/using-appsody/building-and-deploying
+      path: /docs/using-appsody/building-and-deploying
     - title: CLI Reference
-      path: /content/docs/using-appsody/cli-commands
+      path: /docs/using-appsody/cli-commands
 - title: Appsody Stacks
   items:
     - title: Stacks Overview
-      path: /content/docs/stacks/stacks-overview
+      path: /docs/stacks/stacks-overview
     - title: Creating Stacks
-      path: /content/docs/stacks/create
+      path: /docs/stacks/create
     - title: Modifying Stacks
-      path: /content/docs/stacks/modify
+      path: /docs/stacks/modify
     - title: Stack Structure
-      path: /content/docs/stacks/stack-structure
+      path: /docs/stacks/stack-structure
     - title: Building and Testing Stacks
-      path: /content/docs/stacks/build-and-test
+      path: /docs/stacks/build-and-test
 - items:
     - title: FAQ
-      path: /content/docs/faq
+      path: /docs/faq

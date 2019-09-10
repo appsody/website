@@ -9,7 +9,7 @@ Infused with cloud native capabilities from the moment you start, Appsody provid
 
 # Documentation and Website
 
-This repository holds the source for the website along with Appsody's [documentation](https://appsody.dev/content/docs/).
+This repository holds the source for the website along with Appsody's [documentation](https://appsody.dev/docs/).
 
 ## Contributing
 
