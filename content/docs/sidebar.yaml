@@ -21,12 +21,14 @@
   items:
     - title: Stacks Overview
       path: /docs/stacks/stacks-overview
+    - title: Stack Structure
+      path: /docs/stacks/stack-structure
     - title: Creating Stacks
       path: /docs/stacks/create
     - title: Modifying Stacks
       path: /docs/stacks/modify
-    - title: Stack Structure
-      path: /docs/stacks/stack-structure
+    - title: Stack Variables
+      path: /docs/stacks/environment-variables
     - title: Building and Testing Stacks
       path: /docs/stacks/build-and-test
 - items:
