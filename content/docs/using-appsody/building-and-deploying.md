@@ -191,7 +191,7 @@ The appsody operator allows you to deploy as a Knative Service if your stack con
 Perform the following steps:
 1. `appsody deploy —generate-only` will create `app-deploy.yaml` for your project
 2. Edit your app-deploy.yaml file.
-   - Add the line `createKnativeService: true` in the spec definition section to the `app-deploy.yaml` file created above, 
+   - Add the line `createKnativeService: true` in the spec definition section to the `app-deploy.yaml` file created above.
 3. Deploy your application:
 
    - For Local Docker:
