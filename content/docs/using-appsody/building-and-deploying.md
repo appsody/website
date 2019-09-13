@@ -180,7 +180,7 @@ If the stack you are using for your Appsody project does not support the Appsody
 
 In this case, the following **pre-requisites** apply:
 
-- You must have access to a Kubernetes cluster, with Knative Serving installed and running. To install Knative locally, use the Kubernetes feature in Docker for Desktop, see [Installing Knative Locally](/docs/using-appsody/installing-knative-locally.md). To install Knative on other Kubernetes clusters, see the [Knative Install Documentation](https://knative.dev/docs/install/).
+- You must have access to a Kubernetes cluster, with Knative Serving installed and running. To install Knative locally, use the Kubernetes feature in Docker for Desktop, see [Installing Knative Locally](/content/docs/using-appsody/installing-knative-locally.md). To install Knative on other Kubernetes clusters, see the [Knative Install Documentation](https://knative.dev/docs/install/).
 - You must configure your `kubectl` CLI to point to your Kubernetes cluster.
 - If you intend to push the Docker image containing your application to Docker Hub, your target cluster must be configured to pull images from Docker Hub.
 
@@ -189,7 +189,7 @@ In this case, the following **pre-requisites** apply:
 The appsody operator allows you to deploy as a Knative Service if your stack contains a config/app-deploy.yaml file. You can add the element `createKnativeService: true` to your `app-deploy.yaml` file in your project directory.
 
 Perform the following steps:
-1. `appsody deploy —generate-only` will create `app-deploy.yaml` for your project
+1. `appsody deploy --generate-only` will create `app-deploy.yaml` for your project
 2. Edit your app-deploy.yaml file.
    - Add the line `createKnativeService: true` in the spec definition section to the `app-deploy.yaml` file created above.
 3. Deploy your application:
@@ -202,7 +202,7 @@ Perform the following steps:
 
    - For Docker Hub:
 
-      - Run the command `appsody deploy --push -—tag my-account/<projectName> --namespace your-namespace`
+      - Run the command `appsody deploy --push --tag my-account/<projectName> --namespace your-namespace`
       Notes:
       - The --tag option tags the image.
       - You must be logged in to your docker repo for --push to work. 

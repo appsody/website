@@ -50,7 +50,7 @@ appsodyhub	swift            	0.1.2    	*simple          	Runtime for Swift appli
 
 When you have chosen your stack, run `appsody init <repository-name>/<stack> <template>` for the repository and stack of your choice. This command downloads the default project template for the stack and initializes Appsody for local development.  If you elect to only specify the stack, e.g. `appsody init <stack>`, the default repository is assumed.  If you do not specify a template, the default template is assumed.
 
-Now you have a fully functional Appsody project. For more details on running the project, see [Local Development](/docs/using-appsody/local-development.md).
+Now you have a fully functional Appsody project. For more details on running the project, see [Local Development](/content/docs/using-appsody/local-development.md).
 
 
 ## Configuring an existing project
@@ -63,4 +63,4 @@ Next, from your project directory, run `appsody init <stack> none` to initialize
 
 You might need to update the structure of your project so that the stack can find and run your code. Because each stack has a different structure, refer to the documentation for your stack and review the project template for guidance.
 
-When you have updated the project structure, start the development container to verify that it is working with `appsody run`. For more details on running the project, see [Local Development](/docs/using-appsody/local-development.md).
+When you have updated the project structure, start the development container to verify that it is working with `appsody run`. For more details on running the project, see [Local Development](/content/docs/using-appsody/local-development.md).

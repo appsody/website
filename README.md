@@ -21,4 +21,4 @@ Join our [Slack](https://appsody-slack.eu-gb.mybluemix.net/) to meet the team, a
 
 ## Licence
 
-Please see [LICENSE](https://github.com/appsody/docs/blob/master/LICENSE) and [NOTICES](https://github.com/appsody/website/blob/master/NOTICE.md) for more information.
+Please see [LICENSE](https://github.com/appsody/website/blob/master/LICENSE) and [NOTICES](https://github.com/appsody/website/blob/master/NOTICE.md) for more information.
