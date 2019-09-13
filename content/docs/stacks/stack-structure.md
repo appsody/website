@@ -36,7 +36,7 @@ my-stack
 
 ```
 
-The structure above is then processed when you build a stack, to generate a Docker image for the stack, along with tar files of each of the templates, which can then all be stored/referenced in a local or public appsody repo. Refer to the section on [Building and Testing Stacks](/docs/stacks/build-and-test.md) for more details. The appsody CLI can then access such a repo, to use the stack to initiate local development.
+The structure above is then processed when you build a stack, to generate a Docker image for the stack, along with tar files of each of the templates, which can then all be stored/referenced in a local or public appsody repo. Refer to the section on [Building and Testing Stacks](/content/docs/stacks/build-and-test.md) for more details. The appsody CLI can then access such a repo, to use the stack to initiate local development.
 
 As described in the first section, the stack (in conjunction with the Appsody software) has different responsibilities, depending on which mode of operation is being carried out. To understand how the stack operates, we will delve into each of these scenarios separately, including the initial work required to initialize the project. One of things that can initially cause confusion when looking at the source of an appsody stack is that there are two Docker files. These are independant of each other - one is used to build the initial stack image (`Dockerfile-stack`) and one to build the final application image (`Dockerfile`). These are both described as we examine the scenarios.
 
@@ -112,7 +112,7 @@ Any environment variables required by the technology in the stack itself are typ
 
 ### Passing control to the appsody controller to run the user application
 
-When an `appsody run` command is issued, the stack image is launched in the local Docker environment of the user machine and the appsody-controller is set as the entrypoint. The controller is also passed the appsody command being executed (`run` in this case). The appsody controller will then process the appsody-specifc Docker variables to manage how the user application is run and managed. These appsody-specific variables are described in full in the section [Appsody Environment Variables](/docs/stacks/environment-variables.md), although the most important ones for the run case are (with examples from the python-flask stack):
+When an `appsody run` command is issued, the stack image is launched in the local Docker environment of the user machine and the appsody-controller is set as the entrypoint. The controller is also passed the appsody command being executed (`run` in this case). The appsody controller will then process the appsody-specifc Docker variables to manage how the user application is run and managed. These appsody-specific variables are described in full in the section [Appsody Environment Variables](/content/docs/stacks/environment-variables.md), although the most important ones for the run case are (with examples from the python-flask stack):
 
 ```bash
 ENV APPSODY_RUN="python -m flask run --host=0.0.0.0 --port=8080"
@@ -174,7 +174,7 @@ The `app-deploy.yaml` is the configuration file for deploying an Appsody project
 
 The `Dockerfile-stack` file in the `image` directory defines the foundation stack image, and a set of environment variables that specify the desired behaviour during the rapid local development cycle. It also defines what is exposed from the host machine to the container during this mode.
 
-Environment variables can be set to alter the behaviour of the CLI and controller (see [Appsody Environment Variables](/docs/stacks/environment-variables.md)).
+Environment variables can be set to alter the behaviour of the CLI and controller (see [Appsody Environment Variables](/content/docs/stacks/environment-variables.md)).
 
 ### Dockerfile
 

@@ -15,13 +15,13 @@ Appsody consists of 3 key components:
 
 ### Appsody Stacks
 These are configurable technology stacks built with popular runtimes and frameworks, such as *Java with Eclipse MicroProfile* and *Node.js with Express*. These stacks  provide the foundation for building applications that can be deployed and managed effectively in Kubernetes. Stacks allow for rapid development, whilst giving the stack provider the ability to control how the applications are composed. For example, which security policies are applied or which version of a dependency is used. For more
-information, see [Appsody Stacks](/docs/stacks/stacks-overview.md).
+information, see [Appsody Stacks](/content/docs/stacks/stacks-overview.md).
 
 ### Appsody Hub
 The Hub is the central point of control for Appsody Stacks where you can find available stacks, create new stacks, or modify existing ones. You can use the Hub content in the public repo or clone it to provide a private Hub that's based on your requirements. By making changes to the Stacks in the Hub, you can deploy updates to any application that's been built on them, simply by restarting the application.
 
 ### Appsody CLI
-No project is complete without a nice new CLI to play with. The [Appsody CLI](/docs/using-appsody/cli-commands.md) is powerful and intuitive, allowing developers to discover the available stacks and bring them into their local development environment. From here, they can build, run, test, and deploy applications locally. The Docker container that's built for an application can then be integrated with Tekton pipelines and deployed to Kubernetes cloud environments. For more information, see [Deploying your app through a Tekton pipeline](/docs/using-appsody/building-and-deploying.md#Deploying-your-app-through-a-Tekton-pipeline).
+No project is complete without a nice new CLI to play with. The [Appsody CLI](/content/docs/using-appsody/cli-commands.md) is powerful and intuitive, allowing developers to discover the available stacks and bring them into their local development environment. From here, they can build, run, test, and deploy applications locally. The Docker container that's built for an application can then be integrated with Tekton pipelines and deployed to Kubernetes cloud environments. For more information, see [Deploying your app through a Tekton pipeline](/content/docs/using-appsody/building-and-deploying.md#Deploying-your-app-through-a-Tekton-pipeline).
 
 ## How does it work?
 
@@ -35,7 +35,7 @@ We welcome all contributions.
 
 If you'd like to get involved, read our [Contribution guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) and come and chat to us in [Slack](https://appsody-slack.eu-gb.mybluemix.net/).
 
-Want to see your framework available as an Appsody Stack? See [Creating](/docs/stacks/create.md) and [Modifying](/docs/stacks/modify.md) Stacks and join the `#stack-providers` channel on Slack to introduce yourself!
+Want to see your framework available as an Appsody Stack? See [Creating](/content/docs/stacks/create.md) and [Modifying](/content/docs/stacks/modify.md) Stacks and join the `#stack-providers` channel on Slack to introduce yourself!
 
 ## License
 This project is licensed under the Apache 2.0 license, and all contributed stacks must also be licensed under the Apache 2.0 license. Each contributed stack should include a LICENSE file containing the Apache 2.0 license. More information can be found in the LICENSE file or online at

@@ -15,11 +15,11 @@ git clone https://github.com/appsody/stacks.git
 cd stacks
 ```
 
-2. Modify the stack or templates making sure that you follow the [stack structure](/docs/stacks/stack-structure).
+2. Modify the stack or templates making sure that you follow the [stack structure](/content/docs/stacks/stack-structure.md).
 
 ## Modifying the stack image
 
-If you have modified files within `/image` you will need to [build and test](/docs/stacks/build-and-test) to make sure the stack and its templates are working as intended.
+If you have modified files within `/image` you will need to [build and test](/content/docs/stacks/build-and-test.md) to make sure the stack and its templates are working as intended.
 
 **Note:** You should test all other Appsody commands that the stack supports also.
 
@@ -43,4 +43,4 @@ appsody run
 ```
 
 ## Building and testing stacks locally
-Now that have you have created a stack you can [build and test](/docs/stacks/build-and-test) it locally.
+Now that have you have created a stack you can [build and test](/content/docs/stacks/build-and-test.md) it locally.
