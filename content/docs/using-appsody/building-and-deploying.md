@@ -206,7 +206,7 @@ appsody deploy
 This command completes the following actions:
 
 - Calls `appsody build` and creates a *deployment* Docker image, as described in the previous section.
-- If you specified the `--knative` flag, or if Knative is the only deployment option for your stack, the command tags the image with the special prefix `dev.local`, making it accessible to your Kubernetes cluster (assuming you followed [this directions](./installing-knative-locally.md))
+- If you specified the `--knative` flag, or if Knative is the only deployment option for your stack, the command tags the image with the special prefix `dev.local`, making it accessible to your Kubernetes cluster (assuming you followed [these directions](./installing-knative-locally.md))
 - Creates a deployment manifest file named `app-deploy.yaml`, in a `/deploy` subdirectory of the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
 
 ### Deploying your application through Docker Hub
