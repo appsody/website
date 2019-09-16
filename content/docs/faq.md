@@ -11,16 +11,21 @@ Welcome to the FAQ. Here you will find a list of common questions and answers al
 
 ### 1. Does Appsody support Enterprise Windows users?
 Enterprise Windows users very frequently authenticate through Azure Active Directory (AAD). In those circumstances, the Docker daemon on Windows may not be authorized to access any of the folders that are owned by the AAD user. For this reason, Appsody supports Enterprise Windows users through a workaround.
-1. Create a new project (pick a folder that is outside of your home directory, or Docker will not have access to it).
-2. Go into that project directory and run ```appsody init <stack>```
-3. Create a new folder called ```C:\my-appsody-config-dir\```
-4. Run ```appsody init --config C:\my-appsody-config-dir\.appsody-config.yaml```
+1. Create a new project folder (pick a folder that is outside of your home directory, or Docker will not have access to it).
+1. Create a new folder called ```C:\my-appsody-config-dir\``` (again - any folder outside the home directory would work)
+1. From the project folder, run ```appsody init --config C:\my-appsody-config-dir\.appsody-config.yaml```
 
-5. ```notepad C:\my-appsody-config-dir\.appsody-config.yaml```
+1. Edit the configuration file: ```notepad C:\my-appsody-config-dir\.appsody-config.yaml```
 
-6. Change the entry ```home:``` to ```C:\my-appsody-config-dir```
+1. Change the entry ```home:``` to ```C:\my-appsody-config-dir```
 
-7. Run ```appsody run --config C:\my-appsody-config-dir\.appsody-config.yaml```
+1. Run your app: ```appsody run --config C:\my-appsody-config-dir\.appsody-config.yaml```
+
+1. Notice that if you are using some of the **Java-based stacks**, their containers might attempt to mount your local home directory, in order to be able to share the Maven repository that you may have on your disk (typically located in `~/.m2/repository`). To avoid permission issues, you need to set a special environment variable to override the resolution of the `~` with a directory that is accessible to the Docker container, by running: 
+```
+SET APPSODY_MOUNT_HOME=<any accessible directory>
+```
+This command must be run in the same command prompt window as the one where you are running Appsody.
 
 For more information on this issue, click [here](https://github.com/appsody/appsody/issues/24).
 
