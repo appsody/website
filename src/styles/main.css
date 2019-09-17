@@ -403,6 +403,7 @@ footer a:hover {
 
 .doc-content {
   padding-bottom: 3em;
+  padding-left: 1rem;
 }
 
 .doc-content table {
@@ -448,6 +449,10 @@ footer a:hover {
 
 #docs-sidebar div.dropdown {
   display: none;
+}
+
+.header-link-icon {
+  fill: var(--colour-scheme-1);
 }
 
 @media only screen and (max-width: 767px) {

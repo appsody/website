@@ -4,5 +4,7 @@ public/
 .DS_Store
 .idea/
 
+/package-lock.json
+
 src/data/indexes/*
 !src/data/indexes/sample-index.yaml

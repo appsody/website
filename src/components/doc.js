@@ -2,11 +2,6 @@ import React from "react";
 
 class Doc extends React.Component {
     componentDidMount() {
-        // Linking between sections on the same document
-        const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-        headings.forEach(heading => {
-            heading.id = heading.innerText.replace(/ /g, "-");
-        });
 
         // Trim .md
         const links = document.querySelectorAll('a');
