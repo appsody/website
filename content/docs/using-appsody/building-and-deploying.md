@@ -182,10 +182,11 @@ rules:
 
 ### Deployment as a Knative Service
 
-There are two ways to deploy your app as a Knative service:
+You can use the `--knative` flag with the `appsody deploy` command to have your application deployed as a Knative service on your target Kubernetes cluster.
 
-* If the stack your are using supports the Appsody operator, you can use the `--knative` flag with the `appsody deploy` command
-* If the stack you are using for your Appsody project does not support the Appsody operator, `appsody deploy` will default to deploying your app as a Knative serving service. The `--knative` flag, in that case, is unnecessary, but  is tolerated by the Appsody CLI.
+Note that, if the stack you are using for your Appsody project does not support the Appsody operator, `appsody deploy` will always default to deploying your app as a Knative serving service. The `--knative` flag, in that case, is unnecessary, but  is tolerated by the Appsody CLI.
+
+One way to determine whether your stack supports the operator is by inspecting the `app-deploy.yaml` file that is generated. If the `kind` element has a value of `AppsodyApplication`, that means that the stack supports the Appsody operator.
 
 For your app to work as a Knative service, the following **pre-requisites** apply:
 
