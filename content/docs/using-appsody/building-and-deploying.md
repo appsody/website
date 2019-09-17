@@ -52,7 +52,7 @@ The `appsody deploy` command provides a way for you to deploy your application d
 - If the stack contains a deployment manifest that can be consumed by the [Appsody operator](https://operatorhub.io/operator/appsody-operator), `appsody deploy` will install the operator, if necessary, and deploy your application to the cluster using that deployment manifest.
 - If the stack you are using is not equipped with the manifest for the Appsody operator, `appsody deploy` attempts to install your app as a Knative serving service.
 
-In all cases, `appsody deploy` creates a deployment manifest in the `/config` directory within your project folder. The manifest is called `app-deploy.yaml`. 
+In all cases, `appsody deploy` creates a deployment manifest in your project folder. The manifest is called `app-deploy.yaml`. 
 
 If you just want to generate the manifest - and possibly manipulate it or just check it into your source control repository - you can issue:
 ```
@@ -207,7 +207,7 @@ This command completes the following actions:
 
 - Calls `appsody build` and creates a *deployment* Docker image, as described in the previous section.
 - If you specified the `--knative` flag, or if Knative is the only deployment option for your stack, the command tags the image with the special prefix `dev.local`, making it accessible to your Kubernetes cluster (assuming you followed [these directions](./installing-knative-locally.md))
-- Creates a deployment manifest file named `app-deploy.yaml`, in a `/deploy` subdirectory of the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
+- Creates a deployment manifest file named `app-deploy.yaml`, in the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
 
 ### Deploying your application through Docker Hub
 
@@ -220,7 +220,7 @@ The command completes the following actions:
 - Calls `appsody build` and creates a deployment image, as described in the previous section.
 - The `-t myaccount/appsody-project` option tags the image.
 - The `--push` flag tells the appsody CLI to push the image to Docker Hub.
-- Creates a deployment manifest file named `app-deploy.yaml`, in a `/config` subdirectory of the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
+- Creates a deployment manifest file named `app-deploy.yaml`, in the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
 - The `--namespace mynamespace` option provisions the deployment under the `mynamespace` namespace.
 
 **Note:** If you don't specify `--push`, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry. 
