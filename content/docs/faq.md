@@ -12,8 +12,7 @@ Welcome to the FAQ. Here you will find a list of common questions and answers al
 ### 1. Does Appsody support Enterprise Windows users?
 Enterprise Windows users very frequently authenticate through Azure Active Directory (AAD). In those circumstances, the Docker daemon on Windows may not be authorized to access any of the folders that are owned by the AAD user. For this reason, Appsody supports Enterprise Windows users through a workaround.
 
-1. Create a new folder called ```C:\my-appsody-config-dir\``` (again - any folder outside the home directory would work)
-1. From the project folder, run ```appsody init --config C:\my-appsody-config-dir\.appsody-config.yaml```
+1. Create a new folder called ```C:\my-appsody-config-dir\``` (any folder outside the home directory would work)
 
 1. Edit the configuration file: ```notepad C:\my-appsody-config-dir\.appsody-config.yaml```
 
@@ -21,7 +20,7 @@ Enterprise Windows users very frequently authenticate through Azure Active Direc
 
 1. Create a new project folder (pick a folder that is outside of your home directory, or Docker will not have access to it).
 
-1. Change directories to your project folder and initialize your application: ```appsody init <stack>```
+1. Change directories to your project folder and initialize your application: ```appsody init <stack> --config C:\my-appsody-config-dir\.appsody-config.yaml```
 
 1. Run your app: ```appsody run --config C:\my-appsody-config-dir\.appsody-config.yaml```
 
