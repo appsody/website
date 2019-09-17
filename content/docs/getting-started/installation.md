@@ -129,7 +129,7 @@ This command checks the installed Appsody folder for outdated installations and 
 
 ## Upgrading on Ubuntu
 To upgrade Appsody on your system, follow these steps: 
-1) Download the most recently released **Debian install package** from the [Appsody releases page](https://github.com/appsody/appsody/releases). The file is named named `appsody_v.r.m_amd64.deb`, where v.r.m is the release number.
+1) Download the most recently released **Debian install package** from the [Appsody releases page](https://github.com/appsody/appsody/releases). The file is named `appsody_v.r.m_amd64.deb`, where v.r.m is the release number.
 2) Open your terminal and enter the directory in which you downloaded the file.
 3) Run the following command:
 ```
