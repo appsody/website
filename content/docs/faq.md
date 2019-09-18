@@ -14,6 +14,8 @@ Enterprise Windows users very frequently authenticate through Azure Active Direc
 
 1. Create a new folder called ```C:\my-appsody-config-dir\``` (any folder outside the home directory would work)
 
+1. Run `appsody init --config C:\my-appsody-config-dir\appsody-config.yaml`
+
 1. Edit the configuration file: ```notepad C:\my-appsody-config-dir\.appsody-config.yaml```
 
 1. Change the entry ```home:``` to ```C:\my-appsody-config-dir```
