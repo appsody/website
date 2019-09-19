@@ -22,6 +22,7 @@ Assuming the creation of a new user does not violate your organization policies,
 2. Grant the new user from step 1 the "Full Control" permission to the folders to be mounted by Appsody into a container. You could use the "Security" tab for each folder properties in the File Explorer application, but the quickest and simplest mechanism is to open a "Command Prompt" and issue the following commands to achieve the same results:
 
     ```
+    REM This has to be the same user applied to the Shared Drive in Docker Desktop
     set DOCKER_SHARED_DRIVE_USER=Developer
 
     REM if using the java-microprofile collection and until issue https://github.com/appsody/stacks/issues/363 is resolved:
