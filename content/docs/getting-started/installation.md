@@ -59,7 +59,7 @@ That's all there is to it! You can now follow our [Quick Start](/content/docs/ge
 
 ## Installing on Windows
 
-Note: Appsody runs only on Windows 10.
+Note: Appsody runs only on Windows 10 Pro edition. Also, if you are running Enterprise Windows with authentication through Azure Active Directory, please see the [FAQ](../faq.md).
 
 Follow these steps:
 
