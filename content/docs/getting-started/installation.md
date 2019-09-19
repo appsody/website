@@ -59,7 +59,7 @@ That's all there is to it! You can now follow our [Quick Start](/content/docs/ge
 
 ## Installing on Windows
 
-Note: Appsody runs only on Windows 10 Professional and Windows 10 Enterprise editions. If you are running Windows 10 Enterprise with authentication through Azure Active Directory, please follow the additional instructions in the page titled ["Special notes about Appsody and Docker Desktop on Windows 10"](docker-windows-aad.md).
+Note: Appsody runs only on Windows 10 Professional and Windows 10 Enterprise editions. If you are running Windows 10 Enterprise with authentication through Azure Active Directory, please follow the additional instructions in the page [Appsody and Docker Desktop on Windows 10](/content/docs/docker-windows-aad.md).
 
 Follow these steps:
 
