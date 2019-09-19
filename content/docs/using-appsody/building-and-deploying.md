@@ -52,6 +52,14 @@ The `appsody deploy` command provides a way for you to deploy your application d
 - If the stack contains a deployment manifest that can be consumed by the [Appsody operator](https://operatorhub.io/operator/appsody-operator), `appsody deploy` will install the operator, if necessary, and deploy your application to the cluster using that deployment manifest.
 - If the stack you are using is not equipped with the manifest for the Appsody operator, `appsody deploy` attempts to install your app as a Knative serving service.
 
+In all cases, `appsody deploy` creates a deployment manifest in your project folder. The manifest is called `app-deploy.yaml`. 
+
+If you just want to generate the manifest - and possibly manipulate it or just check it into your source control repository - you can issue:
+```
+appsody deploy --generate-only
+```
+plus any other applicable flags, such as `--tag` and `--knative`, as discussed later.
+
 ### Deployment via the Appsody Operator - Overview
 Kubernetes operators offer a powerful way to provide full lifecycle maintenance of a wide range of resources on Kubernetes clusters. In particular, they can install, upgrade, remove, and monitor application deployments. The recently published [Appsody operator](https://operatorhub.io/operator/appsody-operator) automates the installation and maintenance of a special type of Custom Resource Definitions (CRDs), called **AppsodyApplication**. 
 
@@ -79,7 +87,9 @@ When you run `appsody deploy` on a project that is based on a stack that is enab
 - If there isn't one, it attempts to install it. If there's already an operator, the command will move to the next step.
 - The command will then proceed to install the AppsodyApplication (your app)
 
-The command can be run with or without a `--namespace` or `-n` flag. No flag means you are targeting the `default` namespace.
+The command can be run with or without a `--namespace` or `-n` flag. If that flag is omitted, you are targeting the `default` namespace.
+
+The command also accepts an optional `--knative` flag, which instructs Appsody to deploy your application as a Knative service. More on this option [in this section](#deployment-as-a-knative-service)
 
 When you want to remove your application, you can run: 
 
@@ -170,48 +180,21 @@ rules:
 
   Once you have these roles in place, you need to create the appropriate RoleBinding and ClusterRoleBinding to bind your users or groups to them.
 
-
-
-
-
 ### Deployment as a Knative Service
 
-If the stack you are using for your Appsody project does not support the Appsody operator, `appsody deploy` will default to deploying your app as a Knative serving service.
+You can use the `--knative` flag with the `appsody deploy` command to have your application deployed as a Knative service on your target Kubernetes cluster.
 
-In this case, the following **pre-requisites** apply:
+Note that, if the stack you are using for your Appsody project does not support the Appsody operator, `appsody deploy` will always default to deploying your app as a Knative serving service. The `--knative` flag, in that case, is unnecessary, but  is tolerated by the Appsody CLI.
+
+One way to determine whether your stack supports the operator is by inspecting the `app-deploy.yaml` file that is generated. If the `kind` element has a value of `AppsodyApplication`, that means that the stack supports the Appsody operator.
+
+For your app to work as a Knative service, the following **pre-requisites** apply:
 
 - You must have access to a Kubernetes cluster, with Knative Serving installed and running. To install Knative locally, use the Kubernetes feature in Docker for Desktop, see [Installing Knative Locally](/content/docs/using-appsody/installing-knative-locally.md). To install Knative on other Kubernetes clusters, see the [Knative Install Documentation](https://knative.dev/docs/install/).
 - You must configure your `kubectl` CLI to point to your Kubernetes cluster.
 - If you intend to push the Docker image containing your application to Docker Hub, your target cluster must be configured to pull images from Docker Hub.
 
-#### Using the createKnativeService option to deploy as a Knative Service  
-
-The appsody operator allows you to deploy as a Knative Service if your stack contains a config/app-deploy.yaml file. You can add the element `createKnativeService: true` to your `app-deploy.yaml` file in your project directory.
-
-Perform the following steps:
-1. `appsody deploy --generate-only` will create `app-deploy.yaml` for your project
-2. Edit your app-deploy.yaml file.
-   - Add the line `createKnativeService: true` in the spec definition section to the `app-deploy.yaml` file created above.
-3. Deploy your application:
-
-   - For Local Docker:
-
-      - Run the command `appsody deploy —-tag dev.local/<projectName> --namespace your-namespace`
-
-      - Tagging with  `dev.local/` makes the image accessible to your Kubernetes cluster.
-
-   - For Docker Hub:
-
-      - Run the command `appsody deploy --push --tag my-account/<projectName> --namespace your-namespace`
-      Notes:
-      - The --tag option tags the image.
-      - You must be logged in to your docker repo for --push to work. 
-      - The --push  flag tells the appsody CLI to push the image to Docker Hub
-      - You must be logged in to Docker Hub for --push to work. 
-      
-5. The Knative Service should now be operable at the URL specified in the output.
-
-
+Once the `appsody deploy --knative` command completes successfully, the Knative Service is operable at the URL specified in the command output.
 
 ### Deploying your application to a local Kubernetes cluster
 
@@ -224,24 +207,24 @@ appsody deploy
 This command completes the following actions:
 
 - Calls `appsody build` and creates a *deployment* Docker image, as described in the previous section.
-- Tags the image with the special prefix `dev.local`, making it accessible to your Kubernetes cluster.
-- Creates a deployment manifest file named `app-deploy.yaml`, in a `/deploy` subdirectory of the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
+- If you specified the `--knative` flag, or if Knative is the only deployment option for your stack, the command tags the image with the special prefix `dev.local`, making it accessible to your Kubernetes cluster (assuming you followed [these directions](./installing-knative-locally.md))
+- Creates a deployment manifest file named `app-deploy.yaml`, in the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
 
 ### Deploying your application through Docker Hub
 
 If your cluster is configured to pull images from Docker Hub, use the following command to deploy your application:
 ```
-appsody deploy -t <myaccount/appsody-project> --push --namespace mynamespace
+appsody deploy -t <myaccount/appsody-project> --push --namespace mynamespace [--knative]
 ```
 The command completes the following actions:
 
 - Calls `appsody build` and creates a deployment image, as described in the previous section.
 - The `-t myaccount/appsody-project` option tags the image.
 - The `--push` flag tells the appsody CLI to push the image to Docker Hub.
-- Creates a deployment manifest file named `app-deploy.yaml`, in a `/deploy` subdirectory of the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
+- Creates a deployment manifest file named `app-deploy.yaml`, in the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
 - The `--namespace mynamespace` option provisions the deployment under the `mynamespace` namespace.
 
-**Note:** If you don't specify `--push`, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry. Additionally, your image will be tagged as  `dev.local/<project-name>` and referenced in the deployment manifest.
+**Note:** If you don't specify `--push`, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry. 
 
 ### Deploying multiple projects
 If you are running multiple Appsody projects on your workstation, you can use `appsody deploy` and `appsody operator` commands to get them deployed to a Kubernetes cluster. However, make sure that you run these commands one at a time, because those commands create temporary files that might lead to conflicts if created concurrently.
