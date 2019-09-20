@@ -17,33 +17,24 @@ From the base directory:
     ```
     ./ci/build.sh . incubator/nodejs-express
     ```
-
     **Note:** If a stack is not specified, all stacks in all repositories will be built.
 
-1. Add the generated appsody repository to the repository list:
+2. A generated repository based on the stacks built will be added to the repository list. Run ```appsody repo list``` to see this repository named `<repo>-index-local`
+
+3. Check the built stack has been added in that repository by running `appsody list <repo>-index-local`. Here is an example of the output you should get: 
     ```
-    appsody repo add <local-repo-name> file://$PWD/ci/assets/<local-stack-repo>
+    REPO            	    ID            	VERSION  	TEMPLATES        	DESCRIPTION                      
+    incubator-index-local	nodejs-express	0.2.5    	*simple, skaffold	Express web framework for Node.js
     ```
 
-    The value of `<local-stack-repo>` can be `incubator-index-local.yaml` or `experimental-index-local.yaml` or `stable-index-local.yaml`. For example:
-    ```
-    appsody repo add my-repo-incubator file://$PWD/ci/assets/incubator-index-local.yaml
-    ```
-
-1. Check the built stack has been added in that repository by running `appsody list my-repo-incubator`. Here is an example of the output you should get: 
-    ```
-    REPO            	ID            	VERSION  	TEMPLATES        	DESCRIPTION                      
-    my-repo-incubator	nodejs-express	0.2.5    	*simple, skaffold	Express web framework for Node.js
-    ```
-
-1. Set an environment variable to use locally created images:
+4. Set an environment variable to use locally created images:
     ```
     export APPSODY_PULL_POLICY=IFNOTPRESENT
     ```
 
 You can now use the generated local repository to create new projects:
 ```
-appsody init my-repo-incubator/nodejs-express
+appsody init incubator-index-local/nodejs-express
 ```
 
 Local appsody operations will also be performed against already pulled or rebuilt stack images.
