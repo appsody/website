@@ -19,8 +19,7 @@ You can now use the following commands to install Knative Serving 0.7.1 (current
 1. Install Istio:
 
 	```sh
-	curl -L https://raw.githubusercontent.com/knative/serving/v0.5.2/third_party/istio-1.0.7/istio.yaml \
-	  | kubectl apply --filename -
+	curl -L https://raw.githubusercontent.com/knative/serving/v0.5.2/third_party/istio-1.0.7/istio.yaml \ | kubectl apply --filename -
 	```
 	
 	Next, label the default namespace with *istio-injection=enabled* using the following .
@@ -40,8 +39,7 @@ You can now use the following commands to install Knative Serving 0.7.1 (current
 3. Install Knative Serving 0.7.1:
 
 	```sh
-	curl -L https://github.com/knative/serving/releases/download/v0.7.1/serving.yaml \
-	  | kubectl apply --selector networking.knative.dev/certificate-provider!=cert-manager --filename -
+	curl -L https://github.com/knative/serving/releases/download/v0.7.1/serving.yaml \ | kubectl apply --selector networking.knative.dev/certificate-provider!=cert-manager --filename -
 	```
 4. Verify the STATUS of the Knative Serving components:
 
@@ -66,12 +64,20 @@ You can now use the following commands to install Knative Serving 0.7.1 (current
    ```
    and use `ESCAPE` followed by `:wq` to save your changes.
    
-6. Discover the "nip.io" address for your local machine:
+6. Discover the "nip.io" address for your local machine. This will be your machine's IPV4/inet address appended with ".nip.io" 
+
+    For example, if your local IPV4/inet address is: `9.174.18.28` then your "nip.io" address is: `9.174.18.28.nip.io`
+
+    To find your IPV4/inet address on linux/mac use:
 
    ```sh
-   echo $(ifconfig | grep "inet 9." | cut -d ' ' -f2).nip.io
+   ifconfig | grep "inet "
    ```
-   This will print an address that you will use to set a config domain in the next step.
+      For Windows use:
+   ```sh
+   ipconfig | find "IPv4"
+   ```
+      This will print an IP address that you will use to set a config domain in the next step.
    
 7. Edit your `config-domain` config map to set up the use of your "nip.io" domain:
 
@@ -87,6 +93,8 @@ You can now use the following commands to install Knative Serving 0.7.1 (current
   	  9.174.18.28.nip.io: ""
     ```
     and use `ESCAPE` followed by `:wq` to save your changes.
+    
+      If your local machine's IP address changes you will need to repeat the previous two steps to find the new ip and change the config map.
 
 You should now have Knative Serving installed in your Docker for Desktop based Kubernetes cluster.
 
