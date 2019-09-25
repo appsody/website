@@ -1,7 +1,7 @@
 ---
 title: Installing Appsody
-path: /docs/getting-started/installation
 ---
+
 # Installing Appsody
 
 You can install Appsody on your system in a few easy steps by using our binary packages, which are available for macOS&reg;, Ubuntu, Red Hat Enterprise Linux (RHEL), and Windows&reg;.

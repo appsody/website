@@ -105,7 +105,7 @@ class Search extends Component {
                 <tbody key={`row_${item.frontmatter.title}`}>
                   <tr>
                     <td>
-                      <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.title}</Link>
+                      <Link onClick={this.closeDropdown} to={item.fields.slug}>{item.frontmatter.title}</Link>
                     </td>
                   </tr>
                 </tbody>
@@ -133,7 +133,7 @@ class Search extends Component {
                 <tbody key={`row_${item.frontmatter.title}`}>
                   <tr>
                     <td>
-                      <Link onClick={this.closeDropdown} to={item.frontmatter.path}>{item.frontmatter.title}</Link>
+                      <Link onClick={this.closeDropdown} to={item.fields.slug}>{item.frontmatter.title}</Link>
                     </td>
                   </tr>
                 </tbody>
@@ -156,9 +156,11 @@ export default () => (
               node {
                 html
                 frontmatter {
-                  path
                   title
                 }
+                fields {
+              		slug
+            		}
               }
             }
           }

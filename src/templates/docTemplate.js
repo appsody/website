@@ -15,12 +15,9 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      frontmatter {
-        path
-      }
-    }
+query($path: String!) {
+  markdownRemark(fields: { slug: { eq: $path } }) {
+    html
   }
+}
 `

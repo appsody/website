@@ -1,7 +1,7 @@
 ---
 title: Appsody Overview
-path: /docs
 ---
+
 # Welcome to Appsody
 
 Appsody is designed to help you develop containerized applications for the cloud.
