@@ -1,7 +1,7 @@
 ---
 title: Appsody Stacks
-path: /docs/stacks/stacks-overview
 ---
+
 # Appsody Stacks
 
 Appsody provides pre-configured application stacks that enable rapid development of quality microservice-based applications. Stacks include a base container image and project templates which act as a starting point for your application development.

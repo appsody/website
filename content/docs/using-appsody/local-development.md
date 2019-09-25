@@ -1,6 +1,5 @@
 ---
 title: Appsody Local Development
-path: /docs/using-appsody/local-development
 ---
 
 # Appsody Local Development
