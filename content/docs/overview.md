@@ -29,6 +29,8 @@ Appsody provides pre-configured application stacks, which use the well-known Doc
 
 When developers run, debug, or test their application using the Appsody CLI, it starts a container with the stack image, makes the development workspace available to the running container, and starts the Appsody controller. The controller is configurable through environment variables in the stack and manages the application within the running container. For example, the controller can watch for changes in the application `/src` directory. When these changes are saved, the controller restarts the application running in a docker container.
 
+![Appsody Flow](/src/images/appsody_flow.png)
+
 ## Contributing
 
 We welcome all contributions.
