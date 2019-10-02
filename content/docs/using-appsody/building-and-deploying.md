@@ -97,7 +97,7 @@ appsody deploy delete
 ```
 This command must be run from your Appsody project directory. It will attempt to remove the application you installed, but it will not touch the Appsody operator.
 
-#### Use of the --generate only flag with `appsody deploy`
+#### Use of `appsody deploy --generate-only`
 ##### Use of  `appsody deploy --generate-only` flag with the `--tag  (-t)` flag 
 If the `--generate only` flag is used in conjunction with the `--tag (-t)` flag, the value of the tag is preserved in the app-deploy.yaml file and used during subsequent `appsody deploy` invocations.
 
