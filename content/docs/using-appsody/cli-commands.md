@@ -172,7 +172,7 @@ appsody deploy [flags]
       --generate-only      Only generate the deployment configuration file. Do not deploy the project.
   -h, --help               help for deploy
       --knative            Deploy as a Knative Service
-  -n, --namespace string   Target namespace in your Kubernetes cluster
+  -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
       --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
   -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
 ```
@@ -217,7 +217,7 @@ appsody deploy delete [flags]
       --force              Force the reuse of the deployment configuration file if one exists.
       --generate-only      Only generate the deployment configuration file. Do not deploy the project.
       --knative            Deploy as a Knative Service
-  -n, --namespace string   Target namespace in your Kubernetes cluster
+  -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
       --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
   -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
   -v, --verbose            Turns on debug output and logging to a file in $HOME/.appsody/logs
@@ -671,6 +671,8 @@ Tools to help create and test Appsody stacks
 
 * [appsody](#appsody)	 - Appsody CLI
 * [appsody stack lint](#appsody-stack-lint)	 - Lint your stack to verify that it conforms to the standard of an Appsody stack
+* [appsody stack package](#appsody-stack-package)	 - Package a stack in the local Appsody environment
+* [appsody stack validate](#appsody-stack-validate)	 - Run validation tests of a stack in the local Appsody environment
 
 ## appsody stack lint
 
@@ -691,6 +693,68 @@ appsody stack lint [flags]
 
 ```
   -h, --help   help for lint
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun          Turns on dry run mode
+  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+```
+
+### SEE ALSO
+
+* [appsody stack](#appsody-stack)	 - Tools to help create and test Appsody stacks
+
+## appsody stack package
+
+Package a stack in the local Appsody environment
+
+### Synopsis
+
+This builds a stack and creates an index and adds it to the repository
+
+```
+appsody stack package [flags]
+```
+
+### Options
+
+```
+  -h, --help   help for package
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun          Turns on dry run mode
+  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+```
+
+### SEE ALSO
+
+* [appsody stack](#appsody-stack)	 - Tools to help create and test Appsody stacks
+
+## appsody stack validate
+
+Run validation tests of a stack in the local Appsody environment
+
+### Synopsis
+
+This runs a set of validation tests for a stack.
+
+```
+appsody stack validate [flags]
+```
+
+### Options
+
+```
+  -h, --help         help for validate
+      --no-lint      Skips running appsody stack lint
+      --no-package   Skips running appsody stack package
 ```
 
 ### Options inherited from parent commands
