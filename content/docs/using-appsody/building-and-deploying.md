@@ -218,7 +218,7 @@ appsody deploy -t <myaccount/appsody-project> --push --namespace mynamespace [--
 The command completes the following actions:
 
 - Calls `appsody build` and creates a deployment image, as described in the previous section.
-- The `-t myaccount/appsody-project` option tags the image.
+- The `-t myrepository/appsody-project:tag` flag tags the image.
 - The `--push` flag tells the appsody CLI to push the image to Docker Hub.
 - Creates a deployment manifest file named `app-deploy.yaml`, in the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
 - The `--namespace mynamespace` option provisions the deployment under the `mynamespace` namespace.
@@ -227,6 +227,21 @@ The command completes the following actions:
 
 ### Deploying multiple projects
 If you are running multiple Appsody projects on your workstation, you can use `appsody deploy` and `appsody operator` commands to get them deployed to a Kubernetes cluster. However, make sure that you run these commands one at a time, because those commands create temporary files that might lead to conflicts if created concurrently.
+
+### Ensuring the latest application code changes get deployed
+Some users have noticed that their code changes do not seem to be published to the target Kubernetes cluster after an initial deployment of the Appsody project through `appsody deploy`.
+The sequence of actions that leads to this behavior is as follows:
+1. You create an initial version of your app, and then use `appsody deploy` to publish it to your test Kubernetes cluster.
+1. You test your app, and make code changes. The code changes appear as you re-test your app using `appsody run`.
+1. You decide to re-publish your app to your target cluster, and run `appsody deploy` again.
+1. The command succeeds, yet nothing seems to change on the Kubernetes cluster: you still observe the older version of your app.
+
+This behavior can be explained by the fact that - if you simply issue `appsody deploy` without explictily tagging the image - you end up with a deployment manifest (the `app-deploy.yaml` file) that is identical to the one that was used to deploy the application the first time. Therefore, Kubernetes will detect no differences in the deployment yaml, and will do nothing to update your app.
+
+In order to ensure that the latest version of your app gets pushed down to the cluster, you have two options:
+1. Remove the app, and re-deploy (`appsody deploy delete` and then `appsody deploy`)
+1. Explicitly tag the image every time with a new tag, to force Kubernetes to take action (for example: `appsody deploy -t dev.local/my-image:0.x`, where you increment x every time you re-deploy).
+
 
 ## Deploying your app through a Tekton pipeline
 
