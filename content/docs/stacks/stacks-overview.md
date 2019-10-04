@@ -19,6 +19,22 @@ Stacks are categorized as either `stable`, `incubator` or `experimental` dependi
 
 - `experimental/`: Experimental stacks are not being actively been worked on and may not fulfill the requirements of an Appsody stack. These can be used for trying out specific capabilities or proof of concept work.
 
+### Official Appsody Stacks
+
+Below are the URLs for official Appsody releases.
+
+| Stack | URL |
+| ----- | --- |
+| `stable` | TBD |
+| `incubator` | `https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml` |
+| `experimental` | `https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml` |
+
+By default, Appsody comes with the `incubator` stack. Other stacks can be added, to add the `experimental` stack run the following:
+
+```bash
+appsody repo add experimental https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
+```
+
 ## Getting started
 Follow our [Quick Start Guide](/content/docs/getting-started/quick-start.md) to get you up and running with Appsody.
 
