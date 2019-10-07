@@ -60,7 +60,7 @@ significant exception is work-in-progress PRs. These should be indicated by open
 
 ## Contributor License Agreement
 
-In order for us to merge any of your changes into Appsody, you need to sign the Contributor License Agreement. When you open up a Pull Request for the first time, a bot will comment with a link to the CLA.
+In order for us to merge any of your changes into Appsody, you need to sign the Contributor License Agreement. When you open up a Pull Request for the first time, a bot will comment with a link to the CLA. You can review or sign the CLA now here https://cla-assistant.io/appsody/appsody
 
 ## Merge approval and release process
 

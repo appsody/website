@@ -1,13 +1,12 @@
 ---
 title: Building and Testing Stacks
-path: /docs/stacks/build-and-test
 ---
 
 # Building and Testing Stacks
 
 The instructions below will reference the "base directory", which will be the directory containing the clone or copy of the appsody/stacks git repository.
 
-Once you have created or updated a stack, use scripts in the `ci/` directory or use ```appsody stack package``` to build stack images and templates, and to generate an appsody repository index you can use for local testing. The script `./ci/build.sh` combines several operations (lint, prefetch, package, test) for the specified stack. If you would like to learn more about the process for building, testing and releasing a stack, please see [Appsody Stacks Release Process](https://github.com/appsody/stacks/blob/master/RELEASE.md#appsody-stacks-release-process---technical-overview).
+Once you have created or updated a stack, use scripts in the `ci/` directory or use ```appsody stack package``` to build stack images and templates, and to generate an Appsody repository index you can use for local testing. The script `./ci/build.sh` combines several operations (lint, prefetch, package, test) for the specified stack. If you would like to learn more about the process for building, testing and releasing a stack, please see [Appsody Stacks Release Process](https://github.com/appsody/stacks/blob/master/RELEASE.md#appsody-stacks-release-process---technical-overview).
 
 ## Building a stack locally using build scripts
 
