@@ -7,24 +7,20 @@ path: /docs/stacks/build-and-test
 
 The instructions below will reference the "base directory", which will be the directory containing the clone or copy of the appsody/stacks git repository.
 
-Once you have created or updated a stack, use scripts in the `ci/` directory to build stack images and templates, and to generate an appsody repository index you can use for local testing. The script `./ci/build.sh` combines several operations (lint, prefetch, package, test) for the specified stack. If you would like to learn more about the process for building, testing and releasing a stack, please see [Appsody Stacks Release Process](https://github.com/appsody/stacks/blob/master/RELEASE.md#appsody-stacks-release-process---technical-overview).
+Once you have created or updated a stack, use scripts in the `ci/` directory or use ```appsody stack package``` to build stack images and templates, and to generate an appsody repository index you can use for local testing. The script `./ci/build.sh` combines several operations (lint, prefetch, package, test) for the specified stack. If you would like to learn more about the process for building, testing and releasing a stack, please see [Appsody Stacks Release Process](https://github.com/appsody/stacks/blob/master/RELEASE.md#appsody-stacks-release-process---technical-overview).
 
 ## Building a stack locally using build scripts
 
-From the base directory:
+From the root directory of the desired stack:
 
-1. Run the build script and specify the desired stack as a parameter, for example:
-    ```
-    ./ci/build.sh . incubator/nodejs-express
-    ```
-    **Note:** If a stack is not specified, all stacks in all repositories will be built.
+1. Running ```appsody stack package``` will build your stack, create an index and add it to a repository automatically.
 
-2. A generated repository based on the stacks built will be added to the repository list. Run ```appsody repo list``` to see this repository named `<repo>-index-local`
+2. A generated repository based on the stacks built will be added to the repository list. Run ```appsody repo list``` to see this repository named `dev-local`
 
-3. Check the built stack has been added in that repository by running `appsody list <repo>-index-local`. Here is an example of the output you should get: 
+3. Check the built stack has been added in that repository by running `appsody list dev-local`. Here is an example of the output you should get: 
     ```
     REPO            	    ID            	VERSION  	TEMPLATES        	DESCRIPTION                      
-    incubator-index-local	nodejs-express	0.2.5    	*simple, skaffold	Express web framework for Node.js
+    dev-local	            nodejs-express	0.2.5    	*simple, skaffold	Express web framework for Node.js
     ```
 
 4. Set an environment variable to use locally created images:
@@ -34,7 +30,7 @@ From the base directory:
 
 You can now use the generated local repository to create new projects:
 ```
-appsody init incubator-index-local/nodejs-express
+appsody init dev-local/nodejs-express
 ```
 
 Local appsody operations will also be performed against already pulled or rebuilt stack images.
