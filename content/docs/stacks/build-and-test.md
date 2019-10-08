@@ -19,7 +19,7 @@ From the root directory of the desired stack:
 3. Check the built stack has been added in that repository by running `appsody list dev-local`. Here is an example of the output you should get: 
     ```
     REPO            	    ID            	VERSION  	TEMPLATES        	DESCRIPTION                      
-    dev-local	            nodejs-express	0.2.5    	*simple, skaffold	Express web framework for Node.js
+    dev-local	            nodejs-express	0.2.5    	*simple, scaffold	Express web framework for Node.js
     ```
 
 4. Set an environment variable to use locally created images:
@@ -46,8 +46,8 @@ To build your stack image locally follow the below steps:
     docker build -t <org-name>/<stack-id>:<tag> -f Dockerfile-stack .
     ```
 
-    You now have access to the stack image to use and test locally. 
-    
+    You now have access to the stack image to use and test locally.
+
     **Note:** The local image should be tagged with the desired release. The tag value is usually the major and minor version of the stack, e.g. `appsody/nodejs-express:0.2`. If you do not specify the tag value, it will tag it as the latest version, e.g. `appsody/nodejs-express:latest`.
 
 1. Set an environment variable to use locally created image:
@@ -90,5 +90,3 @@ For a project that has already been initialized:
     appsody test
     appsody build
     ```
-
-
