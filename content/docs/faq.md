@@ -42,3 +42,9 @@ When you encounter the following error
 `https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml`
 
 3. Save your changes and try running your command again.
+
+### 6. Does Appsody require an Internet connection?
+
+Appsody requires the user to have a working Internet connection to utilise several of the commands. For the core ```appsody run/test/debug``` commands, Appsody will pull the latest images from DockerHub but if pulled down ahead of time, these images will be cached locally and used when a network connection is not present.
+
+**NOTE:** Some stacks may need to download package dependencies and therefore cached images for the commands will not always work.
