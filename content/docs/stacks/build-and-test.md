@@ -4,9 +4,7 @@ title: Building and Testing Stacks
 
 # Building and Testing Stacks
 
-The instructions below will reference the "base directory", which will be the directory containing the clone or copy of the appsody/stacks git repository.
-
-Once you have created or updated a stack, use scripts in the `ci/` directory or use ```appsody stack package``` to build stack images and templates, and to generate an Appsody repository index you can use for local testing. The script `./ci/build.sh` combines several operations (lint, prefetch, package, test) for the specified stack. If you would like to learn more about the process for building, testing and releasing a stack, please see [Appsody Stacks Release Process](https://github.com/appsody/stacks/blob/master/RELEASE.md#appsody-stacks-release-process---technical-overview).
+Once you have created or updated a stack, use ```appsody stack package``` to build stack images and templates, and to generate an Appsody repository index you can use for local testing. To test your stack, you can use ```appsody stack validate``` which combines several operations (lint, package, test) for the specified stack. If you would like to learn more about the process for building, testing and releasing a stack, please see [Appsody Stacks Release Process](https://github.com/appsody/stacks/blob/master/RELEASE.md#appsody-stacks-release-process---technical-overview).
 
 ## Building a stack locally using the Appsody CLI
 
@@ -29,8 +27,7 @@ You can now use the generated local repository to create new projects:
 appsody init dev-local/nodejs-express
 ```
 
-
-## Building a stack image locally without build scripts
+## Building a stack image locally without using the Appsody CLI
 
 To build your stack image locally follow the below steps:
 
@@ -56,30 +53,27 @@ Local appsody operations will also be performed against already pulled or rebuil
 
 To initialize a new project:
 
-1. Repackage the templates for the stack, from the base directory:
-    ```
-    ./ci/build.sh . <repository>/<stack-id>
-    ```
+1. Navigate to the root directory of the stack you want to build e.g. ```cd incubator/nodejs-express```
 
-    For example, `./ci/build.sh . incubator/nodejs-express`
+2. Use `appsody stack package` to repackage the templates for the stack
 
-2. Initialize a project with the new stack image, and run appsody commands as usual:
+3. Initialize a project with the new stack image, and run appsody commands as usual:
     ```
     mkdir -p /tmp/nodejs-express
     cd /tmp/nodejs-express
-    appsody init my-repo-incubator/nodejs-express <optional template>
+    appsody init dev-local/nodejs-express <optional template>
     appsody test
     ```
 
 For a project that has already been initialized:
 
-3. Update the contents of `.appsody-config.yaml`
+4. Update the contents of `.appsody-config.yaml`
 
     ```
     stack: <org-name>/<stack-id>:<tag>
     ```
 
-4. Use `appsody` commands as usual:
+5. Use `appsody` commands as usual:
     ```
     appsody run
     appsody test
