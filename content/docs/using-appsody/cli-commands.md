@@ -718,6 +718,7 @@ This command is a tool for stack developers to package a stack from their local 
 - Creates a tar.gz for each stack template and stores it in .appsody/stacks/dev.local
 - Builds a Docker image named "dev.local/[stack name]:SNAPSHOT
 - Creates an Appsody repository named "dev-local"
+- Adds the "dev-local" repository to your Appsody configuration
 
 ```
 appsody stack package [flags]
