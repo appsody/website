@@ -676,7 +676,7 @@ Tools to help create and test Appsody stacks
 
 ## appsody stack lint
 
-Lint your stack to verify that it conforms to the standard of an Appsody stack
+Lint your stack to verify that it conforms to the [structure](https://appsody.dev/docs/stacks/stack-structure#stack-structure) of an Appsody stack
 
 ### Synopsis
 
