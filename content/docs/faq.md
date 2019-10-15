@@ -43,8 +43,14 @@ When you encounter the following error
 
 3. Save your changes and try running your command again.
 
-### 6. Does Appsody require an Internet connection?
+### 6. How to work offline with the Appsody CLI
 
-Appsody requires the user to have a working Internet connection to utilise several of the commands. For the core ```appsody run/test/debug``` commands, Appsody will pull the latest images from DockerHub but if pulled down ahead of time, these images will be cached locally and used when a network connection is not present.
+Appsody requires the user to have a working Internet connection to utilise several commands. However if you wish to work offline, there are several things you must do first:
 
-**NOTE:** Some stacks may need to download package dependencies and therefore cached images for the commands will not always work.
+- Download the incubator or experimental index files here and add them to your repo by using `appsody repo add <repo-name> <path-to-downloaded-index>`:
+    - https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml
+    - https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
+
+- Initialise an Appsody project using the desired stack with `appsody init` to pull down the latest images from DockerHub. These images will then be cached locally for offline use to run other Appsody commands e.g. `run/test/debug`.
+
+**NOTE:** Some stacks such as the `nodejs` stacks may need to download package dependencies and therefore not all stacks can be used offline.
