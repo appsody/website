@@ -54,7 +54,6 @@ module.exports = {
         ],
       }
     },
-    `gatsby-transformer-yaml`,
-    `gatsby-plugin-layout`
+    `gatsby-transformer-yaml`
   ]
 }

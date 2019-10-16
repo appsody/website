@@ -1,5 +1,7 @@
 import React from "react";
 
+import Layout from "../layouts"
+
 import TileGrid from "../components/tileGrid";
 
 import kubeLogo from "../images/kubernetes_logo.png";
@@ -12,6 +14,7 @@ import appsodyHello from "../images/appsody_hello.svg";
 import { Link } from "gatsby";
 
 const IndexPage = () => (
+  <Layout>
   <div className="container">
     <section className="landing-section">
       <div className="row w-100 mx-auto">
@@ -68,6 +71,7 @@ const IndexPage = () => (
       </div>
     </section>
   </div>
+  </Layout>
 )
 
 export default IndexPage
