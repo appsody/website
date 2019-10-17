@@ -97,6 +97,14 @@ appsody deploy delete
 ```
 This command must be run from your Appsody project directory. It will attempt to remove the application you installed, but it will not touch the Appsody operator.
 
+Here we discuss the `--generate-only` flag, which allows you to create the deployment manifest without triggering a deployment.
+#### Use of  `appsody deploy --generate-only` flag with the `--tag  (-t)` flag 
+If the `--generate only` flag is used in conjunction with the `--tag (-t)` flag, the value of the tag is preserved in the app-deploy.yaml file and used during subsequent `appsody deploy` invocations.
+
+#### Use of `appsody deploy --generate-only` with the `--knative` tag 
+If `--knative` is used along with `--generate-only`, the value of `createKnativeService` will be set to `true` in the generated app-deploy.yaml file.  
+Note that if during a subsequent `appsody deploy` call the `--knative` flag is not present, the value of `createKnativeService` will be set to `false` in app-deploy.yaml.
+
 #### Using the `appsody operator` commands
 In certain cases, you may want to deploy one or more Appsody operators on your cluster ahead of time, and let developers deploy their applications to the cluster without them having to meddle with operator deployments.
 
@@ -178,6 +186,13 @@ rules:
   This ClusterRole allows users to lookup the necessary resources across namespaces, and to create CRDs anywhere in the cluster (which is required by the installation of the operator, in certain cases).
 
   Once you have these roles in place, you need to create the appropriate RoleBinding and ClusterRoleBinding to bind your users or groups to them.
+
+
+#### Considerations on Appsody operators not installed via the Appsody CLI
+Appsody operators can be installed through different means - the Appsody CLI is one of the ways to get them installed.
+- The Appsody CLI assumes you have at most one Appsody operator per namespace. If you install the operator with the Appsody CLI, this constraint is enforced by the CLI itself. If you use different techniques to install the operator, make sure you do not install multiple operators in the same namespace.
+
+- The Appsody operators created by `appsody operator install` or `appsody deploy` watch only one namespace.  However, the Appsody CLI operations `appsody operator install` and `appsody deploy` can tolerate an Appsody operator created by a different mechanism which watches multiple namespaces.
 
 ### Deployment as a Knative Service
 
