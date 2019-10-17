@@ -45,12 +45,21 @@ When you encounter the following error
 
 ### 6. How to work offline with the Appsody CLI
 
-Appsody requires the user to have a working Internet connection to utilise several commands. However if you wish to work offline, there are several things you must do first:
+It is stated in the Installation Guide that the user requires an internet connection. However, it might be possible for a user to work with the Appsody CLI offline, depending on their chosen stack.
 
-- Download the incubator or experimental index files here and add them to your repo by using `appsody repo add <repo-name> <path-to-downloaded-index>`:
-    - https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml
-    - https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
+Here are the commands you will be using with Appsody and the steps you would follow to use them offline:
 
-- Initialise an Appsody project using the desired stack with `appsody init` to pull down the latest images from DockerHub. These images will then be cached locally for offline use to run other Appsody commands e.g. `run/test/debug`.
+- `appsody list/repo list`: Download the Appsody index files that you are using for example [incubator](https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml) or [experimental](https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml) and add them to your local repository, by using: 
+    ```
+    appsody repo add <repo-name> <path-to-downloaded-index>
+    ```
 
-**NOTE:** Some stacks such as the `nodejs` stacks may need to download package dependencies and therefore not all stacks can be used offline.
+- `appsody init`: Initialise an Appsody project using the desired stack with `appsody init` to pull down the latest images from DockerHub. These images will then be cached locally to be used without an Internet connection.
+
+- `appsody run/test/debug`: You must first set the environment variable:
+    ```
+    export APPSODY_PULL_POLICY=IFNOTPRESENT
+    ```
+    This tells Appsody to utilise images stored in the cache rather than from Dockerhub.
+
+**NOTE:** Some stacks such as the `nodejs` stacks need to download package dependencies so not all stacks can be used offline.
