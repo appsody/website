@@ -1,7 +1,7 @@
 ---
 title: CLI Reference
+path: /docs/using-appsody/cli-commands
 ---
-
 # Appsody CLI
 ## appsody
 
@@ -172,7 +172,7 @@ appsody deploy [flags]
       --generate-only      Only generate the deployment configuration file. Do not deploy the project.
   -h, --help               help for deploy
       --knative            Deploy as a Knative Service
-  -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
+  -n, --namespace string   Target namespace in your Kubernetes cluster
       --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
   -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
 ```
@@ -217,7 +217,7 @@ appsody deploy delete [flags]
       --force              Force the reuse of the deployment configuration file if one exists.
       --generate-only      Only generate the deployment configuration file. Do not deploy the project.
       --knative            Deploy as a Knative Service
-  -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
+  -n, --namespace string   Target namespace in your Kubernetes cluster
       --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
   -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
   -v, --verbose            Turns on debug output and logging to a file in $HOME/.appsody/logs
@@ -671,12 +671,10 @@ Tools to help create and test Appsody stacks
 
 * [appsody](#appsody)	 - Appsody CLI
 * [appsody stack lint](#appsody-stack-lint)	 - Lint your stack to verify that it conforms to the standard of an Appsody stack
-* [appsody stack package](#appsody-stack-package)	 - Package a stack in the local Appsody environment
-* [appsody stack validate](#appsody-stack-validate)	 - Run validation tests against a stack in the local Appsody environment
 
 ## appsody stack lint
 
-Lint your stack to verify that it conforms to the [structure](https://appsody.dev/docs/stacks/stack-structure#stack-structure) of an Appsody stack
+Lint your stack to verify that it conforms to the standard of an Appsody stack
 
 ### Synopsis
 
@@ -693,80 +691,6 @@ appsody stack lint [flags]
 
 ```
   -h, --help   help for lint
-```
-
-### Options inherited from parent commands
-
-```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
-```
-
-### SEE ALSO
-
-* [appsody stack](#appsody-stack)	 - Tools to help create and test Appsody stacks
-
-## appsody stack package
-
-Package a stack in the local Appsody environment
-
-### Synopsis
-
-This command is a tool for stack developers to package a stack from their local Appsody development environment. Once the stack is packaged it can then be tested via Appsody commands. The package command performs the following:
-- Creates an index file named "index-dev-local.yaml" and stores it in .appsody/stacks/dev.local
-- Creates a tar.gz for each stack template and stores it in .appsody/stacks/dev.local
-- Builds a Docker image named "dev.local/[stack name]:SNAPSHOT
-- Creates an Appsody repository named "dev-local"
-- Adds the "dev-local" repository to your Appsody configuration
-
-```
-appsody stack package [flags]
-```
-
-### Options
-
-```
-  -h, --help   help for package
-```
-
-### Options inherited from parent commands
-
-```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
-```
-
-### SEE ALSO
-
-* [appsody stack](#appsody-stack)	 - Tools to help create and test Appsody stacks
-
-## appsody stack validate
-
-Run validation tests of a stack in the local Appsody environment
-
-### Synopsis
-
-This command is a tool for stack developers to validate a stack from their local Appsody development environment. It performs the following against the stack:
-- Runs the stack lint test. This can be turned off with the --no-lint flag
-- Runs the stack package command. This can be turned off with the --no-package flag
-- Runs the appsody init command
-- Runs the appsody run command
-- Runs the appsody test command
-- Runs the appsody build command
-- Provides a Passed/Failed status and summary of the above operations
-
-```
-appsody stack validate [flags]
-```
-
-### Options
-
-```
-  -h, --help         help for validate
-      --no-lint      Skips running appsody stack lint
-      --no-package   Skips running appsody stack package
 ```
 
 ### Options inherited from parent commands
