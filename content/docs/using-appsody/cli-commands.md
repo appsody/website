@@ -674,7 +674,7 @@ Tools to help create and test Appsody stacks
 
 * [appsody](#appsody)	 - Appsody CLI
 * [appsody stack create](#appsody-stack-create)	 - Create a new Appsody stack.
-* [appsody stack lint](#appsody-stack-lint)	 - Lint your stack to verify that it conforms to the standard of an Appsody stack
+* [appsody stack lint](#appsody-stack-lint)	 - Lint your stack to verify that it conforms to the structure of an Appsody stack
 * [appsody stack package](#appsody-stack-package)	 - Package a stack in the local Appsody environment
 * [appsody stack validate](#appsody-stack-validate)	 - Run validation tests against a stack in the local Appsody environment
 
@@ -722,7 +722,7 @@ appsody stack create <name> [flags]
 
 ## appsody stack lint
 
-Lint your stack to verify that it conforms to the standard of an Appsody stack
+Lint your stack to verify that it conforms to the structure of an Appsody stack
 
 ### Synopsis
 
