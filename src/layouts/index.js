@@ -4,8 +4,8 @@ import Layout from "../components/layout";
 import DocLayout from "../components/docLayout";
 import DocSidebar from "../components/docSidebar.js";
 
-export default ({ children, pageContext }) => {
-  if (pageContext.layout === "docs") {
+export default ({ children, pageSource }) => {
+  if (pageSource === "docs") {
     return (
       <div id="docs">
       <DocLayout>
