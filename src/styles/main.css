@@ -431,9 +431,20 @@ footer a:hover {
   margin-bottom: 2em;
 }
 
-.doc-content h1, .doc-content h2, .doc-content h3, .doc-content h4, .doc-content h5, .doc-content h6 {
-  padding-top: 2.5em;
-  margin-top: -2.5em;
+ .doc-content h5, .doc-content h6 {
+  margin: 1.5rem 0 1rem 0;
+}
+
+.doc-content h1 {
+  margin: 2.5rem 0 1rem 0;
+}
+
+.doc-content h2 {
+  margin: 2.5rem 0 1rem 0;
+}
+
+.doc-content h3, .doc-content h4 {
+  margin: 2rem 0 1rem 0;
 }
 
 .dropdown {
