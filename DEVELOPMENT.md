@@ -41,7 +41,8 @@ gatsby clean
 **Note:** If you are developing remotely, use `http://<hostname>:PORT` instead of `http://localhost:PORT` as described in this doc.
 
 ## Contributing Documentation
-1. Add documentation to the `content/docs` directory. This is where the documentation for [Appsody](https://appsody.dev/docs) is stored.
+1. Add documentation to the `content/docs` directory. This is where the documentation for [Appsody](https://appsody.dev/docs) is stored. 
+2. Add any  images to the `content/docs/images` directory.
 
 The documentation should follow the rough structure of the sidebar so that the docs are easy to find. The quick start guide, for example, is located in `content/docs/getting-started/quick-start`.
 
@@ -69,6 +70,14 @@ To add the doc to the side menu you must add it to the `sidebar.yaml` in `conten
       path: /docs/getting-started/quick-start
 ```
 **Note:** `title` for the section is optional but the `title` for each menu item is required.
+
+Images can help explain certain things better than words ever could, and make for more exciting and digestable content. To add an inline image to a doc, first place the image inside `content/docs/images` and use the following syntax:
+
+```
+![Helpful image](../images/my-awesome-image.png)
+```
+
+**Note:** relative paths must be used to reference image locations. If you can't get an image to show, you may be pointing to the wrong directory.
 
 2. Run the developement server
 ```
