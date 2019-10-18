@@ -672,11 +672,11 @@ Tools to help create and test Appsody stacks
 * [appsody](#appsody)	 - Appsody CLI
 * [appsody stack lint](#appsody-stack-lint)	 - Lint your stack to verify that it conforms to the standard of an Appsody stack
 * [appsody stack package](#appsody-stack-package)	 - Package a stack in the local Appsody environment
-* [appsody stack validate](#appsody-stack-validate)	 - Run validation tests against a stack in the local Appsody environment
+* [appsody stack validate](#appsody-stack-validate)	 - Run validation tests of a stack in the local Appsody environment
 
 ## appsody stack lint
 
-Lint your stack to verify that it conforms to the [structure](https://appsody.dev/docs/stacks/stack-structure#stack-structure) of an Appsody stack
+Lint your stack to verify that it conforms to the standard of an Appsody stack
 
 ### Synopsis
 
@@ -713,12 +713,7 @@ Package a stack in the local Appsody environment
 
 ### Synopsis
 
-This command is a tool for stack developers to package a stack from their local Appsody development environment. Once the stack is packaged it can then be tested via Appsody commands. The package command performs the following:
-- Creates an index file named "index-dev-local.yaml" and stores it in .appsody/stacks/dev.local
-- Creates a tar.gz for each stack template and stores it in .appsody/stacks/dev.local
-- Builds a Docker image named "dev.local/[stack name]:SNAPSHOT
-- Creates an Appsody repository named "dev-local"
-- Adds the "dev-local" repository to your Appsody configuration
+This builds a stack and creates an index and adds it to the repository
 
 ```
 appsody stack package [flags]
@@ -748,14 +743,7 @@ Run validation tests of a stack in the local Appsody environment
 
 ### Synopsis
 
-This command is a tool for stack developers to validate a stack from their local Appsody development environment. It performs the following against the stack:
-- Runs the stack lint test. This can be turned off with the --no-lint flag
-- Runs the stack package command. This can be turned off with the --no-package flag
-- Runs the appsody init command
-- Runs the appsody run command
-- Runs the appsody test command
-- Runs the appsody build command
-- Provides a Passed/Failed status and summary of the above operations
+This runs a set of validation tests for a stack.
 
 ```
 appsody stack validate [flags]
