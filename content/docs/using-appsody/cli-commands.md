@@ -760,11 +760,11 @@ Package a stack in the local Appsody environment
 ### Synopsis
 
 This command is a tool for stack developers to package a stack from their local Appsody development environment. Once the stack is packaged it can then be tested via Appsody commands. The package command performs the following:
-		- Creates/updates an index file named "index-dev-local.yaml" and stores it in .appsody/stacks/dev.local
-		- Creates a tar.gz for each stack template and stores it in .appsody/stacks/dev.local
-		- Builds a Docker image named "dev.local/[stack name]:SNAPSHOT"
-		- Creates an Appsody repository named "dev-local"
-		- Adds/updates the "dev-local" repository of your Appsody configuration
+- Creates/updates an index file named "index-dev-local.yaml" and stores it in .appsody/stacks/dev.local
+- Creates a tar.gz for each stack template and stores it in .appsody/stacks/dev.local
+- Builds a Docker image named "dev.local/[stack name]:SNAPSHOT"
+- Creates an Appsody repository named "dev-local"
+- Adds/updates the "dev-local" repository of your Appsody configuration
 
 ```
 appsody stack package [flags]
@@ -795,13 +795,13 @@ Run validation tests against a stack in the local Appsody environment
 ### Synopsis
 
 This command is a tool for stack developers to validate a stack from their local Appsody development environment. It performs the following against the stack:
-		- Runs the stack lint test. This can be turned off with the --no-lint flag
-		- Runs the stack package command. This can be turned off with the --no-package flag
-		- Runs the appsody init command
-		- Runs the appsody run command
-		- Runs the appsody test command
-		- Runs the appsody build command
-		- Provides a Passed/Failed status and summary of the above operations
+- Runs the stack lint test. This can be turned off with the --no-lint flag
+- Runs the stack package command. This can be turned off with the --no-package flag
+- Runs the appsody init command
+- Runs the appsody run command
+- Runs the appsody test command
+- Runs the appsody build command
+- Provides a Passed/Failed status and summary of the above operations
 
 ```
 appsody stack validate [flags]
