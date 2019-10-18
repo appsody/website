@@ -63,7 +63,7 @@ module.exports = {
         ],
       }
     },
-    `gatsby-transformer-yaml`
+    `gatsby-transformer-yaml`,
     `gatsby-plugin-sharp`,
   ]
 }
