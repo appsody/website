@@ -1,11 +1,10 @@
 ---
 title: Initializing Appsody Projects
-path: /docs/using-appsody/initializing-project
 ---
 
 # Initializing Appsody Projects
 
-The easiest way to initialize an Appsody project is to start a new source code project from a stack template. However, you can also configure an existing source code project to use an appropriate Appsody stack.  
+The easiest way to initialize an Appsody project is to start a new source code project from a stack template. However, you can also configure an existing source code project to use an appropriate Appsody stack.
 
 ## Creating a new project
 
@@ -24,27 +23,27 @@ Here is an example of the output produced by the `appsody list` command:
 ```
 $ appsody list
 
-REPO      	    ID               	        VERSION  	TEMPLATES        	DESCRIPTION                                
+REPO      	    ID               	        VERSION  	TEMPLATES        	DESCRIPTION
 appsodyhub	    java-microprofile	        0.2.6    	*default         	Eclipse MicroProfile using OpenJ9 and Maven
-appsodyhub	    java-spring-boot2	        0.3.2    	*default, kotlin 	Spring Boot using OpenJ9 and Maven         
-appsodyhub	    nodejs           	        0.2.3    	*simple          	Runtime for Node.js applications           
-appsodyhub	    nodejs-express   	        0.2.3    	*simple, skaffold	Express web framework for Node.js          
-appsodyhub	    swift            	        0.1.2    	*simple          	Runtime for Swift applications 
+appsodyhub	    java-spring-boot2	        0.3.2    	*default, kotlin 	Spring Boot using OpenJ9 and Maven
+appsodyhub	    nodejs           	        0.2.3    	*simple          	Runtime for Node.js applications
+appsodyhub	    nodejs-express   	        0.2.3    	*simple, scaffold	Express web framework for Node.js
+appsodyhub	    swift            	        0.1.2    	*simple          	Runtime for Swift applications
 experimental	java-spring-boot2-liberty	0.1.0    	*default 	        Spring Boot using OpenJ9, Maven and OpenLiberty
-experimental	nodejs-functions         	0.1.1    	*simple  	        Serverless runtime for Node.js functions       
-experimental	quarkus                  	0.1.1    	*default 	        Quarkus runtime for running Java applications 
+experimental	nodejs-functions         	0.1.1    	*simple  	        Serverless runtime for Node.js functions
+experimental	quarkus                  	0.1.1    	*default 	        Quarkus runtime for running Java applications
 
 ```
 You can limit the `appsody list` output by specifying a `repository name` as shown below:
 ```
 $ appsody list appsodyhub
 
-REPO      	ID               	VERSION  	TEMPLATES        	DESCRIPTION                                
+REPO      	ID               	VERSION  	TEMPLATES        	DESCRIPTION
 appsodyhub	java-microprofile	0.2.6    	*default         	Eclipse MicroProfile using OpenJ9 and Maven
-appsodyhub	java-spring-boot2	0.3.2    	*default, kotlin 	Spring Boot using OpenJ9 and Maven         
-appsodyhub	nodejs           	0.2.3    	*simple          	Runtime for Node.js applications           
-appsodyhub	nodejs-express   	0.2.3    	*simple, skaffold	Express web framework for Node.js          
-appsodyhub	swift            	0.1.2    	*simple          	Runtime for Swift applications 
+appsodyhub	java-spring-boot2	0.3.2    	*default, kotlin 	Spring Boot using OpenJ9 and Maven
+appsodyhub	nodejs           	0.2.3    	*simple          	Runtime for Node.js applications
+appsodyhub	nodejs-express   	0.2.3    	*simple, scaffold	Express web framework for Node.js
+appsodyhub	swift            	0.1.2    	*simple          	Runtime for Swift applications
 
 ```
 

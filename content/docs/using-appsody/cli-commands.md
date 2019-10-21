@@ -1,7 +1,7 @@
 ---
 title: CLI Reference
-path: /docs/using-appsody/cli-commands
 ---
+
 # Appsody CLI
 ## appsody
 
@@ -35,6 +35,7 @@ Complete documentation is available at https://appsody.dev
 * [appsody ps](#appsody-ps)	 - List the appsody containers running in the local docker environment
 * [appsody repo](#appsody-repo)	 - Manage your Appsody repositories
 * [appsody run](#appsody-run)	 - Run the local Appsody environment for your project
+* [appsody stack](#appsody-stack)	 - Tools to help create and test Appsody stacks
 * [appsody stop](#appsody-stop)	 - Stops the local Appsody docker container for your project
 * [appsody test](#appsody-test)	 - Test your project in the local Appsody environment
 * [appsody version](#appsody-version)	 - Show Appsody CLI version
@@ -54,7 +55,7 @@ appsody build [flags]
 ### Options
 
 ```
-      --docker-options string   Additional options to be sent when running docker commands.  Value must be in "".
+      --docker-options string   Specify the docker build options to use.  Value must be in "".
   -h, --help                    help for build
   -t, --tag string              Docker image name and optionally a tag in the 'name:tag' format
 ```
@@ -128,10 +129,12 @@ appsody debug [flags]
 
 ```
       --deps-volume string      Docker volume to use for dependencies. Mounts to APPSODY_DEPS dir. (default "my-project-deps")
-      --docker-options string   Specify the docker options to use.  Value must be in "".
+      --docker-options string   Specify the docker run options to use.  Value must be in "".
   -h, --help                    help for debug
+  -i, --interactive             Attach STDIN to the container for interactive TTY mode
       --name string             Assign a name to your development container. (default "my-project-dev")
       --network string          Specify the network for docker to use.
+      --no-watcher              Disable file watching, regardless of container environment variable settings.
   -p, --publish stringArray     Publish the container's ports to the host. The stack's exposed ports will always be published, but you can publish addition ports or override the host ports with this option.
   -P, --publish-all             Publish all exposed ports to random ports
 ```
@@ -168,7 +171,8 @@ appsody deploy [flags]
       --force              Force the reuse of the deployment configuration file if one exists.
       --generate-only      Only generate the deployment configuration file. Do not deploy the project.
   -h, --help               help for deploy
-  -n, --namespace string   Target namespace in your Kubernetes cluster
+      --knative            Deploy as a Knative Service
+  -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
       --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
   -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
 ```
@@ -212,7 +216,8 @@ appsody deploy delete [flags]
   -f, --file string        The file name to use for the deployment configuration. (default "app-deploy.yaml")
       --force              Force the reuse of the deployment configuration file if one exists.
       --generate-only      Only generate the deployment configuration file. Do not deploy the project.
-  -n, --namespace string   Target namespace in your Kubernetes cluster
+      --knative            Deploy as a Knative Service
+  -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
       --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
   -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
   -v, --verbose            Turns on debug output and logging to a file in $HOME/.appsody/logs
@@ -618,10 +623,12 @@ appsody run [flags]
 
 ```
       --deps-volume string      Docker volume to use for dependencies. Mounts to APPSODY_DEPS dir. (default "my-project-deps")
-      --docker-options string   Specify the docker options to use.  Value must be in "".
+      --docker-options string   Specify the docker run options to use.  Value must be in "".
   -h, --help                    help for run
+  -i, --interactive             Attach STDIN to the container for interactive TTY mode
       --name string             Assign a name to your development container. (default "my-project-dev")
       --network string          Specify the network for docker to use.
+      --no-watcher              Disable file watching, regardless of container environment variable settings.
   -p, --publish stringArray     Publish the container's ports to the host. The stack's exposed ports will always be published, but you can publish addition ports or override the host ports with this option.
   -P, --publish-all             Publish all exposed ports to random ports
 ```
@@ -637,6 +644,142 @@ appsody run [flags]
 ### SEE ALSO
 
 * [appsody](#appsody)	 - Appsody CLI
+
+## appsody stack
+
+Tools to help create and test Appsody stacks
+
+### Synopsis
+
+Tools to help create and test Appsody stacks
+
+### Options
+
+```
+  -h, --help   help for stack
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun          Turns on dry run mode
+  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+```
+
+### SEE ALSO
+
+* [appsody](#appsody)	 - Appsody CLI
+* [appsody stack lint](#appsody-stack-lint)	 - Lint your stack to verify that it conforms to the standard of an Appsody stack
+* [appsody stack package](#appsody-stack-package)	 - Package a stack in the local Appsody environment
+* [appsody stack validate](#appsody-stack-validate)	 - Run validation tests against a stack in the local Appsody environment
+
+## appsody stack lint
+
+Lint your stack to verify that it conforms to the [structure](https://appsody.dev/docs/stacks/stack-structure#stack-structure) of an Appsody stack
+
+### Synopsis
+
+This command will validate that your stack has the structure of an Appsody stack. It will inform you of files/directories
+missing and warn you if your stack could be enhanced.
+
+This command can be run from the base directory of your stack or you can supply a path to the stack as an argument.
+
+```
+appsody stack lint [flags]
+```
+
+### Options
+
+```
+  -h, --help   help for lint
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun          Turns on dry run mode
+  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+```
+
+### SEE ALSO
+
+* [appsody stack](#appsody-stack)	 - Tools to help create and test Appsody stacks
+
+## appsody stack package
+
+Package a stack in the local Appsody environment
+
+### Synopsis
+
+This command is a tool for stack developers to package a stack from their local Appsody development environment. Once the stack is packaged it can then be tested via Appsody commands. The package command performs the following:
+- Creates an index file named "index-dev-local.yaml" and stores it in .appsody/stacks/dev.local
+- Creates a tar.gz for each stack template and stores it in .appsody/stacks/dev.local
+- Builds a Docker image named "dev.local/[stack name]:SNAPSHOT
+- Creates an Appsody repository named "dev-local"
+- Adds the "dev-local" repository to your Appsody configuration
+
+```
+appsody stack package [flags]
+```
+
+### Options
+
+```
+  -h, --help   help for package
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun          Turns on dry run mode
+  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+```
+
+### SEE ALSO
+
+* [appsody stack](#appsody-stack)	 - Tools to help create and test Appsody stacks
+
+## appsody stack validate
+
+Run validation tests of a stack in the local Appsody environment
+
+### Synopsis
+
+This command is a tool for stack developers to validate a stack from their local Appsody development environment. It performs the following against the stack:
+- Runs the stack lint test. This can be turned off with the --no-lint flag
+- Runs the stack package command. This can be turned off with the --no-package flag
+- Runs the appsody init command
+- Runs the appsody run command
+- Runs the appsody test command
+- Runs the appsody build command
+- Provides a Passed/Failed status and summary of the above operations
+
+```
+appsody stack validate [flags]
+```
+
+### Options
+
+```
+  -h, --help         help for validate
+      --no-lint      Skips running appsody stack lint
+      --no-package   Skips running appsody stack package
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun          Turns on dry run mode
+  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+```
+
+### SEE ALSO
+
+* [appsody stack](#appsody-stack)	 - Tools to help create and test Appsody stacks
 
 ## appsody stop
 
@@ -689,10 +832,12 @@ appsody test [flags]
 
 ```
       --deps-volume string      Docker volume to use for dependencies. Mounts to APPSODY_DEPS dir. (default "my-project-deps")
-      --docker-options string   Specify the docker options to use.  Value must be in "".
+      --docker-options string   Specify the docker run options to use.  Value must be in "".
   -h, --help                    help for test
+  -i, --interactive             Attach STDIN to the container for interactive TTY mode
       --name string             Assign a name to your development container. (default "my-project-dev")
       --network string          Specify the network for docker to use.
+      --no-watcher              Disable file watching, regardless of container environment variable settings.
   -p, --publish stringArray     Publish the container's ports to the host. The stack's exposed ports will always be published, but you can publish addition ports or override the host ports with this option.
   -P, --publish-all             Publish all exposed ports to random ports
 ```

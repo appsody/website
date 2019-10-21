@@ -11,6 +11,29 @@ const indexURLs = [
   'https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml'
 ]
 
+const { createFilePath } = require(`gatsby-source-filesystem`)
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode })
+   
+    if (slug == '/overview/') {
+      createNodeField({
+        node,
+        name: `slug`,
+        value: `/docs`,
+      })
+    } else {
+      createNodeField({
+        node,
+        name: `slug`,
+        value: `/docs${slug}`,
+      })
+    }
+  }
+}
+
 exports.onPreInit = () => {
   indexURLs.forEach(url => {
     fetch(url)
@@ -32,8 +55,8 @@ exports.createPages = ({ actions, graphql }) => {
       allMarkdownRemark {
         edges {
           node {
-            frontmatter {
-              path
+            fields {
+              slug
             }
           }
         }
@@ -45,12 +68,14 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      if (node.fields.slug == '/docs/overview/') {
+        node.fields.slug = '/docs'
+      }
       createPage({
-        path: node.frontmatter.path,
+        path: node.fields.slug,
         component: docTemplate,
         context: {
-            layout: "docs"
-        }, // additional data can be passed via context
+        },
       })
     })
   })

@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Doc from "../components/doc";
+import Layout from "../layouts"
 
 export default function Template({
   data,
@@ -10,17 +11,16 @@ export default function Template({
   const { html } = markdownRemark
 
   return (
+    <Layout pageSource="docs">
       <Doc html={html}/>
+    </Layout>
   )
 }
 
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      frontmatter {
-        path
-      }
-    }
+query($path: String!) {
+  markdownRemark(fields: { slug: { eq: $path } }) {
+    html
   }
+}
 `
