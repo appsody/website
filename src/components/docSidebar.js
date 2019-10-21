@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import { Link } from "gatsby"
 import Search from "./search";
 import navStructure from "../../content/docs/sidebar.yaml";
+import Accordion from 'react-bootstrap/Accordion'
+import Button from 'react-bootstrap/Button'
 
 class DocSection extends Component {
   closeDocDropdown = () => {
@@ -12,14 +14,18 @@ class DocSection extends Component {
     let itemList;
     if (this.props.data !== undefined) {
       itemList = (
-        <>
-          <h4>{this.props.title}</h4>
-          <ul>
-            {
-            this.props.data.map(doc => <li key={doc.title} className="my-1"><Link className="sidebar-link" onClick={this.closeDocDropdown} activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
-            }
-          </ul>
-        </>
+        <Accordion>
+          <Accordion.Toggle as={Button} variant="link" eventKey="0">
+            <h4  className="sidebar-heading-link">{this.props.title}</h4>
+          </Accordion.Toggle>
+          <Accordion.Collapse eventKey="0">
+            <ul>
+              {
+              this.props.data.map(doc => <li key={doc.title} className="my-1"><Link className="sidebar-link" onClick={this.closeDocDropdown} activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
+              }
+            </ul>
+          </Accordion.Collapse>
+        </Accordion>
       )
     } else {
       itemList = (

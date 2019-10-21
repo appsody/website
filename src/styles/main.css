@@ -430,6 +430,8 @@ footer a:hover {
 
 .sidebar-heading-link {
   color: black;
+  font-weight: bolder;
+
 }
 
 .sidebar-heading-link:hover {
