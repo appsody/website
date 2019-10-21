@@ -20,7 +20,7 @@ The quickest way to create a new stack is to use the `appsody stack create` comm
 
 If you want to use a different stack as the basis for your new stack, use the copy flag to specify the stack you want to use as the starting point. You can use `appsody list` to see the available stacks. For example, to create a new stack, called `my-stack`, based on the Node.js Express stack use this command:
 
-`appsody stack create my-stack –copy incubator/nodejs-express`
+`appsody stack create my-stack --copy incubator/nodejs-express`
 
 ### Using Git clone
 
