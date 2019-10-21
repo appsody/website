@@ -13,7 +13,7 @@ class DocSection extends Component {
     if (this.props.data !== undefined) {
       itemList = (
         <>
-          <h4>{this.props.title}</h4>
+          <h4 className="sidebar-heading-height">{this.props.title}</h4>
           <ul>
             {
             this.props.data.map(doc => <li key={doc.title} className="my-1"><Link className="sidebar-link" onClick={this.closeDocDropdown} activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
@@ -23,7 +23,7 @@ class DocSection extends Component {
       )
     } else {
       itemList = (
-        <h4> <Link className="sidebar-heading-link" onClick={this.closeDocDropdown} activeClassName="active" to={this.props.path}>{this.props.title}</Link></h4>
+        <h4 className="sidebar-heading-height"> <Link className="sidebar-heading-link" onClick={this.closeDocDropdown} activeClassName="active" to={this.props.path}>{this.props.title}</Link></h4>
        
       )
     }

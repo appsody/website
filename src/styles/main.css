@@ -432,6 +432,9 @@ footer a:hover {
   color: black;
 }
 
+.sidebar-heading-height {
+  height: 1.1em;
+}
 .sidebar-heading-link:hover {
   text-decoration: none;
   color: var(--colour-scheme-1);
