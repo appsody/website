@@ -9,16 +9,30 @@ class DocSection extends Component {
   }
 
   render() {
+    let itemList;
+    if (this.props.data !== undefined) {
+      itemList = (
+        <>
+          <h4>{this.props.title}</h4>
+          <ul>
+            {
+            this.props.data.map(doc => <li key={doc.title} className="my-1"><Link className="sidebar-link" onClick={this.closeDocDropdown} activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
+            }
+          </ul>
+        </>
+      )
+    } else {
+      itemList = (
+        <h4> <Link className="sidebar-heading-link" onClick={this.closeDocDropdown} activeClassName="active" to={this.props.path}>{this.props.title}</Link></h4>
+       
+      )
+    }
     return (
       <React.Fragment>
         {
-          (this.props.title !== "null") ? <h4>{this.props.title}</h4> : null
+          itemList
         }
-        <ul>
-          {
-            this.props.data.map(doc => <li key={doc.title} className="my-1"><Link onClick={this.closeDocDropdown} activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
-          }
-        </ul>
+        
       </React.Fragment>
     );
   }
@@ -27,11 +41,7 @@ class DocSection extends Component {
 const DocSidebar = () => {
   let list = [];
   for (let section of navStructure) {
-    if (section.title == null) {
-      list.push(<DocSection key={section.items[0].title} title={section.title} data={section.items}/>)
-    } else {
-      list.push(<DocSection key={section.title} title={section.title} data={section.items}/>)
-    }
+    list.push(<DocSection key={section.title} path={section.path} title={section.title} data={section.items}/>)    
   }
 
   return (
