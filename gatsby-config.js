@@ -50,11 +50,20 @@ module.exports = {
             options: {
               className: `header-link-icon`
             }
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              linkImagesToOriginal: true,
+              maxWidth: 1000,
+              wrapperStyle: result => `width: 100%;margin-left: 0;`,
+
+            }
           }
         ],
       }
     },
     `gatsby-transformer-yaml`,
-    `gatsby-plugin-layout`
+    `gatsby-plugin-sharp`,
   ]
 }
