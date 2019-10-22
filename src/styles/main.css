@@ -430,11 +430,21 @@ footer a:hover {
 
 .sidebar-heading-link {
   color: black;
+  margin: 0.3em;
 }
 
-.sidebar-heading-height {
-  height: 1.3em;
+.sidebar-heading-link a{
+  color: black;
 }
+
+.sidebar-heading-link a:hover{
+  padding: 0;
+  text-decoration: none !important;
+  color: var(--colour-scheme-1);
+  font-weight: bolder;
+  font-size: 1.6rem;
+}
+
 .sidebar-heading-link:hover {
   text-decoration: none;
   color: var(--colour-scheme-1);
@@ -516,8 +526,20 @@ footer a:hover {
   #docs-sidebar div.dropdown {
     display: inline-block;
   }
+
+  .form-inline {
+    margin-bottom: 1.5em ;
+  }
 }
 
 .hide {
   display: none;
+}
+
+.btn.btn-link {
+  padding: 0;
+  text-decoration: none !important;
+  color: var(--colour-scheme-1);
+  font-weight: bolder;
+  font-size: 1.6rem;
 }
