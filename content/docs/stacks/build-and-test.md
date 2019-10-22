@@ -4,7 +4,7 @@ title: Building and Testing Stacks
 
 # Building and Testing Stacks
 
-Once you have created or updated a stack, use ```appsody stack package``` to build stack images and templates, and to generate an Appsody repository index you can use for local testing. To test your stack, you can use ```appsody stack validate``` which combines several operations (lint, package, test) for the specified stack. If you would like to learn more about the process for building, testing and releasing a stack, please see [Appsody Stacks Release Process](https://github.com/appsody/stacks/blob/master/RELEASE.md#appsody-stacks-release-process---technical-overview).
+After you create or update a stack, use ```appsody stack package``` to build stack images and templates, and to generate an Appsody repository index you can use for local testing. To test your stack, you can use ```appsody stack validate```, which combines several operations (lint, package, test) for the specified stack. To learn more about the process for building, testing and releasing a stack, see [Appsody Stacks Release Process](https://github.com/appsody/stacks/blob/master/RELEASE.md#appsody-stacks-release-process---technical-overview).
 
 ## Building a stack locally using the Appsody CLI
 
