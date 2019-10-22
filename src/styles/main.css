@@ -254,10 +254,6 @@ section.landing-section h2 {
   margin-top: 2em;
 }
 
-#docs-sidebar a {
-  color: black;
-}
-
 #docs h2 {
   font-size: 1.6em;
   font-weight: bold;
@@ -418,6 +414,33 @@ footer a:hover {
 
 #docs-sidebar .active{
   color: var(--colour-scheme-1);
+}
+
+.sidebar-link {
+  color: black;
+}
+
+.sidebar-link:hover {
+  text-decoration: none;
+  color: var(--colour-scheme-1);
+  font-weight: bolder;
+  font-size: 1.02rem;
+
+}
+
+.sidebar-heading-link {
+  color: black;
+}
+
+.sidebar-heading-height {
+  height: 1.3em;
+}
+.sidebar-heading-link:hover {
+  text-decoration: none;
+  color: var(--colour-scheme-1);
+  font-weight: bolder;
+  font-size: 1.6rem;
+
 }
 
 .doc-content {
