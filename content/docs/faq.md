@@ -47,19 +47,18 @@ When you encounter the following error
 
 It is stated in the Installation Guide that the user requires an internet connection. However, it might be possible for a user to work with the Appsody CLI offline, depending on their chosen stack.
 
-Here are the commands you will be using with Appsody and the steps you would follow to use them offline:
+Here is a list of commands that are part of the standard Appsody flow of work, with the steps to follow to enable working offline:
 
-- `appsody list/repo list`: Download the Appsody index files that you are using for example [incubator](https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml) or [experimental](https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml) and add them to your local repository, by using: 
+- `appsody list/repo list`: Download the Appsody index files that you are using, for example [incubator](https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml) or [experimental](https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml) and add them to your local repository, by using: 
     ```
     appsody repo add <repo-name> <path-to-downloaded-index>
     ```
 
-- `appsody init`: Initialise an Appsody project using the desired stack with `appsody init` to pull down the latest images from DockerHub. These images will then be cached locally to be used without an Internet connection.
+- `appsody init`: Initialize an Appsody project for your chosen stack, with ```appsody init```, which pulls down the latest images from DockerHub. These images are then cached locally and can be used without an internet connection.
 
-- `appsody run/test/debug`: You must first set the environment variable:
+- `appsody run/test/debug`: To use images that are stored in the local cache, rather than pull them from Dockerhub, set the environment variable:
     ```
     export APPSODY_PULL_POLICY=IFNOTPRESENT
     ```
-    This tells Appsody to utilise images stored in the cache rather than from Dockerhub.
 
 **NOTE:** Some stacks such as the `nodejs` stacks need to download package dependencies so not all stacks can be used offline.

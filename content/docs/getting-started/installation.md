@@ -7,7 +7,7 @@ title: Installing Appsody
 You can install Appsody on your system in a few easy steps by using our binary packages, which are available for macOS&reg;, Ubuntu, Red Hat Enterprise Linux (RHEL), and Windows&reg;.
 
 ## Requirements
-- A working Internet connection
+- A working internet connection
 - Appsody depends on Docker so ensure that you have [Docker](https://docs.docker.com/get-started/) installed and the Docker daemon is running on your system.
 
 ## Installing on macOS
