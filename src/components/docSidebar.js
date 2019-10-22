@@ -8,10 +8,6 @@ import Button from 'react-bootstrap/Button'
 var accordionIndex = 0;
 
 class DocSection extends Component {
-  closeDocDropdown = () => {
-    document.getElementById("collapsingSideNavbar").classList.remove("show");
-  }
-
   setAccordionIndex = (index) => {
     accordionIndex = index
   }
@@ -27,7 +23,7 @@ class DocSection extends Component {
           <Accordion.Collapse eventKey={this.props.index}>
             <ul>
               {
-              this.props.data.map(doc => <li key={doc.title} className="my-1"><Link className="sidebar-link ml-3" onClick={this.closeDocDropdown, ()=>this.setAccordionIndex(this.props.index)} activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
+              this.props.data.map(doc => <li key={doc.title} className="my-1"><Link className="sidebar-link ml-3" onClick={()=>this.setAccordionIndex(this.props.index)} activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
               }
 
             </ul>
@@ -36,7 +32,7 @@ class DocSection extends Component {
       )
     } else {
       itemList = (
-        <h4 className="sidebar-heading-link"> <Link onClick={this.closeDocDropdown, ()=>this.setAccordionIndex(this.props.index)}  activeClassName="active" to={this.props.path}>{this.props.title}</Link></h4>
+        <h4 className="sidebar-heading-link"> <Link onClick={()=>this.setAccordionIndex(this.props.index)}  activeClassName="active" to={this.props.path}>{this.props.title}</Link></h4>
        
       )
     }
@@ -57,6 +53,7 @@ const DocSidebar = () => {
   let item;
   item = <DocSection key={section.title} path={section.path} title={section.title} data={section.items} index={index}/>
   list.push(item)
+  return null
   })
 
   return (
