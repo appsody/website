@@ -172,7 +172,7 @@ appsody deploy [flags]
       --generate-only      Only generate the deployment configuration file. Do not deploy the project.
   -h, --help               help for deploy
       --knative            Deploy as a Knative Service
-  -n, --namespace string   Target namespace in your Kubernetes cluster
+  -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
       --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
   -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
 ```
@@ -217,7 +217,7 @@ appsody deploy delete [flags]
       --force              Force the reuse of the deployment configuration file if one exists.
       --generate-only      Only generate the deployment configuration file. Do not deploy the project.
       --knative            Deploy as a Knative Service
-  -n, --namespace string   Target namespace in your Kubernetes cluster
+  -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
       --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
   -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
   -v, --verbose            Turns on debug output and logging to a file in $HOME/.appsody/logs
@@ -286,9 +286,10 @@ appsody init [stack] or [repository]/[stack] [template] [flags]
 ### Options
 
 ```
-  -h, --help          help for init
-      --no-template   Only create the .appsody-config.yaml file. Do not unzip the template project. [Deprecated]
-      --overwrite     Download and extract the template project, overwriting existing files.  This option is not intended to be used in Appsody project directories.
+  -h, --help                  help for init
+      --no-template           Only create the .appsody-config.yaml file. Do not unzip the template project. [Deprecated]
+      --overwrite             Download and extract the template project, overwriting existing files.  This option is not intended to be used in Appsody project directories.
+      --project-name string   Project Name for Kubernetes Service (default "my-project")
 ```
 
 ### Options inherited from parent commands
@@ -318,7 +319,8 @@ appsody list [repository] [flags]
 ### Options
 
 ```
-  -h, --help   help for list
+  -h, --help            help for list
+  -o, --output string   Output list in yaml or json format
 ```
 
 ### Options inherited from parent commands
@@ -532,7 +534,8 @@ appsody repo list [flags]
 ### Options
 
 ```
-  -h, --help   help for list
+  -h, --help            help for list
+  -o, --output string   Output repo list in yaml or json format
 ```
 
 ### Options inherited from parent commands
@@ -670,11 +673,56 @@ Tools to help create and test Appsody stacks
 ### SEE ALSO
 
 * [appsody](#appsody)	 - Appsody CLI
-* [appsody stack lint](#appsody-stack-lint)	 - Lint your stack to verify that it conforms to the standard of an Appsody stack
+* [appsody stack create](#appsody-stack-create)	 - Create a new Appsody stack.
+* [appsody stack lint](#appsody-stack-lint)	 - Lint your stack to verify that it conforms to the structure of an Appsody stack
+* [appsody stack package](#appsody-stack-package)	 - Package a stack in the local Appsody environment
+* [appsody stack validate](#appsody-stack-validate)	 - Run validation tests against a stack in the local Appsody environment
+
+## appsody stack create
+
+Create a new Appsody stack.
+
+### Synopsis
+
+Create a new Appsody stack, called <name>, in the current directory. You can use this stack as a starting point for developing your own Appsody stack.
+
+By default, the new stack is based on the example stack: samples/sample-stack. If you want to use a different stack as the basis for your new stack, use the copy flag to specify the stack you want to use as the starting point. You can use 'appsody list' to see the available stacks.
+
+Examples:
+  appsody stack create my-stack
+  Creates a stack called my-stack, based on the example stack “samples/sample-stack”.
+
+  appsody stack create my-stack --copy incubator/nodejs-express
+  Creates a stack called my-stack, based on the Node.js Express stack.
+
+The stack name must start with a lowercase letter, and can contain only lowercase letters, numbers, or dashes, and cannot end with a dash. The stack name cannot exceed 128 characters.
+
+```
+appsody stack create <name> [flags]
+```
+
+### Options
+
+```
+      --copy string   Copy the specified stack. The format is <repository>/<stack> (default "samples/sample-stack")
+  -h, --help          help for create
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun          Turns on dry run mode
+  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+```
+
+### SEE ALSO
+
+* [appsody stack](#appsody-stack)	 - Tools to help create and test Appsody stacks
 
 ## appsody stack lint
 
-Lint your stack to verify that it conforms to the standard of an Appsody stack
+Lint your stack to verify that it conforms to the structure of an Appsody stack
 
 ### Synopsis
 
@@ -691,6 +739,80 @@ appsody stack lint [flags]
 
 ```
   -h, --help   help for lint
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun          Turns on dry run mode
+  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+```
+
+### SEE ALSO
+
+* [appsody stack](#appsody-stack)	 - Tools to help create and test Appsody stacks
+
+## appsody stack package
+
+Package a stack in the local Appsody environment
+
+### Synopsis
+
+This command is a tool for stack developers to package a stack from their local Appsody development environment. Once the stack is packaged it can then be tested via Appsody commands. The package command performs the following:
+- Creates/updates an index file named "index-dev-local.yaml" and stores it in .appsody/stacks/dev.local
+- Creates a tar.gz for each stack template and stores it in .appsody/stacks/dev.local
+- Builds a Docker image named "dev.local/[stack name]:SNAPSHOT"
+- Creates an Appsody repository named "dev-local"
+- Adds/updates the "dev-local" repository of your Appsody configuration
+
+```
+appsody stack package [flags]
+```
+
+### Options
+
+```
+  -h, --help   help for package
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun          Turns on dry run mode
+  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+```
+
+### SEE ALSO
+
+* [appsody stack](#appsody-stack)	 - Tools to help create and test Appsody stacks
+
+## appsody stack validate
+
+Run validation tests against a stack in the local Appsody environment
+
+### Synopsis
+
+This command is a tool for stack developers to validate a stack from their local Appsody development environment. It performs the following against the stack:
+- Runs the stack lint test. This can be turned off with the --no-lint flag
+- Runs the stack package command. This can be turned off with the --no-package flag
+- Runs the appsody init command
+- Runs the appsody run command
+- Runs the appsody test command
+- Runs the appsody build command
+- Provides a Passed/Failed status and summary of the above operations
+
+```
+appsody stack validate [flags]
+```
+
+### Options
+
+```
+  -h, --help         help for validate
+      --no-lint      Skips running appsody stack lint
+      --no-package   Skips running appsody stack package
 ```
 
 ### Options inherited from parent commands
