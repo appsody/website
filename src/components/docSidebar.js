@@ -12,20 +12,21 @@ class DocSection extends Component {
 
   render() {
     let itemList;
+    console.log(this.props.index)
     if (this.props.data !== undefined) {
       itemList = (
-        <Accordion>
-          <Accordion.Toggle as={Button} variant="link" eventKey="0">
+        <>
+          <Accordion.Toggle as={Button} variant="link" eventKey={this.props.index}>
             <h4  className="sidebar-heading-link">{this.props.title}</h4>
           </Accordion.Toggle>
-          <Accordion.Collapse eventKey="0">
+          <Accordion.Collapse eventKey={this.props.index}>
             <ul>
               {
               this.props.data.map(doc => <li key={doc.title} className="my-1"><Link className="sidebar-link" onClick={this.closeDocDropdown} activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
               }
             </ul>
           </Accordion.Collapse>
-        </Accordion>
+          </>
       )
     } else {
       itemList = (
@@ -34,21 +35,23 @@ class DocSection extends Component {
       )
     }
     return (
-      <React.Fragment>
+        <>
         {
           itemList
         }
-        
-      </React.Fragment>
+        </>
+     
     );
   }
 }
 
 const DocSidebar = () => {
   let list = [];
-  for (let section of navStructure) {
-    list.push(<DocSection key={section.title} path={section.path} title={section.title} data={section.items}/>)    
-  }
+  navStructure.map((section, index) => {
+  let item;
+  item = <DocSection key={section.title} path={section.path} title={section.title} data={section.items} index={index}/>
+  list.push(item)
+  })
 
   return (
     <nav className="navbar-expand-md navbar-light border-bottom" id="docs-sidebar">
@@ -57,7 +60,9 @@ const DocSidebar = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="navbar-expand-md collapse d-md-inline" id="collapsingSideNavbar">
+      <Accordion>
         {list}
+      </Accordion>
       </div>
     </nav>
   )
