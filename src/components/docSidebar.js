@@ -8,31 +8,52 @@ import chevronlogo from "../images/chevron.svg";
 
 var accordionIndex = 0;
 var lastIndex = null;
+var rotated = false;
+var img;
 class DocSection extends Component {
 
-  state = {
-    rotated: false
-  }
-
-  setAccordionIndex = () => {
+  setAccordionIndex = (index) => {
+    if (this.props.index !== 0 || this.props.index !== 4 ) {
+          console.log("here");
+          img = document.getElementById(`chevron-${this.props.index}`);
+          console.log("Inside timeout - this.props.index =" + this.props.index);
+          img.style.transform = 'rotate(90deg)';
+          rotated = true
+        }
+    // console.log("this.props.index = " + this.props.index)
+    // setTimeout(function(index) {
+    //   if (this.props.index !== 0 || this.props.index !== 4 ) {
+    //     console.log("here");
+    //     img = document.getElementById(`chevron-${this.props.index}`);
+    //     console.log("Inside timeout - this.props.index =" + this.props.index);
+    //     img.style.transform = 'rotate(90deg)';
+    //     rotated = true
+    //   }
+    // }, 1000);
+    
     accordionIndex = this.props.index
   }
 
   rotateImage() {
-    if (!this.state.rotated || lastIndex !== this.props.index) {
-      var img = document.getElementById(`chevron-${this.props.index}`);
-      img.style.transform = 'rotate(90deg)';
-      this.state.rotated = true
-    } else if (this.state.rotated || lastIndex !== this.props.index){
-      var img = document.getElementById(`chevron-${this.props.index}`);
-      img.style.transform = 'rotate(0)';
-      this.state.rotated = false
-    } 
-  
     if (lastIndex !== this.props.index && lastIndex !== null){
-      var img = document.getElementById(`chevron-${lastIndex}`);
+      img = document.getElementById(`chevron-${lastIndex}`);
       img.style.transform = 'rotate(0)';
+      rotated = false
     }
+
+    if (!rotated) {
+      img = document.getElementById(`chevron-${this.props.index}`);
+      img.style.transform = 'rotate(90deg)';
+      rotated = true
+    } else {
+      img = document.getElementById(`chevron-${this.props.index}`);
+      img.style.transform = 'rotate(0)';
+      rotated = false
+    } 
+
+    console.log("this.props.index = " + this.props.index)
+    console.log("lastIndex = " + lastIndex)
+    console.log("rotated = " + rotated)
 
     lastIndex = this.props.index
   }
@@ -43,12 +64,12 @@ class DocSection extends Component {
       itemList = (
         <>
           <Accordion.Toggle as={Button} variant="link" eventKey={this.props.index}>
-            <h4 onClick={()=>this.rotateImage(this.props.index)} className="sidebar-heading-link">{this.props.title}  <img id={`chevron-${this.props.index}`} src={ chevronlogo } width="10" height="10" className="d-inline-block align-top mt-2" alt="Chevron Logo"></img></h4>
+            <h4 onClick={()=>this.rotateImage()} className="sidebar-heading-link">{this.props.title}  <img id={`chevron-${this.props.index}`} src={ chevronlogo } width="10" height="10" className="d-inline-block align-top mt-2" alt="Chevron Logo"></img></h4>
           </Accordion.Toggle>
           <Accordion.Collapse eventKey={this.props.index}>
             <ul>
               {
-              this.props.data.map(doc => <li key={doc.title} className="my-1"><Link className="sidebar-link ml-3" onClick={()=>this.setAccordionIndex()} activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
+              this.props.data.map(doc => <li key={doc.title} className="my-1"><Link className="sidebar-link ml-3" onClick={()=>this.setAccordionIndex(this.props.index)} activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
               }
             </ul>
           </Accordion.Collapse>
