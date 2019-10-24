@@ -49,7 +49,7 @@ class DocSection extends Component {
           <Accordion.Collapse eventKey={this.props.index}>
             <ul>
               {
-              this.props.data.map(doc => <li key={doc.title} className="my-1"><Link className="sidebar-link ml-3" onMouseOver={()=>this.setAccordionIndex(this.props.index)} activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
+              this.props.data.map(doc => <li key={doc.title} className="my-1"><Link className="sidebar-link ml-3" onMouseOver={()=>this.setAccordionIndex()} activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
               }
             </ul>
           </Accordion.Collapse>
