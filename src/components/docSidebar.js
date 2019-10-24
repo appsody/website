@@ -12,12 +12,11 @@ var rotated = false;
 var img;
 class DocSection extends Component {
 
-  setAccordionIndex = (e) => {    
+  setAccordionIndex = () => {    
     img = document.getElementById(`chevron-${this.props.index}`);
     img.style.transform = 'rotate(90deg)';
     rotated = true
     accordionIndex = this.props.index
-
   }
 
   rotateImage() {
