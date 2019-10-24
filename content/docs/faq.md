@@ -42,3 +42,21 @@ When you encounter the following error
 `https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml`
 
 3. Save your changes and try running your command again.
+
+### 6. Can I use the Appsody CLI offline?
+
+Although the installation guide states that a working internet connection is required, you can use the Appsody CLI offline for some stacks. Other stacks, such as the `nodejs` stacks, need to download package dependencies so cannot can be used offline.
+
+Here is a list of commands that are part of the standard Appsody flow of work, with the steps to follow to enable working offline:
+
+- `appsody list/repo list`: Download the Appsody index files that you are using, for example [incubator](https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml) or [experimental](https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml) and add them to your local repository, by using: 
+    ```
+    appsody repo add <repo-name> <path-to-downloaded-index>
+    ```
+
+- `appsody init`: Initialize an Appsody project for your chosen stack, with ```appsody init```, which pulls down the latest images from DockerHub. These images are then cached locally and can be used without an internet connection.
+
+- `appsody run/test/debug`: To use images that are stored in the local cache, rather than pull them from Dockerhub, set the environment variable:
+    ```
+    export APPSODY_PULL_POLICY=IFNOTPRESENT
+    ```
