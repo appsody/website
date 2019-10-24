@@ -43,7 +43,7 @@ When you encounter the following error
 
 3. Save your changes and try running your command again.
 
-### 6. How to work offline with the Appsody CLI
+### 6. Can I use the Appsody CLI offline?
 
 Although the installation guide states that a working internet connection is required, you can use the Appsody CLI offline for some stacks. Other stacks, such as the `nodejs` stacks, need to download package dependencies so cannot can be used offline.
 
