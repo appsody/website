@@ -91,6 +91,37 @@ section.landing-section h2 {
   width: 25px;
 }
 
+.navbar-toggler {
+  border: 0;
+}
+
+#main-nav .navbar-toggler-icon {
+  background-image: url("../images/search-icon.png") !important;
+  width: 25px;
+  height:25px;
+}
+
+.bigscreen-social {
+  display: flex;
+}
+
+.smallscreen-social {
+  display: none;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .bigscreen-social {
+    display: none;
+  }
+
+  .smallscreen-social {
+    display: flex;
+    
+  }
+}
+
+
 /* Cannot change as the Slack icon is not transparent in the middle. Saving for later */
 /* .navbar-img:hover {
   filter: invert(33%) sepia(54%) saturate(1628%) hue-rotate(295deg) brightness(86%) contrast(81%);
@@ -292,6 +323,10 @@ section.landing-section h2 {
     grid-row-end: 2;
     background-color: white;
   }
+
+  .form-control-sm {
+    font-size: 1.2rem;
+  }
 }
 
 footer {
@@ -363,11 +398,6 @@ footer a:hover {
     margin-right: 1em;
   }
 
-  #docs #twitter-nav{
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   #docs .navbar-brand img {
     margin: 0 !important;
   }
@@ -384,15 +414,20 @@ footer a:hover {
    code  {
      font-size: 0.8em;
   }
+
+  .dropdown-content {
+    min-width: 100%;
+    font-size: 1.0rem;
+  }
 }
 
 .navbar-brand {
   padding: 0;
 }
 
-#docs #brand-name {
+/* #docs #brand-name {
   display: none;
-}
+} */
 
 .doc-content table tr td {
   border: 0.1em solid var(--darker-grey);
@@ -511,7 +546,19 @@ footer a:hover {
 
 @media only screen and (max-width: 767px) {
   div .dropdown {
-    display: none;
+    width: 100%;
+  }
+
+  #search-input {
+    width: 100% !important;
+    height: 50px !important;
+    border-radius: 10px;
+    margin-bottom: 10px !important;
+    margin-top: 25px !important;
+  }
+
+  .fa-search {
+    display: none !important;
   }
 
   #docs-sidebar div.dropdown {

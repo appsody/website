@@ -1,14 +1,16 @@
 import React from "react";
 
 import Head from "./head"
-import DocNavbar from "./docNavbar"
+import Navbar from "./navbar"
 import Footer from "../components/footer"
+import MobileNav from "../components/mobileNav";
 
 export default ({ children }) => (
     <React.Fragment>
         <Head/>
-        <DocNavbar/>
+        <Navbar/>
         { children }
         <Footer/>
+        <MobileNav />
     </React.Fragment>
 )
