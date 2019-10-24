@@ -42,7 +42,7 @@ gatsby clean
 
 ## Contributing Documentation
 
-Any documentation needs to be added to the `content/docs` directory. This is where the documentation for [Appsody](https://appsody.dev/docs) is stored. Put any associated images in the `content/docs/images` directory.
+Documentation for Appsody must be stored in the `content/docs directory`. Images must be stored in the `content/docs/images directory`.
 
 The documentation should follow the rough structure of the sidebar so that the docs are easy to find. The quick start guide, for example, is located in `content/docs/getting-started/quick-start`.
 
