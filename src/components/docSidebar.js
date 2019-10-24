@@ -12,26 +12,12 @@ var rotated = false;
 var img;
 class DocSection extends Component {
 
-  setAccordionIndex = (index) => {
-    if (this.props.index !== 0 || this.props.index !== 4 ) {
-          console.log("here");
-          img = document.getElementById(`chevron-${this.props.index}`);
-          console.log("Inside timeout - this.props.index =" + this.props.index);
-          img.style.transform = 'rotate(90deg)';
-          rotated = true
-        }
-    // console.log("this.props.index = " + this.props.index)
-    // setTimeout(function(index) {
-    //   if (this.props.index !== 0 || this.props.index !== 4 ) {
-    //     console.log("here");
-    //     img = document.getElementById(`chevron-${this.props.index}`);
-    //     console.log("Inside timeout - this.props.index =" + this.props.index);
-    //     img.style.transform = 'rotate(90deg)';
-    //     rotated = true
-    //   }
-    // }, 1000);
-    
+  setAccordionIndex = (e) => {    
+    img = document.getElementById(`chevron-${this.props.index}`);
+    img.style.transform = 'rotate(90deg)';
+    rotated = true
     accordionIndex = this.props.index
+
   }
 
   rotateImage() {
@@ -50,11 +36,6 @@ class DocSection extends Component {
       img.style.transform = 'rotate(0)';
       rotated = false
     } 
-
-    console.log("this.props.index = " + this.props.index)
-    console.log("lastIndex = " + lastIndex)
-    console.log("rotated = " + rotated)
-
     lastIndex = this.props.index
   }
 
@@ -69,7 +50,7 @@ class DocSection extends Component {
           <Accordion.Collapse eventKey={this.props.index}>
             <ul>
               {
-              this.props.data.map(doc => <li key={doc.title} className="my-1"><Link className="sidebar-link ml-3" onClick={()=>this.setAccordionIndex(this.props.index)} activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
+              this.props.data.map(doc => <li key={doc.title} className="my-1"><Link className="sidebar-link ml-3" onMouseOver={()=>this.setAccordionIndex(this.props.index)} activeClassName="active" to={doc.path}>{doc.title}</Link></li>)
               }
             </ul>
           </Accordion.Collapse>
