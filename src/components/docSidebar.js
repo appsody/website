@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
-import Search from "./search";
 import navStructure from "../../content/docs/sidebar.yaml";
 import Accordion from 'react-bootstrap/Accordion'
 import Button from 'react-bootstrap/Button'
