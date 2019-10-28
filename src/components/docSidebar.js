@@ -5,10 +5,10 @@ import Accordion from 'react-bootstrap/Accordion'
 import Button from 'react-bootstrap/Button'
 import chevronlogo from "../images/chevron.svg";
 
-var accordionIndex = 0;
-var lastIndex = null;
-var rotated = false;
-var img;
+let accordionIndex = 0;
+let lastIndex = null;
+let rotated = false;
+let img;
 class DocSection extends Component {
 
   setAccordionIndex = () => {    
