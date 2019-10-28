@@ -500,14 +500,8 @@ footer a:hover {
  
 }
 
-@media only screen and (min-width: 767px) {
-  .sidebar-heading-link a:hover {
-    font-size: 1.61em;
-  }
-
-  .sidebar-heading-link:hover {
-    font-size: 0.71em;
-  }
+.accordion ul {
+  margin-bottom: 2em;
 }
 
 .doc-content {
