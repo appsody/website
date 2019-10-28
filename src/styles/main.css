@@ -461,7 +461,6 @@ footer a:hover {
   text-decoration: none;
   color: var(--colour-scheme-1);
   font-weight: bolder;
-  font-size: 1.02rem;
 
 }
 
@@ -504,12 +503,10 @@ footer a:hover {
 
 @media only screen and (min-width: 767px) {
   .sidebar-heading-link a:hover {
-    font-weight: bolder;
     font-size: 1.61em;
   }
 
   .sidebar-heading-link:hover {
-    font-weight: bolder;
     font-size: 0.71em;
   }
 }
