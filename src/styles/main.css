@@ -275,7 +275,7 @@ section.landing-section h2 {
 
 #docs-sidebar{
   position: fixed;
-  width: 15em;
+  width: 16em;
   padding-top: 5.6em;
   background-color: var(--light-grey);
   height: 100%;
