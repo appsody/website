@@ -418,6 +418,7 @@ footer a:hover {
 
 .sidebar-link {
   color: black;
+  width: 8em;
 }
 
 .sidebar-link:hover {
@@ -430,28 +431,51 @@ footer a:hover {
 
 .sidebar-heading-link {
   color: black;
-  font-size: 0.8em;
+  font-size: 0.7em;
+  width: 8em;
+  margin-right: 1.4em;
+}
+
+.sidebar-heading-link.float-left {
+  margin-bottom:0 ;
 }
 
 .sidebar-heading-link a{
   color: black;
   font-size: 1.6em;
+  margin-left: 0.5em;
 }
 
-.sidebar-heading-link a:hover{
-  padding: 0;
-  text-decoration: none !important;
-  color: var(--colour-scheme-1);
-  font-weight: bolder;
-  font-size: 1.6rem;
+.accordion-dropdown:hover {
+  filter: invert(33%) sepia(54%) saturate(1628%) hue-rotate(295deg) brightness(86%) contrast(81%);
+}
+
+.accordion-dropdown {
+  height: 1.2em;
 }
 
 .sidebar-heading-link:hover {
   text-decoration: none;
-  color: var(--colour-scheme-1);
-  font-weight: bolder;
-  font-size: 0.9em;
+}
+ 
 
+.sidebar-heading-link a:hover {
+  padding: 0;
+  text-decoration: none !important;
+  color: var(--colour-scheme-1);
+ 
+}
+
+@media only screen and (min-width: 767px) {
+  .sidebar-heading-link a:hover {
+    font-weight: bolder;
+    font-size: 1.61em;
+  }
+
+  .sidebar-heading-link:hover {
+    font-weight: bolder;
+    font-size: 0.71em;
+  }
 }
 
 .doc-content {
@@ -543,4 +567,5 @@ footer a:hover {
   color: var(--colour-scheme-1);
   font-weight: bolder;
   font-size: 1.6rem;
+  display: block;
 }
