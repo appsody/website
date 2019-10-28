@@ -5,7 +5,7 @@ import Doc from "../components/doc";
 import Layout from "../layouts"
 
 export default function Template({
-  data,
+  data
 }) {
   const { markdownRemark } = data
   const { html } = markdownRemark

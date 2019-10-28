@@ -275,7 +275,7 @@ section.landing-section h2 {
 
 #docs-sidebar{
   position: fixed;
-  width: 15em;
+  width: 16em;
   padding-top: 5.6em;
   background-color: var(--light-grey);
   height: 100%;
@@ -454,29 +454,54 @@ footer a:hover {
 
 .sidebar-link {
   color: black;
+  width: 8em;
 }
 
 .sidebar-link:hover {
   text-decoration: none;
   color: var(--colour-scheme-1);
-  font-weight: bolder;
-  font-size: 1.02rem;
 
 }
 
 .sidebar-heading-link {
   color: black;
+  font-size: 0.7em;
+  width: 8em;
+  margin-right: 1.4em;
 }
 
-.sidebar-heading-height {
-  height: 1.3em;
+.sidebar-heading-link.float-left {
+  margin-bottom:0 ;
 }
+
+.sidebar-heading-link a{
+  color: black;
+  font-size: 1.6em;
+  margin-left: 0.5em;
+}
+
+.accordion-dropdown:hover {
+  filter: invert(33%) sepia(54%) saturate(1628%) hue-rotate(295deg) brightness(86%) contrast(81%);
+}
+
+.accordion-dropdown {
+  height: 1.2em;
+}
+
 .sidebar-heading-link:hover {
   text-decoration: none;
-  color: var(--colour-scheme-1);
-  font-weight: bolder;
-  font-size: 1.6rem;
+}
+ 
 
+.sidebar-heading-link a:hover {
+  padding: 0;
+  text-decoration: none !important;
+  color: var(--colour-scheme-1);
+ 
+}
+
+.accordion ul {
+  margin-bottom: 2em;
 }
 
 .doc-content {
@@ -568,4 +593,13 @@ footer a:hover {
 
 .hide {
   display: none;
+}
+
+.btn.btn-link {
+  padding: 0;
+  text-decoration: none !important;
+  color: var(--colour-scheme-1);
+  font-weight: bolder;
+  font-size: 1.6rem;
+  display: block;
 }
