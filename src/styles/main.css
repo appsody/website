@@ -589,10 +589,6 @@ footer a:hover {
   #docs-sidebar div.dropdown {
     display: inline-block;
   }
-
-  .form-inline {
-    margin-bottom: 1.5em ;
-  }
 }
 
 .hide {
