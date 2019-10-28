@@ -460,7 +460,6 @@ footer a:hover {
 .sidebar-link:hover {
   text-decoration: none;
   color: var(--colour-scheme-1);
-  font-weight: bolder;
 
 }
 
