@@ -56,9 +56,9 @@ If the stack is intended to be contributed to the  [Appsody stacks repository](h
 Now that have you have created a stack you can [build and test](/content/docs/stacks/build-and-test.md) it locally.
 
 ## Contributing a stack
-If you would like to contribute a new stack to the [stacks repository](https://github.com/appsody/stacks) the Appsody [contributing guildlines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) explains how.
+If you would like to contribute a new stack to the [stacks repository](https://github.com/appsody/stacks) the Appsody [contributing guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) explain how.
 
-We welcome new contributions but before starting a large piece of work we recommend to reach out to us on [slack](http://appsody-slack.eu-gb.mybluemix.net/) or [raise an issue](https://github.com/appsody/stacks/issues/) to start a discussion.
+We welcome new contributions but before starting a large piece of work we recommend that you reach out to us on [Slack](http://appsody-slack.eu-gb.mybluemix.net/) or [raise an issue](https://github.com/appsody/stacks/issues/) to start a discussion.
 
 ## Maintaining a separate repository
 In addition to the main Appsody stacks repository, you can maintain your own set of stacks. This is useful for developing stacks and separating sets of stacks for different uses.
@@ -70,7 +70,7 @@ NAME      	    URL
 *incubator	    https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml
 experimental    https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
 ```
-A repository is defined by an `index.yaml`. This file lists all the stacks and templates it wants to make available. See the `incubator` [index](https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml) as an example.
+A repository is defined by an `index.yaml` file. This file lists all the stacks and templates that are available within a repository. The user can modify the index files, within their own repositories, to say which stacks and templates they want to be available. See the `incubator` [index](https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml) file for an example.
 
 Each template section must include a link to its `.tar.gz` file. This file is used by `appsody init` to initialize an Appsody project.
 
