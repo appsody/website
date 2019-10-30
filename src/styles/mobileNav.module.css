@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito|Open+Sans&display=swap');
+
+:root {
+  --links-colour: black;
+  --white-buttons: white;
+
+  --white: white;
+  --light-grey: #F1F1F1;
+  --dark-grey: #d3d3d3;
+  --darker-grey: #9B9B9B;
+  --off-black-1: #100F15;
+  --colour-scheme-1: #BB417C;
+  --colour-scheme-2: #ED8E00;
+  --colour-scheme-3: #C4302F;
+
+}
+
+.mobile-nav {
+    display: none;
+    font-family: 'Nunito';
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .mobile-nav {
+      display: block;
+      height: 75px;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      box-shadow: 1px -2.5px 4px var(--dark-grey);
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .mobile-nav a {
+        color: black;
+        font-size: 1.3rem;
+
+    }
+
+    .mobile-nav a:hover {
+        text-decoration: none;
+        color: var(--colour-scheme-1);
+    }
+    
+    .nav-link {
+      padding: 0.5em 1em;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  }
+  
+  

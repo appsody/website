@@ -18,24 +18,29 @@ const NavBarContent = () => (
       <Link to="/">
         <img src={ appsodyLogo } width="30" height="30" className="d-inline-block align-top mr-4" alt="Appsody Logo"></img>
       </Link>
-      <Link id="brand-name" className="navbar-brand d-md-none" to="/">
-          Appsody
-      </Link>
     </Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav>
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/docs">Docs</Nav.Link>
-        <Nav.Link href="https://medium.com/appsody" target="_blank" rel="noopener noreferrer">Tutorials</Nav.Link>
-      </Nav>
-      <Nav className="ml-auto">
-        <Search/>
+    <Nav className="ml-auto smallscreen-social">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Nav.Link href="https://github.com/appsody"><img className="navbar-img" src={ githubIcon } alt=""></img></Nav.Link>
         <Nav.Link href="https://twitter.com/appsodydev"><img id="twitter-nav" className="navbar-img" src={ twitterIcon } alt=""></img></Nav.Link>
         <Nav.Link href="http://appsody-slack.eu-gb.mybluemix.net"><img className="navbar-img" src={ slackIcon } alt=""></img></Nav.Link>
+    </Nav>
+        <Navbar.Collapse id="basic-navbar-nav">
+      <Nav>
+        <Nav.Link href="/" className="d-none d-md-block">Home</Nav.Link>
+        <Nav.Link href="/docs" className="d-none d-md-block">Docs</Nav.Link>
+        <Nav.Link href="https://medium.com/appsody" target="_blank" rel="noopener noreferrer" className="d-none d-md-block">Tutorials</Nav.Link>
+      </Nav>
+      <Nav className="ml-auto">
+        <Search/>
       </Nav>
     </Navbar.Collapse>
+            <Nav className="ml-auto bigscreen-social">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Nav.Link href="https://github.com/appsody"><img className="navbar-img" src={ githubIcon } alt=""></img></Nav.Link>
+        <Nav.Link href="https://twitter.com/appsodydev"><img id="twitter-nav" className="navbar-img" src={ twitterIcon } alt=""></img></Nav.Link>
+        <Nav.Link href="http://appsody-slack.eu-gb.mybluemix.net"><img className="navbar-img" src={ slackIcon } alt=""></img></Nav.Link>
+    </Nav>
   </React.Fragment>
 )
 
