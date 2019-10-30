@@ -16,7 +16,7 @@ For more information on this issue, click [here](https://github.com/appsody/apps
 ### 2. Why am I getting a cross-device link error on Appsody extract?
 
 This was an issue that was faced in an older version of the software. It occurred when the Appsody CLI and the Appsody project were located on different disk volumes. If you are experiencing this problem, navigate to our [GitHub page](https://github.com/appsody) and ensure you are operating on the latest version. If you would like more information on this issue, please click [here](https://github.com/appsody/appsody/issues/82).
-                                                                                                                
+
 ### 3. Why is Appsody deploy not displaying the URL of the Knative service?
 
 Sometimes, when you run ```appsody deploy```, you may see a message that fails to provide the URL of the deployed Knative service. Although the Knative URL is not displaying, Appsody should have still been deployed successfully. This is a timing issue where ```kubectl apply``` finishes executing before all resources have been made available.
@@ -37,7 +37,7 @@ When you encounter the following error
     - `cd ~/.appsody/repository/` (macOS/Linux)
     - `cd %HOMEPATH%/.appsody/repository/` (Windows)
 
-2. Replace the appsodyhub URL to use the latest appsodyhub index which is:
+2. Change the URL for the incubator repository to reference the latest incubator index, which is:
 
 `https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml`
 
@@ -49,7 +49,7 @@ Although the installation guide states that a working internet connection is req
 
 Here is a list of commands that are part of the standard Appsody flow of work, with the steps to follow to enable working offline:
 
-- `appsody list/repo list`: Download the Appsody index files that you are using, for example [incubator](https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml) or [experimental](https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml) and add them to your local repository, by using: 
+- `appsody list/repo list`: Download the Appsody index files that you are using, for example [incubator](https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml) or [experimental](https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml) and add them to your local repository, by using:
     ```
     appsody repo add <repo-name> <path-to-downloaded-index>
     ```
