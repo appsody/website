@@ -10,7 +10,7 @@ After you create or update a stack, use the [CLI command](/docs/stacks/package#b
 
 1. Navigate to the root directory of the stack you want to build e.g. ```cd incubator/<stack-id>```
 
-2. Run ```appsody stack package``` to build your stack locally. An index (stored in ```~/.appsody/stacks/dev.local/index-dev-local.yaml```) will be generated containing information on the stack you have built only.
+2. Run ```appsody stack package``` to build your stack locally. An index (stored in ```~/.appsody/stacks/dev.local/index-dev-local.yaml```) is generated that contains only the information for that stack.
 
 3. Run ```appsody repo list``` to see the repository named `dev-local`, pointing to the index just generated.
 
@@ -28,7 +28,7 @@ appsody init dev-local/<stack-id>
 
 ## Packaging a stack locally using build scripts
 
-The instructions below will reference the "base directory", which will be the directory containing the clone or copy of the appsody/stacks git repository.
+The following instructions reference the base directory, which contains the clone or copy of the `appsody/stacks` GIT repository.
 
 From the base directory:
 
@@ -37,9 +37,9 @@ From the base directory:
     ./ci/build.sh . incubator/<stack-id>
     ```
 
-    **Note:** If a stack is not specified, all stacks in all repositories will be built.
+    **Note:** If a stack is not specified, all stacks in all repositories are built.
 
-2. A generated repository based on the stacks built will be added to the repository list. Run ```appsody repo list``` to see this repository named `<repo>-index-local`
+2. A generated repository based on the stacks built is added to the repository list. Run ```appsody repo list``` to see this repository named `<repo>-index-local`
 
 3. Check the built stack has been added in that repository by running `appsody list <repo>-index-local`. Here is an example of the output you should get:
     ```
@@ -57,11 +57,11 @@ You can now use the generated local repository to create new projects:
 appsody init <repo>-index-local/<stack-id>
 ```
 
-Local appsody operations will also be performed against already pulled or rebuilt stack images.
+Local Appsody operations are also performed against already pulled or rebuilt stack images.
 
 ## Packaging a stack image locally using Docker
 
-To build your stack image locally follow the below steps:
+To build a local stack image follow these steps:
 
 1. Navigate to the `<repository>/<stack-id>/image` directory
 
