@@ -27,7 +27,8 @@
       width: 100%;
       position: fixed;
       bottom: 0;
-      box-shadow: 1px -2.5px 4px var(--dark-grey);
+      /* box-shadow: 1px -2.5px 4px var(--dark-grey); */
+      border-top: 3px solid var(--light-grey);
       background-color: white;
       display: flex;
       justify-content: center;
