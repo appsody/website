@@ -342,15 +342,15 @@ footer {
 
 @media only screen and (max-width: 767px) {
   footer {
-    bottom:75px
+    bottom: 4em;
   }
 
   .doc-content {
-    margin-bottom: 75px;;
+    margin-bottom: 4em;
   }
 
   .homepage-sections {
-    margin-bottom: 50px;
+    margin-bottom: 3em;
   }
 
 }
