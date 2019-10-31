@@ -14,7 +14,7 @@ During build and deploy, the stack enables the Appsody CLI to build a self-conta
 
 ## Stack structure
 
-A stack is designed to support both ways of working; local development, and build and deploy. Therefore, there is a standard structure for all stacks as follows:
+A stack is designed to support both ways of working; local development, and build and deploy. Therefore, all stacks follow the same structure, which is shown here:
 
 ```bash
 my-stack
@@ -124,7 +124,7 @@ which specifies the command to be run by the Appsody controller to start the use
 ENV APPSODY_WATCH_DIR=/project/userapp
 ```
 
-which specifies the directory which the Appsody controller watches for changes, so that the user application can be automatically relaunched during local development. Since relaunching may require addition steps, the variable `APPSODY_RUN_ON_CHANGE` specifies the command that will be run to relaunch the application.
+which specifies the directory that the Appsody controller watches for changes, so that the user application can be automatically relaunched during local development. Since relaunching may require addition steps, the variable `APPSODY_RUN_ON_CHANGE` specifies the command that will be run to relaunch the application.
 
 The Appsody controller remains running during local development, and is terminated with the `appsody stop` command (or by simply killing the running Appsody CLI process).
 
