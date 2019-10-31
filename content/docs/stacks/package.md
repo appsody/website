@@ -58,23 +58,3 @@ appsody init <repo>-index-local/<stack-id>
 ```
 
 Local Appsody operations are also performed against already pulled or rebuilt stack images.
-
-## Packaging a stack image locally using Docker
-
-To build a local stack image follow these steps:
-
-1. Navigate to the `<repository>/<stack-id>/image` directory
-
-2. Build stack image:
-    ```
-    docker build -t <org-name>/<stack-id>:<tag> -f Dockerfile-stack .
-    ```
-
-    You now have access to the stack image to use and test locally.
-
-    **Note:** The local image should be tagged with the desired release. The tag value is usually the major and minor version of the stack, e.g. `appsody/nodejs-express:0.2`. If you do not specify the tag value, it will tag it as the latest version, e.g. `appsody/nodejs-express:latest`.
-
-3. Set an environment variable to use the locally created image:
-    ```
-    export APPSODY_PULL_POLICY=IFNOTPRESENT
-    ```
