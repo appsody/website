@@ -5,10 +5,13 @@ import Accordion from 'react-bootstrap/Accordion'
 import Button from 'react-bootstrap/Button'
 import chevronlogo from "../images/chevron.svg";
 
+import styles from './sidebar.module.css';
+
 let accordionIndex = 0;
 let lastIndex = null;
 let rotated = false;
 let img;
+
 class DocSection extends Component {
 
   setAccordionIndex = () => {    
@@ -85,16 +88,11 @@ const DocSidebar = () => {
   })
 
   return (
-    <nav className="navbar-expand-md navbar-light border-bottom" id="docs-sidebar">
-      <button className="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#collapsingSideNavbar">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="navbar-expand-md collapse d-md-inline" id="collapsingSideNavbar">
-      <Accordion defaultActiveKey={accordionIndex}>
-        {list}
-      </Accordion>
-      </div>
-    </nav>
+      <aside id="sidebar" className={styles.sidebar}>
+        <Accordion defaultActiveKey={accordionIndex}>
+          {list}
+        </Accordion>
+      </aside>
   )
 }
 

@@ -257,10 +257,6 @@ section.landing-section h2 {
   grid-template-columns: 15em auto;
 }
 
-#docs main, #docs-sidebar {
-  padding: 1em;
-}
-
 #docs main {
   grid-column-start: 2;
   grid-column-end: 3;
