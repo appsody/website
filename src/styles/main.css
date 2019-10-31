@@ -340,6 +340,21 @@ footer {
   text-align: center;
 }
 
+@media only screen and (max-width: 767px) {
+  footer {
+    bottom: 4em;
+  }
+
+  .doc-content {
+    margin-bottom: 4em;
+  }
+
+  .homepage-sections {
+    margin-bottom: 3em;
+  }
+
+}
+
 #docs footer {
   grid-column-start: 1;
   grid-column-end: 3;

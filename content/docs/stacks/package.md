@@ -8,27 +8,27 @@ After you create or update a stack, use the [CLI command](/docs/stacks/package#b
 
 ## Packaging a stack locally using the Appsody CLI
 
-1. Navigate to the root directory of the stack you want to build e.g. ```cd incubator/<stack-id>```
+1. Navigate to the root directory of the stack you want to build e.g. ```cd <stack-id>```
 
 2. Run ```appsody stack package``` to build your stack locally. An index (stored in ```~/.appsody/stacks/dev.local/index-dev-local.yaml```) is generated that contains only the information for that stack.
 
-3. Run ```appsody repo list``` to see the repository named `dev-local`, pointing to the index just generated.
+3. Run ```appsody repo list``` to see the repository named `dev.local`, pointing to the index just generated.
 
-4. Check the built stack has been added in that repository by running `appsody list dev-local`. Here is an example of the output you should get: 
+4. Check the built stack has been added in that repository by running `appsody list dev.local`. Here is an example of the output you should get: 
     ```
     REPO            	    ID            	VERSION  	TEMPLATES        	DESCRIPTION                      
-    dev-local	            <stack-id>	    0.1.0     	*simple	            <stack-description>
+    dev.local	            <stack-id>	    0.1.0     	*simple	            <stack-description>
     ```
 
 5. You can now use the generated local repository to create new projects:
 ```
-appsody init dev-local/<stack-id>
+appsody init dev.local/<stack-id>
 ```
 
 
 ## Packaging a stack locally using build scripts
 
-The following instructions reference the base directory, which contains the clone or copy of the `appsody/stacks` GIT repository.
+The following instructions reference the base directory, which contains the clone or copy of the `appsody/stacks` Git repository.
 
 From the base directory:
 
@@ -47,7 +47,7 @@ From the base directory:
     incubator-index-local	<stack-id>	    0.1.0    	*simple	            <stack-description>
     ```
 
-4. Set an environment variable to use locally created images:
+4. Set an environment variable to tell Appsody to use locally created images:
     ```
     export APPSODY_PULL_POLICY=IFNOTPRESENT
     ```
@@ -74,7 +74,7 @@ To build a local stack image follow these steps:
 
     **Note:** The local image should be tagged with the desired release. The tag value is usually the major and minor version of the stack, e.g. `appsody/nodejs-express:0.2`. If you do not specify the tag value, it will tag it as the latest version, e.g. `appsody/nodejs-express:latest`.
 
-3. Set an environment variable to use locally created image:
+3. Set an environment variable to use the locally created image:
     ```
     export APPSODY_PULL_POLICY=IFNOTPRESENT
     ```
