@@ -70,7 +70,7 @@ NAME      	    URL
 *incubator	    https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml
 experimental    https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
 ```
-A repository is defined by an `index.yaml` file. This file lists all the stacks and templates that are available within a repository. The user can modify the index files, within their own repositories, to say which stacks and templates they want to be available. See the `incubator` [index](https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml) file for an example.
+A repository is defined by an `index.yaml` file. This file lists all the stacks and templates that are available within a repository. You can modify the index files within your own repositories, to say which stacks and templates you want to be available. See the `incubator` [index](https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml) file for an example.
 
 Each template section must include a link to its `.tar.gz` file. This file is used by `appsody init` to initialize an Appsody project.
 
