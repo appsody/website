@@ -6,6 +6,9 @@ title: Installing Appsody
 
 You can install Appsody on your system in a few easy steps by using our binary packages, which are available for macOS&reg;, Ubuntu, Red Hat Enterprise Linux (RHEL), and Windows&reg;.
 
+
+Alternatively, if you would like to build the binaries from source code, please take a look at [Building from Source] (https://github.com/appsody/appsody/blob/master/build.md). If you would like to download a pre-built binary, you will also need to download the [appsody-controller](https://github.com/appsody/controller/releases).
+
 ## Requirements
 - A working internet connection
 - Appsody depends on Docker so ensure that you have [Docker](https://docs.docker.com/get-started/) installed and the Docker daemon is running on your system.
@@ -40,8 +43,6 @@ sudo apt install -f <path>/appsody_v.r.m_amd64.deb
 Where `<path>` is the fully qualified path to the package.
 
 That's all there is to it! You can now follow our [Quick Start](/content/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
-
-Alternatively, if you would like to build the binaries from source code, please take a look at [Building from Source] (https://github.com/appsody/appsody/blob/master/build.md). If you would just like to download a pre-built binary, you will also need to download the [appsody-controller](https://github.com/appsody/controller/releases).
 
 ## Installing on RHEL
 
