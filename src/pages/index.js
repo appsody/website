@@ -54,7 +54,7 @@ const IndexPage = () => (
     <section className="landing-section text-center">
       <h2 className="mb-2">Why Appsody?</h2>
       <div className="container">
-        <div className="row w-100 mx-auto">
+        <div className="row w-100 mx-auto homepage-sections">
           <div className="col m-3 p-4">
             <h3>CLI</h3>
             <p>Intuitive and powerful. The Appsody CLI allows you to connect to a Hub, pull down a stack, and create, build, test and deploy your application.</p>
