@@ -23,11 +23,11 @@
   @media only screen and (max-width: 767px) {
     .mobile-nav {
       display: block;
-      height: 75px;
+      height: 4em;
       width: 100%;
       position: fixed;
       bottom: 0;
-      box-shadow: 1px -2.5px 4px var(--dark-grey);
+      border-top: 3px solid var(--light-grey);
       background-color: white;
       display: flex;
       justify-content: center;
