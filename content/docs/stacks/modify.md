@@ -18,7 +18,7 @@ cd stacks
 
 ## Modifying the stack image
 
-If you have modified files within `/image` you will need to [build and test](/content/docs/stacks/build-and-test.md) to make sure the stack and its templates are working as intended.
+If you have modified files within `/image` you will need to [package](/content/docs/stacks/package.md) the stack to make sure its templates are working as intended.
 
 **Note:** You should test all other Appsody commands that the stack supports also.
 
@@ -40,6 +40,3 @@ cd templates/<template-name>
 ```
 appsody run
 ```
-
-## Building and testing stacks locally
-Now that have you have created a stack you can [build and test](/content/docs/stacks/build-and-test.md) it locally.

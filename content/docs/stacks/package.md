@@ -4,13 +4,13 @@ title: Packaging Stacks
 
 # Packaging Stacks
 
-After you create or update a stack, use the [CLI command](/docs/stacks/package#building-a-stack-locally-using-the-appsody-cli), ```appsody stack package``` to build stack images and templates, and to generate an Appsody repository index you can use for local testing. Alternatively, this can also be achieved using the [build scripts](/docs/stacks/package/docs/stacks/package#building-a-stack-locally-using-build-scripts) located in the `stacks` repository. To learn more about the process for building, testing and releasing a stack, see [Appsody Stacks Release Process](https://github.com/appsody/stacks/blob/master/RELEASE.md#appsody-stacks-release-process---technical-overview).
+After you create or update a stack, use the [CLI command](/docs/using-appsody/cli-commands#appsody-stack-package), ```appsody stack package``` to build stack images and templates, and to generate an Appsody repository index you can use for local testing. You may want to follow this path if you are a standalone stack developer and only plan on creating or modifying one stack at a time. Alternatively, if you are an architect looking to build an entire repository containing multiple stacks you may want to use the [build scripts](/docs/stacks/package#packaging-a-stack-locally-using-build-scripts) which allow you to package multiple stacks at once.
 
 ## Packaging a stack locally using the Appsody CLI
 
 1. Navigate to the root directory of the stack you want to build e.g. ```cd <stack-id>```
 
-2. Run ```appsody stack package``` to build your stack locally. An index (stored in ```~/.appsody/stacks/dev.local/index-dev-local.yaml```) is generated that contains only the information for that stack.
+2. Run ```appsody stack package``` to package your stack locally. This builds the stack image for you and generates an index that contains only the information for that stack. Both the index and the `tar.gz` for each template are stored in ```~/.appsody/stacks/dev.local```.
 
 3. Run ```appsody repo list``` to see the repository named `dev.local`, pointing to the index just generated.
 
