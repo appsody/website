@@ -48,7 +48,7 @@ class DocSection extends Component {
           <Accordion.Toggle as={Button} variant="link" eventKey={this.props.index}>
             <div onClick={()=>this.rotateImage()} className="accordion-dropdown">
               <h4 className="sidebar-heading-link float-left">{this.props.title}</h4>
-              <img id={`chevron-${this.props.index}`} src={ chevronlogo } width="10" height="10" className="accordion-icon ml-4 mb-3" alt="Chevron Logo"></img>
+              <img id={`chevron-${this.props.index}`} src={ chevronlogo } width="10" height="10" className="accordion-icon mb-3" alt="Chevron Logo"></img>
             </div>
             
           </Accordion.Toggle>

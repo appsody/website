@@ -343,6 +343,8 @@ footer {
 
   .doc-content {
     margin-bottom: 4em;
+    padding: 1em;
+    margin-top: 4em;
   }
 
   .homepage-sections {
@@ -354,7 +356,7 @@ footer {
 #docs footer {
   grid-column-start: 1;
   grid-column-end: 3;
-  z-index: 1;
+  z-index: 2;
 }
 
 footer ul {
@@ -517,7 +519,8 @@ footer a:hover {
 
 .doc-content {
   padding-bottom: 3em;
-  padding-left: 1rem;
+  padding-left: 2rem;
+  padding-top: 1rem;
 }
 
 .doc-content table {
@@ -600,6 +603,14 @@ footer a:hover {
   #docs-sidebar div.dropdown {
     display: inline-block;
   }
+
+  .sidebar-heading-link {
+    font-size: 0.6em;
+  }
+
+  .sidebar-link {
+    font-size: 0.7em;
+  }
 }
 
 .hide {
@@ -613,4 +624,8 @@ footer a:hover {
   font-weight: bolder;
   font-size: 1.6rem;
   display: block;
+}
+
+.accordion {
+  margin-left: 1em;
 }

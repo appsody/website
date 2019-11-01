@@ -1,15 +1,15 @@
 .sidebar {
-    width: 16em;
-    margin-top: 4em;
+    width: 15em;
+    margin-top: 3em;
     padding-left: 5em;
     background-color: var(--light-grey);
-    height: Calc(100vh - 75px);
+    height: Calc(100vh);
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
     padding: 2rem 0;
     box-sizing: border-box;
     position: fixed;
     overflow-y: scroll;
-    z-index: 2;
+    z-index: 0;
 }
 
 .guides-heading, .ref-heading {
@@ -60,14 +60,19 @@
         position: fixed;
         overflow-y: auto;
         z-index: 1;
-        height: calc(100vh - 150px);
+        height: calc(100vh);
+        display: none;
     }
 
     .docs-section {
-        font-size: 1rem;
+        font-size: 1em;
     }
-    
-    .sidebar-link {
-        font-size: 0.8rem;
-    }
+}
+
+ul li {
+    list-style-type: none;
+}
+
+ul {
+    padding: 0;
 }

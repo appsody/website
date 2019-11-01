@@ -10,6 +10,9 @@
     right: 20px;
     padding: 0.5em;
     cursor: pointer;
+    background-color: var(--dark-grey);
+    border-radius: 20px;
+    z-index: 3;
   }
   
   .line {
