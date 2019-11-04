@@ -14,11 +14,14 @@
     border-radius: 20px;
     z-index: 3;
   }
+
+  .line:nth-child(2) {
+    margin: 3px 0;
+  }
   
   .line {
     width: 15px;
     height: 2px;
-    margin-bottom: 3px;
     background-color: black;
   }
 }

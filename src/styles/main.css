@@ -264,24 +264,6 @@ section.landing-section h2 {
   position: relative;
 }
 
-#docs-sidebar ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-#docs-sidebar{
-  position: fixed;
-  width: 16em;
-  padding-top: 5.6em;
-  background-color: var(--light-grey);
-  height: 100%;
-  left: 0;
-}
-
-#docs-sidebar li {
-  margin-top: 2em;
-}
-
 #docs h2 {
   font-size: 1.6em;
   font-weight: bold;
@@ -310,14 +292,6 @@ section.landing-section h2 {
     margin-top: 0;
     grid-row-start: 2;
     grid-row-end: 3;
-  }
-
-  #docs-sidebar{
-    width: 100vw;
-    position: static;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    background-color: white;
   }
 
   .form-control-sm {
@@ -461,10 +435,6 @@ footer a:hover {
   background: var(--dark-grey);
 }
 
-#docs-sidebar .active{
-  color: var(--colour-scheme-1);
-}
-
 .sidebar-link {
   color: black;
   width: 8em;
@@ -575,10 +545,6 @@ footer a:hover {
   width: 15em !important ;
 }
 
-#docs-sidebar div.dropdown {
-  display: none;
-}
-
 .header-link-icon {
   fill: var(--colour-scheme-1);
 }
@@ -598,10 +564,6 @@ footer a:hover {
 
   .fa-search {
     display: none !important;
-  }
-
-  #docs-sidebar div.dropdown {
-    display: inline-block;
   }
 
   .sidebar-heading-link {
@@ -628,4 +590,8 @@ footer a:hover {
 
 .accordion {
   margin-left: 1em;
+}
+
+.active{
+  color: var(--colour-scheme-1);
 }
