@@ -2,7 +2,7 @@
   display: none;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 767px) {
   .burger-icon {
     display: block;
     position: fixed;

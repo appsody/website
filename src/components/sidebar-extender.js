@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import styles from "./sidebar-extender.module.css"
 
-
 const SidebarExtender = () => {
 
   const [isExpanded, setIsExpanded] = useState(false);

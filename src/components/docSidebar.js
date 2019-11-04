@@ -59,7 +59,7 @@ class DocSection extends Component {
               }
             </ul>
           </Accordion.Collapse>
-          </>
+        </>
       )
     } else {
       itemList = (

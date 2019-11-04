@@ -1,15 +1,14 @@
 import React from "react";
 
 import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 import { Link } from "gatsby";
 
 import githubIcon from "../images/header_github_icon.svg";
 import twitterIcon from "../images/header_twitter_icon.svg";
 import slackIcon from "../images/header_slack_icon.svg";
-
 import appsodyLogo from "../images/appsody_logo.svg";
 
-import Nav from 'react-bootstrap/Nav';
 import Search from './search';
 
 const NavBar = () => (
