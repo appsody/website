@@ -5,14 +5,16 @@ The Appsody website is built with [Gatsby.js](https://www.gatsbyjs.org/). See th
 ## Prerequisites
 
 - **Node 10+**
-  You can download Node.js from https://nodejs.org/en/
-  
+  Download Node.js from https://nodejs.org/en/
+
 - [**Gatsby.js**](https://www.gatsbyjs.org)
-  Once you have Node installed run the following to install Gatsby.js:
+  When Node is installed, run the following command to install Gatsby.js:
+
   ``` bash
     npm install -g gatsby-cli
   ```
-- **Clone website** and **install Node dependencies**
+- **Install Node dependencies** Clone the website Git repo and install the dependencies with the following commands:
+
   ``` bash
     git clone https://github.com/appsody/website.git
     cd website
@@ -24,29 +26,36 @@ The Appsody website is built with [Gatsby.js](https://www.gatsbyjs.org/). See th
 
 1. Run the development server:
 
-``` bash
-gatsby develop
-```
+  ``` bash
+  gatsby develop
+  ```
 
-This will compile your changes as you develop and host the website at http://localhost:8000. To explore GraphQL queries that Gatsby exposes, you can use http://localhost:8000/__graphql.
+  This command compiles your changes as you develop and hosts the website at http://localhost:8000. To explore GraphQL queries that Gatsby exposes, use http://localhost:8000/__graphql.
 
-### Clear Caching
-Sometimes when developing locally, the website shows cached content from previous versions of the website. You can clear the cache before developing by running:
+  :pencil: **Note about clearing your Cache:**
+  Sometimes when developing locally, the website shows cached content from previous versions of the website. To clear the cache before developing, run the following command:
 
-``` bash
-gatsby clean
-```
+  ``` bash
+  gatsby clean
+  ```
 
-### Developing Remotely
-**Note:** If you are developing remotely, use `http://<hostname>:PORT` instead of `http://localhost:PORT` as described in this doc.
+2. View documentation at http://localhost:8000/docs
+
+For more information on adding Markdown pages with Gatsby, see https://www.gatsbyjs.org/docs/adding-markdown-pages/
+
+:pencil: **Note:** If you are developing remotely, use `http://<hostname>:PORT` instead of `http://localhost:PORT` as described in this doc.
 
 ## Contributing Documentation
+
+We welcome contributions to the Appsody documentation.
+
+### Understanding the documentation structure
 
 Documentation for Appsody must be stored in the `content/docs directory`. Images must be stored in the `content/docs/images directory`.
 
 The documentation should follow the rough structure of the sidebar so that the docs are easy to find. The quick start guide, for example, is located in `content/docs/getting-started/quick-start`.
 
-At the top of each documentation page you should include frontmatter so that the website can render the page correctly. Include the following:
+At the top of each documentation page you should include frontmatter so that the website can render the page correctly. Include the following elements:
 
 ```
 ---
@@ -60,7 +69,7 @@ path: /docs/getting-started/quick-start
 ---
 ```
 
-To add the doc to the side menu you must add it to the `sidebar.yaml` in `content/docs`. A section is defined as followed:
+To add the doc to the side menu you must add it to the `sidebar.yaml` in `content/docs`. A section is defined using the following structure:
 ```
 - title (optional): Getting Started
   items:
@@ -69,35 +78,77 @@ To add the doc to the side menu you must add it to the `sidebar.yaml` in `conten
     - title: Quick Start
       path: /docs/getting-started/quick-start
 ```
-**Note:** `title` for the section is optional but the `title` for each menu item is required.
+:pencil: **Note:** The `title` for the section is optional but the `title` for each menu item is required.
 
-Images can help explain concepts better than words, and make for more exciting and digestible content. To add an inline image to a doc, first place the image inside `content/docs/images` and use the following syntax:
+
+### Using images
+
+Images can help explain concepts better than words, and make for more exciting and digestible content.
+
+First, copy the image file to the `content/docs/images` directory.
+
+To add an inline image to a doc, use the following syntax:
 
 ```
 ![Alt Text](../images/my-awesome-image.png)
 ```
 
-A helpful image could show a window that a user is expected to see. Make sure to replace `[Alt Text]` with some text describing what the image shows, as this text is used for screen readers, or for when the image does not load.
+A helpful image could show a window that a user is expected to see. Make sure you replace `[Alt Text]` with some text describing what the image shows, as this text is used for screen readers, or for when the image does not load.
 
-**Note:** relative paths must be used to reference image locations. If an image does not render properly, you might be pointing to the wrong directory. Only use images of type `.png` or `.jpg`.
+**Note:** Relative paths must be used to reference image locations. If an image does not render properly, you might be pointing to the wrong directory. Use only images of file type `.png` or `.jpg`.
 
-2. Run the development server
-```
-gatsby develop
-```
-3. View documentation at http://localhost:8000/docs
+### Writing technical content
 
-For more information on adding Markdown pages with Gatsby, see https://www.gatsbyjs.org/docs/adding-markdown-pages/
+Writing good technical content that is easy to read and understand is important for the success of any product. For consistency across the documentation, these  guidelines should be followed:
 
-## Testing website ready for release
+1. Use an active voice:
 
-Before submitting a pull request you must have tested the website can build and run in production.
+   :negative_squared_cross_mark: NO: When the file is opened, the entry xxx can be deleted.
+
+   :white_check_mark: YES: Open the file and delete entry xxx.
+
+2. Use present tense:
+
+   :negative_squared_cross_mark: NO: The command will create a new directory...
+
+   :white_check_mark: YES: The command creates a new directory...
+
+3. Use the first person to engage the audience:
+
+   :negative_squared_cross_mark: NO: The user has two options....
+
+   :white_check_mark:  YES: You have two options...
+
+4. Be aware of words that convey position.
+
+   :negative_squared_cross_mark: NO: Run the command shown below:
+
+   :white_check_mark: YES: Run the following command:
+
+   :pencil: **NOTE:** Words such as above, below, left, right, top, and bottom break accessibility guidelines when used in isolation.
+
+5. Avoid ambiguity:
+
+   :negative_squared_cross_mark: NO: This causes a problem with...  (what is this referring to?)
+
+   :white_check_mark:  YES: This behavior causes a problem with...
+
+And finally, to help users for whom their first language is not English:
+
+- use simple language
+- keep sentences short
+- avoid needless words
+
+
+## Testing the website ready for release
+
+Before submitting a pull request you must test that the website can build and run successfully.
 
 1. Build the website
 ```
 gatsby build
 ```
-This build needs to be successful before continuing to serve the website.
+This build must be successful or you cannot serve the website.
 
 2. Serve the website
 ```
@@ -105,6 +156,6 @@ gatsby serve
 ```
 
 3. Access the website on http://localhost:9000 and complete any visual checks.
-   
+
 ## Need help?
-If you have a question that you can't find an answer to, we would also like to hear about that too. You can reach out to the community for assistance on [Slack](https://appsody-slack.eu-gb.mybluemix.net/).
+If you have a question that you can't find an answer to, we want to hear from you. Reach out to the community for assistance on [Slack](https://appsody-slack.eu-gb.mybluemix.net/).
