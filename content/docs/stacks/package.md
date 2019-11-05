@@ -4,7 +4,7 @@ title: Packaging Stacks
 
 # Packaging Stacks
 
-After you create or update a stack, use the [CLI command](/docs/using-appsody/cli-commands#appsody-stack-package), ```appsody stack package``` to build stack images and templates, and to generate an Appsody repository index you can use for local testing. You may want to follow this path if you are a standalone stack developer and only plan on creating or modifying one stack at a time. Alternatively, if you are an architect looking to build an entire repository containing multiple stacks you may want to use the [build scripts](/docs/stacks/package#packaging-a-stack-locally-using-build-scripts) which allow you to package multiple stacks at once.
+After you create or update a stack, use the [CLI command](/docs/using-appsody/cli-commands#appsody-stack-package), ```appsody stack package``` to build stack images and templates, and to generate an Appsody repository index you can use for local testing. The `stack package` command suits a stack developer who is going to create or modify a single stack. If you are an architect that is going to build a repository that consists of multiple stacks, you can use the [build scripts](/docs/stacks/package#packaging-a-stack-locally-using-build-scripts) as they enable multiple stacks to be packaged at the same time.
 
 ## Packaging a stack locally using the Appsody CLI
 
@@ -12,9 +12,15 @@ After you create or update a stack, use the [CLI command](/docs/using-appsody/cl
 
 2. Run ```appsody stack package``` to package your stack locally. This builds the stack image for you and generates an index that contains only the information for that stack. Both the index and the `tar.gz` for each template are stored in ```~/.appsody/stacks/dev.local```.
 
-3. Run ```appsody repo list``` to see the repository named `dev.local`, pointing to the index just generated.
+3. Run ```appsody repo list``` to see the repository named `dev.local`, that points to the generated index.
+    ```
+    NAME            URL
+    *incubator  	https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml                    
+    dev.local   	file:///$HOME/.appsody/stacks/dev.local/dev.local-index.yaml                  
+    experimental	https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
+    ```
 
-4. Check the built stack has been added in that repository by running `appsody list dev.local`. Here is an example of the output you should get: 
+4. Run `appsody list dev.local` to check the built stack is visible in the `dev.local` repository. Here is an example of the output you should get: 
     ```
     REPO            	    ID            	VERSION  	TEMPLATES        	DESCRIPTION                      
     dev.local	            <stack-id>	    0.1.0     	*simple	            <stack-description>
