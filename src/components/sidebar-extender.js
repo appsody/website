@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import styles from "./sidebar-extender.module.css"
+import styles from "../styles/sidebar-extender.module.css"
 
 const SidebarExtender = () => {
 

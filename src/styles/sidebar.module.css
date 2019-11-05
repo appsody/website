@@ -18,7 +18,7 @@
     font-weight: 400;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 767px) {
     .sidebar {
         width: 50vw;
         position: fixed;

@@ -5,7 +5,7 @@ import Accordion from 'react-bootstrap/Accordion'
 import Button from 'react-bootstrap/Button'
 import chevronlogo from "../images/chevron.svg";
 
-import styles from './sidebar.module.css';
+import styles from '../styles/sidebar.module.css';
 
 let accordionIndex = 0;
 let lastIndex = null;
