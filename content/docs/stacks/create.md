@@ -56,25 +56,25 @@ If the stack is intended to be contributed to the  [Appsody stacks repository](h
 Now that have you have created a stack you can [package](/content/docs/stacks/package.md) it locally.
 
 ## Contributing a stack
-If you would like to contribute a new stack to the [stacks repository](https://github.com/appsody/stacks) the Appsody [contributing guildlines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) explains how.
+If you would like to contribute a new stack to the [stacks repository](https://github.com/appsody/stacks) the Appsody [contributing guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) explain how.
 
-We welcome new contributions but before starting a large piece of work we recommend to reach out to us on [slack](http://appsody-slack.eu-gb.mybluemix.net/) or [raise an issue](https://github.com/appsody/stacks/issues/) to start a discussion.
+We welcome new contributions but before starting a large piece of work we recommend that you reach out to us on [Slack](http://appsody-slack.eu-gb.mybluemix.net/) or [raise an issue](https://github.com/appsody/stacks/issues/) to start a discussion.
 
 ## Maintaining a separate repository
 In addition to the main Appsody stacks repository, you can maintain your own set of stacks. This is useful for developing stacks and separating sets of stacks for different uses.
 
-By default you have access to the `appsodyhub` repository:
+By default you have access to the `incubator` repository:
 ```
 $ appsody repo list
 NAME      	    URL                                                               
-*appsodyhub	    https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml  
+*incubator	    https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml
 experimental    https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
 ```
-A repository is defined by an `index.yaml`. This file lists all stacks and  templates it wants to make avalible.  See the `appsodyhub` [index](https://raw.githubusercontent.com/appsody/stacks/master/index.yaml) as an example.
+A repository is defined by an `index.yaml` file. This file lists all the stacks and templates that are available within a repository. You can modify the index files within your own repositories, to say which stacks and templates you want to be available. See the `incubator` [index](https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml) file for an example.
 
-Each template section must include a link to its `.tar.gz` file. This will be used by `appsody init` to initialize a Appsody project.
+Each template section must include a link to its `.tar.gz` file. This file is used by `appsody init` to initialize an Appsody project.
 
-You can add you repository by running:
+You can add your repository by running:
 ```
 appsody repo add <name> <index-url>
 ```
@@ -84,12 +84,12 @@ appsody repo add my-repo file:///Users/foo/index.yaml
 
 appsody repo list
 NAME      	   URL                                                               
-*appsodyhub	   https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml
+*incubator	   https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml
 experimental   https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
 my-repo        file:///Users/foo/index.yaml
 ```
 
-Once the repository has been added you can access the stacks in that repo by specifying the repository name when initializing your project:
+Now you can access the stacks in your repo by specifying the repository name when you initialize your project:
 ```
 appsody init my-repo/<stack-name>
 ```

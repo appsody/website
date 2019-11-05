@@ -57,6 +57,8 @@ appsody build [flags]
 ```
       --docker-options string   Specify the docker build options to use.  Value must be in "".
   -h, --help                    help for build
+      --push                    Push the Docker image to the image repository.
+      --push-url string         The remote registry to push the image to.
   -t, --tag string              Docker image name and optionally a tag in the 'name:tag' format
 ```
 
@@ -173,7 +175,9 @@ appsody deploy [flags]
   -h, --help               help for deploy
       --knative            Deploy as a Knative Service
   -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
+      --pull-url string    Remote repository to pull image from.
       --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
+      --push-url string    Remote repository to push image to.
   -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
 ```
 
@@ -218,7 +222,9 @@ appsody deploy delete [flags]
       --generate-only      Only generate the deployment configuration file. Do not deploy the project.
       --knative            Deploy as a Knative Service
   -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
+      --pull-url string    Remote repository to pull image from.
       --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
+      --push-url string    Remote repository to push image to.
   -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
   -v, --verbose            Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -760,11 +766,11 @@ Package a stack in the local Appsody environment
 ### Synopsis
 
 This command is a tool for stack developers to package a stack from their local Appsody development environment. Once the stack is packaged it can then be tested via Appsody commands. The package command performs the following:
-- Creates/updates an index file named "index-dev-local.yaml" and stores it in .appsody/stacks/dev.local
+- Creates/updates an index file named "dev.local-index.yaml" and stores it in .appsody/stacks/dev.local
 - Creates a tar.gz for each stack template and stores it in .appsody/stacks/dev.local
 - Builds a Docker image named "dev.local/[stack name]:SNAPSHOT"
-- Creates an Appsody repository named "dev-local"
-- Adds/updates the "dev-local" repository of your Appsody configuration
+- Creates an Appsody repository named "dev.local"
+- Adds/updates the "dev.local" repository of your Appsody configuration
 
 ```
 appsody stack package [flags]

@@ -15,7 +15,7 @@ cd /path/to/your/project/workspace
 mkdir my-project
 cd my-project
 ```
-Alternatively, you could clone an empty git repository or create an empty project in an IDE, then navigate to that directory in the terminal. Appsody is tolerant of some hidden files in the project directory, such as .git, .project, or .settings files. The `appsody init <repo>/<stack> <template>` command won't overwrite files without the `--overwrite` option.
+Alternatively, you could clone an empty Git repository or create an empty project in an IDE, then navigate to that directory in the terminal. Appsody is tolerant of some hidden files in the project directory, such as .git, .project, or .settings files. The `appsody init <repo>/<stack> <template>` command won't overwrite files without the `--overwrite` option.
 
 Next, choose a stack. Use `appsody list` to view the available stacks.
 
@@ -24,11 +24,11 @@ Here is an example of the output produced by the `appsody list` command:
 $ appsody list
 
 REPO      	    ID               	        VERSION  	TEMPLATES        	DESCRIPTION
-appsodyhub	    java-microprofile	        0.2.6    	*default         	Eclipse MicroProfile using OpenJ9 and Maven
-appsodyhub	    java-spring-boot2	        0.3.2    	*default, kotlin 	Spring Boot using OpenJ9 and Maven
-appsodyhub	    nodejs           	        0.2.3    	*simple          	Runtime for Node.js applications
-appsodyhub	    nodejs-express   	        0.2.3    	*simple, scaffold	Express web framework for Node.js
-appsodyhub	    swift            	        0.1.2    	*simple          	Runtime for Swift applications
+incubator	    java-microprofile	        0.2.6    	*default         	Eclipse MicroProfile using OpenJ9 and Maven
+incubator	    java-spring-boot2	        0.3.2    	*default, kotlin 	Spring Boot using OpenJ9 and Maven
+incubator	    nodejs           	        0.2.3    	*simple          	Runtime for Node.js applications
+incubator	    nodejs-express   	        0.2.3    	*simple, scaffold	Express web framework for Node.js
+incubator	    swift            	        0.1.2    	*simple          	Runtime for Swift applications
 experimental	java-spring-boot2-liberty	0.1.0    	*default 	        Spring Boot using OpenJ9, Maven and OpenLiberty
 experimental	nodejs-functions         	0.1.1    	*simple  	        Serverless runtime for Node.js functions
 experimental	quarkus                  	0.1.1    	*default 	        Quarkus runtime for running Java applications
@@ -36,14 +36,14 @@ experimental	quarkus                  	0.1.1    	*default 	        Quarkus runti
 ```
 You can limit the `appsody list` output by specifying a `repository name` as shown below:
 ```
-$ appsody list appsodyhub
+$ appsody list incubator
 
 REPO      	ID               	VERSION  	TEMPLATES        	DESCRIPTION
-appsodyhub	java-microprofile	0.2.6    	*default         	Eclipse MicroProfile using OpenJ9 and Maven
-appsodyhub	java-spring-boot2	0.3.2    	*default, kotlin 	Spring Boot using OpenJ9 and Maven
-appsodyhub	nodejs           	0.2.3    	*simple          	Runtime for Node.js applications
-appsodyhub	nodejs-express   	0.2.3    	*simple, scaffold	Express web framework for Node.js
-appsodyhub	swift            	0.1.2    	*simple          	Runtime for Swift applications
+incubator	java-microprofile	0.2.6    	*default         	Eclipse MicroProfile using OpenJ9 and Maven
+incubator	java-spring-boot2	0.3.2    	*default, kotlin 	Spring Boot using OpenJ9 and Maven
+incubator	nodejs           	0.2.3    	*simple          	Runtime for Node.js applications
+incubator	nodejs-express   	0.2.3    	*simple, scaffold	Express web framework for Node.js
+incubator	swift            	0.1.2    	*simple          	Runtime for Swift applications
 
 ```
 
