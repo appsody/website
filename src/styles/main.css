@@ -449,8 +449,9 @@ footer a:hover {
 .sidebar-heading-link {
   color: black;
   font-size: 0.7em;
-  width: 8em;
-  margin-right: 1.4em;
+  width: 80%;
+  margin-right: 1em;
+  text-align: left;
 }
 
 .sidebar-heading-link.float-left {
@@ -460,7 +461,6 @@ footer a:hover {
 .sidebar-heading-link a{
   color: black;
   font-size: 1.6em;
-  margin-left: 0.5em;
 }
 
 .accordion-dropdown:hover {
@@ -469,6 +469,8 @@ footer a:hover {
 
 .accordion-dropdown {
   height: 1.2em;
+  display: flex;
+  align-items: baseline;
 }
 
 .sidebar-heading-link:hover {
@@ -567,11 +569,11 @@ footer a:hover {
   }
 
   .sidebar-heading-link {
-    font-size: 0.52em;
+    font-size: 0.7em;
   }
 
   .sidebar-link {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 }
 
@@ -586,6 +588,7 @@ footer a:hover {
   font-weight: bolder;
   font-size: 1.6rem;
   display: block;
+  width: 100%;
 }
 
 .accordion {
@@ -598,7 +601,7 @@ footer a:hover {
 
 @media only screen and (min-width: 767px) {
   .accordion-icon {
-    margin-left: 1em !important;
+    margin-left: 2% !important;
   }
 }
 

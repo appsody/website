@@ -20,7 +20,7 @@
 
 @media only screen and (max-width: 767px) {
     .sidebar {
-        width: 50vw;
+        width: 100vw;
         position: fixed;
         overflow-y: auto;
         z-index: 1;
