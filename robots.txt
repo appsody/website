@@ -1,0 +1,4 @@
+User-agent: Twitterbot
+Allow: /
+Sitemap: https://appsody.dev/sitemap.xml
+Host: https://appsody.dev
