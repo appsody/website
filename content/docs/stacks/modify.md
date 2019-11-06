@@ -4,29 +4,13 @@ title: Modifying a Stack
 
 # Modifying a Stack
 
-You may decide to modify an existing stack instead of creating one from scratch. This is an option if you are looking to contribute to the current Appsody stacks or maintain a separate modified version.
+You may decide to modify an existing stack instead of creating one from scratch. This is an option if you are looking to contribute to the current Appsody stacks or maintain a separate modified version. When deciding to change the behaviour of a stack or the way the stack image is built, you will want modify the stack [image](/docs/stacks/modify#modifying-the-stack-image). Alternatively, you may want to alter the starter application provided to the user in which case you will want to modify a [template](/docs/stacks/modify#modifying-a-template).
 
-To modify an existing stack, you must first use the `appsody stack create` [command](/docs/stacks/modify#using-the-appsody-cli) to generate a stack for you or [clone](/docs/stacks/modify#using-git-clone) the `stacks` repo:
-
-### Using the Appsody CLI
-
-Use the `appsody stack create` [command](/docs/using-appsody/cli-commands#appsody-stack-create), which creates a new stack by copying an existing stack. By default, the new stack is based on the [sample stack](https://github.com/appsody/stacks/tree/master/samples/sample-stack). For example, to create a new stack named `my-stack`, in a new directory, use this command:
-
-`appsody stack create my-stack`
-
-### Using Git Clone
-
-1. Clone the stacks repostory:
-```
-git clone https://github.com/appsody/stacks.git
-cd stacks
-```
-
-2. Modify the stack or templates making sure that you follow the [stack structure](/docs/stacks/stack-structure.md).
+To modify an existing stack, you must first use the `appsody stack create` [command](/docs/stacks/create#using-the-appsody-cli) to generate a stack for you or [clone](/docs/stacks/create#using-git-clone) the `stacks` repo.
 
 ## Modifying the stack image
 
-Within the image directory are files providing the core technology components of the stack. These files also govern the way your stack behaves when using the different Appsody commands. See [Stack Structure](/docs/stacks/stack-structure#summary-of-files-within-the-stack-source-and-user-directory-structure) for a more thorough breakdown.
+Within the [image](/docs/stacks/create#creating-the-stack-image) directory are files providing the core technology components of the stack. These files also govern the way your stack behaves when using the different Appsody commands.
 
 **Note:** You should test all other Appsody commands that the stack supports.
 
@@ -37,7 +21,7 @@ You should include:
    * Any restrictions/limitations of the stack
 
 ## Modifying a template
-Modifying a template is simple and allows the developer to get started with their applications more quickly. Whilst modifying templates, consider if the functionality may be better placed in the stack image itself to affect all templates.
+Each stack has their own [template](/docs/stacks/create#creating-a-template) containing a starter application given to the user when they initialise their project. Modifying a template is simple and allows the developer to get started with their applications more quickly. Whilst modifying templates, consider if the functionality may be better placed in the stack image itself to affect all templates.
 
 1. Navigate to the modified template
 ```

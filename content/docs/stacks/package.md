@@ -10,7 +10,7 @@ After you create or update a stack, use the [CLI command](/docs/using-appsody/cl
 
 1. Navigate to the root directory of the stack you want to build e.g. ```cd <stack-id>```
 
-2. Run ```appsody stack package``` to package your stack locally. This builds the stack image for you and generates an index that contains only the information for that stack. Both the index and the `tar.gz` for each template are stored in ```~/.appsody/stacks/dev.local```.
+2. Run ```appsody stack package``` to package your stack locally. This builds the stack image for you and generates an index that contains only the information for that stack. Both the index and the templates are stored in ```~/.appsody/stacks/dev.local```.
 
 3. Run ```appsody repo list``` to see the repository named `dev.local`, that points to the generated index.
     ```
