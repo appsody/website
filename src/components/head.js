@@ -9,6 +9,7 @@ class Head extends React.Component {
         await loadScript('https://code.jquery.com/jquery-3.3.1.slim.min.js', { inBody: true });
         await loadScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', { inBody: true });
         await loadScript('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', { inBody: true });
+        await loadScript('https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js', { inBody: true });
     }
 
     render() {
