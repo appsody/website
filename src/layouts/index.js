@@ -13,7 +13,6 @@ export default ({ children, pageSource }) => {
               {children}
             </main>
             <div id="documents-window" className="docs-window" dangerouslySetInnerHTML={{__html: children.html}}></div>
-            <SidebarExtender />
       </DocLayout>
     )
   }

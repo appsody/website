@@ -5,6 +5,7 @@ import Doc from "../components/doc";
 import Layout from "../layouts"
 import DocHead from "../components/docHead";
 import DocSidebar from "../components/docSidebar";
+import SidebarExtender from "../components/sidebar-extender";
 
 export default function Template({
   data
@@ -18,6 +19,7 @@ export default function Template({
       <DocSidebar />
       <DocHead title={title}></DocHead>
       <Doc html={html}/>
+      <SidebarExtender />
     </Layout>
   )
 }
