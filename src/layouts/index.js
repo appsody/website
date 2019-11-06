@@ -8,16 +8,13 @@ import SidebarExtender from "../components/sidebar-extender";
 export default ({ children, pageSource }) => {
   if (pageSource === "docs") {
     return (
-      <div id="docs">
       <DocLayout>
-            <DocSidebar/>
             <main>
               {children}
             </main>
             <div id="documents-window" className="docs-window" dangerouslySetInnerHTML={{__html: children.html}}></div>
             <SidebarExtender />
       </DocLayout>
-      </div>
     )
   }
   return (

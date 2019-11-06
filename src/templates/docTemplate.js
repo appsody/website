@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Doc from "../components/doc";
 import Layout from "../layouts"
 import DocHead from "../components/docHead";
+import DocSidebar from "../components/docSidebar";
 
 export default function Template({
   data
@@ -14,6 +15,7 @@ export default function Template({
 
   return (
     <Layout pageSource="docs">
+      <DocSidebar />
       <DocHead title={title}></DocHead>
       <Doc html={html}/>
     </Layout>
