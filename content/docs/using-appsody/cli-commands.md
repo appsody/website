@@ -58,7 +58,7 @@ appsody build [flags]
       --docker-options string   Specify the docker build options to use.  Value must be in "".
   -h, --help                    help for build
       --push                    Push the Docker image to the image repository.
-      --push-url string         The remote registry to push the image to.
+      --push-url string         The remote registry to push the image to. This will also trigger a push if the --push flag is not specified.
   -t, --tag string              Docker image name and optionally a tag in the 'name:tag' format
 ```
 
@@ -177,7 +177,7 @@ appsody deploy [flags]
   -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
       --pull-url string    Remote repository to pull image from.
       --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
-      --push-url string    Remote repository to push image to.
+      --push-url string    Remote repository to push image to.  This will also trigger a push if the --push flag is not specified.
   -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
 ```
 
@@ -224,7 +224,7 @@ appsody deploy delete [flags]
   -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
       --pull-url string    Remote repository to pull image from.
       --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
-      --push-url string    Remote repository to push image to.
+      --push-url string    Remote repository to push image to.  This will also trigger a push if the --push flag is not specified.
   -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
   -v, --verbose            Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
