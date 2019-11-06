@@ -1,7 +1,6 @@
 import React from "react";
 import * as loadScript from 'simple-load-script';
 import SEO from "../components/SEO";
-import { StaticQuery, graphql } from "gatsby";
 
 class DocHead extends React.Component {
 
@@ -10,27 +9,12 @@ class DocHead extends React.Component {
         await loadScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', { inBody: true });
         await loadScript('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', { inBody: true });
     }
+
+    render() {
+        return <SEO title={this.props.title}></SEO>
+    }
 }
 
-export default () => (
-    <StaticQuery
-      query={graphql`
-        query {
-            allMarkdownRemark(filter: {fileAbsolutePath: {regex: "content/docs/using-appsody/cli-commands/"}}) {
-              nodes {
-                headings(depth: h1) {
-                  value
-                }
-              }
-            }
-          }
-      `}
-      render={data => {
-          
-        let heading = data.allMarkdownRemark.nodes[0].headings[0].value;
+export default DocHead;
 
-        
-        return <SEO title={heading}></SEO>
-      }}
-    />
-)
+

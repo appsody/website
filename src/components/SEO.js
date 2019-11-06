@@ -50,6 +50,7 @@ const SEO = ({ title, description, image, pathname, article, keywords, }) => (
             )}
             {seo.image && <meta name="twitter:image" content={seo.image} />}
             {seo.keywords && <meta name="keywords" content={seo.keywords} />}
+            <meta name="twitter:dnt" content="on"></meta> {/* Do not track personal information from this website (Twitter) */}
           </Helmet>
         </>
       )
