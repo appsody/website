@@ -1,6 +1,5 @@
 import React from "react";
 import * as loadScript from 'simple-load-script';
-import { Helmet } from "react-helmet";
 import SEO from "../components/SEO";
 
 class Head extends React.Component {
@@ -13,9 +12,7 @@ class Head extends React.Component {
     }
 
     render() {
-        return (
-            <SEO></SEO>
-        )
+        return <SEO title={this.props.title}></SEO>
     }
 }
 

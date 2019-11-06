@@ -2,8 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Doc from "../components/doc";
-import Layout from "../layouts"
-import DocHead from "../components/docHead";
+import Layout from "../components/layout"
 import DocSidebar from "../components/docSidebar";
 import SidebarExtender from "../components/sidebar-extender";
 
@@ -15,9 +14,8 @@ export default function Template({
   const { title } = markdownRemark.frontmatter
 
   return (
-    <Layout pageSource="docs">
+    <Layout title={title}>
       <DocSidebar />
-      <DocHead title={title}></DocHead>
       <Doc html={html}/>
       <SidebarExtender />
     </Layout>
