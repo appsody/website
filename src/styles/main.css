@@ -252,28 +252,6 @@ section.landing-section h2 {
   margin: 3em;
 }
 
-#docs {
-  display: grid;
-  grid-template-columns: 15em auto;
-}
-
-#docs main {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  margin-top: 4em;
-  position: relative;
-}
-
-#docs h2 {
-  font-size: 1.6em;
-  font-weight: bold;
-}
-
-#docs h3 {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
 #docs-nav-heading {
   justify-content: center;
 }
@@ -281,17 +259,6 @@ section.landing-section h2 {
 @media only screen and (max-width: 767px) {
   img.navbar-img {
     margin: 0em;
-  }
-
-  #docs {
-    grid-template-columns: 0;
-    grid-template-rows: auto auto;
-  }
-
-  #docs main {
-    margin-top: 0;
-    grid-row-start: 2;
-    grid-row-end: 3;
   }
 
   .form-control-sm {
@@ -357,21 +324,6 @@ footer a:hover {
   color: white;
 }
 
-#docs main pre, #docs main :not(pre) > code  {
-  padding: 0.3em;
-  background-color: var(--light-grey);
-  border-radius: 0.1em;
-  color: black
-}
-#docs pre, #docs code{
-  overflow-x: scroll;
-  width: 100%;
-}
-
-#docs main {
-  overflow-x: hidden;
-}
-
 #appsody-hello {
   position: relative;
   top: 50%;
@@ -384,15 +336,7 @@ footer a:hover {
     margin-left: 1em;
     margin-right: 1em;
   }
-
-  #docs .navbar-brand img {
-    margin: 0 !important;
-  }
-
-   #docs .nav-link {
-    padding-left: 0;
-  }
-
+  
    table {
      width: 100%;
      overflow-x: auto;
