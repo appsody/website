@@ -26,6 +26,8 @@
       path: /docs/stacks/create
     - title: Modifying Stacks
       path: /docs/stacks/modify
+    - title: Testing Stacks
+      path: /docs/stacks/test
     - title: Stack Variables
       path: /docs/stacks/environment-variables
     - title: Building and Testing
