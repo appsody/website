@@ -224,6 +224,188 @@ This command completes the following actions:
 - If you specified the `--knative` flag, or if Knative is the only deployment option for your stack, the command tags the image with the special prefix `dev.local`, making it accessible to your Kubernetes cluster (assuming you followed [these directions](/content/docs/using-appsody/installing-knative-locally.md))
 - Creates a deployment manifest file named `app-deploy.yaml`, in the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
 
+### Deploying your application to a local Open Shift cluster using Red Hat CodeReady Containers
+Instructions for installing Red Hat CodeReady Containers can be found [here](/content/docs/using-appsody/installing-openshift-locally.md).
+
+To deploy your application follow these steps:
+1. Log into the cluster:
+    ```
+    oc login -u <userid> -p <password> https://api.crc.testing:6443
+    ```
+    Use the developer id and password
+1. Create a project:
+    ```
+    oc new-project test
+    ```
+1. Log into the web console:
+    ```
+    crc console
+    ```
+    The web console will open in a web browser. Use the kubeadmin id and password to log in
+1. Find the `image-registry` address:
+    - Navigate to Workloads-> Pods
+    - Click on the main `image-registry` pod (Example: `image-registry-6984bcdf68-vpfjt`)
+    - Click on the `Environment` tab and scroll down to `REGISTRY_OPENSHIFT_SERVER_ADDR` and note the value (Example: `image-registry.openshift-image-registry.svc:5000`)
+    This value will be used for `--pull-url` for `appsody deploy`
+1. Find the `default-route` location:
+    - Navigate to Networking-> Routes
+    - Note the `Location` for the `default-route` (Example: `https://default-route-openshift-image-registry.apps-crc.testing`)
+    This value will be used for `--push-url` for `appsody deploy`
+1. Create the certificate (Red Ha Linux example):
+    - Get the certificate:
+        ```
+        openssl s_client -connect default-route-openshift-image-registry.apps-crc.testing:443
+        ```
+        Copy the `Server certificate` which starts with header: `-----BEGIN CERTIFICATE-----` and ends with header: `-----END CERTIFICATE-----` You must include the headers.
+    - Create the certificate directory: 
+        ```
+        sudo mkdir /etc/docker/certs.d/default-route-openshift-image-registry.apps-crc.testing
+        ```
+    - Create the certificate:
+        ```
+        vi /etc/docker/certs.d/default-route-openshift-image-registry.apps-crc.testing/ca.crt
+        ```
+    - Insert the copied certificate using `i` to get into insert mode and then paste the copied certificate and then press `esc` then `:wq` `<enter>` to save the file
+1. Log out oc developer:
+    ```
+    oc logout
+    ```
+1. Log in oc kubeadmin:
+    ```
+    oc login -u <userid> -p <password> https://api.crc.testing:6443
+    ```
+    Use the kubeadmin id and password
+1. Create and apply Role yaml file:
+    - Create the file:
+        ```
+        vi ~/Role.yaml
+        ```
+    - Copy and paste the following into the file using `i` to get into insert mode and then paste and then press `esc` then `:wq` `<enter>` to save the file
+        ```
+        kind: Role
+        apiVersion: rbac.authorization.k8s.io/v1
+        metadata:
+          name: test-user-full-access
+          namespace: test
+        rules:
+        - apiGroups: ["", "extensions", "apps", "autoscaling", "appsody.dev", "rbac.authorization.k8s.io"]
+          resources: ["*"]
+          verbs: ["*"]
+        - apiGroups: ["batch"]
+          resources:
+          - jobs
+          - cronjobs
+          verbs: ["*"]
+        ```
+    - Apply the role:
+        ```
+        kubectl apply -f Role.yaml
+        ```
+1. Create and apply the ClusterRole yaml file:
+    - Create the file:
+        ```
+        vi ~/ClusterRole.yaml
+        ```
+    - Copy and paste the following into the file using `i` to get into insert mode and then paste and then press `esc` then `:wq` `<enter>` to save the file
+        ```
+        kind: ClusterRole
+        apiVersion: rbac.authorization.k8s.io/v1
+        metadata:
+          name: test-user-node-readonly-access
+        rules:
+        - apiGroups: ["", "apps", "autoscaling", "extensions"]
+          resources: ["*"]
+          verbs: ["get", "watch", "list"]
+        - apiGroups: ["apiextensions.k8s.io"]
+          resources: ["customresourcedefinitions"]
+          verbs: ["*"]
+        - apiGroups: ["rbac.authorization.k8s.io"]
+          resources: ["rolebindings"]
+          verbs: ["get", "watch", "list"] 
+        ```
+    - Apply the role:
+        ```
+        kubectl apply -f ClusterRole.yaml
+        ```
+1. Create and apply the RoleBinding yaml file:
+    - Create the file:
+        ````
+        vi ~/RoleBinding.yaml
+        ````
+    - Copy and paste the following into the file using `i` to get into insert mode and then paste and then press `esc` then `:wq` `<enter>` to save the file
+        ```
+        apiVersion: rbac.authorization.k8s.io/v1
+        kind: RoleBinding
+        metadata:
+          name: read-pods
+          namespace: test
+        subjects:
+        - kind: User
+          name: developer
+          apiGroup: rbac.authorization.k8s.io
+        roleRef:
+          kind: Role
+          name: test-user-full-access
+          apiGroup: rbac.authorization.k8s.io 
+        ```
+    - Apply the role:
+        ```
+        kubectl apply -f RoleBinding.yaml
+        ```
+1. Create and apply the ClusterRoleBinding yaml file:
+    - Create the file:
+        ```
+        vi ~/ClusterRoleBinding.yaml
+        ```
+    - Copy and paste the following into the file using `i` to get into insert mode and then paste and then press `esc` then `:wq` `<enter>` to save the file
+        ```
+        apiVersion: rbac.authorization.k8s.io/v1
+        kind: ClusterRoleBinding
+        metadata:
+          name: read-pods-global
+        subjects:
+        - kind: User
+          name: developer
+          apiGroup: rbac.authorization.k8s.io
+        roleRef:
+          kind: ClusterRole
+          name: test-user-node-readonly-access
+          apiGroup: rbac.authorization.k8s.io
+        ```
+    - Apply the role:
+        ```
+        kubectl apply -f ClusterRoleBinding.yaml
+        ```
+1. Log out oc kubeadmin:
+    ```
+    oc logout
+    ```
+1. Log in oc developer
+    ```
+    oc login -u <userid> -p <password> https://api.crc.testing:6443
+    ```
+    Use the developer id and password
+1. Log into docker:
+    ```
+    docker login -u $(oc whoami) -p $(oc whoami -t) https://default-route-openshift-image-registry.apps-crc.testing
+    ```
+1. Perform the deploy:
+    ```
+    appsody deploy --tag <tag> --pull-url <pull-url> --push-url <push-url> --push --namespace <namespace> -v
+    ```
+    Example tag: `test/node:v1`
+
+    Example pull-url: `image-registry.openshift-image-registry.svc:5000`
+
+    Example push-url: `https://default-route-openshift-image-registry.apps-crc.testing`
+
+    Example namespace: `test`
+
+    Example deploy command:
+    ```
+    appsody deploy --tag test/node:v1 --pull-url image-registry.openshift-image-registry.svc:5000 --push-url https://default-route-openshift-image-registry.apps-crc.testing --push --namespace test -v
+    ```
+
 ### Deploying your application through Docker Hub
 
 If your cluster is configured to pull images from Docker Hub, use the following command to deploy your application:
