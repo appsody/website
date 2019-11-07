@@ -4,11 +4,11 @@ title: Packaging Stacks
 
 # Packaging Stacks
 
-Packaging allows a stack developer to build all the components of a stack and enables the stack to be used via Appsody CLI commands. The packaging process typically involvess: building the stack container image, creating archive files for each template and configuring a local Appsody repository.
+Packaging allows a stack developer to build all the components of a stack and enables the stack to be used via Appsody CLI commands. The packaging process typically involves: building the stack container image, creating archive files for each template and configuring a local Appsody repository.
 
-You can use the [CLI command](/docs/using-appsody/cli-commands#appsody-stack-package) `appsody stack package` to package a single stack that you have created or modified and want to test it locally.
+You can use the [CLI command](/docs/using-appsody/cli-commands#appsody-stack-package) `appsody stack package` to package a single stack that you have created or modified and want to test locally.
 
-Alternatively, you can also use the [ci scripts](/docs/stacks/package#packaging-a-stack-locally-using-build-scripts), if you want to package multiple stacks or repositories.
+Alternatively, you can also use the [CI scripts](/docs/stacks/package#packaging-a-stack-locally-using-build-scripts), if you want to package multiple stacks or repositories.
 
 ## Packaging a stack locally using the Appsody CLI
 
