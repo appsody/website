@@ -277,23 +277,6 @@ footer {
   text-align: center;
 }
 
-@media only screen and (max-width: 767px) {
-  footer {
-    bottom: 4em;
-  }
-
-  .doc-content {
-    margin-bottom: 4em;
-    padding: 1em;
-    margin-top: 4em;
-  }
-
-  .homepage-sections {
-    margin-bottom: 3em;
-  }
-
-}
-
 #docs footer {
   grid-column-start: 1;
   grid-column-end: 3;
@@ -360,24 +343,7 @@ footer a:hover {
   display: none;
 } */
 
-.doc-content table tr td {
-  border: 0.1em solid var(--darker-grey);
-  margin: 0;
-  text-align: left;
-  padding: 0.5em 1em;
-}
 
-.doc-content table tr th {
-  border: 0.05em solid var(--darker-grey);
-  margin: 0;
-  column-width: 200em;
-  text-align: center;
-  font-size: 16pt;
-}
-
-.doc-content table tr:nth-child(even) {
-  background: var(--dark-grey);
-}
 
 .sidebar-link {
   color: black;
@@ -431,34 +397,6 @@ footer a:hover {
 
 .accordion ul {
   margin-bottom: 2em;
-}
-
-.doc-content {
-  padding-bottom: 3em;
-  padding-left: 2rem;
-  padding-top: 1rem;
-}
-
-.doc-content table {
-  display: block;
-  overflow: scroll;
-  margin-bottom: 2em;
-}
-
- .doc-content h5, .doc-content h6 {
-  margin: 1.5rem 0 1rem 0;
-}
-
-.doc-content h1 {
-  margin: 0 0 1rem 0;
-}
-
-.doc-content h2 {
-  margin: 2.5rem 0 1rem 0;
-}
-
-.doc-content h3, .doc-content h4 {
-  margin: 2rem 0 1rem 0;
 }
 
 .dropdown {
@@ -551,4 +489,86 @@ footer a:hover {
 
 .mb-3 {
   margin-bottom: 1em!important;
+}
+
+/* Docs Window Styling */
+
+.doc-content {
+  padding-left: 18rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.doc-content table {
+  display: block;
+  overflow: scroll;
+  margin-bottom: 2em;
+}
+
+.doc-content table tr td {
+  border: 0.1em solid var(--darker-grey);
+  margin: 0;
+  text-align: left;
+  padding: 0.5em 1em;
+}
+
+.doc-content table tr th {
+  border: 0.05em solid var(--darker-grey);
+  margin: 0;
+  column-width: 200em;
+  text-align: center;
+  font-size: 16pt;
+}
+
+.doc-content table tr:nth-child(even) {
+  background: var(--dark-grey);
+}
+
+ .doc-content h5, .doc-content h6 {
+  margin: 1.5rem 0 1rem 0;
+}
+
+.doc-content h1 {
+  margin: 0 0 1rem 0;
+}
+
+.doc-content h2 {
+  margin: 2.5rem 0 1rem 0;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+.doc-content h3, .doc-content h4 {
+  margin: 2rem 0 1rem 0;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.doc-content :not(pre)>code {
+    padding: .3em;
+    background-color: var(--light-grey);
+    border-radius: .1em;
+    color: #000;
+}
+
+.doc-content pre {
+  padding: .3em;
+  background-color: var(--light-grey);
+  border-radius: .1em;
+  color: #000;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .doc-content {
+    margin-bottom: 4em;
+    padding: 2em;
+    padding-bottom: 4em;
+    padding-top: 5rem;
+  }
+
+  .homepage-sections {
+    margin-bottom: 3em;
+  }
+
 }
