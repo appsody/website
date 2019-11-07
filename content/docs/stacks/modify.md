@@ -4,35 +4,18 @@ title: Modifying a Stack
 
 # Modifying a Stack
 
-You may decide to modify an existing stack instead of creating one from scratch. This is an option if you are looking to contribute to the current Appsody stacks or maintain a separate modified version. When deciding to change the behaviour of a stack or the way the stack image is built, you will want modify the stack [image](/docs/stacks/modify#modifying-the-stack-image). Alternatively, you may want to alter the starter application provided to the user in which case you will want to modify a [template](/docs/stacks/modify#modifying-a-template).
+While there are many Appsody stacks to choose from, you may want to alter some aspects of an existing stack to match your development needs or standards. The modifications can impact how users will develop, build and deploy applications using the stack.
 
-To modify an existing stack, you must first use the `appsody stack create` [command](/docs/stacks/create#using-the-appsody-cli) to generate a stack for you or [clone](/docs/stacks/create#using-git-clone) the `stacks` repo.
+Once you have made the necessary modifications, you can [package](/content/docs/stacks/package.md) the modified stack and test it locally using Appsody CLI.
+
+When you have ensured the stack is working as intended, you can contribute the modifications to the existing Appsody stack or maintain a separate version with your modifications.
+
 
 ## Modifying the stack image
+The `image` directory contains files for building the stack image. This image controls how the stack behaves throughout the application lifecycle.
 
-Within the [image](/docs/stacks/create#creating-the-stack-image) directory are files providing the core technology components of the stack. These files also govern the way your stack behaves when using the different Appsody commands.
 
-**Note:** You should test all other Appsody commands that the stack supports.
+## Modifying stack templates
+The `templates` directory contains one or more starter applicatoins that are given to the user when they initialise their projects. 
 
-When stack image changes are made, make sure to update `stack-name/README.md`.
-You should include:
-   * Dependency versions that would be useful to the developer
-   * Any endpoints that are enforced or provided by the stack
-   * Any restrictions/limitations of the stack
-
-## Modifying a template
-Each stack has their own [template](/docs/stacks/create#creating-a-template) containing a starter application given to the user when they initialise their project. Modifying a template is simple and allows the developer to get started with their applications more quickly. Whilst modifying templates, consider if the functionality may be better placed in the stack image itself to affect all templates.
-
-1. Navigate to the modified template
-```
-cd templates/<template-name>
-```
-
-2. Run template:
-```
-appsody run
-```
-
-## Packaging a Stack
-
-Now that you have modified a stack, you will need to [package](/content/docs/stacks/package.md) it to ensure it is working as intended.
+Whilst modifying templates, consider if the functionality may be better placed in the stack image itself to affect all templates.
