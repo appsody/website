@@ -1,12 +1,12 @@
 import React, { useState } from "react"
-import styles from "../styles/sidebar-extender.module.css"
+import "../styles/sidebar-extender.css"
 
 const SidebarExtender = () => {
-
   const [isExpanded, setIsExpanded] = useState(false);
 
   function moveSidebar() {
-   document.getElementById("sidebar").style.display = 'inline';
+    document.getElementById(".hamburger-icon").classList.toggle('open');
+    document.getElementById("sidebar").style.display = 'inline';
 
     setIsExpanded(!isExpanded)
     const sidebar = document.querySelector('#sidebar');
@@ -58,10 +58,10 @@ const SidebarExtender = () => {
   }
 
   return (
-    <section onClick={() => moveSidebar()} className={styles.burgerIcon}>
-      <div className={styles.line}></div>
-      <div className={styles.line}></div>
-      <div className={styles.line}></div>
+    <section onClick={() => moveSidebar()} className="burger-icon" id=".hamburger-icon">
+      <span></span>
+      <span></span>
+      <span></span>
     </section>
   )
 }
