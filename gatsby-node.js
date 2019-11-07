@@ -75,6 +75,7 @@ exports.createPages = ({ actions, graphql }) => {
         path: node.fields.slug,
         component: docTemplate,
         context: {
+          pagePath: node.fields.slug
         },
       })
     })
