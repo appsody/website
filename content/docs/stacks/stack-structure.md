@@ -36,7 +36,7 @@ my-stack
 
 ```
 
-The stack structure is processed when you build a stack, to generate a Docker image for the stack, along with tar files of each of the templates, which can then all be stored/referenced in a local or public Appsody repository. Refer to the section on [Building and Testing Stacks](/content/docs/stacks/build-and-test.md) for more details. The Appsody CLI can then access such a repo, to use the stack to initiate local development.
+The stack structure is processed when you build a stack, to generate a Docker image for the stack, along with tar files of each of the templates, which can then all be stored/referenced in a local or public Appsody repository. Refer to the section on [Packaging Stacks](/content/docs/stacks/package.md) for more details. The Appsody CLI can then access such a repo, to use the stack to initiate local development.
 
 As described earlier, the stack (along with the Appsody software) has different responsibilities, depending whether you are in local development, or build and deploy. To understand how the stack operates, we will delve into each of these scenarios separately, including the initial work that is required to initialize the project. One of things that can initially cause confusion when looking at the source of an Appsody stack is that there are two Dockerfiles. The Dockerfiles are independent of each other - one is used to build the initial stack image (`Dockerfile-stack`) and one to build the final application image (`Dockerfile`). These are both described as we examine the scenarios.
 

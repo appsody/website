@@ -52,8 +52,8 @@ All templates should be created within `/templates`. Every template is contained
 
 If the stack is intended to be contributed to the  [Appsody stacks repository](https://github.com/appsody/stacks) the stack image should be called `appsody/<stack-name>:<stack-version>`.
 
-## Building and testing stacks locally
-Now that have you have created a stack you can [build and test](/content/docs/stacks/build-and-test.md) it locally.
+## Packaging a stack locally
+Now that have you have created a stack you can [package](/content/docs/stacks/package.md) it locally.
 
 ## Contributing a stack
 If you would like to contribute a new stack to the [stacks repository](https://github.com/appsody/stacks) the Appsody [contributing guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) explain how.
