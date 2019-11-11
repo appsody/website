@@ -4,7 +4,9 @@ title: Testing Stacks
 
 # Testing Stacks
 
-After you create, or update a stack the next consideration is to test the stack to check that it meets your needs.To validate a stack in your local Appsody development environment, use the `appsody stack validate` command. Validate performs several operations (lint, package, init, run, test, build) against the stack and provides a summary of these operations.
+After you create, or update a stack the next consideration is to test the stack to check that it meets your needs. To validate a stack in your local Appsody development environment, use the `appsody stack validate` command. Validate performs several operations (lint, package, init, run, test, build) against the stack and provides a summary of these operations. After your stack is linted and packaged, the stack is validated by initializing, running, testing, and building an Appsody project against the default template in your stack.
+
+Packaging the stack does not logically form part of validation, it is included because the tests that are run as part of the `validate` command depend on the stack being packaged.
 
 ## Testing using Appsody CLI stack validate
 
@@ -20,25 +22,15 @@ Runs the [`appsody stack lint`](/content/docs/using-appsody/cli-commands.md/#app
 
 The lint test statically analyzes your source code to verify that it conforms to the structure of an Appsody stack. It informs you of missing files, or directories and warns you if your stack might be enhanced.
 
-If you don't want to run the lint test as part of the validate operations, you can use the `--no-lint` flag as shown in the following command:
-
-`appsody stack validate --no-lint`
-
 ### Package
 
 Runs the [`appsody stack package`](/content/docs/using-appsody/cli-commands.md/#appsody-stack-package) command.
 
 Builds the stack images and templates and generates an Appsody repository index that you can use for local testing. See [Packaging Stacks](/content/docs/using-appsody/package) for more details.
 
-If you don't want to run the package command as part of the validate operations, you can use the `--no-package` flag as shown in the following command:
+If your stack is already packaged and you don't want to run the `package` operation as part of validate, you can use the `--no-package` flag as shown in the following command:
 
 `appsody stack validate --no-package`
-
-### Testing creating, running, building and testing Appsody projects
-
-After your stack is linted and packaged, the stack is validated by initializing, running, testing, and building an Appsody project against the default template in your stack. To test the creation and running of Appsody projects only, you can turn off linting and packaging for your stack as shown in the following command:
-
-`appsody stack validate --no-lint --no-package`
 
 ### Init
 
