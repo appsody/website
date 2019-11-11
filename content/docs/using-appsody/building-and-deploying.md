@@ -251,7 +251,7 @@ To deploy your application follow these steps:
     - Navigate to Networking-> Routes
     - Note the `Location` for the `default-route` (Example: `https://default-route-openshift-image-registry.apps-crc.testing`)
     This value will be used for `--push-url` for `appsody deploy`
-1. Create the certificate (Red Ha Linux example):
+1. Create the certificate (Red Hat Linux example):
     - Get the certificate:
         ```
         openssl s_client -connect default-route-openshift-image-registry.apps-crc.testing:443
@@ -265,7 +265,7 @@ To deploy your application follow these steps:
         ```
         vi /etc/docker/certs.d/default-route-openshift-image-registry.apps-crc.testing/ca.crt
         ```
-    - Insert the copied certificate using `i` to get into insert mode and then paste the copied certificate and then press `esc` then `:wq` `<enter>` to save the file
+    - Insert the copied certificate using `i` to get into insert mode and then paste the copied certificate and then press `Esc` then `:wq` `<enter>` to save the file
 1. Log out oc developer:
     ```
     oc logout
@@ -280,7 +280,7 @@ To deploy your application follow these steps:
         ```
         vi ~/Role.yaml
         ```
-    - Copy and paste the following into the file using `i` to get into insert mode and then paste and then press `esc` then `:wq` `<enter>` to save the file
+    - Copy and paste the following into the file using `i` to get into insert mode and then paste and then press `Esc` then `:wq` `<enter>` to save the file
         ```
         kind: Role
         apiVersion: rbac.authorization.k8s.io/v1
@@ -306,7 +306,7 @@ To deploy your application follow these steps:
         ```
         vi ~/ClusterRole.yaml
         ```
-    - Copy and paste the following into the file using `i` to get into insert mode and then paste and then press `esc` then `:wq` `<enter>` to save the file
+    - Copy and paste the following into the file using `i` to get into insert mode and then paste and then press `Esc` then `:wq` `<enter>` to save the file
         ```
         kind: ClusterRole
         apiVersion: rbac.authorization.k8s.io/v1
@@ -332,7 +332,7 @@ To deploy your application follow these steps:
         ````
         vi ~/RoleBinding.yaml
         ````
-    - Copy and paste the following into the file using `i` to get into insert mode and then paste and then press `esc` then `:wq` `<enter>` to save the file
+    - Copy and paste the following into the file using `i` to get into insert mode and then paste and then press `Esc` then `:wq` `<enter>` to save the file
         ```
         apiVersion: rbac.authorization.k8s.io/v1
         kind: RoleBinding
@@ -357,7 +357,7 @@ To deploy your application follow these steps:
         ```
         vi ~/ClusterRoleBinding.yaml
         ```
-    - Copy and paste the following into the file using `i` to get into insert mode and then paste and then press `esc` then `:wq` `<enter>` to save the file
+    - Copy and paste the following into the file using `i` to get into insert mode and then paste and then press `Esc` then `:wq` `<enter>` to save the file
         ```
         apiVersion: rbac.authorization.k8s.io/v1
         kind: ClusterRoleBinding
