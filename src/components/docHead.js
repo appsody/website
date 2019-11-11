@@ -2,7 +2,7 @@ import React from "react";
 import * as loadScript from 'simple-load-script';
 import SEO from "../components/SEO";
 
-class Head extends React.Component {
+class DocHead extends React.Component {
 
     async componentDidMount() {
         await loadScript('https://code.jquery.com/jquery-3.3.1.slim.min.js', { inBody: true });
@@ -12,10 +12,10 @@ class Head extends React.Component {
     }
 
     render() {
-        return (
-            <SEO></SEO>
-        )
+        return <SEO title={this.props.title}></SEO>
     }
 }
 
-export default Head;
+export default DocHead;
+
+

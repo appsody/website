@@ -5,10 +5,13 @@ import Accordion from 'react-bootstrap/Accordion'
 import Button from 'react-bootstrap/Button'
 import chevronlogo from "../images/chevron.svg";
 
+import styles from '../styles/sidebar.module.css';
+
 let accordionIndex = 0;
 let lastIndex = null;
 let rotated = false;
 let img;
+
 class DocSection extends Component {
 
   setAccordionIndex = () => {    
@@ -45,7 +48,7 @@ class DocSection extends Component {
           <Accordion.Toggle as={Button} variant="link" eventKey={this.props.index}>
             <div onClick={()=>this.rotateImage()} className="accordion-dropdown">
               <h4 className="sidebar-heading-link float-left">{this.props.title}</h4>
-              <img id={`chevron-${this.props.index}`} src={ chevronlogo } width="10" height="10" className="accordion-icon ml-4 mb-3" alt="Chevron Logo"></img>
+              <img id={`chevron-${this.props.index}`} src={ chevronlogo } width="10" height="10" className="accordion-icon mb-3" alt="Chevron Logo"></img>
             </div>
             
           </Accordion.Toggle>
@@ -56,7 +59,7 @@ class DocSection extends Component {
               }
             </ul>
           </Accordion.Collapse>
-          </>
+        </>
       )
     } else {
       itemList = (
@@ -85,16 +88,11 @@ const DocSidebar = () => {
   })
 
   return (
-    <nav className="navbar-expand-md navbar-light border-bottom" id="docs-sidebar">
-      <button className="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#collapsingSideNavbar">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="navbar-expand-md collapse d-md-inline" id="collapsingSideNavbar">
-      <Accordion defaultActiveKey={accordionIndex}>
-        {list}
-      </Accordion>
-      </div>
-    </nav>
+      <aside id="sidebar" className={styles.sidebar}>
+        <Accordion defaultActiveKey={accordionIndex}>
+          {list}
+        </Accordion>
+      </aside>
   )
 }
 

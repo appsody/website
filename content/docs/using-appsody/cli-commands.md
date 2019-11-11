@@ -57,6 +57,8 @@ appsody build [flags]
 ```
       --docker-options string   Specify the docker build options to use.  Value must be in "".
   -h, --help                    help for build
+      --push                    Push the Docker image to the image repository.
+      --push-url string         The remote registry to push the image to. This will also trigger a push if the --push flag is not specified.
   -t, --tag string              Docker image name and optionally a tag in the 'name:tag' format
 ```
 
@@ -173,7 +175,9 @@ appsody deploy [flags]
   -h, --help               help for deploy
       --knative            Deploy as a Knative Service
   -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
+      --pull-url string    Remote repository to pull image from.
       --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
+      --push-url string    Remote repository to push image to.  This will also trigger a push if the --push flag is not specified.
   -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
 ```
 
@@ -218,7 +222,9 @@ appsody deploy delete [flags]
       --generate-only      Only generate the deployment configuration file. Do not deploy the project.
       --knative            Deploy as a Knative Service
   -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
+      --pull-url string    Remote repository to pull image from.
       --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
+      --push-url string    Remote repository to push image to.  This will also trigger a push if the --push flag is not specified.
   -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
   -v, --verbose            Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
@@ -688,17 +694,20 @@ Create a new Appsody stack, called <name>, in the current directory. You can use
 
 By default, the new stack is based on the example stack: samples/sample-stack. If you want to use a different stack as the basis for your new stack, use the copy flag to specify the stack you want to use as the starting point. You can use 'appsody list' to see the available stacks.
 
-Examples:
-  appsody stack create my-stack
-  Creates a stack called my-stack, based on the example stack “samples/sample-stack”.
-
-  appsody stack create my-stack --copy incubator/nodejs-express
-  Creates a stack called my-stack, based on the Node.js Express stack.
-
 The stack name must start with a lowercase letter, and can contain only lowercase letters, numbers, or dashes, and cannot end with a dash. The stack name cannot exceed 128 characters.
 
 ```
 appsody stack create <name> [flags]
+```
+
+### Examples
+
+```
+  appsody stack create my-stack  
+  Creates a stack called my-stack, based on the example stack “samples/sample-stack”.
+
+  appsody stack create my-stack --copy incubator/nodejs-express  
+  Creates a stack called my-stack, based on the Node.js Express stack.
 ```
 
 ### Options
@@ -760,11 +769,11 @@ Package a stack in the local Appsody environment
 ### Synopsis
 
 This command is a tool for stack developers to package a stack from their local Appsody development environment. Once the stack is packaged it can then be tested via Appsody commands. The package command performs the following:
-- Creates/updates an index file named "index-dev-local.yaml" and stores it in .appsody/stacks/dev.local
+- Creates/updates an index file named "dev.local-index.yaml" and stores it in .appsody/stacks/dev.local
 - Creates a tar.gz for each stack template and stores it in .appsody/stacks/dev.local
 - Builds a Docker image named "dev.local/[stack name]:SNAPSHOT"
-- Creates an Appsody repository named "dev-local"
-- Adds/updates the "dev-local" repository of your Appsody configuration
+- Creates an Appsody repository named "dev.local"
+- Adds/updates the "dev.local" repository of your Appsody configuration
 
 ```
 appsody stack package [flags]
@@ -773,7 +782,8 @@ appsody stack package [flags]
 ### Options
 
 ```
-  -h, --help   help for package
+  -h, --help                     help for package
+      --image-namespace string   Namespace that the images will be created using (default is dev.local) (default "dev.local")
 ```
 
 ### Options inherited from parent commands
@@ -810,9 +820,10 @@ appsody stack validate [flags]
 ### Options
 
 ```
-  -h, --help         help for validate
-      --no-lint      Skips running appsody stack lint
-      --no-package   Skips running appsody stack package
+  -h, --help                     help for validate
+      --image-namespace string   Namespace that the images will be created using (default is dev.local) (default "dev.local")
+      --no-lint                  Skips running appsody stack lint
+      --no-package               Skips running appsody stack package
 ```
 
 ### Options inherited from parent commands
