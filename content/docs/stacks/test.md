@@ -48,7 +48,7 @@ The run command starts the Appsody development container that was created during
 
 Runs the [`appsody test`](/content/docs/using-appsody/cli-commands#appsody-test) command.
 
-The test command runs the project's test suite in the Appsody development container. The test suite is composed of generic tests in the stack which verify the capabilities provided by the stack are working as expected and any custom tests that are defined within the template.
+The test command runs the project's test suite in the Appsody development container. The test suite is composed of generic tests in the stack, which verify the capabilities provided by the stack are working as expected, and any custom tests that are defined within the template.
 
 ### Build
 
@@ -58,7 +58,7 @@ The build command generates a production Docker image ready for deployment to yo
 
 ### Summary
 
-Running the six operations that form the `validate` command produces a significant amount of output. To help you spot any issues there is a summary provided at the end of the output. It provides a result for each of the operations and a total for the overall number of passed and failed operations. The following summary output shows the result of running `validate` against the starter stack:
+Running the six operations that form the `validate` command produces a significant amount of output. To help you spot any issues, a summary is provided at the end of the output. It provides a result for each of the operations and a total for the overall number of passed and failed operations. The following summary output shows the result of running `validate` against the starter stack:
 
 ```
 @@@@@@@@@ Validate Summary Start @@@@@@@@@@
