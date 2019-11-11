@@ -36,7 +36,7 @@ If your stack is already packaged and you don't want to run the `package` operat
 
 Runs the [`appsody init <stack>`](/content/docs/using-appsody/cli-commands.md/#appsody-init) command.
 
-This step initializes an Appsody project that uses the default project template from your stack. This produces a local containerized development environment for your stack. See [Initializing Appsody Projects](/content/docs/using-appsody/initializing-project) for more details.
+This step initializes an Appsody project that uses the default project template from your stack. See [Initializing Appsody Projects](/content/docs/using-appsody/initializing-project) for more details.
 
 ### Run
 
