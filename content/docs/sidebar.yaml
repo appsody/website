@@ -28,6 +28,8 @@
       path: /docs/stacks/modify
     - title: Packaging Stacks
       path: /docs/stacks/package
+    - title: Testing Stacks
+      path: /docs/stacks/test
     - title: Stack Variables
       path: /docs/stacks/environment-variables
 - title: FAQ
