@@ -43,7 +43,7 @@ For information on Appsody local development go [here](/content/docs/using-appso
 ## Learn about stack operation and structure
 Stacks provide support for all phases of development and deployment. To do this, they need to adhere to a specific structure.
 
-To learn more about this, go to [stack structure](/docs/stacks/stack-structure.md).
+To learn more about this, go to [stack structure](/content/docs/stacks/stack-structure.md).
 
 ## Modifying existing stacks
 You might want to modify an existing stack to suit your development needs, for example you might want to use a different library or runtime version.

@@ -6,15 +6,15 @@ title: Packaging Stacks
 
 Packaging allows a stack developer to build all the components of a stack and enables the stack to be used via Appsody CLI commands. The packaging process typically involves: building the stack container image, creating archive files for each template and configuring a local Appsody repository.
 
-You can use the [CLI command](/docs/using-appsody/cli-commands#appsody-stack-package) `appsody stack package` to package a single stack that you have created or modified and want to test locally.
+You can use the [CLI command](/content/docs/using-appsody/cli-commands.md/#appsody-stack-package) `appsody stack package` to package a single stack that you have created or modified and want to test locally.
 
-Alternatively, you can also use the [CI scripts](/docs/stacks/package#packaging-a-stack-locally-using-build-scripts), if you want to package multiple stacks or repositories.
+Alternatively, you can also use the [CI scripts](#packaging-a-stack-locally-using-ci-scripts), if you want to package multiple stacks or repositories.
 
 ## Packaging a stack locally using the Appsody CLI
 
-1. Navigate to the root directory of the stack you want to package e.g. `cd <stack-id>`
+1. Run `appsody stack package` to package your stack locally. Run this command from the base directory of your stack, or specify the path to your stack (e.g. `appsody stack package [path/to/stack]`).
 
-1. Run `appsody stack package` to package your stack locally. This builds the stack container image, creates archives for each template and a local Appsody repository called `dev.local`.
+    This builds the stack container image, creates archives for each template and adds your stack to the `dev.local` repository in your Appsody configuration.
 
 1. Run `appsody repo list` to see the repository named `dev.local`, that points to the generated index.
     ```
@@ -30,11 +30,17 @@ Alternatively, you can also use the [CI scripts](/docs/stacks/package#packaging-
     dev.local	            <stack-id>	    <version>   *<template>	        <stack-description>
     ```
 
-1. You can use the Appsody CLI to create new projects using the packaged stack:
+## Using your freshly packaged stack
+1. Create a new directory where you want to initialise your project (e.g. `mkdir my-project`).
+
+1. Navigate to the directory of your new project (e.g. `cd my-project`).
+
+1. Use the Appsody CLI to create new projects using the packaged stack:
     ```
     appsody init dev.local/<stack-id>
     ```
 
+To test your new stack, see [Testing Stacks](/content/docs/stacks/test.md).
 
 ## Packaging a stack locally using CI scripts
 
