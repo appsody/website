@@ -31,7 +31,7 @@ This builds the stack container image, creates archives for each template, and a
     REPO            	    ID            	VERSION  	TEMPLATES        	DESCRIPTION                      
     dev.local	            <stack-id>	    <version>   *<template>	        <stack-description>
     ```
-1. Create a new directory where you want to initialize your project (e.g. `mkdir my-project`).
+1. Create a directory to initialize your project in (e.g. `mkdir my-project`).
 
 1. Navigate to the directory of your new project (e.g. `cd my-project`).
 
@@ -66,7 +66,7 @@ Run the build script and specify the desired stack as a parameter, for example:
     ```
     export APPSODY_PULL_POLICY=IFNOTPRESENT
     ```
-1. Create a new directory where you want to initialize your project (e.g. `mkdir my-project`).
+1. Create a directory to initialize your project in (e.g. `mkdir my-project`).
 
 1. Navigate to the directory of your new project (e.g. `cd my-project`).
 
@@ -74,3 +74,5 @@ Run the build script and specify the desired stack as a parameter, for example:
     ```
     appsody init <repo>-index-local/<stack-id>
     ```
+
+To test your new stack, see [Testing Stacks](/content/docs/stacks/test.md).
