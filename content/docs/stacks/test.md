@@ -26,7 +26,7 @@ The lint test statically analyzes your source code to verify that it conforms to
 
 Runs the [`appsody stack package`](/content/docs/using-appsody/cli-commands.md/#appsody-stack-package) command.
 
-Builds the stack images and templates and generates an Appsody repository index that you can use for local testing. See [Packaging Stacks](/content/docs/stacks/package) for more details.
+Builds the stack images and templates and generates an Appsody repository index that you can use for local testing. See [Packaging Stacks](/content/docs/stacks/package.md) for more details.
 
 If your stack is already packaged and you don't want to run the `package` operation as part of validate, you can use the `--no-package` flag as shown in the following command:
 
