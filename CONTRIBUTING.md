@@ -12,7 +12,7 @@ We welcome all contributions to the Appsody project and request you follow the g
 ## Code of conduct
 
 All members of the Appsody community must abide by the
-[Code of Conduct](https://github.com/appsody/website/blob/master/CODE_OF_CONDUCT.md). Only by respecting each other can we
+[Code of Conduct](https://github.com/appsody/website/blob/master/CODE_OF_CONDUCT). Only by respecting each other can we
 develop a productive, collaborative community.
 
 ## Raising issues

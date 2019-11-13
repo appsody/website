@@ -204,7 +204,7 @@ One way to determine whether your stack supports the operator is by inspecting t
 
 For your app to work as a Knative service, the following **pre-requisites** apply:
 
-- You must have access to a Kubernetes cluster, with Knative Serving installed and running. To install Knative locally, use the Kubernetes feature in Docker for Desktop, see [Installing Knative Locally](/content/docs/using-appsody/installing-knative-locally.md). To install Knative on other Kubernetes clusters, see the [Knative Install Documentation](https://knative.dev/docs/install/).
+- You must have access to a Kubernetes cluster, with Knative Serving installed and running. To install Knative locally, use the Kubernetes feature in Docker for Desktop, see [Installing Knative Locally](/docs/using-appsody/installing-knative-locally). To install Knative on other Kubernetes clusters, see the [Knative Install Documentation](https://knative.dev/docs/install/).
 - You must configure your `kubectl` CLI to point to your Kubernetes cluster.
 - If you intend to push the Docker image containing your application to Docker Hub, your target cluster must be configured to pull images from Docker Hub.
 
@@ -221,7 +221,7 @@ appsody deploy
 This command completes the following actions:
 
 - Calls `appsody build` and creates a *deployment* Docker image, as described in the previous section.
-- If you specified the `--knative` flag, or if Knative is the only deployment option for your stack, the command tags the image with the special prefix `dev.local`, making it accessible to your Kubernetes cluster (assuming you followed [these directions](/content/docs/using-appsody/installing-knative-locally.md))
+- If you specified the `--knative` flag, or if Knative is the only deployment option for your stack, the command tags the image with the special prefix `dev.local`, making it accessible to your Kubernetes cluster (assuming you followed [these directions](/docs/using-appsody/installing-knative-locally))
 - Creates a deployment manifest file named `app-deploy.yaml`, in the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
 
 ### Deploying your application through Docker Hub
@@ -271,7 +271,7 @@ This [example](https://github.com/appsody/tekton-example) shows you how to use T
 The following pre-requisites are required to run the example pipeline:
 
 - You must have developed a project with the appsody CLI, and you must have checked your project into a GitHub repository.
-- Your Kubernetes cluster must be configured to run Tekton pipelines (see [Installing Tekton Pipelines](https://github.com/tektoncd/pipeline/blob/master/docs/install.md)).
+- Your Kubernetes cluster must be configured to run Tekton pipelines (see [Installing Tekton Pipelines](https://github.com/tektoncd/pipeline/blob/master/docs/install)).
 - Your project must include a deployment manifest called `app-deploy.yaml`, which is a current pre-requisite if you want to run the pipeline with minimal changes. A quick way to obtain such a manifest is to run the `appsody deploy --generate-only` command, and then check the `app-deploy.yaml` file into your source code repository.
 
-More details on running the Tekton pipeline example for Appsody can be found in the repo [readme file] (https://github.com/appsody/tekton-example/blob/master/README.md)
+More details on running the Tekton pipeline example for Appsody can be found in the repo [readme file] (https://github.com/appsody/tekton-example/blob/master/README)
