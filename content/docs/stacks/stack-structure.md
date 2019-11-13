@@ -83,8 +83,9 @@ This creates a volume used to cache, for efficiency, the combined dependencies o
    would cause the creation of a volume to be created and mounted into the container file systems at `/project/deps`.
 
 3. Appsody controller mount  
-The Appsody CLI creates this Docker volume mount automatically.  When you run the `appsody run`, `appsody debug`, or `appsody test` commands, the Appsody CLI creates a Docker volume named `appsody-controller-<version>`, if it doesn't exist already, and populates it with the appropriate controller binary (as indicated by `<version>`). Then, it mounts this volume at `/.appsody` in the stack container file system. The reason this approach is taken is so that stack images do not need to be updated simply to ensure the appropriate version of the appsody-controller will be used.
-The Appsody CLI "knows" which controller version needs to be used.
+The Appsody CLI automatically creates the Appsody controller mount, as it knows which version of the controller needs to be used.  When you run the `appsody run`, `appsody debug`, or `appsody test` commands, the Appsody CLI creates a Docker volume, if it doesn't exist, named `appsody-controller-<version>`, and installs appropriate Appsody controller, as indicated by `<version>`. The volume is then mounted at `/.appsody` in the container file system. 
+
+As the Appsody CLI is responsible for installing the appropriate version of the Appsody controller, the stack developer doesn't need to be aware of the Appsody controller version.
 
 ### Enabling the software dependencies
 
