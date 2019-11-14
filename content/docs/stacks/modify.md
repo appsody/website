@@ -24,7 +24,7 @@ Whilst modifying templates, consider if the functionality may be better placed i
 
 ### Setting stack requirements
 
-You might modify a stack such that it requires the user to have a specific version, or range of versions, for a given technology. With the Appsody CLI, you can enforce version restrictions only when using Docker, Buildah, and the Appsody CLI. In these scenarios, it is important that you specify in the `stack.yaml` what these restrictions are to prevent the user from encountering errors further down the development line. 
+You might modify a stack such that it requires the user to have a specific version, or range of versions, for a given technology. With the Appsody CLI, you can enforce version restrictions only when using Docker, [Buildah](https://buildah.io/), and the Appsody CLI.
 
 To set a requirement, use the following format in the `stack.yaml`:
 ```
