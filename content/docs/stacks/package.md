@@ -24,7 +24,7 @@ Alternatively, you can also use the [CI scripts](/docs/stacks/package#packaging-
     experimental	https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
     ```
 
-1. Run `appsody list dev.local` to check the built stack is visible in the `dev.local` repository. Here is an example of the output you should get: 
+1. Run `appsody list dev.local` to check the built stack is visible in the `dev.local` repository. Here is an example of the output you should get:
     ```
     REPO            	    ID            	VERSION  	TEMPLATES        	DESCRIPTION                      
     dev.local	            <stack-id>	    <version>   *<template>	        <stack-description>

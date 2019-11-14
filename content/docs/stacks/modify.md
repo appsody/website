@@ -16,6 +16,58 @@ The `image` directory contains files for building the stack image. This image co
 
 
 ## Modifying stack templates
-The `templates` directory contains one or more starter applications that are given to the user when they initialise their projects. 
+The `templates` directory contains one or more starter applications that are given to the user when they initialise their projects.
 
 Whilst modifying templates, consider if the functionality may be better placed in the stack image itself to affect all templates.
+
+## Templating
+
+Often in a stack, there are common values that are used across the image and template.  It can be laborious to manually go through a stack and make changes to these values in every place they occur, especially if those values change frequently, such as the version number.  Templating offers a solution to this problem.
+
+Templating is applied when the `stack package` command is called.  To use templating in your stack, wrap the variables you would like to use with `{{ }}`.
+
+**Example usage:**
+
+`This is {{.stack.name}}, running version: {{.stack.version}}.`
+
+**Note:** Do not use templating for a `README`. As templating only takes place during the `stack package` command, the `README` on the GitHub page for your stack would have the template variables as opposed to the values associated with them.
+
+### Built-in templating
+
+The currently supported built-in variables that stack creators can use to access stack values are:
+
+| Variable                  | Value                                                                                 |
+| ------------------------- | ------------------------------------------------------------------------------------- |
+| `.stack.id`               | The stack name from the stack path.                                                   |
+| `.stack.name`             | The `name` value from `stack.yaml`.                                                   |
+| `.stack.description`      | The `description` value from `stack.yaml`.                                            |
+| `.stack.created`          | The `timestamp` of when the stack was packaged.                                       |
+| `.stack.tag`              | The `tag` value from Docker image.                                                    |
+| `.stack.maintainers`      | The `maintainers` list from `stack.yaml`.                                             |
+| `.stack.version`          | The `version` value from `stack.yaml`.                                                |
+| `.stack.semver.major`     | The `version` major value from `stack.yaml`.                                          |
+| `.stack.semver.minor`     | The `version` minor value from `stack.yaml`.                                          |
+| `.stack.semver.patch`     | The `version` patch value from `stack.yaml`.                                          |
+| `.stack.semver.majorminor`| The `version` major and minor values from `stack.yaml`.                               |
+| `.stack.image.namespace`  | The `image-namespace` from user defined image-namespace flag, default is `dev.local`. |
+
+### Custom templating
+
+If you would like to use your own custom variables you can declare a `templating-data` map in your `stack.yaml`:
+
+```
+templating-data:
+  variable1: value1
+  variable2: value2
+  variable3: value3
+```
+
+**Example usage:**
+
+```
+This is {{.stack.variable1}}, this is {{.stack.variable2}} and this is {{.stack.variable3}}.
+```
+
+**Note:** Custom variables must begin with an alphanumeric character.
+
+If you wish to use other templating libraries that have the same `{{ }}` delimiters, you can wrap your variables with `{{"{{ }}"}}`.  This leaves your templating variable intact without causing an error during the `stack package` command.
