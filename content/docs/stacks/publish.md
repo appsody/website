@@ -53,33 +53,37 @@ You can then provide the URL to this hosted repository index file to other Appso
 
 ## Publishing a stack using CI scripts
 
-To publish a stack using CI scripts, clone or copy the `appsody/stacks` Git repository. From the base directory
+To publish a stack using CI scripts, clone or copy the `appsody/stacks` Git repository to obtain the CI scripts.
+
+Create a new repository directory, within the base directory of the Git repository, which you will use to contain the stack to be published, for example: `mkdir ./myrepository`, and then copy or create your stack into this directory 
 
 The build script uses a set of default values for arguments such as the the namespace to use for the docker images, the URL to use to reference the template archive files. 
 These can be overridden by setting some environment variables. The main variables need to be overridden are:
 
  1. `IMAGE_REGISTRY_ORG` this  is the namespace that the docker images will be created with
  2. `RELEASE_URL` this is the base URL to your web hosting service and which will be used to reference the template archive files from within the repository index file.
+ 3. `REPO_LIST` this specifies which repositories will be built. The default is `REPO_LIST=experimental incubator stable`. You will need to set this to also include or only be your new repository. 
  
- These can be set by exporting these variables, for example:
+ These environment variables can be set by exporting these variables, for example:
 ```
 export IMAGE_REGISTRY_ORG=myproject
 export RELEASE_URL=https://github.com/myorg/myrepository/releases/latest/download
+export REPO_LIST=myrepository
 ```
     
-Once the required environment variables have been setup, run the build script and specify the desired stack as a parameter, for example:
+Once the required environment variables have been setup, run the build script from the base directory of the git repository and specify the desired stack as a parameter, for example:
 ```
-./ci/build.sh incubator/<stack-id>
+./ci/build.sh myrepository/<stack-id>
 ```
     
-**Note:** If a stack is not specified, all stacks in all repositories are built.
+**Note:** If a stack is not specified, all stacks in repositories listed in REPO_LIST are built.
 
-This command will create a repository index file containing remote URLs, the stack container images and the template archive files. All these files can be found in the ./ci/assets directory. 
+This command will create a repository index files containing remote URLs, the stack container images and the template archive files. All these files can be found in the ./ci/assets directory. 
 
-An index file will be created per repository (incubator-index.yaml, experimental-index.yaml, stable-index.yaml) and contains all the stacks within that repository. These repository index files will be found in the ./ci/assets directory.
+An index file will be created per repository listed in REPO_LIST and the template archive files will be prefixed with the repository name to make them easier to identify as belonging to a specific repository. The files will be found in the ./ci/assets directory.
 
 **Note:** Even if a single stack is referenced on the `./ci/build.sh` command the repository index file will contain information for all the stacks in that repository.
 
-For the stack to be available to others the stack container image needs to be pushed to a docker registry, the template archives and repository index file will need to be uploaded to a suitable web hosting service. 
+For the stack to be available to others the stack container images need to be pushed to a docker registry, for example: docker.io, the template archives and repository index file will need to be uploaded to a suitable web hosting service. 
 
 You can then provide the URL to this hosted repository index file to other Appsody uses who can add it to their Appsody repository list and then initialise a project using your stack. 
