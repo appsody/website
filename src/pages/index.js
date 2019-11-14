@@ -1,6 +1,6 @@
 import React from "react";
 
-import Layout from "../layouts"
+import Layout from "../components/layout"
 
 import TileGrid from "../components/tileGrid";
 
