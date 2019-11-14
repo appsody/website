@@ -16,7 +16,7 @@ The `image` directory contains files for building the stack image. This image co
 
 
 ## Modifying stack templates
-The `templates` directory contains one or more starter applications that are given to the user when they initialise their projects.
+The `templates` directory contains one or more starter applications that are given to the user when they initialize their projects.
 
 Whilst modifying templates, consider if the functionality may be better placed in the stack image itself to affect all templates.
 
