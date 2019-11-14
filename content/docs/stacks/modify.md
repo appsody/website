@@ -24,7 +24,7 @@ Whilst modifying templates, consider if the functionality may be better placed i
 
 ### Setting stack requirements
 
-There may be cases where a modification you have made to a stack require the user to have a certain version of a technology associated with it e.g. Docker or the Appsody CLI. In these scenarios, it is important that you specify in the `stack.yaml` what these restrictions are to prevent the user from encountering errors further down the development line. Currently, the CLI supports enforcing restrictions on: Docker, Buildah, and the Appsody CLI.
+You might modify a stack such that it requires the user to have a specific version, or range of versions, for a given technology. With the Appsody CLI, you can enforce version restrictions only when using Docker, Buildah, and the Appsody CLI. In these scenarios, it is important that you specify in the `stack.yaml` what these restrictions are to prevent the user from encountering errors further down the development line. 
 
 To set a requirement, use the following format in the `stack.yaml`:
 ```
@@ -39,4 +39,6 @@ requirements:
    buildah-version: "<= 1.10.0"
 ```
 
-Following this, when the user intializes a project using the stack, the CLI will check the user matches the requirements set and if not, they will be unable to use the stack.
+You can see the full list of version comparisons that the CLI supports [here](https://github.com/Masterminds/semver#basic-comparisons).
+
+When a project that uses the stack is initialized, the CLI checks whether the user meets the stack requirements. If the requirements are not met, the user cannot use the stack.
