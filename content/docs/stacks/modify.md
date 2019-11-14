@@ -22,15 +22,15 @@ Whilst modifying templates, consider if the functionality may be better placed i
 
 ## Templating
 
-Often in a stack, there are common values that are used across the image and template.  It can be laborious to manually go through a stack and make changes to these values in every place they occur, especially if those values change frequently, such as the version number.  [Go templating](https://golang.org/pkg/text/template/) allows stack creators to declare values in their `stack.yaml` file and use templating constructs to refer them throughout the stack, therefore the values can be changed in one place and always remain in sync.
+Often in a stack, there are common values that are used across the image and template.  It can be laborious to manually go through a stack and make changes to the values in every place they occur, especially if they change frequently, such as the version number.  [Go templating](https://golang.org/pkg/text/template/) allows stack creators to declare values in their `stack.yaml` file and use templating constructs to refer to them throughout the stack; values can be changed in one place and always remain in sync.
 
-Templates are translated into their values before a stack is packaged.  To use templating in your stack, wrap the variables you would like to use with `{{ }}`.
+Templates are translated into their values before a stack is packaged.  To use templating in your stack, wrap your templating variables with `{{ }}`.
 
 **Example usage:**
 
 `This is {{.stack.name}}, running version: {{.stack.version}}.`
 
-**Note:** Do not use templating for a `README`. As templating only takes place during the `stack package` command, the `README` on the GitHub page for your stack would have the template variables as opposed to the values associated with them.
+**Note:** Do not use templating for a `README`. As templating only takes place during the `stack package` command, the `README` on the GitHub page for your stack would have the templating variables as opposed to the values associated with them.
 
 ### Built-in templating variables
 
@@ -53,7 +53,7 @@ The currently supported built-in variables that stack creators can use to access
 
 ### Custom templating variables
 
-If you would like to use your own custom variables you can declare a `templating-data` map in your `stack.yaml` (this map should only contain key: value pairs):
+If you want to use your own custom variables you can declare a `templating-data` map in your `stack.yaml`.  This map can only contain `key`: `value` pairs.
 
 ```
 templating-data:
@@ -70,4 +70,4 @@ This is {{.stack.variable1}}, this is {{.stack.variable2}} and this is {{.stack.
 
 **Note:** Custom variables must begin with an alphanumeric character.
 
-If you wish to use other templating libraries that have the same `{{ }}` delimiters, you can wrap your variables with `{{"{{ }}"}}`.  This leaves your templating variable intact without causing an error during the `stack package` command.
+If you wish to use other templating libraries that have the same `{{ }}` delimiters, wrap your variables with `{{"{{ }}"}}`.  This leaves your templating variable intact without causing an error during the `stack package` command.
