@@ -29,7 +29,7 @@ Below are the URLs for official Appsody repository releases.
 | `incubator`    | `https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml`    |
 | `experimental` | `https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml` |
 
-By default, Appsody comes with the `incubator` and `experimental` repositories. Other repositories can be added by running the [`appsody repo add`](https://appsody.dev/docs/using-appsody/cli-commands/#appsody-repo-add) command.
+By default, Appsody comes with the `incubator` and `experimental` repositories. Other repositories can be added by running the [`appsody repo add`](/content/docs/using-appsody/cli-commands.md/#appsody-repo-add) command.
 
 ## Getting started
 Follow our [Quick Start Guide](/content/docs/getting-started/quick-start.md) to get you up and running with Appsody.
@@ -43,7 +43,7 @@ For information on Appsody local development go [here](/content/docs/using-appso
 ## Learn about stack operation and structure
 Stacks provide support for all phases of development and deployment. To do this, they need to adhere to a specific structure.
 
-To learn more about this, go to [stack structure](/docs/stacks/stack-structure.md).
+To learn more about this, go to [stack structure](/content/docs/stacks/stack-structure.md).
 
 ## Modifying existing stacks
 You might want to modify an existing stack to suit your development needs, for example you might want to use a different library or runtime version.

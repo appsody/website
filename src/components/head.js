@@ -12,9 +12,7 @@ class Head extends React.Component {
     }
 
     render() {
-        return (
-            <SEO></SEO>
-        )
+        return <SEO title={this.props.title}></SEO>
     }
 }
 
