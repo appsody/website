@@ -3,13 +3,9 @@ title: Modifying a Stack
 ---
 
 # Modifying a Stack
-
 While there are many Appsody stacks to choose from, you may want to alter some aspects of an existing stack to match your development needs or standards. The modifications can impact how users will develop, build and deploy applications using the stack.
 
 Once you have made the necessary modifications, you can [package](/content/docs/stacks/package.md) the modified stack and test it locally using Appsody CLI.
-
-When you have ensured the stack is working as intended, you can contribute the changes to the existing Appsody stack or maintain a separate version with your modifications.
-
 
 ## Project templates
 Templates provide an initial application to enable developers to get started with a stack. Developers can expand and adapt this template to suit their application needs.
