@@ -10,7 +10,6 @@ const SidebarExtender = () => {
 
     setIsExpanded(!isExpanded)
     const sidebar = document.querySelector('#sidebar');
-    const docsWindow = document.querySelector('#documents-window');
     const animationTimings = {
       fill: "forwards",
       duration: 250,
@@ -26,15 +25,6 @@ const SidebarExtender = () => {
           transform: "translateX(0)",
         }
       ], animationTimings);
-
-      docsWindow.animate([
-        {
-          transform: "translateX(calc(-100vw))",
-        },
-        {
-          transform: "translateX(0)",
-        }
-      ], animationTimings)
       
     } else {
       sidebar.animate([
@@ -45,15 +35,6 @@ const SidebarExtender = () => {
           transform: "translateX(calc(-100vw))"
         }
       ], animationTimings);
-
-      docsWindow.animate([
-        {
-          transform: "translateX(0)",
-        },
-        {
-          transform: "translateX(calc(-100vw))",
-        }
-      ], animationTimings)
     }
   }
 

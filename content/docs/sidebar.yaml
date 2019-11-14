@@ -30,7 +30,7 @@
       path: /docs/stacks/package
     - title: Testing Stacks
       path: /docs/stacks/test
-    - title: Stack Variables
+    - title: Environment Variables
       path: /docs/stacks/environment-variables
 - title: FAQ
   path: /docs/faq
