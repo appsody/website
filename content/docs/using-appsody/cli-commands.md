@@ -24,13 +24,13 @@ Complete documentation is available at https://appsody.dev
 
 ### SEE ALSO
 
-* [appsody build](#appsody-build)	 - Locally build a docker image of your appsody project
+* [appsody build](#appsody-build)	 - Build a local container image of your Appsody project.
 * [appsody completion](#appsody-completion)	 - Generates bash tab completions
-* [appsody debug](#appsody-debug)	 - Run the local Appsody environment in debug mode
+* [appsody debug](#appsody-debug)	 - Debug your Appsody project.
 * [appsody deploy](#appsody-deploy)	 - Build and deploy your Appsody project to your Kubernetes cluster
 * [appsody extract](#appsody-extract)	 - Extract the stack and your Appsody project to a local directory
-* [appsody init](#appsody-init)	 - Initialize an Appsody project with a stack and template app
-* [appsody list](#appsody-list)	 - List the Appsody stacks available to init
+* [appsody init](#appsody-init)	 - Initialize an Appsody project.
+* [appsody list](#appsody-list)	 - List the available Appsody stacks.
 * [appsody operator](#appsody-operator)	 - Install or uninstall the Appsody operator from your Kubernetes cluster.
 * [appsody ps](#appsody-ps)	 - List the appsody containers running in the local docker environment
 * [appsody repo](#appsody-repo)	 - Manage your Appsody repositories
@@ -42,24 +42,43 @@ Complete documentation is available at https://appsody.dev
 
 ## appsody build
 
-Locally build a docker image of your appsody project
+Build a local container image of your Appsody project.
 
 ### Synopsis
 
-This allows you to build a local Docker image from your Appsody project. Extract is run before the docker build.
+Build a local container image of your Appsody project. The stack, along with your Appsody project, is extracted to a local directory before the container build is run.
+
+By default, the built image is tagged with the project name that you specified when you initialised your Appsody project. If you did not specify a name, the image is tagged with the name of the root directory of your Appsody project.
+
+If you want to push the built image to an image repository using the [--push] options, you must specify the relevant image tag.
 
 ```
 appsody build [flags]
 ```
 
+### Examples
+
+```
+  appsody build -t my-repo/nodejs-express --push
+  Builds the container image, tags it with my-repo/nodejs-express, and pushes it to the container registry the Docker CLI is currently logged into.
+
+  appsody build -t my-repo/nodejs-express:0.1 --push-url my-registry-url
+  Builds the container image, tags it with my-repo/nodejs-express, and pushes it to my-registry-url/my-repo/nodejs-express:0.1.
+```
+
 ### Options
 
 ```
-      --docker-options string   Specify the docker build options to use.  Value must be in "".
-  -h, --help                    help for build
-      --push                    Push the Docker image to the image repository.
-      --push-url string         The remote registry to push the image to. This will also trigger a push if the --push flag is not specified.
-  -t, --tag string              Docker image name and optionally a tag in the 'name:tag' format
+      --buildah                  Build project using buildah primitives instead of Docker.
+      --buildah-options string   Specify the buildah build options to use. Value must be in "".
+      --docker-options string    Specify the Docker build options to use. Value must be in "".
+  -f, --file string              The file name to use for the deployment configuration. (default "app-deploy.yaml")
+  -h, --help                     help for build
+      --knative                  Deploy as a Knative Service
+      --pull-url string          Remote repository to pull image from.
+      --push                     Push the container image to the image repository.
+      --push-url string          The remote registry to push the image to. This will also trigger a push if the --push flag is not specified.
+  -t, --tag string               Container image name and optionally, a tag in the 'name:tag' format.
 ```
 
 ### Options inherited from parent commands
@@ -117,14 +136,24 @@ appsody completion [flags]
 
 ## appsody debug
 
-Run the local Appsody environment in debug mode
+Debug your Appsody project.
 
 ### Synopsis
 
-This starts a docker based continuous build environment for your project with debugging enabled.
+Start a container-based continuous build environment for your Appsody project, with debugging enabled.
 
 ```
 appsody debug [flags]
+```
+
+### Examples
+
+```
+  appsody debug --docker-options "--privileged"
+  Starts the debugging environment, passing the "--privileged" option to the "docker run" command as a flag.
+  
+  appsody debug --name my-project-dev2 -p 3001:3000
+  Starts the debugging environment, names the development container "my-project-dev2", and binds the container port 3000 to the host port 3001.
 ```
 
 ### Options
@@ -169,16 +198,19 @@ appsody deploy [flags]
 ### Options
 
 ```
-  -f, --file string        The file name to use for the deployment configuration. (default "app-deploy.yaml")
-      --force              Force the reuse of the deployment configuration file if one exists.
-      --generate-only      Only generate the deployment configuration file. Do not deploy the project.
-  -h, --help               help for deploy
-      --knative            Deploy as a Knative Service
-  -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
-      --pull-url string    Remote repository to pull image from.
-      --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
-      --push-url string    Remote repository to push image to.  This will also trigger a push if the --push flag is not specified.
-  -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
+      --buildah                  Build project using buildah primitives instead of docker.
+      --buildah-options string   Specify the buildah build options to use. Value must be in "".
+      --docker-options string    Specify the docker build options to use. Value must be in "".
+  -f, --file string              The file name to use for the deployment configuration. (default "app-deploy.yaml")
+      --force                    DEPRECATED - Force the reuse of the deployment configuration file if one exists.
+      --generate-only            DEPRECATED - Only generate the deployment configuration file. Do not deploy the project.
+  -h, --help                     help for deploy
+      --knative                  Deploy as a Knative Service
+  -n, --namespace string         Target namespace in your Kubernetes cluster (default "default")
+      --pull-url string          Remote repository to pull image from.
+      --push                     Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
+      --push-url string          Remote repository to push image to.  This will also trigger a push if the --push flag is not specified.
+  -t, --tag string               Docker image name and optionally a tag in the 'name:tag' format
 ```
 
 ### Options inherited from parent commands
@@ -215,18 +247,21 @@ appsody deploy delete [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string      config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun             Turns on dry run mode
-  -f, --file string        The file name to use for the deployment configuration. (default "app-deploy.yaml")
-      --force              Force the reuse of the deployment configuration file if one exists.
-      --generate-only      Only generate the deployment configuration file. Do not deploy the project.
-      --knative            Deploy as a Knative Service
-  -n, --namespace string   Target namespace in your Kubernetes cluster (default "default")
-      --pull-url string    Remote repository to pull image from.
-      --push               Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
-      --push-url string    Remote repository to push image to.  This will also trigger a push if the --push flag is not specified.
-  -t, --tag string         Docker image name and optionally a tag in the 'name:tag' format
-  -v, --verbose            Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --buildah                  Build project using buildah primitives instead of docker.
+      --buildah-options string   Specify the buildah build options to use. Value must be in "".
+      --config string            config file (default is $HOME/.appsody/.appsody.yaml)
+      --docker-options string    Specify the docker build options to use. Value must be in "".
+      --dryrun                   Turns on dry run mode
+  -f, --file string              The file name to use for the deployment configuration. (default "app-deploy.yaml")
+      --force                    DEPRECATED - Force the reuse of the deployment configuration file if one exists.
+      --generate-only            DEPRECATED - Only generate the deployment configuration file. Do not deploy the project.
+      --knative                  Deploy as a Knative Service
+  -n, --namespace string         Target namespace in your Kubernetes cluster (default "default")
+      --pull-url string          Remote repository to pull image from.
+      --push                     Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
+      --push-url string          Remote repository to push image to.  This will also trigger a push if the --push flag is not specified.
+  -t, --tag string               Docker image name and optionally a tag in the 'name:tag' format
+  -v, --verbose                  Turns on debug output and logging to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -269,24 +304,38 @@ appsody extract [flags]
 
 ## appsody init
 
-Initialize an Appsody project with a stack and template app
+Initialize an Appsody project.
 
 ### Synopsis
 
-This creates a new Appsody project in a local directory or sets up the local dev environment of an existing Appsody project.
+Set up the local Appsody development environment. You can do this for an existing project or use the template application provided by the stack. 
 
-If the [repository] is not specified the default repository will be used. If no [template] is specified, the default template will be used.
-With the [stack], [repository]/[stack], [stack] [template] or [repository]/[stack] [template] arguments, this command will setup a new Appsody project. It will create an Appsody stack config file, unzip a template app, and run the stack init script to setup the local dev environment. It is typically run on an empty directory and may fail
-if files already exist. See the --overwrite and --no-template options for more details.
-Use 'appsody list' to see the available stack options.
+By default, the command creates an Appsody stack configuration file and provides a simple default application. You can also initialize a project with a different template application, or no template. 
 
-If keyword "none" is specified instead of a [template], the project will be initialized to use Appsody, and no template will be provided.
-
-Without the [stack] argument, this command must be run on an existing Appsody project and will only run the stack init script to
-setup the local dev environment.
+To initialize a project with a template application, in a directory that is not empty, you need to specify the "overwrite" option [--overwrite].
+Use 'appsody list' to see the available stacks and templates.
 
 ```
 appsody init [stack] or [repository]/[stack] [template] [flags]
+```
+
+### Examples
+
+```
+  appsody init nodejs-express
+  Initializes a project with the default template from the "nodejs-express" stack in the default repository.
+  
+  appsody init experimental/nodejs-functions
+  Initializes a project with the default template from the "nodejs-functions" stack in the "experimental" repository.
+  
+  appsody init nodejs-express scaffold
+  Initializes a project with the "scaffold" template from "nodejs-express" stack in the default repository.
+
+  appsody init nodejs none
+  Initializes a project without a template for the "nodejs" stack in the default repository.
+
+  appsody init
+  Runs the stack init script to set up the local development environment on an existing Appsody project.
 ```
 
 ### Options
@@ -312,14 +361,26 @@ appsody init [stack] or [repository]/[stack] [template] [flags]
 
 ## appsody list
 
-List the Appsody stacks available to init
+List the available Appsody stacks.
 
 ### Synopsis
 
-This command lists all the stacks available in your repositories. If you omit the  optional [repository] parameter, the stacks for all the repositories are listed. If you specify the repository name [repository], only the stacks in that repository will be listed.
+List all the Appsody stacks available in your repositories. 
+
+An asterisk in the repository column denotes the default repository. An asterisk in the template column denotes the default template that is used when you initialise an Appsody project.
 
 ```
 appsody list [repository] [flags]
+```
+
+### Examples
+
+```
+  appsody list
+  Lists all available stacks for each of your repositories.
+  
+  appsody list my-repo
+  Lists available stacks only in your "my-repo" repository.
 ```
 
 ### Options
@@ -490,21 +551,28 @@ Manage your Appsody repositories
 ### SEE ALSO
 
 * [appsody](#appsody)	 - Appsody CLI
-* [appsody repo add](#appsody-repo-add)	 - Add an Appsody repository
-* [appsody repo list](#appsody-repo-list)	 - List configured Appsody repositories
-* [appsody repo remove](#appsody-repo-remove)	 - Remove a configured Appsody repository
-* [appsody repo set-default](#appsody-repo-set-default)	 - Set desired default repository
+* [appsody repo add](#appsody-repo-add)	 - Add an Appsody repository.
+* [appsody repo list](#appsody-repo-list)	 - List your Appsody repositories.
+* [appsody repo remove](#appsody-repo-remove)	 - Remove an Appsody repository.
+* [appsody repo set-default](#appsody-repo-set-default)	 - Set a default repository.
 
 ## appsody repo add
 
-Add an Appsody repository
+Add an Appsody repository.
 
 ### Synopsis
 
-Add an Appsody repository
+Add an Appsody repository to your list of configured Appsody repositories.
 
 ```
 appsody repo add <name> <url> [flags]
+```
+
+### Examples
+
+```
+  appsody repo add my-local-repo file://path/to/my-local-repo.yaml
+  Adds the "my-local-repo" repository, specified by the "file://path/to/my-local-repo.yaml" file to your list of repositories.
 ```
 
 ### Options
@@ -527,11 +595,11 @@ appsody repo add <name> <url> [flags]
 
 ## appsody repo list
 
-List configured Appsody repositories
+List your Appsody repositories.
 
 ### Synopsis
 
-List configured Appsody repositories. An asterisk denotes the default repository.
+List all your configured Appsody repositories. The "incubator" repository is the initial default repository for Appsody.
 
 ```
 appsody repo list [flags]
@@ -558,14 +626,23 @@ appsody repo list [flags]
 
 ## appsody repo remove
 
-Remove a configured Appsody repository
+Remove an Appsody repository.
 
 ### Synopsis
 
-Remove a configured Appsody repository
+Remove an Appsody repository from your list of configured Appsody repositories.
+		
+You cannot remove the default repository, but you can make a different repository the default (see appsody repo set-default).
 
 ```
 appsody repo remove <name> [flags]
+```
+
+### Examples
+
+```
+  appsody repo remove my-local-repo
+  Removes the "my-local-repo" repository from your list of configured repositories.
 ```
 
 ### Options
@@ -588,14 +665,23 @@ appsody repo remove <name> [flags]
 
 ## appsody repo set-default
 
-Set desired default repository
+Set a default repository.
 
 ### Synopsis
 
-Set desired default repository
+Set your specified repository to be the default repository.
+
+The default repository is used when you run the "appsody init" command without specifying a repository name. Use "appsody repo list" or "appsody list" to see which repository is currently the default (denoted by an asterisk).
 
 ```
 appsody repo set-default <name> [flags]
+```
+
+### Examples
+
+```
+  appsody repo set-default my-local-repo
+  Sets your default repository to "my-local-repo".
 ```
 
 ### Options
@@ -679,10 +765,60 @@ Tools to help create and test Appsody stacks
 ### SEE ALSO
 
 * [appsody](#appsody)	 - Appsody CLI
+* [appsody stack add-to-repo](#appsody-stack-add-to-repo)	 - Add stack information into a production Appsody repository
 * [appsody stack create](#appsody-stack-create)	 - Create a new Appsody stack.
-* [appsody stack lint](#appsody-stack-lint)	 - Lint your stack to verify that it conforms to the structure of an Appsody stack
-* [appsody stack package](#appsody-stack-package)	 - Package a stack in the local Appsody environment
-* [appsody stack validate](#appsody-stack-validate)	 - Run validation tests against a stack in the local Appsody environment
+* [appsody stack lint](#appsody-stack-lint)	 - Check your stack structure.
+* [appsody stack package](#appsody-stack-package)	 - Package your stack.
+* [appsody stack validate](#appsody-stack-validate)	 - Run validation tests against your stack.
+
+## appsody stack add-to-repo
+
+Add stack information into a production Appsody repository
+
+### Synopsis
+
+Adds stack information into an Appsody repository. 
+		
+Adds stack information to a new or existing Appsody repository, specified by the <repo-name> argument. This enables you to share your stack with others.
+
+The updated repository index file is created in  ~/.appsody/stacks/dev.local directory.
+
+```
+appsody stack add-to-repo <repo-name> [flags]
+```
+
+### Examples
+
+```
+  appsody stack add-to-repo incubator
+  Creates a new repository index file for the incubator repository, setting the template URLs to begin with a default URL of https://github.com/appsody/stacks/releases/latest/download/
+
+  appsody stack add-to-repo myrepository --release-url https://github.com/mygitorg/myrepository/releases/latest/download/
+  Create a new index file for the myrepository repository, setting the template URLs to begin with https://github.com/mygitorg/myrepository/releases/latest/download/
+
+  appsody stack add-to-repo myrepository --release-url https://github.com/appsody/stacks/releases/latest/download/ --use-local-cache
+  Use an existing index for the myrepository repository or create it if it doesnt exist, setting the template URLs to begin with https://github.com/mygitorg/myrepository/releases/latest/download/
+```
+
+### Options
+
+```
+  -h, --help                 help for add-to-repo
+      --release-url string   URL to use within the repository to access the stack assets (default "https://github.com/appsody/stacks/releases/download/")
+      --use-local-cache      Whether to use a local file if exists or create a new file
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
+      --dryrun          Turns on dry run mode
+  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+```
+
+### SEE ALSO
+
+* [appsody stack](#appsody-stack)	 - Tools to help create and test Appsody stacks
 
 ## appsody stack create
 
@@ -731,17 +867,26 @@ appsody stack create <name> [flags]
 
 ## appsody stack lint
 
-Lint your stack to verify that it conforms to the structure of an Appsody stack
+Check your stack structure.
 
 ### Synopsis
 
-This command will validate that your stack has the structure of an Appsody stack. It will inform you of files/directories
-missing and warn you if your stack could be enhanced.
+Check that the structure of your stack is valid. Error messages indicate critical issues in your stack structure, such as missing files, directories, or stack variables. Warning messages suggest optional stack enhancements.
 
-This command can be run from the base directory of your stack or you can supply a path to the stack as an argument.
+		Run this command from the base directory of your stack, or specify the path to your stack.
 
 ```
 appsody stack lint [flags]
+```
+
+### Examples
+
+```
+  appsody stack lint
+		Checks the structure of the stack in the current directory"
+		
+		appsody stack lint path/to/my-stack
+		Checks the structure of the stack "my-stack" in the path "path/to/my-stack"
 ```
 
 ### Options
@@ -764,19 +909,26 @@ appsody stack lint [flags]
 
 ## appsody stack package
 
-Package a stack in the local Appsody environment
+Package your stack.
 
 ### Synopsis
 
-This command is a tool for stack developers to package a stack from their local Appsody development environment. Once the stack is packaged it can then be tested via Appsody commands. The package command performs the following:
-- Creates/updates an index file named "dev.local-index.yaml" and stores it in .appsody/stacks/dev.local
-- Creates a tar.gz for each stack template and stores it in .appsody/stacks/dev.local
-- Builds a Docker image named "dev.local/[stack name]:SNAPSHOT"
-- Creates an Appsody repository named "dev.local"
-- Adds/updates the "dev.local" repository of your Appsody configuration
+Package your stack in a local Appsody development environment. You must run this command from the root directory of your stack.
+
+The packaging process builds the stack image, generates the "tar.gz" archive files for each template, and adds your stack to the "dev.local" repository in your Appsody configuration. You can see the list of your packaged stacks by running 'appsody list dev.local'.
 
 ```
 appsody stack package [flags]
+```
+
+### Examples
+
+```
+  appsody stack package
+  Packages the stack in the current directory, tags the built image with the "dev.local" namespace, and adds the stack to the "dev.local" repository.
+  
+  appsody stack package --image-namespace my-namespace
+  Packages the stack in the current directory, tags the built image with the "my-namespace" namespace, and adds the stack to the "dev.local" repository.
 ```
 
 ### Options
@@ -800,18 +952,19 @@ appsody stack package [flags]
 
 ## appsody stack validate
 
-Run validation tests against a stack in the local Appsody environment
+Run validation tests against your stack.
 
 ### Synopsis
 
-This command is a tool for stack developers to validate a stack from their local Appsody development environment. It performs the following against the stack:
-- Runs the stack lint test. This can be turned off with the --no-lint flag
-- Runs the stack package command. This can be turned off with the --no-package flag
-- Runs the appsody init command
-- Runs the appsody run command
-- Runs the appsody test command
-- Runs the appsody build command
-- Provides a Passed/Failed status and summary of the above operations
+Run validation tests against your stack, in your local Appsody development environment. 
+		
+Runs the following validation tests against the stack:
+  * appsody stack lint
+  * appsody stack package
+  * appsody init 
+  * appsody run 
+  * appsody test 
+  * appsody build
 
 ```
 appsody stack validate [flags]
