@@ -41,7 +41,7 @@ Where `<path>` is the fully qualified path to the package.
 
 That's all there is to it! You can now follow our [Quick Start](/content/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
 
-Alternatively, if you would like to build the binaries from source code, please take a look at [Building from Source] (https://github.com/appsody/appsody/blob/master/build.md). If you would just like to download a pre-built binary, you will also need to download the [appsody-controller](https://github.com/appsody/controller/releases).
+Alternatively, if you would like to build the binaries from source code, please take a look at [Building from Source] (https://github.com/appsody/appsody/blob/master/build.md). 
 
 ## Installing on RHEL
 
@@ -116,7 +116,7 @@ If you are unsure about which directories are mounted by the stack you are using
 [ibmadmin@naval1 my-project]$ appsody run
 Running development environment...
 Running command: docker[pull appsody/nodejs-express:0.2]
-Running command: docker[run --rm -p 3000:3000 -p 9229:9229 --name my-project-dev -v /home/ibmadmin/appsody/my-project/:/project/user-app -v my-project-deps:/project/user-app/node_modules -v /home/ibmadmin/.appsody/appsody-controller:/appsody/appsody-controller -t --entrypoint /appsody/appsody-controller appsody/nodejs-express:0.2 --mode=run]
+Running command: docker[run --rm -p 3000:3000 -p 9229:9229 --name my-project-dev -v /home/ibmadmin/appsody/my-project/:/project/user-app -v my-project-deps:/project/user-app/node_modules -v /home/ibmadmin/.appsody/appsody-controller:/.appsody/appsody-controller -t --entrypoint /.appsody/appsody-controller appsody/nodejs-express:0.2 --mode=run]
 ```
 In the example above, there are two binding mounts:
 * /home/ibmadmin/appsody/my-project/
