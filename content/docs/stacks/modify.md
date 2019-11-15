@@ -44,6 +44,58 @@ Stack creators also provide a template deployment manifest `image/config/app-dep
 
 ## Advanced Topics
 
+### Templating
+
+Often in a stack, there are common values that are used across the image and template. It can be laborious to manually go through a stack and make changes to the values in every place they occur, especially if they change frequently, such as the version number. [Go templating](https://golang.org/pkg/text/template/) allows stack creators to declare values in their `stack.yaml` file and use templating constructs to refer to them throughout the stack; values can be changed in one place and always remain in sync.
+
+Templates are converted into their values before a stack is packaged. To use templating in your stack, wrap your templating variables with `{{ }}`.  All variables are prepended with `.stack`.
+
+**Example usage:**
+
+`This is {{.stack.name}}, running version: {{.stack.version}}.`
+
+**Note:** Do not use templating for a readme file.
+
+#### Built-in templating variables
+
+The variables that stack creators can use to access stack values are:
+
+| Variable                  | Value                                                                                 |
+| ------------------------- | ------------------------------------------------------------------------------------- |
+| `.stack.id`               | The stack name from the stack path.                                                   |
+| `.stack.name`             | The `name` value from `stack.yaml`.                                                   |
+| `.stack.description`      | The `description` value from `stack.yaml`.                                            |
+| `.stack.created`          | The `timestamp` of when the stack was packaged.                                       |
+| `.stack.tag`              | The `tag` value from Docker image.                                                    |
+| `.stack.maintainers`      | The `maintainers` list from `stack.yaml`.                                             |
+| `.stack.version`          | The `version` value from `stack.yaml`.                                                |
+| `.stack.semver.major`     | The `version` major value from `stack.yaml`.                                          |
+| `.stack.semver.minor`     | The `version` minor value from `stack.yaml`.                                          |
+| `.stack.semver.patch`     | The `version` patch value from `stack.yaml`.                                          |
+| `.stack.semver.majorminor`| The `version` major and minor values from `stack.yaml`.                               |
+| `.stack.image.namespace`  | The `image-namespace` from user defined image-namespace flag, default is `dev.local`. |
+
+#### Custom templating variables
+
+If you want to use your own custom variables, you can declare a `templating-data` map in your `stack.yaml`. This map can contain only `key`: `value` pairs.
+
+```
+templating-data:
+  variable1: value1
+  variable2: value2
+  variable3: value3
+```
+
+**Example usage:**
+
+```
+This is {{.stack.variable1}}, this is {{.stack.variable2}} and this is {{.stack.variable3}}.
+```
+
+**Note:** Custom variables must begin with an alphanumeric character.
+
+If you want to use other templating libraries that have the same `{{ }}` delimiters, wrap your variables with `{{"{{ }}"}}`. This leaves your templating variable intact without causing an error during the `stack package` command.
+
 ### Setting stack requirements
 
 You might modify a stack such that it requires the user to have a specific version, or range of versions, for a given technology. With the Appsody CLI, you can enforce version restrictions only when using Docker, [Buildah](https://buildah.io/), and the Appsody CLI.
