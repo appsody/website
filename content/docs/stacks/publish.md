@@ -10,8 +10,6 @@ The basic, required steps for publishing a stack are:
  1. Package the stack then generate Docker images using a suitable image registry namespace.
  2. Generate a repository index file that contains remote URLs.
 
-
-
 ## Contribute a stack to Appsody
 You can contribute a new stack, or update an existing stack, by following these steps:
 
@@ -30,7 +28,7 @@ After creating and testing a stack locally, you might want to make the stack ava
  1. The [Appsody CLI](#publishing-a-stack-using-the-appsody-cli).
  2. The [CI scripts](#publishing-a-stack-using-ci-scripts), if one or more stacks or repositories are to be published.
 
-## Publishing a stack using the Appsody CLI
+### Publishing a stack using the Appsody CLI
 
 1. If the stack is not already packaged, package it by running the [`appsody stack package` command](/content/docs/using-appsody/cli-commands.md/#appsody-stack-package). Run this command from the base directory of your stack, specifying the namespace for creating the Docker images with. For example: `appsody stack package --image-namespace myproject` creates Docker images with a namespace of `myproject`.
 
@@ -48,7 +46,7 @@ After creating and testing a stack locally, you might want to make the stack ava
 
 You can now provide the URL to the hosted repository index file to other Appsody users, who can add it to their Appsody repository list then initialise a project using your stack.
 
-## Publishing a stack using CI scripts
+### Publishing a stack using CI scripts
 
 1. Clone or copy the `appsody/stacks` Git repository to obtain the CI scripts.
 2. Create a new repository directory, within the base directory of the Git repository, to contain the stack to be published. For example, `mkdir ./myrepository`
