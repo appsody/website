@@ -4,86 +4,82 @@ title: Publishing Stacks
 
 # Publishing Stacks
 
-Publishing a stack prepares the stack to be made available from a remote location so that it can be accessed by other individuals.
+You publish a stack when you want to make it available to other users. You can make a stack available by contributing it to the Appsody project, or by publishing it with a web hosting service.
 
-In order to publish a stack the stack needs to 
- - be packaged and have the images generated using a suitable image registry namespace
- - have a repository index file generated containing remote URLs
+The basic, required steps for publishing a stack are:
+ 1. Package the stack then generate Docker images using a suitable image registry namespace.
+ 2. Generate a repository index file that contains remote URLs.
 
-There are several scenarios for publishing which are dependant on the proposed audience for the stack.
 
- 1. Make a new stack or an update to an existing stack available to Appsody. 
- 2. Make a stack available to others by using a web hosting service.
-  
+
 ## Contribute a stack to Appsody
-If you are contributing a new stack or an updated stack to Appsody, you would have done the following: 
+You can contribute a new stack, or update an existing stack, by following these steps:
 
- 1. Clone the appsody/stacks git repository
- 2. Created a new stack or updated an existing stack
- 3. Built and tested the stack
- 4. Modified any relevant documentation
- 
-At which point you would be ready to contribute this back to Appsody by pushing your changes to a branch in your fork of the Appsody git repository and then creating a Pull Request to the Appsody repository.
+ 1. Clone the `appsody/stacks` git repository.
+ 2. Create your new stack, or update an existing stack.
+ 3. Build and test the stack.
+ 4. Modify any relevant documentation.
+ 5. Push your changes to a branch in your fork of the Appsody git repository.
+ 6. Create a pull request to the Appsody repository, to get your changes merged.
 
-For more information about this see the [Contributing](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) guidelines. 
+For more information, see the [Contributing guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md).
 
 ## Make a stack available to others
-Once you have created and tested a stack locally you may want the stack to be available to others.
+After creating and testing a stack locally, you might want to make the stack available to other users. You can publish the stack by using:
 
-In order to do this the stack needs to be in a published state. This can be performed by using:
-
- 1. the [Appsody CLI](#publishing-a-stack-using-the-appsody-cli).
- 2. the [CI scripts](#publishing-a-stack-using-ci-scripts), if one or more stacks or repositories are to be published.
+ 1. The [Appsody CLI](#publishing-a-stack-using-the-appsody-cli).
+ 2. The [CI scripts](#publishing-a-stack-using-ci-scripts), if one or more stacks or repositories are to be published.
 
 ## Publishing a stack using the Appsody CLI
 
-If you have not done so previously you will need to run the [CLI command](/content/docs/using-appsody/cli-commands.md/#appsody-stack-package) `appsody stack package` to package your stack. Run this command from the base directory of your stack specifying the namespace that the docker images should be created with, for example: `appsody stack package --image-namespace myproject` to create the images with a namespace of `myproject`
+1. If the stack is not already packaged, package it by running the [`appsody stack package` command](/content/docs/using-appsody/cli-commands.md/#appsody-stack-package). Run this command from the base directory of your stack, specifying the namespace for creating the Docker images with. For example: `appsody stack package --image-namespace myproject` creates Docker images with a namespace of `myproject`.
 
-This builds the stack container image, creates archives for each template, and adds your stack to the dev.local repository in your Appsody configuration. 
+    This command builds the stack container image, creates archives for each template, and adds your stack to the `dev.local` repository in your Appsody configuration.
 
-For the stack to be available to others the stack container image needs to be pushed to a docker registry, for example docker.io, and the template archives will need to be uploaded to a suitable web hosting service. 
+2. Push the stack container image to a Docker registry, for example `docker.io`.
 
-To generate a repository index for the stack that will point to the template archive files that you put onto the web hosting service run the [CLI command](/content/docs/using-appsody/cli-commands.md/#appsody-stack-addtorepo) `appsody stack add-to-repo` from the base directory of your stack specifying the repository name and the base URL to be used. for example: `appsody stack add-to-repo myrepository --release-url https://github.com/myorg/myrepository/releases/latest/download/`
+3. Upload the template archives to a suitable web hosting service.
 
-This will create or update a repository index file using the --release-url argument value provided as the base URL required to reference the template archives. The index file will be determined from the the repository name, i.e. myrepository-index.yaml, and will be found in the .appsody/stacks/dev.local directory
+4. Generate a repository index for the stack, which will point to the template archive files that you uploaded to the web hosting service. To generate the index, run the [`appsody stack add-to-repo` command](/content/docs/using-appsody/cli-commands.md/#appsody-stack-addtorepo)  from the base directory of your stack, specifying the repository name and the base URL to use. For example: `appsody stack add-to-repo myrepository --release-url https://github.com/myorg/myrepository/releases/latest/download/`
 
-The generated repository index file will then need to be uploaded to the web hosting service.
+    This command creates (or updates) a repository index file using the specified  `--release-url` as the base URL for referencing the template archives. The index file is determined from the repository name (`myrepository-index.yaml` in this example), and is created in the `.appsody/stacks/dev.local` directory
 
-You can then provide the URL to this hosted repository index file to other Appsody uses who can add it to their Appsody repository list and then initialise a project using your stack. 
+3. Upload the generated repository index file to the web hosting service.
+
+You can now provide the URL to the hosted repository index file to other Appsody users, who can add it to their Appsody repository list then initialise a project using your stack.
 
 ## Publishing a stack using CI scripts
 
-To publish a stack using CI scripts, clone or copy the `appsody/stacks` Git repository to obtain the CI scripts.
+1. Clone or copy the `appsody/stacks` Git repository to obtain the CI scripts.
+2. Create a new repository directory, within the base directory of the Git repository, to contain the stack to be published. For example, `mkdir ./myrepository`
+3. Copy or create your stack into this new directory.
+4. Use environment variables to override default settings that are used by the build script, for example the namespace to use for the Docker images, and the URL to use to reference the template archive files. The main variables to override are:
 
-Create a new repository directory, within the base directory of the Git repository, which you will use to contain the stack to be published, for example: `mkdir ./myrepository`, and then copy or create your stack into this directory 
+   - `IMAGE_REGISTRY_ORG` this is the namespace to create the Docker images with.
+   - `RELEASE_URL` this is the base URL to your web hosting service, and is used to reference the template archive files from within the repository index file.
+   - `REPO_LIST` this specifies the repositories to build. The default value is `experimental incubator stable`. Change the list so that your new repository is the only entry (otherwise artefacts are built for the other repositories too).
 
-The build script uses a set of default values for arguments such as the the namespace to use for the docker images, the URL to use to reference the template archive files. 
-These can be overridden by setting some environment variables. The main variables need to be overridden are:
+   You can set these environment variables by exporting them. For example:
+   
+    ```
+    export IMAGE_REGISTRY_ORG=myproject
+    export RELEASE_URL=https://github.com/myorg/myrepository/releases/latest/download
+    export REPO_LIST=myrepository
+    ```
+5. Run the build script from the base directory of the git repository, specifying your stack as a parameter. For example:
+    ```
+    ./ci/build.sh myrepository/<stack-id>
+    ```
 
- 1. `IMAGE_REGISTRY_ORG` this  is the namespace that the docker images will be created with
- 2. `RELEASE_URL` this is the base URL to your web hosting service and which will be used to reference the template archive files from within the repository index file.
- 3. `REPO_LIST` this specifies which repositories will be built. The default is `REPO_LIST=experimental incubator stable`. You will need to set this to also include or only be your new repository. 
- 
- These environment variables can be set by exporting these variables, for example:
-```
-export IMAGE_REGISTRY_ORG=myproject
-export RELEASE_URL=https://github.com/myorg/myrepository/releases/latest/download
-export REPO_LIST=myrepository
-```
-    
-Once the required environment variables have been setup, run the build script from the base directory of the git repository and specify the desired stack as a parameter, for example:
-```
-./ci/build.sh myrepository/<stack-id>
-```
-    
-**Note:** If a stack is not specified, all stacks in repositories listed in REPO_LIST are built.
+    **Note:** If you do not specify a stack, Appsody builds all the stacks in the  repositories listed in REPO_LIST.
 
-This command will create a repository index files containing remote URLs, the stack container images and the template archive files. All these files can be found in the ./ci/assets directory. 
+    This command creates the following artefacts in the `./ci/assets` directory: repository index files (containing remote URLs), stack container images, and template archive files.
 
-An index file will be created per repository listed in REPO_LIST and the template archive files will be prefixed with the repository name to make them easier to identify as belonging to a specific repository. The files will be found in the ./ci/assets directory.
+    An index file is created for each repository that is listed in REPO_LIST, and the template archive files are prefixed with the repository name to make them easier to identify as belonging to a specific repository.
 
-**Note:** Even if a single stack is referenced on the `./ci/build.sh` command the repository index file will contain information for all the stacks in that repository.
+    **Note:** The repository index file contains information for all the stacks in that repository, even if you specified a single stack with the `./ci/build.sh` command.
 
-For the stack to be available to others the stack container images need to be pushed to a docker registry, for example: docker.io, the template archives and repository index file will need to be uploaded to a suitable web hosting service. 
+6. Push the stack container images to a Docker registry, such as `docker.io`.
+7. Upload the template archives and repository index file to a suitable web hosting service.
 
-You can then provide the URL to this hosted repository index file to other Appsody uses who can add it to their Appsody repository list and then initialise a project using your stack. 
+You can now provide the URL to the hosted repository index file to other Appsody users, who can add it to their Appsody repository list then initialise a project using your stack.
