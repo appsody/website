@@ -95,3 +95,24 @@ This is {{.stack.variable1}}, this is {{.stack.variable2}} and this is {{.stack.
 **Note:** Custom variables must begin with an alphanumeric character.
 
 If you want to use other templating libraries that have the same `{{ }}` delimiters, wrap your variables with `{{"{{ }}"}}`. This leaves your templating variable intact without causing an error during the `stack package` command.
+
+### Setting stack requirements
+
+You might modify a stack such that it requires the user to have a specific version, or range of versions, for a given technology. With the Appsody CLI, you can enforce version restrictions only when using Docker, [Buildah](https://buildah.io/), and the Appsody CLI.
+
+To set a requirement, use the following format in the `stack.yaml`:
+```
+name: <stack-name>
+version: 0.1.0
+.
+.
+.
+requirements:
+   docker-version: ">= 17.09.0"
+   appsody-version: "0.2.7 - 0.4.10"
+   buildah-version: "<= 1.10.0"
+```
+
+You can see the full list of version comparisons that the CLI supports [here](https://github.com/Masterminds/semver#basic-comparisons).
+
+When a project that uses the stack is initialized, the CLI checks whether the user meets the stack requirements. If the requirements are not met, the user cannot use the stack.
