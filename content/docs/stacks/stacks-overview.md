@@ -13,7 +13,7 @@ Appsody stacks include language runtimes, frameworks and any additional librarie
 ---
 Stacks are categorized as either `stable`, `incubator` or `experimental` depending on the content of the stack.
 
-- `stable/`: Stable stacks meet this set of [technical requirements](https://github.com/appsody/stacks/blob/master/TECHNICAL_REQUIREMENTS).
+- `stable/`: Stable stacks meet this set of [technical requirements](https://github.com/appsody/stacks/blob/master/TECHNICAL_REQUIREMENTS.md).
 
 - `incubator/`: The stacks in the incubator folder are actively being worked on to satisfy the stable criteria.
 
@@ -53,7 +53,7 @@ To learn how to go about modifying an existing stack go to [modifying a stack](/
 ## Creating new stacks
 We are actively working to create new stacks so that more people can adopt Appsody. If you find that none of the existing stacks meet your needs please reach out to us on the [Appsody Slack](https://appsody-slack.eu-gb.mybluemix.net/) or create a new GitHub issue to track the discussion.
 
-We always welcome any contributions. If you wanted to create your own stack for a framework or language that we do not currently support, please review the [contributing guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING) and follow the steps outlined in [creating a stack](/docs/stacks/create).
+We always welcome any contributions. If you wanted to create your own stack for a framework or language that we do not currently support, please review the [contributing guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) and follow the steps outlined in [creating a stack](/docs/stacks/create).
 
 ## Need help?
 If you have a question that you can't find an answer to, we would also like to hear about that too. You can reach out to the community for assistance on [Slack](https://appsody-slack.eu-gb.mybluemix.net/).

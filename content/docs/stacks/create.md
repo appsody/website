@@ -56,7 +56,7 @@ If the stack is intended to be contributed to the  [Appsody stacks repository](h
 Now that have you have created a stack you can [package](/docs/stacks/package) it locally.
 
 ## Contributing a stack
-If you would like to contribute a new stack to the [stacks repository](https://github.com/appsody/stacks) the Appsody [contributing guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING) explain how.
+If you would like to contribute a new stack to the [stacks repository](https://github.com/appsody/stacks) the Appsody [contributing guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) explain how.
 
 We welcome new contributions but before starting a large piece of work we recommend that you reach out to us on [Slack](http://appsody-slack.eu-gb.mybluemix.net/) or [raise an issue](https://github.com/appsody/stacks/issues/) to start a discussion.
 

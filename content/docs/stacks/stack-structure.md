@@ -18,7 +18,7 @@ A stack is designed to support both ways of working; local development, and buil
 
 ```bash
 my-stack
-├── README
+├── README.md
 ├── stack.yaml
 ├── image/
 |   ├── config/
