@@ -549,6 +549,11 @@ footer a:hover {
   color: #000;
 }
 
+.doc-content ul {
+  list-style: disc outside none;
+  padding-inline-start: 40px;
+}
+
 @media only screen and (max-width: 767px) {
   .doc-content {
     margin-bottom: 4em;
