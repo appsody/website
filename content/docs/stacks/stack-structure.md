@@ -47,7 +47,7 @@ Initialization occurs when a user issues an `appsody init` command in a new empt
 * Appsody CLI finds the yaml entry for the stack in the respective repo
 * Appsody CLI downloads the referenced tar file for the specified template to be used as a basis for the user application, and extracts the contents. This creates the directory structure within the current directory, including the `.appsody-config.yaml` file that specifies the stack image itself (which is usually stored in a Docker repository)
 * Appsody CLI downloads this stack image
-* Appsody CLI inspects the stack image to see if it has an initialization file within it called `appsody-init.sh` (or `appsody-init.bat` if running on Windows). If this file does it exist, it is executed to set up any further configuration. Note that it not recommended that this initialization installs new packages or modules in user space of the local machine. Any dependencies should be handled by ensuring this happens during run and build, listed below.
+* Appsody CLI inspects the stack image to see if it has an initialization file within it called `appsody-init.sh` (or `appsody-init.bat` if running on Windows). If this file exists, it is executed to set up any further configuration. Note that it not recommended that this initialization installs new packages or modules in user space of the local machine. Any dependencies should be handled by ensuring this happens during run and build, listed below.
 
 ## Stack operation during local development
 
@@ -83,7 +83,7 @@ This creates a volume used to cache, for efficiency, the combined dependencies o
    would cause the creation of a volume to be created and mounted into the container file systems at `/project/deps`.
 
 3. Appsody controller mount  
-The Appsody CLI automatically creates the Appsody controller mount, as it knows which version of the controller needs to be used.  When you run the `appsody run`, `appsody debug`, or `appsody test` commands, the Appsody CLI creates a Docker volume, if it doesn't exist, named `appsody-controller-<version>`, and installs appropriate Appsody controller, as indicated by `<version>`. The volume is then mounted at `/.appsody` in the container file system. 
+The Appsody CLI automatically creates the Appsody controller mount, as it knows which version of the controller needs to be used.  When you run the `appsody run`, `appsody debug`, or `appsody test` commands, the Appsody CLI creates a Docker volume, if it doesn't exist, named `appsody-controller-<version>`, and installs appropriate Appsody controller, as indicated by `<version>`. The volume is then mounted at `/.appsody` in the container file system.
 
 As the Appsody CLI is responsible for installing the appropriate version of the Appsody controller, the stack developer doesn't need to be aware of the Appsody controller version.
 

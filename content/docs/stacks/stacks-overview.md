@@ -17,7 +17,7 @@ Stacks are categorized as either `stable`, `incubator` or `experimental` dependi
 
 - `incubator/`: The stacks in the incubator folder are actively being worked on to satisfy the stable criteria.
 
-- `experimental/`: Experimental stacks are not being actively been worked on and may not fulfill the requirements of an Appsody stack. These can be used for trying out specific capabilities or proof of concept work.
+- `experimental/`: Experimental stacks are not being actively worked on and may not fulfill the requirements of an Appsody stack. These can be used for trying out specific capabilities or proof of concept work.
 
 ### Official Appsody Repositories
 
@@ -34,9 +34,7 @@ By default, Appsody comes with the `incubator` and `experimental` repositories. 
 ## Getting started
 Follow our [Quick Start Guide](/content/docs/getting-started/quick-start.md) to get you up and running with Appsody.
 
-To find a list of existing stacks that are available to you:
-- Visit the [Appsody website](https://appsody.dev) or
-- Run the `appsody list` command within the Appsody CLI
+To find a list of existing stacks that are available, you can visit the [home page](https://appsody.dev) or run the `appsody list` command within the Appsody CLI.
 
 For information on Appsody local development go [here](/content/docs/using-appsody/local-development.md).
 

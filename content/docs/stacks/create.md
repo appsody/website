@@ -6,7 +6,7 @@ title: Creating a Stack
 
 You might like to create your own stack, for example if the current Appsody stacks don't meet your needs or if you want to add a framework or language that isn't currently supported.
 
-A stack comprises two main components: a stack image, and templates that use the stack image to provide starter applications for your development team to build on.
+A stack comprises of two main components: a stack image, and templates that use the stack image to provide starter applications for your development team to build on.
 
 You can start by using either the Appsody CLI `appsody stack create` command, or Git clone. Both methods involve basing your new stack on an existing stack, to create the starting point for developing your own Appsody stack.
 

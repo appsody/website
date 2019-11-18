@@ -36,7 +36,7 @@ Appsody enables the caching of any installed dependencies across runs to acceler
 Stack creators configure the `APPSODY_DEPS` [environment variable](/content/docs/stacks/environment-variables.md) to specify the directory to be cached.
 
 ## Application build and deployment
-Stack creators must provide `Dockerfile` that defines how to build the container image for the Appsody application, including both capabilities from the stack, and the developer's application.
+Stack creators must provide a `Dockerfile` that defines how to build the container image for the Appsody application, including both capabilities from the stack, and the developer's application.
 
 Appsody CLI uses the `Dockerfile` to create the application container image when [`appsody build`](/content/docs/using-appsody/cli-commands.md/#appsody-build) command is run.
 
