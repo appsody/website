@@ -116,12 +116,12 @@ If you are unsure about which directories are mounted by the stack you are using
 [ibmadmin@naval1 my-project]$ appsody run
 Running development environment...
 Running command: docker[pull appsody/nodejs-express:0.2]
-Running command: docker[run --rm -p 3000:3000 -p 9229:9229 --name my-project-dev -v /home/ibmadmin/appsody/my-project/:/project/user-app -v my-project-deps:/project/user-app/node_modules -v /home/ibmadmin/.appsody/appsody-controller:/.appsody/appsody-controller -t --entrypoint /.appsody/appsody-controller appsody/nodejs-express:0.2 --mode=run]
+Running command: docker[run --rm -p 3000:3000 -p 9229:9229 --name my-project-dev -v /home/ibmadmin/appsody/my-project/:/project/user-app -v my-project-deps:/project/user-app/node_modules -v appsody-controller-0.3.1:/.appsody/appsody-controller -t --entrypoint /.appsody/appsody-controller appsody/nodejs-express:0.2 --mode=run]
 ```
-In the example above, there are two binding mounts:
-* /home/ibmadmin/appsody/my-project/
-* /home/ibmadmin/.appsody/appsody-controller
-
+In the example above, there is one binding mount:
+```
+/home/ibmadmin/appsody/my-project/
+```
 In this case, whitelisting the home directory (`/home/ibmadmin`) would be sufficient.
 
 # Upgrading Appsody
