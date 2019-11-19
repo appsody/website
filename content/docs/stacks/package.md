@@ -51,7 +51,7 @@ Run the build script and specify the desired stack as a parameter, for example:
      ./ci/build.sh incubator/<stack-id>
     ```
 
-**Note:** If a stack is not specified, all stacks in all repositories are built.
+> If a stack is not specified, all stacks in all repositories are built.
 
 ### Using your packaged stack
 1. A local repository based on the stacks built is added to the repository list. Run ```appsody repo list``` to see this repository named `<repo>-index-local`

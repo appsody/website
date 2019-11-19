@@ -106,7 +106,7 @@ Since the developer might add these at any stage, these are generated each time 
    ENV APPSODY_PREP="cd /project/userapp; pipenv lock -r > requirements.txt; python -m pip install -r requirements.txt -t /project/deps"
    ```
 
-   [Note that in older stacks this variable was called `APPSODY_INSTALL`, which has since been deprecated]
+   > Note that in older stacks this variable was called `APPSODY_INSTALL`, which has since been deprecated
 
 ### Setting up any environment variables required
 

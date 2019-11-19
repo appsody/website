@@ -488,6 +488,7 @@ footer a:hover {
   padding-left: 18rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  padding-right: 2em;
 }
 
 .doc-content table {
@@ -565,4 +566,15 @@ footer a:hover {
   .homepage-sections {
     margin-bottom: 3em;
   }
+}
+
+
+blockquote {
+  background-color: rgba(128, 27, 102, 0.1);
+  padding: 1rem 3rem;
+  border-left: 4px solid #BB417C;
+}
+
+blockquote p {
+  margin: 0;
 }

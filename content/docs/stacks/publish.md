@@ -69,13 +69,13 @@ You can now provide the URL to the hosted repository index file to other Appsody
     ./ci/build.sh myrepository/<stack-id>
     ```
 
-    **Note:** If you do not specify a stack, Appsody builds all the stacks in the  repositories listed in REPO_LIST.
+    > If you do not specify a stack, Appsody builds all the stacks in the  repositories listed in REPO_LIST.
 
     This command creates the following artefacts in the `./ci/assets` directory: repository index files (containing remote URLs), stack container images, and template archive files.
 
     An index file is created for each repository that is listed in REPO_LIST, and the template archive files are prefixed with the repository name to make them easier to identify as belonging to a specific repository.
 
-    **Note:** The repository index file contains information for all the stacks in that repository, even if you specified a single stack with the `./ci/build.sh` command.
+    > The repository index file contains information for all the stacks in that repository, even if you specified a single stack with the `./ci/build.sh` command.
 
 6. Push the stack container images to a Docker registry, such as `docker.io`.
 7. Upload the template archives and repository index file to a suitable web hosting service.
