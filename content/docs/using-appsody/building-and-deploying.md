@@ -25,7 +25,7 @@ The `appsody build` command completes the following actions:
 - Extracts your code and other artifacts, including a new Dockerfile, which are required to build the *deployment* image from the *development* image. These files are saved to the `~/.appsody/extract` directory.
 - Runs a `docker build` against the Dockerfile that was extracted on the previous step to produce a *deployment* image in your local Docker registry. If you want to give the image a name, specify the `-t <tag>` parameter. If you run `appsody build` with no parameters, the image is given a name that matches the name of your project.
 
-**Note:** If your project includes uppercase characters these are converted to lowercase characters in the image name because Docker does not accept uppercase characters in image tags. Also, if your project directory includes underscore characters, those will be converted to dashes (-), because certain areas of Kubernetes are not tolerant of underscore characters.
+> If your project includes uppercase characters these are converted to lowercase characters in the image name because Docker does not accept uppercase characters in image tags. Also, if your project directory includes underscore characters, those will be converted to dashes (-), because certain areas of Kubernetes are not tolerant of underscore characters.
 
 Here is an example of the output produced by the `appsody build` command on a project named `appsody-project`:
 ```
@@ -103,7 +103,7 @@ If the `--generate only` flag is used in conjunction with the `--tag (-t)` flag,
 
 #### Use of `appsody deploy --generate-only` with the `--knative` tag 
 If `--knative` is used along with `--generate-only`, the value of `createKnativeService` will be set to `true` in the generated app-deploy.yaml file.  
-Note that if during a subsequent `appsody deploy` call the `--knative` flag is not present, the value of `createKnativeService` will be set to `false` in app-deploy.yaml.
+> that if during a subsequent `appsody deploy` call the `--knative` flag is not present, the value of `createKnativeService` will be set to `false` in app-deploy.yaml.
 
 #### Using the `appsody operator` commands
 In certain cases, you may want to deploy one or more Appsody operators on your cluster ahead of time, and let developers deploy their applications to the cluster without them having to meddle with operator deployments.
@@ -198,7 +198,7 @@ Appsody operators can be installed through different means - the Appsody CLI is 
 
 You can use the `--knative` flag with the `appsody deploy` command to have your application deployed as a Knative service on your target Kubernetes cluster.
 
-Note that, if the stack you are using for your Appsody project does not support the Appsody operator, `appsody deploy` will always default to deploying your app as a Knative serving service. The `--knative` flag, in that case, is unnecessary, but  is tolerated by the Appsody CLI.
+> that, if the stack you are using for your Appsody project does not support the Appsody operator, `appsody deploy` will always default to deploying your app as a Knative serving service. The `--knative` flag, in that case, is unnecessary, but  is tolerated by the Appsody CLI.
 
 One way to determine whether your stack supports the operator is by inspecting the `app-deploy.yaml` file that is generated. If the `kind` element has a value of `AppsodyApplication`, that means that the stack supports the Appsody operator.
 
@@ -238,7 +238,7 @@ The command completes the following actions:
 - Creates a deployment manifest file named `app-deploy.yaml`, in the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
 - The `--namespace mynamespace` option provisions the deployment under the `mynamespace` namespace.
 
-**Note:** If you don't specify `--push`, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry. 
+> If you don't specify `--push`, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry. 
 
 ### Deploying multiple projects
 If you are running multiple Appsody projects on your workstation, you can use `appsody deploy` and `appsody operator` commands to get them deployed to a Kubernetes cluster. However, make sure that you run these commands one at a time, because those commands create temporary files that might lead to conflicts if created concurrently.
@@ -260,7 +260,7 @@ In order to ensure that the latest version of your app gets pushed down to the c
 
 ## Deploying your app through a Tekton pipeline
 
-**Note:** This deployment option is under development
+> This deployment option is under development
 
 Most likely, the deployment of apps created with the appsody CLI is going to occur through the invocation of a CI/CD build pipeline.
 

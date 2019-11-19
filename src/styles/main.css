@@ -109,7 +109,6 @@ section.landing-section h2 {
   display: none;
 }
 
-
 @media only screen and (max-width: 767px) {
   .bigscreen-social {
     display: none;
@@ -120,7 +119,6 @@ section.landing-section h2 {
     
   }
 }
-
 
 /* Cannot change as the Slack icon is not transparent in the middle. Saving for later */
 /* .navbar-img:hover {
@@ -252,28 +250,6 @@ section.landing-section h2 {
   margin: 3em;
 }
 
-#docs {
-  display: grid;
-  grid-template-columns: 15em auto;
-}
-
-#docs main {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  margin-top: 4em;
-  position: relative;
-}
-
-#docs h2 {
-  font-size: 1.6em;
-  font-weight: bold;
-}
-
-#docs h3 {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
 #docs-nav-heading {
   justify-content: center;
 }
@@ -281,17 +257,6 @@ section.landing-section h2 {
 @media only screen and (max-width: 767px) {
   img.navbar-img {
     margin: 0em;
-  }
-
-  #docs {
-    grid-template-columns: 0;
-    grid-template-rows: auto auto;
-  }
-
-  #docs main {
-    margin-top: 0;
-    grid-row-start: 2;
-    grid-row-end: 3;
   }
 
   .form-control-sm {
@@ -308,23 +273,6 @@ footer {
   box-shadow: 0 6px 29px var(--darker-grey);
   padding: 1em;
   text-align: center;
-}
-
-@media only screen and (max-width: 767px) {
-  footer {
-    bottom: 4em;
-  }
-
-  .doc-content {
-    margin-bottom: 4em;
-    padding: 1em;
-    margin-top: 4em;
-  }
-
-  .homepage-sections {
-    margin-bottom: 3em;
-  }
-
 }
 
 #docs footer {
@@ -357,21 +305,6 @@ footer a:hover {
   color: white;
 }
 
-#docs main pre, #docs main :not(pre) > code  {
-  padding: 0.3em;
-  background-color: var(--light-grey);
-  border-radius: 0.1em;
-  color: black
-}
-#docs pre, #docs code{
-  overflow-x: scroll;
-  width: 100%;
-}
-
-#docs main {
-  overflow-x: hidden;
-}
-
 #appsody-hello {
   position: relative;
   top: 50%;
@@ -384,15 +317,7 @@ footer a:hover {
     margin-left: 1em;
     margin-right: 1em;
   }
-
-  #docs .navbar-brand img {
-    margin: 0 !important;
-  }
-
-   #docs .nav-link {
-    padding-left: 0;
-  }
-
+  
    table {
      width: 100%;
      overflow-x: auto;
@@ -410,29 +335,6 @@ footer a:hover {
 
 .navbar-brand {
   padding: 0;
-}
-
-/* #docs #brand-name {
-  display: none;
-} */
-
-.doc-content table tr td {
-  border: 0.1em solid var(--darker-grey);
-  margin: 0;
-  text-align: left;
-  padding: 0.5em 1em;
-}
-
-.doc-content table tr th {
-  border: 0.05em solid var(--darker-grey);
-  margin: 0;
-  column-width: 200em;
-  text-align: center;
-  font-size: 16pt;
-}
-
-.doc-content table tr:nth-child(even) {
-  background: var(--dark-grey);
 }
 
 .sidebar-link {
@@ -487,34 +389,6 @@ footer a:hover {
 
 .accordion ul {
   margin-bottom: 2em;
-}
-
-.doc-content {
-  padding-bottom: 3em;
-  padding-left: 2rem;
-  padding-top: 1rem;
-}
-
-.doc-content table {
-  display: block;
-  overflow: scroll;
-  margin-bottom: 2em;
-}
-
- .doc-content h5, .doc-content h6 {
-  margin: 1.5rem 0 1rem 0;
-}
-
-.doc-content h1 {
-  margin: 0 0 1rem 0;
-}
-
-.doc-content h2 {
-  margin: 2.5rem 0 1rem 0;
-}
-
-.doc-content h3, .doc-content h4 {
-  margin: 2rem 0 1rem 0;
 }
 
 .dropdown {
@@ -607,4 +481,100 @@ footer a:hover {
 
 .mb-3 {
   margin-bottom: 1em!important;
+}
+
+/* Docs Window Styling */
+.doc-content {
+  padding-left: 18rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  padding-right: 2em;
+}
+
+.doc-content table {
+  display: block;
+  overflow: scroll;
+  margin-bottom: 2em;
+}
+
+.doc-content table tr td {
+  border: 0.1em solid var(--darker-grey);
+  margin: 0;
+  text-align: left;
+  padding: 0.5em 1em;
+}
+
+.doc-content table tr th {
+  border: 0.05em solid var(--darker-grey);
+  margin: 0;
+  column-width: 200em;
+  text-align: center;
+  font-size: 16pt;
+}
+
+.doc-content table tr:nth-child(even) {
+  background: var(--dark-grey);
+}
+
+ .doc-content h5, .doc-content h6 {
+  margin: 1.5rem 0 1rem 0;
+}
+
+.doc-content h1 {
+  margin: 0 0 1rem 0;
+}
+
+.doc-content h2 {
+  margin: 2.5rem 0 1rem 0;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+.doc-content h3, .doc-content h4 {
+  margin: 2rem 0 1rem 0;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.doc-content :not(pre)>code {
+    padding: .3em;
+    background-color: var(--light-grey);
+    border-radius: .1em;
+    color: #000;
+}
+
+.doc-content pre {
+  padding: .3em;
+  background-color: var(--light-grey);
+  border-radius: .1em;
+  color: #000;
+}
+
+.doc-content ul {
+  list-style: disc outside none;
+  padding-inline-start: 40px;
+}
+
+@media only screen and (max-width: 767px) {
+  .doc-content {
+    margin-bottom: 4em;
+    padding: 2em;
+    padding-bottom: 4em;
+    padding-top: 5rem;
+  }
+
+  .homepage-sections {
+    margin-bottom: 3em;
+  }
+}
+
+
+blockquote {
+  background-color: rgba(128, 27, 102, 0.1);
+  padding: 1rem 3rem;
+  border-left: 4px solid #BB417C;
+}
+
+blockquote p {
+  margin: 0;
 }
