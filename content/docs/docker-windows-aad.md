@@ -42,7 +42,7 @@ Assuming the creation of a new user does not violate your organization policies,
     icacls "%USERPROFILE%\directory-for-appsody-project" /grant %DOCKER_SHARED_DRIVE_USER%:(OI)(CI)F
     ```
 
-    Note that the user in the `DOCKER_SHARED_DRIVE_USER` environment variable must match the user specified in the Docker Desktop "Shared Drives" tab in the first step. 
+    > Note that the user in the `DOCKER_SHARED_DRIVE_USER` environment variable must match the user specified in the Docker Desktop "Shared Drives" tab in the first step. 
 
     Repeat the `mkdir` and `icacls` commands for any other directory where you are about to create a new Appsody project. If you plan on creating multiple projects, you can also target a parent directory for those future project directories, so that you do not have to repeat the commands for each new Appsody project directory.
 
