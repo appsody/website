@@ -61,7 +61,7 @@ That's all there is to it! You can now follow our [Quick Start](/content/docs/ge
 
 ## Installing on Windows
 
-Note: Appsody runs only on Windows 10 Professional and Windows 10 Enterprise editions. If you are running Windows 10 Enterprise with authentication through Azure Active Directory, please follow the additional instructions in the page [Appsody and Docker Desktop on Windows 10](/content/docs/docker-windows-aad.md).
+> Appsody runs only on Windows 10 Professional and Windows 10 Enterprise editions. If you are running Windows 10 Enterprise with authentication through Azure Active Directory, please follow the additional instructions in the page [Appsody and Docker Desktop on Windows 10](/content/docs/docker-windows-aad.md).
 
 Follow these steps:
 
@@ -69,7 +69,7 @@ Follow these steps:
 2. Download the **Appsody binaries for Windows** from the [Appsody releases page](https://github.com/appsody/appsody/releases) into the directory. The file is named `appsody-v.r.m-windows.tar.gz`, where `v.r.m` indicates the release tag.
 3. Extract the files by running `tar -xvf appsody-v.r.m-windows.tar.gz`.
 
-Note: If you choose to extract the files using a GUI tool you may have to extract the `appsody-v.r.m-windows.tar.gz` file and extract the extracted `appsody-v.r.m-windows.tar` file afterwards.
+> If you choose to extract the files using a GUI tool you may have to extract the `appsody-v.r.m-windows.tar.gz` file and extract the extracted `appsody-v.r.m-windows.tar` file afterwards.
 
 4. To install Appsody, run the following setup command:
 
@@ -142,7 +142,7 @@ To upgrade Appsody on your system, follow these steps:
 ```
 sudo apt upgrade -f ./appsody_v.r.m_amd64.deb -y
 ```
-**Note:** The command uses `./` otherwise it will not work.
+> The command uses `./` otherwise it will not work.
 
 ## Upgrading on RHEL
 To upgrade Appsody on your system, follow these steps: 
@@ -159,7 +159,7 @@ To upgrade Appsody on your system, follow these steps:
 2) Move the file to the directory where you stored the existing Appsody binaries.
 3) Untar the file there: `tar -xvf appsody-v.r.m-windows.tar.gz`.
 
-Note: If you choose to extract the files using a GUI tool you may have to extract the `appsody-v.r.m-windows.tar.gz` file and extract the extracted `appsody-v.r.m-windows.tar` file afterwards.
+> If you choose to extract the files using a GUI tool you may have to extract the `appsody-v.r.m-windows.tar.gz` file and extract the extracted `appsody-v.r.m-windows.tar` file afterwards.
 
 # Uninstalling Appsody
 Here we cover the steps to uninstalling Appsody on your system.

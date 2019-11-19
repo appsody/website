@@ -54,7 +54,7 @@ Templates are converted into their values before a stack is packaged. To use tem
 
 `This is {{.stack.name}}, running version: {{.stack.version}}.`
 
-**Note:** Do not use templating for a readme file.
+> Do not use templating for a readme file.
 
 #### Built-in templating variables
 
@@ -92,7 +92,7 @@ templating-data:
 This is {{.stack.variable1}}, this is {{.stack.variable2}} and this is {{.stack.variable3}}.
 ```
 
-**Note:** Custom variables must begin with an alphanumeric character.
+> Custom variables must begin with an alphanumeric character.
 
 If you want to use other templating libraries that have the same `{{ }}` delimiters, wrap your variables with `{{"{{ }}"}}`. This leaves your templating variable intact without causing an error during the `stack package` command.
 
