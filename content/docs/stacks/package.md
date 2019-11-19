@@ -26,7 +26,7 @@ This builds the stack container image, creates archives for each template, and a
     experimental	https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
     ```
 
-1. Run `appsody list dev.local` to check the built stack is visible in the `dev.local` repository. Here is an example of the output you should get: 
+1. Run `appsody list dev.local` to check the built stack is visible in the `dev.local` repository. Here is an example of the output you should get:
     ```
     REPO            	    ID            	VERSION  	TEMPLATES        	DESCRIPTION                      
     dev.local	            <stack-id>	    <version>   *<template>	        <stack-description>
@@ -51,7 +51,7 @@ Run the build script and specify the desired stack as a parameter, for example:
      ./ci/build.sh incubator/<stack-id>
     ```
 
-**Note:** If a stack is not specified, all stacks in all repositories are built.
+> If a stack is not specified, all stacks in all repositories are built.
 
 ### Using your packaged stack
 1. A local repository based on the stacks built is added to the repository list. Run ```appsody repo list``` to see this repository named `<repo>-index-local`

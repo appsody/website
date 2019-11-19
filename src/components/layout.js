@@ -5,12 +5,14 @@ import Navbar from "./navbar"
 import Footer from "./footer"
 import MobileNav from "./mobileNav";
 
-export default ({ children }) => (
+const Layout = ({ title, children }) => (
     <React.Fragment>
-        <Head/>
+        <Head title={title}/>
             <Navbar/>
                 { children }
             <Footer/>
         <MobileNav />
     </React.Fragment>
 )
+
+export default Layout;
