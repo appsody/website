@@ -31,27 +31,19 @@ Below are the URLs for official Appsody repository releases.
 
 By default, Appsody comes with the `incubator` and `experimental` repositories. Other repositories can be added by running the [`appsody repo add`](/content/docs/using-appsody/cli-commands.md/#appsody-repo-add) command.
 
-## Getting started
-Follow our [Quick Start Guide](/content/docs/getting-started/quick-start.md) to get you up and running with Appsody.
+## The role of a stack in the development process
 
-To find a list of existing stacks that are available, you can visit the [home page](https://appsody.dev) or run the `appsody list` command within the Appsody CLI.
+The fundamental goal of stacks is to simplify the life of the developer trying to build an application using a specific set of technologies or development pattern. As such, a stack is designed to support two ways of working:
 
-For information on Appsody local development go [here](/content/docs/using-appsody/local-development.md).
+1. **Local Development**  
+During local development, the stack provides everything to enable the development of a new application on the local machine, with the application *always* being run in a (local) containerized Docker environment. The fact that application development uses containerization from the start (as opposed to development solely in the user space of the local machine) minimizes the chances of introducing subtle issues in the containerization process, and removes the need for a developer to install the core technology components that will underpin their application. Therefore, the requirements on the stack are to have all the dependencies for the particular technologies involved pre-built into the Docker image, and also to dynamically compliment these with whatever dependencies are added explicitly by the developer for their code.
+Local development consists of the Appsody CLI (hooked into a local IDE if required), communicating with a local Docker container that is running the application under development. Furthermore, local development is accelerated by enabling application code to be held on the local file system, whilst being mounted in the Docker container, so that a local change can automatically trigger a restart of the application.
 
-## Learn about stack operation and structure
-Stacks provide support for all phases of development and deployment. To do this, they need to adhere to a specific structure.
+2. **Build and Deploy**  
+During build and deploy, the stack enables the Appsody CLI to build a self-contained Docker image that includes both the core technologies in the stack plus the application code that has been developed, along with the combined dependencies of both. The resulting image can then be deployed manually or programmatically to any platform that supports Docker images (such as a local or public Kubernetes cluster).
 
-To learn more about this, go to [stack structure](/content/docs/stacks/stack-structure.md).
 
-## Modifying existing stacks
-You might want to modify an existing stack to suit your development needs, for example you might want to use a different library or runtime version.
 
-To learn how to go about modifying an existing stack go to [modifying a stack](/content/docs/stacks/modify.md).
+## Next steps
 
-## Creating new stacks
-We are actively working to create new stacks so that more people can adopt Appsody. If you find that none of the existing stacks meet your needs please reach out to us on the [Appsody Slack](https://appsody-slack.eu-gb.mybluemix.net/) or create a new GitHub issue to track the discussion.
-
-We always welcome any contributions. If you wanted to create your own stack for a framework or language that we do not currently support, please review the [contributing guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) and follow the steps outlined in [creating a stack](/content/docs/stacks/create.md).
-
-## Need help?
-If you have a question that you can't find an answer to, we would also like to hear about that too. You can reach out to the community for assistance on [Slack](https://appsody-slack.eu-gb.mybluemix.net/).
+Learn how to develop your own or existing stack.
