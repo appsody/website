@@ -160,7 +160,7 @@ default-template: my-template-1  # name of default template
 
 ### README
 
-The top level directory must contain a `README` markdown file that describes the contents of the stack and how it should be used.
+The top level directory must contain a `README.md` markdown file that describes the contents of the stack and how it should be used.
 
 ### LICENSE
 

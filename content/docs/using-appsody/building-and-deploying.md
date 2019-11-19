@@ -271,7 +271,7 @@ This [example](https://github.com/appsody/tekton-example) shows you how to use T
 The following pre-requisites are required to run the example pipeline:
 
 - You must have developed a project with the appsody CLI, and you must have checked your project into a GitHub repository.
-- Your Kubernetes cluster must be configured to run Tekton pipelines (see [Installing Tekton Pipelines](https://github.com/tektoncd/pipeline/blob/master/docs/install)).
+- Your Kubernetes cluster must be configured to run Tekton pipelines (see [Installing Tekton Pipelines](https://github.com/tektoncd/pipeline/blob/master/docs/install.md)).
 - Your project must include a deployment manifest called `app-deploy.yaml`, which is a current pre-requisite if you want to run the pipeline with minimal changes. A quick way to obtain such a manifest is to run the `appsody deploy --generate-only` command, and then check the `app-deploy.yaml` file into your source code repository.
 
-More details on running the Tekton pipeline example for Appsody can be found in the repo [readme file] (https://github.com/appsody/tekton-example/blob/master/README)
+More details on running the Tekton pipeline example for Appsody can be found in the repo [readme file] (https://github.com/appsody/tekton-example/blob/master/README.md)
