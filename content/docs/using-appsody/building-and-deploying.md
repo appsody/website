@@ -204,7 +204,7 @@ One way to determine whether your stack supports the operator is by inspecting t
 
 For your app to work as a Knative service, the following **pre-requisites** apply:
 
-- You must have access to a Kubernetes cluster, with Knative Serving installed and running. To install Knative locally, use the Kubernetes feature in Docker for Desktop, see [Installing Knative Locally](/content/docs/using-appsody/installing-knative-locally.md). To install Knative on other Kubernetes clusters, see the [Knative Install Documentation](https://knative.dev/docs/install/).
+- You must have access to a Kubernetes cluster, with Knative Serving installed and running. To install Knative locally, use the Kubernetes feature in Docker for Desktop, see [Installing Knative Locally](/docs/using-appsody/installing-knative-locally). To install Knative on other Kubernetes clusters, see the [Knative Install Documentation](https://knative.dev/docs/install/).
 - You must configure your `kubectl` CLI to point to your Kubernetes cluster.
 - If you intend to push the Docker image containing your application to Docker Hub, your target cluster must be configured to pull images from Docker Hub.
 
@@ -221,7 +221,7 @@ appsody deploy
 This command completes the following actions:
 
 - Calls `appsody build` and creates a *deployment* Docker image, as described in the previous section.
-- If you specified the `--knative` flag, or if Knative is the only deployment option for your stack, the command tags the image with the special prefix `dev.local`, making it accessible to your Kubernetes cluster (assuming you followed [these directions](/content/docs/using-appsody/installing-knative-locally.md))
+- If you specified the `--knative` flag, or if Knative is the only deployment option for your stack, the command tags the image with the special prefix `dev.local`, making it accessible to your Kubernetes cluster (assuming you followed [these directions](/docs/using-appsody/installing-knative-locally))
 - Creates a deployment manifest file named `app-deploy.yaml`, in the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
 
 ### Deploying your application through Docker Hub
