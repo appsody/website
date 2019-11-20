@@ -486,9 +486,9 @@ footer a:hover {
 /* Docs Window Styling */
 .doc-content {
   padding-left: 18rem;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
   padding-right: 2em;
+  margin-top: 5rem;
+  padding-bottom: 4rem;
 }
 
 .doc-content table {
@@ -557,10 +557,10 @@ footer a:hover {
 
 @media only screen and (max-width: 767px) {
   .doc-content {
-    margin-bottom: 4em;
+    margin-bottom: 3rem;
     padding: 2em;
     padding-bottom: 4em;
-    padding-top: 5rem;
+    padding-top: 0;
   }
 
   .homepage-sections {
