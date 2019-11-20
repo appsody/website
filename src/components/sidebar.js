@@ -55,7 +55,7 @@ const Sidebar = () => {
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey={index}>
                     <ul>
-                      {item.items.map(subItem => <li key={subItem.title} className="my-1 p-1"><Link className="sidebar-link ml-3" onClick={()=>setAccordionIndex(index)} activeClassName="active" to={subItem.path}>{subItem.title}</Link></li>)}
+                      {item.items.map(subItem => <li key={subItem.title} className="my-1 p-1"><Link className="sidebar-link ml-3" onMouseOver={()=>setAccordionIndex(index)} activeClassName="active" to={subItem.path}>{subItem.title}</Link></li>)}
                     </ul>
                   </Accordion.Collapse>
                 </>
