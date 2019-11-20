@@ -32,10 +32,10 @@ To create a new stack using Git, clone the [sample stack](https://github.com/app
    cd stacks/samples/sample-stack
    ```
 
-Whichever method you used to create your stack, you now have the basic [structure](/content/docs/stacks/stack-structure.md) of an Appsody stack.
+Whichever method you used to create your stack, you now have the basic [structure](/docs/stacks/stack-structure) of an Appsody stack.
 
 ## Packaging a stack locally
-Now that have you have created a stack you can [package](/content/docs/stacks/package.md) it locally.
+Now that have you have created a stack you can [package](/docs/stacks/package) it locally.
 
 ## Contributing a stack
 If you would like to contribute a new stack to the [stacks repository](https://github.com/appsody/stacks) the Appsody [contributing guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) explain how.
