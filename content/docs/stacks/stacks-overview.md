@@ -82,4 +82,4 @@ By default, Appsody comes with the `incubator` and `experimental` repositories. 
 
 ## Next steps
 
-Learn how to develop a stack.
+Learn how to [develop a stack](develop).
