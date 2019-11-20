@@ -9,7 +9,7 @@ Welcome to the FAQ. Here you will find a list of common questions and answers al
 ## CLI Issues
 
 ### 1. Does Appsody support Windows Enterprise users?
-Yes, though Docker Desktop may require special settings to access user folders in the host system. In order to ensure Docker has access to those folders, please follow the instructions in the page [Appsody and Docker Desktop on Windows 10](/content/docs/docker-windows-aad.md).
+Yes, though Docker Desktop may require special settings to access user folders in the host system. In order to ensure Docker has access to those folders, please follow the instructions in the page [Appsody and Docker Desktop on Windows 10](/docs/docker-windows-aad).
 
 For more information on this issue, click [here](https://github.com/appsody/appsody/issues/24).
 

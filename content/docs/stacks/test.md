@@ -18,15 +18,15 @@ Validate runs the following operations: lint, package, init, run, test, and buil
 
 ### Lint
 
-Runs the [`appsody stack lint`](/content/docs/using-appsody/cli-commands.md/#appsody-stack-lint) command.
+Runs the [`appsody stack lint`](/docs/using-appsody/cli-commands/#appsody-stack-lint) command.
 
 The lint test statically analyzes your source code to verify that it conforms to the structure of an Appsody stack. It informs you of missing files, or directories and warns you if your stack might be enhanced.
 
 ### Package
 
-Runs the [`appsody stack package`](/content/docs/using-appsody/cli-commands.md/#appsody-stack-package) command.
+Runs the [`appsody stack package`](/docs/using-appsody/cli-commands/#appsody-stack-package) command.
 
-Builds the stack images and templates and generates an Appsody repository index that you can use for local testing. See [Packaging Stacks](/content/docs/stacks/package.md) for more details.
+Builds the stack images and templates and generates an Appsody repository index that you can use for local testing. See [Packaging Stacks](/docs/stacks/package) for more details.
 
 If your stack is already packaged and you don't want to run the `package` operation as part of validate, you can use the `--no-package` flag as shown in the following command:
 
@@ -34,27 +34,27 @@ If your stack is already packaged and you don't want to run the `package` operat
 
 ### Init
 
-Runs the [`appsody init <stack>`](/content/docs/using-appsody/cli-commands.md/#appsody-init) command.
+Runs the [`appsody init <stack>`](/docs/using-appsody/cli-commands/#appsody-init) command.
 
-This step initializes an Appsody project that uses the default project template from your stack. See [Initializing Appsody Projects](/content/docs/using-appsody/initializing-project) for more details.
+This step initializes an Appsody project that uses the default project template from your stack. See [Initializing Appsody Projects](/docs/using-appsody/initializing-project) for more details.
 
 ### Run
 
-Runs the [`appsody run`](/content/docs/using-appsody/cli-commands#appsody-run) command.
+Runs the [`appsody run`](/docs/using-appsody/cli-commands#appsody-run) command.
 
-The run command starts the Appsody development container that was created during initialization. In `run` mode Appsody watches your local project directory for file changes and updates your application to reflect code changes as you develop. See [Local Development](/content/docs/using-appsody/local-development) for more details.
+The run command starts the Appsody development container that was created during initialization. In `run` mode Appsody watches your local project directory for file changes and updates your application to reflect code changes as you develop. See [Local Development](/docs/using-appsody/local-development) for more details.
 
 ### Test
 
-Runs the [`appsody test`](/content/docs/using-appsody/cli-commands#appsody-test) command.
+Runs the [`appsody test`](/docs/using-appsody/cli-commands#appsody-test) command.
 
 The test command runs the project's test suite in the Appsody development container. The test suite is composed of generic tests in the stack, which verify the capabilities provided by the stack are working as expected, and any custom tests that are defined within the template.
 
 ### Build
 
-Runs the [`appsody build`](/content/docs/using-appsody/cli-commands.md/#appsody-build) command against your stack.
+Runs the [`appsody build`](/docs/using-appsody/cli-commands/#appsody-build) command against your stack.
 
-The build command generates a production Docker image ready for deployment to your runtime platform of choice. See [Getting ready to deploy your Appsody project](/content/docs/using-appsody/building-and-deploying) for more details.
+The build command generates a production Docker image ready for deployment to your runtime platform of choice. See [Getting ready to deploy your Appsody project](/docs/using-appsody/building-and-deploying) for more details.
 
 ### Summary
 

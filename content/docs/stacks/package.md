@@ -6,7 +6,7 @@ title: Packaging Stacks
 
 Packaging allows a stack developer to build all the components of a stack and enables the stack to be used via Appsody CLI commands. The packaging process typically involves: building the stack container image, creating archive files for each template and configuring a local Appsody repository.
 
-You can use the [CLI command](/content/docs/using-appsody/cli-commands.md/#appsody-stack-package) `appsody stack package` to package a single stack that you have created or modified and want to test locally.
+You can use the [CLI command](/docs/using-appsody/cli-commands/#appsody-stack-package) `appsody stack package` to package a single stack that you have created or modified and want to test locally.
 
 Alternatively, you can also use the [CI scripts](#packaging-a-stack-locally-using-ci-scripts), if you want to package multiple stacks or repositories.
 
@@ -40,7 +40,7 @@ This builds the stack container image, creates archives for each template, and a
     appsody init dev.local/<stack-id>
     ```
 
-To test your new stack, see [Testing Stacks](/content/docs/stacks/test.md).
+To test your new stack, see [Testing Stacks](/docs/stacks/test).
 
 ## Packaging a stack locally using CI scripts
 
@@ -51,7 +51,7 @@ Run the build script and specify the desired stack as a parameter, for example:
      ./ci/build.sh incubator/<stack-id>
     ```
 
-**Note:** If a stack is not specified, all stacks in all repositories are built.
+> If a stack is not specified, all stacks in all repositories are built.
 
 ### Using your packaged stack
 1. A local repository based on the stacks built is added to the repository list. Run ```appsody repo list``` to see this repository named `<repo>-index-local`
@@ -75,4 +75,4 @@ Run the build script and specify the desired stack as a parameter, for example:
     appsody init <repo>-index-local/<stack-id>
     ```
 
-To test your new stack, see [Testing Stacks](/content/docs/stacks/test.md).
+To test your new stack, see [Testing Stacks](/docs/stacks/test).
