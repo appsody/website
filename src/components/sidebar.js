@@ -41,28 +41,30 @@ const Sidebar = () => {
 
   return (
     <aside id="sidebar" className={styles.sidebar}>
+      <h2 className="docs-header-text">Appsody</h2>
+      <h2 className="docs-header-text docs-header-pink">Docs</h2>
       <Accordion defaultActiveKey={accordionIndex}>
         {
           sidebarList.map((item, index) => {
             if (item.items !== undefined) {
               return (
                 <>
-                  <Accordion.Toggle as={Button} variant="link" eventKey={index}>
+                  <Accordion.Toggle variant="link" eventKey={index} className="sidebar-heading-link">
                     <div onClick={()=>rotateImage(index)} className="accordion-dropdown">
-                      <h4 className="sidebar-heading-link float-left">{item.title}</h4>
-                      <img id={`chevron-${index}`} src={ chevronlogo } width="10" height="10" className="accordion-icon mb-3" alt="Chevron Logo"></img>
+                      <h3 className="float-left">{item.title} </h3>
+                      <img id={`chevron-${index}`} src={ chevronlogo } width="10" height="10" className="accordion-icon" alt="Chevron Logo"></img>
                     </div>
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey={index}>
-                    <ul>
-                      {item.items.map(subItem => <li key={subItem.title} className="my-1 p-1"><Link className="sidebar-link ml-3" onMouseOver={()=>setAccordionIndex(index)} activeClassName="active" to={subItem.path}>{subItem.title}</Link></li>)}
+                    <ul className="doc-sidebar-hidden-list">
+                      {item.items.map(subItem => <li key={subItem.title} className="my-3"><Link className="sidebar-link" onMouseOver={()=>setAccordionIndex(index)} activeClassName="active-docs" to={subItem.path}>{subItem.title}</Link></li>)}
                     </ul>
                   </Accordion.Collapse>
                 </>
               )
             } else {
               return (
-                <h4 className="sidebar-heading-link"> <Link onClick={()=>setAccordionIndex(index)}  activeClassName="active" to={item.path}>{item.title}</Link></h4>
+                <h3 className="sidebar-heading-link"> <Link onClick={()=>setAccordionIndex(index)}  activeClassName="active" to={item.path}>{item.title}</Link></h3>
               )
             }
           })
