@@ -7,10 +7,10 @@
     position: fixed;
     box-sizing: border-box;
     bottom: 100px;
-    right: 20px;
+    right: 30px;
     background-color:var(--colour-scheme-1);
     border-radius: 50%;
-    z-index: 3;
+    z-index: 9999;
     height: 4.5rem;
     width: 4.5rem;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
