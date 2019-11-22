@@ -14,8 +14,18 @@ You can install Appsody on your system in a few easy steps by using our binary p
 
 Follow these steps:
 
-1. If you don't have the Xcode command line tools installed on your system, install them by running `xcode-select --install`.
-2. If you don't have Homebrew installed on your system, install it by running `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`.
+1. If you don't have the Xcode command line tools installed on your system, install them by running:
+
+```
+xcode-select --install
+```
+
+2. If you don't have Homebrew installed on your system, install it by running:
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
 3. To install Appsody, run:
 
 ```
