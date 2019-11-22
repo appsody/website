@@ -564,22 +564,18 @@ hr {
 }
 
 .doc-content table thead {
-  /* background-color: rgba(187,65,124, 0.85); */
   border-bottom: 4px solid #BB417C;
   color: black;
   font-weight: 400;
 }
 
 .doc-content table tr td {
-  /* border: 0.1em solid var(--dark-grey); */
   margin: 0;
   text-align: left;
   padding: 0.7em 1em;
-  /* border-right: 3px solid #BB417C; */
 }
 
 .doc-content table tr th {
-  /* border: 0.05em solid var(--dark-grey); */
   margin: 0;
   column-width: 200em;
   text-align: left;
