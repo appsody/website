@@ -613,10 +613,12 @@ hr {
 }
 
 .doc-content :not(pre)>code {
-    padding: .3em;
-    background-color: var(--light-grey);
     border-radius: .1em;
     color: #000;
+    font-weight: 700;
+    font-family: 'SFMono-Regular', 'Menlo', 'Times New Roman', Times, serif;
+    font-size: 0.9em;
+
 }
 
 .doc-content a {
@@ -666,10 +668,6 @@ blockquote {
 
 blockquote p {
   margin: 0;
-}
-
-.doc-content blockquote p code {
-  background-color: var(--dark-grey);
 }
 
 .docs-header-text {
