@@ -52,7 +52,9 @@ Templates are converted into their values before a stack is packaged. To use tem
 
 **Example usage:**
 
-`This is {{.stack.name}}, running version: {{.stack.version}}.`
+```
+This is {{.stack.name}}, running version: {{.stack.version}}.
+```
 
 > Do not use templating for a readme file.
 
