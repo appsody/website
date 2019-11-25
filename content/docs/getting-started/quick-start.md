@@ -39,5 +39,5 @@ You are ready to continue developing your application.
 - To enable the debugger, restart the container with `appsody debug`.
 - When you are ready to build a production docker image, run `appsody build`.
 
-**Tip:** You can get more information about all the available commands by running `appsody help [command]` or `appsody <command> --help`.
+> You can get more information about all the available commands by running `appsody help [command]` or `appsody <command> --help`.
 
