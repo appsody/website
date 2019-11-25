@@ -103,7 +103,7 @@ If the `--generate only` flag is used in conjunction with the `--tag (-t)` flag,
 
 #### Use of `appsody deploy --generate-only` with the `--knative` tag
 If `--knative` is used along with `--generate-only`, the value of `createKnativeService` will be set to `true` in the generated app-deploy.yaml file.  
-> that if during a subsequent `appsody deploy` call the `--knative` flag is not present, the value of `createKnativeService` will be set to `false` in app-deploy.yaml.
+> Note that if during a subsequent `appsody deploy` call the `--knative` flag is not present, the value of `createKnativeService` will be set to `false` in app-deploy.yaml.
 
 #### Using the `appsody operator` commands
 In certain cases, you may want to deploy one or more Appsody operators on your cluster ahead of time, and let developers deploy their applications to the cluster without them having to meddle with operator deployments.
@@ -198,7 +198,7 @@ Appsody operators can be installed through different means - the Appsody CLI is 
 
 You can use the `--knative` flag with the `appsody deploy` command to have your application deployed as a Knative service on your target Kubernetes cluster.
 
-> that, if the stack you are using for your Appsody project does not support the Appsody operator, `appsody deploy` will always default to deploying your app as a Knative serving service. The `--knative` flag, in that case, is unnecessary, but  is tolerated by the Appsody CLI.
+> Note that, if the stack you are using for your Appsody project does not support the Appsody operator, `appsody deploy` will always default to deploying your app as a Knative serving service. The `--knative` flag, in that case, is unnecessary, but  is tolerated by the Appsody CLI.
 
 One way to determine whether your stack supports the operator is by inspecting the `app-deploy.yaml` file that is generated. If the `kind` element has a value of `AppsodyApplication`, that means that the stack supports the Appsody operator.
 
