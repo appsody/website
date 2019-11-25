@@ -555,8 +555,8 @@ hr {
 /* Docs Window Styling */
 .doc-content {
   padding-left: 23rem;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  margin-top: 5rem;
+  padding-bottom: 4rem;
   padding-right: 2em;
   max-width: 2000px;
 }
@@ -651,10 +651,10 @@ hr {
 
 @media only screen and (max-width: 767px) {
   .doc-content {
-    margin-bottom: 4em;
+    margin-bottom: 3em;
     padding: 2em;
     padding-bottom: 4em;
-    padding-top: 5rem;
+    padding-top: 0;
   }
 
   .homepage-sections {
