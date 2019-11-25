@@ -30,7 +30,7 @@ After creating and testing a stack locally, you might want to make the stack ava
 
 ### Publishing a stack using the Appsody CLI
 
-1. If the stack is not already packaged, package it by running the [`appsody stack package` command](/content/docs/using-appsody/cli-commands.md/#appsody-stack-package). Run this command from the base directory of your stack, specifying the namespace for creating the Docker images with. For example, the following command creates Docker images with a namespace of `myproject`.
+1. If the stack is not already packaged, package it by running the [`appsody stack package` command](/content/docs/using-appsody/cli-commands.md/#appsody-stack-package). Run this command from the base directory of your stack, specifying the namespace for creating the Docker images with. For example, the following command creates Docker images with a namespace of `myproject`:
     ```
     appsody stack package --image-namespace myproject
     ```
@@ -41,7 +41,7 @@ After creating and testing a stack locally, you might want to make the stack ava
 
 3. Upload the template archives to a suitable web hosting service.
 
-4. Generate a repository index for the stack, which will point to the template archive files that you uploaded to the web hosting service. To generate the index, run the [`appsody stack add-to-repo` command](/content/docs/using-appsody/cli-commands.md/#appsody-stack-addtorepo)  from the base directory of your stack, specifying the repository name and the base URL to use. For example: 
+4. Generate a repository index for the stack, which points to the template archive files that you uploaded to the web hosting service. To generate the index, run the [`appsody stack add-to-repo` command](/content/docs/using-appsody/cli-commands.md/#appsody-stack-addtorepo) from the base directory of your stack, specifying the repository name and the base URL to use. For example: 
     ```
     appsody stack add-to-repo myrepository --release-url https://github.com/myorg/myrepository/releases/latest/download/
     ```
