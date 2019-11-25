@@ -15,12 +15,14 @@ You can start by using either the Appsody CLI `appsody stack create` command, or
 ### Using the Appsody CLI
 
 The quickest way to create a new stack is to use the `appsody stack create` command, which creates a new stack by copying an existing stack. By default, the new stack is based on the [sample stack](https://github.com/appsody/stacks/tree/master/samples/sample-stack). For example, to create a new stack named `my-stack`, in a new directory, use this command:
-
-`appsody stack create my-stack`
+```
+appsody stack create my-stack
+```
 
 If you want to use a different stack as the basis for your new stack, use the `copy` flag to specify the stack you want to use as the starting point. You can use `appsody list` to see the available stacks. For example, to create a new stack, called `my-stack`, based on the Node.js Express stack use this command:
-
-`appsody stack create my-stack --copy incubator/nodejs-express`
+```
+appsody stack create my-stack --copy incubator/nodejs-express
+```
 
 ### Using Git clone
 
