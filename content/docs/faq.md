@@ -34,12 +34,19 @@ When you encounter the following error
 
 1. Go to your home directory and open the **repository.yaml** using an editor of your choice.
 
-    - `cd ~/.appsody/repository/` (macOS/Linux)
-    - `cd %HOMEPATH%/.appsody/repository/` (Windows)
-
+    - On macOS/Linux
+        ```
+        cd ~/.appsody/repository/
+        ``` 
+    - On Windows
+        ```
+        cd %HOMEPATH%/.appsody/repository/
+        ``` 
 2. Change the URL for the incubator repository to reference the latest incubator index, which is:
 
-`https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml`
+    ```
+    https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml
+    ```
 
 3. Save your changes and try running your command again.
 
