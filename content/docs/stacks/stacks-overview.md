@@ -10,23 +10,16 @@ Appsody stacks include language runtimes, frameworks and any additional librarie
 
 ---
 
-## Stack Image
-Appsody uses a containerized environment during local development. The stack image defines this environment and specifies the stack behavior during application development lifecycle.
+## What makes up a stack?
 
-The stack image contains common capabilities that can be used by all templates. For example, the [`nodejs-express`](https://github.com/appsody/stacks/tree/master/incubator/nodejs-express) stack image provides health endpoints and Prometheus metrics so the developers do not need to implement them.
+### Stack Image
 
-The `image` directory contains files for the stack image. The `image/Dockerfile-stack` defines the exact steps for building the stack image.
+A stack image is lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-## Project templates
-Templates provide an initial application to enable developers to get started with a stack. Developers can expand and adapt the templates to suit the needs of their applications.
+### Project templates
+A project template is lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-The `templates` directory contains one or more starter applications that are created for the user when they initialize their projects. Every template is contained within its own directory, `/templates/<template-name>`.
-
-Capabilities that apply to all templates are better suited for inclusion in the stack image.
-
-## Stack structure
-
-### Stack source
+### Stack structure
 
 ```bash
 my-stack
@@ -48,7 +41,7 @@ my-stack
 
 ```
 
->`Dockerfile-stack` builds the initial stack image and the `Dockerfile` builds the final application image.
+>`Dockerfile-stack` builds the initial stack image for local development and the `Dockerfile` builds the final application image.
 
 ### Generated files
 
@@ -82,4 +75,4 @@ By default, Appsody comes with the `incubator` and `experimental` repositories. 
 
 ## Next steps
 
-Learn how to [develop a stack](develop).
+Learn how to [develop a stack](develop)

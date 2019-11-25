@@ -8,6 +8,8 @@ After you create, or update a stack the next consideration is to test the stack 
 
 Packaging the stack does not logically form part of validation, it is included because the tests that are run as part of the `validate` command depend on the stack being packaged.
 
+---
+
 ## Testing using Appsody CLI stack validate
 
 1. Navigate to the root directory of the stack you want to test e.g. `cd my-stack`.
@@ -72,3 +74,9 @@ Total PASSED: 6
 Total FAILED: 0
 @@@@@@@@@ Validate Summary End @@@@@@@@@@
 ```
+
+---
+
+## Next steps
+
+Learn how to [publish a stack](publish)
