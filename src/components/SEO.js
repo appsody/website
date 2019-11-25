@@ -20,7 +20,7 @@ const SEO = ({ title, description, image, pathname, article, keywords, }) => (
     }) => {
       const seo = {
         title: title || defaultTitle,
-        description: description || defaultDescription,
+        description: "Appsody enables developers and teams to easily create and deploy apps to Kubernetes",
         image: `${image || defaultImage}`,
         url: `${siteUrl}${pathname || "/"}`,
         keywords: keywords || defaultKeywords
