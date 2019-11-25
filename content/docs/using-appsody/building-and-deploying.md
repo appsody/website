@@ -51,7 +51,7 @@ The `appsody deploy` command provides a way for you to deploy your application d
 - If the stack contains a deployment manifest that can be consumed by the [Appsody operator](https://operatorhub.io/operator/appsody-operator), `appsody deploy` will install the operator, if necessary, and deploy your application to the cluster using that deployment manifest.
 - If the stack you are using is not equipped with the manifest for the Appsody operator, `appsody deploy` attempts to install your app as a Knative serving service.
 
-In all cases, `appsody deploy` creates a deployment manifest in your project folder. The manifest is called `app-deploy.yaml`. 
+In all cases, `appsody deploy` creates a deployment manifest in your project folder. The manifest is called `app-deploy.yaml`.
 
 If you just want to generate the manifest - and possibly manipulate it or just check it into your source control repository - you can issue:
 ```
@@ -60,21 +60,21 @@ appsody deploy --generate-only
 plus any other applicable flags, such as `--tag` and `--knative`, as discussed later.
 
 ### Deployment via the Appsody Operator - Overview
-Kubernetes operators offer a powerful way to provide full lifecycle maintenance of a wide range of resources on Kubernetes clusters. In particular, they can install, upgrade, remove, and monitor application deployments. The recently published [Appsody operator](https://operatorhub.io/operator/appsody-operator) automates the installation and maintenance of a special type of Custom Resource Definitions (CRDs), called **AppsodyApplication**. 
+Kubernetes operators offer a powerful way to provide full lifecycle maintenance of a wide range of resources on Kubernetes clusters. In particular, they can install, upgrade, remove, and monitor application deployments. The recently published [Appsody operator](https://operatorhub.io/operator/appsody-operator) automates the installation and maintenance of a special type of Custom Resource Definitions (CRDs), called **AppsodyApplication**.
 
 The Appsody stacks that are currently available include a template of such a CRD manifest. When you run `appsody deploy` on a project created from one of the stacks enabled with those manifests, the CLI customizes the manifest with information that is specific to the deployment (such as namespace and project name), and submits the manifest to the Appsody operator on the Kubernetes cluster.
 
-In fact, if your cluster does not already provide an operator, `appsody deploy` will install one for you. You can also use the Appsody CLI to install an instance of the Appsody operator, without installing any applications. This can be achieved by running the `appsody operator install` command. 
-Let's discuss some of the details behind the `appsody deploy` and `appsody operator` commands. 
+In fact, if your cluster does not already provide an operator, `appsody deploy` will install one for you. You can also use the Appsody CLI to install an instance of the Appsody operator, without installing any applications. This can be achieved by running the `appsody operator install` command.
+Let's discuss some of the details behind the `appsody deploy` and `appsody operator` commands.
 
 #### How the Appsody operator works
 Before we delve into the details of `appsody deploy` and `appsody operator`, we need to spend a few words on how the Appsody operator works.
 
-An operator monitors certain resources - it can detect when resource definition instances are added, removed, or changed, and take the appropriate action. 
+An operator monitors certain resources - it can detect when resource definition instances are added, removed, or changed, and take the appropriate action.
 
 The Appsody operator monitors instances of the **AppsodyApplication** resource. It does so by "watching" a certain namespace, which is defined when the Appsody operator is installed. The operator can watch a single namespace, or all the namespaces in the cluster.
 
-The operator itself, however, can be installed in its own namespace, which not necessarily coincides with the namespace it is watching. You can have an Appsody operator in namespace "abc" watching namespace "xyz". 
+The operator itself, however, can be installed in its own namespace, which not necessarily coincides with the namespace it is watching. You can have an Appsody operator in namespace "abc" watching namespace "xyz".
 
 You can also have multiple Appsody operators in a cluster, but only one operator can watch a certain namespace. Also, only one operator can be installed in any given namespace.
 
@@ -90,7 +90,7 @@ The command can be run with or without a `--namespace` or `-n` flag. If that fla
 
 The command also accepts an optional `--knative` flag, which instructs Appsody to deploy your application as a Knative service. More on this option [in this section](#deployment-as-a-knative-service)
 
-When you want to remove your application, you can run: 
+When you want to remove your application, you can run:
 
 ```
 appsody deploy delete
@@ -98,10 +98,10 @@ appsody deploy delete
 This command must be run from your Appsody project directory. It will attempt to remove the application you installed, but it will not touch the Appsody operator.
 
 Here we discuss the `--generate-only` flag, which allows you to create the deployment manifest without triggering a deployment.
-#### Use of  `appsody deploy --generate-only` flag with the `--tag  (-t)` flag 
+#### Use of  `appsody deploy --generate-only` flag with the `--tag  (-t)` flag
 If the `--generate only` flag is used in conjunction with the `--tag (-t)` flag, the value of the tag is preserved in the app-deploy.yaml file and used during subsequent `appsody deploy` invocations.
 
-#### Use of `appsody deploy --generate-only` with the `--knative` tag 
+#### Use of `appsody deploy --generate-only` with the `--knative` tag
 If `--knative` is used along with `--generate-only`, the value of `createKnativeService` will be set to `true` in the generated app-deploy.yaml file.  
 > that if during a subsequent `appsody deploy` call the `--knative` flag is not present, the value of `createKnativeService` will be set to `false` in app-deploy.yaml.
 
@@ -127,11 +127,11 @@ appsody operator install --namespace <operator namespace> --watch-all
 
 #### RBAC considerations for the use of `appsody deploy` and `appsody operator` commands
 
-The `appsody deploy` and `appsody operator` commands involve the lookup and creation of a number of different resources, both in specific namespaces and at the cluster level. 
+The `appsody deploy` and `appsody operator` commands involve the lookup and creation of a number of different resources, both in specific namespaces and at the cluster level.
 
 In a typical local testing scenario, developers have full administrative rights on the entire cluster. In that case, no specific provisions need to be made in terms of granting permissions.
 
-However, if a single cluster is shared across many development groups, it is common practice to restrict full access to resources by limiting it to a single namespace. An individual developer or a group of developers would have the ability to create, modify, and delete resources only in a certain namespace. 
+However, if a single cluster is shared across many development groups, it is common practice to restrict full access to resources by limiting it to a single namespace. An individual developer or a group of developers would have the ability to create, modify, and delete resources only in a certain namespace.
 
 The use of `appsody deploy` and `appsody operator` commands, however, requires granting the following permissions:
 1) Querying Appsody operator instances across namespaces
@@ -144,10 +144,10 @@ In a shared cluster scenario, with developers limited to access their own namesp
 
 1) Developers can use `appsody deploy -n <namespace>` to target their own namespace. The first time `appsody deploy` is used, the operator is installed and it watches the namespace of choice.
 
-2) Only cluster administrators can use `appsody operator install -n <namespace> --watchspace <another namespace>` to enable operators to watch across namespaces. 
+2) Only cluster administrators can use `appsody operator install -n <namespace> --watchspace <another namespace>` to enable operators to watch across namespaces.
 
 Under these assumptions, developers need to be granted the following permissions:
-1) First, through a Role: 
+1) First, through a Role:
 ```
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
@@ -228,17 +228,18 @@ This command completes the following actions:
 
 If your cluster is configured to pull images from Docker Hub, use the following command to deploy your application:
 ```
-appsody deploy -t <myaccount/appsody-project> --push --namespace mynamespace [--knative]
+appsody deploy -t <mynamespace/myrepository[:tag]> --push --namespace mynamespace [--knative]
 ```
 The command completes the following actions:
 
 - Calls `appsody build` and creates a deployment image, as described in the previous section.
-- The `-t myrepository/appsody-project:tag` flag tags the image.
-- The `--push` flag tells the appsody CLI to push the image to Docker Hub.
-- Creates a deployment manifest file named `app-deploy.yaml`, in the project directory. This yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The format of this yaml file depends on whether or not the stack you are using is enabled for the Appsody operator.
-- The `--namespace mynamespace` option provisions the deployment under the `mynamespace` namespace.
+- The `-t mynamespace/myrepository[:tag]` flag tags the image.
+- The `--push` flag tells the Appsody CLI to push the image to Docker Hub.
+- Creates a deployment manifest file named `app-deploy.yaml` in the project directory, if one doesn’t exist already. If a deployment manifest file exists, this command updates the following entries within it: application image, labels, and annotations. In addition, the `createKnativeService` entry is set to true if you specified the `--knative` flag.
+- The Yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The Yaml file is set to use the Appsody operator.
+- The `--namespace mynamespace` option provisions the deployment under the specified Kubernetes namespace within your cluster.
 
-> If you don't specify `--push`, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry. 
+> If you don't specify `--push`, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry.
 
 ### Deploying multiple projects
 If you are running multiple Appsody projects on your workstation, you can use `appsody deploy` and `appsody operator` commands to get them deployed to a Kubernetes cluster. However, make sure that you run these commands one at a time, because those commands create temporary files that might lead to conflicts if created concurrently.
