@@ -7,9 +7,21 @@ While there are many Appsody stacks to choose from, you might want to create an 
 
 ---
 
+## The role of a stack in the development process
+
+The fundamental goal of stacks is to simplify the life of the developer trying to build an application using a specific set of technologies or development pattern. As such, a stack is designed to support two ways of working:
+
+1. **Local Development**  
+During local development, the stack provides everything to enable the development of a new application on the local machine, with the application *always* being run in a (local) containerized Docker environment. The fact that application development uses containerization from the start (as opposed to development solely in the user space of the local machine) minimizes the chances of introducing subtle issues in the containerization process, and removes the need for a developer to install the core technology components that will underpin their application. Therefore, the requirements on the stack are to have all the dependencies for the particular technologies involved pre-built into the Docker image, and also to dynamically compliment these with whatever dependencies are added explicitly by the developer for their code. Local development consists of the Appsody CLI (hooked into a local IDE if required), communicating with a local Docker container that is running the application under development. Furthermore, local development is accelerated by enabling application code to be held on the local file system, whilst being mounted in the Docker container, so that a local change can automatically trigger a restart of the application.
+
+2. **Build and Deploy**  
+During build and deploy, the stack enables the Appsody CLI to build a self-contained Docker image that includes both the core technologies in the stack plus the application code that has been developed, along with the combined dependencies of both. The resulting image can then be deployed manually or programmatically to any platform that supports Docker images (such as a local or public Kubernetes cluster).
+
+---
+
 ## Start developing a stack
 
-The following method details how you can use the Apposdy CLI `stack create` command to create a stack.
+The following method details how you can use the `appsody stack create` command to create a stack.
 
 Alternatively, you can use [Git clone](git-clone) to get started with stack development.
 
@@ -150,6 +162,8 @@ This is {{.stack.variable1}}, this is {{.stack.variable2}} and this is {{.stack.
 > Custom variables must begin with an alphanumeric character.
 
 If you want to use other templating libraries that have the same `{{ }}` delimiters, wrap your variables with `{{"{{ }}"}}`. This leaves your templating variable intact without causing an error during the `stack package` command.
+
+---
 
 ### Setting stack requirements
 

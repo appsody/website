@@ -18,7 +18,7 @@ To package your stack locally, run:
 ```
 appsody stack package
 ```
-Run this command from the base directory of your stack, or specify the path to your stack (e.g. `appsody stack package [path/to/stack]`).
+Run this command from the base directory of your stack, or specify the path to your stack: `appsody stack package <path/to/stack>`.
 
 This builds the stack container image, creates archives for each template, and adds your stack to the `dev.local` repository in your Appsody configuration.
 

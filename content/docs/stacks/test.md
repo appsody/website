@@ -4,7 +4,7 @@ title: Testing Stacks
 
 # Testing Stacks
 
-After you create, or update a stack, the next consideration is to test the stack to check that it meets your needs. To validate a stack in your local Appsody development environment, use the Appsody CLI `stack validate` command. Validate performs several operations to ensure every aspect of your stack is tested.
+After you create, or update a stack, the next consideration is to test the stack to check that it meets your needs. To validate a stack in your local Appsody development environment, use the `appsody stack validate` command. Validate performs several operations to ensure every aspect of your stack is tested.
 
 ---
 

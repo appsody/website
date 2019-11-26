@@ -25,7 +25,7 @@ Alternatively, you can use [CI scripts](./publish-ci-scripts), if one or more st
 
 ### Publishing a stack using the Appsody CLI
 
-1. If the stack is not already packaged, package it by running the [`appsody stack package`](/content/docs/using-appsody/cli-commands.md/#appsody-stack-package) command from the root directory of your stack, specifying the namespace for creating the Docker images with. For example, the following command creates Docker images with a namespace of `myproject`:
+1. If the stack is not already packaged, package it by running the [`appsody stack package`](/content/docs/using-appsody/cli-commands/#appsody-stack-package) command from the root directory of your stack, specifying the namespace for creating the Docker images with. For example, the following command creates Docker images with a namespace of `myproject`:
     ```
     appsody stack package --image-namespace myproject
     ```
@@ -34,7 +34,7 @@ Alternatively, you can use [CI scripts](./publish-ci-scripts), if one or more st
 
 2. Push the stack container image to a Docker registry, such as [docker.io](https://docker.io).
 
-3. Upload the template archives to a suitable web hosting service.
+3. Upload the template archives to a suitable web hosting service, such as GitHub Releases.
 
 4. To generate the index, run the [`appsody stack add-to-repo`](/content/docs/using-appsody/cli-commands.md/#appsody-stack-addtorepo) command from the root directory of your stack, specifying the repository name and the base URL to use. For example:
     ```
@@ -46,3 +46,11 @@ Alternatively, you can use [CI scripts](./publish-ci-scripts), if one or more st
 3. Upload the generated repository index file to the web hosting service.
 
 You can now provide the URL to the hosted repository index file to other Appsody users, who can add it to their Appsody repository list then initialise a project using your stack.
+
+---
+
+## Next steps
+
+Congratulations!  You have now developed, tested and published a stack for use in Appsody!
+
+Why not learn more about stacks and familiarize yourself with the [lifecycle](./lifecycle) of a stack?
