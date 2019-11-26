@@ -3,7 +3,9 @@ import "../styles/sidebar-extender.css"
 
 
 const SidebarExtender = () => {
-  window.onresize = resize;
+  if (typeof window !== 'undefined') {
+    window.onresize = resize;
+  }
   function resize() {
     if (window.innerWidth <= 767) {
       if (isExpanded) {
