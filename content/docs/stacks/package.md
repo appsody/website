@@ -14,13 +14,21 @@ Alternatively, you can also use the [CI scripts](#packaging-a-stack-locally-usin
 
 ## Packaging a stack locally using the Appsody CLI
 
-Run `appsody stack package` to package your stack locally. Run this command from the base directory of your stack, or specify the path to your stack (e.g. `appsody stack package [path/to/stack]`).
+To package your stack locally, run:
+```
+appsody stack package
+```
+Run this command from the base directory of your stack, or specify the path to your stack (e.g. `appsody stack package [path/to/stack]`).
 
 This builds the stack container image, creates archives for each template, and adds your stack to the `dev.local` repository in your Appsody configuration.
 
 
 ### Using your packaged stack
-1. Run `appsody repo list` to see the repository named `dev.local`, that points to the generated index.
+1. To see the repository named `dev.local`, that points to the generated index, run:
+    ```
+    appsody repo list
+    ```
+    The output should look something like this:
     ```
     NAME            URL
     *incubator  	https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml                    
@@ -28,15 +36,23 @@ This builds the stack container image, creates archives for each template, and a
     experimental	https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
     ```
 
-1. Run `appsody list dev.local` to check the built stack is visible in the `dev.local` repository. Here is an example of the output you should get:
+1. To check the built stack is visible in the `dev.local` repository, run:
+    ```
+    appsody list dev.local
+    ```
+    Here is an example of the output you should get:
     ```
     REPO            	    ID            	VERSION  	TEMPLATES        	DESCRIPTION                      
     dev.local	            <stack-id>	    <version>   *<template>	        <stack-description>
     ```
-1. Create a directory to initialize your project in (e.g. `mkdir my-project`).
-
-1. Navigate to the directory of your new project (e.g. `cd my-project`).
-
+1. Create a directory to initialize your project in, for example:
+    ```
+    mkdir my-project
+    ```
+1. Navigate to the directory of your new project, for example:
+    ```
+    cd my-project
+    ```
 1. Use the Appsody CLI to create new projects using the packaged stack:
     ```
     appsody init dev.local/<stack-id>
