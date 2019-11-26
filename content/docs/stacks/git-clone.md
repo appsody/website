@@ -21,4 +21,4 @@ cd stacks/incubator/nodejs-express
 ---
 ## Next steps
 
-[Return](./develop#create-your-stackyaml) to the developing stacks page.
+[Return](./develop#create-your-stack.yaml) to the developing stacks page.

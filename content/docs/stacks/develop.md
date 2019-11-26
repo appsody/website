@@ -50,45 +50,35 @@ default-template: my-template-1  # name of default template
 
 ## Create your project templates
 
-Templates provide an initial application to enable developers to get started with a stack. Developers can expand and adapt the templates to suit the needs of their applications.
-
 The `templates` directory contains one or more starter applications that are created for the user when they initialize their projects. Every template is contained within its own directory, `/templates/<template-name>`.
 
 Capabilities that apply to all templates are better suited for inclusion in the stack image.
 
-## Stack image for local development
-
-Appsody uses a containerized environment during local development. The stack image defines this environment and specifies the stack behavior during application development lifecycle.
+## Create your local development stack image
 
 The stack image contains common capabilities that can be used by all templates. For example, the [`nodejs-express`](https://github.com/appsody/stacks/tree/master/incubator/nodejs-express) stack image provides health endpoints and Prometheus metrics so the developers do not need to implement them.
 
-The `image` directory contains files for the stack image. The `image/Dockerfile-stack` defines the exact steps for building the stack image.
-
-### Handling file mounts
-During local development, the application code is held on the local file system and is mounted in the running container for the stack. Stack creators configure the `APPSODY_MOUNTS` [environment variable](/content/docs/stacks/environment-variables.md) to specify a list of mount paths to achieve this behavior.
-
 ### Stack environment variables
-Stack creators configure [environment variables](/content/docs/stacks/environment-variables.md) in `Dockerfile-stack` to specify the commands for running, debugging and testing the application. `Appsody CLI` and `Appsody controller` inspect these environment variables and then drive the expected behavior for the developer during local development.
 
-### Monitoring file changes
-Stack creators configure [environment variables](/content/docs/stacks/environment-variables.md) in `Dockerfile-stack` to specify which files are monitored for changes and how to reflect those changes in the running application.
+Stack creators configure [environment variables](./environment-variables) in `Dockerfile-stack` to specify the commands for running, debugging and testing the application. `Appsody CLI` and `Appsody controller` inspect these environment variables and then drive the expected behavior for the developer during local development.
 
-### Managing dependencies
-Appsody enables the caching of any installed dependencies across runs to accelerate local development. This is achieved by creating a volume independent of a specific container instance and then mounting it every time the appsody container is started.
+* Handling File mounts - During local development, the application code is held on the local file system and is mounted in the running container for the stack. Stack creators configure the [`APPSODY_MOUNTS`](./environment-variables) enivronment variable to specify a list of mount paths to achieve this behavior.
 
-Stack creators configure the `APPSODY_DEPS` [environment variable](/content/docs/stacks/environment-variables.md) to specify the directory to be cached.
+* Monitoring file changes - Stack creators configure the many [`APPSODY_WATCH`](./environment-variables) environment variables in `Dockerfile-stack` to specify which files are monitored for changes and how to reflect those changes in the running application.
+
+* Managing dependencies - Appsody enables the caching of any installed dependencies across runs to accelerate local development. This is achieved by creating a volume independent of a specific container instance and then mounting it every time the appsody container is started. Stack creators configure the [`APPSODY_DEPS`](./environment-variables) environment variable to specify the directory to be cached.
 
 ### File permissions
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Within your stack, if you want to restrict users from editing some of the files in your stack, such as if a vital dependency is needed, you should set the file permissions across your stack to reflect that accordingly.
 
 ### IDE Considerations
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+A user project might need dependencies or other assets that come from the stack image itself, when an IDE opens a user’s app they cant find those and show a multitude of errors. To avoid this, we provide a mechanism for stack creators to set up user’s environment during the init command this way they can install or copy whatever needs to be on user’s host system to keep IDEs from displaying unwanted errors.
 
 ### License
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+You must provide a valid license when developing a stack.
 
 ## Application build and deployment
 Stack creators must provide a `Dockerfile` that defines how to build the container image for the Appsody application, including both capabilities from the stack, and the developer's application.
