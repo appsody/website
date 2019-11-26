@@ -9,7 +9,7 @@ While there are many Appsody stacks to choose from, you might want to create an 
 
 ## Start developing a stack
 
-The following method details how you can use the Apposdy CLI `appsody stack create` to create a stack.
+The following method details how you can use the Apposdy CLI `stack create` command to create a stack.
 
 Alternatively, you can use [Git clone](git-clone) to get started with stack development.
 

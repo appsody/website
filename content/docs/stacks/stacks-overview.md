@@ -14,10 +14,10 @@ Appsody stacks include language runtimes, frameworks and any additional librarie
 
 ### Stack Image
 
-A stack image is lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Appsody uses a containerized environment during local development. The stack image defines this environment and specifies the stack behavior during application development lifecycle.  The `image` directory contains files for the stack image. The `image/Dockerfile-stack` defines the exact steps for building the stack image.
 
 ### Project templates
-A project template is lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Project templates provide a starting point, typically a 'Hello World' application, for application development. Like other components within an Appsody stack, you can customize project templates and share them across teams.
 
 ### Stack structure
 
