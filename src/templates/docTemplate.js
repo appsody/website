@@ -10,14 +10,15 @@ import SidebarExtender from "../components/sidebar-extender";
 export default function Template({
   data
 }) {
-  const { mdx } = data
-  const { html } = mdx
-  const { title } = mdx.frontmatter
+  const { mdx } = data.mdx
+  // const { body } = data.mdx.rawBody
+  const { title } = data.mdx.frontmatter
 
+  console.log(data.mdx.rawBody)
   return (
-    <Layout title={title}>
+    <Layout title={data.mdx.frontmatter.title}>
       <Sidebar />
-      <Doc html={html}/>
+      <Doc html={data.mdx.rawBody}/>
       <SidebarExtender />
     </Layout>
   )
@@ -26,7 +27,7 @@ export default function Template({
 export const pageQuery = graphql`
 query($path: String!) {
   mdx(fields: { slug: { eq: $path } }) {
-    body
+    rawBody
     frontmatter {
       title
     }
