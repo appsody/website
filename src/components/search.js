@@ -168,7 +168,7 @@ export default () => (
       `}
       render={data => {
         let items = [];
-        data.mdx.edges.forEach(node => {
+        data.allMdx.edges.forEach(node => {
             items = items.concat(node.node);
         });
 
