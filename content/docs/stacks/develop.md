@@ -48,12 +48,6 @@ maintainers:                     # list of maintainer(s) details
 default-template: my-template-1  # name of default template
 ```
 
-## Create your project templates
-
-You can create as many templates as you feel necessary for your stack.  It is recommended to include a default simple template, such as a "Hello, World!" project.
-
-Capabilities that apply to all templates are better suited for inclusion in the stack image.
-
 ## Create your stack image
 
 The stack image contains common capabilities that can be used by all templates. For example, the [`nodejs-express`](https://github.com/appsody/stacks/tree/master/incubator/nodejs-express) stack image provides health endpoints and Prometheus metrics so the developers do not need to implement them.
@@ -79,6 +73,12 @@ A user project might need dependencies or other assets that come from the stack 
 ### License
 
 You must provide a valid license when developing a stack.
+
+## Create your project templates
+
+A stack can have multiple templates, perhaps representing different classes of starter applications using the stack technology components.
+
+Capabilities that apply to all templates are better suited for inclusion in the stack image.
 
 ## Application build and deployment
 Stack creators must provide a `Dockerfile` that defines how to build the container image for the Appsody application, including both capabilities from the stack, and the developer's application.

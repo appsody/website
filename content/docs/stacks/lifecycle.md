@@ -105,13 +105,6 @@ The steps undertaken when the `appsody build` command is run are:
 
 The `Dockerfile` needs to build the dependencies for both the stack technology components as well as the user application, and set the entrypoint (or `CMD`) to an appropriate entrypoint for the user application. The Appsody controller is not involved in the final application image.
 
-## Packaging a stack locally
-Now that have you have created a stack you can [package](/content/docs/stacks/package.md) it locally.
-
-## Contributing a stack
-If you would like to contribute a new stack to the [stacks repository](https://github.com/appsody/stacks) the Appsody [contributing guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) explain how.
-
-We welcome new contributions but before starting a large piece of work we recommend that you reach out to us on [Slack](http://appsody-slack.eu-gb.mybluemix.net/) or [raise an issue](https://github.com/appsody/stacks/issues/) to start a discussion.
 
 ## Maintaining a separate repository
 In addition to the main Appsody stacks repository, you can maintain your own set of stacks. This is useful for developing stacks and separating sets of stacks for different uses.
