@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "gatsby"
 import sidebarList from "../../content/docs/sidebar.yaml";
 import Accordion from 'react-bootstrap/Accordion'
-import Button from 'react-bootstrap/Button'
 import chevronlogo from "../images/chevron.svg";
 
 import styles from "../styles/sidebar.module.css";

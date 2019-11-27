@@ -10,6 +10,7 @@
     position: fixed;
     overflow-y: scroll;
     z-index: 1000;
+    transition: 0.5s;
 }
 
 .sidebar-link {
@@ -27,7 +28,7 @@
         overflow-y: auto;
         z-index: 1000;
         height: calc(100vh);
-        display: none;
+        margin-left: -85vw;
     }
 
     .docs-section {
@@ -43,3 +44,4 @@ ul {
     padding: 0;
     list-style-type: none;
   }
+  
