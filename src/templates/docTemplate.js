@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import markdownRemark from "gatsby-plugin-mdx";
 
 import Doc from "../components/doc";
 import Layout from "../components/layout"
@@ -24,7 +25,7 @@ export default function Template({
 
 export const pageQuery = graphql`
 query($path: String!) {
-  markdownRemark(fields: { slug: { eq: $path } }) {
+  mdx(fields: { slug: { eq: $path } }) {
     html
     frontmatter {
       title

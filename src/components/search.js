@@ -151,10 +151,10 @@ export default () => (
     <StaticQuery
       query={graphql`
         query {
-          allMarkdownRemark {
+          allMdx {
             edges {
               node {
-                html
+                body
                 frontmatter {
                   title
                 }
@@ -168,7 +168,7 @@ export default () => (
       `}
       render={data => {
         let items = [];
-        data.allMarkdownRemark.edges.forEach(node => {
+        data.mdx.edges.forEach(node => {
             items = items.concat(node.node);
         });
 

@@ -40,7 +40,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
         // CommonMark mode (default: true)
         commonmark: true,
@@ -66,7 +66,8 @@ module.exports = {
               wrapperStyle: result => `width: 100%;margin-left: 0;`,
 
             }
-          }
+          },
+          `gatsby-plugin-mdx`
         ],
       }
     },
