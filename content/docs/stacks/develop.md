@@ -7,21 +7,9 @@ While there are many Appsody stacks to choose from, you might want to create an 
 
 ---
 
-## The role of a stack in the development process
-
-The fundamental goal of stacks is to simplify the life of the developer trying to build an application using a specific set of technologies or development pattern. As such, a stack is designed to support two ways of working:
-
-1. **Local Development**  
-During local development, the stack provides everything to enable the development of a new application on the local machine, with the application *always* being run in a (local) containerized Docker environment. The fact that application development uses containerization from the start (as opposed to development solely in the user space of the local machine) minimizes the chances of introducing subtle issues in the containerization process, and removes the need for a developer to install the core technology components that will underpin their application. Therefore, the requirements on the stack are to have all the dependencies for the particular technologies involved pre-built into the Docker image, and also to dynamically compliment these with whatever dependencies are added explicitly by the developer for their code. Local development consists of the Appsody CLI (hooked into a local IDE if required), communicating with a local Docker container that is running the application under development. Furthermore, local development is accelerated by enabling application code to be held on the local file system, whilst being mounted in the Docker container, so that a local change can automatically trigger a restart of the application.
-
-2. **Build and Deploy**  
-During build and deploy, the stack enables the Appsody CLI to build a self-contained Docker image that includes both the core technologies in the stack plus the application code that has been developed, along with the combined dependencies of both. The resulting image can then be deployed manually or programmatically to any platform that supports Docker images (such as a local or public Kubernetes cluster).
-
----
-
 ## Start developing a stack
 
-The following method details how you can use the `appsody stack create` command to create a stack.
+The following methods detail how you can use the `appsody stack create` command to create your own stack or modify an existing Appsody stack.
 
 Alternatively, you can use [Git clone](git-clone) to get started with stack development.
 
@@ -62,11 +50,11 @@ default-template: my-template-1  # name of default template
 
 ## Create your project templates
 
-The `templates` directory contains one or more starter applications that are created for the user when they initialize their projects. Every template is contained within its own directory, `/templates/<template-name>`.
+You can create as many templates as you feel necessary for your stack.  It is recommended to include a default simple template, such as a "Hello, World!" project.
 
 Capabilities that apply to all templates are better suited for inclusion in the stack image.
 
-## Create your local development stack image
+## Create your stack image
 
 The stack image contains common capabilities that can be used by all templates. For example, the [`nodejs-express`](https://github.com/appsody/stacks/tree/master/incubator/nodejs-express) stack image provides health endpoints and Prometheus metrics so the developers do not need to implement them.
 
@@ -86,7 +74,7 @@ Within your stack, if you want to restrict users from editing some of the files 
 
 ### IDE Considerations
 
-A user project might need dependencies or other assets that come from the stack image itself, when an IDE opens a user’s app they cant find those and show a multitude of errors. To avoid this, we provide a mechanism for stack creators to set up user’s environment during the init command this way they can install or copy whatever needs to be on user’s host system to keep IDEs from displaying unwanted errors.
+A user project might need dependencies or other assets that come from the stack image itself, when an IDE opens a user’s app they cant find those and show a multitude of errors. To avoid this, we provide a mechanism for stack creators to set up the user’s environment during the init command allowing them to install or copy anything that needs to be on user’s host system to keep IDEs from displaying unwanted errors.
 
 ### License
 
@@ -97,7 +85,7 @@ Stack creators must provide a `Dockerfile` that defines how to build the contain
 
 Appsody CLI uses the `Dockerfile` to create the application container image when [`appsody build`](/content/docs/using-appsody/cli-commands.md/#appsody-build) command is run.
 
-Stack creators also provide a template deployment manifest `image/config/app-deploy.yaml` that Appsody CLI uses to support deployments to Kubernetes or Knative platforms using the Appsody Operator.
+Stack creators also provide a template deployment manifest `image/config/app-deploy.yaml` that the Appsody CLI uses to support deployments to Kubernetes or Knative platforms using the Appsody Operator.
 
 ---
 
