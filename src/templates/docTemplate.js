@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import Doc from "../components/doc";
 import Layout from "../components/layout"
@@ -11,14 +10,14 @@ export default function Template({
   data
 }) {
   const { mdx } = data.mdx
-  // const { body } = data.mdx.rawBody
+  const { body } = data.mdx.body
   const { title } = data.mdx.frontmatter
 
-  console.log(data.mdx.rawBody)
+  console.log(data)
   return (
     <Layout title={data.mdx.frontmatter.title}>
       <Sidebar />
-      <Doc html={data.mdx.rawBody}/>
+      <Doc body={data.mdx.body}/>
       <SidebarExtender />
     </Layout>
   )
@@ -27,7 +26,7 @@ export default function Template({
 export const pageQuery = graphql`
 query($path: String!) {
   mdx(fields: { slug: { eq: $path } }) {
-    rawBody
+    body
     frontmatter {
       title
     }

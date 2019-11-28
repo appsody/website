@@ -3,6 +3,7 @@ title: CLI Reference
 ---
 
 # Appsody CLI
+
 ## appsody
 
 Appsody CLI
@@ -779,7 +780,7 @@ Add stack information into a production Appsody repository
 
 Adds stack information into an Appsody repository. 
 		
-Adds stack information to a new or existing Appsody repository, specified by the <repo-name> argument. This enables you to share your stack with others.
+Adds stack information to a new or existing Appsody repository, specified by the <repo-name/> argument. This enables you to share your stack with others.
 
 The updated repository index file is created in  ~/.appsody/stacks/dev.local directory.
 
@@ -826,7 +827,7 @@ Create a new Appsody stack.
 
 ### Synopsis
 
-Create a new Appsody stack, called <name>, in the current directory. You can use this stack as a starting point for developing your own Appsody stack.
+Create a new Appsody stack, called <name/>, in the current directory. You can use this stack as a starting point for developing your own Appsody stack.
 
 By default, the new stack is based on the example stack: samples/sample-stack. If you want to use a different stack as the basis for your new stack, use the copy flag to specify the stack you want to use as the starting point. You can use 'appsody list' to see the available stacks.
 

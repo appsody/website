@@ -54,11 +54,27 @@ module.exports = {
         // Plugins configs
         gatsbyRemarkPlugins: [
           {
+            resolve: `gatsby-remark-images`,
+            options: {
+              linkImagesToOriginal: true,
+              maxWidth: 1000,
+              wrapperStyle: result => `width: 100%;margin-left: 0;`,
+
+            }
+          },
+          {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
               className: `header-link-icon`
             }
-          },
+          }
+        ],
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -67,8 +83,14 @@ module.exports = {
               wrapperStyle: result => `width: 100%;margin-left: 0;`,
 
             }
+          },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: `header-link-icon`
+            }
           }
-        ],
+        ]
       }
     },
     `gatsby-transformer-yaml`,

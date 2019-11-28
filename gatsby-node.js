@@ -71,6 +71,7 @@ exports.createPages = ({ actions, graphql }) => {
       if (node.fields.slug == '/docs/overview/') {
         node.fields.slug = '/docs'
       }
+      console.log(node.fields.slug);
       createPage({
         path: node.fields.slug,
         component: docTemplate,
