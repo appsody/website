@@ -38,10 +38,22 @@ const Sidebar = () => {
     lastIndex = index
   }
 
+  function openDesktopSidebar() {
+    document.getElementById("sidebar").style.marginLeft= "0";
+    document.getElementById("desktop-hamburger-icon" ).style.marginLeft= "0"; 
+    document.getElementById("documents-window").style.paddingLeft = "23em";    
+    document.getElementById("desktopHamburgerOpenbtnId").style.display = "none";   
+    document.getElementById("appsody-sidebar-header").style.writingMode = "horizontal-tb"; 
+    document.getElementById("appsody-sidebar-header").style.marginLeft = "1.5rem"; 
+    document.getElementById("docs-sidebar-header").style.writingMode = "horizontal-tb";
+    document.getElementById("docs-sidebar-header").style.marginLeft = "0.25em"; 
+  }
+
   return (
     <aside id="sidebar" className={styles.sidebar}>
-      <h2 className="docs-header-text">Appsody</h2>
-      <h2 className="docs-header-text docs-header-pink">Docs</h2>
+      <h2 id="appsody-sidebar-header" className="docs-header-text">Appsody</h2>
+      <h2 id="docs-sidebar-header"className="docs-header-text docs-header-pink">Docs</h2>
+
       <Accordion defaultActiveKey={accordionIndex}>
         {
           sidebarList.map((item, index) => {
@@ -56,7 +68,7 @@ const Sidebar = () => {
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey={index}>
                     <ul className="doc-sidebar-hidden-list">
-                      {item.items.map(subItem => <li key={subItem.title} className="my-3"><Link className="sidebar-link" onMouseOver={()=>setAccordionIndex(index)} activeClassName="active-docs" to={subItem.path}>{subItem.title}</Link></li>)}
+                      {item.items.map(subItem => <li key={subItem.title} className="my-3"><Link className="sidebar-link" onClick={()=>setAccordionIndex(index)} activeClassName="active-docs" to={subItem.path}>{subItem.title}</Link></li>)}
                     </ul>
                   </Accordion.Collapse>
                 </>
@@ -69,7 +81,9 @@ const Sidebar = () => {
           })
         }
       </Accordion>
+      <span id="desktopHamburgerOpenbtnId" className={styles.desktopHamburgerOpenbtn} onClick={() => openDesktopSidebar()}>☰</span>
     </aside>
+    
   )
 }
 

@@ -695,3 +695,7 @@ blockquote p {
     margin-bottom: 0px;
   }
 }
+
+#documents-window {
+  transition: 0.5s;
+}

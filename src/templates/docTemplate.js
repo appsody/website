@@ -5,6 +5,7 @@ import Doc from "../components/doc";
 import Layout from "../components/layout"
 import Sidebar from "../components/sidebar";
 import SidebarExtender from "../components/sidebar-extender";
+import DesktopSidebarExtender from "../components/desktop-sidebar-extender";
 
 export default function Template({
   data
@@ -18,6 +19,7 @@ export default function Template({
       <Sidebar />
       <Doc html={html}/>
       <SidebarExtender />
+      <DesktopSidebarExtender/>
     </Layout>
   )
 }
