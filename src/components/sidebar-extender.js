@@ -1,7 +1,22 @@
 import React, { useState } from "react"
 import "../styles/sidebar-extender.css"
 
+
 const SidebarExtender = () => {
+  if (typeof window !== 'undefined') {
+    window.onresize = resize;
+  }
+  function resize() {
+    if (window.innerWidth <= 767) {
+      if (isExpanded) {
+        setIsExpanded(!isExpanded) 
+        document.getElementById(".hamburger-icon").classList.toggle('open');
+      }
+      document.getElementById("sidebar").style.marginLeft = "-100vw";
+    } else {
+      document.getElementById("sidebar").style.marginLeft = "0";
+    }
+  }
   const [isExpanded, setIsExpanded] = useState(false);
 
   function moveSidebar() {
@@ -11,7 +26,7 @@ const SidebarExtender = () => {
     if (!isExpanded) {
       document.getElementById("sidebar").style.marginLeft= "0";      
     } else {
-      document.getElementById("sidebar").style.marginLeft = "-85vw";
+      document.getElementById("sidebar").style.marginLeft = "-100vw";
     }
   }
 
