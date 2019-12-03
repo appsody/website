@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import Sidebar from "../components/sidebar";
 import SidebarExtender from "../components/sidebar-extender";
 import DesktopSidebarCloseButton from "../components/desktopSidebarCloseButton";
-import DesktopSidebarOpenButton from "../components/DesktopSidebarOpenButton";
+import DesktopSidebarOpenButton from "../components/desktopSidebarOpenButton";
 
 export default function Template({
   data
