@@ -3,15 +3,15 @@ title: Developing Stacks
 ---
 
 # Developing Stacks
-While there are many Appsody stacks to choose from, you might want to create an entirely new stack or alter some aspects of an existing stack to match your development needs or standards; even modifications to a pre-existing stack can impact how users develop, build, and deploy applications.
+While there are many Appsody stacks to choose from, you might want to create an entirely new stack or alter some aspects of an existing stack to match your development needs or standards.
 
 ---
 
 ## Start developing a stack
 
-The following methods detail how you can use the `appsody stack create` command to create your own stack or modify an existing Appsody stack.
+The following methods detail how you can use the Appsody CLI to create your own stack or modify an existing Appsody stack.
 
-Alternatively, you can use [Git clone](git-clone) to get started with stack development.
+We recommend you use the Appsody CLI, however, you can also use [Git clone](git-clone) to get started with stack development.
 
 ### Create your own stack using the Appsody CLI
 
@@ -20,6 +20,8 @@ The quickest way to create a new stack is to use the `appsody stack create` comm
 ```
 appsody stack create my-stack
 ```
+
+
 
 ### Modify an existing stack using the Appsody CLI
 
@@ -31,36 +33,36 @@ appsody stack create my-stack --copy incubator/nodejs-express
 
 ---
 
-## Create your stack.yaml
+## Define stack behavior
 
 The `stack.yaml` file in the top level directory defines the different attributes of the stack and which template the stack should use by default.  This should be the first thing you define when developing your stack. See the following example:
 
 ```
-name: Sample Application Stack   # concise one line name for the stack
-version: 0.1.0                   # version of the stack
-description: sample stack to help creation of more Appsody stacks # free form text explaining more about the capabilities of this stack and various templates
-license: Apache-2.0              # license for the stack
-language: nodejs                 # programming language the stack uses
-maintainers:                     # list of maintainer(s) details
+name: Sample Application Stack        # concise one line name for the stack
+version: 0.1.0                        # version of the stack
+description: sample stack description # free form text explaining more about the capabilities of this stack and various templates
+license: Apache-2.0                   # license for the stack
+language: nodejs                      # programming language the stack uses
+maintainers:                          # list of maintainer(s) details
   - name: John Smith
     email: example@example.com
     github-id: jsmith
-default-template: my-template-1  # name of default template
+default-template: my-template-1       # name of default template
 ```
 
-## Create your stack image
+## Define your stack image
 
 The stack image contains common capabilities that can be used by all templates. For example, the [`nodejs-express`](https://github.com/appsody/stacks/tree/master/incubator/nodejs-express) stack image provides health endpoints and Prometheus metrics so the developers do not need to implement them.
 
 ### Stack environment variables
 
-Stack creators configure [environment variables](./environment-variables) in `Dockerfile-stack` to specify the commands for running, debugging and testing the application. `Appsody CLI` and `Appsody controller` inspect these environment variables and then drive the expected behavior for the developer during local development.
+Stack creators configure [environment variables](./environment-variables) in `Dockerfile-stack` to specify the commands for running, debugging and testing the application. The `Appsody controller` inspects these environment variables and then drive the expected behavior for the developer during local development.
 
-* Handling File mounts - During local development, the application code is held on the local file system and is mounted in the running container for the stack. Stack creators configure the [`APPSODY_MOUNTS`](./environment-variables) enivronment variable to specify a list of mount paths to achieve this behavior.
+* **Handling File mounts** - During local development, the application code is held on the local file system and is mounted in the running container for the stack. Stack creators configure the [`APPSODY_MOUNTS`](./environment-variables) enivronment variable to specify a list of mount paths to achieve this behavior.
 
-* Monitoring file changes - Stack creators configure the many [`APPSODY_WATCH`](./environment-variables) environment variables in `Dockerfile-stack` to specify which files are monitored for changes and how to reflect those changes in the running application.
+* **Monitoring file changes** - Stack creators configure the many [`APPSODY_WATCH`](./environment-variables) environment variables in `Dockerfile-stack` to specify which files are monitored for changes and how to reflect those changes in the running application.
 
-* Managing dependencies - Appsody enables the caching of any installed dependencies across runs to accelerate local development. This is achieved by creating a volume independent of a specific container instance and then mounting it every time the appsody container is started. Stack creators configure the [`APPSODY_DEPS`](./environment-variables) environment variable to specify the directory to be cached.
+* **Managing dependencies** - Appsody enables the caching of any installed dependencies across runs to accelerate local development. This is achieved by creating a volume independent of a specific container instance and then mounting it every time the appsody container is started. Stack creators configure the [`APPSODY_DEPS`](./environment-variables) environment variable to specify the directory to be cached.
 
 ### File permissions
 
@@ -68,22 +70,22 @@ Within your stack, if you want to restrict users from editing some of the files 
 
 ### IDE Considerations
 
-A user project might need dependencies or other assets that come from the stack image itself, when an IDE opens a user’s app they cant find those and show a multitude of errors. To avoid this, we provide a mechanism for stack creators to set up the user’s environment during the init command allowing them to install or copy anything that needs to be on user’s host system to keep IDEs from displaying unwanted errors.
+A user project might need dependencies or other assets that come from the stack image itself, when an IDE opens the app, they cant find those and show a multitude of errors. To avoid this, during the init command, anything that needs to be on the user’s host system to keep IDEs from displaying unwanted errors will be copied and installed.
 
 ### License
 
-You must provide a valid license when developing a stack.
+You must provide a valid license when developing a stack, such as [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 ## Create your project templates
 
-A stack can have multiple templates, perhaps representing different classes of starter applications using the stack technology components.
+A stack can have multiple templates, perhaps representing different classes of starter applications using the stack technology components.  It is recommended to include a very simple template, such as a 'Hello, world!' application when creating your stack.  You set the default template of your stack in the `stack.yaml`, this is the template that is initialized when no stack is specified with the `appsody init` command.
 
 Capabilities that apply to all templates are better suited for inclusion in the stack image.
 
 ## Application build and deployment
 Stack creators must provide a `Dockerfile` that defines how to build the container image for the Appsody application, including both capabilities from the stack, and the developer's application.
 
-Appsody CLI uses the `Dockerfile` to create the application container image when [`appsody build`](/content/docs/using-appsody/cli-commands.md/#appsody-build) command is run.
+The Appsody CLI uses the `Dockerfile` to create the application container image when [`appsody build`](/content/docs/using-appsody/cli-commands.md/#appsody-build) command is run.
 
 Stack creators also provide a template deployment manifest `image/config/app-deploy.yaml` that the Appsody CLI uses to support deployments to Kubernetes or Knative platforms using the Appsody Operator.
 
@@ -91,7 +93,7 @@ Stack creators also provide a template deployment manifest `image/config/app-dep
 
 ## Next steps
 
-Learn how to [package a stack](package)
+Packaging allows a stack developer to build all the components of a stack and enables the stack to be used via Appsody CLI commands. The packaging process typically involves: building the stack container image, creating archive files for each template and configuring a local Appsody repository. Learn how to package a stack [here](package).
 
 ---
 

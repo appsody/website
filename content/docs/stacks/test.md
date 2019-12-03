@@ -4,19 +4,40 @@ title: Testing Stacks
 
 # Testing Stacks
 
-After you create, or update a stack, the next consideration is to test the stack to check that it meets your needs. To validate a stack in your local Appsody development environment, use the `appsody stack validate` command. Validate performs several operations to ensure every aspect of your stack is tested.
+After you create, or update a stack, the next consideration is to test the stack to check that it meets your needs. To validate a stack in your local Appsody development environment, use the Appsody CLI validate command. Validate performs several operations to ensure every aspect of your stack is tested.
 
 ---
 
-## Testing using Appsody CLI stack validate
+## Testing a stack using the Appsody CLI
 
-1. Navigate to the root directory of the stack you want to test.
+1. Navigate to the root directory of your stack
 
-2. Run `appsody stack validate` to validate your stack locally.
+2. Run the following command:
 
+```
+appsody stack validate
+```
+
+3. The validate command will then run through 6 operations and provide a summary of the result.  The following summary output shows the result of running `validate` against the starter stack:
+```
+@@@@@@@@@ Validate Summary Start @@@@@@@@@@
+PASSED: Lint for stack: starter
+PASSED: Package for stack: starter
+PASSED: Init for stack: starter
+PASSED: Run for stack: starter
+PASSED: Test for stack: starter
+PASSED: Build for stack: starter
+Total PASSED: 6
+Total FAILED: 0
+@@@@@@@@@ Validate Summary End @@@@@@@@@@
+```
+
+> The summary provides a result for each of the operations and a total for the overall number of passed and failed operations.
 ---
 
-## Validation process
+## Validation Operations
+
+The 6 operations that `appsody stack validate` calls are as follows:
 
 ### Lint
 
@@ -56,25 +77,8 @@ Runs [`appsody build`](/docs/using-appsody/cli-commands/#appsody-build).
 
 The build command generates a production Docker image ready for deployment to your runtime platform of choice. See [Getting ready to deploy your Appsody project](/docs/using-appsody/building-and-deploying) for more details.
 
-### Summary
-
-Running the six operations that form the `validate` command produces a significant amount of output. To help you spot any issues, a summary is provided at the end of the output. It provides a result for each of the operations and a total for the overall number of passed and failed operations. The following summary output shows the result of running `validate` against the starter stack:
-
-```
-@@@@@@@@@ Validate Summary Start @@@@@@@@@@
-PASSED: Lint for stack: starter
-PASSED: Package for stack: starter
-PASSED: Init for stack: starter
-PASSED: Run for stack: starter
-PASSED: Test for stack: starter
-PASSED: Build for stack: starter
-Total PASSED: 6
-Total FAILED: 0
-@@@@@@@@@ Validate Summary End @@@@@@@@@@
-```
-
 ---
 
 ## Next steps
 
-Learn how to [publish a stack](publish)
+You have now developed, packaged and tested a stack, now you can make it available to others, so that developers can use your stack's functionalities to accelerate development of their cloud native applications. Learn how to [publish a stack](publish).

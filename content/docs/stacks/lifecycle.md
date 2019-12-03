@@ -104,38 +104,3 @@ The steps undertaken when the `appsody build` command is run are:
 * Appsody CLI then runs, effectively, a Docker build using the `Dockerfile` in the `project` directory of this extracted structure, resulting in a Docker image for the combined application.
 
 The `Dockerfile` needs to build the dependencies for both the stack technology components as well as the user application, and set the entrypoint (or `CMD`) to an appropriate entrypoint for the user application. The Appsody controller is not involved in the final application image.
-
-
-## Maintaining a separate repository
-In addition to the main Appsody stacks repository, you can maintain your own set of stacks. This is useful for developing stacks and separating sets of stacks for different uses.
-
-By default you have access to the `incubator` repository:
-```
-$ appsody repo list
-NAME      	    URL
-*incubator	    https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml
-experimental    https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
-```
-A repository is defined by an `index.yaml` file. This file lists all the stacks and templates that are available within a repository. You can modify the index files within your own repositories, to say which stacks and templates you want to be available. See the `incubator` [index](https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml) file for an example.
-
-Each template section must include a link to its `.tar.gz` file. This file is used by `appsody init` to initialize an Appsody project.
-
-You can add your repository by running:
-```
-appsody repo add <name> <index-url>
-```
-For example:
-```
-appsody repo add my-repo file:///Users/foo/index.yaml
-
-appsody repo list
-NAME      	   URL
-*incubator	   https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml
-experimental   https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
-my-repo        file:///Users/foo/index.yaml
-```
-
-Now you can access the stacks in your repo by specifying the repository name when you initialize your project:
-```
-appsody init my-repo/<stack-name>
-```
