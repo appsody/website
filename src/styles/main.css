@@ -715,11 +715,8 @@ blockquote p {
 
 .glossary-content blockquote {
   padding: 0.6em 1.5em 0.6em 1.5em;
-  margin: 3rem 0 2rem 0;
+  margin: 1rem 0 2rem 0;
   border-left: 4px solid var(--colour-scheme-1);
-  /* border-top: 3px solid var(--colour-scheme-1);
-  border-right: 2px solid var(--colour-scheme-1);
-  border-bottom: 3px solid var(--colour-scheme-1); */
   border-radius: 0 0 1.1rem 0;
   color: #000;
   max-width: 1200px;
@@ -749,7 +746,7 @@ blockquote p {
   font-weight: 600;
   font-size: 2.0em;
   line-height: 1.5em;
-  margin-bottom: -1.3em;
+  margin-bottom: -0.4em;
   margin-left: -3px;
 }
 
