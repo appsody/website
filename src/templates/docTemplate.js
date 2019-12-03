@@ -5,7 +5,7 @@ import Doc from "../components/doc";
 import Layout from "../components/layout"
 import Sidebar from "../components/sidebar";
 import SidebarExtender from "../components/sidebar-extender";
-import DesktopSidebarExtender from "../components/desktopSidebarCloseButton";
+import DesktopSidebarCloseButton from "../components/desktopSidebarCloseButton";
 import DesktopSidebarOpenButton from "../components/DesktopSidebarOpenButton";
 
 export default function Template({
@@ -20,7 +20,7 @@ export default function Template({
       <Sidebar />
       <DesktopSidebarOpenButton/>
       <SidebarExtender />
-      <DesktopSidebarExtender/>
+      <DesktopSidebarCloseButton/>
       <Doc html={html}/>
     </Layout>
   )
