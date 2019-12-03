@@ -15,6 +15,7 @@
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
     border: 1px solid rgba(255,255,255,0.1);
     transition: 0.5s;
+    cursor: pointer;
   }
 
   .desktop-sidebar-hamburger span{

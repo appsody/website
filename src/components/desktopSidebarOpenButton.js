@@ -5,6 +5,7 @@ import styles from "../styles/desktopSidebarOpenButton.module.css"
 const DesktopSidebarOpenButton = () => {
     function openDesktopSidebar() {
         window.sidebarOpen = true;
+        document.getElementById("accordion").style.display="block"
         document.getElementById("sidebar").style.marginLeft= "0";
         document.getElementById("desktop-hamburger-icon" ).style.marginLeft= "0"; 
         document.getElementById("documents-window").style.paddingLeft = "23em";    
