@@ -10,12 +10,13 @@
     left: 0;
     background-color:white;
     z-index: 9999;
-    height: 3.5em;
+    height: 4em;
     width: 20em;
     box-shadow: 2px 0px 12px rgba(187, 65, 124, 0.12);
     border: 1px solid rgba(255,255,255,0.1);
     transition: 0.5s;
     cursor: pointer;
+    font-family: Nunito,sans-serif;
   }
 
   .desktop-sidebar-hamburger span{
