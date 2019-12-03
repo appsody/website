@@ -4,7 +4,15 @@ title: Stack lifecycle
 
 # Stack lifecycle
 
-## Stack requirements during initialization
+The lifecycle of a stack can be broken down into 3 stages:
+
+1. **Initialization**
+2. **Local Development**
+3. **Build and Deploy**
+
+---
+
+## Initialization
 
 Initialization occurs when a user issues an `appsody init` command in a new empty directory, in order to configure a new project. It might seem odd that there are any requirements on the stack for initialization, but since the goal is for the stack image to encapsulate *all* aspects of the stack, the configuration steps required (which are likely to be technology specific) are indeed contained within it. The following is a summary of what happens during initialization:
 
@@ -13,7 +21,9 @@ Initialization occurs when a user issues an `appsody init` command in a new empt
 * Appsody CLI downloads this stack image
 * Appsody CLI inspects the stack image to see if it has an initialization file within it called `appsody-init.sh` (or `appsody-init.bat` if running on Windows). If this file exists, it is executed to set up any further configuration. Note that it not recommended that this initialization installs new packages or modules in user space of the local machine. Any dependencies should be handled by ensuring this happens during run and build, listed below.
 
-## Stack operation during local development
+---
+
+## Local Development
 
 During local development, when the stack image is run, it must build the appropriate local container runtime configuration. This will include:
 
@@ -94,7 +104,9 @@ which specifies the directory that the Appsody controller watches for changes, s
 
 The Appsody controller remains running during local development, and is terminated with the `appsody stop` command (or by simply killing the running Appsody CLI process).
 
-## Stack operation during build and deploy
+---
+
+## Build and Deploy
 
 Build and deploy is designed to package up both the new user application and the technology components of the stack into a single Docker image that can be deployed and run in any Docker environment (often a local or public Kubernetes cluster). From a stack point of view, the key requirement is to include a Dockerfile which can build this combined image. This is the `Dockerfile` in the `project` directory in the stack source (as opposed to the `Dockerfile-stack` file in the `image` directory, which is used when you are creating the original stack image).
 
