@@ -1,0 +1,19 @@
+@media only screen and (min-width: 767px) {
+    .desktopHamburgerOpenbtn {
+        background-color: white;
+        color: var(--colour-scheme-1);
+        font-size: 30px;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-left: 10.6em;
+        border-color: rgb(10, 10, 10);
+        display: none;  
+        position:fixed;
+        top: 25rem;
+        left: -9.4em;
+        vertical-align: middle; 
+        box-shadow: 2px 0px 12px rgba(187, 65, 124, 0.12);
+    }
+}

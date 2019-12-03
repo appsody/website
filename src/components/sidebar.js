@@ -38,23 +38,12 @@ const Sidebar = () => {
     lastIndex = index
   }
 
-  function openDesktopSidebar() {
-    document.getElementById("sidebar").style.marginLeft= "0";
-    document.getElementById("desktop-hamburger-icon" ).style.marginLeft= "0"; 
-    document.getElementById("documents-window").style.paddingLeft = "23em";    
-    document.getElementById("desktopHamburgerOpenbtnId").style.display = "none";   
-    document.getElementById("appsody-sidebar-header").style.writingMode = "horizontal-tb"; 
-    document.getElementById("appsody-sidebar-header").style.marginLeft = "1.5rem"; 
-    document.getElementById("docs-sidebar-header").style.writingMode = "horizontal-tb";
-    document.getElementById("docs-sidebar-header").style.marginLeft = "0.25em"; 
-  }
-
   return (
     <aside id="sidebar" className={styles.sidebar}>
       <h2 id="appsody-sidebar-header" className="docs-header-text">Appsody</h2>
       <h2 id="docs-sidebar-header"className="docs-header-text docs-header-pink">Docs</h2>
 
-      <Accordion defaultActiveKey={accordionIndex}>
+      <Accordion id="accordion" defaultActiveKey={accordionIndex}>
         {
           sidebarList.map((item, index) => {
             if (item.items !== undefined) {
@@ -81,7 +70,6 @@ const Sidebar = () => {
           })
         }
       </Accordion>
-      <span id="desktopHamburgerOpenbtnId" className={styles.desktopHamburgerOpenbtn} onClick={() => openDesktopSidebar()}>☰</span>
     </aside>
     
   )

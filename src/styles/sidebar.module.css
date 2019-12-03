@@ -19,25 +19,6 @@
     font-weight: 400;
 }
 
-@media only screen and (min-width: 767px) {
-    .desktopHamburgerOpenbtn {
-        background-color: white;
-        color: var(--colour-scheme-1);
-        font-size: 30px;
-        cursor: pointer;
-        padding: 10px 15px;
-        border-radius: 10px;
-        margin-left: 10.6em;
-        z-index: -10000;
-        border-color: white;
-        display: none;  
-        position:relative;
-        top:-150px;
-        vertical-align: middle; 
-        box-shadow: 2px 0px 12px rgba(187, 65, 124, 0.12);
-    }
-}
-
 @media only screen and (max-width: 767px) {
     .sidebar {
         width: 85%;

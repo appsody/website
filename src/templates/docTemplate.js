@@ -5,7 +5,8 @@ import Doc from "../components/doc";
 import Layout from "../components/layout"
 import Sidebar from "../components/sidebar";
 import SidebarExtender from "../components/sidebar-extender";
-import DesktopSidebarExtender from "../components/desktop-sidebar-extender";
+import DesktopSidebarExtender from "../components/desktopSidebarCloseButton";
+import DesktopSidebarOpenButton from "../components/DesktopSidebarOpenButton";
 
 export default function Template({
   data
@@ -15,11 +16,12 @@ export default function Template({
   const { title } = markdownRemark.frontmatter
 
   return (
-    <Layout title={title}>
+    <Layout title={title}>    
       <Sidebar />
-      <Doc html={html}/>
+      <DesktopSidebarOpenButton/>
       <SidebarExtender />
       <DesktopSidebarExtender/>
+      <Doc html={html}/>
     </Layout>
   )
 }

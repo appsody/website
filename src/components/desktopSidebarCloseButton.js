@@ -1,9 +1,10 @@
 import React from "react"
-import "../styles/desktop-sidebar-extender.css"
+import "../styles/desktopSidebarCloseButton.css"
 
 
 const DesktopSidebarExtender = () => {
   function closeSidebar() {
+      window.sidebarOpen = false;
       document.getElementById("sidebar").style.marginLeft= "-17.6em";
       document.getElementById("desktop-hamburger-icon" ).style.marginLeft= "-25em"; 
       document.getElementById("documents-window").style.paddingLeft = "8em";    
