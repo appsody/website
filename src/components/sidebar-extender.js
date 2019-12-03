@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 import "../styles/sidebar-extender.css"
 
-window.sidebarOpen= true;
+if (typeof window !== 'undefined') {
+  window.sidebarOpen= true;
+} 
 
 const SidebarExtender = () => {
   if (typeof window !== 'undefined') {
