@@ -17,7 +17,11 @@ const DesktopSidebarOpenButton = () => {
       }
 
   return (
-    <span id="desktopHamburgerOpenbtnId" className={styles.desktopHamburgerOpenbtn} onClick={() => openDesktopSidebar()}>☰</span>
+    <section  id="desktopHamburgerOpenbtnId" className={styles.desktopHamburgerOpenbtn} onClick={() => openDesktopSidebar()}>
+      <span></span>
+      <span></span>
+      <span></span>
+    </section>
   )
 }
 

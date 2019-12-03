@@ -12,7 +12,7 @@
     z-index: 9999;
     height: 3.5em;
     width: 20em;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
+    box-shadow: 2px 0px 12px rgba(187, 65, 124, 0.12);
     border: 1px solid rgba(255,255,255,0.1);
     transition: 0.5s;
     cursor: pointer;
@@ -31,14 +31,14 @@
     -o-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
     margin-top:0.8em;
-    width: 35px;
+    width: 30px;
     height: 4px;
     background-color: var(--colour-scheme-1);
     border-radius: 5px;
   }
 
   .desktop-sidebar-hamburger span:nth-child(1) {
-    top: 2px;
+    top: 4px;
     left: 250px;
   }
 
@@ -48,7 +48,7 @@
   }
 
   .desktop-sidebar-hamburger span:nth-child(3) {
-    top: 26px;
+    top: 24px;
     left: 250px;
   }
 

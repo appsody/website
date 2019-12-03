@@ -14,6 +14,7 @@ const DesktopSidebarExtender = () => {
       document.getElementById("appsody-sidebar-header").style.marginLeft = "9.2em"; 
       document.getElementById("docs-sidebar-header").style.writingMode = "vertical-rl";
       document.getElementById("docs-sidebar-header").style.marginLeft = "9.2em"; 
+      document.getElementById("desktopHamburgerOpenbtnId").style.display="flex"
   }
 
   return (
