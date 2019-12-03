@@ -81,4 +81,4 @@ The build command generates a production Docker image ready for deployment to yo
 
 ## Next steps
 
-You have now developed, packaged and tested a stack, now you can make it available to others, so that developers can use your stack's functionalities to accelerate development of their cloud native applications. Learn how to [publish a stack](publish).
+You have now developed, packaged and tested a stack, now you can make it available to others, so that other developers can use your stack's functionalities to accelerate development of their cloud native applications. Learn how to [publish a stack](publish).

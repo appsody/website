@@ -4,7 +4,7 @@ title: Publishing Stacks
 
 # Publishing Stacks
 
-You have developed, packaged and tested a stack, now you can make it to others, so that developers can use your stack's functionalities to accelerate development of their cloud native applications. You can make a stack available by contributing it to the Appsody project, or by publishing it with a web hosting service.
+You have developed, packaged and tested a stack, now you can make it to others, so that other developers can use your stack's functionalities to accelerate development of their cloud native applications. You can make a stack available by contributing it to the Appsody project, or by publishing it with a web hosting service.
 
 ## Contribute a stack to Appsody
 You can contribute a new stack, or update an existing stack, by following these steps:
@@ -19,7 +19,7 @@ For more information, see the [Contributing guidelines](https://github.com/appso
 
 The following method details how to publish a stack using the Appsody CLI to make it available to others.
 
-We reocommend using the Appsody CLI to publish a stack, however, you can use [CI scripts](./publish-ci-scripts), if one or more stacks or repositories are to be published.
+We recommend using the Appsody CLI to publish a stack, however, you can use [CI scripts](./publish-ci-scripts), if one or more stacks or repositories are to be published.
 
 1. If the stack is not already packaged, package it by running the [`appsody stack package`](/content/docs/using-appsody/cli-commands/#appsody-stack-package) command from the root directory of your stack, specifying the namespace for creating the Docker images with. For example, the following command creates Docker images with a namespace of `myproject`:
     ```
