@@ -9,15 +9,10 @@ import SidebarExtender from "../components/sidebar-extender";
 export default function Template({
   data
 }) {
-  const { mdx } = data.mdx
-  const { body } = data.mdx.body
-  const { title } = data.mdx.frontmatter
-
-  console.log(data)
   return (
     <Layout title={data.mdx.frontmatter.title}>
       <Sidebar />
-      <Doc body={data.mdx.body}/>
+      <Doc body={data.mdx.body} path={data.mdx.fileAbsolutePath}/>
       <SidebarExtender />
     </Layout>
   )
@@ -30,6 +25,7 @@ query($path: String!) {
     frontmatter {
       title
     }
+    fileAbsolutePath
   }
 }
 `
