@@ -1,24 +1,16 @@
 @media only screen and (min-width: 767px) {
     .desktopHamburgerOpenbtn {
-        background-color: white;
-        color: var(--colour-scheme-1);
         font-size: 30px;
-        cursor: pointer;
-        padding: 10px 15px;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
         margin-left: 10.6em;
-        border-color: rgb(10, 10, 10);
         display: none;  
         position:fixed;
         top: calc(50vh - 1em);
-        vertical-align: middle; 
-        box-shadow: 2px 0px 12px rgba(187, 65, 124, 0.12);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         position: fixed;
-        box-sizing: border-box;
         bottom: 0;
         left: -9em;
         background-color:white;
@@ -28,7 +20,6 @@
         width: 2em;
         box-shadow: 2px 0px 12px rgba(187, 65, 124, 0.12);
         border: 1px solid rgba(255,255,255,0.1);
-        transition: 0.5s;
         cursor: pointer;
     }
 
@@ -37,14 +28,6 @@
     display: block;
     position: absolute;
     opacity: 1;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: .25s ease-in-out;
-    -moz-transition: .25s ease-in-out;
-    -o-transition: .25s ease-in-out;
-    transition: .25s ease-in-out;
     margin-top:0.8em;
     width: 30px;
     height: 4px;
