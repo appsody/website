@@ -33,7 +33,7 @@ appsody stack create my-stack --copy incubator/nodejs-express
 
 ---
 
-## Define stack behavior
+## Define the stack behavior
 
 The `stack.yaml` file in the top level directory defines the different attributes of the stack and which template the stack should use by default.  This should be the first thing you define when developing your stack. See the following example:
 
@@ -50,7 +50,7 @@ maintainers:                          # list of maintainer(s) details
 default-template: my-template-1       # name of default template
 ```
 
-## Define your stack image
+## Define the stack image
 
 The stack image contains common capabilities that can be used by all templates. For example, the [`nodejs-express`](https://github.com/appsody/stacks/tree/master/incubator/nodejs-express) stack image provides health endpoints and Prometheus metrics so the developers do not need to implement them.
 
@@ -70,7 +70,7 @@ Within your stack, if you want to restrict users from editing some of the files 
 
 ### IDE Considerations
 
-A user project might need dependencies or other assets that come from the stack image itself, when an IDE opens the app, they cant find those and show a multitude of errors. To avoid this, during the init command, anything that needs to be on the user’s host system to keep IDEs from displaying unwanted errors will be copied and installed.
+A user project might need dependencies or other assets that come from the stack image itself, when an IDE opens the app, it cant find those assets and show a multitude of errors. To avoid this, during the init command, anything that needs to be on the user’s host system to keep IDEs from displaying unwanted errors will be copied and installed.
 
 ### License
 
