@@ -728,10 +728,6 @@ blockquote p {
   background: white;
 }
 
-.glossary-content p {
-  margin-bottom: 2em;
-}
-
 .glossary-content a {
   color: var(--colour-scheme-1);
   font-weight: 600;
@@ -753,6 +749,7 @@ blockquote p {
   line-height: 1.5em;
   margin-bottom: -0.4em;
   margin-left: -3px;
+  margin-top: 1em;
 }
 
 .glossary-content h3 {
