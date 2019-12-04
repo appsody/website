@@ -172,7 +172,7 @@ Feel free to include links, images, and inline code snippets. Code blocks are su
 
 For a new line, end the sentence with two spaces before pressing the enter key.
 
-For an empty line, insert an empty character with two spaces following it. The Unicode character is available [here](http://emptycharacter.com/), by selecting copy to clipboard.
+For an empty line, insert an empty character (`&thinsp;`) with two spaces following it.
 
 The large letters, marking the letter of the alphabet the definitions belong to, are simply written with the following syntax:
 
