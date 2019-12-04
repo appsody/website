@@ -1,0 +1,55 @@
+@media only screen and (min-width: 767px) {
+  .desktop-sidebar-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    box-sizing: border-box;
+    bottom: 0;
+    left: 0;
+    background-color:white;
+    z-index: 9999;
+    height: 4em;
+    width: 20em;
+    box-shadow: 2px 0px 12px rgba(187, 65, 124, 0.12);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.5s;
+    cursor: pointer;
+    font-family: Nunito,sans-serif;
+  }
+
+  .desktop-sidebar-hamburger span{
+    display: block;
+    position: absolute;
+    opacity: 1;
+    margin-top:0.8em;
+    width: 30px;
+    height: 4px;
+    background-color: var(--colour-scheme-1);
+    border-radius: 5px;
+  }
+
+  .desktop-sidebar-hamburger span:nth-child(1) {
+    top: 6px;
+    left: 250px;
+  }
+
+  .desktop-sidebar-hamburger span:nth-child(2) {
+    top: 16px;
+    left: 250px;
+  }
+
+  .desktop-sidebar-hamburger span:nth-child(3) {
+    top: 26px;
+    left: 250px;
+  }
+
+  .desktop-sidebar-hamburger p {
+    color: var(--colour-scheme-1);
+    margin-right: 6em ;
+    margin-top: 0.9em;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+}
