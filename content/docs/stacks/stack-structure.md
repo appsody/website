@@ -2,7 +2,7 @@
 title: Stack structure and requirements
 ---
 
-## The role of a stack in the development process
+# The role of a stack in the development process
 
 The fundamental goal of stacks is to simplify the life of the developer trying to build an application using a specific set of technologies or development pattern. As such, a stack is designed to support two ways of working:
 
