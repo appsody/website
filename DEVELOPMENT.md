@@ -170,9 +170,9 @@ This is where you would write a brief description explaining the term.
 Feel free to include links, images, and inline code snippets. Code blocks are supported.
 ```
 
-To have a new line work correctly, you will need to end the sentence with **two** spaces before pressing the enter key (this is quirk of Markdown).
+For a new line, end the sentence with two spaces before pressing the enter key.
 
-To have an empty line, you can insert an empty character which can be found with some minor Googling.
+For an empty line, insert an empty character with two spaces following it. The Unicode character is available [here](http://emptycharacter.com/), by selecting copy to clipboard.
 
 The large letters, marking the letter of the alphabet the definitions belong to, are simply written with the following syntax:
 
@@ -180,7 +180,7 @@ The large letters, marking the letter of the alphabet the definitions belong to,
 ## Letter
 ```
 
-> The glossary is not self-organising, so  try to add defnitions in their correct place alphabetically.
+> The glossary is not self-organising, so try to add definitions in their correct place alphabetically.
 
 ## Need help?
 If you have a question that you can't find an answer to, we want to hear from you. Reach out to the community for assistance on [Slack](https://appsody-slack.eu-gb.mybluemix.net/).

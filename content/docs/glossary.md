@@ -3,7 +3,7 @@ title: Glossary
 ---
 
 # Glossary
-A page designed to explain some of the new terms you may come across as you explore Appsody.
+Learn about terms and definitions that are related to the Appsody project.
 
 ## A
 
