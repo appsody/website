@@ -416,6 +416,10 @@ footer a:hover {
   margin-top: 1.4rem;
 }
 
+#documents-window {
+  transition: 0.5s;
+}
+
 .accordion-dropdown:hover {
   filter: invert(33%) sepia(54%) saturate(1628%) hue-rotate(295deg) brightness(86%) contrast(81%);
 }
@@ -681,6 +685,7 @@ blockquote p {
   font-weight: 700;
   display: inline-block;
   margin-bottom: 0;
+  
 }
 
 .docs-header-pink {
@@ -723,7 +728,7 @@ blockquote p {
   background: white;
 }
 
-.glossay-content, p {
+.glossary-content p {
   margin-bottom: 2em;
 }
 
@@ -770,4 +775,3 @@ blockquote p {
     margin-bottom: 1rem;
   }
 }
-
