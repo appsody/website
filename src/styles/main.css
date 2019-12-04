@@ -768,7 +768,8 @@ blockquote p {
     padding-top: 0;
   }
 
-  .glossary-content p {
-    margin-bottom: 1rem;
+  .glossary-content h2 {
+    margin-top: 0;
   }
+
 }
