@@ -1,0 +1,53 @@
+@media only screen and (min-width: 767px) {
+    .desktopHamburgerOpenbtn {
+        font-size: 30px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-left: 10.6em;
+        display: none;  
+        position:fixed;
+        top: calc(50vh - 1em);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: -9em;
+        background-color:white;
+        color: var(--colour-scheme-1);
+        z-index: 999;
+        height: 2em;
+        width: 2em;
+        box-shadow: 2px 0px 12px rgba(187, 65, 124, 0.12);
+        border: 1px solid rgba(255,255,255,0.1);
+        cursor: pointer;
+    }
+
+
+  .desktopHamburgerOpenbtn span{
+    display: block;
+    position: absolute;
+    opacity: 1;
+    margin-top:0.8em;
+    width: 30px;
+    height: 4px;
+    background-color: var(--colour-scheme-1);
+    border-radius: 5px;
+  }
+
+  .desktopHamburgerOpenbtn span:nth-child(1) {
+    top: -8px;
+    left: 14px;
+  }
+
+  .desktopHamburgerOpenbtn span:nth-child(2) {
+    top: 2px;
+    left: 14px;
+  }
+
+  .desktopHamburgerOpenbtn span:nth-child(3) {
+    top: 12px;
+    left: 14px;
+  }
+
+}
