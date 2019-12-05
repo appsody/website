@@ -410,12 +410,6 @@ footer a:hover {
   margin-bottom: 0px;
 }
 
-.sidebar-heading-link a{
-  color: black;
-  font-size: 1.3rem;
-  margin-top: 1.4rem;
-}
-
 .accordion-dropdown:hover {
   filter: invert(33%) sepia(54%) saturate(1628%) hue-rotate(295deg) brightness(86%) contrast(81%);
 }
@@ -530,8 +524,10 @@ footer a:hover {
   margin-top: 0.4em;
 }
 
-.active{
-  color: var(--colour-scheme-1);
+.sidebar-heading-link a {
+  color: black;
+  font-size: 1.3rem;
+  margin-top: 1.4rem;
 }
 
 .active-docs {
@@ -539,6 +535,11 @@ footer a:hover {
   font-weight: 700;
   border-left: 5px solid var(--colour-scheme-1);
   padding-left: 2.0rem;
+}
+
+.active-docs-heading{
+  color: var(--colour-scheme-1) !important;
+  font-weight: 700;
 }
 
 @media only screen and (min-width: 767px) {

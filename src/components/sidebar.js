@@ -64,7 +64,7 @@ const Sidebar = () => {
               )
             } else {
               return (
-                <h3 className="sidebar-heading-link"> <Link onClick={()=>setAccordionIndex(index)}  activeClassName="active" to={item.path}>{item.title}</Link></h3>
+                <h3 className="sidebar-heading-link"> <Link onClick={()=>setAccordionIndex(index)}  activeClassName="active-docs-heading" to={item.path}>{item.title}</Link></h3>
               )
             }
           })
