@@ -49,4 +49,4 @@ You can now provide the URL to the hosted repository index file to other Appsody
 
 Congratulations!  You have now developed, tested and published a stack for use in Appsody!
 
-Why not learn more about stacks and familiarize yourself with the [lifecycle](./lifecycle) of a stack?
+Why not learn more about stacks and familiarize yourself with the [lifecycle](lifecycle) of a stack?

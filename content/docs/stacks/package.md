@@ -62,4 +62,4 @@ This builds the stack container image, creates archives for each template, and a
 
 ## Next steps
 
-After you create, or update a stack, the next consideration is to test the stack to check that it meets your needs. Learn how to [test a stack](test).
+After you create, or update a stack, the next consideration is to test the stack to check that it meets your needs. For more information, see [Testing Stacks](test).

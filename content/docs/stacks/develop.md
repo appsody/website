@@ -93,7 +93,7 @@ Stack creators also provide a template deployment manifest `image/config/app-dep
 
 ## Next steps
 
-Packaging allows a stack developer to build all the components of a stack and enables the stack to be used via Appsody CLI commands. The packaging process typically involves: building the stack container image, creating archive files for each template and configuring a local Appsody repository. Learn how to package a stack [here](package).
+Packaging allows a stack developer to build all the components of a stack and enables the stack to be used via Appsody CLI commands. The packaging process typically involves: building the stack container image, creating archive files for each template and configuring a local Appsody repository. For more information, see [Packaging Stacks](package). 
 
 ---
 

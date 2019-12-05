@@ -14,14 +14,14 @@ Appsody stacks include language runtimes, frameworks and any additional librarie
 
 ### Stack Image
 
-Appsody uses a containerized environment during local development. The stack image defines this environment and specifies the stack behavior during application development lifecycle.  
+Appsody uses a containerized environment during local development. The stack image defines this environment and specifies the stack behavior during the development lifecycle of the application.  
 
-The `image` directory contains files for the stack image. The `image/Dockerfile-stack` defines the exact steps for building the stack image.
+The `image` directory contains files for the stack image. The `image/Dockerfile-stack` Dockerfile defines the exact steps for building the stack image.
 
 ### Project templates
 Project templates provide a starting point, typically a 'Hello World' application, for application development. Like other components within an Appsody stack, you can customize project templates and share them across teams.  
 
-The templates directory contains one or more starter applications that are created for the user when they initialize their projects. Every template is contained within its own directory, `/templates/<template-name>`.
+The templates directory contains one or more starter applications that are created for you when you initialize your projects. Every template is contained within its own directory, `/templates/<template-name>`.
 
 ### Stack structure
 
@@ -49,19 +49,19 @@ my-stack
 
 ### Generated files
 
-`.appsody-config.yaml` is not part of the source structure. It is generated as part of the stack building process and will be placed in the user directory by the appsody init command. This file specifies the stack image that is used and can be overridden for testing purposes to point to a locally built stack.
+`.appsody-config.yaml` is not part of the source structure. It is generated as part of the stack building process and is placed in the user directory by the Appsody init command. This file specifies the stack image that is used and can be overridden for testing purposes to point to a locally built stack.
 
 ---
 
 ## Stack stability
 
-Stacks are categorized as either `stable`, `incubator` or `experimental` depending on the content of the stack.
+Stacks are categorized as `stable`, `incubator` or `experimental` depending on the content of the stack.
 
-- `stable/`: Stable stacks meet this set of [technical requirements](https://github.com/appsody/stacks/blob/master/TECHNICAL_REQUIREMENTS.md).
+- `stable`: Stable stacks meet this set of [technical requirements](https://github.com/appsody/stacks/blob/master/TECHNICAL_REQUIREMENTS.md).
 
-- `incubator/`: The stacks in the incubator folder are actively being worked on to satisfy the stable criteria.
+- `incubator`: The stacks in the incubator folder are actively being worked on to satisfy the stable criteria.
 
-- `experimental/`: Experimental stacks are not being actively worked on and may not fulfill the requirements of an Appsody stack. These can be used for trying out specific capabilities or proof of concept work.
+- `experimental`: Experimental stacks are not being actively worked on and might not fulfill the requirements of an Appsody stack. These can be used for trying out specific capabilities or proof of concept work.
 
 ### Official Appsody Repositories
 
@@ -79,4 +79,4 @@ By default, Appsody comes with the `incubator` and `experimental` repositories. 
 
 ## Next steps
 
-While there are many Appsody stacks to choose from, you might want to create an entirely new stack or alter some aspects of an existing stack to match your development needs or standards. Learn how to develop a stack [here](develop).
+Although there are many Appsody stacks to choose from, you might want to create an entirely new stack or alter some aspects of an existing stack to match your development needs or standards. For more information, see [Developing Stacks](develop).

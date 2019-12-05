@@ -4,7 +4,7 @@ title: Testing Stacks
 
 # Testing Stacks
 
-After you create, or update a stack, the next consideration is to test the stack to check that it meets your needs. To validate a stack in your local Appsody development environment, use the Appsody CLI validate command. Validate performs several operations to ensure every aspect of your stack is tested.
+After you create or update a stack, the next consideration is to test the stack to check that it meets your needs. To validate a stack in your local Appsody development environment, use the Appsody CLI validate command. Validation performs several operations to ensure every aspect of your stack is tested.
 
 ---
 
@@ -18,7 +18,7 @@ After you create, or update a stack, the next consideration is to test the stack
 appsody stack validate
 ```
 
-3. The validate command will then run through 6 operations and provide a summary of the result.  The following summary output shows the result of running `validate` against the starter stack:
+3. The validate command then runs through six operations and provides a summary of the results.  The following summary output shows the result of running `validate` against the starter stack:
 ```
 @@@@@@@@@ Validate Summary Start @@@@@@@@@@
 PASSED: Lint for stack: starter
@@ -37,7 +37,7 @@ Total FAILED: 0
 
 ## Validation Operations
 
-The 6 operations that `appsody stack validate` calls are as follows:
+The six operations that the `appsody stack validate` command calls are as follows:
 
 ### Lint
 
@@ -51,7 +51,7 @@ Runs [`appsody stack package`](/docs/using-appsody/cli-commands/#appsody-stack-p
 
 Builds the stack images and templates and generates an Appsody repository index that you can use for local testing. See [Packaging Stacks](/docs/stacks/package) for more details.
 
-> If your stack is already packaged and you don't want to run the `package` operation as part of validate, you can use the `--no-package` flag as shown in the following command: `appsody stack validate --no-package`
+> If your stack is already packaged and you don't want to run the `package` operation as part of the validation, you can use the `--no-package` flag as shown in the following command: `appsody stack validate --no-package`
 
 ### Init
 
@@ -63,13 +63,13 @@ This step initializes an Appsody project that uses the default project template 
 
 Runs [`appsody run`](/docs/using-appsody/cli-commands#appsody-run).
 
-The run command starts the Appsody development container that was created during initialization. In `run` mode Appsody watches your local project directory for file changes and updates your application to reflect code changes as you develop. See [Local Development](/docs/using-appsody/local-development) for more details.
+The `run` command starts the Appsody development container that was created during initialization. In `run` mode Appsody watches your local project directory for file changes, and updates your application to reflect code changes as you develop. See [Local Development](/docs/using-appsody/local-development) for more details.
 
 ### Test
 
 Runs [`appsody test`](/docs/using-appsody/cli-commands#appsody-test).
 
-The test command runs the project's test suite in the Appsody development container. The test suite is composed of generic tests in the stack, which verify the capabilities provided by the stack are working as expected, and any custom tests that are defined within the template.
+The test command runs the project's test suite in the Appsody development container. The test suite is composed of generic tests in the stack, which verify that the capabilities provided by the stack are working as expected, and any custom tests that are defined within the template.
 
 ### Build
 
@@ -81,4 +81,4 @@ The build command generates a production Docker image ready for deployment to yo
 
 ## Next steps
 
-You have now developed, packaged and tested a stack, now you can make it available to others, so that other developers can use your stack's functionalities to accelerate development of their cloud native applications. Learn how to [publish a stack](publish).
+You have now developed, packaged, and tested a stack. You can now publish your stack so that other developers can use it's functionality to accelerate development of their own cloud-native applications. For more information, see [Publishing Stacks](publish).
