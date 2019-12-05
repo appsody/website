@@ -11,8 +11,6 @@ While there are many Appsody stacks to choose from, you might want to create an 
 
 The following methods detail how you can use the Appsody CLI to create your own stack or modify an existing Appsody stack.
 
-We recommend you use the Appsody CLI, however, you can also use [Git clone](git-clone) to get started with stack development.
-
 ### Create your own stack using the Appsody CLI
 
 The quickest way to create a new stack is to use the `appsody stack create` command, which creates a new stack by copying an existing stack. By default, the new stack is based on the sample stack. For example, to create a new stack named my-stack, in a new directory, use this command:
@@ -93,7 +91,7 @@ Stack creators also provide a template deployment manifest `image/config/app-dep
 
 ## Next steps
 
-Packaging allows a stack developer to build all the components of a stack and enables the stack to be used via Appsody CLI commands. The packaging process typically involves: building the stack container image, creating archive files for each template and configuring a local Appsody repository. For more information, see [Packaging Stacks](package). 
+Packaging allows a stack developer to build all the components of a stack and enables the stack to be used via Appsody CLI commands. The packaging process typically involves: building the stack container image, creating archive files for each template and configuring a local Appsody repository. For more information, see [Packaging Stacks](package).
 
 ---
 
