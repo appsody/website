@@ -7,7 +7,7 @@ title: Publishing Stacks
 You have developed, packaged and tested a stack, now you can make it to others, so that other developers can use your stack's functionalities to accelerate development of their cloud native applications. You can make a stack available by contributing it to the Appsody project, or by publishing it with a web hosting service.
 
 ## Contribute a stack to Appsody
-You can contribute a new stack, or update an existing stack, by following these steps:
+You can now contribute your stack by following these steps:
 
  1. Modify any relevant documentation.
  2. Push your changes to a branch in your fork of the Appsody git repository.
