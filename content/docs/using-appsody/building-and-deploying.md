@@ -228,6 +228,15 @@ This command completes the following actions:
 Instructions for installing Red Hat CodeReady Containers can be found [here](/content/docs/using-appsody/installing-openshift-locally.md).
 
 To deploy your application follow these steps:
+1. Check cluster status:
+    ```
+    crc status
+    ```
+    If the cluster is not running:
+    ```
+    crc start
+    ```
+    Note the provided user names and passwords
 1. Log into the cluster:
     ```
     oc login -u <userid> -p <password> https://api.crc.testing:6443
@@ -244,12 +253,13 @@ To deploy your application follow these steps:
     The web console will open in a web browser. Use the kubeadmin id and password to log in
 1. Find the `image-registry` address:
     - Navigate to Workloads-> Pods
+    - Select `all projects` at the top 'Project' pull-down
     - Click on the main `image-registry` pod (Example: `image-registry-6984bcdf68-vpfjt`)
     - Click on the `Environment` tab and scroll down to `REGISTRY_OPENSHIFT_SERVER_ADDR` and note the value (Example: `image-registry.openshift-image-registry.svc:5000`)
     This value will be used for `--pull-url` for `appsody deploy`
 1. Find the `default-route` location:
     - Navigate to Networking-> Routes
-    - Note the `Location` for the `default-route` (Example: `https://default-route-openshift-image-registry.apps-crc.testing`)
+    - Note the `Location` for the `default-route` but remove the `https://` (Example: `default-route-openshift-image-registry.apps-crc.testing`)
     This value will be used for `--push-url` for `appsody deploy`
 1. Create the certificate (Red Hat Linux example):
     - Get the certificate:
@@ -259,11 +269,11 @@ To deploy your application follow these steps:
         Copy the `Server certificate` which starts with header: `-----BEGIN CERTIFICATE-----` and ends with header: `-----END CERTIFICATE-----` You must include the headers.
     - Create the certificate directory: 
         ```
-        sudo mkdir /etc/docker/certs.d/default-route-openshift-image-registry.apps-crc.testing
+        sudo mkdir -p /etc/docker/certs.d/default-route-openshift-image-registry.apps-crc.testing
         ```
     - Create the certificate:
         ```
-        vi /etc/docker/certs.d/default-route-openshift-image-registry.apps-crc.testing/ca.crt
+        sudo vi /etc/docker/certs.d/default-route-openshift-image-registry.apps-crc.testing/ca.crt
         ```
     - Insert the copied certificate using `i` to get into insert mode and then paste the copied certificate and then press `Esc` then `:wq` `<enter>` to save the file
 1. Log out oc developer:
@@ -299,7 +309,7 @@ To deploy your application follow these steps:
         ```
     - Apply the role:
         ```
-        kubectl apply -f Role.yaml
+        kubectl apply -f ~/Role.yaml
         ```
 1. Create and apply the ClusterRole yaml file:
     - Create the file:
@@ -397,13 +407,13 @@ To deploy your application follow these steps:
 
     Example pull-url: `image-registry.openshift-image-registry.svc:5000`
 
-    Example push-url: `https://default-route-openshift-image-registry.apps-crc.testing`
+    Example push-url: `default-route-openshift-image-registry.apps-crc.testing`
 
     Example namespace: `test`
 
     Example deploy command:
     ```
-    appsody deploy --tag test/node:v1 --pull-url image-registry.openshift-image-registry.svc:5000 --push-url https://default-route-openshift-image-registry.apps-crc.testing --push --namespace test -v
+    appsody deploy --tag test/node:v1 --pull-url image-registry.openshift-image-registry.svc:5000 --push-url default-route-openshift-image-registry.apps-crc.testing --push --namespace test -v
     ```
 
 ### Deploying your application through Docker Hub

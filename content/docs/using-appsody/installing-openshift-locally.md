@@ -34,7 +34,7 @@ Red Hat CodeReady Containers provides a minimum OpenShift cluster for your local
     ```
     crc oc-env
     ```
-    Run the printed command
+    Insert the command into /etc/profile. Example: `export PATH="$HOME/.crc.bin:$PATH"`
 ### kubectl
 kubectl is required for deploying Appsody applications to OpenShift. To see if you have kubectl installed run `kubectl version`
 
