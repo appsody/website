@@ -8,7 +8,7 @@ Packaging allows a stack developer to build all the components of a stack and en
 
 The following method details how you can use the Appsody CLI to package a stack that you have created or modified and want to test locally.
 
-We recommend you use the Appsody CLI for packaging a single stack, however, you can also use the [CI scripts](./ci-scripts), if you want to package multiple stacks or repositories.
+The easiest way to package a stack is to use the Appsody CLI, however, you can use [CI scripts](ci-scripts) if you want to package multiple stacks.
 
 ---
 

@@ -4,6 +4,8 @@ Title: Publish a stack using CI scripts
 
 # Publish a stack using CI scripts
 
+The easiest way to publish a stack is to use the [Appsody CLI](publish), however, you can use CI scripts if you want to publish multiple stacks.
+
 1. Clone or copy the `appsody/stacks` [Git repository](https://github.com/appsody/stacks) to obtain the CI scripts.
 2. Create a new repository directory, within the base directory of the Git repository, to contain the stack to be published. For example:
     ```
@@ -37,7 +39,7 @@ Title: Publish a stack using CI scripts
     > The repository index file contains information for all the stacks in that repository, even if you specified a single stack with the `./ci/build.sh` command.
 
 6. Push the stack container images to a Docker registry, such as [docker.io](https://docker.io).
-7. Upload the template archives and repository index file to a suitable web hosting service, such as GitHub Releases.
+7. Upload the template archives and repository index file to a suitable web hosting service. A suitable web hosting service is one that allows an unauthenticated URL for a download that any user can have access to, some notable examples include GitHub Releases or NGnix container.
 
 You can now provide the URL to the hosted repository index file to other Appsody users, who can add it to their Appsody repository list then initialise a project using your stack.
 
