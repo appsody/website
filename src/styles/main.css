@@ -718,7 +718,7 @@ blockquote p {
   max-width: 2000px;
 }
 
-.glossay-content, h1 {
+.glossary-content h1 {
   color: var(--colour-scheme-1);
   font-weight: 600;
   font-size: 2.1em;
