@@ -157,5 +157,30 @@ gatsby serve
 
 3. Access the website on http://localhost:9000 and complete any visual checks.
 
+
+## Adding definitions to the Glossary page
+
+If you feel a term would benefit from being defined, the Glossary is the perfect place to do so! The file is located inside the docs directory, as `glossary.md`.
+
+In order to render correctly, definitions need to be written in the following way:
+
+```
+>### Term Name
+This is where you would write a brief description explaining the term.  
+Feel free to include links, images, and inline code snippets. Code blocks are supported.
+```
+
+For a new line, end the sentence with two spaces before pressing the enter key.
+
+For an empty line, insert an empty character (`&thinsp;`) with two spaces following it.
+
+The large letters, marking the letter of the alphabet the definitions belong to, are simply written with the following syntax:
+
+```
+## Letter
+```
+
+> The glossary is not self-organising, so try to add definitions in their correct place alphabetically.
+
 ## Need help?
 If you have a question that you can't find an answer to, we want to hear from you. Reach out to the community for assistance on [Slack](https://appsody-slack.eu-gb.mybluemix.net/).
