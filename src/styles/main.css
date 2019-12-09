@@ -581,12 +581,27 @@ hr {
 
 .doc-content table tr th {
   margin: 0;
-  column-width: 200em;
   text-align: left;
   font-size: 16pt;
   font-weight: 600;
   padding: 0.4em 1em;
 
+}
+
+.doc-content table tr th:nth-child(1){
+  column-width: 130em;
+}
+
+.doc-content table tr th:nth-child(2){
+  column-width: 280em;
+}
+
+.doc-content table tr th:nth-child(3){
+  column-width: 240em;
+}
+
+.doc-content table tr th:nth-child(4){
+  column-width: 150em;
 }
 
 .doc-content table tr:nth-child(even) {
