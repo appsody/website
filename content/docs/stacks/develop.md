@@ -70,7 +70,7 @@ If you want to protect some of the files in your stack from being changed by a u
 
 ### IDE Considerations
 
-A user project might need dependencies or other assets that come from the stack image itself, when an IDE opens the app, it cant find those assets and show a multitude of errors. To avoid this, during the init command, anything that needs to be on the user’s host system to keep IDEs from displaying unwanted errors will be copied and installed.
+A template might need dependencies or other assets that come from the stack image itself, and if a user begins local development in an IDE, the IDE can't find those assets and show multiple errors, as they aren't present in the template directory. To avoid this, stack creators can include initialization scripts to ensure the user's environment is configured correctly before beginning local development.
 
 ### License
 
