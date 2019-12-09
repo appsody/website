@@ -34,3 +34,5 @@
       path: /docs/stacks/environment-variables
 - title: FAQ
   path: /docs/faq
+- title: Glossary
+  path: /docs/glossary
