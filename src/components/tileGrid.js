@@ -5,8 +5,12 @@ import Tile from "../components/tile";
 const TileGrid = (props) => {
 
     const defaultRepo = "/incubator."
+        console.log(props.id)
+
     const tiles = props.stacks.map(stack => {
-        if (stack == null) return null;
+        console.log(language)
+        if (stack !== null && (stack.id).includes(language)) {
+            if (stack == null) return null;
 
         const templateURL = stack.templates[0].url;
         const repo = templateURL.split("/").reverse()[0].split(".")[0];
@@ -18,6 +22,11 @@ const TileGrid = (props) => {
         else {
             return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
         }
+        }
+    
+
+      
+     
     });
 
     return (
@@ -28,6 +37,21 @@ const TileGrid = (props) => {
         </div>
     )
 }
+
+  var language ="java";
+  function handleSubmit (event) {
+       
+    var ele = document.getElementsByName('gender'); 
+    ele.forEach(i => {
+        if(i.checked) {
+            language= i.value;
+            console.log(language)
+            alert("Gender: "+i.value); 
+            
+        }
+        
+    });
+  }
 
 export default () => (
     <StaticQuery
@@ -52,8 +76,23 @@ export default () => (
         data.allIndexesYaml.nodes.forEach(node => {
             stacks = stacks.concat(node.stacks);
         });
-
-        return <TileGrid stacks={stacks}/>
+        return(
+            <>
+            <aside id="sidebar" className="sidebar">s
+                    <form className="stacks-sidebar-text">
+                   
+                    <label className="stacks-functions">
+                        Language
+                        <input onClick={handleSubmit} type="radio" name="gender" value="Java"/>Java 
+                        <input onClick={handleSubmit} type="radio" name="gender" value="Node"/>Node 
+                        <input onClick={handleSubmit} type="radio" name="gender" value="Swift"/>Swift
+                        </label>
+                    <button type="submit">Submit</button>
+                </form>
+            </aside>
+             <TileGrid id={language} stacks={stacks}/>
+             </>
+        );
       }}
     />
   )

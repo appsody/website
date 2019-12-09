@@ -79,6 +79,16 @@ h1, h2, h3, h4, h5, h6 {
 
 section.landing-section {
   padding: 4em 0;
+  justify-content: center;
+}
+
+section.stacks-section {
+  padding: 4em 0;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 section.landing-section:first-child {
@@ -779,4 +789,27 @@ blockquote p {
     margin-top: 0;
   }
 
+}
+
+.stacks-sidebar-text {
+  margin-top: 10em;  
+}
+
+.sidebar {
+  width: 20em;
+  margin-top: -1.5rem;
+  padding-left: 5em;
+  background-color: white;
+  height: Calc(100vh);
+  box-shadow: 2px 0px 12px rgba(187, 65, 124, 0.12);
+  padding: 2rem 0;
+  box-sizing: border-box;
+  position: fixed;
+  overflow-y: visible;
+  z-index: 1000;
+  transition: 0.5s;
+}
+
+.stacks-functions {
+  display: block;
 }
