@@ -28,14 +28,14 @@ The easiest way to publish a stack is to use the Appsody CLI, however, you can u
 
 2. Push the stack container image to a Docker registry, such as [docker.io](https://docker.io).
 
-3. A template archive is a `.tar.gz` file that stores all the templates for your stack, it is generated during the `appsody stack package` command. Upload the template archives to a suitable web hosting service. A suitable web hosting service is one that allows an unauthenticated URL for a download that any user can have access to, some notable examples include GitHub Releases or NGnix container.
+3. Upload the template archives to a suitable web hosting service, such as the [Releases](https://help.github.com/en/github/administering-a-repository/creating-releases) section of a GitHub repo.
 
-4. A repository index file is an index of stacks in the repository that Appsody uses to pull down stacks remotely during the `appsody init` command.  To generate the index for your new stack, run the [`appsody stack add-to-repo`](/content/docs/using-appsody/cli-commands.md/#appsody-stack-addtorepo) command from the root directory of your stack, specifying the repository name and the base URL to use. For example:
+4. To add your stack to a repository, run the [`appsody stack add-to-repo`](/content/docs/using-appsody/cli-commands.md/#appsody-stack-addtorepo) command from the root directory of your stack, specifying the repository name and the base URL to use. For example:
     ```
     appsody stack add-to-repo myrepository --release-url https://github.com/myorg/myrepository/releases/latest/download/
     ```
 
-    This command creates (or updates) a repository index file using the specified  `--release-url` as the base URL for referencing the template archives. The repository index file name is determined from the repository name (`myrepository-index.yaml` in this example), and is created in the `.appsody/stacks/dev.local` directory
+    This command creates (or updates) a repository index file, that represents the repository, using the specified  `--release-url` as the base URL for referencing the template archives. The repository index file name is determined from the repository name (`myrepository-index.yaml` in this example), and is created in the `.appsody/stacks/dev.local` directory
 
 3. Upload the generated repository index file to the web hosting service.
 

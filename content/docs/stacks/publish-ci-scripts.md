@@ -39,7 +39,7 @@ The easiest way to publish a stack is to use the [Appsody CLI](publish), however
     > The repository index file contains information for all the stacks in that repository, even if you specified a single stack with the `./ci/build.sh` command.
 
 6. Push the stack container images to a Docker registry, such as [docker.io](https://docker.io).
-7. Upload the template archives and repository index file to a suitable web hosting service. A suitable web hosting service is one that allows an unauthenticated URL for a download that any user can have access to, some notable examples include GitHub Releases or NGnix container.
+7. Upload the template archives and repository index file to a suitable web hosting service, such as the [Releases](https://help.github.com/en/github/administering-a-repository/creating-releases) section of a GitHub repo.
 
 You can now provide the URL to the hosted repository index file to other Appsody users, who can add it to their Appsody repository list then initialise a project using your stack.
 
