@@ -9,7 +9,7 @@ such as a cloud platform that hosts a Kubernetes cluster.
 The Appsody CLI provides various options to help you with the transition from the development phase to the deployment phase:
 
 - You can use the `appsody build` command to generate a *deployment* Docker image on your local Docker registry, and then manually deploy that image to your runtime platform of choice.
-- You can use the `appsody deploy` command to deploy the same *deployment* Docker image directly to a Kubernetes cluster that you are using for testing or staging.
+- You can use the `appsody deploy` command to deploy to build and deploy a Docker directly to a Kubernetes cluster that you are using for testing or staging.
 - You can delegate the build and deployment steps to an external pipeline, such as a Tekton pipeline that consumes the source code of your Appsody project after you push it to a GitHub repository. Within the pipeline, you can run `appsody build`, which builds the application image and generates a deployment manifest. You can use the manifest to deploy your application to a Kubernetes environment where the Appsody operator is installed.
 
 These deployment options are covered in more detail in the following sections.
@@ -24,7 +24,7 @@ The `appsody build` command completes the following actions:
 
 - Extracts your code and other artifacts, including a new Dockerfile, which are required to build the *deployment* image from the *development* image. These files are saved to the `~/.appsody/extract` directory.
 - Runs a `docker build` against the Dockerfile that was extracted on the previous step to produce a *deployment* image in your local Docker registry. If you want to give the image a name, specify the `-t <tag>` parameter. If you run `appsody build` with no parameters, the image is given a name that matches the name of your project.
--wGenerates a manifest called `app-deploy.yaml` that can be used to deploy your Appsody application.
+- Generates a manifest called `app-deploy.yaml` that can be used to deploy your Appsody application.
 
 > If your project includes uppercase characters these are converted to lowercase characters in the image name because Docker does not accept uppercase characters in image tags. Also, if your project directory includes underscore characters, those will be converted to dashes (-), because certain areas of Kubernetes are not tolerant of underscore characters.
 
@@ -186,7 +186,7 @@ Appsody operators can be installed through different means - the Appsody CLI is 
 
 ### Deployment as a Knative Service
 
-You can deploy your application as a Knative service on your target Kubernetes cluster by using the `--knative` flag with the appsody deploy command. This action sets the flag `createKnativeService` in the deployment manifest to `true`.
+You can deploy your application as a Knative service on your target Kubernetes cluster by using the `--knative` flag with the `appsody build` or `appsody deploy` commands. This action sets the flag `createKnativeService` in the deployment manifest to `true`.
 
 For your app to work as a Knative service, the following **pre-requisites** apply:
 
@@ -233,11 +233,11 @@ If your cluster is configured to pull images from a custom registry, use the fol
 appsody deploy -t <mynamespace/myrepository[:tag]> --push-url <registry-url:PORT>
 ```
 
-In the case where the push and pull registry have to be different such as internal and external urls, use the following command:
 If you are specifying different push and pull registries, for example, you might want to push to an external registry and pull from an internal registry, use the following command:
 ```
 appsody deploy -t <mynamespace/myrepository[:tag]> --push-url <external-registry-url:PORT> --pull-url <internal-registry-url:PORT>
 ```
+> Note: The pull registry url gets injected into the deployment manifest for Kubernetes to pull the correct image.
 
 ### Deploying multiple projects
 If you are running multiple Appsody projects on your workstation, you can use `appsody deploy` and `appsody operator` commands to get them deployed to a Kubernetes cluster. However, make sure that you run these commands one at a time, because those commands create temporary files that might lead to conflicts if created concurrently.
@@ -252,8 +252,7 @@ The sequence of actions that leads to this behavior is as follows:
 
 This behavior can be explained by the fact that - if you simply issue `appsody deploy` without explicitly tagging the image - you end up with a deployment manifest (the `app-deploy.yaml` file) that is identical to the one that was used to deploy the application the first time. Therefore, Kubernetes will detect no differences in the deployment yaml, and will do nothing to update your app.
 
-In order to ensure that the latest version of your app gets pushed down to the cluster, explicitly tag the image every time with a new tag, to force Kubernetes to take action (for example: `appsody deploy -t dev.local/my-image:0.x`, where you increment x every time you re-deploy).
-
+To ensure that the latest version of your app is pushed to the cluster, use the -t flag to add a unique tag every time you redeploy your app. Kubernetes then detects a change in the deployment manifest, and pushes your app to the cluster again. For example: appsody deploy -t dev.local/my-image:0.x, where x is a number that you increment every time you redeploy.
 ## Deploying your app through a Tekton pipeline
 
 > This deployment option is under development
