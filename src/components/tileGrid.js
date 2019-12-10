@@ -12,25 +12,55 @@ class TileGrid extends React.Component {
         language: ""
     }
 
-    handleSubmit (event) {
-       
-        var ele = document.getElementsByName('gender'); 
+    handleSubmit () {
+       console.log("here")
+       console.log(language);
+        var ele = document.getElementsByName('language'); 
         ele.forEach(i => {
-            if(i.checked) {
-                language= i.value;
+            if(i.checked && !language.includes(i.value)) {
+                console.log("add")
+                    language.push(i.value);
+                    this.setState({
+                        [language]: i.value,
+                    })
+                  
+                
+            } else if (!i.checked && language.indexOf(i.value) > -1) {
+                language.splice(language.indexOf(i.value), 1);
                 this.setState({
-                    [language]: i.value,
-                  })
+                    [language]: "",
+                })
             }
         });
         this.rerenderTiles();
       }
 
       rerenderTiles() {
-        this.tiles = this.props.stacks.map(stack => {
-            console.log("Before if State Language = " + this.state.language)
-            console.log("Before if Language = " + language)
-            if (stack !== null && (stack.id).includes(language)) {
+        console.log(language);
+        console.log(language.length);
+        console.log(language.length !== 0)
+        if (language.length !== 0) {
+            console.log("Non Empty")
+            this.tiles = this.props.stacks.map(stack => {
+                for (var i = 0; i < language.length; i++) {          
+                    if (stack !== null && (stack.id).includes(language[i])) {
+                        if (stack == null) return null;
+                        const templateURL = stack.templates[0].url;
+                        const repo = templateURL.split("/").reverse()[0].split(".")[0];
+                        const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
+            
+                        if (!stack.templates[0].url.includes(this.defaultRepo)) {
+                            return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
+                        }
+                        else {
+                            return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
+                        }
+                    }  
+                }
+            });
+        } else {
+            console.log("Empty")
+            this.tiles = this.props.stacks.map(stack => {
                 if (stack == null) return null;
                 const templateURL = stack.templates[0].url;
                 const repo = templateURL.split("/").reverse()[0].split(".")[0];
@@ -42,14 +72,15 @@ class TileGrid extends React.Component {
                 else {
                     return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
                 }
-            }
-        });
+              
+            });
+        }
+
       }
 
     defaultRepo = "/incubator."
 
     tiles = this.props.stacks.map(stack => {
-        if (stack !== null && (stack.id).includes(this.state.language)) {
             if (stack == null) return null;
             const templateURL = stack.templates[0].url;
             const repo = templateURL.split("/").reverse()[0].split(".")[0];
@@ -61,7 +92,7 @@ class TileGrid extends React.Component {
             else {
                 return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
             }
-        }
+      
     });
     render() {
         return (
@@ -71,11 +102,11 @@ class TileGrid extends React.Component {
                     
                     <label className="stacks-functions">
                         Language
-                        <input onClick={this.handleSubmit} type="radio" name="gender" value="java"/>Java 
-                        <input onClick={this.handleSubmit} type="radio" name="gender" value="node"/>Node 
-                        <input onClick={this.handleSubmit} type="radio" name="gender" value="swift"/>Swift
+                        <input onClick={this.handleSubmit} type="checkbox" name="language" value="java"/>Java 
+                        <input onClick={this.handleSubmit} type="checkbox" name="language" value="node"/>Node 
+                        <input onClick={this.handleSubmit} type="checkbox" name="language" value="swift"/>Swift
                         </label>
-                    <button type="submit">Submit</button>
+                    
                 </form>
                 </aside>
     
@@ -90,7 +121,7 @@ class TileGrid extends React.Component {
 
 }
 
-  var language ="";
+  var language = [];
 
 export default () => (
     <StaticQuery
