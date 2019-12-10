@@ -808,6 +808,8 @@ blockquote p {
   overflow-y: visible;
   z-index: 1000;
   transition: 0.5s;
+  left: 0;
+  top: 0;
 }
 
 .stacks-functions {
