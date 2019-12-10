@@ -3,28 +3,24 @@ import { StaticQuery, graphql } from "gatsby";
 import Tile from "../components/tile";
 
 class TileGrid extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.defaultRepo = "/incubator."
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
     state = {
         language: ""
     }
 
     handleSubmit () {
-       console.log("here")
-       console.log(language);
         var ele = document.getElementsByName('language'); 
         ele.forEach(i => {
             if(i.checked && !language.includes(i.value)) {
-                console.log("add")
                     language.push(i.value);
                     this.setState({
                         [language]: i.value,
-                    })
-                  
-                
+                    })                
             } else if (!i.checked && language.indexOf(i.value) > -1) {
                 language.splice(language.indexOf(i.value), 1);
                 this.setState({
@@ -36,11 +32,7 @@ class TileGrid extends React.Component {
       }
 
       rerenderTiles() {
-        console.log(language);
-        console.log(language.length);
-        console.log(language.length !== 0)
         if (language.length !== 0) {
-            console.log("Non Empty")
             this.tiles = this.props.stacks.map(stack => {
                 for (var i = 0; i < language.length; i++) {          
                     if (stack !== null && (stack.id).includes(language[i])) {
@@ -59,7 +51,6 @@ class TileGrid extends React.Component {
                 }
             });
         } else {
-            console.log("Empty")
             this.tiles = this.props.stacks.map(stack => {
                 if (stack == null) return null;
                 const templateURL = stack.templates[0].url;
@@ -72,10 +63,8 @@ class TileGrid extends React.Component {
                 else {
                     return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
                 }
-              
             });
         }
-
       }
 
     defaultRepo = "/incubator."
@@ -98,16 +87,14 @@ class TileGrid extends React.Component {
         return (
             <>
                 <aside id="sidebar" className="sidebar">s
-                    <form className="stacks-sidebar-text">
-                    
                     <label className="stacks-functions">
                         Language
-                        <input onClick={this.handleSubmit} type="checkbox" name="language" value="java"/>Java 
-                        <input onClick={this.handleSubmit} type="checkbox" name="language" value="node"/>Node 
-                        <input onClick={this.handleSubmit} type="checkbox" name="language" value="swift"/>Swift
-                        </label>
-                    
-                </form>
+                        <ul className="doc-sidebar-hidden-list">
+                            <li><input onClick={this.handleSubmit} type="checkbox" name="language" value="java"/> Java</li>
+                            <li><input onClick={this.handleSubmit} type="checkbox" name="language" value="node"/>  Node </li>
+                            <li><input onClick={this.handleSubmit} type="checkbox" name="language" value="swift"/> Swift</li>
+                        </ul>
+                    </label> 
                 </aside>
     
                 <div className="container">
@@ -121,7 +108,7 @@ class TileGrid extends React.Component {
 
 }
 
-  var language = [];
+var language = [];
 
 export default () => (
     <StaticQuery
