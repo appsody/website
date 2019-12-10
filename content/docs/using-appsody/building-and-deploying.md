@@ -9,7 +9,7 @@ such as a cloud platform that hosts a Kubernetes cluster.
 The Appsody CLI provides various options to help you with the transition from the development phase to the deployment phase:
 
 - You can use the `appsody build` command to generate a *deployment* Docker image on your local Docker registry, and then manually deploy that image to your runtime platform of choice.
-- You can use the `appsody deploy` command to deploy to build and deploy a Docker directly to a Kubernetes cluster that you are using for testing or staging.
+- You can use the `appsody deploy` command to build and deploy a Docker image directly to a Kubernetes cluster that you are using for testing or staging.
 - You can delegate the build and deployment steps to an external pipeline, such as a Tekton pipeline that consumes the source code of your Appsody project after you push it to a GitHub repository. Within the pipeline, you can run `appsody build`, which builds the application image and generates a deployment manifest. You can use the manifest to deploy your application to a Kubernetes environment where the Appsody operator is installed.
 
 These deployment options are covered in more detail in the following sections.
