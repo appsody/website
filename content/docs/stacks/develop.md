@@ -70,7 +70,25 @@ If you want to protect some of the files in your stack from being changed by a u
 
 ### IDE Considerations
 
-A template might need dependencies or other assets that come from the stack image itself, and if a user begins local development in an IDE, the IDE can't find those assets and show multiple errors, as they aren't present in the template directory. To avoid this, stack creators can include initialization scripts to ensure the user's environment is configured correctly before beginning local development.
+Sometimes, a template might need dependencies or other assets that come from the stack image. In this case, include a script that can be called when the appsody init command is run to ensure that the user's local development environment is correctly configured. Otherwise, when a user starts developing in their IDE and the dependencies or assets are missing, the IDE reports multiple errors.
+
+The following example is taken from the [Kitura](https://github.com/appsody/stacks/tree/master/incubator/kitura) stack:
+
+```
+#!/bin/bash
+#
+# Create local copy of package dependencies to enable building and code
+# completion while developing locally.
+#
+set -e
+
+# Current directory is .appsody-init, which is a child of the user's
+# project directory, so we copy the dependencies to a .appsody directory
+# one level up.
+cp -R -p ./deps ../.appsody
+```
+
+In this example, dependencies exist in a folder called `deps` and are copied into the project directory with a `cp` command.
 
 ### License
 

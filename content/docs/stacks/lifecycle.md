@@ -42,7 +42,7 @@ There are three types of volume/mounts used by Appsody:
 These will be processed by the Appsody CLI. The primary use of this is to mount the directory holding the user application into the container, so that the appsody-controller can have access to your application (and run it inside the container). For example:
 
    ```bash
-   ENV APPSODY_MOUNTS=/:/project/userapp
+   ENV APPSODY_MOUNTS=.:/project/userapp
    ```
 
    would map the current directory (where the init was performed), into `/project/userapp` in the container file system.
