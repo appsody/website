@@ -2,7 +2,7 @@ import React from "react";
 
 import Layout from "../components/layout"
 
-import TileGrid from "../components/tileGrid";
+import FeaturedTileGrid from "../components/featuredTileGrid";
 
 import kubeLogo from "../images/kubernetes_logo.png";
 import promLogo from "../images/prometheus_logo.png";
@@ -36,25 +36,10 @@ const IndexPage = () => (
         </div>
       </div>
     </section>
-    <section className="landing-section">
-      <div id="application-stack">
-        <h2>Application Stacks</h2>
-        <p id="application-stack-info">Select the application stack to view further details on GitHub or copy the command to start using the stack with our CLI.</p>
-      </div>
-      <TileGrid/>
-    </section>
-    <section className="landing-section text-center">
-      <h2 >Built on open source</h2>
-      <div className="d-flex flex-wrap justify-content-center">
-        <img className="m-3" src={ kubeLogo } alt="Kubernetes Logo"></img>
-        <img className="m-3" src={ promLogo } alt="Prometheus Logo"></img>
-        <img className="m-3" src={ tektonLogo } alt="Tekton Logo"></img>
-      </div>
-    </section>
     <section className="landing-section text-center">
       <h2 className="mb-2">Why Appsody?</h2>
       <div className="container">
-        <div className="row w-100 mx-auto homepage-sections">
+        <div className="row w-100 mx-auto">
           <div className="col m-3 p-4">
             <h3>CLI</h3>
             <p>Intuitive and powerful. The Appsody CLI allows you to connect to a Hub, pull down a stack, and create, build, test and deploy your application.</p>
@@ -68,6 +53,24 @@ const IndexPage = () => (
             <p>A central repository of available stacks, enabling a single point of control for applications built from these foundations.</p>
           </div>
         </div>
+      </div>
+    </section>
+    <section className="landing-section featured-stacks">
+      <div id="application-stack">
+        <h2>Featured Application Stacks</h2>
+        <p id="application-stack-info">Below you will find our most popular Stacks. Visit our dedicated <a className="index-link" href="https://appsody.dev/stacks">Stacks</a> page to see all the Stacks available.</p>
+      </div>
+      <FeaturedTileGrid/>
+      <div className="text-center t-50">
+        <Link to="/stacks" className="btn btn-primary mx-auto w-50" role="button">View All Stacks</Link>
+      </div>
+    </section>
+    <section className="landing-section text-center homepage-sections bottom-spacer">
+      <h2 >Built on open source</h2>
+      <div className="d-flex flex-wrap justify-content-center">
+        <img className="m-3" src={ kubeLogo } alt="Kubernetes Logo"></img>
+        <img className="m-3" src={ promLogo } alt="Prometheus Logo"></img>
+        <img className="m-3" src={ tektonLogo } alt="Tekton Logo"></img>
       </div>
     </section>
   </div>

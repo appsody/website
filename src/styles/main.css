@@ -101,6 +101,10 @@ section.landing-section h2 {
   font-size: 2.5em !important;
 }
 
+.loading-text {
+  margin: 4em 0;
+}
+
 .nav-link {
   color: var(--links-colour) !important;
 }
@@ -176,12 +180,13 @@ section.landing-section h2 {
   margin: 0.7em;
   width: 14em;
   height: 14em;
-  box-shadow: 1px 4px 15px rgba(0, 0, 0, .35);
+  box-shadow: 1px 3px 11px rgba(0, 0, 0, .2);
 }
 
 .card.flip {
   background-color: var(--colour-scheme-1);
   color: white !important;
+  box-shadow: 1px 3px 14px rgba(187,65,124, 0.8);
 }
 
 .card.flip input {
@@ -199,7 +204,16 @@ section.landing-section h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2em;
 }
+
+/* .featured-stacks {
+  background: var(--colour-scheme-1);
+  color: white;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+} */
 
 #input-cli{
   text-align: center;
@@ -287,6 +301,10 @@ section.landing-section h2 {
   }
 }
 
+.bottom-spacer {
+  margin-bottom: 3em;
+}
+
 footer {
   position: absolute;
   right: 0;
@@ -296,10 +314,12 @@ footer {
   box-shadow: 0 6px 29px var(--darker-grey);
   padding: 1em;
   text-align: center;
+  margin-bottom: -3em;
 }
 
 @media only screen and (max-width: 767px) {
   footer {
+    margin-bottom: 0;
     left: 0;
   }
 }
@@ -659,7 +679,6 @@ hr {
   margin: 0.75em 0;
 }
 
-
 @media only screen and (max-width: 767px) {
   .doc-content {
     margin-bottom: 3em;
@@ -779,4 +798,9 @@ blockquote p {
     margin-top: 0;
   }
 
+}
+
+.index-link {
+  color: var(--colour-scheme-1);
+  font-weight: 600;
 }
