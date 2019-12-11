@@ -807,9 +807,18 @@ blockquote p {
 
 label.stacks-functions {
   display: block;
+  margin-top: 5rem;
+  margin-right: 11em;
+  font-size:1rem ;
+  margin-left: 1.5rem ;
+  font-weight: bold;
+}
+
+label.stacks-level {
+  display: block;
   margin-top: 4em;
-  margin-right: 10em;
-  font-size:1.1rem ;
+  margin-right: 7em;
+  font-size:1rem ;
   margin-left: 1.5rem ;
   font-weight: bold;
 }
@@ -817,6 +826,11 @@ label.stacks-functions {
 .language-checkboxes-with-text {
   margin-left: 1.5rem;
 }
+
+.level-checkboxes-with-text {
+  margin-left: 1.5rem;
+}
+
 
 .row.mx-auto {
   width: 100%;
