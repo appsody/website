@@ -88,6 +88,7 @@ section.stacks-section {
   width: 100%;
   display: flex;
   align-items: center;
+  margin-top: 2rem;
   justify-content: center;
 }
 
@@ -202,13 +203,6 @@ section.landing-section h2 {
   padding-bottom: .25em !important;
   white-space: pre-wrap;
   font-size: .9em;
-}
-
-#application-stacks {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #input-cli{
@@ -796,7 +790,7 @@ blockquote p {
 }
 
 .sidebar {
-  width: 20em;
+  width: 15em;
   margin-top: -1.5rem;
   padding-left: 5em;
   background-color: white;
@@ -806,14 +800,31 @@ blockquote p {
   box-sizing: border-box;
   position: fixed;
   overflow-y: visible;
-  z-index: 1000;
   transition: 0.5s;
   left: 0;
   top: 0;
 }
 
-.stacks-functions {
+label.stacks-functions {
   display: block;
   margin-top: 4em;
   margin-right: 10em;
+  font-size:1.1rem ;
+  margin-left: 1.5rem ;
+  font-weight: bold;
 }
+
+.language-checkboxes-with-text {
+  margin-left: 1.5rem;
+}
+
+.row.mx-auto {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stacks {
+  padding-left: 12em;
+}
+

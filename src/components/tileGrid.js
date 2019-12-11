@@ -33,9 +33,9 @@ class TileGrid extends React.Component {
 
       rerenderTiles() {
         if (language.length !== 0) {
-            this.tiles = this.props.stacks.map(stack => {
+            this.tiles = this.props.stacks.map(stack => {                
                 for (var i = 0; i < language.length; i++) {          
-                    if (stack !== null && (stack.id).includes(language[i])) {
+                    if (stack !== null && (stack.language).includes(language[i])) {
                         if (stack == null) return null;
                         const templateURL = stack.templates[0].url;
                         const repo = templateURL.split("/").reverse()[0].split(".")[0];
@@ -87,14 +87,26 @@ class TileGrid extends React.Component {
         return (
             <>
                 <aside id="sidebar" className="sidebar">s
-                    <label className="stacks-functions">
-                        Language
-                        <ul className="doc-sidebar-hidden-list">
-                            <li><input onClick={this.handleSubmit} type="checkbox" name="language" value="java"/> Java</li>
-                            <li><input onClick={this.handleSubmit} type="checkbox" name="language" value="node"/>  Node </li>
-                            <li><input onClick={this.handleSubmit} type="checkbox" name="language" value="swift"/> Swift</li>
-                        </ul>
-                    </label> 
+                    <label className="stacks-functions">Language</label> 
+                        <table className="language-checkboxes-with-text">
+                            <tbody>
+                            <tr>
+                                <td><input onClick={this.handleSubmit} type="checkbox" name="language" value="java"/></td>
+                                <td>Java</td>
+                            </tr>
+                            <tr>
+                                <td><input onClick={this.handleSubmit} type="checkbox" name="language" value="node"/></td>
+                                <td>Node</td>
+                            </tr>
+                            <tr>
+                                <td><input onClick={this.handleSubmit} type="checkbox" name="language" value="swift"/></td>
+                                <td>Swift</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                           
+
+                    
                 </aside>
     
                 <div className="container">
@@ -115,18 +127,19 @@ export default () => (
       query={graphql`
         query {
             allIndexesYaml {
-                nodes {
-                    stacks {
-                        id
-                        name
-                        description
-                        templates {
-                            url
-                        }
-                    }
+              nodes {
+                stacks {
+                  id
+                  name
+                  description
+                  templates {
+                    url
+                  }
+                  language
                 }
+              }
             }
-        }
+          }
       `}
       render={data => {
         let stacks = [];
