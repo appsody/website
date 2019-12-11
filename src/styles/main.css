@@ -575,6 +575,7 @@ hr {
 
 .doc-content table tr td {
   margin: 0;
+  vertical-align: top;
   text-align: left;
   padding: 0.7em 1em;
 }
