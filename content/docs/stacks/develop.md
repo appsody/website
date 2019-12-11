@@ -119,9 +119,9 @@ Packaging allows a stack developer to build all the components of a stack and en
 
 ### Templating
 
-Often in a stack, there are common values that are used across the image and template. It can be laborious to manually go through a stack and make changes to the values in every place they occur, especially if they change frequently, such as the version number. [Go templating](https://golang.org/pkg/text/template/) allows stack creators to declare values in their `stack.yaml` file and use templating constructs to refer to them throughout the stack; values can be changed in one place and always remain in sync.
+Often in a stack, there are common values that are used across the image and template. It can be laborious to manually go through a stack and make changes to the values in every place they occur, especially if they change frequently, such as the version number. Appsody templating allows stack creators to declare values in their `stack.yaml` file and use templating constructs to refer to them throughout the stack; values can be changed in one place and always remain in sync.
 
-Templates are converted into their values before a stack is packaged. To use templating in your stack, wrap your templating variables with `{{ }}`.  All variables are prepended with `.stack`.
+Templates are converted into their values before a stack is packaged. To use templating in your stack, wrap your templating variables with `{{.stack}}`.
 
 **Example usage:**
 
@@ -168,8 +168,6 @@ This is {{.stack.variable1}}, this is {{.stack.variable2}} and this is {{.stack.
 ```
 
 > Custom variables must begin with an alphanumeric character.
-
-If you want to use other templating libraries that have the same `{{ }}` delimiters, wrap your variables with `{{"{{ }}"}}`. This construct leaves your templating variable intact without causing an error during the `stack package` command.
 
 ---
 
