@@ -53,3 +53,14 @@
     font-weight: 600;
   }
 }
+
+
+@media (prefers-color-scheme: dark) {
+  .desktop-sidebar-hamburger {
+    background-color: rgba(40,40,40);
+    box-shadow: 2px 0px 12px rgba(187, 65, 124, 0.12);
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,0.5);
+  }
+
+}

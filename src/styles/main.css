@@ -54,6 +54,14 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 -6px 29px var(--dark-grey);
 }
 
+.black-appsody-full {
+  display: block;
+}
+
+.white-appsody-full {
+  display: none;
+}
+
 .btn-primary {
   color: var(--white) !important;
   background-color: var(--colour-scheme-1) !important;
@@ -779,4 +787,139 @@ blockquote p {
     margin-top: 0;
   }
 
+}
+
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background-color: rgb(30,30,30);
+    color: #ccc;
+  }
+
+  .tile {
+    background-color: rgb(40,40,40);
+  }
+
+  .card {
+    box-shadow: 1px 4px 15px rgba(10, 10, 10, .55);
+  }
+
+  .flip a.btn {
+    color: black;
+  }
+
+  #main-nav {
+    background-color: rgb(40,40,40);
+    box-shadow: 0 -6px 19px rgba(0,0,0,0.7);
+  }
+
+  .black-appsody-full {
+    display: none;
+  }
+
+  .white-appsody-full {
+    display: block;
+  }
+
+  .btn-primary {
+    color: white !important;
+    background-color: var(--colour-scheme-1-dark) !important;
+    border-color: #963463 !important;
+  }
+
+  .btn-clear {
+    color: white;
+  }
+
+  .btn-clear:hover {
+    background: rgb(40,40,40);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #BB417C !important;
+    border-color: var(--colour-scheme-1) !important;
+  }
+
+  footer {
+    background-color: var(--colour-scheme-1-dark);
+    box-shadow: 0 6px 29px black;
+  }
+
+  .navbar-nav a {
+    color: white !important;
+  }
+
+  .navbar-img {
+    filter: invert(100%);
+  }
+
+  .dropdown-content {
+    background-color: rgb(30,30,30);
+    border-color: rgba(40,40,40,0.5);
+  }
+
+  .dropdown a:hover {
+    background-color: rgba(128, 27, 102, 0.5);
+  }
+
+  #search-input {
+    background-color: rgb(30,30,30) !important;
+    border-color: black;
+  }
+
+  .form-control:focus {
+    color: white;
+  }
+
+  .sidebar-heading-link {
+    background-color: rgb(40,40,40) !important;
+    color: white !important;
+  }
+
+  .sidebar-link {
+    color: white;
+  }
+
+  .sidebar-heading-link a {
+    color: white;
+  }
+
+  .accordion-icon {
+    filter: invert(100%)
+  }
+
+  .doc-content pre {
+    background-color: rgb(40,40,40);
+    color: white;
+    border-color: rgba(0,0,0,0.4);
+  }
+
+  .doc-content :not(pre)>code {
+    color: white;
+  }
+
+  blockquote {
+    background-color: rgba(128, 27, 102, 0.3);
+  }
+
+  .glossary-content blockquote {
+    background-color: rgb(40,40,40);
+    color: white;
+  }
+
+  .doc-content table tr th {
+    color: white;
+  }
+
+  .doc-content table tr:nth-child(even) {
+    background-color: rgb(40,40,40);
+  }
+  .docs-header-text {
+    color: white;
+  }
+
+  .docs-header-pink {
+    color: var(--colour-scheme-1);
+  }
 }

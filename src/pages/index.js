@@ -8,6 +8,7 @@ import kubeLogo from "../images/kubernetes_logo.png";
 import promLogo from "../images/prometheus_logo.png";
 import tektonLogo from "../images/tekton_logo.png";
 
+import appsodyFullLogoWhite from "../images/appsody_full_logo_white.svg";
 import appsodyFullLogo from "../images/appsody_full_logo.svg";
 import appsodyHello from "../images/appsody_hello.svg";
 
@@ -19,7 +20,8 @@ const IndexPage = () => (
     <section className="landing-section">
       <div className="row w-100 mx-auto">
         <div className="col">
-          <img className="w-75 my-4" src={ appsodyFullLogo } alt="Appsody Logo"></img>
+          <img className="w-75 my-4 white-appsody-full" src={ appsodyFullLogoWhite } alt="Appsody Logo"></img>
+          <img className="w-75 my-4 black-appsody-full" src={ appsodyFullLogo } alt="Appsody Logo"></img>
           <p className="lead">
             Compose a cloud native masterpiece.
           </p>

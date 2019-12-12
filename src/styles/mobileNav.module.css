@@ -55,4 +55,14 @@
     }
   }
   
-  
+  @media (prefers-color-scheme: dark) {
+    .mobile-nav {
+      background-color: rgb(40,40,40);
+      color: white;
+      border-top: 3px solid rgba(30,30,30,0.8);
+    }
+
+    .mobile-nav a{
+      color: white;
+    }
+  }  
