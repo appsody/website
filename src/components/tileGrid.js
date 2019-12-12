@@ -189,6 +189,18 @@ class TileGrid extends React.Component {
       
     });
 
+    moveSidebar() {
+        document.getElementById("funnel-icon").classList.toggle('open');
+
+        expanded = !expanded;
+
+        if (expanded) {
+        document.getElementById("sidebar").style.marginLeft= "0";      
+        } else {
+        document.getElementById("sidebar").style.marginLeft = "-100vw";
+        }
+    }
+
     // languages = this.props.stacks.map(stack => {
     //     if (stack == null) return null;
     //     if (stack !== null) {
@@ -241,6 +253,10 @@ class TileGrid extends React.Component {
                         {this.tiles}
                     </div>
                 </div>
+
+                <section onClick={() => this.moveSidebar()} className="funnel-icon" id="funnel-icon">
+                    <i class="fas fa-filter"></i>
+                </section>
             </>
         )
     }
@@ -248,6 +264,7 @@ class TileGrid extends React.Component {
 
 var language = [];
 var level = [];
+var expanded = false;
 
 export default () => (
     <StaticQuery
