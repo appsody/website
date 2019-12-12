@@ -893,7 +893,7 @@ input.checkbox-item {
   .fas.fa-filter {
     display: inline;
   }
-  
+
   .funnel-icon{
     display: flex;
     flex-direction: column;
@@ -912,3 +912,22 @@ input.checkbox-item {
     border: 1px solid rgba(255,255,255,0.1);
   }
 }
+
+@media (min-width: 768px) {
+  .navbar-expand-md .navbar-nav .nav-link {
+    padding-right: .3rem;
+    padding-left: .3rem;
+  }
+
+.form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    margin-bottom: 0.3rem;
+    vertical-align: middle;
+  }
+
+  .px-5 {
+    padding-left: 5rem!important;
+  }
+}
+
