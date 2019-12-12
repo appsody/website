@@ -212,6 +212,19 @@ class TileGrid extends React.Component {
         return (
             <>
                 <aside id="sidebar" className="sidebar">
+                <label className="stacks-level">Stack Level</label> 
+                    <ul className="checkbox-list">
+                        <li className="checkbox-item">
+                            <input className="checkbox-item" onClick={this.filterByLevel} type="checkbox" name="level" value="experimental"/> Experimental
+                        </li>
+                        <li className="checkbox-item">
+                            <input className="checkbox-item" onClick={this.filterByLevel} type="checkbox" name="level" value="incubator"/> Incubator
+                        </li>
+                        <li className="checkbox-item">
+                            <input className="checkbox-item" onClick={this.filterByLevel} type="checkbox" name="level" value="stable"/> Stable
+                        </li>
+                    </ul>
+                    
                     <label className="stacks-functions">Language</label> 
                     <ul className="checkbox-list">
                         <li>
@@ -231,19 +244,6 @@ class TileGrid extends React.Component {
                         </li>
                         <li>
                             <input className="checkbox-item" onClick={this.filterByLanguage} type="checkbox" name="language" value="rust"/>Rust
-                        </li>
-                    </ul>
-                 
-                    <label className="stacks-level">Stack Level</label> 
-                    <ul className="checkbox-list">
-                        <li className="checkbox-item">
-                            <input className="checkbox-item" onClick={this.filterByLevel} type="checkbox" name="level" value="experimental"/> Experimental
-                        </li>
-                        <li className="checkbox-item">
-                            <input className="checkbox-item" onClick={this.filterByLevel} type="checkbox" name="level" value="incubator"/> Incubator
-                        </li>
-                        <li className="checkbox-item">
-                            <input className="checkbox-item" onClick={this.filterByLevel} type="checkbox" name="level" value="stable"/> Stable
                         </li>
                     </ul>
                 </aside>

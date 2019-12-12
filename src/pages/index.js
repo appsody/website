@@ -2,8 +2,6 @@ import React from "react";
 
 import Layout from "../components/layout"
 
-import TileGrid from "../components/tileGrid";
-
 import kubeLogo from "../images/kubernetes_logo.png";
 import promLogo from "../images/prometheus_logo.png";
 import tektonLogo from "../images/tekton_logo.png";
@@ -35,13 +33,6 @@ const IndexPage = () => (
           <img id="appsody-hello" className="mt-3" src={ appsodyHello } alt="Appsody Logo"></img>
         </div>
       </div>
-    </section>
-    <section className="landing-section">
-      <div id="application-stack">
-        <h2>Application Stacks</h2>
-        <p id="application-stack-info">Select the application stack to view further details on GitHub or copy the command to start using the stack with our CLI.</p>
-      </div>
-      <TileGrid/>
     </section>
     <section className="landing-section text-center">
       <h2 >Built on open source</h2>

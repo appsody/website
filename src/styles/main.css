@@ -815,8 +815,8 @@ blockquote p {
 
 label.stacks-functions {
   display: block;
-  margin-top: 5rem;
-  margin-right: 11em;
+  margin-top: 7em;
+  margin-right: 7em;
   font-size:1rem ;
   margin-left: 1.5rem ;
   font-weight: bold;
@@ -824,8 +824,8 @@ label.stacks-functions {
 
 label.stacks-level {
   display: block;
-  margin-top: 11em;
-  margin-right: 7em;
+  margin-top: 6rem;
+  margin-right: 6em;
   font-size:1rem ;
   margin-left: 1.5rem ;
   font-weight: bold;
@@ -851,7 +851,7 @@ margin-left: 2rem;
 }
 
 input.checkbox-item {
-  width: 4rem
+  width: 2rem
 }
 
 .row.mx-auto {
@@ -893,6 +893,7 @@ input.checkbox-item {
   .fas.fa-filter {
     display: inline;
   }
+  
   .funnel-icon{
     display: flex;
     flex-direction: column;
