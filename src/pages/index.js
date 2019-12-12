@@ -2,7 +2,8 @@ import React from "react";
 
 import Layout from "../components/layout"
 
-import FeaturedTileGrid from "../components/featuredTileGrid";
+import TopDownloadedTileGrid from "../components/topDownloadedTileGrid";
+import RecentlyUpdatedTileGrid from "../components/recentlyUpdatedTileGrid";
 
 import kubeLogo from "../images/kubernetes_logo.png";
 import promLogo from "../images/prometheus_logo.png";
@@ -58,11 +59,20 @@ const IndexPage = () => (
     <section className="landing-section featured-stacks">
       <div id="application-stack">
         <h2>Featured Application Stacks</h2>
-        <p id="application-stack-info">Below you will find our most popular Stacks. Visit our dedicated <a className="index-link" href="https://appsody.dev/stacks">Stacks</a> page to see all the Stacks available.</p>
+        <div className="btn-group" role="group" >
+          <button id="downloads-button" onClick={() => switchDownloaded()}  className="btn btn-primary stepper-left">Most Popular</button>
+          <button id="recently-button" onClick={() => switchRecent()}  className="btn btn-clear stepper-right">Recently Updated</button>
+        </div>
       </div>
-      <FeaturedTileGrid/>
+      <div id="top-downloads" className="top-downloaded-tile-grid">
+        <TopDownloadedTileGrid/>
+      </div>
+      <div id="recently-updated" className="recently-updated-tile-grid">
+        <RecentlyUpdatedTileGrid/>
+      </div>
       <div className="text-center t-50">
-        <Link to="/stacks" className="btn btn-primary mx-auto w-50" role="button">View All Stacks</Link>
+      <p id="application-stack-info">Visit our dedicated Stacks page to see all of the Stacks available.</p>
+        <Link to="/stacks" className="btn btn-primary mx-auto all-stacks-button" role="button">View All Stacks</Link>
       </div>
     </section>
     <section className="landing-section text-center homepage-sections bottom-spacer">
@@ -78,3 +88,32 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+function switchDownloaded() {
+  console.log("Switching to top downloads");
+
+  document.getElementById('recently-updated').style.cssText = 'display: none';
+  document.getElementById('top-downloads').style.cssText = 'display: block';
+
+  document.getElementById('downloads-button').style.cssText = 'background: #BB417C; color: white'
+  document.getElementById('downloads-button').className = 'btn btn-primary stepper-left'
+
+  document.getElementById('recently-button').style.cssText = 'background: white; color: black'
+  document.getElementById('recently-button').className = 'btn btn-clear stepper-right'
+
+
+}
+
+function switchRecent() {
+  console.log("Switching to recently updated");
+
+  document.getElementById('top-downloads').style.cssText = 'display: none';
+  document.getElementById('recently-updated').style.cssText = 'display: block';
+
+  document.getElementById('downloads-button').style.cssText = 'background: white; color: black'
+  document.getElementById('downloads-button').className = 'btn btn-clear stepper-left'
+
+  document.getElementById('recently-button').style.cssText = 'background: #BB417C; color: white'
+  document.getElementById('recently-button').className = 'btn btn-primary stepper-right'
+
+}

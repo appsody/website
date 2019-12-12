@@ -10,7 +10,7 @@
   --darker-grey: #9B9B9B;
   --off-black-1: #100F15;
   --colour-scheme-1: #BB417C;
-  --colour-scheme-2: #ED8E00;
+  --colour-scheme-2: #ed8e00;
   --colour-scheme-3: #C4302F;
   --colour-scheme-1-dark: #963463;
 
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 section.landing-section {
-  padding: 4em 0;
+  padding: 3em 0;
 }
 
 section.landing-section:first-child {
@@ -101,8 +101,48 @@ section.landing-section h2 {
   font-size: 2.5em !important;
 }
 
+.all-stacks-button {
+  width: 18em;
+}
+
 .loading-text {
-  margin: 4em 0;
+  margin: 4rem 0;
+}
+
+.stepper-left {
+  border-radius: 10px 0 0 10px !important;
+  width: 14rem;
+}
+
+.stepper-right {
+  border-radius: 0 10px 10px 0 !important;
+  width: 14em;
+}
+
+@media only screen and (max-width: 767px) {
+  .stepper-left {
+    width: 10rem;
+  }
+
+  .stepper-right {
+    width: 10rem;
+  }
+}
+.updated-date {
+  color: rgba(0, 0, 0, 0.5);
+  padding-top:10px;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.recently-updated-tile-grid {
+  display: none;
+}
+
+.btn-group {
+  margin: 1em 0 2em 0;
 }
 
 .nav-link {
@@ -179,7 +219,7 @@ section.landing-section h2 {
   padding: 0.5em 1em 1em 1em;
   margin: 0.7em;
   width: 14em;
-  height: 14em;
+  height: 15.5em;
   box-shadow: 1px 3px 11px rgba(0, 0, 0, .2);
 }
 
@@ -225,6 +265,7 @@ section.landing-section h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top:1em;
 }
 
 #command-input input{
