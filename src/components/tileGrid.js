@@ -201,53 +201,39 @@ class TileGrid extends React.Component {
             <>
                 <aside id="sidebar" className="sidebar">
                     <label className="stacks-functions">Language</label> 
-                        <table className="language-checkboxes-with-text">
-                            <tbody>
-                            <tr>
-                                <td><input onClick={this.filterByLanguage} type="checkbox" name="language" value="java"/></td>
-                                <td>Java</td>
-                            </tr>
-                            <tr>
-                                <td><input onClick={this.filterByLanguage} type="checkbox" name="language" value="node"/></td>
-                                <td>Node</td>
-                            </tr>
-                            <tr>
-                                <td><input onClick={this.filterByLanguage} type="checkbox" name="language" value="swift"/></td>
-                                <td>Swift</td>
-                            </tr>
-                            <tr>
-                                <td><input onClick={this.filterByLanguage} type="checkbox" name="language" value="python"/></td>
-                                <td>Python</td>
-                            </tr>
-                            <tr>
-                                <td><input onClick={this.filterByLanguage} type="checkbox" name="language" value="bash"/></td>
-                                <td>Bash</td>
-                            </tr>
-                            <tr>
-                                <td><input onClick={this.filterByLanguage} type="checkbox" name="language" value="rust"/></td>
-                                <td>Rust</td>
-                            </tr>
-                            </tbody>
-                        </table>
-
-
-                        <label className="stacks-level">Stack Level</label> 
-                        <table className="level-checkboxes-with-text">
-                            <tbody>
-                            <tr>
-                                <td><input onClick={this.filterByLevel} type="checkbox" name="level" value="experimental"/></td>
-                                <td>Experimental</td>
-                            </tr>
-                            <tr>
-                                <td><input onClick={this.filterByLevel} type="checkbox" name="level" value="incubator"/></td>
-                                <td>Incubator</td>
-                            </tr>
-                            <tr>
-                                <td><input onClick={this.filterByLevel} type="checkbox" name="level" value="stable"/></td>
-                                <td>Stable</td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <ul className="checkbox-list">
+                        <li>
+                             <input className="checkbox-item" onClick={this.filterByLanguage} type="checkbox" name="language" value="java"/>Java
+                        </li>
+                        <li>  
+                            <input className="checkbox-item" onClick={this.filterByLanguage} type="checkbox" name="language" value="node"/>Node
+                        </li>
+                        <li>
+                            <input className="checkbox-item" onClick={this.filterByLanguage} type="checkbox" name="language" value="swift"/>Swift
+                        </li>
+                        <li>
+                            <input className="checkbox-item" onClick={this.filterByLanguage} type="checkbox" name="language" value="python"/>Python
+                        </li>
+                        <li>
+                            <input className="checkbox-item" onClick={this.filterByLanguage} type="checkbox" name="language" value="bash"/>Bash
+                        </li>
+                        <li>
+                            <input className="checkbox-item" onClick={this.filterByLanguage} type="checkbox" name="language" value="rust"/>Rust
+                        </li>
+                    </ul>
+                 
+                    <label className="stacks-level">Stack Level</label> 
+                    <ul className="checkbox-list">
+                        <li className="checkbox-item">
+                            <input className="checkbox-item" onClick={this.filterByLevel} type="checkbox" name="level" value="experimental"/> Experimental
+                        </li>
+                        <li className="checkbox-item">
+                            <input className="checkbox-item" onClick={this.filterByLevel} type="checkbox" name="level" value="incubator"/> Incubator
+                        </li>
+                        <li className="checkbox-item">
+                            <input className="checkbox-item" onClick={this.filterByLevel} type="checkbox" name="level" value="stable"/> Stable
+                        </li>
+                    </ul>
                 </aside>
     
                 <div className="container">
