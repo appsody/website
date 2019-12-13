@@ -10,6 +10,9 @@ const MobileNav = () => {
 
       <Link className={styles.navLink} to="/docs">Docs</Link> 
 
+      <Link className={styles.navLink} to="/stacks">Stacks</Link> 
+
+
       <a className={styles.navLink} href="https://medium.com/appsody" target="_blank" rel="noopener noreferrer">Tutorials</a>
 
     </nav>
