@@ -21,7 +21,7 @@ export default function Template({
       <DesktopSidebarOpenButton/>
       <SidebarExtender />
       <DesktopSidebarCloseButton/>
-      <Doc html={html}/>
+      <Doc html={html} title={title}/>
     </Layout>
   )
 }
