@@ -789,6 +789,7 @@ blockquote p {
 
 }
 
+
 @media (prefers-color-scheme: dark) {
 
   body {
@@ -802,6 +803,10 @@ blockquote p {
 
   .card {
     box-shadow: 1px 4px 15px rgba(10, 10, 10, .55);
+  }
+
+  .updated-date {
+    color: rgba(255,255,255,0.6);
   }
 
   .flip a.btn {
@@ -819,6 +824,19 @@ blockquote p {
 
   .white-appsody-full {
     display: block;
+  }
+
+  @media only screen and (max-width: 767px) {
+    
+  .full-logo-homepage-white {
+    /* margin: auto; */
+    display: block;
+    /* width: 90% !important; */
+  }
+  }
+
+  .hero-description {
+    color: white;
   }
 
   .btn-primary {

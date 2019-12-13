@@ -20,8 +20,8 @@ const IndexPage = () => (
     <section className="landing-section">
       <div className="row w-100 mx-auto">
         <div className="col">
-          <img className="w-75 my-4 white-appsody-full" src={ appsodyFullLogoWhite } alt="Appsody Logo"></img>
-          <img className="w-75 my-4 black-appsody-full" src={ appsodyFullLogo } alt="Appsody Logo"></img>
+          <img className="w-75 my-4 full-logo-homepage-white white-appsody-full" src={ appsodyFullLogoWhite } alt="Appsody Logo"></img>
+          <img className="w-75 my-4 full-logo-homepage-black black-appsody-full" src={ appsodyFullLogo } alt="Appsody Logo"></img>
           <p className="lead">
             Compose a cloud native masterpiece.
           </p>
