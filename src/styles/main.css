@@ -50,8 +50,9 @@ h1, h2, h3, h4, h5, h6 {
 
 
 #main-nav {
-  background-color: var(--white);
+  background-color: rgba(255,255,255,0.85);
   box-shadow: 0 -6px 29px var(--dark-grey);
+  backdrop-filter: blur(25px) contrast(125%);
 }
 
 .black-appsody-full {
@@ -814,8 +815,9 @@ blockquote p {
   }
 
   #main-nav {
-    background-color: rgb(40,40,40);
+    background-color: rgba(40,40,40, 0.75);
     box-shadow: 0 -6px 19px rgba(0,0,0,0.7);
+    backdrop-filter: blur(25px), contrast(140%);
   }
 
   .black-appsody-full {
