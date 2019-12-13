@@ -842,6 +842,7 @@ margin-left: 2rem;
   width: 15rem;
   align-items: baseline;
   line-height: 1.5;
+  text-transform: capitalize;
 }
 
 .checkbox-item{
@@ -935,4 +936,3 @@ input.checkbox-item {
     margin-left: 0.5rem;
   }
 }
-

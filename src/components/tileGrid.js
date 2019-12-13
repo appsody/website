@@ -24,12 +24,12 @@ class TileGrid extends React.Component {
             if(i.checked && !language.includes(i.value)) {
                     language.push(i.value);
                     this.setState({
-                        [language]: i.value,
+                        language: i.value,
                     })                
             } else if (!i.checked && language.indexOf(i.value) > -1) {
                 language.splice(language.indexOf(i.value), 1);
                 this.setState({
-                    [language]: "",
+                    language: "",
                 })
             }
         });
@@ -77,7 +77,6 @@ class TileGrid extends React.Component {
                     }
                 });
             } else {
-                console.log("here")
                 this.tiles = this.props.stacks.map(stack => {                
                     for (var i = 0; i < level.length; i++) {        
                         if (stack !== null && (stack.templates[0].url.includes(this.defaultRepo))) {
@@ -139,7 +138,6 @@ class TileGrid extends React.Component {
         } else if((level.length === 1 && level.includes("stable"))) {
             this.tiles = []
         } else if (language.length !== 0) {
-            console.log("here")
             this.tiles = this.props.stacks.map(stack => {                
                 for (var i = 0; i < language.length; i++) {          
                     if (stack !== null && (stack.language).includes(language[i])) {
@@ -201,14 +199,24 @@ class TileGrid extends React.Component {
         }
     }
 
-    // languages = this.props.stacks.map(stack => {
-    //     if (stack == null) return null;
-    //     if (stack !== null) {
-    //         return stack.language;
-    //     }
-    // });
-
     render() {
+        this.props.stacks.forEach(stack => {
+            if (stack == null) return null;
+            if (stack !== null) {
+                if (!languageList.includes(stack.language)) {
+                    languageList.push(stack.language)
+                }
+            }
+        });
+
+            const languages = languageList.map(lang => {
+                return (
+                    <li>
+                        <input className="language checkbox-item" onClick={this.filterByLanguage} type="checkbox" name="language" value={lang}/>{lang}
+                    </li>
+                )
+        });
+
         return (
             <>
                 <aside id="sidebar" className="sidebar">
@@ -227,24 +235,7 @@ class TileGrid extends React.Component {
                     
                     <label className="stacks-functions">Language</label> 
                     <ul className="checkbox-list">
-                        <li>
-                             <input className="checkbox-item" onClick={this.filterByLanguage} type="checkbox" name="language" value="java"/>Java
-                        </li>
-                        <li>  
-                            <input className="checkbox-item" onClick={this.filterByLanguage} type="checkbox" name="language" value="node"/>Node
-                        </li>
-                        <li>
-                            <input className="checkbox-item" onClick={this.filterByLanguage} type="checkbox" name="language" value="swift"/>Swift
-                        </li>
-                        <li>
-                            <input className="checkbox-item" onClick={this.filterByLanguage} type="checkbox" name="language" value="python"/>Python
-                        </li>
-                        <li>
-                            <input className="checkbox-item" onClick={this.filterByLanguage} type="checkbox" name="language" value="bash"/>Bash
-                        </li>
-                        <li>
-                            <input className="checkbox-item" onClick={this.filterByLanguage} type="checkbox" name="language" value="rust"/>Rust
-                        </li>
+                        {languages}
                     </ul>
                 </aside>
     
@@ -265,6 +256,7 @@ class TileGrid extends React.Component {
 var language = [];
 var level = [];
 var expanded = false;
+var languageList = [];
 
 export default () => (
     <StaticQuery
