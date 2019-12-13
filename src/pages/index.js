@@ -63,6 +63,7 @@ const IndexPage = () => (
           <button id="downloads-button" onClick={() => switchDownloaded()}  className="btn btn-primary stepper-left">Most Popular</button>
           <button id="recently-button" onClick={() => switchRecent()}  className="btn btn-clear stepper-right">Recently Updated</button>
         </div>
+        <p>Select the application stack to view further details on GitHub or copy the command to start using the stack with our CLI.</p>
       </div>
       <div id="top-downloads" className="top-downloaded-tile-grid">
         <TopDownloadedTileGrid/>
@@ -99,7 +100,6 @@ function switchDownloaded() {
 
   document.getElementById('recently-button').style.cssText = 'background: white; color: black'
   document.getElementById('recently-button').className = 'btn btn-clear stepper-right'
-
 
 }
 

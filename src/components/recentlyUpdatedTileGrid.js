@@ -46,7 +46,6 @@ class RecentlyUpdatedTileGrid extends Component {
             }
         });
 
-        console.log("saving topstacks : " + JSON.stringify(stackNames));
         this.setState({ topStacks: stackNames });
     }
 
@@ -67,9 +66,6 @@ class RecentlyUpdatedTileGrid extends Component {
         });
 
         finalStacks = finalStacks.sort((a, b) => b.updated - a.updated);
-
-        console.log("state " + this.state.topStacks);
-        console.log("finalstacks " + JSON.stringify(finalStacks));
 
         const tiles = finalStacks.map(stack => {
         if (stack == null) return null;

@@ -119,13 +119,24 @@ section.landing-section h2 {
   width: 14em;
 }
 
+.btn-group {
+  margin: 1em 0 2em 0;
+  width: 40%;
+}
+
+
 @media only screen and (max-width: 767px) {
+
+  .btn-group {
+    width: 100%;
+  }
+
   .stepper-left {
-    width: 10rem;
+    width: 50%;
   }
 
   .stepper-right {
-    width: 10rem;
+    width: 50%;
   }
 }
 .updated-date {
@@ -139,10 +150,6 @@ section.landing-section h2 {
 
 .recently-updated-tile-grid {
   display: none;
-}
-
-.btn-group {
-  margin: 1em 0 2em 0;
 }
 
 .nav-link {
@@ -246,14 +253,6 @@ section.landing-section h2 {
   justify-content: center;
   margin-bottom: 2em;
 }
-
-/* .featured-stacks {
-  background: var(--colour-scheme-1);
-  color: white;
-  left: 0px;
-  right: 0px;
-  width: 100%;
-} */
 
 #input-cli{
   text-align: center;
