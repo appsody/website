@@ -90,7 +90,6 @@ const IndexPage = () => (
 export default IndexPage
 
 function switchDownloaded() {
-  console.log("Switching to top downloads");
 
   document.getElementById('recently-updated').style.cssText = 'display: none';
   document.getElementById('top-downloads').style.cssText = 'display: block';
@@ -105,8 +104,7 @@ function switchDownloaded() {
 }
 
 function switchRecent() {
-  console.log("Switching to recently updated");
-
+  
   document.getElementById('top-downloads').style.cssText = 'display: none';
   document.getElementById('recently-updated').style.cssText = 'display: block';
 
