@@ -246,7 +246,7 @@ class TileGrid extends React.Component {
                 </div>
 
                 <section onClick={() => this.moveSidebar()} className="funnel-icon" id="funnel-icon">
-                    <i class="fas fa-filter"></i>
+                    <i className="fas fa-filter"></i>
                 </section>
             </>
         )
