@@ -851,7 +851,7 @@ margin-left: 2rem;
 }
 
 input.checkbox-item {
-  width: 2rem
+  width: 2rem;
 }
 
 .row.mx-auto {
@@ -917,6 +917,7 @@ input.checkbox-item {
   .navbar-expand-md .navbar-nav .nav-link {
     padding-right: .3rem;
     padding-left: .3rem;
+    
   }
 
 .form-inline .form-control {
@@ -928,6 +929,10 @@ input.checkbox-item {
 
   .px-5 {
     padding-left: 5rem!important;
+  }
+
+  input.checkbox-item {
+    margin-left: 0.5rem;
   }
 }
 
