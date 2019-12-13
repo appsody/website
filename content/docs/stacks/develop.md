@@ -9,8 +9,6 @@ Although there are many Appsody stacks to choose from, you might want to create 
 
 ## Start developing a stack
 
-The following methods detail how you can use the Appsody CLI to create your own stack or modify an existing Appsody stack.
-
 ### Create your own stack using the Appsody CLI
 
 The quickest way to create a new stack is to use the `appsody stack create` command, which creates a new stack by copying an existing stack. By default, the new stack is based on the sample stack. For example, to create a new stack named my-stack, in a new directory, use this command:
@@ -18,8 +16,6 @@ The quickest way to create a new stack is to use the `appsody stack create` comm
 ```
 appsody stack create my-stack
 ```
-
-
 
 ### Modify an existing stack using the Appsody CLI
 
@@ -96,7 +92,7 @@ You must provide a valid license when developing a stack, such as [Apache 2.0](h
 
 ## Create your project templates
 
-A stack can have multiple templates. Each template might represent a different class of starter application that uses the stack technology components. When you create your stack, include a simple template to get users started, such as a "Hello World!". Each stack should specify a default template that is used to initialize a project when a template is not specified with the `appsody init` command. Specify your default template in the `stack.yaml` file.
+When you create your stack, include a simple template to get users started, such as a "Hello World!". Each stack should specify a default template that is used to initialize a project when a template is not specified with the `appsody init` command. Specify your default template in the `stack.yaml` file. A stack can have multiple templates. Each template might represent a different class of starter application that uses the stack technology components.
 
 If you include a capability that applies to all of your templates, consider including that capability in the stack image instead.
 
@@ -117,11 +113,11 @@ Packaging allows a stack developer to build all the components of a stack and en
 
 ## Advanced Topics
 
-### Templating
+### Stack Variables
 
-Often in a stack, there are common values that are used across the image and template. It can be laborious to manually go through a stack and make changes to the values in every place they occur, especially if they change frequently, such as the version number. Appsody templating allows stack creators to declare values in their `stack.yaml` file and use templating constructs to refer to them throughout the stack; values can be changed in one place and always remain in sync.
+Often in a stack, there are common values that are used across the image and template. It can be laborious to manually go through a stack and make changes to the values in every place they occur, especially if they change frequently, such as the version number. Stack creators can declare values in their `stack.yaml` file and use variables to refer to them throughout the stack; values can be changed in one place and always remain in sync.
 
-Templates are converted into their values before a stack is packaged. To use templating in your stack, wrap your templating variables with `{{.stack}}`.
+Variables are converted into their values before a stack is packaged. To use variables in your stack, wrap your stack variables with `{{.stack}}`.
 
 **Example usage:**
 
@@ -129,9 +125,9 @@ Templates are converted into their values before a stack is packaged. To use tem
 This is {{.stack.name}}, running version: {{.stack.version}}.
 ```
 
-> Do not use templating for a readme file.
+> Do not use stack variables in a readme file.
 
-#### Built-in templating variables
+#### Built-in stack variables
 
 The variables that stack creators can use to access stack values are:
 
@@ -150,7 +146,7 @@ The variables that stack creators can use to access stack values are:
 | `.stack.semver.majorminor`| The `version` major and minor values from `stack.yaml`.                               |
 | `.stack.image.namespace`  | The `image-namespace` from user defined image-namespace flag, default is `dev.local`. |
 
-#### Custom templating variables
+#### Custom stack variables
 
 If you want to use your own custom variables, you can declare a `templating-data` map in your `stack.yaml`. This map can contain only `key`: `value` pairs.
 

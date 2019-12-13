@@ -4,7 +4,9 @@ title: Testing Stacks
 
 # Testing Stacks
 
-After you create or update a stack, the next consideration is to test the stack to check that it meets your needs. To validate a stack in your local Appsody development environment, use the Appsody CLI validate command. Validation performs several operations to ensure every aspect of your stack is tested.
+After you create or update a stack, the next consideration is to test the stack to check that it meets your needs. To validate a stack in your local Appsody development environment, use the stack validate command. Stack validation performs several operations (lint, package, init, run, test, build) against the stack and provides a summary of these operations.
+
+>Packaging the stack does not logically form part of validation, it is included because the tests that are run as part of the stack validate command depend on the stack being packaged.
 
 ---
 
@@ -81,4 +83,4 @@ The build command generates a production Docker image ready for deployment to yo
 
 ## Next steps
 
-You have now developed, packaged, and tested a stack. You can now publish your stack so that other developers can use it's functionality to accelerate development of their own cloud-native applications. For more information, see [Publishing Stacks](publish).
+You have now developed, packaged, and tested a stack. You can now publish your stack so that other developers can use its functionality to accelerate development of their own cloud-native applications. For more information, see [Publishing Stacks](publish).

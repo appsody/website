@@ -49,11 +49,11 @@ my-stack
 
 ### Generated files
 
-`.appsody-config.yaml` is not part of the source structure. It is generated as part of the stack building process and is placed in the user directory by the Appsody init command. This file specifies the stack image that is used and can be overridden for testing purposes to point to a locally built stack.
+`.appsody-config.yaml` is not part of the source structure. It is generated as part of the stack building process and is placed in the user directory by the `appsody init` command. This file specifies the stack image that is used and can be overridden for testing purposes to point to a locally built stack.
 
 ---
 
-## Stack stability
+## Stack categories
 
 Stacks are categorized as `stable`, `incubator` or `experimental` depending on the content of the stack.
 
@@ -76,7 +76,5 @@ Below are the URLs for official Appsody repository releases.
 By default, Appsody comes with the `incubator` and `experimental` repositories. Other repositories can be added by running the [`appsody repo add`](/docs/using-appsody/cli-commands/#appsody-repo-add) command.
 
 ---
-
-## Next steps
 
 Although there are many Appsody stacks to choose from, you might want to create an entirely new stack or alter some aspects of an existing stack to match your development needs or standards. For more information, see [Developing Stacks](develop).

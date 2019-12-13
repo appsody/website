@@ -6,8 +6,6 @@ title: Packaging Stacks
 
 Packaging allows a stack developer to build all the components of a stack and enables the stack to be used via Appsody CLI commands. The packaging process typically involves: building the stack container image, creating archive files for each template and configuring a local Appsody repository.
 
-The following method details how you can use the Appsody CLI to package a stack that you have created or modified and want to test locally.
-
 The easiest way to package a stack is to use the Appsody CLI, however, you can use [CI scripts](ci-scripts) if you want to package multiple stacks.
 
 ---
@@ -36,7 +34,7 @@ This builds the stack container image, creates archives for each template, and a
     experimental	https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml
     ```
 
-1. To check the built stack is visible in the `dev.local` repository, run:
+2. To check the built stack is visible in the `dev.local` repository, run:
     ```
     appsody list dev.local
     ```
@@ -45,15 +43,7 @@ This builds the stack container image, creates archives for each template, and a
     REPO            	    ID            	VERSION  	TEMPLATES        	DESCRIPTION                      
     dev.local	            <stack-id>	    <version>   *<template>	        <stack-description>
     ```
-1. Create a directory to initialize your project in, for example:
-    ```
-    mkdir my-project
-    ```
-1. Navigate to the directory of your new project, for example:
-    ```
-    cd my-project
-    ```
-1. Use `appsody init` to create new projects using the packaged stack:
+3. Create a project directory and within it use the Appsody CLI to create new projects using the packaged stack:
     ```
     appsody init dev.local/<stack-id>
     ```
@@ -62,4 +52,4 @@ This builds the stack container image, creates archives for each template, and a
 
 ## Next steps
 
-After you create, or update a stack, the next consideration is to test the stack to check that it meets your needs. For more information, see [Testing Stacks](test).
+After you create, or update a stack, you should test the stack. For more information, see [Testing Stacks](test).
