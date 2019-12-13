@@ -5,7 +5,6 @@ import Tile from "../components/tile";
 class TileGrid extends React.Component {
     constructor(props) {
         super(props)
-        this.defaultRepo = "/incubator."
         this.filterByLanguage = this.filterByLanguage.bind(this);
         this.filterByLevel = this.filterByLevel.bind(this);
     }
