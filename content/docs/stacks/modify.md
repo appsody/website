@@ -75,8 +75,8 @@ The variables that stack creators can use to access stack values are:
 | `.stack.semver.minor`     | The `version` minor value from `stack.yaml`.                                          |
 | `.stack.semver.patch`     | The `version` patch value from `stack.yaml`.                                          |
 | `.stack.semver.majorminor`| The `version` major and minor values from `stack.yaml`.                               |
-| `.stack.image.namespace`  | The `image-namespace` from user defined image-namespace flag, default is `dev.local`. |
-
+| `.stack.image.namespace`  | The value from the `image-namespace` flag that is passed to the `appsody stack package command`; default is `appsody`. |
+| `.stack.image.registry`  | The value from the `image-registry` flag that is passed to the `appsody stack package command`; default is `dev.local`. |
 #### Custom templating variables
 
 If you want to use your own custom variables, you can declare a `templating-data` map in your `stack.yaml`. This map can contain only `key`: `value` pairs.
