@@ -57,7 +57,6 @@ class TileGrid extends React.Component {
          
         if (level.length === 1 && level.includes("incubator") || (level.length === 2 && level.includes("stable") && level.includes("incubator"))) {
             if (language.length !== 0) {
-                console.log("here")
                 this.tiles = this.props.stacks.map(stack => {                
                     for (var i = 0; i < level.length+language.length; i++) {          
                         if (stack !== null && (stack.language).includes(language[i]) && (stack.templates[0].url.includes(this.defaultRepo))) {

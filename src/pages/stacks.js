@@ -8,7 +8,7 @@ const StackPage = () => (
             <div className="stacks">
                 <h2>Application Stacks</h2>
                 <p className="px-5">Select the application stack to view further details on GitHub or copy the command to start using the stack with our CLI.</p>
-                <TileGrid apple="java"/>
+                <TileGrid/>
             </div>
         </section>
     </Layout>
