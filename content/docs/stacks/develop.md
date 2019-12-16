@@ -113,7 +113,7 @@ Packaging allows a stack developer to build all the components of a stack and en
 
 ## Advanced Topics
 
-### Stack Variables
+### Stack variables
 
 Often in a stack, there are common values that are used across the image and template. It can be laborious to manually go through a stack and make changes to the values in every place they occur, especially if they change frequently, such as the version number. Stack creators can declare values in their `stack.yaml` file and use variables to refer to them throughout the stack; values can be changed in one place and always remain in sync.
 
