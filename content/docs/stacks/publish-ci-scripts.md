@@ -36,7 +36,7 @@ The easiest way to publish a stack is to use the [Appsody CLI](publish), however
 
     An index file is created for each repository that is listed in REPO_LIST, and the template archive files are prefixed with the repository name to make them easier to identify as belonging to a specific repository.
 
-    > The repository index file contains information for all the stacks in that repository, even if you specified a single stack with the `./ci/build.sh` command.
+    The repository index file contains information for all the stacks in that repository, even if you specified a single stack with the `./ci/build.sh` command.
 
 6. Push the stack container images to a Docker registry, such as [docker.io](https://docker.io).
 7. Upload the template archives and repository index file to a suitable web hosting service, such as the [Releases](https://help.github.com/en/github/administering-a-repository/creating-releases) section of a GitHub repo.
