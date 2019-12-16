@@ -16,14 +16,12 @@ Appsody stacks include language runtimes, frameworks and any additional librarie
 
 Appsody uses a containerized environment during local development. The stack image defines this environment and specifies the stack behavior during the development lifecycle of the application.  
 
-The `image` directory contains files for the stack image. The `image/Dockerfile-stack` Dockerfile defines the exact steps for building the stack image.
-
 ### Project templates
 Project templates provide a starting point, typically a 'Hello World' application, for application development. Like other components within an Appsody stack, you can customize project templates and share them across teams.  
 
-The templates directory contains one or more starter applications that are created for you when you initialize your projects. Every template is contained within its own directory, `/templates/<template-name>`.
-
 ### Stack structure
+
+The source structure of a stack is standard across all Appsody stacks. This is an example source structure for a stack called `my-stack`:
 
 ```bash
 my-stack
@@ -45,7 +43,9 @@ my-stack
 
 ```
 
->`Dockerfile-stack` builds the initial stack image for local development and the `Dockerfile` builds the final application image. They are independent of each other.
+The `image` directory contains files for the stack image. The `image/Dockerfile-stack` Dockerfile defines the exact steps for building the stack image. `Dockerfile-stack` builds the initial stack image for local development and the `Dockerfile` builds the final application image. They are independent of each other.
+
+The `templates` directory contains one or more starter applications that are created for you when you initialize your projects. Every template is contained within its own directory, `/templates/<template-name>`.
 
 ### Generated files
 
@@ -74,7 +74,3 @@ Below are the URLs for official Appsody repository releases.
 | `experimental` | `https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml` |
 
 By default, Appsody comes with the `incubator` and `experimental` repositories. Other repositories can be added by running the [`appsody repo add`](/docs/using-appsody/cli-commands/#appsody-repo-add) command.
-
----
-
-Although there are many Appsody stacks to choose from, you might want to create an entirely new stack or alter some aspects of an existing stack to match your development needs or standards. For more information, see [Developing Stacks](develop).
