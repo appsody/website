@@ -16,6 +16,7 @@ class TileGrid extends React.Component {
 
     defaultRepo = "/incubator."
     experimentalRepo ="/experimental"
+    stableRepo ="/stable"
 
     filterByLanguage () {
         var ele = document.getElementsByName('language'); 
@@ -134,7 +135,43 @@ class TileGrid extends React.Component {
             }
             
         } else if((level.length === 1 && level.includes("stable"))) {
-            this.tiles = []
+            if (language.length !== 0) {
+                this.tiles = this.props.stacks.map(stack => {                
+                    for (var i = 0; i < level.length+language.length; i++) {        
+                        if (stack !== null && (stack.language).includes(language[i]) && (stack.templates[0].url.includes(this.stableRepo))) {
+                            if (stack == null) return null;
+                            const templateURL = stack.templates[0].url;
+                            const repo = templateURL.split("/").reverse()[0].split(".")[0];
+                            const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
+                
+                            if (!stack.templates[0].url.includes(this.defaultRepo)) {
+                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
+                            }
+                            else {
+                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
+                            }
+                        } 
+                    }
+                });
+            } else {
+                this.tiles = this.props.stacks.map(stack => {                
+                    for (var i = 0; i < level.length; i++) {        
+                        if (stack !== null && (stack.templates[0].url.includes(this.stableRepo))) {
+                            if (stack == null) return null;
+                            const templateURL = stack.templates[0].url;
+                            const repo = templateURL.split("/").reverse()[0].split(".")[0];
+                            const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
+                
+                            if (!stack.templates[0].url.includes(this.defaultRepo)) {
+                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
+                            }
+                            else {
+                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
+                            }
+                        } 
+                    }
+                });
+            }
         } else if (language.length !== 0) {
             this.tiles = this.props.stacks.map(stack => {                
                 for (var i = 0; i < language.length; i++) {          
