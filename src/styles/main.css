@@ -590,19 +590,15 @@ hr {
 }
 
 .doc-content table tr th:nth-child(1){
-  column-width: 130em;
+  column-width: 180em;
 }
 
 .doc-content table tr th:nth-child(2){
-  column-width: 280em;
+  column-width: 350em;
 }
 
 .doc-content table tr th:nth-child(3){
-  column-width: 240em;
-}
-
-.doc-content table tr th:nth-child(4){
-  column-width: 150em;
+  column-width: 270em;
 }
 
 .doc-content table tr:nth-child(even) {
