@@ -19,7 +19,7 @@ Project templates provide a starting point, typically a 'Hello World' applicatio
 
 ### Stack structure
 
-The source structure of a stack is standard across all Appsody stacks. This is an example source structure for a stack called `my-stack`:
+Each Appsody stack is defined by a common set of source directories and files. The following example shows the structure for a stack called `my-stack`:
 
 ```bash
 my-stack
