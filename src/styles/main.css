@@ -936,3 +936,8 @@ input.checkbox-item {
     margin-left: 0.5rem;
   }
 }
+
+.no-result-found {
+  font-size: 2rem;
+  margin-top: 5rem;
+}

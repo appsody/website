@@ -150,7 +150,7 @@ class TileGrid extends React.Component {
                             else {
                                 return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
                             }
-                        } 
+                        }
                     }
                 });
             } else {
@@ -168,7 +168,7 @@ class TileGrid extends React.Component {
                             else {
                                 return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
                             }
-                        } 
+                        }
                     }
                 });
             }
@@ -276,7 +276,13 @@ class TileGrid extends React.Component {
     
                 <div className="container">
                     <div id="application-stacks" className="row mx-auto">
-                        {this.tiles}
+                        { 
+                            this.tiles.filter(function(value) { return value !== undefined }).length === 0 ? (
+                            <span className="no-result-found">No Results Found</span>
+                        
+                        ) : (
+                            this.tiles
+                        )}
                     </div>
                 </div>
 
