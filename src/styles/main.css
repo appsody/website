@@ -50,9 +50,8 @@ h1, h2, h3, h4, h5, h6 {
 
 
 #main-nav {
-  background-color: rgba(255,255,255,0.85);
+  background-color: rgb(255,255,255);
   box-shadow: 0 -6px 29px var(--dark-grey);
-  backdrop-filter: blur(25px) contrast(125%);
 }
 
 .black-appsody-full {
@@ -815,9 +814,8 @@ blockquote p {
   }
 
   #main-nav {
-    background-color: rgba(40,40,40, 0.75);
+    background-color: rgba(40,40,40);
     box-shadow: 0 -6px 19px rgba(0,0,0,0.7);
-    backdrop-filter: blur(25px), contrast(140%);
   }
 
   .black-appsody-full {
@@ -831,10 +829,8 @@ blockquote p {
   @media only screen and (max-width: 767px) {
     
   .full-logo-homepage-white {
-    /* margin: auto; */
     display: block;
-    /* width: 90% !important; */
-  }
+    }
   }
 
   .hero-description {
@@ -907,6 +903,13 @@ blockquote p {
 
   .accordion-icon {
     filter: invert(100%)
+  }
+
+  /* Stacks page sidebar */
+  .sidebar {
+    background-color: rgb(40,40,40);
+    color: white;
+    box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.12);
   }
 
   .doc-content pre {
