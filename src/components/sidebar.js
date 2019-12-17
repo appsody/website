@@ -40,9 +40,10 @@ const Sidebar = () => {
 
   return (
     <aside id="sidebar" className={styles.sidebar}>
-      <h2 className="docs-header-text">Appsody</h2>
-      <h2 className="docs-header-text docs-header-pink">Docs</h2>
-      <Accordion defaultActiveKey={accordionIndex}>
+      <h2 id="appsody-sidebar-header" className="docs-header-text">Appsody</h2>
+      <h2 id="docs-sidebar-header"className="docs-header-text docs-header-pink">Docs</h2>
+
+      <Accordion id="accordion" defaultActiveKey={accordionIndex}>
         {
           sidebarList.map((item, index) => {
             if (item.items !== undefined) {
@@ -56,20 +57,21 @@ const Sidebar = () => {
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey={index}>
                     <ul className="doc-sidebar-hidden-list">
-                      {item.items.map(subItem => <li key={subItem.title} className="my-3"><Link className="sidebar-link" onMouseOver={()=>setAccordionIndex(index)} activeClassName="active-docs" to={subItem.path}>{subItem.title}</Link></li>)}
+                      {item.items.map(subItem => <li key={subItem.title} className="my-3"><Link className="sidebar-link" onClick={()=>setAccordionIndex(index)} activeClassName="active-docs" to={subItem.path}>{subItem.title}</Link></li>)}
                     </ul>
                   </Accordion.Collapse>
                 </>
               )
             } else {
               return (
-                <h3 className="sidebar-heading-link"> <Link onClick={()=>setAccordionIndex(index)}  activeClassName="active" to={item.path}>{item.title}</Link></h3>
+                <h3 className="sidebar-heading-link"> <Link onClick={()=>setAccordionIndex(index)}  activeClassName="active-docs-heading" to={item.path+"/"}>{item.title}</Link></h3>
               )
             }
           })
         }
       </Accordion>
     </aside>
+    
   )
 }
 

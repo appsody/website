@@ -8,6 +8,7 @@
     "bootstrap": "^4.3.1",
     "file-system": "^2.2.2",
     "gatsby": "^2.9.6",
+    "gatsby-plugin-client-side-redirect": "0.0.2",
     "gatsby-plugin-google-analytics": "^2.1.0",
     "gatsby-plugin-manifest": "^2.2.0",
     "gatsby-plugin-react-helmet": "^3.0.12",
@@ -29,6 +30,7 @@
     "web-animations-js": "^2.3.2"
   },
   "devDependencies": {
+    "gatsby-plugin-remove-trailing-slashes": "^2.1.15",
     "gh-pages": "^2.0.1",
     "prettier": "^1.18.2"
   },

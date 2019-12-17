@@ -37,7 +37,7 @@ We welcome all contributions.
 
 If you'd like to get involved, read our [Contribution guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING) and come and chat to us in [Slack](https://appsody-slack.eu-gb.mybluemix.net/).
 
-Want to see your framework available as an Appsody Stack? See [Creating](/docs/stacks/create) and [Modifying](/docs/stacks/modify) Stacks and join the `#stack-providers` channel on Slack to introduce yourself!
+Want to see your framework available as an Appsody Stack? See [Appsody Stacks](./stacks/stacks-overview) and join the `#stack-providers` channel on Slack to introduce yourself!
 
 ## License
 This project is licensed under the Apache 2.0 license, and all contributed stacks must also be licensed under the Apache 2.0 license. Each contributed stack should include a LICENSE file containing the Apache 2.0 license. More information can be found in the LICENSE file or online at
