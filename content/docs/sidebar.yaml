@@ -20,18 +20,16 @@
   items:
     - title: Stacks Overview
       path: /docs/stacks/stacks-overview
-    - title: Stack Structure
-      path: /docs/stacks/stack-structure
-    - title: Creating Stacks
-      path: /docs/stacks/create
-    - title: Modifying Stacks
-      path: /docs/stacks/modify
+    - title: Developing Stacks
+      path: /docs/stacks/develop
     - title: Packaging Stacks
       path: /docs/stacks/package
     - title: Testing Stacks
       path: /docs/stacks/test
     - title: Publishing Stacks
       path: /docs/stacks/publish
+    - title: Stack lifecycle
+      path: /docs/stacks/lifecycle
     - title: Environment Variables
       path: /docs/stacks/environment-variables
 - title: FAQ
