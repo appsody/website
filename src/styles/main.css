@@ -164,20 +164,7 @@ section.landing-section h3 {
 
   section.landing-section .lead {
     font-size: 1.8rem;
-    line-height: 2.4rem;
-    text-align: center;
-  }
-
-  .hero-description {
-    width: 100%;
-    text-align: center;
-    line-height: 1.7rem;
-  }
-
-  .full-logo-homepage {
-    margin: auto;
-    display: block;
-    width: 90% !important;
+    line-height: 2.0rem;
   }
 
   section.landing-section h2 {
