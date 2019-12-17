@@ -55,8 +55,9 @@ class TileGrid extends React.Component {
       }
 
       rerenderTiles() {
-         
+        //if incubator checkbox is selected
         if (level.length === 1 && level.includes("incubator") || (level.length === 2 && level.includes("stable") && level.includes("incubator"))) {
+            //if language checkbox is selected
             if (language.length !== 0) {
                 this.tiles = this.props.stacks.map(stack => {                
                     for (var i = 0; i < level.length+language.length; i++) {          
@@ -75,6 +76,7 @@ class TileGrid extends React.Component {
                         }  
                     }
                 });
+            //only incubator checkbox is selected
             } else {
                 this.tiles = this.props.stacks.map(stack => {                
                     for (var i = 0; i < level.length; i++) {        
@@ -94,8 +96,9 @@ class TileGrid extends React.Component {
                     }
                 });
             }
-            
+        //if experimental checkbox is selected
         } else if (level.length === 1 && level.includes("experimental") || (level.length === 2 && level.includes("stable") && level.includes("experimental"))) {
+             //if language checkbox is selected
             if (language.length !== 0) {
                 this.tiles = this.props.stacks.map(stack => {                
                     for (var i = 0; i < level.length+language.length; i++) {        
@@ -114,6 +117,7 @@ class TileGrid extends React.Component {
                         } 
                     }
                 });
+            //only experimental checkbox is selected
             } else {
                 this.tiles = this.props.stacks.map(stack => {                
                     for (var i = 0; i < level.length; i++) {        
@@ -133,8 +137,9 @@ class TileGrid extends React.Component {
                     }
                 });
             }
-            
+        //if stable checkbox is selected
         } else if((level.length === 1 && level.includes("stable"))) {
+            //if language checkbox is selected
             if (language.length !== 0) {
                 this.tiles = this.props.stacks.map(stack => {                
                     for (var i = 0; i < level.length+language.length; i++) {        
@@ -153,6 +158,7 @@ class TileGrid extends React.Component {
                         }
                     }
                 });
+                //only stable checkbox is selected
             } else {
                 this.tiles = this.props.stacks.map(stack => {                
                     for (var i = 0; i < level.length; i++) {        
@@ -172,6 +178,7 @@ class TileGrid extends React.Component {
                     }
                 });
             }
+            //if language checkbox is selected
         } else if (language.length !== 0) {
             this.tiles = this.props.stacks.map(stack => {                
                 for (var i = 0; i < language.length; i++) {          
@@ -190,6 +197,7 @@ class TileGrid extends React.Component {
                     }  
                 }
             });
+            //if no checkbox is selected
         } else {
             this.tiles = this.props.stacks.map(stack => {
                 if (stack == null) return null;
