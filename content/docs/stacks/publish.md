@@ -17,7 +17,7 @@ For more information, see the [Contributing guidelines](https://github.com/appso
 
 ## Publishing a stack using the Appsody CLI
 
-The easiest way to publish a stack is to use the Appsody CLI, however, you can use [CI scripts](publish-ci-scripts) if you want to publish multiple stacks.
+The easiest way to publish a stack is to use the Appsody CLI, however, you can use [CI scripts](./publish-ci-scripts) if you want to publish multiple stacks.
 
 1. If the stack is not already packaged, package it by running the [`appsody stack package`](/content/docs/using-appsody/cli-commands/#appsody-stack-package) command from the root directory of your stack, specifying the namespace for creating the Docker images with. For example, the following command creates Docker images with a namespace of `myproject`:
     ```
@@ -47,4 +47,4 @@ You can now provide the URL to the hosted repository index file to other Appsody
 
 Congratulations!  You have now developed, tested and published a stack for use in Appsody!
 
-Why not learn more about stacks and familiarize yourself with the [lifecycle](lifecycle) of a stack?
+Why not learn more about stacks and familiarize yourself with the [lifecycle](./lifecycle) of a stack?
