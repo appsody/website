@@ -4,9 +4,7 @@ title: Appsody Stacks
 
 # Appsody Stacks
 
-Appsody provides pre-configured application stacks that enable rapid development of quality microservice-based applications. Stacks include a base container image and project templates.
-
-Appsody stacks include language runtimes, frameworks and any additional libraries and tools that are required to simplify your local application development. Stacks are an easy way to manage consistency and adopt best practices across many applications.
+Appsody provides pre-configured application stacks that enable rapid development of quality microservice-based applications. Stacks include a base container image and project templates, which provide the language runtimes, frameworks, and any additional libraries and tools that you need for local development. Stacks are an easy way to manage consistency and adopt best practices across many applications.
 
 ---
 
@@ -21,7 +19,7 @@ Project templates provide a starting point, typically a 'Hello World' applicatio
 
 ### Stack structure
 
-The source structure of a stack is standard across all Appsody stacks. This is an example source structure for a stack called `my-stack`:
+Each Appsody stack is defined by a common set of source directories and files. The following example shows the structure for a stack called `my-stack`:
 
 ```bash
 my-stack

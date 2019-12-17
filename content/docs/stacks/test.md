@@ -32,7 +32,7 @@ appsody stack validate
 
 If your stack is already packaged and you don't want to run the package operation as part of validate, you can use the `--no-package` flag.
 
-3. After it has completed, it provides a summary of the results.  The following summary output shows the result of running `validate` against the starter stack:
+3. After completion, it provides a summary of the results.  The following summary output shows the result of running `validate` against the starter stack:
 
 ```
 @@@@@@@@@ Validate Summary Start @@@@@@@@@@
