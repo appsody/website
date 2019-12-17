@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--white) !important;
   background-color: var(--colour-scheme-1) !important;
   border: 2px solid var(--colour-scheme-1) !important;
-  border-radius: 10px !important;
+  border-radius: 12px !important;
 }
 
 .btn-primary:hover {
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 6px 12px;
   color: var(--links-colour);
   border: 2px solid var(--colour-scheme-1) !important;
-  border-radius: 10px !important;
+  border-radius: 12px !important;
 }
 
 .btn-clear:hover {
@@ -101,11 +101,11 @@ section.stacks-section {
 }
 
 section.landing-section:first-child {
-  padding: 6em 0;
+  padding: 6em 0 3em 0;
 }
 
 section.landing-section:not(:last-child) {
-  border-bottom: 2px solid var(--darker-grey);
+  border-bottom: 2px solid var(--dark-grey);
 }
 
 section.landing-section .btn {
@@ -113,11 +113,32 @@ section.landing-section .btn {
 }
 
 section.landing-section .lead {
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 2.2rem;
+  color: var(--colour-scheme-1);
+  font-family: 'Nunito', 'Open Sans', sans-serif;
+  line-height: 2.6rem;
 }
 
 section.landing-section h2 {
   font-size: 2.5em !important;
+  color: var(--colour-scheme-1);
+  font-family: 'Nunito', 'Open Sans', sans-serif;
+  margin-bottom: 1.2rem;
+}
+
+section.landing-section h3 {
+  font-weight: 600;
+  color: var(--colour-scheme-1);
+  font-size: 1.4rem;
+}
+
+.hero-description {
+  color: rgba(110, 106, 106, 0.925);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  width: 90%;
 }
 
 .all-stacks-button {
@@ -209,14 +230,18 @@ section.landing-section h2 {
 
   .smallscreen-social {
     display: flex;
-    
+  }
+
+  section.landing-section .lead {
+    font-size: 1.8rem;
+    line-height: 2.0rem;
+  }
+
+  section.landing-section h2 {
+    font-size: 2rem !important;
   }
 }
 
-/* Cannot change as the Slack icon is not transparent in the middle. Saving for later */
-/* .navbar-img:hover {
-  filter: invert(33%) sepia(54%) saturate(1628%) hue-rotate(295deg) brightness(86%) contrast(81%);
-} */
 
 @media only screen and (max-width: 767px) {
   .navbar-img {
@@ -245,6 +270,7 @@ section.landing-section h2 {
   padding: 0.5em 1em 1em 1em;
   margin: 0.7em;
   width: 14em;
+  border-radius: 10px;
   height: 15.5em;
   box-shadow: 1px 3px 11px rgba(0, 0, 0, .2);
 }
@@ -275,7 +301,7 @@ section.landing-section h2 {
 
 #input-cli{
   text-align: center;
-  width: 65%;
+  width: 85%;
 }
 
 #command-input{
@@ -304,7 +330,7 @@ section.landing-section h2 {
 }
 
 .tile {
-  padding: 1.5em 0.5em;
+  padding: 1.3em 0.5em;
   position: relative;
 }
 
@@ -317,6 +343,8 @@ section.landing-section h2 {
 
 .heading-tile {
   min-height: 2em;
+  font-weight: 600;
+  font-size: 1.3rem;
   max-height: 2em;
 }
 .tile a.btn {
