@@ -32,16 +32,17 @@ class Tile extends React.Component {
     }));
   }
   render() {
-      if (this.state.isToggleOn) {
-        return (
-          <div className="tile card text-center">
-            <h5 className="heading-tile">{this.props.heading}</h5>
-            <p>{this.desc}</p>
-            <a href="/" onClick={this.handleClick} className="btn btn-primary w-50 mx-auto" role="button">Select</a>
-          </div>
-        );
-      } else {
-        return (
+    if (this.state.isToggleOn) {
+      return (
+        <div className="tile card text-center">
+          <h5 className="heading-tile">{this.props.heading}</h5>
+          <p>{this.desc}</p>
+          <a href="/" onClick={this.handleClick} className="btn btn-primary w-50 mx-auto" role="button">Select</a>
+          { this.props.updated && <p className="updated-date">Updated: {(new Date(this.props.updated).getDate()) + "/" + (new Date(this.props.updated).getMonth()+1)}</p>}
+        </div>
+      );
+    } else {
+       return (
           <div id={this.props.id} className="tile card flip">
             <i onClick={this.handleClick} className="fas fa-arrow-left" title="flip card"></i>
             <h5 id="tile-heading" className="heading-tile">{this.props.heading}</h5>
@@ -59,3 +60,4 @@ class Tile extends React.Component {
 }
 
 export default Tile;
+

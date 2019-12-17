@@ -10,7 +10,7 @@
   --darker-grey: #9B9B9B;
   --off-black-1: #100F15;
   --colour-scheme-1: #BB417C;
-  --colour-scheme-2: #ED8E00;
+  --colour-scheme-2: #ed8e00;
   --colour-scheme-3: #C4302F;
   --colour-scheme-1-dark: #963463;
 
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 section.landing-section {
-  padding: 4em 0;
+  padding: 3em 0;
   justify-content: center;
 }
 
@@ -110,6 +110,57 @@ section.landing-section .lead {
 
 section.landing-section h2 {
   font-size: 2.5em !important;
+}
+
+.all-stacks-button {
+  width: 18em;
+}
+
+.loading-text {
+  margin: 4rem 0;
+}
+
+.stepper-left {
+  border-radius: 10px 0 0 10px !important;
+  width: 14rem;
+}
+
+.stepper-right {
+  border-radius: 0 10px 10px 0 !important;
+  width: 14em;
+}
+
+.btn-group {
+  margin: 1em 0 2em 0;
+  width: 40%;
+}
+
+
+@media only screen and (max-width: 767px) {
+
+  .btn-group {
+    width: 100%;
+  }
+
+  .stepper-left {
+    width: 50%;
+  }
+
+  .stepper-right {
+    width: 50%;
+  }
+}
+.updated-date {
+  color: rgba(0, 0, 0, 0.5);
+  padding-top:10px;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.recently-updated-tile-grid {
+  display: none;
 }
 
 .nav-link {
@@ -186,13 +237,14 @@ section.landing-section h2 {
   padding: 0.5em 1em 1em 1em;
   margin: 0.7em;
   width: 14em;
-  height: 14em;
-  box-shadow: 1px 4px 15px rgba(0, 0, 0, .35);
+  height: 15.5em;
+  box-shadow: 1px 3px 11px rgba(0, 0, 0, .2);
 }
 
 .card.flip {
   background-color: var(--colour-scheme-1);
   color: white !important;
+  box-shadow: 1px 3px 14px rgba(187,65,124, 0.8);
 }
 
 .card.flip input {
@@ -205,6 +257,14 @@ section.landing-section h2 {
   font-size: .9em;
 }
 
+#application-stacks {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
 #input-cli{
   text-align: center;
   width: 65%;
@@ -215,6 +275,7 @@ section.landing-section h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top:1em;
 }
 
 #command-input input{
@@ -291,6 +352,10 @@ section.landing-section h2 {
   }
 }
 
+.bottom-spacer {
+  margin-bottom: 3em;
+}
+
 footer {
   position: absolute;
   right: 0;
@@ -300,10 +365,12 @@ footer {
   box-shadow: 0 6px 29px var(--darker-grey);
   padding: 1em;
   text-align: center;
+  margin-bottom: -3em;
 }
 
 @media only screen and (max-width: 767px) {
   footer {
+    margin-bottom: 0;
     left: 0;
   }
 }
@@ -667,7 +734,6 @@ hr {
   margin: 0.75em 0;
 }
 
-
 @media only screen and (max-width: 767px) {
   .doc-content {
     margin-bottom: 3em;
@@ -881,8 +947,8 @@ input.checkbox-item {
     z-index: 1;
     margin-left: -100vw ;
   }
-
-  .row.mx-auto {
+  
+   .row.mx-auto {
     padding-left: 0;
   }
 
@@ -912,6 +978,11 @@ input.checkbox-item {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
     border: 1px solid rgba(255,255,255,0.1);
   }
+}
+
+.index-link {
+  color: var(--colour-scheme-1);
+  font-weight: 600;
 }
 
 @media (min-width: 768px) {
