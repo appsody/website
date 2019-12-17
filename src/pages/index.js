@@ -9,6 +9,7 @@ import kubeLogo from "../images/kubernetes_logo.png";
 import promLogo from "../images/prometheus_logo.png";
 import tektonLogo from "../images/tekton_logo.png";
 
+import appsodyFullLogoWhite from "../images/appsody_full_logo_white.svg";
 import appsodyFullLogo from "../images/appsody_full_logo.svg";
 import appsodyHello from "../images/appsody_hello.svg";
 
@@ -20,7 +21,8 @@ const IndexPage = () => (
     <section className="landing-section">
       <div className="row w-100 mx-auto">
         <div className="col">
-          <img className="w-75 my-4" src={ appsodyFullLogo } alt="Appsody Logo"></img>
+          <img className="w-75 my-4 full-logo-homepage-white white-appsody-full" src={ appsodyFullLogoWhite } alt="Appsody Logo"></img>
+          <img className="w-75 my-4 full-logo-homepage-black black-appsody-full" src={ appsodyFullLogo } alt="Appsody Logo"></img>
           <p className="lead">
             Compose a cloud native masterpiece.
           </p>
@@ -78,7 +80,7 @@ const IndexPage = () => (
     </section>
     <section className="landing-section text-center homepage-sections bottom-spacer">
       <h2 >Built on open source</h2>
-      <div className="d-flex flex-wrap justify-content-center">
+      <div className="d-flex flex-wrap justify-content-center mb-5">
         <img className="m-3" src={ kubeLogo } alt="Kubernetes Logo"></img>
         <img className="m-3" src={ promLogo } alt="Prometheus Logo"></img>
         <img className="m-3" src={ tektonLogo } alt="Tekton Logo"></img>
@@ -98,7 +100,7 @@ function switchDownloaded() {
   document.getElementById('downloads-button').style.cssText = 'background: #BB417C; color: white'
   document.getElementById('downloads-button').className = 'btn btn-primary stepper-left'
 
-  document.getElementById('recently-button').style.cssText = 'background: white; color: black'
+  document.getElementById('recently-button').style.cssText = 'background: clear; color: black @media (prefers-color-scheme: dark) { color: white; }'
   document.getElementById('recently-button').className = 'btn btn-clear stepper-right'
 
 }
@@ -108,7 +110,7 @@ function switchRecent() {
   document.getElementById('top-downloads').style.cssText = 'display: none';
   document.getElementById('recently-updated').style.cssText = 'display: block';
 
-  document.getElementById('downloads-button').style.cssText = 'background: white; color: black'
+  document.getElementById('downloads-button').style.cssText = 'background: clear; color: black @media (prefers-color-scheme: dark) { color: white; }'
   document.getElementById('downloads-button').className = 'btn btn-clear stepper-left'
 
   document.getElementById('recently-button').style.cssText = 'background: #BB417C; color: white'
