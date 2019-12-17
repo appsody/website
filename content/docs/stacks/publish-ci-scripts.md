@@ -4,7 +4,7 @@ Title: Publish a stack using CI scripts
 
 # Publish a stack using CI scripts
 
-The easiest way to publish a stack is to use the [Appsody CLI](./publish), however, you can use CI scripts if you want to publish multiple stacks.
+The easiest way to publish a stack is to use the [Appsody CLI](/docs/stacks/publish), however, you can use CI scripts if you want to publish multiple stacks.
 
 1. Clone or copy the `appsody/stacks` [Git repository](https://github.com/appsody/stacks) to obtain the CI scripts.
 2. Create a new repository directory, within the base directory of the Git repository, to contain the stack to be published. For example:
@@ -49,4 +49,4 @@ You can now provide the URL to the hosted repository index file to other Appsody
 
 Congratulations!  You have now developed, tested and published a stack for use in Appsody!
 
-Why not learn more about stacks and familiarize yourself with the [lifecycle](./lifecycle) of a stack?
+Why not learn more about stacks and familiarize yourself with the [lifecycle](/docs/stacks/lifecycle) of a stack?

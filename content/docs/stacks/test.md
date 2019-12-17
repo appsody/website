@@ -53,4 +53,4 @@ The summary provides a result for each of the operations and a total for the ove
 
 ## Next steps
 
-You have now developed, packaged, and tested a stack. You can now publish your stack so that other developers can use its functionality to accelerate development of their own cloud-native applications. For more information, see [Publishing Stacks](./publish).
+You have now developed, packaged, and tested a stack. You can now publish your stack so that other developers can use its functionality to accelerate development of their own cloud-native applications. For more information, see [Publishing Stacks](/docs/stacks/publish).
