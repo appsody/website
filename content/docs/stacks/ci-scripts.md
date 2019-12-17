@@ -4,7 +4,8 @@ Title: Packaging stacks using CI scripts
 
 # Packaging a stack locally using CI scripts
 
-The easiest way to package a single stack is to use the [Appsody CLI](./package), however, you can use CI scripts if you want to package multiple stacks.
+
+The easiest way to package a single stack is to use the [Appsody CLI](/docs/stacks/package), however, you can use CI scripts if you want to package multiple stacks.
 
 To package a stack using CI scripts, clone or copy the `appsody/stacks` Git repository.   Then, from the base directory, run the build script and specify the desired stack as a parameter, for example:
 ```
@@ -52,4 +53,4 @@ To package a stack using CI scripts, clone or copy the `appsody/stacks` Git repo
 
 ## Next steps
 
-After you create, or update a stack, the next consideration is to test the stack to check that it meets your needs. For more information, see [Testing Stacks](./test).
+After you create, or update a stack, the next consideration is to test the stack to check that it meets your needs. For more information, see [Testing Stacks](/docs/stacks/test).
