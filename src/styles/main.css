@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--white) !important;
   background-color: var(--colour-scheme-1) !important;
   border: 2px solid var(--colour-scheme-1) !important;
-  border-radius: 20px !important;
+  border-radius: 12px !important;
 }
 
 .btn-primary:hover {
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 6px 12px;
   color: var(--links-colour);
   border: 2px solid var(--colour-scheme-1) !important;
-  border-radius: 20px !important;
+  border-radius: 12px !important;
 }
 
 .btn-clear:hover {
