@@ -10,12 +10,13 @@ The Appsody website is built with [Gatsby.js](https://www.gatsbyjs.org/). See th
 - [**Gatsby.js**](https://www.gatsbyjs.org)
   When Node is installed, run the following command to install Gatsby.js:
 
-  ``` bash
+  ```bash
     npm install -g gatsby-cli
   ```
+
 - **Install Node dependencies** Clone the website Git repo and install the dependencies with the following commands:
 
-  ``` bash
+  ```bash
     git clone https://github.com/appsody/website.git
     cd website
 
@@ -26,18 +27,18 @@ The Appsody website is built with [Gatsby.js](https://www.gatsbyjs.org/). See th
 
 1. Run the development server:
 
-  ``` bash
-  gatsby develop
-  ```
+```bash
+gatsby develop
+```
 
-  This command compiles your changes as you develop and hosts the website at http://localhost:8000. To explore GraphQL queries that Gatsby exposes, use http://localhost:8000/__graphql.
+This command compiles your changes as you develop and hosts the website at http://localhost:8000. To explore GraphQL queries that Gatsby exposes, use http://localhost:8000/__graphql.
 
-  :pencil: **Note about clearing your Cache:**
-  Sometimes when developing locally, the website shows cached content from previous versions of the website. To clear the cache before developing, run the following command:
+:pencil: **Note about clearing your Cache:**
+Sometimes when developing locally, the website shows cached content from previous versions of the website. To clear the cache before developing, run the following command:
 
-  ``` bash
-  gatsby clean
-  ```
+```bash
+gatsby clean
+```
 
 2. View documentation at http://localhost:8000/docs
 
@@ -62,7 +63,9 @@ At the top of each documentation page you should include frontmatter so that the
 path: This is the route to the page that all links will be created from.
 ---
 ```
+
 For example:
+
 ```
 ---
 path: /docs/getting-started/quick-start
@@ -70,6 +73,7 @@ path: /docs/getting-started/quick-start
 ```
 
 To add the doc to the side menu you must add it to the `sidebar.yaml` in `content/docs`. A section is defined using the following structure:
+
 ```
 - title (optional): Getting Started
   items:
@@ -78,8 +82,8 @@ To add the doc to the side menu you must add it to the `sidebar.yaml` in `conten
     - title: Quick Start
       path: /docs/getting-started/quick-start
 ```
-:pencil: **Note:** The `title` for the section is optional but the `title` for each menu item is required.
 
+:pencil: **Note:** The `title` for the section is optional but the `title` for each menu item is required.
 
 ### Using images
 
@@ -99,7 +103,7 @@ A helpful image could show a window that a user is expected to see. Make sure yo
 
 ### Writing technical content
 
-Writing good technical content that is easy to read and understand is important for the success of any product. For consistency across the documentation, these  guidelines should be followed:
+Writing good technical content that is easy to read and understand is important for the success of any product. For consistency across the documentation, these guidelines should be followed:
 
 1. Use an active voice:
 
@@ -117,7 +121,7 @@ Writing good technical content that is easy to read and understand is important 
 
    :negative_squared_cross_mark: NO: The user has two options....
 
-   :white_check_mark:  YES: You have two options...
+   :white_check_mark: YES: You have two options...
 
 4. Be aware of words that convey position.
 
@@ -129,9 +133,9 @@ Writing good technical content that is easy to read and understand is important 
 
 5. Avoid ambiguity:
 
-   :negative_squared_cross_mark: NO: This causes a problem with...  (what is this referring to?)
+   :negative_squared_cross_mark: NO: This causes a problem with... (what is this referring to?)
 
-   :white_check_mark:  YES: This behavior causes a problem with...
+   :white_check_mark: YES: This behavior causes a problem with...
 
 And finally, to help users for whom their first language is not English:
 
@@ -139,24 +143,44 @@ And finally, to help users for whom their first language is not English:
 - keep sentences short
 - avoid needless words
 
+### Redirecting content
+
+When moving a document from one location to another you must add a redirect to prevent broken links, especially from external sources.
+
+1. Open the `gatsby-node.js` file found at the root of the project
+2. At the redirecting section, add the following:
+
+```
+createRedirect({
+    fromPath: `/old/url`,
+    toPath: `/new/url`,
+    isPermanent: true
+  });
+```
+
+Note that you only need to provide the path.
+
+3. If it makes sense, add a comment above the redirect stating why this was added.
 
 ## Testing the website ready for release
 
 Before submitting a pull request you must test that the website can build and run successfully.
 
 1. Build the website
+
 ```
 gatsby build
 ```
+
 This build must be successful or you cannot serve the website.
 
 2. Serve the website
+
 ```
 gatsby serve
 ```
 
 3. Access the website on http://localhost:9000 and complete any visual checks.
-
 
 ## Adding definitions to the Glossary page
 
@@ -166,7 +190,7 @@ In order to render correctly, definitions need to be written in the following wa
 
 ```
 >### Term Name
-This is where you would write a brief description explaining the term.  
+This is where you would write a brief description explaining the term.
 Feel free to include links, images, and inline code snippets. Code blocks are supported.
 ```
 
@@ -183,4 +207,5 @@ The large letters, marking the letter of the alphabet the definitions belong to,
 > The glossary is not self-organising, so try to add definitions in their correct place alphabetically.
 
 ## Need help?
+
 If you have a question that you can't find an answer to, we want to hear from you. Reach out to the community for assistance on [Slack](https://appsody-slack.eu-gb.mybluemix.net/).

@@ -16,6 +16,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.createPages = ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions;
 
+  // Redirects section
   createRedirect({
     fromPath: `/docs/stacks/modify`,
     toPath: `/docs/stacks/develop`,
