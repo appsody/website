@@ -152,8 +152,8 @@ When moving a document from one location to another you must add a redirect to p
 
 ```
 createRedirect({
-    fromPath: `/old/url`,
-    toPath: `/new/url`,
+    fromPath: `/old/path`,
+    toPath: `/new/path`,
     isPermanent: true
   });
 ```
