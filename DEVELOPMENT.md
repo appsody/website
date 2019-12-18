@@ -145,10 +145,10 @@ And finally, to help users for whom their first language is not English:
 
 ### Redirecting content
 
-When moving a document from one location to another you must add a redirect to prevent broken links, especially from external sources.
+If you move a document from one location to another you must add a redirect to prevent broken links, especially from external sources.
 
 1. Open the `gatsby-node.js` file found at the root of the project
-2. At the redirecting section, add the following:
+2. In the redirects section, add the following code snippet:
 
 ```
 createRedirect({
@@ -158,9 +158,9 @@ createRedirect({
   });
 ```
 
-Note that you only need to provide the path.
+Note, you need to provide only the path.
 
-3. If it makes sense, add a comment above the redirect stating why this was added.
+3. Add a comment above the redirect stating why it was added.
 
 ## Testing the website ready for release
 
