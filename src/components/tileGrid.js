@@ -221,13 +221,12 @@ class TileGrid extends React.Component {
             const repo = templateURL.split("/").reverse()[0].split(".")[0];
             const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
 
-            if (!stack.templates[0].url.includes(this.defaultRepo)) {
-                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
-            }
-            else {
+            if (!stack.templates[0].url.includes(this.experimentalRepo)) {
                 return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
             }
-      
+            else {
+                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>    
+            }
     });
 
     moveSidebar() {
