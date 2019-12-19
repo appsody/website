@@ -4,61 +4,35 @@ title: Testing Stacks
 
 # Testing Stacks
 
-After you create, or update a stack the next consideration is to test the stack to check that it meets your needs. To validate a stack in your local Appsody development environment, use the `appsody stack validate` command. Validate performs several operations (lint, package, init, run, test, build) against the stack and provides a summary of these operations. After your stack is linted and packaged, the stack is validated by initializing, running, testing, and building an Appsody project against the default template in your stack.
+After you create or update a stack, the next consideration is to test the stack to check that it meets your needs. To validate a stack in your local Appsody development environment, use the stack validation command. Stack validation performs several operations against the stack and provides a summary of these operations.
 
-Packaging the stack does not logically form part of validation, it is included because the tests that are run as part of the `validate` command depend on the stack being packaged.
+---
+## Validation process
 
-## Testing using Appsody CLI stack validate
+Stack validation consists of six operations:
 
-1. Navigate to the root directory of the stack you want to test e.g. `cd my-stack`.
+  - **Lint**: Statically analyzes your source code to verify that it conforms to the structure of an Appsody stack.
+  - **Package**: Builds the stack images and templates and generates an Appsody repository index that you can use for local testing.
+  - **Init**: Initializes an Appsody project that uses the default project template from your stack.
+  - **Run**: Starts the Appsody development container that was created during initialization.
+  - **Test**: Runs the project's test suite in the Appsody development container. The test suite is composed of generic tests in the stack.
+  - **Build**: Generates a production Docker image ready for deployment to your runtime platform of choice.
 
-2. Run `appsody stack validate` to validate your stack locally.
+---
 
-Validate runs the following operations: lint, package, init, run, test, and build.  Next, the operations that make up the validate command are described in more detail:
+## Testing a stack using the Appsody CLI
 
-### Lint
+1. Navigate to the root directory of your stack
 
-Runs the [`appsody stack lint`](/docs/using-appsody/cli-commands/#appsody-stack-lint) command.
+2. Run the following command:
 
-The lint test statically analyzes your source code to verify that it conforms to the structure of an Appsody stack. It informs you of missing files, or directories and warns you if your stack might be enhanced.
+```
+appsody stack validate
+```
 
-### Package
+If your stack is already packaged and you don't want to run the package operation as part of validate, you can use the `--no-package` flag.
 
-Runs the [`appsody stack package`](/docs/using-appsody/cli-commands/#appsody-stack-package) command.
-
-Builds the stack images and templates and generates an Appsody repository index that you can use for local testing. See [Packaging Stacks](/docs/stacks/package) for more details.
-
-If your stack is already packaged and you don't want to run the `package` operation as part of validate, you can use the `--no-package` flag as shown in the following command:
-
-`appsody stack validate --no-package`
-
-### Init
-
-Runs the [`appsody init <stack>`](/docs/using-appsody/cli-commands/#appsody-init) command.
-
-This step initializes an Appsody project that uses the default project template from your stack. See [Initializing Appsody Projects](/docs/using-appsody/initializing-project) for more details.
-
-### Run
-
-Runs the [`appsody run`](/docs/using-appsody/cli-commands#appsody-run) command.
-
-The run command starts the Appsody development container that was created during initialization. In `run` mode Appsody watches your local project directory for file changes and updates your application to reflect code changes as you develop. See [Local Development](/docs/using-appsody/local-development) for more details.
-
-### Test
-
-Runs the [`appsody test`](/docs/using-appsody/cli-commands#appsody-test) command.
-
-The test command runs the project's test suite in the Appsody development container. The test suite is composed of generic tests in the stack, which verify the capabilities provided by the stack are working as expected, and any custom tests that are defined within the template.
-
-### Build
-
-Runs the [`appsody build`](/docs/using-appsody/cli-commands/#appsody-build) command against your stack.
-
-The build command generates a production Docker image ready for deployment to your runtime platform of choice. See [Getting ready to deploy your Appsody project](/docs/using-appsody/building-and-deploying) for more details.
-
-### Summary
-
-Running the six operations that form the `validate` command produces a significant amount of output. To help you spot any issues, a summary is provided at the end of the output. It provides a result for each of the operations and a total for the overall number of passed and failed operations. The following summary output shows the result of running `validate` against the starter stack:
+3. After completion, it provides a summary of the results.  The following summary output shows the result of running `validate` against the starter stack:
 
 ```
 @@@@@@@@@ Validate Summary Start @@@@@@@@@@
@@ -72,3 +46,11 @@ Total PASSED: 6
 Total FAILED: 0
 @@@@@@@@@ Validate Summary End @@@@@@@@@@
 ```
+
+The summary provides a result for each of the operations and a total for the overall number of passed and failed operations.
+
+---
+
+## Next steps
+
+You have now developed, packaged, and tested a stack. You can now publish your stack so that other developers can use its functionality to accelerate development of their own cloud-native applications. For more information, see [Publishing Stacks](/docs/stacks/publish).

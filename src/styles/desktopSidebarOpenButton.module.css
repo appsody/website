@@ -51,3 +51,12 @@
   }
 
 }
+
+@media (prefers-color-scheme: dark) {
+  .desktopHamburgerOpenbtn {
+    background-color: rgb(40,40,40);
+    border-color: rgb(20,20,20);
+    box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.5);
+
+  }
+}

@@ -2,12 +2,12 @@ module.exports = {
   siteMetadata: {
     title: `Appsody - Compose a Cloud Native Masterpiece`,
     description: `Infused with cloud native capabilities from the moment you start, Appsody provides everything you need to iteratively develop applications, ready for deployment to Kubernetes environments. Teams are empowered with sharable technology stacks, configurable and controllable through a central hub.`,
-    twitterUsername: '@appsodydev',
+    twitterUsername: "@appsodydev",
     image: `https://i.ytimg.com/vi/CPw06Ag-Wfs/maxresdefault.jpg`,
     url: `https://appsody.dev`,
     siteUrl: `https://appsody.dev`,
     keywords: `appsody, development, microservice, kubernetes, cloud-native, cloud, java, nodejs, swift, spring, microprofile`,
-    pathPrefix: `/appsody-website`,
+    pathPrefix: `/appsody-website`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,14 +15,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `docs-pages`,
-        path: `${__dirname}/content/docs`,
+        path: `${__dirname}/content/docs`
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `indexes`,
-        path: `${__dirname}/src/data/indexes`,
+        path: `${__dirname}/src/data/indexes`
       }
     },
     {
@@ -30,14 +30,14 @@ module.exports = {
       options: {
         trackingId: "UA-142751517-1",
         head: true,
-        anonymize: true,
+        anonymize: true
       }
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         icon: `src/images/favicon.png`
-      },
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -63,11 +63,10 @@ module.exports = {
             options: {
               linkImagesToOriginal: true,
               maxWidth: 1000,
-              wrapperStyle: result => `width: 100%;margin-left: 0;`,
-
+              wrapperStyle: result => `width: 100%;margin-left: 0;`
             }
           }
-        ],
+        ]
       }
     },
     `gatsby-transformer-yaml`,
@@ -76,8 +75,9 @@ module.exports = {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         host: `https://appsody.dev/`,
-        policy: [{ userAgent: 'Twitterbot', allow: '/' }],
+        policy: [{ userAgent: "Twitterbot", allow: "/" }]
       }
-    }
+    },
+    `gatsby-plugin-client-side-redirect`
   ]
-}
+};
