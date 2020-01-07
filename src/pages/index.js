@@ -79,7 +79,7 @@ const IndexPage = () => (
         <Link to="/stacks" className="btn btn-primary mx-auto all-stacks-button" role="button">View All Stacks</Link>
       </div>
     </section>
-    <section className="landing-section text-center homepage-sections bottom-spacer">
+    <section className="landing-section text-center bottom-spacer">
       <h2 >Built on open source</h2>
       <div className="d-flex flex-wrap justify-content-center mb-5">
         <img className="m-3" src={ kubeLogo } alt="Kubernetes Logo"></img>
