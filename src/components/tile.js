@@ -40,7 +40,6 @@ class Tile extends React.Component {
           <p>{this.desc}</p>
           <a href="/" onClick={this.handleClick} className="btn btn-primary w-50 mx-auto" role="button">Select</a>
           { this.props.updated && <p className="updated-date">Updated: {Moment.unix(this.props.updated / 1000).format('MMM Do')}</p>}
-          {console.log(this.props.updated)}
         </div>
       );
     } else {
