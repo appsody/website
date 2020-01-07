@@ -1,4 +1,5 @@
 import React from "react";
+import Moment from "moment";
 
 class Tile extends React.Component {
   constructor(props) {
@@ -38,7 +39,8 @@ class Tile extends React.Component {
           <h5 className="heading-tile">{this.props.heading}</h5>
           <p>{this.desc}</p>
           <a href="/" onClick={this.handleClick} className="btn btn-primary w-50 mx-auto" role="button">Select</a>
-          { this.props.updated && <p className="updated-date">Updated: {(new Date(this.props.updated).getDate()) + "/" + (new Date(this.props.updated).getMonth()+1)}</p>}
+          { this.props.updated && <p className="updated-date">Updated: {Moment.unix(this.props.updated / 1000).format('MMM Do')}</p>}
+          {console.log(this.props.updated)}
         </div>
       );
     } else {
