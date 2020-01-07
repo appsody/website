@@ -152,7 +152,7 @@ appsody debug [flags]
 ```
   appsody debug --docker-options "--privileged"
   Starts the debugging environment, passing the "--privileged" option to the "docker run" command as a flag.
-  
+
   appsody debug --name my-project-dev2 -p 3001:3000
   Starts the debugging environment, names the development container "my-project-dev2", and binds the container port 3000 to the host port 3001.
 ```
@@ -190,8 +190,8 @@ Build and deploy your Appsody project to Kubernetes.
 
 ### Synopsis
 
-Build and deploy a local container image of your Appsody project to your Kubernetes cluster. 
-		
+Build and deploy a local container image of your Appsody project to your Kubernetes cluster.
+
 The command performs the following steps:
 
 1. Runs the appsody build command to build the container image for deployment.
@@ -207,7 +207,7 @@ appsody deploy [flags]
 ```
   appsody deploy --namespace my-namespace
   Builds and deploys your project to the "my-namespace" namespace in your local Kubernetes cluster.
-  
+
   appsody deploy -t my-repo/nodejs-express --push-url external-registry-url --pull-url internal-registry-url
   Builds and tags the image as "my-repo/nodejs-express", pushes the image to "external-registry-url/my-repo/nodejs-express", and creates a deployment manifest that tells the Kubernetes cluster to pull the image from "internal-registry-url/my-repo/nodejs-express".
 ```
@@ -266,7 +266,7 @@ appsody deploy delete [flags]
 ```
   appsody deploy delete -f my-deploy.yaml
   Deletes the AppsodyApplication from the "default" namespace, using the name and type specified in the "my-deploy.yaml" deployment manifest.
-  
+
   appsody deploy delete --namespace my-namespace
   Deletes the AppsodyApplication from the "my-namespace" namespace, using the name and type specified in the "app-deploy.yaml" deployment manifest.
 ```
@@ -310,7 +310,7 @@ Extract your Appsody project to a local directory.
 ### Synopsis
 
 Extract the full application (the stack and your Appsody project) into a local directory.
-		
+
 Your project is extracted into your local '$HOME/.appsody/extract' directory, unless you use the --target-dir flag to specify a different location
 
 ```
@@ -351,9 +351,9 @@ Initialize an Appsody project.
 
 ### Synopsis
 
-Set up the local Appsody development environment. You can do this for an existing project or use the template application provided by the stack. 
+Set up the local Appsody development environment. You can do this for an existing project or use the template application provided by the stack.
 
-By default, the command creates an Appsody stack configuration file and provides a simple default application. You can also initialize a project with a different template application, or no template. 
+By default, the command creates an Appsody stack configuration file and provides a simple default application. You can also initialize a project with a different template application, or no template.
 
 To initialize a project with a template application, in a directory that is not empty, you need to specify the "overwrite" option [--overwrite].
 Use 'appsody list' to see the available stacks and templates.
@@ -367,10 +367,10 @@ appsody init [stack] or [repository]/[stack] [template] [flags]
 ```
   appsody init nodejs-express
   Initializes a project with the default template from the "nodejs-express" stack in the default repository.
-  
+
   appsody init experimental/nodejs-functions
   Initializes a project with the default template from the "nodejs-functions" stack in the "experimental" repository.
-  
+
   appsody init nodejs-express scaffold
   Initializes a project with the "scaffold" template from "nodejs-express" stack in the default repository.
 
@@ -408,7 +408,7 @@ List the available Appsody stacks.
 
 ### Synopsis
 
-List all the Appsody stacks available in your repositories. 
+List all the Appsody stacks available in your repositories.
 
 An asterisk in the repository column denotes the default repository. An asterisk in the template column denotes the default template that is used when you initialise an Appsody project.
 
@@ -421,7 +421,7 @@ appsody list [repository] [flags]
 ```
   appsody list
   Lists all available stacks for each of your repositories.
-  
+
   appsody list my-repo
   Lists available stacks only in your "my-repo" repository.
 ```
@@ -481,8 +481,8 @@ Install the Appsody Operator.
 ### Synopsis
 
 Install the Appsody Operator into your configured Kubernetes cluster.
-		
-The Appsody Operator listens for incoming AppsodyApplication resources on your cluster. For more information, see https://operatorhub.io/operator/appsody-operator. 
+
+The Appsody Operator listens for incoming AppsodyApplication resources on your cluster. For more information, see https://operatorhub.io/operator/appsody-operator.
 
 By default, the operator watches a single namespace. You can specify the ‘--watch-all’ flag to tell the operator to watch all namespaces in the cluster. If you want to watch multiple, but not all, namespaces within your cluster, install an additional operator to watch each additional namespace.
 
@@ -563,8 +563,8 @@ List the Appsody containers running in the local Docker environment.
 
 ### Synopsis
 
-List all stack-based containers that are currently running in the local Docker environment. 
-		
+List all stack-based containers that are currently running in the local Docker environment.
+
 Shows the following information about the Appsody containers that are currently running: container ID, container name, image and status.
 
 ```
@@ -694,7 +694,7 @@ Remove an Appsody repository.
 ### Synopsis
 
 Remove an Appsody repository from your list of configured Appsody repositories.
-		
+
 You cannot remove the default repository, but you can make a different repository the default (see appsody repo set-default).
 
 ```
@@ -772,7 +772,7 @@ Run your Appsody project in a containerized development environment.
 ### Synopsis
 
 Run the local Appsody environment, starting a container-based, continuous build environment for your project.
-		
+
 Run this command from the root directory of your Appsody project
 
 ```
@@ -788,7 +788,7 @@ appsody run [flags]
   appsody run --interactive
   Runs your project in a containerized development environment, and attaches the standard input stream to the container. You can use the standard input stream to interact with processes inside the container.
 
-  appsody run -p 3001:3000 --docker-options "--privileged" 
+  appsody run -p 3001:3000 --docker-options "--privileged"
   Runs your project in a containerized development environment, binds the container port 3000 to the host port 3001, and passes the "--privileged" option to the "docker run" command as a flag.
 ```
 
@@ -856,8 +856,8 @@ Add stack information into a production Appsody repository
 
 ### Synopsis
 
-Adds stack information into an Appsody repository. 
-		
+Adds stack information into an Appsody repository.
+
 Adds stack information to a new or existing Appsody repository, specified by the \<repo-name> argument. This enables you to share your stack with others.
 
 The updated repository index file is created in  ~/.appsody/stacks/dev.local directory.
@@ -907,7 +907,7 @@ Create a new Appsody stack.
 
 Create a new Appsody stack, called \<name>, in the current directory. You can use this stack as a starting point for developing your own Appsody stack.
 
-By default, the new stack is based on the example stack: samples/sample-stack. If you want to use a different stack as the basis for your new stack, use the copy flag to specify the stack you want to use as the starting point. You can use 'appsody list' to see the available stacks.
+By default, the new stack is based on the example stack: incubator/starter. If you want to use a different stack as the basis for your new stack, use the copy flag to specify the stack you want to use as the starting point. You can use 'appsody list' to see the available stacks.
 
 The stack name must start with a lowercase letter, and can contain only lowercase letters, numbers, or dashes, and cannot end with a dash. The stack name cannot exceed 128 characters.
 
@@ -919,7 +919,7 @@ appsody stack create <name> [flags]
 
 ```
   appsody stack create my-stack  
-  Creates a stack called my-stack, based on the example stack “samples/sample-stack”.
+  Creates a stack called my-stack, based on the example stack “incubator/starter”.
 
   appsody stack create my-stack --copy incubator/nodejs-express  
   Creates a stack called my-stack, based on the Node.js Express stack.
@@ -928,7 +928,7 @@ appsody stack create <name> [flags]
 ### Options
 
 ```
-      --copy string   Copy the specified stack. The format is <repository>/<stack> (default "samples/sample-stack")
+      --copy string   Copy the specified stack. The format is <repository>/<stack> (default "incubator/starter")
   -h, --help          help for create
 ```
 
@@ -963,7 +963,7 @@ appsody stack lint [flags]
 ```
   appsody stack lint
   Checks the structure of the stack in the current directory"
-		
+
   appsody stack lint path/to/my-stack
   Checks the structure of the stack "my-stack" in the path "path/to/my-stack"
 ```
@@ -1005,7 +1005,7 @@ appsody stack package [flags]
 ```
   appsody stack package
   Packages the stack in the current directory, tags the built image with the default registry and namespace, and adds the stack to the "dev.local" repository.
-  
+
   appsody stack package --image-namespace my-namespace
   Packages the stack in the current directory, tags the built image with the default registry and "my-namespace" namespace, and adds the stack to the "dev.local" repository.
 ```
@@ -1036,14 +1036,14 @@ Run validation tests against your stack and its templates.
 
 ### Synopsis
 
-Run validation tests against your stack and its templates, in your local Appsody development environment. 
-		
+Run validation tests against your stack and its templates, in your local Appsody development environment.
+
 Runs the following validation tests against the stack and its templates:
   * appsody stack lint
   * appsody stack package
-  * appsody init 
-  * appsody run 
-  * appsody test 
+  * appsody init
+  * appsody run
+  * appsody test
   * appsody build
 
 ```
@@ -1080,7 +1080,7 @@ Stop the local, running Appsody container.
 
 Stop the local, running Appsody container for your project.
 
-By default, the command stops the Appsody container that was launched from the project in your current working directory. 
+By default, the command stops the Appsody container that was launched from the project in your current working directory.
 To see a list of all your running Appsody containers, run the command 'appsody ps'.
 
 ```
@@ -1092,7 +1092,7 @@ appsody stop [flags]
 ```
   appsody stop
   Stops the running Appsody container launched by the project in your current working directory.
-  
+
   appsody stop --name nodejs-express-dev
   Stops the running Appsody container with the name "nodejs-express-dev".
 ```
@@ -1123,7 +1123,7 @@ Test your project in the local Appsody environment.
 ### Synopsis
 
 Run the local Appsody environment, starting a container-based, continuous build environment for your project, and running the test suite each time a file changes.
-		
+
 Run this command from the root directory of your Appsody project.
 
 ```
@@ -1135,7 +1135,7 @@ appsody test [flags]
 ```
   appsody test
   Runs the tests for your Appsody project.
-		
+
   appsody test --no-watcher
   Runs the tests for your Appsody project without monitoring your project files for changes. The command completes after the tests are run once.
 ```
@@ -1196,4 +1196,3 @@ appsody version [flags]
 ### SEE ALSO
 
 * [appsody](#appsody)	 - Appsody CLI
-
