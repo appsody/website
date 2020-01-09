@@ -16,10 +16,10 @@ Complete documentation is available at https://appsody.dev
 ### Options
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
   -h, --help            help for appsody
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -85,9 +85,9 @@ appsody build [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -126,9 +126,9 @@ appsody completion [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -175,9 +175,9 @@ appsody debug [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -235,9 +235,9 @@ appsody deploy [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -282,9 +282,9 @@ appsody deploy delete [flags]
 ```
       --buildah                  Build project using buildah primitives instead of docker.
       --buildah-options string   Specify the buildah build options to use. Value must be in "".
-      --config string            config file (default is $HOME/.appsody/.appsody.yaml)
+      --config string            The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
       --docker-options string    Specify the docker build options to use. Value must be in "". The following Docker options are not supported: '--help','-t','--tag','-f','--file'.
-      --dryrun                   Turns on dry run mode
+      --dryrun                   Shows the commands that are called by this command, without running them.
   -f, --file string              The file name to use for the deployment manifest. (default "app-deploy.yaml")
       --force                    DEPRECATED - Force the reuse of the deployment manifest file if one exists.
       --generate-only            DEPRECATED - Only generate the deployment manifest file. Do not deploy the project.
@@ -296,7 +296,7 @@ appsody deploy delete [flags]
       --push-url string          Remote repository to push image to.  This will also trigger a push if the --push flag is not specified.
       --stack-registry string    Specify the URL of the registry that hosts your stack images. (default "docker.io")
   -t, --tag string               Docker image name and optionally a tag in the 'name:tag' format
-  -v, --verbose                  Turns on debug output and logging to a file in $HOME/.appsody/logs
+  -v, --verbose                  Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -336,9 +336,9 @@ appsody extract [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -393,9 +393,9 @@ appsody init [stack] or [repository]/[stack] [template] [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -436,9 +436,9 @@ appsody list [repository] [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -463,9 +463,9 @@ This command allows you to "install" or "uninstall" the Appsody operator from th
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -508,10 +508,10 @@ appsody operator install [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string      config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun             Turns on dry run mode
+      --config string      The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun             Shows the commands that are called by this command, without running them.
   -n, --namespace string   The namespace in which the operator will run. (default "default")
-  -v, --verbose            Turns on debug output and logging to a file in $HOME/.appsody/logs
+  -v, --verbose            Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -547,10 +547,10 @@ appsody operator uninstall [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string      config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun             Turns on dry run mode
+      --config string      The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun             Shows the commands that are called by this command, without running them.
   -n, --namespace string   The namespace in which the operator will run. (default "default")
-  -v, --verbose            Turns on debug output and logging to a file in $HOME/.appsody/logs
+  -v, --verbose            Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -580,9 +580,9 @@ appsody ps [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -606,9 +606,9 @@ Manage your Appsody repositories
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -647,9 +647,9 @@ appsody repo add <name> <url> [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -678,9 +678,9 @@ appsody repo list [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -717,9 +717,9 @@ appsody repo remove <name> [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -756,9 +756,9 @@ appsody repo set-default <name> [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -810,9 +810,9 @@ appsody run [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -836,9 +836,9 @@ Tools to help create and test Appsody stacks
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -848,6 +848,7 @@ Tools to help create and test Appsody stacks
 * [appsody stack create](#appsody-stack-create)	 - Create a new Appsody stack.
 * [appsody stack lint](#appsody-stack-lint)	 - Check your stack structure.
 * [appsody stack package](#appsody-stack-package)	 - Package your stack.
+* [appsody stack remove-from-repo](#appsody-stack-remove-from-repo)	 - Remove stack information from an Appsody repository
 * [appsody stack validate](#appsody-stack-validate)	 - Run validation tests against your stack and its templates.
 
 ## appsody stack add-to-repo
@@ -890,9 +891,9 @@ appsody stack add-to-repo <repo-name> [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -907,7 +908,7 @@ Create a new Appsody stack.
 
 Create a new Appsody stack, called \<name>, in the current directory. You can use this stack as a starting point for developing your own Appsody stack.
 
-By default, the new stack is based on the example stack: samples/sample-stack. If you want to use a different stack as the basis for your new stack, use the copy flag to specify the stack you want to use as the starting point. You can use 'appsody list' to see the available stacks.
+By default, the new stack is based on the example stack: incubator/starter. If you want to use a different stack as the basis for your new stack, use the copy flag to specify the stack you want to use as the starting point. You can use 'appsody list' to see the available stacks.
 
 The stack name must start with a lowercase letter, and can contain only lowercase letters, numbers, or dashes, and cannot end with a dash. The stack name cannot exceed 128 characters.
 
@@ -919,7 +920,7 @@ appsody stack create <name> [flags]
 
 ```
   appsody stack create my-stack  
-  Creates a stack called my-stack, based on the example stack “samples/sample-stack”.
+  Creates a stack called my-stack, based on the example stack “incubator/starter”.
 
   appsody stack create my-stack --copy incubator/nodejs-express  
   Creates a stack called my-stack, based on the Node.js Express stack.
@@ -928,16 +929,16 @@ appsody stack create <name> [flags]
 ### Options
 
 ```
-      --copy string   Copy the specified stack. The format is <repository>/<stack> (default "samples/sample-stack")
+      --copy string   Copy the specified stack. The format is <repository>/<stack> (default "incubator/starter")
   -h, --help          help for create
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -977,9 +978,9 @@ appsody stack lint [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -1021,9 +1022,51 @@ appsody stack package [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
+```
+
+### SEE ALSO
+
+* [appsody stack](#appsody-stack)	 - Tools to help create and test Appsody stacks
+
+## appsody stack remove-from-repo
+
+Remove stack information from an Appsody repository
+
+### Synopsis
+
+Removes stack information from an Appsody repository. 
+		
+Removes stack information, specified by \<stack-name> from an Appsody repository, specified by the \<repo-name> argument.
+
+The updated repository index file is created in  ~/.appsody/stacks/dev.local directory.
+
+```
+appsody stack remove-from-repo <repo-name> <stack-name> [flags]
+```
+
+### Examples
+
+```
+  appsody stack remove-from-repo incubator nodejs
+  Updates the repository index file for the incubator repository, removing the definition of the nodejs stack
+```
+
+### Options
+
+```
+  -h, --help              help for remove-from-repo
+      --use-local-cache   Whether to use a local file if exists or create a new file
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -1063,9 +1106,9 @@ appsody stack validate [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -1107,9 +1150,9 @@ appsody stop [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -1158,9 +1201,9 @@ appsody test [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
@@ -1188,9 +1231,9 @@ appsody version [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.appsody/.appsody.yaml)
-      --dryrun          Turns on dry run mode
-  -v, --verbose         Turns on debug output and logging to a file in $HOME/.appsody/logs
+      --config string   The absolute path to the Appsody config file. Use this option when you want to specify your own, customized config file (default '$HOME/.appsody/.appsody.yaml')
+      --dryrun          Shows the commands that are called by this command, without running them.
+  -v, --verbose         Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
 
 ### SEE ALSO
