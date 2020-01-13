@@ -1074,6 +1074,12 @@ input.checkbox-item {
 
   .flip a.btn {
     color: black;
+    background-color: rgb(230, 230, 230);
+  }
+
+  .card.flip {
+    background-color: var(--colour-scheme-1-dark);
+    box-shadow: 1px 3px 14px rgba(0, 0, 0, 0.5);
   }
 
   #main-nav {
