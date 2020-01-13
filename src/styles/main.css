@@ -1213,4 +1213,8 @@ input.checkbox-item {
   .docs-header-pink {
     color: var(--colour-scheme-1);
   }
+
+  hr {
+    border-top: 1px solid rgba(255, 255, 255,.1);
+  }
 }
