@@ -11,7 +11,7 @@ Although there are many Appsody stacks to choose from, you might want to create 
 
 ### Create your own stack using the Appsody CLI
 
-The quickest way to create a new stack is to use the `appsody stack create` command, which creates a new stack by copying an existing stack. By default, the new stack is based on the sample stack. For example, to create a new stack named my-stack, in a new directory, use this command:
+The quickest way to create a new stack is to use the `appsody stack create` command, which creates a new stack by copying an existing stack. By default, the new stack is based on the starter stack. For example, to create a new stack named my-stack, in a new directory, use this command:
 
 ```
 appsody stack create my-stack
