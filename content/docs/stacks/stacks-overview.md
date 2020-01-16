@@ -60,29 +60,29 @@ If you would like to contribute a stack, you would need to submit a pull request
 
 These same steps will occur for subsequent pull requests updating your stack. If you would like to move the stack to a different repository, you will need to submit a pull request, changing the stack from the current repository to the new repository directory. We will make a decision with regards to whether or not your stack fulfils the criteria of the new repository.
 
-The stability criteria for each Appsody repository is as follows, with each repository encompassing the criteria for the repositories below it:
+The stability criteria for each Appsody repository is as follows:
 
 ### Experimental - Not production-ready, proof of concept work that should be considered unstable and may be subject to breaking changes
 The stack should:
 - Strictly adhere to the Appsody stack structure (i.e. [appsody stack lint](https://appsody.dev/docs/using-appsody/cli-commands#appsody-stack-lint) passes without errors)
-- Work with the [appsody init](https://appsody.dev/docs/using-appsody/cli-commands#appsody-init), [appsody run](https://appsody.dev/docs/using-appsody/cli-commands#appsody-run) and [appsody build](https://appsody.dev/docs/using-appsody/cli-commands#appsody-build) commands
+- Support the [appsody init](https://appsody.dev/docs/using-appsody/cli-commands#appsody-init), [appsody run](https://appsody.dev/docs/using-appsody/cli-commands#appsody-run) and [appsody build](https://appsody.dev/docs/using-appsody/cli-commands#appsody-build) commands
 
 ### Incubator - Not production-ready, requires further development to satisfy stable criteria
 The stack should encompass the Experimental criteria and further:
-- Have maintainers remain active in terms of contributions
-- Work additionally with the [appsody test](https://appsody.dev/docs/using-appsody/cli-commands#appsody-test) and [appsody deploy](https://appsody.dev/docs/using-appsody/cli-commands#appsody-deploy) commands
-- Provide documentation with regards to the limitations of the stack, in the stack's `README.md`
+- Maintainers must remain active in terms of contributions and reviews
+- Provide documentation with regards to the limitations of the stack, in the `README.md`
+- Support the [appsody test](https://appsody.dev/docs/using-appsody/cli-commands#appsody-test) and [appsody deploy](https://appsody.dev/docs/using-appsody/cli-commands#appsody-deploy) commands
 
 ### Stable - Production-ready workload
 The stack should encompass the Incubator criteria and further:
-- Work with all Appsody CLI commands
-- Have no open critical issues
-- Pass on [appsody stack validate](https://appsody.dev/docs/using-appsody/cli-commands#appsody-stack-validate) and integration tests on all 3 OS supported by Appsody
-- Have specified any minimum requirements needed by the stack in the `stack.yaml` (i.e. the minimum Appsody/Docker/Buildah version required)
-- Be able to run [appsody build](https://appsody.dev/docs/using-appsody/cli-commands#appsody-build) with Buildah
-- Must not create files on the local system that cannot be deleted (i.e. own by root or other users)
-- Use required images with explicit versions
-- Must be tagged with a major version (i.e. at least 1.0.0)
+- Support all Appsody CLI commands
+- Possess no open critical issues
+- Pass on [appsody stack validate](https://appsody.dev/docs/using-appsody/cli-commands#appsody-stack-validate) and integration tests on all 3 OS supported by Appsody without errors
+- Specify minimum requirements required by the stack, in the `stack.yaml` (i.e. the minimum Appsody/Docker/Buildah version required)
+- Support the [appsody build](https://appsody.dev/docs/using-appsody/cli-commands#appsody-build) command with Buildah
+- Prevent creation of files on the local system that cannot be removed (i.e. files owned by root or other users)
+- Specify explicit versions for all required Docker images
+- Tag the stack with a major version (i.e. at least 1.0.0)
 - Provide documentation with regards to the migration of existing projects to use the stack
 - Exemplify [Docker best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) with particular attention paid to:
     1. An effort has been made to minimise the size of production images 
