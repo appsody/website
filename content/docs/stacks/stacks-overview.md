@@ -57,32 +57,31 @@ The criteria for each Appsody stack stability level is as follows:
 
 ### Experimental
 These stacks are not production-ready and are considered as proof of concept. They might be unstable, and subject to breaking changes. They should:
-- Adhere to the Appsody stack structure (i.e. [appsody stack lint](https://appsody.dev/docs/using-appsody/cli-commands#appsody-stack-lint) passes without errors)
-- Support the [appsody init](https://appsody.dev/docs/using-appsody/cli-commands#appsody-init), [appsody run](https://appsody.dev/docs/using-appsody/cli-commands#appsody-run) and [appsody build](https://appsody.dev/docs/using-appsody/cli-commands#appsody-build) commands
+- Adhere to the Appsody stack structure (i.e. [appsody stack lint](/docs/using-appsody/cli-commands#appsody-stack-lint) passes without errors)
+- Support the [appsody init](/docs/using-appsody/cli-commands#appsody-init), [appsody run](/docs/using-appsody/cli-commands#appsody-run) and [appsody build](/docs/using-appsody/cli-commands#appsody-build) commands
 
 ### Incubator
 These stacks are not production-ready and require further development to satisfy the stable criteria. They should encompass the experimental criteria and further:
 - Maintainers must remain active in terms of contributions and reviews
-- Support the [appsody test](https://appsody.dev/docs/using-appsody/cli-commands#appsody-test) and [appsody deploy](https://appsody.dev/docs/using-appsody/cli-commands#appsody-deploy) commands
+- Support the [appsody test](/docs/using-appsody/cli-commands#appsody-test) and [appsody deploy](/docs/using-appsody/cli-commands#appsody-deploy) commands
 - Document the limitations of the stack in the `README.md`
 
 ### Stable
 These stacks are production-ready. They should encompass the incubator criteria and further:
-- Support all Appsody CLI commands
-- Possess no open, critical issues
-- Pass on [appsody stack validate](https://appsody.dev/docs/using-appsody/cli-commands#appsody-stack-validate) and integration tests, on all 3 OS supported by Appsody without errors
+- Support all [Appsody CLI commands](/docs/using-appsody/cli-commands)
+- Pass on [appsody stack validate](/docs/using-appsody/cli-commands#appsody-stack-validate) and integration tests, on all 3 OS supported by Appsody without errors
 - Specify the minimum Appsody, Docker and Buildah versions required in the `stack.yaml`
-- Support the [appsody build](https://appsody.dev/docs/using-appsody/cli-commands#appsody-build) command with Buildah
+- Support the [appsody build](/docs/using-appsody/cli-commands#appsody-build) command with Buildah
 - Prevent creation of files on the local system that cannot be removed (i.e. files owned by root or other users)
 - Specify explicit versions for all required Docker images
 - Tag the stack with a major version (i.e. at least 1.0.0)
 - Provide documentation with regards to the migration of existing projects to use the stack
-- Follow [Docker best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/), including :
+- Follow [Docker best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/), including:
     1. Minimise the size of production images 
     2. Use the official base images 
     3. Images must not have any major security vulnerabilities
     4. Containers must be run by non-root users
-- Must include a detailed `README.md`, including:
+- Include a detailed `README.md`, documenting:
     1. A short description of the stack
     2. Any prerequisites or setup required before using the stack
     3. How to access any endpoints provided by the stack
