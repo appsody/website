@@ -56,33 +56,36 @@ The `templates` directory contains one or more starter applications that are cre
 The criteria for each Appsody stack stability level is as follows:
 
 ### Experimental
-These stacks are not production-ready and should be considered proof of concept work that are unstable, and subject to breaking changes. They should:
-- Strictly adhere to the Appsody stack structure (i.e. [appsody stack lint](https://appsody.dev/docs/using-appsody/cli-commands#appsody-stack-lint) passes without errors)
+These stacks are not production-ready and are considered as proof of concept. They might be unstable, and subject to breaking changes. They should:
+- Adhere to the Appsody stack structure (i.e. [appsody stack lint](https://appsody.dev/docs/using-appsody/cli-commands#appsody-stack-lint) passes without errors)
 - Support the [appsody init](https://appsody.dev/docs/using-appsody/cli-commands#appsody-init), [appsody run](https://appsody.dev/docs/using-appsody/cli-commands#appsody-run) and [appsody build](https://appsody.dev/docs/using-appsody/cli-commands#appsody-build) commands
 
 ### Incubator
 These stacks are not production-ready and require further development to satisfy the stable criteria. They should encompass the experimental criteria and further:
-- Provide documentation with regards to the limitations of the stack in the `README.md`
 - Maintainers must remain active in terms of contributions and reviews
 - Support the [appsody test](https://appsody.dev/docs/using-appsody/cli-commands#appsody-test) and [appsody deploy](https://appsody.dev/docs/using-appsody/cli-commands#appsody-deploy) commands
+- Document the limitations of the stack in the `README.md`
 
 ### Stable
 These stacks are production-ready. They should encompass the incubator criteria and further:
 - Support all Appsody CLI commands
 - Possess no open, critical issues
 - Pass on [appsody stack validate](https://appsody.dev/docs/using-appsody/cli-commands#appsody-stack-validate) and integration tests, on all 3 OS supported by Appsody without errors
-- Specify minimum requirements required by the stack, in the `stack.yaml` (i.e. the minimum Appsody/Docker/Buildah version required)
+- Specify the minimum Appsody, Docker and Buildah versions required in the `stack.yaml`
 - Support the [appsody build](https://appsody.dev/docs/using-appsody/cli-commands#appsody-build) command with Buildah
 - Prevent creation of files on the local system that cannot be removed (i.e. files owned by root or other users)
 - Specify explicit versions for all required Docker images
 - Tag the stack with a major version (i.e. at least 1.0.0)
 - Provide documentation with regards to the migration of existing projects to use the stack
-- Exemplify [Docker best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) with particular attention paid to:
-    1. An effort has been made to minimise the size of production images 
-    2. Use the official base images and ensure security updates are brought into the final production image as necessary
-    3. Only create containers that are run by non-root users
-
-Ultimately, you will decide if the runtime is production-ready, and we will decide if the stack is production-ready for Appsody.
+- Follow [Docker best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/), including :
+    1. Minimise the size of production images 
+    2. Use the official base images 
+    3. Images must not have any major security vulnerabilities
+    4. Containers must be run by non-root users
+- Must include a detailed `README.md`, including:
+    1. A short description of the stack
+    2. Any prerequisites or setup required before using the stack
+    3. How to access any endpoints provided by the stack
 
 ### Official Appsody Repositories
 
@@ -98,9 +101,9 @@ By default, Appsody comes with the `incubator` and `experimental` repositories. 
 
 ## Contributing a stack
 
-If you would like to contribute a stack, you would need to submit a pull request and decide which repository you think is most suitable, corresponding to the stability level of your stack. We will review it, provide further guidance and request changes as necessary. If we agree that the new stack fulfils the criteria of your chosen repository, we will approve, merge and release your stack. When we release your stack, the following will occur:
-- A template archive for each stack template will be generated
-- A docker image of the stack will be pushed to [Appsody’s DockerHub](https://hub.docker.com/u/appsody)
-- The indexes for each repository will be updated
+If you would like to contribute a stack, you would need to submit a pull request and decide which repository you think is most suitable, corresponding to the stability level of your stack. We will review it, provide further guidance and request changes as necessary. If we agree that the new stack fulfils the criteria of your chosen repository, we will approve, merge and release your stack. When the stack is released:
+- A template archive is generated for each stack template
+- A docker image of the stack is pushed to [Appsody’s DockerHub](https://hub.docker.com/u/appsody)
+- The indexes for each repository are updated
 
-These same steps will occur for subsequent pull requests updating your stack. If you would like to move the stack to a different repository, you will need to submit a pull request, changing the stack from the current repository to the new repository directory. We will make a decision with regards to whether or not your stack fulfils the criteria of the new repository.
+To move a stack from incubator to stable, or experimental to incubator, stack maintainers need to submit a pull request, changing the stack from the current repository to the new repository directory. We will make a decision with regards to whether or not your stack fulfils the criteria of the new repository.
