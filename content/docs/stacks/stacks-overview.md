@@ -100,10 +100,19 @@ Below are the URLs for official Appsody repository releases.
 By default, Appsody comes with the `incubator` and `experimental` repositories. Other repositories can be added by running the [`appsody repo add`](/docs/using-appsody/cli-commands/#appsody-repo-add) command.
 
 ## Contributing a stack
+Any contributor can submit a pull request to change a stack. However, typically, the Stack Release Team will wait for the Stack Maintainers' (as listed in the `stack.yaml`) approval, before approving and merging a stack change.
 
-If you would like to contribute a stack, you would need to submit a pull request and decide which repository you think is most suitable, corresponding to the stability level of your stack. We will review it, provide further guidance and request changes as necessary. If we agree that the new stack fulfils the criteria of your chosen repository, we will approve, merge and release your stack. When the stack is released:
-- A template archive is generated for each stack template
-- A docker image of the stack is pushed to [Appsody’s DockerHub](https://hub.docker.com/u/appsody)
-- The indexes for each repository are updated
+The following outlines the process to contributing a new stack:
 
-To move a stack from incubator to stable, or experimental to incubator, stack maintainers need to submit a pull request, changing the stack from the current repository to the new repository directory. We will make a decision with regards to whether or not your stack fulfils the criteria of the new repository.
+1. The Stack Maintainer(s) submits a pull request, deciding the stability level of their stack. 
+
+2. The Stack Release Team reviews the pull request, provides further guidance, and requests changes as necessary. 
+
+3. If the Stack Release Team agrees the stack fulfils the criteria of the chosen stability level, the pull request gets approved and merged.
+
+4. The Stack Release Team then releases the new stack. When the stack is released:
+    - A template archive is generated for each stack template
+    - A docker image of the stack is pushed to [Appsody’s DockerHub](https://hub.docker.com/u/appsody)
+    - The indexes for each repository are updated
+
+To move a stack from incubator to stable, or experimental to incubator, Stack Maintainers need to submit a pull request, changing the stack from the current repository to the new repository directory. The Stack Release Team makes the decision with regards to whether or not the stack fulfils the criteria of the new repository.
