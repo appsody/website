@@ -1219,7 +1219,7 @@ appsody test [flags]
       --no-watcher              Disable file watching, regardless of container environment variable settings.
   -p, --publish stringArray     Publish the container's ports to the host. The stack's exposed ports will always be published, but you can publish addition ports or override the host ports with this option.
   -P, --publish-all             Publish all exposed ports to random ports
-      --stack-registry string   Specify the URL of the registry that hosts your stack images. [WARNING] Your current settings are incorrect - change your project config or use this flag to override the image registry. (default "docker.io")
+      --stack-registry string   Specify the URL of the registry that hosts your stack images. (default "docker.io")
 ```
 
 ### Options inherited from parent commands
