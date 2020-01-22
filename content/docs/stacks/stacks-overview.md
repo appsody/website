@@ -75,7 +75,7 @@ These stacks are production-ready. Stable stacks must meet all the criteria set 
 - Prevent creation of files on the local system that cannot be removed (i.e. files owned by root or other users)
 - Specify explicit versions for all required Docker images
 - Tag the stack with a major version (i.e. at least 1.0.0)
-- Provide documentation with regards to the migration of existing projects to use the stack
+- Provide documentation to help users with existing projects migrate to using the stack
 - Follow [Docker best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/), including:
     1. Minimise the size of production images 
     2. Use the official base images 
