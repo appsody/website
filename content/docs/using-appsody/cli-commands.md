@@ -80,7 +80,7 @@ appsody build [flags]
       --pull-url string          Remote repository to pull image from.
       --push                     Push the container image to the image repository.
       --push-url string          The remote registry to push the image to. This will also trigger a push if the --push flag is not specified.
-      --stack-registry string    Specify the URL of the registry that hosts your stack images. [WARNING] Your current settings are incorrect - change your project config or use this flag to override the image registry. (default "docker.io")
+      --stack-registry string    Specify the URL of the registry that hosts your stack images. (default "docker.io")
   -t, --tag string               Container image name and optionally, a tag in the 'name:tag' format.
 ```
 
@@ -173,7 +173,7 @@ appsody debug [flags]
       --no-watcher              Disable file watching, regardless of container environment variable settings.
   -p, --publish stringArray     Publish the container's ports to the host. The stack's exposed ports will always be published, but you can publish addition ports or override the host ports with this option.
   -P, --publish-all             Publish all exposed ports to random ports
-      --stack-registry string   Specify the URL of the registry that hosts your stack images. [WARNING] Your current settings are incorrect - change your project config or use this flag to override the image registry. (default "docker.io")
+      --stack-registry string   Specify the URL of the registry that hosts your stack images. (default "docker.io")
 ```
 
 ### Options inherited from parent commands
@@ -236,7 +236,7 @@ appsody deploy [flags]
       --pull-url string          Remote repository to pull image from.
       --push                     Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
       --push-url string          Remote repository to push image to.  This will also trigger a push if the --push flag is not specified.
-      --stack-registry string    Specify the URL of the registry that hosts your stack images. [WARNING] Your current settings are incorrect - change your project config or use this flag to override the image registry. (default "docker.io")
+      --stack-registry string    Specify the URL of the registry that hosts your stack images. (default "docker.io")
   -t, --tag string               Docker image name and optionally a tag in the 'name:tag' format
 ```
 
@@ -304,7 +304,7 @@ appsody deploy delete [flags]
       --pull-url string          Remote repository to pull image from.
       --push                     Push this image to an external Docker registry. Assumes that you have previously successfully done docker login
       --push-url string          Remote repository to push image to.  This will also trigger a push if the --push flag is not specified.
-      --stack-registry string    Specify the URL of the registry that hosts your stack images. [WARNING] Your current settings are incorrect - change your project config or use this flag to override the image registry. (default "docker.io")
+      --stack-registry string    Specify the URL of the registry that hosts your stack images. (default "docker.io")
   -t, --tag string               Docker image name and optionally a tag in the 'name:tag' format
   -v, --verbose                  Prints more detailed log output, to the console and to a file in $HOME/.appsody/logs
 ```
@@ -818,7 +818,7 @@ appsody run [flags]
       --no-watcher              Disable file watching, regardless of container environment variable settings.
   -p, --publish stringArray     Publish the container's ports to the host. The stack's exposed ports will always be published, but you can publish addition ports or override the host ports with this option.
   -P, --publish-all             Publish all exposed ports to random ports
-      --stack-registry string   Specify the URL of the registry that hosts your stack images. [WARNING] Your current settings are incorrect - change your project config or use this flag to override the image registry. (default "docker.io")
+      --stack-registry string   Specify the URL of the registry that hosts your stack images. (default "docker.io")
 ```
 
 ### Options inherited from parent commands
