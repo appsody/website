@@ -102,15 +102,13 @@ By default, Appsody comes with the `incubator` and `experimental` repositories. 
 
 The following outlines the process to contributing changes to a stack:
 
-1. The Stack Contributor submits a pull request with changes to a stack. The pull request should follow commit guidelines detailing how the stack changes satisfy the stability criteria (e.g. how Docker best practices have been implemented). 
+1. The Stack Contributor submits a pull request with changes to a stack. The pull request should follow commit guidelines detailing the stack changes. If the change is updating the stack's stability level, it must also describe how the stability criteria is met (e.g. how Docker best practices have been implemented). 
 
-    > Any contributor can submit a pull request to promote a stack to a higher stability level.
+2. The Stack Maintainer(s) (as listed in the `stack.yaml`) review the pull request, keeping in mind the stability criteria of the stack. If the Stack Maintainer(s) are satisfied that the stack changes follow the stability criteria, the pull request gets approved. 
 
-2. The Stack Maintainer(s) (as listed in the `stack.yaml`) reviews the pull request, keeping in mind the stability criteria of the stack. In the case of the contribution of a new stack, the Stack Release Team reviews the pull request.
+    >Note: In the case of a contribution of a new stack, the Stack Release Team reviews the pull request and decides if the stack satisfies the chosen stability criteria. 
 
-3. If the Stack Maintainer(s) are satisfied the stack changes follow the stability criteria, the pull request gets approved. In the case of the contribution of a new stack, the Stack Release Team decides if the stack satisfies the chosen stability criteria.
-
-4. The Stack Release Team merges and releases the new stack. When the stack is released:
+3. The Stack Release Team merges and releases the new stack. When the stack is released:
     - A template archive is generated for each stack template
     - A docker image of the stack is pushed to [Appsody’s DockerHub](https://hub.docker.com/u/appsody)
     - The indexes for each repository are updated
