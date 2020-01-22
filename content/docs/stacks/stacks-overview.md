@@ -98,20 +98,19 @@ Below are the URLs for official Appsody repository releases.
 
 By default, Appsody comes with the `incubator` and `experimental` repositories. Other repositories can be added by running the [`appsody repo add`](/docs/using-appsody/cli-commands/#appsody-repo-add) command.
 
-## Contributing a stack
-Any contributor can submit a pull request to change a stack. However, typically, the Stack Release Team will wait for the Stack Maintainers' (as listed in the `stack.yaml`) approval, before approving and merging a stack change.
+## Contributing to a stack
 
-The following outlines the process to contributing a new stack:
+The following outlines the process to contributing changes to a stack:
 
-1. The Stack Maintainer(s) submits a pull request, deciding the stability level of their stack. 
+1. The Stack Contributor submits a pull request with changes to a stack. The pull request should follow commit guidelines detailing how the stack changes satisfy the stability criteria (e.g. how Docker best practices have been implemented). 
 
-2. The Stack Release Team reviews the pull request, provides further guidance, and requests changes as necessary. 
+    > Any contributor can submit a pull request to promote a stack to a higher stability level.
 
-3. If the Stack Release Team agrees the stack fulfils the criteria of the chosen stability level, the pull request gets approved and merged.
+2. The Stack Maintainer(s) (as listed in the `stack.yaml`) reviews the pull request, keeping in mind the stability criteria of the stack. In the case of the contribution of a new stack, the Stack Release Team reviews the pull request.
 
-4. The Stack Release Team then releases the new stack. When the stack is released:
+3. If the Stack Maintainer(s) are satisfied the stack changes follow the stability criteria, the pull request gets approved. In the case of the contribution of a new stack, the Stack Release Team decides if the stack satisfies the chosen stability criteria.
+
+4. The Stack Release Team merges and releases the new stack. When the stack is released:
     - A template archive is generated for each stack template
     - A docker image of the stack is pushed to [Appsody’s DockerHub](https://hub.docker.com/u/appsody)
     - The indexes for each repository are updated
-
-To move a stack from incubator to stable, or experimental to incubator, Stack Maintainers need to submit a pull request, changing the stack from the current repository to the new repository directory. The Stack Release Team makes the decision with regards to whether or not the stack fulfils the criteria of the new repository.
