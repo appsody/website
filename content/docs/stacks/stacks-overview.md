@@ -53,24 +53,24 @@ The `templates` directory contains one or more starter applications that are cre
 
 ## Stack stability levels
 
-The criteria for each Appsody stack stability level is as follows:
+Appsody stacks belong to one of three categories, depending on their stability level. The criteria for each category is detailed in the following sections:
 
 ### Experimental
-These stacks are not production-ready and are considered as proof of concept. They might be unstable, and subject to breaking changes. They should:
+These stacks are not production-ready and are considered as proof of concept. They might be unstable, and subject to breaking changes. Experimental stacks must meet the following criteria:
 - Adhere to the Appsody stack structure (i.e. [appsody stack lint](/docs/using-appsody/cli-commands#appsody-stack-lint) passes without errors)
-- Support the [appsody init](/docs/using-appsody/cli-commands#appsody-init), [appsody run](/docs/using-appsody/cli-commands#appsody-run) and [appsody build](/docs/using-appsody/cli-commands#appsody-build) commands
+- Support the [appsody init](/docs/using-appsody/cli-commands#appsody-init), [appsody run](/docs/using-appsody/cli-commands#appsody-run), and [appsody build](/docs/using-appsody/cli-commands#appsody-build) commands
 
 ### Incubator
-These stacks are not production-ready and require further development to satisfy the stable criteria. They should encompass the experimental criteria and further:
+These stacks are not production-ready and require further development to satisfy the stable criteria. Incubator stacks must meet all the criteria set for experimental stacks and the following additional items:
 - Maintainers must remain active in terms of contributions and reviews
 - Support the [appsody test](/docs/using-appsody/cli-commands#appsody-test) and [appsody deploy](/docs/using-appsody/cli-commands#appsody-deploy) commands
 - Document the limitations of the stack in the `README.md`
 
 ### Stable
-These stacks are production-ready. They should encompass the incubator criteria and further:
+These stacks are production-ready. Stable stacks must meet all the criteria set for experimental and incubator stacks, and the following additional items:
 - Support all [Appsody CLI commands](/docs/using-appsody/cli-commands)
-- Pass on [appsody stack validate](/docs/using-appsody/cli-commands#appsody-stack-validate) and integration tests, on all 3 OS supported by Appsody without errors
-- Specify the minimum Appsody, Docker and Buildah versions required in the `stack.yaml`
+- Pass on [appsody stack validate](/docs/using-appsody/cli-commands#appsody-stack-validate) and integration tests, on all 3 operating systems supported by Appsody without errors
+- Specify the minimum Appsody, Docker, and Buildah versions required in the `stack.yaml`
 - Support the [appsody build](/docs/using-appsody/cli-commands#appsody-build) command with Buildah
 - Prevent creation of files on the local system that cannot be removed (i.e. files owned by root or other users)
 - Specify explicit versions for all required Docker images
@@ -100,13 +100,13 @@ By default, Appsody comes with the `incubator` and `experimental` repositories. 
 
 ## Contributing to a stack
 
-The following outlines the process to contributing changes to a stack:
+The following steps outline the process for contributing a new stack or changes to a stack:
 
-1. The Stack Contributor submits a pull request with changes to a stack. The pull request should follow commit guidelines detailing the stack changes. If the change is updating the stack's stability level, it must also describe how the stability criteria is met (e.g. how Docker best practices have been implemented). 
+1. The Stack Contributor submits a pull request with changes to a stack. The pull request should follow commit guidelines detailing the stack changes. If the change improves the stack stability level, the pull request must also describe how the new criteria for that level is met (e.g. how Docker best practices have been implemented). 
 
 2. The Stack Maintainer(s) (as listed in the `stack.yaml`) review the pull request, keeping in mind the stability criteria of the stack. If the Stack Maintainer(s) are satisfied that the stack changes follow the stability criteria, the pull request gets approved. 
 
-    >Note: In the case of a contribution of a new stack, the Stack Release Team reviews the pull request and decides if the stack satisfies the chosen stability criteria. 
+    >Note: If the stack is new, the Stack Release Team reviews the pull request and decides if the stack satisfies the chosen stability criteria. 
 
 3. The Stack Release Team merges and releases the new stack. When the stack is released:
     - A template archive is generated for each stack template
