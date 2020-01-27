@@ -69,13 +69,12 @@ These stacks are not production-ready and require further development to satisfy
 ### Stable
 These stacks are production-ready. Stable stacks must meet all the criteria set for experimental and incubator stacks, and the following additional items:
 - Support all [Appsody CLI commands](/docs/using-appsody/cli-commands)
-- Pass on [appsody stack validate](/docs/using-appsody/cli-commands#appsody-stack-validate) and integration tests, on all 3 operating systems supported by Appsody without errors
+- Pass the [appsody stack validate](/docs/using-appsody/cli-commands#appsody-stack-validate) and integration tests, on all three operating systems that are supported by Appsody without errors. For example, the stack must not bind mount individual files as it is not supported on Windows
 - Specify the minimum Appsody, Docker, and Buildah versions required in the `stack.yaml`
 - Support the [appsody build](/docs/using-appsody/cli-commands#appsody-build) command with Buildah
 - Prevent creation of files on the local system that cannot be removed (i.e. files owned by root or other users)
 - Specify explicit versions for all required Docker images
 - Tag the stack with a major version (i.e. at least 1.0.0)
-- Provide documentation to help users with existing projects migrate to using the stack
 - Follow [Docker best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/), including:
     1. Minimise the size of production images 
     2. Use the official base images 
@@ -85,6 +84,8 @@ These stacks are production-ready. Stable stacks must meet all the criteria set 
     1. A short description of the stack
     2. Any prerequisites or setup required before using the stack
     3. How to access any endpoints provided by the stack
+    4. How users with existing projects can migrate to using the stack
+    5. How users can include additional dependencies needed by their application
 
 ### Official Appsody Repositories
 
