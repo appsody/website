@@ -48,9 +48,7 @@ There are many options to deploy your Appsody applications to a Kubernetes clust
 - If you are testing your app on a locally installed cluster, using `appsody deploy` is your best bet
 - If you intend to have your app deployed on a shared cluster for integration testing or production, you are probably going to rely on CI/CD pipelines, and have the app built and deployed from its source.
 
-The `appsody deploy` command provides a way for you to deploy your application directly to a Kubernetes cluster. The deployment may occur in one of two different ways, depending on how the stack you are using is configured:
-- If the stack contains a deployment manifest that can be consumed by the [Appsody operator](https://operatorhub.io/operator/appsody-operator), `appsody deploy` will install the operator, if necessary, and deploy your application to the cluster using that deployment manifest.
-- If the stack you are using is not equipped with the manifest for the Appsody operator, `appsody deploy` attempts to install your app as a Knative serving service.
+The `appsody deploy` command provides a way for you to deploy your application directly to a Kubernetes cluster. The stack contains a deployment manifest that can be consumed by the [Appsody operator](https://operatorhub.io/operator/appsody-operator). `appsody deploy` will install the operator, if necessary, and deploy your application to the cluster using that deployment manifest.
 
 If you want to deploy your application without rebuilding the application image, or modifying the deployment manifest, you can run
 ```
