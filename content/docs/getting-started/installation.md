@@ -14,8 +14,18 @@ You can install Appsody on your system in a few easy steps by using our binary p
 
 Follow these steps:
 
-1. If you don't have the Xcode command line tools installed on your system, install them by running `xcode-select --install`.
-2. If you don't have Homebrew installed on your system, install it by running `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`.
+1. If you don't have the Xcode command line tools installed on your system, install them by running:
+
+```
+xcode-select --install
+```
+
+2. If you don't have Homebrew installed on your system, install it by running:
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
 3. To install Appsody, run:
 
 ```
@@ -24,7 +34,7 @@ brew install appsody/appsody/appsody
 
 This command creates a brew tap for the `appsody/appsody` repo and installs the `appsody` formula.
 
-That's all there is to it! You can now follow our [Quick Start](/content/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
+That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start) instructions to create your first containerized development environment with a running *Hello World!* application.
 
 ## Installing on Ubuntu
 
@@ -39,7 +49,7 @@ sudo apt install -f <path>/appsody_v.r.m_amd64.deb
 ```
 Where `<path>` is the fully qualified path to the package.
 
-That's all there is to it! You can now follow our [Quick Start](/content/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
+That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start) instructions to create your first containerized development environment with a running *Hello World!* application.
 
 Alternatively, if you would like to build the binaries from source code, please take a look at [Building from Source] (https://github.com/appsody/appsody/blob/master/build.md). 
 
@@ -57,11 +67,11 @@ sudo yum install <path>/appsody-v.r.m-1.x86_64.rpm
 
 Where `<path>` is the fully qualified path to the package.
 
-That's all there is to it! You can now follow our [Quick Start](/content/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
+That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start) instructions to create your first containerized development environment with a running *Hello World!* application.
 
 ## Installing on Windows
 
-Note: Appsody runs only on Windows 10 Professional and Windows 10 Enterprise editions. If you are running Windows 10 Enterprise with authentication through Azure Active Directory, please follow the additional instructions in the page [Appsody and Docker Desktop on Windows 10](/content/docs/docker-windows-aad.md).
+> Appsody runs only on Windows 10 Professional and Windows 10 Enterprise editions. If you are running Windows 10 Enterprise with authentication through Azure Active Directory, please follow the additional instructions in the page [Appsody and Docker Desktop on Windows 10](/docs/docker-windows-aad).
 
 Follow these steps:
 
@@ -69,7 +79,7 @@ Follow these steps:
 2. Download the **Appsody binaries for Windows** from the [Appsody releases page](https://github.com/appsody/appsody/releases) into the directory. The file is named `appsody-v.r.m-windows.tar.gz`, where `v.r.m` indicates the release tag.
 3. Extract the files by running `tar -xvf appsody-v.r.m-windows.tar.gz`.
 
-Note: If you choose to extract the files using a GUI tool you may have to extract the `appsody-v.r.m-windows.tar.gz` file and extract the extracted `appsody-v.r.m-windows.tar` file afterwards.
+> If you choose to extract the files using a GUI tool you may have to extract the `appsody-v.r.m-windows.tar.gz` file and extract the extracted `appsody-v.r.m-windows.tar` file afterwards.
 
 4. To install Appsody, run the following setup command:
 
@@ -77,7 +87,7 @@ Note: If you choose to extract the files using a GUI tool you may have to extrac
 appsody-setup.bat
 ```
 
-That's all there is to it! You can now follow our [Quick Start](/content/docs/getting-started/quick-start.md) instructions to create your first containerized development environment with a running *Hello World!* application.
+That's all there is to it! You can now follow our [Quick Start](/docs/getting-started/quick-start) instructions to create your first containerized development environment with a running *Hello World!* application.
 
 Note that `appsody-setup.bat` does the following environment changes: 
 * It modifies your **PATH** environment variable - adding the folder where Appsody is installed to it - on the current command prompt session
@@ -116,12 +126,12 @@ If you are unsure about which directories are mounted by the stack you are using
 [ibmadmin@naval1 my-project]$ appsody run
 Running development environment...
 Running command: docker[pull appsody/nodejs-express:0.2]
-Running command: docker[run --rm -p 3000:3000 -p 9229:9229 --name my-project-dev -v /home/ibmadmin/appsody/my-project/:/project/user-app -v my-project-deps:/project/user-app/node_modules -v /home/ibmadmin/.appsody/appsody-controller:/.appsody/appsody-controller -t --entrypoint /.appsody/appsody-controller appsody/nodejs-express:0.2 --mode=run]
+Running command: docker[run --rm -p 3000:3000 -p 9229:9229 --name my-project-dev -v /home/ibmadmin/appsody/my-project/:/project/user-app -v my-project-deps:/project/user-app/node_modules -v appsody-controller-0.3.1:/.appsody/appsody-controller -t --entrypoint /.appsody/appsody-controller appsody/nodejs-express:0.2 --mode=run]
 ```
-In the example above, there are two binding mounts:
-* /home/ibmadmin/appsody/my-project/
-* /home/ibmadmin/.appsody/appsody-controller
-
+In the example above, there is one binding mount:
+```
+/home/ibmadmin/appsody/my-project/
+```
 In this case, whitelisting the home directory (`/home/ibmadmin`) would be sufficient.
 
 # Upgrading Appsody
@@ -142,7 +152,7 @@ To upgrade Appsody on your system, follow these steps:
 ```
 sudo apt upgrade -f ./appsody_v.r.m_amd64.deb -y
 ```
-**Note:** The command uses `./` otherwise it will not work.
+> The command uses `./` otherwise it will not work.
 
 ## Upgrading on RHEL
 To upgrade Appsody on your system, follow these steps: 
@@ -159,7 +169,7 @@ To upgrade Appsody on your system, follow these steps:
 2) Move the file to the directory where you stored the existing Appsody binaries.
 3) Untar the file there: `tar -xvf appsody-v.r.m-windows.tar.gz`.
 
-Note: If you choose to extract the files using a GUI tool you may have to extract the `appsody-v.r.m-windows.tar.gz` file and extract the extracted `appsody-v.r.m-windows.tar` file afterwards.
+> If you choose to extract the files using a GUI tool you may have to extract the `appsody-v.r.m-windows.tar.gz` file and extract the extracted `appsody-v.r.m-windows.tar` file afterwards.
 
 # Uninstalling Appsody
 Here we cover the steps to uninstalling Appsody on your system.

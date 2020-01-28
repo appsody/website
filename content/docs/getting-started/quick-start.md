@@ -4,7 +4,7 @@ title: Quick Start
 
 # Quick Start
 
-If you haven't already installed Appsody, follow the steps described in [Installation](/content/docs/getting-started/installation.md).
+If you haven't already installed Appsody, follow the steps described in [Installation](/docs/getting-started/installation).
 
 Creating a new Appsody project is easy! All you need is a few commands to create a containerized development environment running with the stack of your choice.
 
@@ -39,5 +39,5 @@ You are ready to continue developing your application.
 - To enable the debugger, restart the container with `appsody debug`.
 - When you are ready to build a production docker image, run `appsody build`.
 
-**Tip:** You can get more information about all the available commands by running `appsody help [command]` or `appsody <command> --help`.
+> You can get more information about all the available commands by running `appsody help [command]` or `appsody <command> --help`.
 

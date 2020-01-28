@@ -23,7 +23,7 @@
   @media only screen and (max-width: 767px) {
     .mobile-nav {
       display: block;
-      height: 4em;
+      height: 5em + env(safe-area-inset-bottom);
       width: 100%;
       position: fixed;
       bottom: 0;
@@ -33,6 +33,7 @@
       justify-content: center;
       align-items: center;
       z-index: 2;
+      padding-bottom: env(safe-area-inset-bottom);
     }
 
     .mobile-nav a {
@@ -47,11 +48,21 @@
     }
     
     .nav-link {
-      padding: 0.5em 1em;
+      padding: 0.5em 0.5em;
       box-sizing: border-box;
       text-decoration: none;
       font-size: 14px;
     }
   }
   
-  
+  @media (prefers-color-scheme: dark) {
+    .mobile-nav {
+      background-color: rgb(40,40,40);
+      color: white;
+      border-top: 3px solid rgba(30,30,30,0.8);
+    }
+
+    .mobile-nav a{
+      color: white;
+    }
+  }  

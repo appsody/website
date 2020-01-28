@@ -3,8 +3,10 @@ import { graphql } from "gatsby"
 
 import Doc from "../components/doc";
 import Layout from "../components/layout"
-import DocSidebar from "../components/docSidebar";
+import Sidebar from "../components/sidebar";
 import SidebarExtender from "../components/sidebar-extender";
+import DesktopSidebarCloseButton from "../components/desktopSidebarCloseButton";
+import DesktopSidebarOpenButton from "../components/desktopSidebarOpenButton";
 
 export default function Template({
   data
@@ -14,10 +16,12 @@ export default function Template({
   const { title } = markdownRemark.frontmatter
 
   return (
-    <Layout title={title}>
-      <DocSidebar />
-      <Doc html={html}/>
+    <Layout title={title}>    
+      <Sidebar />
+      <DesktopSidebarOpenButton/>
       <SidebarExtender />
+      <DesktopSidebarCloseButton/>
+      <Doc html={html} title={title}/>
     </Layout>
   )
 }

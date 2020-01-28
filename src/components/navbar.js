@@ -28,7 +28,8 @@ const NavBar = () => (
       <Nav>
         <Nav.Link href="/" className="d-none d-md-block">Home</Nav.Link>
         <Nav.Link href="/docs" className="d-none d-md-block">Docs</Nav.Link>
-        <Nav.Link href="https://medium.com/appsody" target="_blank" rel="noopener noreferrer" className="d-none d-md-block">Tutorials</Nav.Link>
+        <Nav.Link href="/stacks" className="d-none d-md-block">Stacks</Nav.Link>
+        <Nav.Link href="https://medium.com/appsody/archive" target="_blank" rel="noopener noreferrer" className="d-none d-md-block">Tutorials</Nav.Link>
       </Nav>
       <Nav className="ml-auto">
         <Search/>

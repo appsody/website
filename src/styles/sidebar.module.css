@@ -1,15 +1,16 @@
 .sidebar {
-    width: 15em;
-    margin-top: 3em;
+    width: 20em;
+    margin-top: -1.5rem;
     padding-left: 5em;
-    background-color: var(--light-grey);
+    background-color: white;
     height: Calc(100vh);
-    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0px 12px rgba(187, 65, 124, 0.12);
     padding: 2rem 0;
     box-sizing: border-box;
     position: fixed;
     overflow-y: scroll;
-    z-index: 0;
+    z-index: 1000;
+    transition: 0.5s;
 }
 
 .sidebar-link {
@@ -20,22 +21,41 @@
 
 @media only screen and (max-width: 767px) {
     .sidebar {
-        width: 100vw;
-        padding-top: 5rem;
-        margin-top: 0;
+        width: 85%;
+        padding-top: -1.5rem;
         position: fixed;
         overflow-y: auto;
-        z-index: 1;
+        z-index: 1000;
         height: calc(100vh);
-        display: none;
+        margin-left: -85vw;
     }
 
     .docs-section {
         font-size: 1em;
+    }
+
+    .sidebar-link {
+        font-size: 2em !important;
     }
 }
 
 ul {
     padding: 0;
     list-style-type: none;
+  }
+  
+
+
+
+  @media (prefers-color-scheme: dark) {
+      .sidebar {
+          background-color: rgb(40,40,40);
+          box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.12);
+
+      }
+
+      .sidebar-heading-link {
+        background-color: rgb(40,40,40) !important;
+        color: white !important;
+      }
   }

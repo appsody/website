@@ -9,7 +9,7 @@ Welcome to the FAQ. Here you will find a list of common questions and answers al
 ## CLI Issues
 
 ### 1. Does Appsody support Windows Enterprise users?
-Yes, though Docker Desktop may require special settings to access user folders in the host system. In order to ensure Docker has access to those folders, please follow the instructions in the page [Appsody and Docker Desktop on Windows 10](/content/docs/docker-windows-aad.md).
+Yes, though Docker Desktop may require special settings to access user folders in the host system. In order to ensure Docker has access to those folders, please follow the instructions in the page [Appsody and Docker Desktop on Windows 10](/docs/docker-windows-aad).
 
 For more information on this issue, click [here](https://github.com/appsody/appsody/issues/24).
 
@@ -34,12 +34,19 @@ When you encounter the following error
 
 1. Go to your home directory and open the **repository.yaml** using an editor of your choice.
 
-    - `cd ~/.appsody/repository/` (macOS/Linux)
-    - `cd %HOMEPATH%/.appsody/repository/` (Windows)
-
+    - On macOS/Linux
+        ```
+        cd ~/.appsody/repository/
+        ``` 
+    - On Windows
+        ```
+        cd %HOMEPATH%/.appsody/repository/
+        ``` 
 2. Change the URL for the incubator repository to reference the latest incubator index, which is:
 
-`https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml`
+    ```
+    https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml
+    ```
 
 3. Save your changes and try running your command again.
 
