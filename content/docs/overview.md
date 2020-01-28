@@ -25,9 +25,17 @@ No project is complete without a nice new CLI to play with. The [Appsody CLI](/c
 
 ## How does it work?
 
-Appsody provides pre-configured application stacks, which use the well-known Dockerfile syntax to specify which language runtimes, frameworks, libraries, and tools are included. Project templates build upon these stacks, providing developers with a templatized application to bring into their IDE of choice and begin development.
+Appsody simplifies the creation of cloud-native applications and helps you throughout the development lifecycle.
 
-When developers run, debug, or test their application using the Appsody CLI, it starts a container with the stack image, makes the development workspace available to the running container, and starts the Appsody controller. The controller is configurable through environment variables in the stack and manages the application within the running container. For example, the controller can watch for changes in the application `/src` directory. When these changes are saved, the controller restarts the application running in a docker container.
+Appsody provides pre-configured application stacks, which specify which language runtimes, frameworks, libraries, and tools that you want to use. Appsody stacks abstract various degrees of infrastructure and application concerns and provide consistency and maintainability across your deployments. Project templates build upon these stacks, providing developers with a starter application to bring into their IDE of choice and begin development.
+
+Appsody CLI lets discover our pre-configured technology stacks, which give you everything you need to get started building apps. These stacks can be customised and extended to suit you or your teams use cases and standards, and can be a great way to support new developers in your team become productive faster.
+
+Once you’ve picked the stack you want to work with, you can get started by using the `init` command to pull down the stack to your development environment.
+
+Appsody provides an inner loop development experience. When developers `run`, `debug`, or `test` their application using the Appsody CLI, it starts a container with the stack image, makes the development workspace available to the running container, and starts the application. The Appsody controller watches for file changes and manages live updates to your application within the running container. 
+
+Once your application is ready, you can `build` it into a production-ready image. and push the image to a registry. You can also `deploy` the application to a local or remote Kubernetes cluster.
 
 ![Appsody Flow](./images/appsody_flow.png)
 
