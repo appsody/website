@@ -7,7 +7,7 @@ You can contribute to the project in a variety of ways:
 - Improve documentation
 - Contribute code
 
-We welcome all contributions to the Appsody project and request you follow the guidelines below:
+We welcome all contributions to the Appsody project! We have a developer's guide that explains [how to set up your development environment and contribute](https://github.com/appsody/website/blob/master/DEVELOPMENT.md). This page covers information about reporting issues along with our contributing guidelines. We request that you follow the guidelines below before you start participating:
 
 ## Code of conduct
 
