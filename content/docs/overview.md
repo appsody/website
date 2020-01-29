@@ -34,7 +34,7 @@ After you choose the stack that you want to work with, you can get started by us
 
 Appsody provides an inner loop development experience. When developers `run`, `debug`, or `test` their application by using the Appsody CLI it starts a container with the stack image, makes the development workspace available to the running container, and starts the application. The Appsody controller watches for file changes and manages live updates to your application within the running container.
 
-When your application is ready, you can `build` it into a production-ready image and push the image to a registry. You can also `deploy` the application to a local, or remote Kubernetes cluster.
+When your application is ready, you can `build` it into a production-ready image and push the image to a registry. You can also `deploy` the application using the Appsody operator to a local, or remote Kubernetes cluster.
 
 ![Appsody Flow](./images/appsody_flow.png)
 
