@@ -26,6 +26,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blogs`,
+        path: `${__dirname}/content/blogs`
+      }
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-142751517-1",
@@ -62,7 +69,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               linkImagesToOriginal: true,
-              maxWidth: 1000,
+              maxWidth: 3000,
               wrapperStyle: result => `width: 100%;margin-left: 0;`
             }
           }

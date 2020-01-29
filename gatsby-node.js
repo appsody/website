@@ -40,12 +40,28 @@ exports.createPages = ({ actions, graphql }) => {
   });
 
   const docTemplate = path.resolve(`src/templates/docTemplate.js`);
+  const blogTemplate = path.resolve(`src/templates/blogTemplate.js`);
 
   return graphql(`
     {
-      allMarkdownRemark {
+      docs: allMarkdownRemark(
+        filter: {fileAbsolutePath: {regex: "//docs//"}}
+      ) {
         edges {
           node {
+            fileAbsolutePath
+            fields {
+              slug
+            }
+          }
+        }
+      }, 
+      blogs: allMarkdownRemark(
+        filter: {fileAbsolutePath: {regex: "//blogs//"}}
+      ) {
+        edges {
+          node {
+            fileAbsolutePath
             fields {
               slug
             }
@@ -58,13 +74,27 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    const { docs, blogs } = result.data;
+    console.log(docs, blogs);
+
+    docs.edges.forEach(({ node }) => {
       if (node.fields.slug == "/docs/overview/") {
         node.fields.slug = "/docs";
       }
       createPage({
         path: node.fields.slug,
         component: docTemplate,
+        context: {
+          pagePath: node.fields.slug
+        }
+      });
+    });
+
+    blogs.edges.forEach(({ node }) => {
+      console.log(node);
+      createPage({
+        path: node.fields.slug,
+        component: blogTemplate,
         context: {
           pagePath: node.fields.slug
         }
@@ -78,11 +108,19 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode });
 
+    console.log(node.frontmatter.author);
+
     if (slug == "/overview/") {
       createNodeField({
         node,
         name: `slug`,
         value: `/docs`
+      });
+    } else if (node.frontmatter.author !== undefined) {
+      createNodeField({
+        node,
+        name: `slug`,
+        value: `/blogs${slug}`
       });
     } else {
       createNodeField({
