@@ -14,20 +14,27 @@ If you're responsible for defining standards for application runtime environment
 Appsody consists of 3 key components:
 
 ### Appsody Stacks
-These are configurable technology stacks built with popular runtimes and frameworks, such as *Java with Eclipse MicroProfile* and *Node.js with Express*. These stacks  provide the foundation for building applications that can be deployed and managed effectively in Kubernetes. Stacks allow for rapid development, whilst giving the stack provider the ability to control how the applications are composed. For example, which security policies are applied or which version of a dependency is used. For more
-information, see [Appsody Stacks](/docs/stacks/stacks-overview).
+These are configurable technology stacks built with popular runtimes and frameworks, such as *Java with Eclipse MicroProfile* and *Node.js with Express*. These stacks provide the foundation for building applications that can be deployed and managed effectively in Kubernetes. Stacks allow for rapid development, whilst giving the stack provider the ability to control how the applications are composed. For example, which security policies are applied or which version of a dependency is used. For more information, see [Appsody Stacks](/docs/stacks/stacks-overview).
 
 ### Appsody Hub
-The Hub is the central point of control for Appsody Stacks where you can find available stacks, create new stacks, or modify existing ones. You can use the Hub content in the public repo or clone it to provide a private Hub that's based on your requirements. By making changes to the Stacks in the Hub, you can deploy updates to any application that's been built on them, simply by restarting the application.
+The Hub is the central point of control for Appsody Stacks where you can find available stacks, create new stacks, or modify existing ones. There are 3 [stack stability levels](/docs/stacks/stacks-overview#stack-stability-levels) - stable, incubator, and experimental. Stable stacks are production-ready. You can use the Hub content in the public repo or clone it to provide a private Hub that's based on your requirements. By making changes to the Stacks in the Hub, you can deploy updates to any application that's been built on them, simply by restarting the application. You can also create individual stacks outside of the Hub, that can be supported by the Appsody CLI.
 
 ### Appsody CLI
 No project is complete without a nice new CLI to play with. The [Appsody CLI](/docs/using-appsody/cli-commands) is powerful and intuitive, allowing developers to discover the available stacks and bring them into their local development environment. From here, they can build, run, test, and deploy applications locally. The Docker container that's built for an application can then be integrated with Tekton pipelines and deployed to Kubernetes cloud environments. For more information, see [Deploying your app through a Tekton pipeline](/docs/using-appsody/building-and-deploying#Deploying-your-app-through-a-Tekton-pipeline).
 
 ## How does it work?
 
-Appsody provides pre-configured application stacks, which use the well-known Dockerfile syntax to specify which language runtimes, frameworks, libraries, and tools are included. Project templates build upon these stacks, providing developers with a templatized application to bring into their IDE of choice and begin development.
+Appsody simplifies the creation of cloud-native applications and helps you throughout the development lifecycle.
 
-When developers run, debug, or test their application using the Appsody CLI, it starts a container with the stack image, makes the development workspace available to the running container, and starts the Appsody controller. The controller is configurable through environment variables in the stack and manages the application within the running container. For example, the controller can watch for changes in the application `/src` directory. When these changes are saved, the controller restarts the application running in a docker container.
+Appsody provides preconfigured application stacks, which specify the language runtimes, frameworks, libraries, and tools you want to use. Appsody stacks abstract infrastructure and application concerns and provide consistency and maintainability across your deployments. Project templates build upon these stacks, providing developers with a starter application to bring into their IDE of choice and begin development.
+
+You can use the Appsody CLI to discover the preconfigured technology stacks, which provide everything you need to get started building apps. Stacks can be customized and extended to suit you or your teams use cases and standards. Using stacks can be a great way to enable new developers in your team to become productive faster.
+
+After you choose the stack that you want to work with, you can get started by using the `init` command to pull a container image for the stack to your development environment.
+
+Appsody provides an inner loop development experience. When developers `run`, `debug`, or `test` their application by using the Appsody CLI it starts a container with the stack image, makes the development workspace available to the running container, and starts the application. The Appsody controller watches for file changes and manages live updates to your application within the running container.
+
+When your application is ready, you can `build` it into a production-ready image and push the image to a registry. You can also `deploy` the application using the Appsody operator to a local, or remote Kubernetes cluster.
 
 ![Appsody Architecture](./images/appsody_architecture.png)
 
@@ -35,7 +42,7 @@ When developers run, debug, or test their application using the Appsody CLI, it 
 
 We welcome all contributions.
 
-If you'd like to get involved, read our [Contribution guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING) and come and chat to us in [Slack](https://appsody-slack.eu-gb.mybluemix.net/).
+If you'd like to get involved, read our [Contribution guidelines](https://github.com/appsody/website/blob/master/CONTRIBUTING.md) and come and chat to us in [Slack](https://appsody-slack.eu-gb.mybluemix.net/).
 
 Want to see your framework available as an Appsody Stack? See [Appsody Stacks](./stacks/stacks-overview) and join the `#stack-providers` channel on Slack to introduce yourself!
 

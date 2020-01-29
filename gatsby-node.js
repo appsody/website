@@ -16,18 +16,23 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.createPages = ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions;
 
+  // Redirects section
+
+  // The modify doc was merged with the create doc to form a develop doc
   createRedirect({
     fromPath: `/docs/stacks/modify`,
     toPath: `/docs/stacks/develop`,
     isPermanent: true
   });
 
+  // The create doc was merged with the modify doc to form a develop doc
   createRedirect({
     fromPath: `/docs/stacks/create`,
     toPath: `/docs/stacks/develop`,
     isPermanent: true
   });
 
+  // The stack structure doc was merged into the stack overview doc
   createRedirect({
     fromPath: `/docs/stacks/stack-structure`,
     toPath: `/docs/stacks/stacks-overview`,

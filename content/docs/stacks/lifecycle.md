@@ -47,6 +47,8 @@ These will be processed by the Appsody CLI. The primary use of this is to mount 
 
    would map the current directory (where the init was performed), into `/project/userapp` in the container file system.
 
+  > You can specify only directories in volume mounts, not single files.
+
 2. Dependency directory volume  
 This creates a volume used to cache, for efficiency, the combined dependencies of the stack components and the user application between sequential runs of the application during local development. It is not mounted into the user directory, since access to this is not required outside of the Docker environment. This is specified via the Docker variable `APPSODY_DEPS`. For example:
 

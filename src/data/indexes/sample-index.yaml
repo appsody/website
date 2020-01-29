@@ -5,6 +5,7 @@ stacks:
     version: 0.0.1
     description: This sample stack
     license: Apache-2.0
+    language: sample
     maintainers:
       - name: appsody
         email: appsody@example.com

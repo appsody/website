@@ -1,4 +1,5 @@
 import React from "react";
+import Moment from "moment";
 
 class Tile extends React.Component {
   constructor(props) {
@@ -38,23 +39,26 @@ class Tile extends React.Component {
           <h5 className="heading-tile">{this.props.heading}</h5>
           <p>{this.desc}</p>
           <a href="/" onClick={this.handleClick} className="btn btn-primary w-50 mx-auto" role="button">Select</a>
+          { this.props.updated && <p className="updated-date">Updated: {Moment.unix(this.props.updated / 1000).format('MMM Do')}</p>}
         </div>
       );
     } else {
-      return (
-        <div id={this.props.id} className="tile card flip">
-          <i onClick={this.handleClick} className="fas fa-arrow-left" title="flip card"></i>
-          <h5 id="tile-heading" className="heading-tile">{this.props.heading}</h5>
-
-          <div id="command-input">
-            <input id="input-cli" type="text" name="cli" value={this.props.cmd} readOnly></input>
-            <i onClick={this.copy} className="far fa-copy"></i>
+       return (
+          <div id={this.props.id} className="tile card flip">
+            <i onClick={this.handleClick} className="fas fa-arrow-left" title="flip card"></i>
+            <h5 id="tile-heading" className="heading-tile">{this.props.heading}</h5>
+  
+            <div id="command-input">
+              <input id="input-cli" type="text" name="cli" value={this.props.cmd} readOnly></input>
+              <i onClick={this.copy} className="far fa-copy"></i>
+            </div>
+            <a href={this.props.github} className="btn btn-clear w-75 mx-auto" role="button">View in GitHub</a>
           </div>
-          <a href={this.props.github} className="btn btn-clear w-75 mx-auto" role="button">View in GitHub</a>
-        </div>
-      );
-    }
+        );
+      }
+  
   }
 }
 
 export default Tile;
+

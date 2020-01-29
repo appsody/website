@@ -11,7 +11,7 @@ Although there are many Appsody stacks to choose from, you might want to create 
 
 ### Create your own stack using the Appsody CLI
 
-The quickest way to create a new stack is to use the `appsody stack create` command, which creates a new stack by copying an existing stack. By default, the new stack is based on the sample stack. For example, to create a new stack named my-stack, in a new directory, use this command:
+The quickest way to create a new stack is to use the `appsody stack create` command, which creates a new stack by copying an existing stack. By default, the new stack is based on the starter stack. For example, to create a new stack named my-stack, in a new directory, use this command:
 
 ```
 appsody stack create my-stack
@@ -50,13 +50,13 @@ The stack image contains common capabilities that can be used by all templates. 
 
 ### Stack environment variables
 
-Stack creators configure [environment variables](./environment-variables) in `Dockerfile-stack` to specify the commands for running, debugging, and testing the application. The Appsody controller inspects these environment variables and then drives the expected behavior for the developer during local development.
+Stack creators configure [environment variables](/docs/stacks/environment-variables) in `Dockerfile-stack` to specify the commands for running, debugging, and testing the application. The Appsody controller inspects these environment variables and then drives the expected behavior for the developer during local development.
 
-* **Handling File mounts** - During local development, the application code is held on the local file system and is mounted in the running container for the stack. Stack creators configure the [`APPSODY_MOUNTS`](./environment-variables) enivronment variable to specify a list of mount paths to achieve this behavior.
+* **Handling File mounts** - During local development, the application code is held on the local file system and is mounted in the running container for the stack. Stack creators configure the [`APPSODY_MOUNTS`](/docs/stacks/environment-variables) enivronment variable to specify a list of mount paths to achieve this behavior.
 
-* **Monitoring file changes** - Stack creators configure the many [`APPSODY_WATCH`](./environment-variables) environment variables in `Dockerfile-stack` to specify which files are monitored for changes and how to reflect those changes in the running application.
+* **Monitoring file changes** - Stack creators configure the many [`APPSODY_WATCH`](/docs/stacks/environment-variables) environment variables in `Dockerfile-stack` to specify which files are monitored for changes and how to reflect those changes in the running application.
 
-* **Managing dependencies** - Appsody enables the caching of any installed dependencies across runs to accelerate local development. Caching is achieved by creating a volume independent of a specific container instance and then mounting it every time the appsody container is started. Stack creators configure the [`APPSODY_DEPS`](./environment-variables) environment variable to specify the directory to be cached.
+* **Managing dependencies** - Appsody enables the caching of any installed dependencies across runs to accelerate local development. Caching is achieved by creating a volume independent of a specific container instance and then mounting it every time the appsody container is started. Stack creators configure the [`APPSODY_DEPS`](/docs/stacks/environment-variables) environment variable to specify the directory to be cached.
 
 ### File permissions
 
@@ -107,7 +107,7 @@ Stack creators also provide a template deployment manifest file that the Appsody
 
 ## Next steps
 
-Packaging allows a stack developer to build all the components of a stack and enables the stack to be used via Appsody CLI commands. The packaging process typically involves: building the stack container image, creating archive files for each template, and configuring a local Appsody repository. For more information, see [Packaging Stacks](package).
+Packaging allows a stack developer to build all the components of a stack and enables the stack to be used via Appsody CLI commands. The packaging process typically involves: building the stack container image, creating archive files for each template, and configuring a local Appsody repository. For more information, see [Packaging Stacks](/docs/stacks/package).
 
 ---
 

@@ -8,7 +8,7 @@
     padding: 2rem 0;
     box-sizing: border-box;
     position: fixed;
-    overflow-y: visible;
+    overflow-y: scroll;
     z-index: 1000;
     transition: 0.5s;
 }
@@ -44,3 +44,18 @@ ul {
     list-style-type: none;
   }
   
+
+
+
+  @media (prefers-color-scheme: dark) {
+      .sidebar {
+          background-color: rgb(40,40,40);
+          box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.12);
+
+      }
+
+      .sidebar-heading-link {
+        background-color: rgb(40,40,40) !important;
+        color: white !important;
+      }
+  }
