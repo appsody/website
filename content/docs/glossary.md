@@ -10,6 +10,12 @@ Learn about terms and definitions that are related to the Appsody project.
 >### Appsody CLI
 The Appsody command-line interface supports the full application development lifecycle; creating stacks, creating applications based on stacks, testing and debugging your applications, and deployment to Kubernetes.  
 
+>### Appsody controller
+The controller manages a running application inside the Appsody development container. It monitors file changes in the application source and provides live updates to the application running in the container.  
+
+>### Appsody operator
+The operator manages the deployment of applications that are developed using Appsody to Kubernetes environments.  
+
 ## D
 
 >### Dockerfile
