@@ -36,7 +36,7 @@ Appsody provides an inner loop development experience. When developers `run`, `d
 
 When your application is ready, you can `build` it into a production-ready image and push the image to a registry. You can also `deploy` the application using the Appsody operator to a local, or remote Kubernetes cluster.
 
-![Appsody Architecture](./images/appsody_architecture.png)
+![Appsody Flow](./images/appsody_flow.png)
 
 ## Contributing
 
