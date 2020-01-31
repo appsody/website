@@ -8,7 +8,6 @@ os:
 script:
   - npm install -g gatsby-cli
   - . ./ci/get-indexes.sh
-  - gatsby clean
   - gatsby build
 
 deploy:
