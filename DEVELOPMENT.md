@@ -44,7 +44,7 @@ gatsby clean
 
 For more information on adding Markdown pages with Gatsby, see https://www.gatsbyjs.org/docs/adding-markdown-pages/
 
-To test links within your documentation, follow the instructions for [Testing the website ready for release](https://github.com/appsody/website/blob/master/DEVELOPMENT.md#testing-the-website-ready-for-release).
+To manually test links within your documentation, follow the instructions for [Testing the website ready for release](https://github.com/appsody/website/blob/master/DEVELOPMENT.md#testing-the-website-ready-for-release).
 
 :pencil: **Note:** If you are developing remotely, use `http://<hostname>:PORT` instead of `http://localhost:PORT` as described in this doc.
 
