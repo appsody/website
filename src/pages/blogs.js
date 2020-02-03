@@ -10,7 +10,7 @@ import BlogPostGrid from "../components/blogPostGrid";
 const Blogs = ({data}) => {
     console.log(data);
     return (
-        <Layout>
+        <Layout title="Appsody - Blogs">
             <div className="container">
               <section className="blog-card-section">
                   <h2>Latest Blog</h2>
@@ -45,7 +45,7 @@ query BlogsQuery {
           date(fromNow: true)
           author
         }
-        excerpt(pruneLength: 300)
+        excerpt(pruneLength: 450)
       }
     }
   }

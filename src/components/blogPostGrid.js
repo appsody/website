@@ -8,7 +8,7 @@ class BlogPostGrid extends Component {
         const allBlogs = this.props.blogs.map(blog => {
             console.log(blog);
 
-            return <BlogPost title={blog.frontmatter.title} subtext={blog.excerpt.substring(0, 100).replace(blog.frontmatter.title, "").replace("By " + blog.frontmatter.author, "").replace("Posted", "")} author={blog.frontmatter.author} date={blog.frontmatter.date} slug={blog.fields.slug}/>
+            return <BlogPost title={blog.frontmatter.title} subtext={blog.excerpt.replace(blog.frontmatter.title, "").replace("By " + blog.frontmatter.author, "").replace("Posted", "")} author={blog.frontmatter.author} date={blog.frontmatter.date} slug={blog.fields.slug}/>
 
         });
 
@@ -49,7 +49,7 @@ export default () => (
               date(fromNow: true)
               author
             }
-            excerpt(pruneLength: 300)
+            excerpt(pruneLength: 130)
           }
         }
       }

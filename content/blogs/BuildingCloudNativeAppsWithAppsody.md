@@ -7,7 +7,7 @@ imagePath: "../../content/blogs/resources/mic.jpeg"
 
 # Building Cloud-Native Apps with Appsody
 
-![mic](./resources/appsodylogo.svg)
+![Appsody](./resources/appsodylogo.png)
 
 Appsody provides a set of open source tools and capabilities that simplifies the process of building and deploying applications to Kubernetes that are not just cloud packaged, but that are also cloud native.
 
@@ -60,7 +60,7 @@ Additionally, the Appsody `deploy` command can deploy directly to any Kubernetes
 ## See it in action
 
 <!-- <center><iframe width="560" height="315" src="https://www.youtube.com/embed/a1ww3W1ZVto" frameborder="0" allowfullscreen></iframe></center> -->
-Youtube Link [here](https://www.youtube.com/embed/a1ww3W1ZVto).
+`youtube:https://www.youtube.com/embed/a1ww3W1ZVto`
 
 ## Try it out!
 

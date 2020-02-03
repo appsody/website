@@ -6,7 +6,7 @@ const WideBlogPost = ({title, subtext, author, date, image, slug}) => (
     <Link className="blog-link" to={slug}>
     <div className="wide-blog-container">
         <div className="wide-blog-image-container">
-            <img className="wide-blog-image" src={"http://localhost:8000/static/e05283c91c0cc09f39645b4b283a68a7/8dcf2/autumn.jpg"}/>
+            <img className="wide-blog-image" src={"https://miro.medium.com/max/2800/1*AmrAV709WQFlXgs4R4zZEw.jpeg"}/>
         </div>
         <h2 className="wide-blog-title">{title}</h2>
         <p className="wide-blog-subtext">{subtext}</p>

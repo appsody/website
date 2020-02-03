@@ -23,15 +23,19 @@ Thanks to some great new folks to the project — **there are now 11**.
 
 * [Quarkus](https://github.com/appsody/stacks/tree/master/experimental/quarkus): a “Kubernetes Native Java stack”. Quarkus is an open source project sponsored by Red Hat, which you can discover [here](https://quarkus.io/). Thanks to [Paul](https://github.com/paulrobinson) for this stack!
 
-* [Node.js Functions](https://github.com/appsody/stacks/tree/master/experimental/nodejs-functions): an extension to the existing nodejs-express stack, allowing you to build functions using the same “Connect Middleware” API from Express.js. For example:
+* [Node.js Functions](https://github.com/appsody/stacks/tree/master/experimental/nodejs-functions): an extension to the existing nodejs-express stack, allowing you to build functions using the same “Connect Middleware” API from Express.js. 
 
+For example:
+
+```
     var handler = function handler(req, res, next) {
         res.send('Hello from Appsody!')
     }
+```
 
 * [LoopBack4](https://github.com/appsody/stacks/tree/master/incubator/nodejs-loopback): a powerful Node.js framework built in TypeScript, which helps you easily build REST APIs and microservices. Thanks [Raymond](https://github.com/raymondfeng)!
 
-* [Spring Boot on Open Liberty](https://github.com/appsody/stacks/tree/master/experimental/java-spring-boot2-liberty): allowing you to develop Spring Boot 2 applications and run on Open Liberty with OpenJ9 — an open source JVM ideal for cloud deployments, see the comparison with HotSpot [here](https://www.eclipse.org/openj9/oj9_performance.html).
+* [Spring Boot on Open Liberty](https://github.com/appsody/stacks/tree/master/experimental/java-spring-boot2-liberty): allowing you to develop Spring Boot 2 applications and run on Open Liberty with OpenJ9 — an open source JVM ideal for cloud deployments. See the comparison with HotSpot [here](https://www.eclipse.org/openj9/oj9_performance.html).
 
 * [Python Flask](https://github.com/appsody/stacks/tree/master/incubator/python-flask): a new language for Appsody! This stack uses Python 3.7 and Flask 0.11.1 and enables health checking and application metrics out of the box. It also uses [flasgger](https://github.com/flasgger/flasgger) to auto-generate Swagger UI documentation and specification(thanks [Henry](https://github.com/henrynash)!).
 
@@ -49,7 +53,7 @@ At time of writing we’re at V0.4.5 and I would strongly encourage you to keep 
 
 Here’s some of the new functionality introduced so far:
 
-* Work with multiple repositories: you can specify a repo when using the init cmd to initialise a new project and start building an application i.e. appsody init <repository>/<stack> . You can also set a default repository with appsody repo set-default
+* Work with multiple repositories: you can specify a repo when using the init cmd to initialise a new project and start building an application i.e. `appsody init <repository>/<stack>` . You can also set a default repository with `appsody repo set-default`
 
 * Support for the Appsody Operator (more on that later…)
 

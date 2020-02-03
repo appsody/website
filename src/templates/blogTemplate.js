@@ -8,6 +8,7 @@ export default function Template({
   data
 }) {
   const { markdownRemark } = data
+  console.log(markdownRemark.frontmatter.date)
   const { html } = markdownRemark
   const { title } = markdownRemark.frontmatter.title
   const { author } = markdownRemark.frontmatter.author
@@ -15,7 +16,7 @@ export default function Template({
 
   return (
     <Layout title={title}>
-         <Blog html={html} author={author} date={date}/>   
+         <Blog html={html} author={markdownRemark.frontmatter.author} date={markdownRemark.frontmatter.date}/>   
     </Layout>
   )
 }

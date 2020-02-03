@@ -43,7 +43,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        icon: `src/images/favicon.png`
+        icon: `src/images/favicon.png`,
+        start_url: `/`
       }
     },
     {
@@ -71,6 +72,13 @@ module.exports = {
               linkImagesToOriginal: true,
               maxWidth: 3000,
               wrapperStyle: result => `width: 100%;margin-left: 0;`
+            }
+          },
+          {
+            resolve: `gatsby-remark-embed-youtube`,
+            options: {
+              width: 560,
+              height: 315
             }
           }
         ]
