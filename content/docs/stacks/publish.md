@@ -24,18 +24,18 @@ The easiest way to publish a stack is to use the Appsody CLI, however, you can u
     appsody stack package --image-namespace myproject
     ```
 
-    This command builds the stack container image, creates archives for your source and each template, then adds your stack to the `dev.local` repository in your Appsody configuration.
+    This command builds the stack container image, creates archives for your source code and each template, and adds your stack to the `dev.local` repository in your Appsody configuration.
 
 2. Push the stack container image to a Docker registry, such as [docker.io](https://docker.io).
 
-3. Upload the source and template archives to a suitable web hosting service, such as the [Releases](https://help.github.com/en/github/administering-a-repository/creating-releases) section of a GitHub repo.
+3. Upload the source code and template archives to a suitable web hosting service, such as the [Releases](https://help.github.com/en/github/administering-a-repository/creating-releases) section of a GitHub repo.
 
 4. To add your stack to a repository, run the [`appsody stack add-to-repo`](/content/docs/using-appsody/cli-commands.md/#appsody-stack-addtorepo) command from the root directory of your stack, specifying the repository name and the base URL to use. For example:
     ```
     appsody stack add-to-repo myrepository --release-url https://github.com/myorg/myrepository/releases/latest/download/
     ```
 
-    This command creates (or updates) a repository index file, that represents the repository, using the specified  `--release-url` as the base URL for referencing the source and template archives. The repository index file name is determined from the repository name (`myrepository-index.yaml` in this example), and is created in the `.appsody/stacks/dev.local` directory
+    This command creates (or updates) a repository index file, that represents the repository, using the specified  `--release-url` as the base URL for referencing the source code and template archives. The repository index file name is determined from the repository name (`myrepository-index.yaml` in this example), and is created in the `.appsody/stacks/dev.local` directory
 
 3. Upload the generated repository index file to the web hosting service.
 
