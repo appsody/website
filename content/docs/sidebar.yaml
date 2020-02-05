@@ -1,11 +1,19 @@
 - title: Overview
   path: /docs
-- title: Getting Started
+- title: Installing
   items:
-    - title: Installation
-      path: /docs/getting-started/installation
-    - title: Quick Start
-      path: /docs/getting-started/quick-start
+    - title: Overview
+      path: /docs/installing/installing-appsody
+    - title: macOS
+      path: /docs//installing/macos
+    - title: Ubuntu
+      path: /docs/installing/ubuntu
+    - title: RHEL
+      path: /docs/installing/rhel
+    - title: Windows
+      path: /docs/installing/windows
+- title: Getting Started
+  path: /docs/getting-started
 - title: Using Appsody
   items:
     - title: Initializing Projects
