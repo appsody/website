@@ -79,6 +79,6 @@ If you encounter errors, running `appsody run` or `appsody deploy` similar to:
 
 You might find that embedded Kubernetes on Docker Docktop on macOS is using port 9443.  You can [query the open TCP ports on macOS](https://support.apple.com/lt-lt/guide/mac-help/mchlp1710/mac).
 
-The workaround is to append `-p 9444:9443` to the Appsody command so that the port inside the container is 9443 but access to the application (the publicly exposed port), is 9444.
+The workaround is to append `-p 9444:9443` to the Appsody command so that the port inside the container is 9443 but access to the application (the publicly exposed port), is through 9444.
 
-Alternatively you can append `-P` to your Appsody command, which automatically assigns a free port.
+Alternatively you can append `-P` to your Appsody command, which automatically assigns a free port to the process.
