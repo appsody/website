@@ -37,11 +37,11 @@ When you encounter the following error
     - On macOS/Linux
         ```
         cd ~/.appsody/repository/
-        ``` 
+        ```
     - On Windows
         ```
         cd %HOMEPATH%/.appsody/repository/
-        ``` 
+        ```
 2. Change the URL for the incubator repository to reference the latest incubator index, which is:
 
     ```
@@ -67,3 +67,18 @@ Here is a list of commands that are part of the standard Appsody flow of work, w
     ```
     export APPSODY_PULL_POLICY=IFNOTPRESENT
     ```
+
+### 7. Why does my Open Liberty Appsody project on macOS fail with the error “address already in use”?
+
+If you encounter errors, running `appsody run` or `appsody deploy` similar to:
+
+```
+[Container] docker: Error response from daemon: driver failed programming external connectivity on endpoint hello-dev (c7cd774c8fab853f31f94efee4e639189cb6b77de7501a4c0bc669fbb7defe60): Error starting userland proxy: listen tcp 0.0.0.0:9443: bind: address already in use.
+[Error] Error in 'appsody run': exit status 125
+```
+
+You might find that embedded Kubernetes on Docker Docktop on macOS is using port 9443.  You can [query the open TCP ports on macOS](https://support.apple.com/lt-lt/guide/mac-help/mchlp1710/mac).
+
+The workaround is to append `-p 9444:9443` to the Appsody command so that the port inside the container is 9443 but access to the application (the publicly exposed port), is 9444.
+
+Alternatively you can append `-P` to your Appsody command, which automatically assigns a free port.
