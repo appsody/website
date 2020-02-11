@@ -68,7 +68,7 @@ Here is a list of commands that are part of the standard Appsody flow of work, w
     export APPSODY_PULL_POLICY=IFNOTPRESENT
     ```
 
-### 7. Why does my Open Liberty Appsody project on macOS fail with the error “address already in use”?
+### 7. Why does my Appsody project on macOS fail with the error “address already in use”?
 
 If you encounter errors, running `appsody run` or `appsody deploy` similar to:
 
