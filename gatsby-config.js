@@ -58,6 +58,7 @@ module.exports = {
               className: `header-link-icon`
             }
           },
+          `gatsby-plugin-sharp`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -70,7 +71,6 @@ module.exports = {
       }
     },
     `gatsby-transformer-yaml`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
