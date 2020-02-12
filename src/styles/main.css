@@ -1140,11 +1140,6 @@ input.checkbox-item {
   color: darkgray;
 }
 
-/* .blog-content > p:nth-child(2) {
-  margin: 0;
-  margin-bottom: 50px;
-} */
-
 .blog-content ul {
   margin: auto;
   width: 50%;
@@ -1191,14 +1186,12 @@ input.checkbox-item {
 .wide-blog-container {
   width: 100%;
   box-shadow: 1px 3px 11px rgba(0, 0, 0, 0.2);
-  height: 24vw;
+  height: 30%;
   border-radius: 10px;
   display: grid;
-  /* padding: 20px 40px 20px 0px; */
   grid-template-columns: 40% 1fr 1fr 1fr 1fr;
   grid-template-rows: 35% 40% 25%;
   transition: box-shadow 0.25s ease-in;
-  background-color: var(--colour-scheme-1);
 }
 
 .wide-blog-container:hover {
@@ -1219,8 +1212,7 @@ input.checkbox-item {
   font-size: 2.0em !important;
   color: var(--colour-scheme-1);
   font-family: "Nunito", "Open Sans", sans-serif;
-  margin-bottom: 1.2rem;
-  width: 100%;
+  padding-bottom: 1.2rem;
 }
 
 .all-blog-section {
@@ -1258,10 +1250,9 @@ input.checkbox-item {
   grid-column-end: 6;
   grid-row-start: 1;
   grid-row-end: 2;
-  margin-top: 1.5rem;
+  padding-top: 1.5rem;
   margin-left: 1.5rem;
   font-weight: 600;
-  color: white !important;
 }
 
 .wide-blog-subtext {
@@ -1271,7 +1262,6 @@ input.checkbox-item {
   grid-row-end: 3;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
-  color: white !important;
   align-self: center;
 }
 
@@ -1284,7 +1274,7 @@ input.checkbox-item {
   align-self: flex-end;
   margin-left: 1.5rem;
   margin-bottom: 1.5rem;
-  color: white !important;
+  color: darkgrey !important;
 }
 
 .wide-blog-date  {
@@ -1297,7 +1287,7 @@ input.checkbox-item {
   margin-bottom: 1.5rem;
   margin-right: 1.5rem;
   justify-self: end;
-  color: white !important;
+  color: darkgrey !important;
 }
 
 .wide-blog-image-container {
@@ -1404,8 +1394,9 @@ input.checkbox-item {
   }
 
   .wide-blog-container {
-    height: 220vw;
-    grid-template-rows: 40% 15% 35% 10%;
+    height: auto;
+    /* grid-template-rows: 30% 25% 35% 10%; */
+    display: block;
   }
 
   .wide-blog-image-container {
@@ -1429,7 +1420,6 @@ input.checkbox-item {
     grid-column-end: 6;
     grid-row-start: 3;
     grid-row-end: 4;
-    align-self: center;
   }
 
   .wide-blog-author {
@@ -1437,6 +1427,10 @@ input.checkbox-item {
     grid-column-end: 6;
     grid-row-start: 4;
     grid-row-end: 5;
+    margin-bottom: 0.5rem;
+    margin-top: 2.0rem;
+    color: darkgrey !important;
+
   }
 
   .wide-blog-date {
@@ -1444,15 +1438,21 @@ input.checkbox-item {
     grid-column-end: 6;
     grid-row-start: 4;
     grid-row-end: 5;
+    margin-right: 0;
+    margin-left: 1.5rem;
+    padding-bottom: 1.5rem;
+    color: darkgrey !important;
   }
 
   .blog-container {
-    height: 80vw;
+    height: auto;
     grid-template-rows: 35% auto 10% 10%;
   }
 
   .blog-title {
     font-size: 1.7em !important;
+    padding-bottom: 15px;
+
   }
 
   .blog-subtext {
@@ -1724,7 +1724,28 @@ input.checkbox-item {
 
   .wide-blog-container {
     box-shadow:rgba(10, 10, 10, 0.55) 1px 4px 15px 0px;
-    background-color: var(--colour-scheme-1-dark);
+    background-color: rgb(40,40,40);
+    color: white !important;
+  }
+
+  .wide-blog-container:hover {
+    box-shadow: 0px 0px 12px 3px rgba(160, 160, 160, 0.3)
+  }
+
+  .wide-blog-title {
+    color: var(--colour-scheme-1-dark);
+  }
+
+  .wide-blog-subtext {
+    color: white !important;
+  }
+
+  .wide-blog-author {
+    color: lightgrey !important;
+  }
+
+  .wide-blog-date {
+    color: lightgrey !important;
   }
 
   .blog-container:hover {
