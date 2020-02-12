@@ -25,7 +25,7 @@ Complete documentation is available at https://appsody.dev
 ### SEE ALSO
 
 * [appsody build](#appsody-build)	 - Build a local container image of your Appsody project.
-* [appsody completion](#appsody-completion)	 - Generates bash tab completions
+* [appsody completion](#appsody-completion)	 - Generate tab completions
 * [appsody debug](#appsody-debug)	 - Debug your Appsody project.
 * [appsody deploy](#appsody-deploy)	 - Build and deploy your Appsody project to Kubernetes.
 * [appsody extract](#appsody-extract)	 - Extract your Appsody project to a local directory.
@@ -98,22 +98,29 @@ appsody build [flags]
 
 ## appsody completion
 
-Generates bash tab completions
+Generate tab completions
 
 ### Synopsis
 
-Outputs a bash completion script for appsody to stdout.  Bash completion is optionally available for your convenience. It helps you fill out appsody commands when you type the [TAB] key.
+Generate a completion script for Appsody to stdout.  The default is bash, you can specify either 'bash' or 'zsh' as a parameter.  Completion is optionally available for your convenience. It helps you fill out Appsody commands when you type the [TAB] key.
 
-	To install on macOS
+	To install on macOS for bash completion
 	1. brew install bash-completion
-	2. Make sure to update your ~/.bash_profile as instructed
+	2. Make sure to update your ~/.bash_profile as instructed.
 	3. appsody completion > /usr/local/etc/bash_completion.d/appsody
 
-	To install on Linux
+	To install on Linux for bash completion
 	1. On a current Linux OS (in a non-minimal installation), bash completion should be available.
-	2. For Debian see the following link for more information:  https://debian-administration.org/article/316/An_introduction_to_bash_completion_part_1
+	2. For Debian see the following link for more information:  https://debian-administration.org/article/316/An_introduction_to_bash_completion_part_1.
 	3. Make sure to copy the appsody completion file generated above into the appropriate directory for your Linux distribution e.g.
 	appsody completion >  /etc/bash_completion.d/appsody
+	
+	For zsh,
+	The zsh shell must be enabled and .zshrc configured to run zsh completion.
+	To install Appsody zsh completion: 
+	1. run appsody completion zsh > _appsody
+	2. copy _appsody to a directory in your $fpath
+	3. rm ~/.zcompdump*
 
 ```
 appsody completion [flags]
@@ -873,7 +880,7 @@ Add stack information into a production Appsody repository
 
 Adds stack information into an Appsody repository. 
 		
-Adds stack information to a new or existing Appsody repository, specified by the \<repository> argument. This enables you to share your stack with others.
+Adds stack information to a new or existing Appsody repository, specified by the \<repository> argument. This enables you to share your stack with others. This command must be run after appsody stack package on the chosen stack.
 
 The updated repository index file is created in  ~/.appsody/stacks/dev.local directory.
 
@@ -926,7 +933,7 @@ Create a new Appsody stack, called \<name>, in the current directory. You can us
 
 By default, the new stack is based on the example stack: incubator/starter. If you want to use a different stack as the basis for your new stack, use the copy flag to specify the stack you want to use as the starting point. You can use 'appsody list' to see the available stacks.
 
-The stack name must start with a lowercase letter, and can contain only lowercase letters, numbers, or dashes, and cannot end with a dash. The stack name cannot exceed 128 characters.
+The stack name must start with a lowercase letter, and can contain only lowercase letters, numbers, or dashes, and cannot end with a dash. The stack name cannot exceed 68 characters.
 
 ```
 appsody stack create <name> [flags]
