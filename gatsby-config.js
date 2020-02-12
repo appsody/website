@@ -39,6 +39,7 @@ module.exports = {
         icon: `src/images/favicon.png`
       }
     },
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -58,7 +59,6 @@ module.exports = {
               className: `header-link-icon`
             }
           },
-          `gatsby-plugin-sharp`,
           {
             resolve: `gatsby-remark-images`,
             options: {
