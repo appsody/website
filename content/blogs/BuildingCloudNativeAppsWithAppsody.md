@@ -39,23 +39,25 @@ Appsody Stacks are designed to provide a spectrum of capabilities dependent on h
 
 ![Appsody Stacks for Node.js](./resources/appsodystacks.png)*Appsody Stacks for Node.js*
 
-At the most simple level, the Appsody Stack provides “**Cloud Packaging**” for your chosen language. This means that you can either bring an existing application or build a new application, and the Appsody Stack not only provides a continuous containerized run, test and debug environment, but can also be used to build a best-practise container image for your application, and then deploy it to a local or remote Kubernetes cluster.
+At the simplest level, the Appsody Stack provides “**Cloud Packaging**” for your chosen language. This means that you can either bring an existing application or build a new application, and the Appsody Stack not only provides a continuous containerized run, test and debug environment, but can also be used to build a best-practise container image for your application, and then deploy it to a local or remote Kubernetes cluster.
 
 At the next level, the Appsody Stack provides additional built-in “**Cloud Native**” capabilities such as liveness and readiness, metrics and observability. This is achieved by providing a pre-configured microservice or web framework as part of the Stack itself. You can then develop your code using the standard APIs from the framework as you would normally; Appsody then *composes* the application with the Stack to provide a full, containerized microservice.
 
 At the highest level, the Appsody Stack provides “**Cloud Functions**”-like APIs, where the Appsody Stack itself contains a full, cloud-native microservice. You can then develop by writing functions, using either the HTTP APIs provided by the framework or generic APIs such as those provided by Lambda, OpenWhisk and others. Appsody then *composes* with the Stack to provide a full, containerized, microservice with your functions.
 
-This means that you can choose the level of function *you* want to provide, versus what is provided by the Stack. You can, of course, also create your own Stacks — these are just source projects that contain pre-configured microsevice or web frameworks which are built into standard container images.
+This means that you can choose the level of function *you* want to provide, versus what is provided by the Stack. You can, of course, also create your own Stacks — these are just source projects that contain pre-configured microsevice or web frameworks, which are built into standard container images.
 
 ## Appsody Deploy
 
-Finally, you can build you application into a standard, production-optimized container image using the Appsody build command, or build and deploy the image into Kubernetes using the Appsody deploy command. This makes it easy to test and verify how your application runs when deployed into Kubernetes.
+Finally, you can build your application into a standard, production-optimized container image using the Appsody build command, or build and deploy the image into Kubernetes using the Appsody deploy command. This makes it easy to test and verify how your application runs when deployed into Kubernetes.
 
 The built container image can then be used in the same way that you would use any other image — enabling you to run it using Docker directly, or to deploy it to any cloud that supports containers.
 
 ![Cloud Deploy to Kubernetes using Knative](./resources/kubernetesandknative.png)*Cloud Deploy to Kubernetes using Knative*
 
-Additionally, the Appsody `deploy` command can deploy directly to any Kubernetes cluster that has [Knative Serving](https://knative.dev) installed. The use of Knative serving means that the deployed application scales on request — and down to zero when its not use — and automatically has routes set up for it, so its immediately testable from your browser.
+Additionally, the Appsody `deploy` command can deploy directly to any Kubernetes cluster.
+
+If you have [Knative Serving](https://knative.dev) installed on your cluster you can pass the `--knative` flag to your Appsody `deploy` command. The use of Knative serving means that the deployed application scales on request — and down to zero when it's not in use — and automatically has routes set up for it, so it's immediately testable from your browser.
 
 ## See it in action
 
