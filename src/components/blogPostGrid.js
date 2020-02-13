@@ -6,7 +6,6 @@ class BlogPostGrid extends Component {
 
     generateBlogs() {
         const allBlogs = this.props.blogs.map(blog => {
-            console.log(blog);
 
             return <BlogPost title={blog.frontmatter.title} subtext={blog.excerpt.replace(blog.frontmatter.title, "").replace("By " + blog.frontmatter.author, "").replace("Posted", "")} author={blog.frontmatter.author} date={blog.frontmatter.date} slug={blog.fields.slug}/>
 
@@ -57,11 +56,9 @@ export default () => (
       render={data => {
         let blogs = [];
         data.allMarkdownRemark.nodes.forEach(node => {
-            console.log("node" + JSON.stringify(node))
             blogs = blogs.concat(node);
         });
 
-        console.log("hey: " + blogs)
 
         return <BlogPostGrid blogs={blogs}/>
       }}

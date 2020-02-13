@@ -8,7 +8,6 @@ import BlogPostGrid from "../components/blogPostGrid";
 
 
 const Blogs = ({data}) => {
-    console.log(data);
     return (
         <Layout title="Appsody - Blogs">
             <div className="container">

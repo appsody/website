@@ -8,7 +8,6 @@ export default function Template({
   data
 }) {
   const { markdownRemark } = data
-  console.log(markdownRemark.frontmatter.date)
   const { html } = markdownRemark
   const { title } = markdownRemark.frontmatter.title
   const { author } = markdownRemark.frontmatter.author
