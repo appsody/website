@@ -3,7 +3,7 @@ import TileGrid from "../components/tileGrid";
 import Layout from "../components/layout"
 
 const StackPage = () => (
-    <Layout>
+    <Layout title="Appsody - Stacks">
         <section className="stacks-section">
             <div className="stacks mb-5">
                 <h2>Application Stacks</h2>

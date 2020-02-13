@@ -34,8 +34,15 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               linkImagesToOriginal: true,
-              maxWidth: 1000,
+              maxWidth: 3000,
               wrapperStyle: result => `width: 100%;margin-left: 0;`
+            }
+          },
+          {
+            resolve: `gatsby-remark-embed-youtube`,
+            options: {
+              width: 560,
+              height: 315
             }
           }
         ]
@@ -68,6 +75,13 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         icon: `src/images/favicon.png`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blogs`,
+        path: `${__dirname}/content/blogs`
       }
     },
     `gatsby-transformer-yaml`,
