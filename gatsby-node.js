@@ -75,7 +75,6 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const { docs, blogs } = result.data;
-    console.log(docs, blogs);
 
     docs.edges.forEach(({ node }) => {
       if (node.fields.slug == "/docs/overview/") {
@@ -91,7 +90,6 @@ exports.createPages = ({ actions, graphql }) => {
     });
 
     blogs.edges.forEach(({ node }) => {
-      console.log(node);
       createPage({
         path: node.fields.slug,
         component: blogTemplate,
@@ -107,8 +105,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode });
-
-    console.log(node.frontmatter.author);
 
     if (slug == "/overview/") {
       createNodeField({
