@@ -5,7 +5,7 @@
     - title: Overview
       path: /docs/installing/installing-appsody
     - title: macOS
-      path: /docs//installing/macos
+      path: /docs/installing/macos
     - title: Ubuntu
       path: /docs/installing/ubuntu
     - title: RHEL
