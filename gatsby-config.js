@@ -10,35 +10,7 @@ module.exports = {
     pathPrefix: `/appsody-website`
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `docs-pages`,
-        path: `${__dirname}/content/docs`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `indexes`,
-        path: `${__dirname}/src/data/indexes`
-      }
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-142751517-1",
-        head: true,
-        anonymize: true
-      }
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        icon: `src/images/favicon.png`
-      }
-    },
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -69,8 +41,36 @@ module.exports = {
         ]
       }
     },
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `docs-pages`,
+        path: `${__dirname}/content/docs`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `indexes`,
+        path: `${__dirname}/src/data/indexes`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-142751517-1",
+        head: true,
+        anonymize: true
+      }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/images/favicon.png`
+      }
+    },
     `gatsby-transformer-yaml`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
