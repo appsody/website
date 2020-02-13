@@ -2,9 +2,9 @@
 title: Installing on macOS
 ---
 
-# Installing and Uninstalling on macOS
+# Installing on macOS
 
-The easiest way to install and uninstall Appsody on macOS is to use [Homebrew](#installing-with-homebrew), or you can alternatively use a [binary file](/docs/installing-appsody#appsody-binaries).
+The easiest way to install and uninstall Appsody on macOS is to use [Homebrew](#installing-with-homebrew).
 
 ## Prerequisites
 
