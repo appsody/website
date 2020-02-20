@@ -57,7 +57,7 @@ The easiest way to publish a stack is to use the Appsody CLI, however, you can u
         ./create_codewind_index.py -f /assets
         ```
 
-6. Upload the generated repository index file to the web hosting service.
+6. Upload the generated repository index files (`yaml` and `json`) to the web hosting service.
 
 You can now provide the URL to the hosted repository index file to other Appsody users, who can add it to their Appsody repository list then initialise a project using your stack.
 
