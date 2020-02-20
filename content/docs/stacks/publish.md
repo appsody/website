@@ -42,7 +42,22 @@ The easiest way to publish a stack is to use the Appsody CLI, however, you can u
 
     This command creates (or updates) a repository index file, that represents the repository, using the specified  `--release-url` as the base URL for referencing the source code and template archives. The repository index file name is determined from the repository name (`myrepository-index.yaml` in this example), and is created in the `.appsody/stacks/dev.local` directory
 
-3. Upload the generated repository index file to the web hosting service.
+5. To generate a `.json` formatted file of the created repository index (`myrepository-index.yaml`):
+    1. Install [python 3](https://www.python.org/downloads/) on your machine
+    2. Download the `.json` generation script from the [Appsody Stacks](https://github.com/appsody/stacks) git repository
+        ```
+        wget https://raw.githubusercontent.com/appsody/stacks/master/ci/create_codewind_index.py
+        ```
+    3. Change the script's permissions to be executable
+        ```
+        chmod +x ./create_codewind_index.py
+        ```
+    4. Run the script (`./create_codewind_index.py -h` to see optional arguments). For example, to generate `.json` files for every yaml file in the `/assets` directory:
+        ```
+        ./create_codewind_index.py -f /assets
+        ```
+
+6. Upload the generated repository index file to the web hosting service.
 
 You can now provide the URL to the hosted repository index file to other Appsody users, who can add it to their Appsody repository list then initialise a project using your stack.
 
