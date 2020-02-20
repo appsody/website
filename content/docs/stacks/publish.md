@@ -26,9 +26,9 @@ The easiest way to publish a stack is to use the Appsody CLI, however, you can u
 
     This command builds the stack container image, creates archives for your source code and each template, and adds your stack to the `dev.local` repository in your Appsody configuration.
 
-    If you want to publish your Docker images to a non-default image registry, such as `docker.io`, you can specify the registry to use with the `--image-registry` flag:
+    If you want to publish your Docker images to a non-default image registry, such as `myregistry.io`, you can specify the registry to use with the `--image-registry` flag:
     ```
-    appsody stack package --image-namespace myproject --image-registry docker.io
+    appsody stack package --image-namespace myproject --image-registry myregistry.io
     ```
 
 2. Push the stack container image to a Docker registry, such as [docker.io](https://docker.io).
