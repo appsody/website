@@ -26,7 +26,12 @@ The easiest way to publish a stack is to use the Appsody CLI, however, you can u
 
     This command builds the stack container image, creates archives for your source code and each template, and adds your stack to the `dev.local` repository in your Appsody configuration.
 
-2. Push the stack container image to a Docker registry, such as [docker.io](https://docker.io).
+    If you want to publish your Docker images to a non-default image registry, such as `myregistry.io`, you can specify the registry to use with the `--image-registry` flag:
+    ```
+    appsody stack package --image-namespace myproject --image-registry myregistry.io
+    ```
+
+2. Push the stack container image to the appropriate Docker registry, such as [docker.io](https://docker.io) or `myregistry.io`.
 
 3. Upload the source code and template archives to a suitable web hosting service, such as the [Releases](https://help.github.com/en/github/administering-a-repository/creating-releases) section of a GitHub repo.
 
@@ -52,7 +57,7 @@ The easiest way to publish a stack is to use the Appsody CLI, however, you can u
         ./create_codewind_index.py -f /assets
         ```
 
-6. Upload the generated repository index file to the web hosting service.
+6. Upload the generated repository index files (`yaml` and `json`) to the web hosting service.
 
 You can now provide the URL to the hosted repository index file to other Appsody users, who can add it to their Appsody repository list then initialise a project using your stack.
 
