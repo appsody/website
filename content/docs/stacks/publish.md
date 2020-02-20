@@ -31,7 +31,7 @@ The easiest way to publish a stack is to use the Appsody CLI, however, you can u
     appsody stack package --image-namespace myproject --image-registry myregistry.io
     ```
 
-2. Push the stack container image to a Docker registry, such as [docker.io](https://docker.io).
+2. Push the stack container image to the appropriate Docker registry, such as [docker.io](https://docker.io) or `myregistry.io`.
 
 3. Upload the source code and template archives to a suitable web hosting service, such as the [Releases](https://help.github.com/en/github/administering-a-repository/creating-releases) section of a GitHub repo.
 
