@@ -17,7 +17,7 @@ Appsody supports the following operating systems on x86 hardware:
 
 ## Requirements
 
-Appsody depends on Docker so ensure that you have [Docker](https://docs.docker.com/get-started/) installed and the Docker daemon is running on your system.
+Appsody depends on Docker so ensure that you have [Docker](https://docs.docker.com/get-started/) installed and the Docker daemon is running on your system. Prerequisites specific to each operating system are provided within the links in the following section.
 
 ## Using installers
 
