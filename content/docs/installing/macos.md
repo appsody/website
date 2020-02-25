@@ -14,17 +14,15 @@ If you don't have the Xcode Command Line Tools installed on your system, install
 xcode-select --install
 ```
 
-## Installing with Homebrew
-
-To install Appsody with Homebrew:
-
-1. If you don’t have Homebrew installed, you can install it by running:
+If you are installing with Homebrew and don't have Homebrew installed, you can install it by running:
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-2. To install Appsody with Homebrew, run:
+## Installing with Homebrew
+
+To install Appsody with Homebrew, run:
 
 ```
 brew install appsody/appsody/appsody
