@@ -8,7 +8,7 @@ The easiest way to install and uninstall Appsody on Ubuntu is to use `apt`.
 
 ## Prerequisites
 
-1. To avoid permissions problems on Linux hosts, your user account must be a member of the `docker` group, as detailed in the [Docker documentation](https://docs.docker.com/install/linux/linux-postinstall/), which you can configure by running:
+To avoid permissions problems on Linux hosts, your user account must be a member of the `docker` group, as detailed in the [Docker documentation](https://docs.docker.com/install/linux/linux-postinstall/), which you can configure by running:
 ```
 sudo usermod -aG docker <username>
 ```
