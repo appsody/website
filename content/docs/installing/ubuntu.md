@@ -4,14 +4,21 @@ title: Installing on Ubuntu
 
 # Installing on Ubuntu
 
-Follow these steps:
+The easiest way to install and uninstall Appsody on Ubuntu is to use `apt`.
+
+## Prerequisites
 
 1. To avoid permissions problems on Linux hosts, your user account must be a member of the `docker` group, as detailed in the [Docker documentation](https://docs.docker.com/install/linux/linux-postinstall/), which you can configure by running:
 ```
 sudo usermod -aG docker <username>
 ```
-2. Download the latest Debian install package from the [Appsody releases page](https://github.com/appsody/appsody/releases). The file is named `appsody_v.r.m_amd64.deb`, where `v.r.m` indicates the release tag.
-3. To install the package, run:
+
+## Installing
+
+Follow these steps:
+
+1. Download the latest Debian install package from the [Appsody releases page](https://github.com/appsody/appsody/releases). The file is named `appsody_v.r.m_amd64.deb`, where `v.r.m` indicates the release tag.
+2. To install the package, run:
 
 ```
 sudo apt install -f <path>/appsody_v.r.m_amd64.deb
