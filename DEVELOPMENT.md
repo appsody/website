@@ -208,6 +208,27 @@ The large letters, marking the letter of the alphabet the definitions belong to,
 
 > The glossary is not self-organising, so try to add definitions in their correct place alphabetically.
 
+## Adding a Blog
+
+Appsody blogs must be stored in the `content/blogs directory`. Images that are used in the blogs must be stored in the `content/docs/resources directory`.
+
+Blogs must be written in Markdown. At the top of each blog page, you need to include the following frontmatter so that the website can render the page correctly. Include the following elements:
+
+```
+---
+title: "Title of the blog"
+date: "Date the blog is published"
+author: "Name of the author"
+---
+```
+
+:pencil: **Note:** The `title`, `date` and `author` are required for each blog. The date format needs to be `yyyy-mm-dd`.
+
+For other formatting queries, follow the format of the existing blog listings, or talk to the community on Slack.
+
+> Blogs are rendered on the blogs page in `date` order, from most recent to oldest.
+
+
 ## Need help?
 
 If you have a question that you can't find an answer to, we want to hear from you. Reach out to the community for assistance on [Slack](https://appsody-slack.eu-gb.mybluemix.net/).
