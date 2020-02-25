@@ -23,7 +23,7 @@ Thanks to some great new folks to the project — **there are now 11**.
 
 * [Quarkus](https://github.com/appsody/stacks/tree/master/experimental/quarkus): a “Kubernetes Native Java stack”. Quarkus is an open source project sponsored by Red Hat, which you can discover [here](https://quarkus.io/). Thanks to [Paul](https://github.com/paulrobinson) for this stack!
 
-* [Node.js Functions](https://github.com/appsody/stacks/tree/master/experimental/nodejs-functions): an extension to the existing nodejs-express stack, allowing you to build functions using the same “Connect Middleware” API from Express.js. 
+* [Node.js Functions](https://github.com/appsody/stacks/tree/master/experimental/nodejs-functions): an extension to the existing nodejs-express stack, allowing you to build functions using the same “Connect Middleware” API from Express.js.
 
 For example:
 
@@ -45,7 +45,7 @@ For example:
 
 Growing the number of Stacks remains a priority for us. We want to give developers as much choice as possible, and to be able to work with their preferred technologies when building cloud-native microservices.
 
-With that in mind, we are trying to make it easier to provide new Stacks, both from a technology perspective — like updating the CLI to help create stacks ([#45](https://github.com/appsody/appsody/issues/45) & [#199](https://github.com/appsody/stacks/issues/199)) — and in terms of guidance, such as improving the docs with our new ‘[building and testing stacks’](https://appsody.dev/docs/stacks/build-and-test) section. We also have the #stack-providers channel in our [Slack](http://appsody-slack.eu-gb.mybluemix.net/) for any and all questions you might have.
+With that in mind, we are trying to make it easier to provide new Stacks, both from a technology perspective — like updating the CLI to help create stacks ([#45](https://github.com/appsody/appsody/issues/45) & [#199](https://github.com/appsody/stacks/issues/199)) — and in terms of guidance, such as improving the docs with our new ['developing stacks'](https://appsody.dev/docs/stacks/develop) documentation. We also have the #stack-providers channel in our [Slack](http://appsody-slack.eu-gb.mybluemix.net/) for any and all questions you might have.
 
 ## Appsody CLI
 
@@ -53,13 +53,13 @@ At time of writing we’re at V0.4.5 and I would strongly encourage you to keep 
 
 Here’s some of the new functionality introduced so far:
 
-* Work with multiple repositories: you can specify a repo when using the init cmd to initialise a new project and start building an application i.e. `appsody init <repository>/<stack>` . You can also set a default repository with `appsody repo set-default`
+* Work with multiple repositories: you can specify a repo when using the init cmd to initialize a new project and start building an application i.e. `appsody init <repository>/<stack>` . You can also set a default repository with `appsody repo set-default`
 
 * Support for the Appsody Operator (more on that later…)
 
 * Pass options to ‘docker run’ in appsody[run/debug/test] and to ‘docker build’ in appsody build via the --docker-options flag
 
-* Support for buildah in appsody extract allowing you to run in environments where docker-in-docker is not viable.
+* Support for buildah in ‘appsody extract‘ allowing you to run in environments where docker-in-docker is not viable.
 
 * Support for interactive stacks: you can now use --interactive to attach STDIN to the container for interactive TTY mode.
 

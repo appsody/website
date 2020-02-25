@@ -10,8 +10,6 @@ export default function Template({
   const { markdownRemark } = data
   const { html } = markdownRemark
   const { title } = markdownRemark.frontmatter.title
-  const { author } = markdownRemark.frontmatter.author
-  const { date } = markdownRemark.frontmatter.date
 
   return (
     <Layout title={title}>

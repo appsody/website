@@ -1,5 +1,5 @@
 ---
-Title: Packaging stacks using CI scripts
+title: Packaging stacks using CI scripts
 ---
 
 # Packaging a stack locally using CI scripts
