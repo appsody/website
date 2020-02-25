@@ -4,14 +4,21 @@ title: Installing on RHEL
 
 # Installing on RHEL
 
-Follow these steps:
+The easiest way to install and uninstall Appsody on Red Hat Enterprise Linux is to use yum.
 
-1. To avoid permissions problems on Linux hosts, your user account must be a member of the `docker` group, as detailed in the [Docker documentation](https://docs.docker.com/install/linux/linux-postinstall/), which you can configure by running:
+## Prerequisites
+
+To avoid permissions problems on Linux hosts, your user account must be a member of the `docker` group, as detailed in the [Docker documentation](https://docs.docker.com/install/linux/linux-postinstall/), which you can configure by running:
 ```
 sudo usermod -aG docker <username>
 ```
-2. Download the latest RPM install package from the [Appsody releases page](https://github.com/appsody/appsody/releases). The file is named `appsody-v.r.m-1.x86_64.rpm`, where `v.r.m` indicates the release tag.
-3. To install the package, run:
+
+## Installing
+
+Follow these steps:
+
+1. Download the latest RPM install package from the [Appsody releases page](https://github.com/appsody/appsody/releases). The file is named `appsody-v.r.m-1.x86_64.rpm`, where `v.r.m` indicates the release tag.
+2. To install the package, run:
 
 ```
 sudo yum install <path>/appsody-v.r.m-1.x86_64.rpm
