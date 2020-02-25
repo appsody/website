@@ -8,7 +8,7 @@ os:
 script:
   - npm install -g gatsby-cli
   - . ./ci/get-indexes.sh
-  - gatsby build
+  - gatsby clean && gatsby build
 
 deploy:
   provider: pages
