@@ -4,7 +4,7 @@ title: Overview - Installing Appsody
 
 # Installing Appsody
 
-The easiest way to install Appsody is to use the installers which are available for all supported platforms, except Windows&reg;.
+The easiest way to install Appsody is to use the installers, which are available for all supported platforms, except Windows&reg;.
 
 ## Platforms
 
@@ -14,8 +14,6 @@ Appsody supports the following operating systems on x86 hardware:
  - Ubuntu
  - Red Hat Enterprise Linux (RHEL)
  - Windows&reg; - Windows 10 Professional and Windows 10 Enterprise editions only
-
- To find out more details about the operating system versions that Appsody tests against, refer to [Testing]().
 
 ## Requirements
 
