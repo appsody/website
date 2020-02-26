@@ -1,10 +1,10 @@
 ---
-title: Quick Start
+title: Getting Started
 ---
 
-# Quick Start
+# Getting Started
 
-If you haven't already installed Appsody, follow the steps described in [Installation](/docs/getting-started/installation).
+If you haven't already installed Appsody, follow the steps described in [Installing Appsody](/docs/installing/installing-appsody).
 
 Creating a new Appsody project is easy! All you need is a few commands to create a containerized development environment running with the stack of your choice.
 
@@ -14,8 +14,7 @@ First, choose a development stack. To see all the available stacks, run:
 appsody list
 ```
 
-Create a new directory for your project and run `appsody init <stack>` to download the template project. The following example uses the `nodejs-express` stack to create
-a fully functional Appsody project:
+Create a new directory for your project and run `appsody init <stack>` to download the template project. The following example uses the `nodejs-express` stack to create a fully functional Appsody project:
 
 ```
 mkdir my-project
@@ -40,4 +39,3 @@ You are ready to continue developing your application.
 - When you are ready to build a production docker image, run `appsody build`.
 
 > You can get more information about all the available commands by running `appsody help [command]` or `appsody <command> --help`.
-
