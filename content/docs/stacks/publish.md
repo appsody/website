@@ -19,7 +19,7 @@ For more information, see the [Contributing guidelines](https://github.com/appso
 
 The easiest way to publish a stack is to use the Appsody CLI, however, you can use [CI scripts](/docs/stacks/publish-ci-scripts) if you want to publish multiple stacks.
 
-1. If the stack is not already packaged, package it by running the [`appsody stack package`](/content/docs/using-appsody/cli-commands/#appsody-stack-package) command from the root directory of your stack, specifying the namespace for creating the Docker images with. For example, the following command creates Docker images with a namespace of `myproject`:
+1. If the stack is not already packaged, package it by running the [`appsody stack package`](/content/docs/cli-commands/#appsody-stack-package) command from the root directory of your stack, specifying the namespace for creating the Docker images with. For example, the following command creates Docker images with a namespace of `myproject`:
     ```
     appsody stack package --image-namespace myproject
     ```
@@ -35,7 +35,7 @@ The easiest way to publish a stack is to use the Appsody CLI, however, you can u
 
 3. Upload the source code and template archives to a suitable web hosting service, such as the [Releases](https://help.github.com/en/github/administering-a-repository/creating-releases) section of a GitHub repo.
 
-4. To add your stack to a repository, run the [`appsody stack add-to-repo`](/content/docs/using-appsody/cli-commands.md/#appsody-stack-addtorepo) command from the root directory of your stack, specifying the repository name and the base URL to use. For example:
+4. To add your stack to a repository, run the [`appsody stack add-to-repo`](/content/docs/cli-commands.md/#appsody-stack-addtorepo) command from the root directory of your stack, specifying the repository name and the base URL to use. For example:
     ```
     appsody stack add-to-repo myrepository --release-url https://github.com/myorg/myrepository/releases/latest/download/
     ```
