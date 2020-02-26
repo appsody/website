@@ -82,3 +82,24 @@ You might find that embedded Kubernetes on Docker Docktop on macOS is using port
 The workaround is to append `-p 9444:9443` to the Appsody command so that the port inside the container is 9443 but access to the application (the publicly exposed port), is through 9444.
 
 Alternatively you can append `-P` to your Appsody command, which automatically assigns a free port to the process.
+
+### 8. Can I run Appsody with SELinux?
+
+Yes. Although if you see errors similar to the following, it indicates that the Docker daemon, although it runs as `root`, might not be able to access the folders that are mounted from the host file system:
+
+```
+Container] [Warning] Failed to add directory to recursive watch list: /project/user-appopen /project/user-app: permission denied
+npm ERR! path /project/user-app/package.json
+[Container] npm ERR! Code EACCES
+[Container] npm ERR! errno -13
+[Container] npm ERR! syscall open
+[Container] npm ERR! Error: EACCES: permission denied, open '/project/user-app/package.json'
+```
+
+To check whether SELinux is enabled and enforcing its policies, you can run `sestatus`. The output of the command includes the `Current Mode` of SELinux. If it is set to `enforcing`, and you see errors similar to those shown, you might need to change your SELinux configuration.
+
+You can exempt the folders that are mounted by the stacks that you are using, with the following command:
+```
+chcon -Rt svirt_sandbox_file_t </path/to/volume>
+```
+You might need to run this command multiple times to whitelist different paths, depending on your setup, and on the mount points of the specific stack you are using.

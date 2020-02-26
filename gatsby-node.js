@@ -18,6 +18,20 @@ exports.createPages = ({ actions, graphql }) => {
 
   // Redirects section
 
+  // The install doc was split and placed under its own installing menu
+  createRedirect({
+    fromPath: `/docs/getting-started/installation`,
+    toPath: `/docs/installing/installing-appsody`,
+    isPermanent: true
+  });
+
+  // The getting-started doc was moved to the top level menu
+  createRedirect({
+    fromPath: `/docs/getting-started/quick-start`,
+    toPath: `/docs/getting-started`,
+    isPermanent: true
+  });
+
   // The modify doc was merged with the create doc to form a develop doc
   createRedirect({
     fromPath: `/docs/stacks/modify`,
