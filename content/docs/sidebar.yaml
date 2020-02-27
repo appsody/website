@@ -22,8 +22,6 @@
       path: /docs/using-appsody/local-development
     - title: Building and Deploying
       path: /docs/using-appsody/building-and-deploying
-    - title: CLI Reference
-      path: /docs/using-appsody/cli-commands
 - title: Appsody Stacks
   items:
     - title: Stacks Overview
@@ -40,6 +38,8 @@
       path: /docs/stacks/lifecycle
     - title: Environment Variables
       path: /docs/stacks/environment-variables
+- title: CLI Reference
+  path: /docs/cli-commands
 - title: FAQ
   path: /docs/faq
 - title: Glossary
