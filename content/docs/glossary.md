@@ -7,6 +7,12 @@ Learn about terms and definitions that are related to the Appsody project.
 
 ## A
 
+>### Appsody
+Appsody is an open source project that provides tools to help users develop and deploy containerized applications for the cloud.
+
+>### Appsody stack
+Appsody stacks contain software components that provide the foundation for building applications that run in containers. Stacks are an easy way to manage consistency and adopt best practices across many applications. Stacks are available for different language runtime environments and frameworks, which can be customized to suit local needs. A stack includes a base container image (see Dockerfile-stack) and project templates that act as a starting point for application development.
+
 >### Appsody CLI
 The Appsody command-line interface supports the full application development lifecycle; creating stacks, creating applications based on stacks, testing and debugging your applications, and deployment to Kubernetes.  
 
