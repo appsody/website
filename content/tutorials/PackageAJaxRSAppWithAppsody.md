@@ -45,31 +45,38 @@ git clone https://github.com/OpenLiberty/guide-rest-intro
 
 As mentioned, Appsody provides both a Stack and Project Templates. If you already have your own application, and as such don’t require the template, you can initialize the development environment with just the Stack that is required by your application. To do this issue the `appsody init` command with none specified as a template.
 
-The JAX-RS and JSON-P features used by the sample application are part of Eclipse Microprofile specification, so we can use the java-microprofile Stack. You can initialize the development environment by issuing the following command within the `finish` directory:
+The JAX-RS and JSON-P features used by the sample application are part of Eclipse Microprofile specification. We can use the java-openliberty stack which allows you to build MicroProfile compliant applications. You can initialize the development environment by issuing the following command within the `finish` directory:
 
 ```
-appsody init java-microprofile none
+appsody init java-openliberty none
 ```
 
-There are two changes that you need to make in order for the app to run.
+You should see output including a statement similar to this:
 
-1. Both the application and the java-microprofile Stack include a `pom.xml` file. The Stack’s `pom.xml` file acts as the parent, so before you can run the app you need to update the `<parent>` field in the application's `pom.xml` to reference the Stack as follows:
+```
+[InitScript] [INFO] --------------------< dev.appsody:java-openliberty >--------------------
+[InitScript] [INFO] Building java-openliberty 0.2.2
+```
+
+There is one change that you need to make in order for the app to run.
+
+Both the application and the java-openliberty Stack include a `pom.xml` file. The Stack’s `pom.xml` file acts as the parent, so before you can run the app you need to update the `<parent>` field in the application's `pom.xml` to reference the Stack as follows:
+
+Note: You can find the correct parent pom version in the above output statement from `appsody init`.
 
 ```
     <parent>
       <groupId>dev.appsody</groupId>
-      <artifactId>java-microprofile</artifactId>
-      <version>0.2.1</version>
+      <artifactId>java-openliberty</artifactId>
+      <version>0.2.2</version>
     </parent>
 ```
-
-2. The Stack requires the application to either be a specific version of OpenLiberty like 19.0.0.5 or to rely on the default set in the Stack by using `${version.openliberty-runtime}`. You need to update `<assemblyArtifact>` appropriately.
 
 ### Running the application
 
 Simply issue: `appsody run`.
 
-This starts a docker container and copies across the workspace and a **controller**. This controller watches for changes in the `src` directory and issues `mvn -Dmaven.repo.local=/mvn/repository compile` to rebuild the app.
+This starts a docker container and mounts the workspace and the local maven repository (~/.m2/repository). Open Liberty's "dev mode" is enabled which will automatically detect changes to the application's configuration and source triggering a recompile and redeploy of the application.
 
 Once complete you can test the app by going to:
 [http://localhost:9080/LibertyProject/System/properties](http://localhost:9080/LibertyProject/System/properties)
