@@ -24,26 +24,26 @@ Here is an example of the output produced by the `appsody list` command:
 $ appsody list
 
 REPO      	    ID               	        VERSION  	TEMPLATES        	DESCRIPTION
-incubator	    java-microprofile	        0.2.6    	*default         	Eclipse MicroProfile using OpenJ9 and Maven
-incubator	    java-spring-boot2	        0.3.2    	*default, kotlin 	Spring Boot using OpenJ9 and Maven
-incubator	    nodejs           	        0.2.3    	*simple          	Runtime for Node.js applications
-incubator	    nodejs-express   	        0.2.3    	*simple, scaffold	Express web framework for Node.js
-incubator	    swift            	        0.1.2    	*simple          	Runtime for Swift applications
-experimental	java-spring-boot2-liberty	0.1.0    	*default 	        Spring Boot using OpenJ9, Maven and OpenLiberty
-experimental	nodejs-functions         	0.1.1    	*simple  	        Serverless runtime for Node.js functions
-experimental	quarkus                  	0.1.1    	*default 	        Quarkus runtime for running Java applications
+incubator    	java-openliberty         	0.2.2    	*default         	Open Liberty & OpenJ9 using Maven          
+incubator	    java-spring-boot2	        0.3.26    	*default, kotlin 	Spring Boot using OpenJ9 and Maven
+incubator	    nodejs           	        0.3.4    	*simple          	Runtime for Node.js applications
+incubator	    nodejs-express   	        0.4.4   	*simple, scaffold	Express web framework for Node.js
+incubator	    swift            	        0.2.5    	*simple          	Runtime for Swift applications
+experimental	java-spring-boot2-liberty	0.1.11    	*default 	        Spring Boot using OpenJ9, Maven and OpenLiberty
+experimental	nodejs-functions         	0.2.0    	*simple  	        Serverless runtime for Node.js functions
+experimental	quarkus                  	0.2.3    	*default 	        Quarkus runtime for running Java applications
 
 ```
 You can limit the `appsody list` output by specifying a `repository name` as shown below:
 ```
 $ appsody list incubator
 
-REPO      	ID               	VERSION  	TEMPLATES        	DESCRIPTION
-incubator	java-microprofile	0.2.6    	*default         	Eclipse MicroProfile using OpenJ9 and Maven
-incubator	java-spring-boot2	0.3.2    	*default, kotlin 	Spring Boot using OpenJ9 and Maven
-incubator	nodejs           	0.2.3    	*simple          	Runtime for Node.js applications
-incubator	nodejs-express   	0.2.3    	*simple, scaffold	Express web framework for Node.js
-incubator	swift            	0.1.2    	*simple          	Runtime for Swift applications
+REPO      	  ID               	     VERSION  	TEMPLATES        	DESCRIPTION
+incubator     java-openliberty       0.2.2    	*default         	Open Liberty & OpenJ9 using Maven          
+incubator	  java-spring-boot2	     0.3.26    	*default, kotlin 	Spring Boot using OpenJ9 and Maven
+incubator	  nodejs           	     0.3.4    	*simple          	Runtime for Node.js applications
+incubator	  nodejs-express   	     0.4.4   	*simple, scaffold	Express web framework for Node.js
+incubator	  swift            	     0.2.5    	*simple          	Runtime for Swift applications
 
 ```
 
