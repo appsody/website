@@ -17,7 +17,7 @@ Follow these steps:
 appsody-setup.bat
 ```
 
-You can now follow the [Quick Start](/docs/getting-started/quick-start) instructions to create your first containerized development environment with a running *Hello World!* application.
+You can now follow the [Getting Started](/docs/getting-started) instructions to create your first containerized development environment with a running *Hello World!* application.
 
 # Upgrading
 
