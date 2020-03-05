@@ -403,11 +403,12 @@ appsody init [stack] or [repository]/[stack] [template] [flags]
 ### Options
 
 ```
-  -h, --help                    help for init
-      --no-template             Only create the .appsody-config.yaml file. Do not unzip the template project. [Deprecated]
-      --overwrite               Download and extract the template project, overwriting existing files.  This option is not intended to be used in Appsody project directories.
-      --project-name string     Project Name for Kubernetes Service (default "my-project")
-      --stack-registry string   Specify the URL of the registry that hosts your stack images.
+      --application-name string   Specifies the greater application which this project belongs to.
+  -h, --help                      help for init
+      --no-template               Only create the .appsody-config.yaml file. Do not unzip the template project. [Deprecated]
+      --overwrite                 Download and extract the template project, overwriting existing files.  This option is not intended to be used in Appsody project directories.
+      --project-name string       Project Name for Kubernetes Service. (default "my-project")
+      --stack-registry string     Specify the URL of the registry that hosts your stack images.
 ```
 
 ### Options inherited from parent commands
