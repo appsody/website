@@ -25,7 +25,7 @@ sudo apt install -f <path>/appsody_v.r.m_amd64.deb
 ```
 where `<path>` is the fully qualified path to the package.
 
-You can now follow the [Quick Start](/docs/getting-started/quick-start) instructions to create your first containerized development environment with a running *Hello World!* application.
+You can now follow the [Getting Started](/docs/getting-started) instructions to create your first containerized development environment with a running *Hello World!* application.
 
 # Upgrading
 

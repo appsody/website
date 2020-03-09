@@ -56,7 +56,7 @@ We welcome contributions to the Appsody documentation.
 
 Documentation for Appsody must be stored in the `content/docs directory`. Images must be stored in the `content/docs/images directory`.
 
-The documentation should follow the rough structure of the sidebar so that the docs are easy to find. The quick start guide, for example, is located in `content/docs/getting-started/quick-start`.
+The documentation should follow the rough structure of the sidebar so that the docs are easy to find. The getting started guide, for example, is located in `content/docs/getting-started`.
 
 At the top of each documentation page you should include frontmatter so that the website can render the page correctly. Include the following elements:
 

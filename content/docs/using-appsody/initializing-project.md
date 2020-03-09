@@ -49,6 +49,8 @@ incubator	  swift            	     0.2.5    	*simple          	Runtime for Swift
 
 When you have chosen your stack, run `appsody init <repository-name>/<stack> <template>` for the repository and stack of your choice. This command downloads the default project template for the stack and initializes Appsody for local development.  If you elect to only specify the stack, e.g. `appsody init <stack>`, the default repository is assumed.  If you do not specify a template, the default template is assumed.
 
+You can specify an `application-name:` field in the Appsody configuration file `.appsody-config.yaml` by using the `--application-name` flag. The Appsody configuration file does not contain an application name entry by default. If added, this field is used by downstream tools such as the Appsody Operator.
+
 You can specify the `--stack-registry` flag to override the default registry URL that hosts your stack images, from the default value “docker.io”. Subsequent calls to Appsody CLI commands, such as `appsody run`, then use this registry URL.
 
 Now you have a fully functional Appsody project. For more details on running the project, see [Local Development](/docs/using-appsody/local-development).
