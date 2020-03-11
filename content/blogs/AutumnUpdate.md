@@ -9,7 +9,7 @@ imagePath: "http://localhost:8000/static/e05283c91c0cc09f39645b4b283a68a7/8dcf2/
 
 ![Autumn](./resources/autumn.jpeg)
 
-It’s been a busy couple of months since we publicly launched as an open source project, full of fixes, features and (cloud) functions. If you’ve not tried Appsody yet, head over to [appsody.dev](https://appsody.dev), create cloud native applications and live your best life.
+It’s been a busy couple of months since we publicly launched as an open source project, full of fixes, features and (cloud) functions. If you’ve not tried Appsody yet, head over to our docs, create cloud native applications and live your best life.
 
 ## Doubling the number of Stacks
 
