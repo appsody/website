@@ -45,7 +45,7 @@ The `build` command adds metadata to the Appsody application image using informa
 - Git source control (prefix: `dev.appsody.image.commit`)
 - The stack image (prefix: `dev.appsody.stack`)
 
-The `build` command alters the [stack metadata](#stack-metadata) by changing the prefix of the labels from `org.opencontainers.image` to `dev.appsody.stack`.
+The `build` command alters the [stack labels](#stack-labels) by changing the prefix of the labels from `org.opencontainers.image` to `dev.appsody.stack`.
 
 > Metadata that has an asterisk (`*`) attributed to them will only appear if the respective information has been manually added to the `.appsody-config.yaml` file (e.g. `version: 0.1.1`)
 
@@ -72,6 +72,6 @@ The `build` command alters the [stack metadata](#stack-metadata) by changing the
 
 ## Custom Resources for Kubernetes
 
-The `build` command generates the deployment manifest `app-deploy.yaml` using the [application metadata](#application-metadata) and reformats the metadata to Kubernetes reverse domain notations (e.g. `dev.appsody.stack.id` becomes `stack.appsody.dev/id`).  The information is then exposed on the deployed resources in Kubernetes.
+The `build` command generates the deployment manifest `app-deploy.yaml` using the [application labels](#application-labels) and reformats the metadata to Kubernetes reverse domain notations (e.g. `dev.appsody.stack.id` becomes `stack.appsody.dev/id`).  The information is then exposed on the deployed resources in Kubernetes.
 
 The only label that changes its prefix entirely is `dev.appsody.app.name` which becomes `app.kubernetes.io/part-of`.
