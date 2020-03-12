@@ -10,7 +10,7 @@ Docker object labels in images allows easier discoverability of both Appsody app
 
 ## Stack labels
 
-The following metadata is generated when using the `stack package` command, and then added to the stack image.
+The following labels are generated when using the `stack package` command, and then added to the stack image.
 
 | Labels                                   | Description                                                                                                                  |
 |------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
@@ -39,7 +39,7 @@ If there are additional labels present they are inherited from the base image us
 
 ## Application labels
 
-The `build` command adds metadata to the Appsody application image using information from:
+The `build` command adds labels to the Appsody application image using information from:
 
 - The generated application config file `.appsody-config.yaml` (prefix: `dev.appsody.app`)
 - Git source control (prefix: `dev.appsody.image.commit`)
@@ -47,7 +47,7 @@ The `build` command adds metadata to the Appsody application image using informa
 
 The `build` command alters the [stack labels](#stack-labels) by changing the prefix of the labels from `org.opencontainers.image` to `dev.appsody.stack`.
 
-> Metadata that has an asterisk (`*`) attributed to them will only appear if the respective information has been manually added to the `.appsody-config.yaml` file (e.g. `version: 0.1.1`)
+> Labels that have an asterisk (`*`) attributed to them will only appear if the respective information has been manually added to the `.appsody-config.yaml` file (e.g. `version: 0.1.1`)
 
 | Labels                                      | Description                                                                                                                  |
 |---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
@@ -72,6 +72,6 @@ The `build` command alters the [stack labels](#stack-labels) by changing the pre
 
 ## Custom Resources for Kubernetes
 
-The `build` command generates the deployment manifest `app-deploy.yaml` using the [application labels](#application-labels) and reformats the metadata to Kubernetes reverse domain notations (e.g. `dev.appsody.stack.id` becomes `stack.appsody.dev/id`).  The information is then exposed on the deployed resources in Kubernetes.
+The `build` command generates the deployment manifest `app-deploy.yaml` using the [application labels](#application-labels) and reformats the labels to Kubernetes reverse domain notations (e.g. `dev.appsody.stack.id` becomes `stack.appsody.dev/id`).  The information is then exposed on the deployed resources in Kubernetes.
 
 The only label that changes its prefix entirely is `dev.appsody.app.name` which becomes `app.kubernetes.io/part-of`.
