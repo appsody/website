@@ -53,38 +53,3 @@ This builds the stack container image, creates archives for the source code and 
 ## Next steps
 
 After you create, or update a stack, you should test the stack. For more information, see [Testing Stacks](/docs/stacks/test).
-
----
-
-## Advanced Topics
-
-### Labels - Appsody stacks
-
-The following Appsody stack labels are populated using relevant information in the `stack.yaml` and git source control during the `stack package` command:
-
-```
-org.opencontainers.image.created
-org.opencontainers.image.authors
-org.opencontainers.image.version
-org.opencontainers.image.licenses
-org.opencontainers.image.title
-org.opencontainers.image.description
-org.opencontainers.image.url
-org.opencontainers.image.documentation
-org.opencontainers.image.source
-org.opencontainers.image.revision
-
-dev.appsody.image.commit.contextDir
-dev.appsody.image.commit.author
-dev.appsody.image.commit.committer
-dev.appsody.image.commit.date
-dev.appsody.image.commit.message
-dev.appsody.stack.id
-dev.appsody.stack.tag
-```
-
-Any additional labels present in the stack image have been inherited from the base image used for the stack.
-
-### Labels - Appsody applications
-
-### Labels - Appsody Custom Resource for Kubernetes

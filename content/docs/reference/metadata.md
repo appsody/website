@@ -10,7 +10,7 @@ Docker object labels in images allows easier discoverability of both Appsody app
 
 ## Stack labels
 
-The following labels are generated when using the `stack package` command, and then added to the stack image.
+When you package the stack by running the `stack package` command, the following metadata is generated and added to the stack image:
 
 | Labels                                   | Description                                                                                                                  |
 |------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
@@ -33,7 +33,7 @@ The following labels are generated when using the `stack package` command, and t
 | `dev.appsody.stack.tag`                  | Image namespace, image registry, stack ID and version (e.g. `appsody/docker.io/nodejs:0.1.1`)                                |
 | `dev.appsody.stack.deprecated`           | Optional value included in `stack.yaml` to indicate stack is deprecated                                                      |
 
-If there are additional labels present they are inherited from the base image used by the stack.
+If there are additional labels present, they are inherited from the base image used by the stack.
 
 ---
 
