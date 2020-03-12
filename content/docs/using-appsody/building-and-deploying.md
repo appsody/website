@@ -28,6 +28,8 @@ The `appsody build` command completes the following actions:
 
 > If your project includes uppercase characters these are converted to lowercase characters in the image name because Docker does not accept uppercase characters in image tags. Also, if your project directory includes underscore characters, those will be converted to dashes (-), because certain areas of Kubernetes are not tolerant of underscore characters.
 
+
+
 Here is an example of the output produced by the `appsody build` command on a project named `appsody-project`:
 ```
 appsody-project$ appsody build

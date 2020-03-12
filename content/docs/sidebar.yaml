@@ -36,10 +36,14 @@
       path: /docs/stacks/publish
     - title: Stack lifecycle
       path: /docs/stacks/lifecycle
-    - title: Environment Variables
-      path: /docs/stacks/environment-variables
 - title: CLI Reference
   path: /docs/cli-commands
+- title: Reference
+  items:
+    - title: Metadata
+      path: /docs/reference/metadata
+    - title: Environment Variables
+      path: /docs/reference/environment-variables
 - title: FAQ
   path: /docs/faq
 - title: Glossary
