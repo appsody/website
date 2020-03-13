@@ -16,7 +16,7 @@ The `dev.appsody.image.commit` labels are present when a user has Git source con
 
 | Labels                                   | Description  | Origin | Example |
 |------------------------------------------|-----------------------------------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| `dev.appsody.image.commit.author`        | GitHub name and email of code author | Git | `Joe Bloggs <joe.bloggs@email.com` |
+| `dev.appsody.image.commit.author`        | GitHub name and email of code author          | Git                            | `Joe Bloggs <joe.bloggs@email.com`                                                                                               |
 | `dev.appsody.image.commit.committer`     | GitHub name and email of Git committer | Git | `GitHub <noreply@github.com`|
 | `dev.appsody.image.commit.contextDir`    | You can use a subdirectory of your source code repository by specifying a --context-dir flag | Git | `incubator/starter` |
 | `dev.appsody.image.commit.date`          | Date on which Git commit was pushed | Git | `Tue Mar 3 16:16:43 2020 +0000` |
