@@ -4,7 +4,7 @@ title: Metadata
 
 # Metadata
 
-Docker object labels in images allows easier discoverability of both Appsody applications and stacks.  When you package a stack or build an application with Appsody, several labels will be added to the resulting images which developers can access, for example to filter and organise images.
+Appsody  enables end-to-end traceability from development to deployment by injecting metadata in the form of labels and annotations on container images and Kubernetes resources.
 
 ---
 
