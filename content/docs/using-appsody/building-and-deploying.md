@@ -259,4 +259,4 @@ Most likely, the deployment of apps created with the appsody CLI is going to occ
 
 As a developer, you develop your app using the appsody CLI, and when you are ready to deploy, you push your code to a repo or create a pull request on GitHub.
 
-This [example](https://github.com/appsody/tekton-example) shows you how to use Tekton pipelines to deploy your app to a Kubernetes cluster. More details on running the Tekton pipeline example for Appsody can be found in the repo [readme file] (https://github.com/appsody/tekton-example/blob/master/README.md).
+This [example](https://github.com/appsody/tekton-example) shows you how to use Tekton pipelines to deploy your app to a Kubernetes cluster. More details on running the Tekton pipeline example for Appsody can be found in the repo [readme file] (https://github.com/appsody/tekton-example/blob/master/README.md). The example makes use of a customized Buildah image with the Appsody CLI installed which can be found [here](https://github.com/appsody/appsody-buildah).
