@@ -74,7 +74,7 @@ These stacks are production-ready. Stable stacks must meet all the criteria set 
 - Support the [appsody build](/docs/cli-commands#appsody-build) command with Buildah
 - Prevent creation of files on the local system that cannot be removed (i.e. files owned by root or other users)
 - Specify explicit versions for all required Docker images
-- Do not introduce any version changes to the content provided by the parent container images (for example: yum upgrade, apt-get dist-upgrade, npm audit fix). If a package contained in the parent image is out-of-date, contact its' maintainers or update it individually.
+- Do not introduce any version changes to the content provided by the parent container images (for example: `yum upgrade`, `apt-get dist-upgrade`, `npm audit fix`). If a package contained in the parent image is out of date, contact its maintainers or update it individually.
 - Tag the stack with a major version (i.e. at least 1.0.0)
 - Follow [Docker best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/), including:
     1. Minimise the size of production images 
