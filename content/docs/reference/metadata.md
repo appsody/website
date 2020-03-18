@@ -32,17 +32,19 @@ The `dev.appsody.stack` labels are created from general information that is pass
 
 The `org.opencontainers.image` labels are created every time that a stack is packaged, primarily by using information from the `stack.yaml` and GitHub.
 
+`<GitHub Stack URl>` = https://github.com/appsody/stacks/tree/master/incubator/starter
+
 | Labels                                   | Description  | Origin | Example |
 |------------------------------------------|-----------------------------------------------|--------------------------------|----------|
 | `org.opencontainers.image.authors`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| `maintainer` field in `stack.yaml`| `Joe BLoggs <joebloggs@email.com>` |
 | `org.opencontainers.image.created`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  Created by the `stack package` command| `2020-03-03T16:19:59Z`|
 | `org.opencontainers.image.description`   | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  `description` field in `stack.yaml`| `Runnable starter stack`|
-| `org.opencontainers.image.documentation` | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  GitHub | https://github.com/appsody/stacks/tree/master/incubator/starter/README.md
+| `org.opencontainers.image.documentation` | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  GitHub | `<GitHub Stack URl>/README.md`
 | `org.opencontainers.image.licenses`      | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  `licenses` field in `stack.yaml` |  `Apache-2.0`|
 | `org.opencontainers.image.revision`      | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  Github |  `c27fffdbe7a9443081ef6abbac2cb2d8125aeb45` |
-| `org.opencontainers.image.source`        | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  GitHub |  https://github.com/appsody/stacks/tree/master/incubator/starter/image |
+| `org.opencontainers.image.source`        | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  GitHub |  `<GitHub Stack URl>/image` |
 | `org.opencontainers.image.title`         | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  `name` field in `stack.yaml`|  `Starter Sample` |
-| `org.opencontainers.image.url`           | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  GitHub |  https://github.com/appsody/stacks/tree/master/incubator/starter |
+| `org.opencontainers.image.url`           | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  GitHub |  `<GitHub Stack URl>` |
 | `org.opencontainers.image.version`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  `version` field in `stack.yaml`|  `0.1.1`                                            |
 
 If there are additional labels present, they are inherited from the base image used by the stack.
@@ -75,21 +77,24 @@ The `dev.appsody.image.commit` labels are created when Git source control is con
 
 The `dev.appsody.stack` labels are inherited from the stack image. The `build` command changes the prefix for each of the [stack labels](#stack-labels) from `org.opencontainers.image` to `dev.appsody.stack`.
 
+`<GitHub URl>` = https://github.com/appsody/stacks/tree/master/incubator/starter
+
 | Labels                                   | Description  | Origin  | Example  |
 |------------------------------------------|-----------------------------------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| `dev.appsody.stack.authors`       | Stack maintainers names and emails | `maintainer` field in `stack.yaml` | `Joe BLoggs <joebloggs@email.com>`            |
+| `dev.appsody.stack.authors`       | Stack maintainers names and emails | `authors` field in `stack.yaml` | `Joe BLoggs <joebloggs@email.com>`            |
+| `dev.appsody.stack.configured`       | Version of stack used for project |  `configured` field in `.appsody-config.yaml` | `2020-03-03T16:19:59Z`                         |
 | `dev.appsody.stack.created`       | Timestamp of when stack was packaged |  Created by the `stack package` command | `2020-03-03T16:19:59Z`                         |
 | `dev.appsody.stack.deprecated`           | **OPTIONAL** - Stack deprecation message if stack is deprecated | `deprecated` field in `stack.yaml` | `[01/01/2020] Deprecated` |
 | `dev.appsody.stack.description`   | Stack description| `description` field in `stack.yaml`| `Runnable starter stack`                     |
-| `dev.appsody.stack.documentation` | Stack `README`| GitHub | https://github.com/appsody/stacks/tree/master/incubator/starter/README.md |
+| `dev.appsody.stack.documentation` | Stack `README`| GitHub | `<GitHub Stack URl>/README.md` |
 | `dev.appsody.stack.id`            | Stack ID | Name of directory stack is located in | `starter` |
 | `dev.appsody.stack.licenses`      | Licenses attributed to stack | `licenses` field in `stack.yaml` | `Apache-2.0`                                    |
 | `dev.appsody.stack.version`       | Stack version | `version` field in `stack.yaml`| `0.1.1`                                            |
 | `dev.appsody.stack.tag`           | Stack tag | Image namespace, image registry, stack ID and version | `docker.io/appsody/starter:0.1.1`|
 | `dev.appsody.stack.title`         | Stack title | `name` field in `stack.yaml` | `Starter Sample` |
 | `dev.appsody.stack.revision`      | Git commit hash of when stack was pushed to Github | Github | `c27fffdbe7a9443081ef6abbac2cb2d8125aeb45` |
-| `dev.appsody.stack.source`        | Image directory of Stack GitHub repo | GitHub | https://github.com/appsody/stacks/tree/master/incubator/starter/image
-| `dev.appsody.stack.url`           | URL of stack in GitHub rerpo | GitHub | https://github.com/appsody/stacks/tree/master/incubator/starter |
+| `dev.appsody.stack.source`        | Image directory of Stack GitHub repo | GitHub | `<GitHub Stack URl>/image` |
+| `dev.appsody.stack.url`           | URL of stack in GitHub rerpo | GitHub | <GitHub Stack URl> |
 | `dev.appsody.stack.commit.author`        | GitHub name and email of code author | Git | `Joe Bloggs <joe.bloggs@email.com` |
 | `dev.appsody.stack.commit.committer`     | GitHub name and email of Git committer | Git | `GitHub <noreply@github.com`|
 | `dev.appsody.stack.commit.contextDir`    | You can use a subdirectory of your source code repository by specifying a --context-dir flag | Git | `incubator/starter` |
@@ -98,18 +103,20 @@ The `dev.appsody.stack` labels are inherited from the stack image. The `build` c
 
 The `org.opencontainers.image` labels are created every time that a stack is packaged, primarily by using information from the `.appsody-config.yaml` and GitHub.
 
+`<GitHub Project URL>` = https://github.com/JoeBlogg/tree/master/HelloWorld
+
 | Labels                                   | Description  | Origin | Example |
 |------------------------------------------|-----------------------------------------------|--------------------------------|---------------------------------------------|
 | `org.opencontainers.image.authors`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| `authors` field in `.appsody-config.yaml` | `Joe BLoggs <joebloggs@email.com>` |
 | `org.opencontainers.image.created`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| Timestamp when application was built | `2020-03-03T16:19:59Z`|
 | `org.opencontainers.image.description`   | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| `description` field in `.appsody-config.yaml` | `Simple "Hello, World!" application` |
-| `org.opencontainers.image.documentation` | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| GitHub | https://github.com/JoeBlogg/tree/master/HelloWorld/README.md |
+| `org.opencontainers.image.documentation` | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| GitHub | `<GitHub Project URL>/README.md` |
 | `org.opencontainers.image.licenses`      | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| `licenses` field in `.appsody-config.yaml` | `Apache-2.0` |
 | `org.opencontainers.image.revision`      | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| Github | `c27fffdbe7a9443081ef6abbac2cb2d8125aeb45` |
-| `org.opencontainers.image.source`        | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| GitHub | https://github.com/JoeBlogg/tree/HelloWorld/tree/master |
+| `org.opencontainers.image.source`        | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| GitHub | `<GitHub Project URL>` |
 | `org.opencontainers.image.title`         | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| Application directory name | `hello-world` |
-| `org.opencontainers.image.url`           | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| GitHub | https://github.com/JoeBlogg/tree/HelloWorld |
-| `org.opencontainers.image.version`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| `version` field in `stack.yaml`| `0.1.1` |
+| `org.opencontainers.image.url`           | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| GitHub | `<GitHub Project URL>` |
+| `org.opencontainers.image.version`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| `version` field in `.appsody-config.yaml`| `0.1.1` |
 
 ---
 
