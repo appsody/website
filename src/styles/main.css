@@ -692,7 +692,6 @@ hr {
 }
 
 .doc-content table td {
-  overflow: scroll;
   box-sizing: border-box;
   padding: 0.5rem;
 }
@@ -713,6 +712,56 @@ hr {
   width: 25%;
 }
 
+@media only screen and (max-width: 1040px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  .doc-content table, .doc-content thead, .doc-content tbody, .doc-content th, .doc-content tr, .doc-content td {
+    display: block;
+  }
+
+  .doc-content table {
+    width: 100%;
+  }
+
+  .doc-content thead tr {
+    position: absolute;
+    top: -99999px;
+    left: -99999px;
+  }
+
+  .doc-content tr { 
+    border-bottom: #bb417c 3px solid;
+  }
+
+  .doc-content tr:first-of-type {
+    border-top: #bb417c 3px solid;
+  }
+
+  .doc-content table td {
+    border: none;
+    position: relative;
+    padding-left: 40%;
+  }
+
+  .doc-content td::before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    font-weight: bold;
+  }
+
+  .doc-content td:nth-of-type(1)::before {
+    content: "Label";
+  }
+  .doc-content td:nth-of-type(2)::before {
+    content: "Description";
+  }
+  .doc-content td:nth-of-type(3)::before {
+    content: "Origin";
+
+  }
+  .doc-content td:nth-of-type(4)::before {content : "Example"}
+}
 
 .doc-content table tr:nth-child(even) {
   background: var(--light-grey);
