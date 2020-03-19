@@ -40,7 +40,7 @@
   path: /docs/cli-commands
 - title: Reference
   items:
-    - title: Metadata
+    - title: Traceability Metadata
       path: /docs/reference/metadata
     - title: Environment Variables
       path: /docs/reference/environment-variables
