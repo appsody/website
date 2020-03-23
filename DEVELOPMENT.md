@@ -164,26 +164,6 @@ Note, you need to provide only the path.
 
 3. Add a comment above the redirect stating why it was added.
 
-## Testing the website ready for release
-
-Before submitting a pull request you must test that the website can build and run successfully.
-
-1. Build the website
-
-```
-gatsby build
-```
-
-This build must be successful or you cannot serve the website.
-
-2. Serve the website
-
-```
-gatsby serve
-```
-
-3. Access the website on http://localhost:9000 and complete any visual checks.
-
 ## Adding definitions to the Glossary page
 
 If you feel a term would benefit from being defined, the Glossary is the perfect place to do so! The file is located inside the docs directory, as `glossary.md`.
@@ -207,6 +187,48 @@ The large letters, marking the letter of the alphabet the definitions belong to,
 ```
 
 > The glossary is not self-organising, so try to add definitions in their correct place alphabetically.
+
+## Adding tutorials
+
+Tutorials can help a user understand a concept or work to acheive a goal. Tutorials are written in Markdown format, similarly to docs and blogs. The files need to be added to `content/tutorials/`.
+
+Make sure all code blocks are enclosed using the triple backtick notation.
+
+Images need to be placed in the resources folder which is located inside the tutorials folder. For further information see [Using images](#using-images)
+
+Tutorials also require a small amount of frontmatter, to let the site know some extra information such as title, appoximate length, author etc. Below is an example of the required information:
+
+```
+---
+title: "Title of the Tutorial here"
+date: "2020-03-18"
+author: "Joe Bloggs"
+tutorial: "true"
+length: "1 hour 30 mins"
+---
+```
+
+When you estimate the length of time that is required to complete the tutorial, consider who the tutorial is aimed at. If it’s an advanced guide, expect someone with more experience in the subject matter to be using the tutorial. For more basic tutorials, a new developer might follow along at a slower pace.
+
+## Testing the website ready for release
+
+Before submitting a pull request you must test that the website can build and run successfully.
+
+1. Build the website
+
+```
+gatsby build
+```
+
+This build must be successful or you cannot serve the website.
+
+2. Serve the website
+
+```
+gatsby serve
+```
+
+3. Access the website on http://localhost:9000 and complete any visual checks.
 
 ## Need help?
 
