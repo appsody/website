@@ -18,6 +18,27 @@ exports.createPages = ({ actions, graphql }) => {
 
   // Redirects section
 
+  // The CLI reference has moved and is now a top level menu item
+  createRedirect({
+    fromPath: `/docs/using-appsody/cli-commands`,
+    toPath: `/docs/cli-commands`,
+    isPermanent: true
+  });
+
+  // The install doc was split and placed under its own installing menu
+  createRedirect({
+    fromPath: `/docs/getting-started/installation`,
+    toPath: `/docs/installing/installing-appsody`,
+    isPermanent: true
+  });
+
+  // The getting-started doc was moved to the top level menu
+  createRedirect({
+    fromPath: `/docs/getting-started/quick-start`,
+    toPath: `/docs/getting-started`,
+    isPermanent: true
+  });
+
   // The modify doc was merged with the create doc to form a develop doc
   createRedirect({
     fromPath: `/docs/stacks/modify`,
@@ -57,7 +78,7 @@ exports.createPages = ({ actions, graphql }) => {
             }
           }
         }
-      }, 
+      },
       blogs: allMarkdownRemark(
         filter: {fileAbsolutePath: {regex: "//blogs//"}}
       ) {

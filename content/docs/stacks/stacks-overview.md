@@ -57,27 +57,28 @@ Appsody stacks belong to one of three categories, depending on their stability l
 
 ### Experimental
 These stacks are not production-ready and are considered as proof of concept. They might be unstable, and subject to breaking changes. Experimental stacks must meet the following criteria:
-- Adhere to the Appsody stack structure (i.e. [appsody stack lint](/docs/using-appsody/cli-commands#appsody-stack-lint) passes without errors)
-- Support the [appsody init](/docs/using-appsody/cli-commands#appsody-init), [appsody run](/docs/using-appsody/cli-commands#appsody-run), and [appsody build](/docs/using-appsody/cli-commands#appsody-build) commands
+- Adhere to the Appsody stack structure (i.e. [appsody stack lint](/docs/cli-commands#appsody-stack-lint) passes without errors)
+- Support the [appsody init](/docs/cli-commands#appsody-init), [appsody run](/docs/cli-commands#appsody-run), and [appsody build](/docs/cli-commands#appsody-build) commands
 
 ### Incubator
 These stacks are not production-ready and require further development to satisfy the stable criteria. Incubator stacks must meet all the criteria set for experimental stacks and the following additional items:
 - Maintainers must remain active in terms of contributions and reviews
-- Support the [appsody test](/docs/using-appsody/cli-commands#appsody-test) and [appsody deploy](/docs/using-appsody/cli-commands#appsody-deploy) commands
+- Support the [appsody test](/docs/cli-commands#appsody-test) and [appsody deploy](/docs/cli-commands#appsody-deploy) commands
 - Document the limitations of the stack in the `README.md`
 
 ### Stable
 These stacks are production-ready. Stable stacks must meet all the criteria set for experimental and incubator stacks, and the following additional items:
-- Support all [Appsody CLI commands](/docs/using-appsody/cli-commands)
-- Pass the [appsody stack validate](/docs/using-appsody/cli-commands#appsody-stack-validate) and integration tests, on all three operating systems that are supported by Appsody without errors. For example, the stack must not bind mount individual files as it is not supported on Windows
+- Support all [Appsody CLI commands](/docs/cli-commands)
+- Pass the [appsody stack validate](/docs/cli-commands#appsody-stack-validate) and integration tests, on all three operating systems that are supported by Appsody without errors. For example, the stack must not bind mount individual files as it is not supported on Windows
 - Specify the minimum Appsody, Docker, and Buildah versions required in the `stack.yaml`
-- Support the [appsody build](/docs/using-appsody/cli-commands#appsody-build) command with Buildah
+- Support the [appsody build](/docs/cli-commands#appsody-build) command with Buildah
 - Prevent creation of files on the local system that cannot be removed (i.e. files owned by root or other users)
 - Specify explicit versions for all required Docker images
+- Do not introduce any version changes to the content provided by the parent container images (for example: `yum upgrade`, `apt-get dist-upgrade`, `npm audit fix`). If a package contained in the parent image is out of date, contact its maintainers or update it individually.
 - Tag the stack with a major version (i.e. at least 1.0.0)
 - Follow [Docker best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/), including:
     1. Minimise the size of production images 
-    2. Use the official base images 
+    2. Use the official base images
     3. Images must not have any major security vulnerabilities
     4. Containers must be run by non-root users
 - Include a detailed `README.md`, documenting:
@@ -97,17 +98,17 @@ Below are the URLs for official Appsody repository releases.
 | `incubator`    | `https://github.com/appsody/stacks/releases/latest/download/incubator-index.yaml`    |
 | `experimental` | `https://github.com/appsody/stacks/releases/latest/download/experimental-index.yaml` |
 
-By default, Appsody comes with the `incubator` and `experimental` repositories. Other repositories can be added by running the [`appsody repo add`](/docs/using-appsody/cli-commands/#appsody-repo-add) command.
+By default, Appsody comes with the `incubator` and `experimental` repositories. Other repositories can be added by running the [`appsody repo add`](/docs/cli-commands/#appsody-repo-add) command.
 
 ## Contributing to a stack
 
 The following steps outline the process for contributing a new stack or changes to a stack:
 
-1. The Stack Contributor submits a pull request with changes to a stack. The pull request should follow commit guidelines detailing the stack changes. If the change improves the stack stability level, the pull request must also describe how the new criteria for that level is met (e.g. how Docker best practices have been implemented). 
+1. The Stack Contributor submits a pull request with changes to a stack. The pull request should follow commit guidelines detailing the stack changes. If the change improves the stack stability level, the pull request must also describe how the new criteria for that level is met (e.g. how Docker best practices have been implemented).
 
-2. The Stack Maintainer(s) (as listed in the `stack.yaml`) review the pull request, keeping in mind the stability criteria of the stack. If the Stack Maintainer(s) are satisfied that the stack changes follow the stability criteria, the pull request gets approved. 
+2. The Stack Maintainer(s) (as listed in the `stack.yaml`) review the pull request, keeping in mind the stability criteria of the stack. If the Stack Maintainer(s) are satisfied that the stack changes follow the stability criteria, the pull request gets approved.
 
-    >Note: If the stack is new, the Stack Release Team reviews the pull request and decides if the stack satisfies the chosen stability criteria. 
+    >Note: If the stack is new, the Stack Release Team reviews the pull request and decides if the stack satisfies the chosen stability criteria.
 
 3. The Stack Release Team merges and releases the new stack. When the stack is released:
     - A template archive is generated for each stack template
