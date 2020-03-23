@@ -1,6 +1,6 @@
 import React from "react";
 
-class Doc extends React.Component {
+class Tutorial extends React.Component {
     render() {
             return (
                 <div id="documents-window" className="doc-content tutorial" dangerouslySetInnerHTML={{ __html: this.props.html }} />
@@ -9,4 +9,4 @@ class Doc extends React.Component {
 
 }
 
-export default Doc;
+export default Tutorial;
