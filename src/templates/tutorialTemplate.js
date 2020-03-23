@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Tutorial from "../components/Tutorial";
+import Tutorial from "../components/tutorial";
 import Layout from "../components/layout"
 
 export default function Template({
