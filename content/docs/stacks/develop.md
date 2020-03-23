@@ -99,7 +99,7 @@ If you include a capability that applies to all of your templates, consider incl
 ## Application build and deployment
 Stack creators must provide a `Dockerfile` that defines how to build the container image for the Appsody application, including capabilities from the stack and the developer's application.
 
-The Appsody CLI uses the `Dockerfile` to create the application container image when the [`appsody build`](/content/docs/using-appsody/cli-commands.md/#appsody-build) command is run.
+The Appsody CLI uses the `Dockerfile` to create the application container image when the [`appsody build`](/content/docs/cli-commands.md/#appsody-build) command is run.
 
 Stack creators also provide a template deployment manifest file that the Appsody CLI uses to support deployments to Kubernetes or Knative platforms. This manifest file is `image/config/app-deploy.yaml`, which is used by the Appsody Operator.
 

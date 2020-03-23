@@ -56,7 +56,7 @@ We welcome contributions to the Appsody documentation.
 
 Documentation for Appsody must be stored in the `content/docs directory`. Images must be stored in the `content/docs/images directory`.
 
-The documentation should follow the rough structure of the sidebar so that the docs are easy to find. The quick start guide, for example, is located in `content/docs/getting-started/quick-start`.
+The documentation should follow the rough structure of the sidebar so that the docs are easy to find. The getting started guide, for example, is located in `content/docs/getting-started`.
 
 At the top of each documentation page you should include frontmatter so that the website can render the page correctly. Include the following elements:
 
@@ -229,6 +229,27 @@ gatsby serve
 ```
 
 3. Access the website on http://localhost:9000 and complete any visual checks.
+
+## Adding a Blog
+
+Appsody blogs must be stored in the `content/blogs directory`. Images that are used in the blogs must be stored in the `content/docs/resources directory`.
+
+Blogs must be written in Markdown. At the top of each blog page, you need to include the following frontmatter so that the website can render the page correctly. Include the following elements:
+
+```
+---
+title: "Title of the blog"
+date: "Date the blog is published"
+author: "Name of the author"
+---
+```
+
+:pencil: **Note:** The `title`, `date` and `author` are required for each blog. The date format needs to be `yyyy-mm-dd`.
+
+For other formatting queries, follow the format of the existing blog listings, or talk to the community on Slack.
+
+> Blogs are rendered on the blogs page in `date` order, from most recent to oldest.
+
 
 ## Need help?
 

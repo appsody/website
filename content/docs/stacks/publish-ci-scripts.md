@@ -1,5 +1,5 @@
 ---
-Title: Publish a stack using CI scripts
+title: Publish a stack using CI scripts
 ---
 
 # Publish a stack using CI scripts

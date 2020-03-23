@@ -15,7 +15,7 @@ This was the challenge I was faced with, and naturally — given our project bei
 
 I’m not claiming it’s 100% true to a developer’s experience, or that everyone in the world is using WebSphere Network Deployment, the flow isn’t perfect, etc etc, but hey — it was fun to create, and I hope you enjoy it as well.
 
-Please come check out the project at [https://appsody.dev](https://appsody.dev), follow us on [Twitter](https://twitter.com/appsodydev), and star our [GitHub](https://github.com/appsody) repos if you like what you see!
+Please come check out our project, follow us on [Twitter](https://twitter.com/appsodydev), and star our [GitHub](https://github.com/appsody) repos if you like what you see!
 
 ## Bohemian Appsody
 
