@@ -12,35 +12,35 @@ Appsody enables end-to-end traceability from development to deployment by inject
 
 When you package the stack by running the `stack package` command, the following labels are generated and added to the stack image:
 
-The `dev.appsody.image.commit` labels are created when Git source control is configured in a user's project.
+The `dev.appsody.image.commit` labels are created when Git source control is configured for stack source code.
 
 | Labels                                   | Description  | Origin | Example |
 |------------------------------------------|-----------------------------------------------|--------------------------------|-------|
 | `dev.appsody.image.commit.author`        | GitHub name and email of code author          |  Git| `Joe Bloggs <joe.bloggs@email.com`>|
 | `dev.appsody.image.commit.committer`     | GitHub name and email of Git committer | Git | `GitHub <noreply@github.com`|
-| `dev.appsody.image.commit.contextDir`    | You can use a subdirectory of your source code repository by specifying a --context-dir flag | Git | `incubator/starter` |
-| `dev.appsody.image.commit.date`          | Date on which Git commit was pushed | Git | `Tue Mar 3 16:16:43 2020 +0000` |
+| `dev.appsody.image.commit.contextDir`    | Subdirectory specifying the source code for the stack | Git | `incubator/starter` |
+| `dev.appsody.image.commit.date`          | Date for commit creation or push | Git | `Tue Mar 3 16:16:43 2020 +0000` |
 | `dev.appsody.image.commit.message`       | Message attributed to Git commit | Git | `starter - changed description text (#001)` |
 
 The `dev.appsody.stack` labels are created from general information that is passed to the stack.
 
 | Labels                                   | Description  | Origin | Example |
 |------------------------------------------|-----------------------------------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| `dev.appsody.stack.id`                   | Stack ID | Name of directory stack is located in | `starter` |
-| `dev.appsody.stack.tag`                  | Stack tag | Image namespace, image registry, stack ID and version | `docker.io/appsody/starter:0.1.1`|
-| `dev.appsody.stack.deprecated`           | **OPTIONAL** - Stack deprecation message if stack is deprecated | `deprecated` field in `stack.yaml` | `[01/01/2020] -  Deprecated` |
+| `dev.appsody.stack.id`                   | Stack ID | Identifier for stack | `starter` |
+| `dev.appsody.stack.tag`                  | Stack tag | Tag for stack image | `docker.io/appsody/starter:0.1.1`|
+| `dev.appsody.stack.deprecated`           | Optional - The reason for deprecating the stack | `deprecated` field in `stack.yaml` | `[01/01/2020] -  Deprecated` |
 
-The `org.opencontainers.image` labels are created every time that a stack is packaged, primarily by using information from the `stack.yaml` and GitHub.
+Appsody adds labels described by OCI Image specification while building stack container images, primarily by using information from the `stack.yaml` and GitHub.
 
 `<GitHub Stack URl>` = https://github.com/appsody/stacks/tree/master/incubator/starter
 
 | Labels                                   | Description  | Origin | Example |
 |------------------------------------------|-----------------------------------------------|--------------------------------|----------|
-| `org.opencontainers.image.authors`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| `maintainer` field in `stack.yaml`| `Joe BLoggs <joebloggs@email.com>` |
+| `org.opencontainers.image.authors`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| `maintainers` field in `stack.yaml`| `Joe BLoggs <joebloggs@email.com>` |
 | `org.opencontainers.image.created`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  Created by the `stack package` command| `2020-03-03T16:19:59Z`|
 | `org.opencontainers.image.description`   | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  `description` field in `stack.yaml`| `Runnable starter stack`|
 | `org.opencontainers.image.documentation` | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  GitHub | `<GitHub Stack URl>/README.md`
-| `org.opencontainers.image.licenses`      | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  `licenses` field in `stack.yaml` |  `Apache-2.0`|
+| `org.opencontainers.image.licenses`      | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  `license` field in `stack.yaml` |  `Apache-2.0`|
 | `org.opencontainers.image.revision`      | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  Github |  `c27fffdbe7a9443081ef6abbac2cb2d8125aeb45` |
 | `org.opencontainers.image.source`        | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  GitHub |  `<GitHub Stack URl>/image` |
 | `org.opencontainers.image.title`         | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  `name` field in `stack.yaml`|  `Starter Sample` |
