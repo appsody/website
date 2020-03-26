@@ -104,7 +104,7 @@ chcon -Rt svirt_sandbox_file_t </path/to/volume>
 ```
 You might need to run this command multiple times to whitelist different paths, depending on your setup, and on the mount points of the specific stack you are using.
 
-### 9. Can I use Appsody without Docker?
+### 9. Can I use Appsody without Docker? 
 
 Appsody lists Docker as a prerequisite for creating and running applications and stacks. However, certain Appsody operations like building an application, or packaging a stack can also be done with Buildah. Using Buildah is useful in environments where Docker is not available, for example, in Tekton pipelines or other Kubernetes environments. To use Buildah with Appsody, instead of Docker, add the `--buildah` flag to the following Appsody commands:
 ```
