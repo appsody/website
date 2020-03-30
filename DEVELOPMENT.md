@@ -208,6 +208,8 @@ length: "1 hour 30 mins"
 ---
 ```
 
+Code blocks need to have their respective backticks on their own lines, so make sure you use 3 backticks, then a new line, then the code with a new line at the end, followed by the closing 3 backticks on their own line too.
+
 When you estimate the length of time that is required to complete the tutorial, consider who the tutorial is aimed at. If it’s an advanced guide, expect someone with more experience in the subject matter to be using the tutorial. For more basic tutorials, a new developer might follow along at a slower pace.
 
 ## Testing the website ready for release
@@ -230,7 +232,7 @@ gatsby serve
 
 3. Access the website on http://localhost:9000 and complete any visual checks.
 
-## Adding a Blog
+## Adding a blog
 
 Appsody blogs must be stored in the `content/blogs directory`. Images that are used in the blogs must be stored in the `content/docs/resources directory`.
 

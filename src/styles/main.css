@@ -56,6 +56,8 @@ p > img {
   width: 100%;
 }
 
+
+
 #main-nav {
   background-color: rgb(255, 255, 255, 0.93);
   backdrop-filter: blur(16px) saturate(150%);
@@ -899,10 +901,9 @@ blockquote p {
 }
 
 .tutorial img {
-  width: 75%;
+  width: 100%;
   margin: auto;
   display: block;
-  margin-top: 2rem;
 }
 
 .tutorial em {
