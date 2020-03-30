@@ -188,7 +188,27 @@ The large letters, marking the letter of the alphabet the definitions belong to,
 
 > The glossary is not self-organising, so try to add definitions in their correct place alphabetically.
 
-## Adding tutorials
+## Testing the website ready for release
+
+Before submitting a pull request you must test that the website can build and run successfully.
+
+1. Build the website
+
+```
+gatsby build
+```
+
+This build must be successful or you cannot serve the website.
+
+2. Serve the website
+
+```
+gatsby serve
+```
+
+3. Access the website on http://localhost:9000 and complete any visual checks.
+
+## Adding a tutorial
 
 Tutorials can help a user understand a concept or work to acheive a goal. Tutorials are written in Markdown format, similarly to docs and blogs. The files need to be added to `content/tutorials/`.
 
@@ -211,26 +231,6 @@ length: "1 hour 30 mins"
 Code blocks need to have their respective backticks on their own lines, so make sure you use 3 backticks, then a new line, then the code with a new line at the end, followed by the closing 3 backticks on their own line too.
 
 When you estimate the length of time that is required to complete the tutorial, consider who the tutorial is aimed at. If it’s an advanced guide, expect someone with more experience in the subject matter to be using the tutorial. For more basic tutorials, a new developer might follow along at a slower pace.
-
-## Testing the website ready for release
-
-Before submitting a pull request you must test that the website can build and run successfully.
-
-1. Build the website
-
-```
-gatsby build
-```
-
-This build must be successful or you cannot serve the website.
-
-2. Serve the website
-
-```
-gatsby serve
-```
-
-3. Access the website on http://localhost:9000 and complete any visual checks.
 
 ## Adding a blog
 
