@@ -68,10 +68,10 @@ class TileGrid extends React.Component {
                             const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
                 
                             if (!stack.templates[0].url.includes(this.defaultRepo)) {
-                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
+                                return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
                             }
                             else {
-                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
+                                return <Tile id={stack.id} heading={stack.name}  deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
                             }
                         }  
                     }
@@ -87,10 +87,10 @@ class TileGrid extends React.Component {
                             const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
                 
                             if (!stack.templates[0].url.includes(this.defaultRepo)) {
-                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
+                                return <Tile id={stack.id} heading={stack.name}deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
                             }
                             else {
-                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
+                                return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
                             }
                         } 
                     }
@@ -109,10 +109,10 @@ class TileGrid extends React.Component {
                             const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
                 
                             if (!stack.templates[0].url.includes(this.defaultRepo)) {
-                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
+                                return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
                             }
                             else {
-                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
+                                return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
                             }
                         } 
                     }
@@ -128,10 +128,10 @@ class TileGrid extends React.Component {
                             const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
                 
                             if (!stack.templates[0].url.includes(this.defaultRepo)) {
-                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
+                                return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
                             }
                             else {
-                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
+                                return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
                             }
                         } 
                     }
@@ -150,10 +150,10 @@ class TileGrid extends React.Component {
                             const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
                 
                             if (!stack.templates[0].url.includes(this.defaultRepo)) {
-                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
+                                return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
                             }
                             else {
-                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
+                                return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
                             }
                         }
                     }
@@ -169,10 +169,10 @@ class TileGrid extends React.Component {
                             const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
                 
                             if (!stack.templates[0].url.includes(this.defaultRepo)) {
-                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
+                                return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
                             }
                             else {
-                                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
+                                return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
                             }
                         }
                     }
@@ -189,10 +189,10 @@ class TileGrid extends React.Component {
                         const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
             
                         if (!stack.templates[0].url.includes(this.defaultRepo)) {
-                            return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
+                            return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
                         }
                         else {
-                            return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
+                            return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
                         }
                     }  
                 }
@@ -206,10 +206,10 @@ class TileGrid extends React.Component {
                 const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
     
                 if (!stack.templates[0].url.includes(this.defaultRepo)) {
-                    return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
+                    return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
                 }
                 else {
-                    return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
+                    return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
                 }
             });
         }
@@ -222,10 +222,10 @@ class TileGrid extends React.Component {
             const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
 
             if (!stack.templates[0].url.includes(this.experimentalRepo)) {
-                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
+                return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + stack.id} github={githubURL}/>
             }
             else {
-                return <Tile id={stack.id} heading={stack.name} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>    
+                return <Tile id={stack.id} heading={stack.name} deprecated={stack.deprecated} desc={stack.description} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>    
             }
     });
 
@@ -279,6 +279,14 @@ class TileGrid extends React.Component {
                     <ul className="checkbox-list">
                         {languages}
                     </ul>
+
+                    <div className="stacks-icons">
+                        <label className="stacks-deprecated">Icons </label>
+                        <img width="30px" className="stacks-deprecated-sidebar-icon" src={require("../images/deprecation_warning.svg")} /> 
+                        <p className="stacks-deprecated-label">Deprecated Stack</p>
+                        <p className="stacks-deprecated-sublabel">Hover for details</p>
+                    </div>
+
                 </aside>
     
                 <div className="container">
@@ -316,6 +324,7 @@ export default () => (
                   id
                   name
                   description
+                  deprecated
                   templates {
                     url
                   }
