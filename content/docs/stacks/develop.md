@@ -56,7 +56,7 @@ Stack creators configure [environment variables](/docs/stacks/environment-variab
 
 * **Monitoring file changes** - Stack creators configure the many [`APPSODY_WATCH`](/docs/stacks/environment-variables) environment variables in `Dockerfile-stack` to specify which files are monitored for changes and how to reflect those changes in the running application.
 
-* **Managing dependencies** - Appsody enables the caching of any installed dependencies across runs to accelerate local development. Caching is achieved by creating a volume independent of a specific container instance and then mounting it every time the appsody container is started. Stack creators configure the [`APPSODY_DEPS`](/docs/stacks/environment-variables) environment variable to specify the directory to be cached.
+* **Managing dependencies** - Appsody enables the caching of any installed dependencies across runs to accelerate local development. Caching is achieved by creating one or more volumes independent of a specific container instance and then mounting them every time the appsody container is started. Stack creators configure the [`APPSODY_DEPS`](/docs/stacks/environment-variables) environment variable to specify a list of the directories to be cached.
 
 ### File permissions
 
