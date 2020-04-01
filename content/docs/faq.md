@@ -103,3 +103,27 @@ You can exempt the folders that are mounted by the stacks that you are using, wi
 chcon -Rt svirt_sandbox_file_t </path/to/volume>
 ```
 You might need to run this command multiple times to whitelist different paths, depending on your setup, and on the mount points of the specific stack you are using.
+
+### 9. Can I use Appsody without Docker?
+
+Appsody lists Docker as a prerequisite for creating and running applications and stacks. However, certain Appsody operations like building an application, or packaging a stack can also be done with Buildah. Using Buildah is useful in environments where Docker is not available, for example, in Tekton pipelines or other Kubernetes environments. To use Buildah with Appsody, instead of Docker, add the `--buildah` flag to the following Appsody commands:
+```
+appsody stack package
+appsody extract
+appsody build
+appsody deploy
+```
+
+For convenience, there is also a container image `appsody-buildah` that includes the current version of the Appsody CLI and the version of buildah that is used by Appsody. If you would like to modify this image to fit your own purposes, you can find the Dockerfile in the [appsody-buildah repo](https://github.com/appsody/appsody-buildah)
+
+## 10. How do I set up Knative Serving for Local Kubernetes Development?
+
+To work with Kubernetes locally, it is recommended that you enable Kubernetes in Docker for Desktop. To do that, first run the Docker app that starts Docker and adds the Docker icon to the menu bar.
+
+Select the Docker icon in the menu bar, click 'Preferences', and select the 'Kubernetes' tab. Select the 'Enable Kubernetes' checkbox and click 'Apply'.
+
+Click 'Install' on the dialog box that is entitled, “Install the Kubernetes Cluster now?” to start the installation. When it completes, Kubernetes is installed along with the `kubectl` tool that Appsody uses to deploy your applications.
+
+Next, ensure that Kubernetes has enough resources to run your apps by selecting the Docker icon in the menu bar, click 'Preferences' and select the 'Advanced' tab. Use the sliders to ensure that you have 6 CPUs and 8.0 GB of memory that is assigned to Kubernetes and click 'Apply & Restart'.
+
+Now use the [Installing Knative](https://knative.dev/docs/install/any-kubernetes-cluster/) guide to install Knative Serving in your Docker for Desktop based Kubernetes cluster.
