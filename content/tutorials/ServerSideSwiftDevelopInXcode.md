@@ -54,9 +54,6 @@ You can create a sample application using the Kitura CLI by following the [Creat
 
     ```
     mkdir ~/swiftapp
-    ```
-
-    ```
     cd ~/swiftapp
     ```
 
@@ -86,9 +83,6 @@ You can create a sample application using the Vapor CLI by following the [Instal
 
     ```
     vapor new swiftapp
-    ```
-
-    ```
     cd swiftapp
     ```
 
@@ -114,7 +108,6 @@ This will print output similar to the following to the console:
 
 ```
     Running appsody init...
-
     Downloading swift template project from [https://github.com/appsody/stacks/releases/download/swift-v0.1.4/incubator.swift.templates.simple.tar.gz](https://github.com/appsody/stacks/releases/download/swift-v0.1.4/incubator.swift.templates.simple.tar.gz)
     Download complete. Extracting files from swift.tar.gz
     Setting up the development environment
@@ -139,9 +132,6 @@ The `appsody run` command provides a continuous development environment, where c
 
     ```
     cd ~/swiftapp
-    ```
-
-    ```
     xed .
     ```
 
@@ -149,9 +139,6 @@ The `appsody run` command provides a continuous development environment, where c
 
     ```
     cd ~/swiftapp
-    ```
-
-    ```
     open Package.swift
     ```
 
