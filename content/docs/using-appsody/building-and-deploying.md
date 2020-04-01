@@ -188,7 +188,7 @@ You can deploy your application as a Knative service on your target Kubernetes c
 
 For your app to work as a Knative service, the following **pre-requisites** apply:
 
-- You must have access to a Kubernetes cluster, with Knative Serving installed and running. To install Knative locally, use the Kubernetes feature in Docker for Desktop, see [Installing Knative Locally](/docs/using-appsody/installing-knative-locally). To install Knative on other Kubernetes clusters, see the [Knative Install Documentation](https://knative.dev/docs/install/).
+- You must have access to a Kubernetes cluster, with Knative Serving installed and running. To install Knative locally, use the Kubernetes feature in Docker for Desktop, see [Installing Knative Locally](/docs/faq#10-how-do-i-set-up-knative-serving-for-local-kubernetes-development). To install Knative on other Kubernetes clusters, see the [Knative Install Documentation](https://knative.dev/docs/install/).
 - You must configure your `kubectl` CLI to point to your Kubernetes cluster.
 - If you intend to push the Docker image containing your application to Docker Hub, your target cluster must be configured to pull images from Docker Hub.
 
@@ -255,8 +255,8 @@ To ensure that the latest version of your app is pushed to the cluster, use the 
 
 > This deployment option is under development
 
-Most likely, the deployment of apps created with the appsody CLI is going to occur through the invocation of a CI/CD build pipeline.
+Most likely, the deployment of apps created with the Appsody CLI is going to occur through the invocation of a CI/CD build pipeline.
 
-As a developer, you develop your app using the appsody CLI, and when you are ready to deploy, you push your code to a repo or create a pull request on GitHub.
+As a developer, you develop your app using the Appsody CLI, and when you are ready to deploy, you push your code to a repo or create a pull request on GitHub.
 
-This [example](https://github.com/appsody/tekton-example) shows you how to use Tekton pipelines to deploy your app to a Kubernetes cluster. More details on running the Tekton pipeline example for Appsody can be found in the repo [readme file] (https://github.com/appsody/tekton-example/blob/master/README.md).
+This [example](https://github.com/appsody/tekton-example) shows you how to use Tekton pipelines to deploy your app to a Kubernetes cluster. More details on running the Tekton pipeline example for Appsody can be found in the repo [readme file] (https://github.com/appsody/tekton-example/blob/master/README.md). The example uses a [customized Buildah image with the Appsody CLI installed](https://github.com/appsody/appsody-buildah). For more information on using Appsody with Buildah, see the [FAQ](/docs/faq#9-can-i-use-appsody-without-docker)

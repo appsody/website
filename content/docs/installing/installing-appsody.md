@@ -17,7 +17,7 @@ Appsody supports the following operating systems on x86 hardware:
 
 ## Requirements
 
-Appsody depends on Docker so ensure that you have [Docker](https://docs.docker.com/get-started/) installed and the Docker daemon is running on your system. Prerequisites specific to each operating system are provided within the links in the following section.
+To use all of Appsody's functions, you need to install [Docker](https://docs.docker.com/get-started/) and start the Docker daemon on your system. In environments where Docker is not available, a subset of Appsody commands can be used with Buildah as detailed in the [FAQ](/docs/faq#9-can-i-use-appsody-without-docker). Prerequisites specific to each operating system are provided within the links in the following section.
 
 ## Using installers
 
