@@ -1414,6 +1414,7 @@ input.checkbox-item {
   min-width: 100vw;
   display: flex;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .wide-blog-container p {
