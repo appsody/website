@@ -84,6 +84,13 @@ module.exports = {
         path: `${__dirname}/content/blogs`
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blogs`,
+        path: `${__dirname}/content/tutorials`
+      }
+    },
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-plugin-robots-txt`,
