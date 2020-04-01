@@ -280,13 +280,6 @@ class TileGrid extends React.Component {
                         {languages}
                     </ul>
 
-                    <div className="stacks-icons">
-                        <label className="stacks-deprecated">Icons </label>
-                        <img width="30px" className="stacks-deprecated-sidebar-icon" src={require("../images/deprecation_warning.svg")} /> 
-                        <p className="stacks-deprecated-label">Deprecated Stack</p>
-                        <p className="stacks-deprecated-sublabel">Hover for details</p>
-                    </div>
-
                 </aside>
     
                 <div className="container">

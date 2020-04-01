@@ -32,13 +32,24 @@ class Tile extends React.Component {
       isToggleOn: !state.isToggleOn
     }));
   }
+
+  isMobileBrowser() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+  };
+
+  showDeprecationMessageMobile(e) {
+    if (this.isMobileBrowser()) {
+      alert(e);
+    }
+  }
+
   render() {
     if (this.state.isToggleOn) {
       return (
         <div className="tile card text-center">
           
           <h5 className="heading-tile">{this.props.heading}</h5>
-          { this.props.deprecated && <img title={this.props.deprecated} className="deprecated-icon" src={require("../images/deprecation_warning.svg") } width="30px"/>}
+          { this.props.deprecated && <img title={this.props.deprecated} onClick={() => this.showDeprecationMessageMobile(this.props.deprecated)} role="button" className="deprecated-icon" src={require("../images/deprecation_warning.svg") } width="30px"/>}
 
           <p>{this.desc}</p>
 

@@ -940,26 +940,6 @@ label.stacks-level {
   font-weight: bold;
 }
 
-label.stacks-deprecated {
-  display: block;
-  margin-top: 14rem;
-  margin-right: 6em;
-  font-size: 1rem;
-  margin-left: 2.5rem;
-  font-weight: bold;
-  text-align: left;
-}
-
-.stacks-deprecated-sidebar-icon {
-  margin-bottom: 2px;
-
-}
-
-.stacks-deprecated-sublabel {
-  margin-top: -1.05rem;
-  font-size: 14px;
-}
-
 .checkbox-list {
   margin-left: 2rem;
 }
