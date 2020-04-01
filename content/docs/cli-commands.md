@@ -171,11 +171,10 @@ appsody debug [flags]
 ### Options
 
 ```
-      --deps-volume string      Docker volume to use for dependencies. Mounts to APPSODY_DEPS dir. (default "my-project-deps")
-      --docker-options string   Specify the docker run options to use.  Value must be in "". The following Docker options are not supported:  '--help','-p','--publish-all','-P','-u','-—user','-—name','-—network','-t','-—tty,'—rm','—entrypoint','-v','—volume'.
+      --docker-options string   Specify the docker run options to use.  Value must be in "". The following Docker options are not supported:  '--help','-p','--publish-all','-P','-u','-—user','-—name','-—network','-t','-—tty,'—rm','—entrypoint', '--mount'.
   -h, --help                    help for debug
   -i, --interactive             Attach STDIN to the container for interactive TTY mode
-      --name string             Assign a name to your development container. (default "my-project-dev")
+      --name string             Assign a name to your development container. (default "my-project")
       --network string          Specify the network for docker to use.
       --no-watcher              Disable file watching, regardless of container environment variable settings.
   -p, --publish stringArray     Publish the container's ports to the host. The stack's exposed ports will always be published, but you can publish addition ports or override the host ports with this option.
@@ -817,11 +816,10 @@ appsody run [flags]
 ### Options
 
 ```
-      --deps-volume string      Docker volume to use for dependencies. Mounts to APPSODY_DEPS dir. (default "my-project-deps")
-      --docker-options string   Specify the docker run options to use.  Value must be in "". The following Docker options are not supported:  '--help','-p','--publish-all','-P','-u','-—user','-—name','-—network','-t','-—tty,'—rm','—entrypoint','-v','—volume'.
+      --docker-options string   Specify the docker run options to use.  Value must be in "". The following Docker options are not supported:  '--help','-p','--publish-all','-P','-u','-—user','-—name','-—network','-t','-—tty,'—rm','—entrypoint', '--mount'.
   -h, --help                    help for run
   -i, --interactive             Attach STDIN to the container for interactive TTY mode
-      --name string             Assign a name to your development container. (default "my-project-dev")
+      --name string             Assign a name to your development container. (default "my-project")
       --network string          Specify the network for docker to use.
       --no-watcher              Disable file watching, regardless of container environment variable settings.
   -p, --publish stringArray     Publish the container's ports to the host. The stack's exposed ports will always be published, but you can publish addition ports or override the host ports with this option.
@@ -1176,7 +1174,7 @@ appsody stop [flags]
 
 ```
   -h, --help          help for stop
-      --name string   Assign a name to your development container. (default "my-project-dev")
+      --name string   Assign a name to your development container. (default "my-project")
 ```
 
 ### Options inherited from parent commands
@@ -1218,11 +1216,10 @@ appsody test [flags]
 ### Options
 
 ```
-      --deps-volume string      Docker volume to use for dependencies. Mounts to APPSODY_DEPS dir. (default "my-project-deps")
-      --docker-options string   Specify the docker run options to use.  Value must be in "". The following Docker options are not supported:  '--help','-p','--publish-all','-P','-u','-—user','-—name','-—network','-t','-—tty,'—rm','—entrypoint','-v','—volume'.
+      --docker-options string   Specify the docker run options to use.  Value must be in "". The following Docker options are not supported:  '--help','-p','--publish-all','-P','-u','-—user','-—name','-—network','-t','-—tty,'—rm','—entrypoint', '--mount'.
   -h, --help                    help for test
   -i, --interactive             Attach STDIN to the container for interactive TTY mode
-      --name string             Assign a name to your development container. (default "my-project-dev")
+      --name string             Assign a name to your development container. (default "my-project")
       --network string          Specify the network for docker to use.
       --no-watcher              Disable file watching, regardless of container environment variable settings.
   -p, --publish stringArray     Publish the container's ports to the host. The stack's exposed ports will always be published, but you can publish addition ports or override the host ports with this option.
