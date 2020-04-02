@@ -190,3 +190,13 @@ exports.onPreInit = () => {
       });
   });
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+  type IndexesYamlStacks implements Node {
+    deprecated: String
+  }
+  `
+  createTypes(typeDefs)
+}
