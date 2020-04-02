@@ -56,7 +56,7 @@ class TileGrid extends React.Component {
 
       rerenderTiles() {
         //if incubator checkbox is selected
-        if (level.length === 1 && level.includes("incubator") || (level.length === 2 && level.includes("stable") && level.includes("incubator"))) {
+        if ((level.length === 1 && level.includes("incubator")) || (level.length === 2 && level.includes("stable") && level.includes("incubator"))) {
             //if language checkbox is selected
             if (language.length !== 0) {
                 this.tiles = this.props.stacks.map(stack => {                
@@ -97,7 +97,7 @@ class TileGrid extends React.Component {
                 });
             }
         //if experimental checkbox is selected
-        } else if (level.length === 1 && level.includes("experimental") || (level.length === 2 && level.includes("stable") && level.includes("experimental"))) {
+        } else if ((level.length === 1 && level.includes("experimental")) || (level.length === 2 && level.includes("stable") && level.includes("experimental"))) {
              //if language checkbox is selected
             if (language.length !== 0) {
                 this.tiles = this.props.stacks.map(stack => {                

@@ -50,7 +50,7 @@ const Sidebar = () => {
               return (
                 <>
                   <Accordion.Toggle variant="link" eventKey={index} className="sidebar-heading-link">
-                    <div onClick={()=>rotateImage(index)} className="accordion-dropdown">
+                    <div role="button" onClick={()=>rotateImage(index)} className="accordion-dropdown">
                       <h3 className="float-left">{item.title} </h3>
                       <img id={`chevron-${index}`} src={ chevronlogo } width="10" height="10" className="accordion-icon" alt="Chevron Logo"></img>
                     </div>
