@@ -127,3 +127,36 @@ Click 'Install' on the dialog box that is entitled, “Install the Kubernetes Cl
 Next, ensure that Kubernetes has enough resources to run your apps by selecting the Docker icon in the menu bar, click 'Preferences' and select the 'Advanced' tab. Use the sliders to ensure that you have 6 CPUs and 8.0 GB of memory that is assigned to Kubernetes and click 'Apply & Restart'.
 
 Now use the [Installing Knative](https://knative.dev/docs/install/any-kubernetes-cluster/) guide to install Knative Serving in your Docker for Desktop based Kubernetes cluster.
+
+## 11. Where are my application dependencies?
+
+Appsody stacks can specify where and how the dependencies of the user's application are managed. Typically, stacks use the [`APPSODY_DEPS`](/docs/stacks/environment-variables) environment variable to specify a list of locations where the application's dependencies are going to be stored within the Appsody container.
+
+Appsody CLI creates Docker volumes for these locations and reuses the same volumes every time the user's project is executed by Appsody. This provides a caching mechanism and improves performance.
+
+These project specific volumes are listed within the `$HOME/.appsody/project.yaml` file. It contains an entry for every project that is initialized on the local system. An example `project.yaml` file follows:
+
+```
+projects:
+- id: "20200330103455.86854200"
+  path: /Users/myuser/projects/test-nodejs
+  volumes:
+  - name: appsody-test-nodejs-20200330114100.38851500
+    path: /project/user-app/node_modules
+  - name: appsody-test-nodejs-20200330114100.38854000
+    path: /project/tests
+- id: "20200330120542.32567800"
+  path: /Users/myuser/projects/myproject
+  volumes:
+  - name: appsody-myproject-20200330121802.54124700
+    path: /project/user-app/.build
+```
+The example file contains information about two projects `test-nodejs` and `myproject`. The `test-nodejs` project has two Docker volumes that are associated with it `appsody-test-nodejs-20200330114100.38851500` and `appsody-test-nodejs-20200330114100.38854000`. The volumes are mounted at the following container paths `/project/user-app/node_modules` and `/project/tests`. The `myproject` project has one volume that is associated with it `appsody-myproject-20200330121802.54124700` that is mounted at `/project/user-app/.build`
+
+The `project.yaml` file is validated when a new Appsody project is initialized. For projects that meet any of the following categories:
+
+* no longer exist
+* moved to a different directory
+* are being initialized into the same directory as a previous project
+
+Their entry is removed from the `project.yaml` file and the associated volumes are deleted. This validation ensures that volumes exist for current projects only and that volumes are not reused between different projects of the same name.
