@@ -228,7 +228,7 @@ Note that for our `nodejs-app` app, the target has an address of `host.docker.in
 
 The following view is shown where you can display graphs and data:
 
-![Prometheus Dashboard View](https://cdn-images-1.medium.com/max/2840/1*F5KOAHrAxKbfeM87s_s6zQ.png)*Prometheus Dashboard View*
+![Prometheus Dashboard View](./resources/nativeexpress/prometheusdashboard.png)*Prometheus Dashboard View*
 
 Before doing that, first see what “targets” Prometheus is collecting data from:
 
@@ -236,7 +236,7 @@ Before doing that, first see what “targets” Prometheus is collecting data fr
 
 This shows a list of two servers that Prometheus is collecting data from:
 
-![Prometheus Target Status View](https://cdn-images-1.medium.com/max/3300/1*iCbfDAYMhOkMVqvSmp3hfw.png)*Prometheus Target Status View*
+![Prometheus Target Status View](./resources/nativeexpress/targetstatusview.png)*Prometheus Target Status View*
 
 This show that Prometheus is collecting data itself as well as your application, and that both have a state of UP.
 
@@ -246,13 +246,13 @@ This show that Prometheus is collecting data itself as well as your application,
 
 This displays a graph of the the performance of requests to various HTTP endpoints in your application:
 
-![Promethus Graph View with Request Duration Data](https://cdn-images-1.medium.com/max/2744/1*V6OaKFUSCn1WDdyfjB4Y0w.png)*Prometheus Graph View with Request Duration Data*
+![Promethus Graph View with Request Duration Data](./resources/nativeexpress/requestdurationdata.png)*Prometheus Graph View with Request Duration Data*
 
 This shows that Prometheus has data for requests against `/` and `/favicon.ico`.
 
 6. Next, make some requests of your application in your browser, and refresh the Graph page in the Prometheus dashboard
 
-![Promethus Graph View with Request Duration Data](https://cdn-images-1.medium.com/max/2548/1*tEIbuGPFgnOMY8a3QhWx-w.png)*Prometheus Graph View with Request Duration Data*
+![Promethus Graph View with Request Duration Data](./resources/nativeexpress/requestdurationdata2.png)*Prometheus Graph View with Request Duration Data*
 
 The graph now shows the variation in performance as the application is responding to ongoing requests.
 
@@ -276,31 +276,31 @@ Prometheus provides the ability to build simple graphs and alerts. However, it i
 
 * Password: password
 
-![Grafana Login Page](https://cdn-images-1.medium.com/max/2332/1*kl8-ejpc88Jr34zyzfPW6Q.png)*Grafana Login Page*
+![Grafana Login Page](./resources/nativeexpress/grafanalogin.png)*Grafana Login Page*
 
 > The password of `password` was set using the `GF_SECURITY_ADMIN_PASSWORD` value when you started the Grafana server using `docker`. If this doesn't work, you might find `Username: admin` with `Password: admin` works, which then prompts you to change your password.
 
 4. In the Home Dashboard display, click on **Add data source**:
 
-![Adding a data source in Grafana](https://cdn-images-1.medium.com/max/3024/1*7Z-oe1udHhYDor4X2XZQkg.png)*Adding a data source in Grafana*
+![Adding a data source in Grafana](./resources/nativeexpress/adddatasourcegrafana.png)*Adding a data source in Grafana*
 
 5. Select the **Prometheus** icon for the data source type:
 
-![Selecting the Prometheus data source](https://cdn-images-1.medium.com/max/2568/1*4hxvLa9C-Uu_gq8-09CMsg.png)*Selecting the Prometheus data source*
+![Selecting the Prometheus data source](./resources/nativeexpress/selectdatasourcegrafana.png)*Selecting the Prometheus data source*
 
 6. Enter a **URL** of http://host.docker.internal:9090and click **Save & Test**:
 
-![Setting the data source values in Grafana](https://cdn-images-1.medium.com/max/2404/1*Sgm9VB1cIDXhtcAzQFfSog.png)*Setting the data source values in Grafana*
+![Setting the data source values in Grafana](./resources/nativeexpress/setdatavaluesgrafana.png)*Setting the data source values in Grafana*
 
 7. Select the **+** button on the left hand side-bar and click on **Dashboard**:
 
-![Creating a new Dashboard in Grafana](https://cdn-images-1.medium.com/max/2244/1*6Ysk2lfnRW-c8pn5o7bPbQ.png)*Creating a new Dashboard in Grafana*
+![Creating a new Dashboard in Grafana](./resources/nativeexpress/createnewdashboard.png)*Creating a new Dashboard in Grafana*
 
 This creates a new dashboard for you, in which you can start to create panels to display visualizations, queries and data.
 
 8. Click on the **Add Query** icon
 
-![Add a new panel using Add Query](https://cdn-images-1.medium.com/max/2320/1*qJjtUyTpxGlzOhNKKayp8w.png)*Add a new panel using Add Query*
+![Add a new panel using Add Query](./resources/nativeexpress/addquery.png)*Add a new panel using Add Query*
 
 This opens a new query and visualization panel.
 
@@ -312,7 +312,7 @@ This opens a new query and visualization panel.
 
 and then click on the graph at the top of the panel.
 
-![Adding a query and creating a graph](https://cdn-images-1.medium.com/max/3024/1*Ft4jMGquH9a9a-i7-MkKew.png)*Adding a query and creating a graph*
+![Adding a query and creating a graph](./resources/nativeexpress/creategraph.png)*Adding a query and creating a graph*
 
 It now displays a chart of the HTTP responsiveness for all of the applications that Prometheus is collecting data from.
 
@@ -324,13 +324,13 @@ It now displays a chart of the HTTP responsiveness for all of the applications t
 
 and then click on the graph at the top of the panel.
 
-![Filtered graph, displayed in milliseconds](https://cdn-images-1.medium.com/max/3012/1*5xP1ibNUStXgvcRkxImoWA.png)*Filtered graph, displayed in milliseconds*
+![Filtered graph, displayed in milliseconds](./resources/nativeexpress/filteredgraph.png)*Filtered graph, displayed in milliseconds*
 
 This has filtered the graph to only display data from the application with the job name of `nodejs-app` — this is the value you set for your application in the `prometheus.yml` file when you started Prometheus — and then divides the data by 1000 to give a time in milliseconds rather than microseconds.
 
 11. Finally, click the **Disk** icon at the top of the window to save your dashboard, giving it a name and clicking on the **Save** button.
 
-![Save the Dashboard](https://cdn-images-1.medium.com/max/3016/1*GoyHsHjHYJ6uNUrbI3QAhQ.png)*Save the Dashboard*
+![Save the Dashboard](./resources/nativeexpress/savedashboard.png)*Save the Dashboard*
 
 Grafana makes it possible to build rich and dynamic dashboards so that you can visualize your data however you wish. It also lets you import pre-built dashboards.
 
