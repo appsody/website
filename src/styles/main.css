@@ -906,7 +906,7 @@ blockquote p {
   display: block;
 }
 
-.tutorial em {
+.tutorial span + em {
   text-align: center;
   margin: auto;
   display: block;

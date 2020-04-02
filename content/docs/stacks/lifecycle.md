@@ -49,14 +49,23 @@ These will be processed by the Appsody CLI. The primary use of this is to mount 
 
   > You can specify only directories in volume mounts, not single files.
 
-2. Dependency directory volume  
-This creates a volume used to cache, for efficiency, the combined dependencies of the stack components and the user application between sequential runs of the application during local development. It is not mounted into the user directory, since access to this is not required outside of the Docker environment. This is specified via the Docker variable `APPSODY_DEPS`. For example:
+2. Dependency directory volumes  
+Volumes are created that are used to cache, for efficiency, the combined dependencies of the stack components and the user application between sequential runs of the application during local development. The volumes are not mounted into the user directory, since access to that directory is not required outside of the Docker environment. The volumes to be created are specified by the Docker variable APPSODY_DEPS. For example:
 
    ```bash
    ENV APPSODY_DEPS=/project/deps
    ```
 
-   would cause the creation of a volume to be created and mounted into the container file systems at `/project/deps`.
+   would cause the creation of a volume that is mounted into the container file systems at `/project/deps`.
+
+   Multiple dependency directory volumes can be specified by separating the mount path with a semicolon.  For example: 
+
+   ```bash
+   ENV APPSODY_DEPS=/project/deps;/project/test/deps
+   ```
+
+   would cause the creation of two volumes that are mounted into the container file systems at `/project/deps` and `/project/test/deps`.   
+
 
 3. Appsody controller mount  
 The Appsody CLI automatically creates the Appsody controller mount, as it knows which version of the controller needs to be used.  When you run the `appsody run`, `appsody debug`, or `appsody test` commands, the Appsody CLI creates a Docker volume, if it doesn't exist, named `appsody-controller-<version>`, and installs appropriate Appsody controller, as indicated by `<version>`. The volume is then mounted at `/.appsody` in the container file system.
