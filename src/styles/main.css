@@ -52,8 +52,15 @@ h6 {
   font-family: "Nunito", sans-serif;
 }
 
+p > img {
+  width: 100%;
+}
+
+
+
 #main-nav {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255, 0.93);
+  backdrop-filter: blur(16px) saturate(150%);
   box-shadow: 0 -6px 29px var(--dark-grey);
 }
 
@@ -657,6 +664,57 @@ footer a:hover {
   font-weight: 700;
 }
 
+.active-tutorials-heading {
+  color: var(--colour-scheme-3) !important;
+  font-weight: 700;
+}
+
+.tutorial-container {
+  width: 100%;
+  box-shadow: 1px 3px 11px rgba(0, 0, 0, 0.2);
+  min-height: 21vw;
+  border-radius: 10px;
+  display: grid;
+  padding: 20px 40px 20px 20px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  transition: box-shadow 0.25s ease-in, background-color 0.20s ease-in;
+  margin: 0 0 50px 0;
+  background-color: rgba(255,255,255,0.86);
+  backdrop-filter: blur(20px) saturate(150%);
+}
+
+.tutorial-container:hover {
+  box-shadow: 1px 2px 10px rgba(187, 65, 124, 0.6);
+  background-color: rgba(255,255,255,0.92);
+}
+
+.tutorial-container p {
+  color: black;
+}
+
+.tutorial-subtext {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  align-self: center;
+}
+
+.tutorial-length {
+  color: var(--darker-grey) !important;
+  align-self: center;
+  text-align: center;
+  margin: auto;
+  align-self: flex-end;
+  justify-self: end;
+
+}
+
+.tutorial-length-icon {
+  width: 24px;
+}
+
 @media only screen and (min-width: 767px) {
   .accordion-icon {
     margin-left: 2% !important;
@@ -678,6 +736,7 @@ hr {
   padding-bottom: 4rem;
   padding-right: 2em;
   max-width: 2000px;
+  overflow-wrap: break-word;
 }
 
 .doc-content table {
@@ -803,6 +862,7 @@ hr {
 .doc-content a {
   color: var(--colour-scheme-1);
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .doc-content pre {
@@ -862,10 +922,54 @@ blockquote p {
   margin-left: 0.25em;
 }
 
+.docs-header-red {
+  color: var(--colour-scheme-3);
+  display: inline-block;
+  margin-left: 0.25em;
+}
+
 @media only screen and (max-width: 767px) {
   .docs-header-text {
     padding-bottom: 0px;
     margin-bottom: 0px;
+  }
+}
+
+.tutorial {
+  padding-left: 13rem;
+  margin-top: 7rem;
+  padding-bottom: 4rem;
+  padding-right: 13rem;
+  max-width: 2000px;
+  line-height: 1.8rem;
+}
+
+.tutorial img {
+  width: 100%;
+  margin: auto;
+  display: block;
+}
+
+.tutorial span + em {
+  text-align: center;
+  margin: auto;
+  display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .tutorial {
+    width: 100%;
+    margin: auto;
+    margin-top: 4rem;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    margin-bottom: 3.3rem;
+  }
+
+  .tutorial img {
+    width: 100%;
   }
 }
 
@@ -1234,12 +1338,16 @@ input.checkbox-item {
   border-radius: 10px;
   display: grid;
   grid-template-columns: 40% 1fr 1fr 1fr 1fr;
-  grid-template-rows: 35% 40% 25%;
-  transition: box-shadow 0.25s ease-in;
+  grid-template-rows: auto auto auto;
+  transition: box-shadow 0.25s ease-in, background-color 0.20s ease-in;;
+  background-color: rgba(255,255,255,0.86);
+  backdrop-filter: blur(20px) saturate(150%);
 }
 
 .wide-blog-container:hover {
-  box-shadow: 1px 2px 10px rgba(187, 65, 124, 0.6)
+  box-shadow: 1px 2px 10px rgba(187, 65, 124, 0.6);
+  background-color: rgba(255,255,255,0.92);
+
 }
 
 .blog-card-section {
@@ -1259,12 +1367,39 @@ input.checkbox-item {
   padding-bottom: 1.2rem;
 }
 
+.latest-blog-section-title {
+  color: white !important;
+  background-color: var(--colour-scheme-1);
+  width: 190px;
+  padding-left: 14px;
+  padding-bottom: 15px !important;
+  padding-top: 15px;
+  margin-bottom: 25px;
+  border-radius: 26px 10px 26px 10px;
+}
+
+.all-blog-section-title {
+  color: white !important;
+  background-color: var(--colour-scheme-1);
+  width: 160px !important;
+  padding-left: 14px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-radius: 26px 10px 26px 10px;
+}
+
 .all-blog-section {
   display: block;
 }
 
 .all-blogs-section h2 {
   margin-bottom: 25px;
+}
+
+.blogs-page {
+  background-image: url(../images/blogs_bg.svg) !important;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .blog-grid {
@@ -1279,6 +1414,51 @@ input.checkbox-item {
   font-family: "Nunito", "Open Sans", sans-serif;
   margin-top: 1.5em;
   width: 100%;
+}
+
+.all-tutorials-section {
+  display: block;
+  /* margin: auto; */
+  text-align: center;
+}
+
+.all-tutorials-section h2 {
+  font-size: 1.65em ;
+  color: var(--colour-scheme-1);
+  font-family: "Nunito", "Open Sans", sans-serif;
+  margin-top: 1.0em;
+  width: 100%;
+  font-weight: 600;
+}
+
+.tutorials-header {
+  font-size: 4.4rem !important;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 2.1rem;
+  font-weight: 700;
+  background-color: rgba(168, 65, 124, 0.95);
+  color: white !important;
+  width: 340px !important;
+  backdrop-filter: blur(12px) saturate(200%);
+  border-radius: 26px 10px 26px 10px;
+}
+
+.tutorials-section {
+  padding-top: 3em;
+  height: 100%;
+}
+
+
+.tutorials-page.container {
+  background-image: url(../images/tutorials_bg.svg) !important;
+  background-repeat: repeat-y;
+  background-size: cover;
+  margin: 0;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .wide-blog-container p {
@@ -1352,18 +1532,22 @@ input.checkbox-item {
 .blog-container {
   width: 100%;
   box-shadow: 1px 3px 11px rgba(0, 0, 0, 0.2);
-  height: 21vw;
+  min-height: 23vw;
   border-radius: 10px;
   display: grid;
   padding: 20px 40px 20px 20px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 45% 35% 20%;
-  transition: box-shadow 0.25s ease-in;
+  grid-template-rows: auto auto auto;
+  transition: box-shadow 0.25s ease-in, background-color 0.20s ease-in;;
   margin: 0 0 50px 0;
+  background-color: rgba(255,255,255,0.86);
+  backdrop-filter: blur(20px) saturate(150%);
 }
 
 .blog-container:hover {
-  box-shadow: 1px 2px 10px rgba(187, 65, 124, 0.6)
+  box-shadow: 1px 2px 10px rgba(187, 65, 124, 0.6);
+  background-color: rgba(255,255,255,0.92);
+
 }
 
 .blog-container p {
@@ -1594,6 +1778,19 @@ input.checkbox-item {
     height: 200px;
   }
 
+  .tutorial-container {
+    height: auto;
+    display: block;
+  }
+
+  .tutorials-header {
+    font-size: 3.6rem !important;
+    width: 280px !important;
+  }
+
+  .tutorials-section {
+    padding-top: 1.4em;
+  }
 }
 
 
@@ -1626,7 +1823,8 @@ input.checkbox-item {
   }
 
   #main-nav {
-    background-color: rgba(40, 40, 40);
+    background-color: rgba(40, 40, 40, 0.93);
+    backdrop-filter: blur(18px) saturate(140%);
     box-shadow: 0 -6px 19px rgba(0, 0, 0, 0.7);
   }
 
@@ -1762,18 +1960,25 @@ input.checkbox-item {
   }
 
   .blog-container {
-    background-color: rgb(40,40,40);
+    background-color: rgba(45,45,45,0.86);
+    backdrop-filter: blur(20px) saturate(150%);
     box-shadow:rgba(10, 10, 10, 0.55) 1px 4px 15px 0px;
   }
 
   .wide-blog-container {
     box-shadow:rgba(10, 10, 10, 0.55) 1px 4px 15px 0px;
-    background-color: rgb(40,40,40);
+    background-color: rgba(45,45,45,0.86);
+    backdrop-filter: blur(20px) saturate(150%);
     color: white !important;
   }
 
   .wide-blog-container:hover {
-    box-shadow: 0px 0px 12px 3px rgba(160, 160, 160, 0.3)
+    background-color: rgba(35,35,35, 0.88);
+  }
+
+  .latest-blog-section-title, .all-blog-section-title {
+    background-color: rgba(150,52,99, 1.0);
+    /* backdrop-filter: blur(8px) saturate(180%); */
   }
 
   .wide-blog-title {
@@ -1793,7 +1998,8 @@ input.checkbox-item {
   }
 
   .blog-container:hover {
-    box-shadow: 0px 0px 12px 3px rgba(160, 160, 160, 0.3)
+    background-color: rgba(35,35,35, 0.92);
+
   }
 
   .blog-subtext {
@@ -1812,6 +2018,35 @@ input.checkbox-item {
     background-color: rgb(40, 40, 40);
     color: white;
     border-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .tutorial-container {
+    background-color: rgba(45,45,45,0.86);
+    backdrop-filter: blur(20px) saturate(150%);
+  }
+
+  .tutorial-length {
+    color: white !important;
+  }
+
+  .tutorial-subtext {
+    color: white !important;
+  }
+
+  .tutorials-header {
+    background-color: rgba(10,10,10,0.85);
+    backdrop-filter: blur(8px) saturate(180%);
+
+  }
+
+  .tutorial-container:hover {
+    background-color: rgba(35,35,35, 0.92);
+  }
+
+  .tutorials-page.container {
+    background: rgba(30,30,30, 1.0);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
 }
