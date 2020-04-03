@@ -14,9 +14,11 @@ When you package the stack by running the `stack package` command, the following
 
 The `dev.appsody.image.commit` labels are created when Git source control is configured for stack source code.
 
+`<GitHub Stack URl>` = https://github.com/appsody/stacks/tree/master/incubator/starter
+
 | Labels                                   | Description  | Origin | Example |
 |------------------------------------------|-----------------------------------------------|--------------------------------|-------|
-| `dev.appsody.image.commit.author`        | GitHub name and email of code author          |  Git| `Joe Bloggs <joe.bloggs@email.com`>|
+| `dev.appsody.image.commit.author`        | GitHub name and email of code author          |  Git | `Joe Bloggs <joe.bloggs@email.com`>|
 | `dev.appsody.image.commit.committer`     | GitHub name and email of Git committer | Git | `GitHub <noreply@github.com`|
 | `dev.appsody.image.commit.contextDir`    | Subdirectory specifying the source code for the stack | Git | `incubator/starter` |
 | `dev.appsody.image.commit.date`          | Date for commit creation or push | Git | `Tue Mar 3 16:16:43 2020 +0000` |
@@ -31,8 +33,6 @@ The `dev.appsody.stack` labels are created from general information that is pass
 | `dev.appsody.stack.deprecated`           | Optional - The reason for deprecating the stack | `deprecated` field in `stack.yaml` | `[01/01/2020] -  Deprecated` |
 
 Appsody adds labels described by OCI Image specification while building stack container images, primarily by using information from the `stack.yaml` and GitHub.
-
-`<GitHub Stack URl>` = https://github.com/appsody/stacks/tree/master/incubator/starter
 
 | Labels                                   | Description  | Origin | Example |
 |------------------------------------------|-----------------------------------------------|--------------------------------|----------|
@@ -63,7 +63,7 @@ The `dev.appsody.app` labels are created using information from the `.appsody-co
 
 | Labels                                   | Description  | Origin | Example |
 |------------------------------------------|-----------------------------------------------|--------------------------------|---------------------------------------------|
-| `dev.appsody.app.name`       | Application name | `application-name` field in `.appsody-config.yaml` | `hello-world` |
+| `dev.appsody.app.name`       | Application your project is part of | `application-name` field in `.appsody-config.yaml` | `hello-world` |
 
 The `dev.appsody.image.commit` labels are created when Git source control is configured in a user's project.
 
@@ -71,34 +71,34 @@ The `dev.appsody.image.commit` labels are created when Git source control is con
 |------------------------------------------|-----------------------------------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | `dev.appsody.image.commit.author`        | GitHub name and email of code author | Git | `Joe Bloggs <joe.bloggs@email.com` |
 | `dev.appsody.image.commit.committer`     | GitHub name and email of Git committer | Git | `GitHub <noreply@github.com`|
-| `dev.appsody.image.commit.contextDir`    | You can use a subdirectory of your source code repository by specifying a --context-dir flag | Git | `incubator/starter` |
-| `dev.appsody.image.commit.date`          | Date on which Git commit was pushed | Git | `Tue Mar 3 16:16:43 2020 +0000` |
+| `dev.appsody.image.commit.contextDir`    | Subdirectory specifying the source code for the application | Git | `incubator/starter` |
+| `dev.appsody.image.commit.date`          | Date on which Git commit was created | Git | `Tue Mar 3 16:16:43 2020 +0000` |
 | `dev.appsody.image.commit.message`       | Message attributed to Git commit | Git | `hello-world - fixes (#001)` |
 
-The `dev.appsody.stack` labels are inherited from the stack image. The `build` command changes the prefix for each of the [stack labels](#stack-labels) from `org.opencontainers.image` to `dev.appsody.stack`.
+The `dev.appsody.stack` labels are inherited from the stack image. The `build` command changes the prefix for each of the [stack labels](#stack-labels) from `org.opencontainers.image` to `dev.appsody.stack` and adds some more by inspecting the stack image.
 
 `<GitHub URl>` = https://github.com/appsody/stacks/tree/master/incubator/starter
 
 | Labels                                   | Description  | Origin  | Example  |
 |------------------------------------------|-----------------------------------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | `dev.appsody.stack.authors`       | Stack maintainers names and emails | `authors` field in `stack.yaml` | `Joe BLoggs <joebloggs@email.com>`            |
-| `dev.appsody.stack.configured`       | Version of stack used for project |  `configured` field in `.appsody-config.yaml` | `2020-03-03T16:19:59Z`                         |
+| `dev.appsody.stack.configured`       | The version of the stack your application is configured to use |  `configured` field in `.appsody-config.yaml` | `2020-03-03T16:19:59Z`                         |
 | `dev.appsody.stack.created`       | Timestamp of when stack was packaged |  Created by the `stack package` command | `2020-03-03T16:19:59Z`                         |
 | `dev.appsody.stack.deprecated`           | **OPTIONAL** - Stack deprecation message if stack is deprecated | `deprecated` field in `stack.yaml` | `[01/01/2020] Deprecated` |
 | `dev.appsody.stack.description`   | Stack description| `description` field in `stack.yaml`| `Runnable starter stack`                     |
-| `dev.appsody.stack.documentation` | Stack `README`| GitHub | `<GitHub Stack URl>/README.md` |
-| `dev.appsody.stack.id`            | Stack ID | Name of directory stack is located in | `starter` |
-| `dev.appsody.stack.licenses`      | Licenses attributed to stack | `licenses` field in `stack.yaml` | `Apache-2.0`                                    |
-| `dev.appsody.stack.version`       | Stack version | `version` field in `stack.yaml`| `0.1.1`                                            |
-| `dev.appsody.stack.tag`           | Stack tag | Image namespace, image registry, stack ID and version | `docker.io/appsody/starter:0.1.1`|
-| `dev.appsody.stack.title`         | Stack title | `name` field in `stack.yaml` | `Starter Sample` |
-| `dev.appsody.stack.revision`      | Git commit hash of when stack was pushed to Github | Github | `c27fffdbe7a9443081ef6abbac2cb2d8125aeb45` |
-| `dev.appsody.stack.source`        | Image directory of Stack GitHub repo | GitHub | `<GitHub Stack URl>/image` |
-| `dev.appsody.stack.url`           | URL of stack in GitHub rerpo | GitHub | <GitHub Stack URl> |
+| `dev.appsody.stack.documentation` | Stack `README`| Location for stack documentation | `<GitHub Stack URl>/README.md` |
+| `dev.appsody.stack.id`            | ID of the stack that was used to build the application | Name of directory stack is located in | `starter` |
+| `dev.appsody.stack.licenses`      | Licenses attributed to stack | `license` field in `stack.yaml` | `Apache-2.0`                                    |
+| `dev.appsody.stack.version`       | The version of the stack that was used to build the application.  This can be a specific version, such as: 0.4->0.4.2 | `version` field in `stack.yaml`| `0.1.1`                                            |
+| `dev.appsody.stack.tag`           | Stack tag | Full tag for the stack image including registry, namespace, id an version | `docker.io/appsody/starter:0.1.1`|
+| `dev.appsody.stack.title`         | Stack title | Name of the stack used | `Starter Sample` |
+| `dev.appsody.stack.revision`      | Revision for the source code for the version of the stack | Github | `c27fffdbe7a9443081ef6abbac2cb2d8125aeb45` |
+| `dev.appsody.stack.source`        | URL for the source code for the image of the stack version | GitHub | `<GitHub Stack URl>/image` |
+| `dev.appsody.stack.url`           | URL for the source code for this version of the stack | GitHub | <GitHub Stack URl> |
 | `dev.appsody.stack.commit.author`        | GitHub name and email of code author | Git | `Joe Bloggs <joe.bloggs@email.com` |
 | `dev.appsody.stack.commit.committer`     | GitHub name and email of Git committer | Git | `GitHub <noreply@github.com`|
-| `dev.appsody.stack.commit.contextDir`    | You can use a subdirectory of your source code repository by specifying a --context-dir flag | Git | `incubator/starter` |
-| `dev.appsody.stack.commit.date`          | Date on which Git commit was pushed | Git | `Tue Mar 3 16:16:43 2020 +0000` |
+| `dev.appsody.stack.commit.contextDir`    | Directory in GitHub repo that points to source code of the stack | Git | `incubator/starter` |
+| `dev.appsody.stack.commit.date`          | Date on which Git commit was created | Git | `Tue Mar 3 16:16:43 2020 +0000` |
 | `dev.appsody.stack.commit.message`       | Message attributed to Git commit | Git | `starter - changed description text (#001)` |
 
 The `org.opencontainers.image` labels are created every time that a stack is packaged, primarily by using information from the `.appsody-config.yaml` and GitHub.
@@ -111,7 +111,7 @@ The `org.opencontainers.image` labels are created every time that a stack is pac
 | `org.opencontainers.image.created`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| Timestamp when application was built | `2020-03-03T16:19:59Z`|
 | `org.opencontainers.image.description`   | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| `description` field in `.appsody-config.yaml` | `Simple "Hello, World!" application` |
 | `org.opencontainers.image.documentation` | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| GitHub | `<GitHub Project URL>/README.md` |
-| `org.opencontainers.image.licenses`      | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| `licenses` field in `.appsody-config.yaml` | `Apache-2.0` |
+| `org.opencontainers.image.licenses`      | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| `license` field in `.appsody-config.yaml` | `Apache-2.0` |
 | `org.opencontainers.image.revision`      | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| Github | `c27fffdbe7a9443081ef6abbac2cb2d8125aeb45` |
 | `org.opencontainers.image.source`        | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| GitHub | `<GitHub Project URL>` |
 | `org.opencontainers.image.title`         | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| Application directory name | `hello-world` |
@@ -122,7 +122,9 @@ The `org.opencontainers.image` labels are created every time that a stack is pac
 
 ## Custom Resources for Kubernetes
 
-The `build` command generates the deployment manifest `app-deploy.yaml` using the [application labels](#application-labels) and reformats the labels to Kubernetes reverse domain notations (e.g. `dev.appsody.stack.id` becomes `stack.appsody.dev/id`).  The information is then exposed on the deployed resources in Kubernetes.
+The `build` command injects all the traceability information from the [stack](#stack-labels) and the [application](#application-labels) into the deployment manifest (`app-deploy.yaml`). While adding this information, it reformats the label names to adhere to the Kubernetes reverse domain notation.
+
+When the application is deployed, the traceability information is made available to Kubernetes resources (deployments, services etc.) that represent the application.
 
 | Original Label | Kubernetes Custom Resource |
 |----------------|----------------------------|
