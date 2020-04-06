@@ -1,5 +1,5 @@
 ---
-title: "Server-Swift Swift: Develop in Xcode, continuously verify in Docker"
+title: "Server-Side Swift: Develop in Xcode, continuously verify in Docker"
 date: "2019-09-01"
 author: "Chris Bailey"
 tutorial: "true"
