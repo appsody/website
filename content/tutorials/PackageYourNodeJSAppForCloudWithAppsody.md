@@ -10,9 +10,9 @@ length: "20 mins"
 
 The use of Appsody's tools and provided Stacks simplifies the steps and knowledge required to build "_cloud packaged_", "_cloud native_" and "_cloud functions_" based applications.
 
-Appsody's nodejs Stack makes it easy to take any existing Node.js application and make it "_cloud packaged_".
+Appsody's `nodejs` Stack makes it easy to take any existing Node.js application and make it "_cloud packaged_".
 
-The following tutorial, shows you how to take a sample Node.js application, and package it into a best-practise container image using the Appsody CLI and the nodejs Stack.
+The following tutorial, shows you how to take a sample Node.js application, and package it into a best-practise container image using the Appsody CLI and the `nodejs` Stack.
 
 ## Prerequisites
 
@@ -58,7 +58,7 @@ Your sample application is now ready to use!
 
 New Appsody based applications are created by using `appsody init <stack>`, where the stack is chosen by you from the stacks that are listed when you run `appsody list`. The init command downloads the most recent copy of the Appsody Stack, and populates the project directory with a template that provides a basic project structure.
 
-In order to enable an existing application with a stack, the same steps can be followed, but passing the option none to appsody init, as a project structure is not required.
+In order to enable an existing application with a stack, the same steps can be followed, but passing the option `none` to `appsody init`, as a project structure is not required.
 
 1. Enable the Node.js Application:
 ```
@@ -83,7 +83,7 @@ docker.io/appsody/nodejs:0.3
 Running command: docker run --rm --entrypoint /bin/bash docker.io/appsody/nodejs:0.3 -c "find /project -type f -name .appsody-init.sh"
 Successfully initialized Appsody project with the nodejs stack and no template.
 ```
-As well as downloading the latest version of the Appsody Stack (in this case version 0.2), this has added a **.appsody-config.yaml** file to the project, which configures the versions of the Stack that the project will use.
+As well as downloading the latest version of the Appsody Stack (in this case version 0.3), this has added a `.appsody-config.yaml` file to the project, which configures the versions of the Stack that the project will use.
 
 At this point, your application has been enabled, which means you can now run, test and debug your application in a continuous containerized environment provided by the Appsody Stack, to build it into a optimized container image, and to deploy it to Kubernetes.
 
@@ -110,7 +110,7 @@ Alternatively you can open a second terminal window so that you can edit the app
 
 ![](./resources/nodecloud/welcomeToExpress.png)
 
-As appsody run provides a continuous development environment, any code changes you make will cause an automatic restart of the application.
+As `appsody run` provides a continuous development environment, any code changes you make will cause an automatic restart of the application.
 
 4. Make a code change to your project that will be reflected in the browser:
 
@@ -137,7 +137,7 @@ This provides a continuous, containerized development environment where you can 
 
 ### Carrying out Performance Analysis of your application
 
-As well as providing the development environment, both appsody run and appsody debug also inject a development-time only feature that adds a performance monitoring and profiling dashboard using the [appmetrics-dash](https://www.npmjs.com/package/appmetrics-dash) module, which enables you to do analysis of your application.
+As part of the development environment, both appsody run and appsody debug also provide a performance monitoring and profiling dashboard that uses the [appmetrics-dash](https://www.npmjs.com/package/appmetrics-dash) module. This feature is available during development only and it enables you to do analysis of your application.
 
 1. Open the Performance dashboard: [http://localhost:3000/appmetrics-dash/](http://localhost:3000/appmetrics-dash/)
 
@@ -157,7 +157,7 @@ This provides a display similar to the following, which provides data for:
 
 3. Click on the "**Hamburger Menu**" (the three horizontal lines in the top left-hand corner" and select **Enable Profiling**
 
-This starts to collect function profiling data from the application, and to visualize it using a _[flame graph](http://www.brendangregg.com/flamegraphs.html)_, which providing a visualization of the stacks and functions that are using most CPU time.
+This starts to collect function profiling data from the application, and to visualize it using a _[flame graph](http://www.brendangregg.com/flamegraphs.html)_, which provides a visualization of the stacks and functions that are using most CPU time.
 
 ![Flame Graph generated from Performance Profiling Data](./resources/nodecloud/flameGraph.png)*Flame Graph generated from Performance Profiling Data*
 
@@ -169,11 +169,11 @@ As well as providing performance monitoring and profiling, you can also trigger 
 
 * Using **Ctrl-C** in the terminal window where appsody run is executing
 
-* Running appsody stop from the project directory
+* Running `appsody stop` from the project directory
 
 ### Debugging your application
 
-Appsody's debug command provides the same continuous development environment that you get with the run environment, with the addition of running the application in debug and providing the correct configuration to enable remote access from a local debugger.
+Appsody's debug command provides the same continuous development environment that you get with the run environment. In addition, the application runs in debug and provides the correct configuration to enable remote access from a local debugger.
 
 The following steps show you how that works for your application:
 
@@ -190,11 +190,11 @@ The following steps show you how that works for your application:
 
 ![Express: Welcome to Express!!!!!!!](./resources/nodecloud/welcomeCustomised.png)*Express: Welcome to Express!!!!!!!*
 
-As appsody debug provides a continuous development environment, any code changes you make will cause an automatic restart of the application. It also sets up the container to allow remote access from a debugger.
+As `appsody debug` provides a continuous development environment, any code changes you make will cause an automatic restart of the application. It also sets up the container to allow remote access from a debugger.
 
 4. Attach a debugger to your application
 
- You can either used your favourite debugger for this, or use the one integrated into the Chrome Browser as follows:
+ You can either use your favourite debugger for this, or use the one integrated into the Chrome Browser as follows:
 
  1. Open the Chrome Browser
 
@@ -202,7 +202,7 @@ As appsody debug provides a continuous development environment, any code changes
 
 ![chrome://inspect in the search bar](./resources/nodecloud/chromeInspect.png)*chrome://inspect in the search bar*
 
-This will display a view similar to the following in the window:
+It displays a view similar to the following in the window:
 
 ![Available targets to inspect with the Chrome Debugger](./resources/nodecloud/chromeDebugger.png)*Available targets to inspect with the Chrome Debugger*
 
@@ -214,9 +214,9 @@ You can now debug as you would normally. Additionally, any code change that you 
 
 4. Finally, stop the continuous debug environment by either:
 
-* Using **Ctrl-C** in the terminal window where appsody debug is executing
+* Using **Ctrl-C** in the terminal window where `appsody debug` is executing
 
-* Running appsody stop from the project directory
+* Running `appsody stop` from the project directory
 
 ### Testing your application
 
@@ -317,11 +317,11 @@ This will respond with output that includes the following:
     [Container]
     [Container] 1 passing (375ms)
 ```
-Note that, unlike run anddebug, test executes a single run of the tests rather than a continuous container.
+Note that, unlike `run` and `debug`, `test` executes a single run of the tests rather than a continuous container.
 
 ## Building your application with Appsody
 
-Once you have reached a point that you would like to build a deployable container image for your application, you can do that using appsody build. This creates a production-optimized image that is built using the regular ["node" Official Docker image](https://hub.docker.com/_/node) from the Node.js community and then rebased on the communities "node-slim" image. The "node-slim" image is both significantly smaller that the regular "node" image, making it easier and faster to deploy to a cloud, and more secure because it does not include packages like compilers (which are required in the regular "node" image to allow you to use packages with native add-ons).
+Once you have reached a point that you would like to build a deployable container image for your application, you can do that using `appsody build`. This creates a production-optimized image that is built using the regular ["node" Official Docker image](https://hub.docker.com/_/node) from the Node.js community and then rebased on the communities "node-slim" image. The "node-slim" image is both significantly smaller that the regular "node" image, making it easier and faster to deploy to a cloud, and more secure because it does not include packages like compilers (which are required in the regular "node" image to allow you to use packages with native add-ons).
 
 The steps below show how to build the container image for your application, and then run it locally using Docker:
 
@@ -343,14 +343,14 @@ This runs your container image, using the `-p` option to map port 3000 from the 
 
 Note that the Performance Dashboard is not present, as it was injected as a development-only feature.
 
-4. Finally, stop the container by using **Ctrl-C** in the terminal window where docker run is executing.
+4. Finally, stop the container by using **Ctrl-C** in the terminal window where `docker run` is executing.
 
 You now have a cloud packaged available in a container image that is ready to be deployed to any cloud that supports container images.
 
-You can also use the appsody deploy command to [deploy the image to any Kubernetes cluster](https://appsody.dev/docs/using-appsody/building-and-deploying).
+You can also use the `appsody deploy` command to [deploy the image to any Kubernetes cluster](https://appsody.dev/docs/using-appsody/building-and-deploying).
 
 ## Next Steps
 
-This article covered how to take an existing Node.js application and make it "*Cloud Packaged*" using the nodejs Appsody Stack. Appsody also provides a higher level nodejs-express stack that additionally provides a pre-configured Express.js server that includes cloud-native capabilities such as liveness and readiness checks, along with metrics and observability.
+This article covered how to take an existing Node.js application and make it "*Cloud Packaged*" using the `nodejs` Appsody Stack. Appsody also provides a higher level `nodejs-express` stack that additionally provides a pre-configured Express.js server that includes cloud-native capabilities such as liveness and readiness checks, along with metrics and observability.
 
 For more information on [Appsody](https://appsody.dev), join us on [Slack](http://appsody-slack.eu-gb.mybluemix.net), follow us on [Twitter](https://twitter.com/appsodydev) and star us on [GitHub](https://github.com/appsody).
