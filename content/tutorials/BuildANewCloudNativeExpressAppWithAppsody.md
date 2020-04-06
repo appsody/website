@@ -18,13 +18,15 @@ The following tutorial, shows you how to create a new cloud-native Express.js ap
 
 To follow this tutorial, you need to install both the Appsody CLI and Docker.
 
-## Install the Appsody CLI
+### Install the Appsody CLI
 
 Install the Appsody CLI by following the [Installing Appsody](https://appsody.dev/docs/getting-started/installation) guide for your platform.
 
 ## Creating a new application with the `nodejs-express` Appsody Stack
 
-New Appsody based applications are created by using `appsody init <stack>`, where the stack is chosen by you from the stacks that are listed when you run `appsody list`. The `init` command downloads the most recent copy of the Appsody Stack, and populates the project directory with a template that provides a basic project structure.
+New Appsody based applications are created by using `appsody init <stack> <template>`, where the stack is chosen by you from the stacks that are listed when you run `appsody list`. The `init` command downloads the most recent copy of the Appsody Stack, and populates the project directory with the specified template.
+
+The Express.js Appsody stack provides [two templates: simple and scaffold](https://github.com/appsody/stacks/tree/master/incubator/nodejs-express#templates). Simple, the default template, provides a basic Express app and is used when a template is not specified. The scaffold template has more boilerplate.
 
 The `init` command needs to be run inside in a new project directory. Appsody uses the name of the directory as the default name for the project.
 
