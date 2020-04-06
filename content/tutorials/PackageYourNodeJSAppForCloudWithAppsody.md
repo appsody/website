@@ -8,15 +8,15 @@ length: "20 mins"
 
 # Package your Node.js app for Cloud with Appsody
 
-The use of Appsody's tools and provided Stacks simplifies the steps and knowledge required to build "_cloud packaged_", "_cloud native_" and "_cloud functions_" based applications.
+The use of [Appsody](http://www.appsody.dev)'s tools and provided Stacks simplifies the steps and knowledge required to build _"cloud packaged"_, _"cloud native"_ and _"cloud functions"_ based applications.
 
-Appsody's `nodejs` Stack makes it easy to take any existing Node.js application and make it "_cloud packaged_".
+Appsody's `nodejs` Stack makes it easy to take any existing Node.js application and make it _"cloud packaged"_.
 
 The following tutorial, shows you how to take a sample Node.js application, and package it into a best-practise container image using the Appsody CLI and the `nodejs` Stack.
 
 ## Prerequisites
 
-To follow this tutorial, you need to install both the Appsody CLI and Docker. You also need a Node.js application to cloud package.
+To follow this tutorial, you need to install both the **Appsody CLI** and **Docker**. You also need a Node.js application to cloud package.
 
 ### Install the Appsody CLI
 
@@ -54,7 +54,7 @@ You need a Node.js app to package. You can either use one you already have, or c
 
 Your sample application is now ready to use!
 
-## Enabling your application with the nodejs Appsody Stack
+## Enabling your application with the `nodejs` Appsody Stack
 
 New Appsody based applications are created by using `appsody init <stack>`, where the stack is chosen by you from the stacks that are listed when you run `appsody list`. The init command downloads the most recent copy of the Appsody Stack, and populates the project directory with a template that provides a basic project structure.
 
@@ -89,7 +89,7 @@ At this point, your application has been enabled, which means you can now run, t
 
 ## Developing your application with Appsody
 
-Now that your application has been enabled, you can use the run, test and debug commands to the Appsody CLI to work with your application in a continuous containerized environment provided by the Appsody Stack.
+Now that your application has been enabled, you can use the `run`, `test` and `debug` commands to the Appsody CLI to work with your application in a continuous containerized environment provided by the Appsody Stack.
 
 ### Working with your application
 
@@ -161,19 +161,19 @@ This starts to collect function profiling data from the application, and to visu
 
 ![Flame Graph generated from Performance Profiling Data](./resources/nodecloud/flameGraph.png)*Flame Graph generated from Performance Profiling Data*
 
-4. Click on the "**Hamburger Menu**"(the three horizontal lines in the top left hand corner" and select **Disable Profiling**
+4. Click on the "**Hamburger Menu**"(the three horizontal lines in the top left hand corner) and select **Disable Profiling**
 
 As well as providing performance monitoring and profiling, you can also trigger Heap Dumps and [Node Reports](https://github.com/nodejs/node-report) through the menu, and see an overview of your application in the Summary tab.
 
 5. Finally, stop the continuous `run` environment by either:
 
-* Using **Ctrl-C** in the terminal window where appsody run is executing
+* Using **Ctrl-C** in the terminal window where `appsody run` is executing
 
 * Running `appsody stop` from the project directory
 
 ### Debugging your application
 
-Appsody's debug command provides the same continuous development environment that you get with the run environment. In addition, the application runs in debug and provides the correct configuration to enable remote access from a local debugger.
+Appsody's `debug` command provides the same continuous development environment that you get with the run environment. In addition, the application runs in debug and provides the correct configuration to enable remote access from a local debugger.
 
 The following steps show you how that works for your application:
 
@@ -220,7 +220,7 @@ You can now debug as you would normally. Additionally, any code change that you 
 
 ### Testing your application
 
-Appsody's test command makes it possible to run any tests that your application has inside the containerized environment. To use this capability, your application needs to be provided with some tests, and your **package.json** file needs to include a **test** script that runs them.
+Appsody's `test` command makes it possible to run any tests that your application has inside the containerized environment. To use this capability, your application needs to be provided with some tests, and your **package.json** file needs to include a **test** script that runs them.
 
 The steps below show how that works for your application. As the sample application created from the Express Application Generate does not include any tests, you first need to add one.
 
