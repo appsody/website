@@ -1,12 +1,12 @@
 ---
-title: "Server-Swift Swift: Develop in Xcode, continuously verify in Docker"
+title: "Server-Side Swift: Develop in Xcode, continuously verify in Docker"
 date: "2019-09-01"
 author: "Chris Bailey"
 tutorial: "true"
 length: "30 mins"
 ---
 
-# Server-Swift Swift: Develop in Xcode, continuously verify in Docker
+# Server-Side Swift: Develop in Xcode, continuously verify in Docker
 
 Due to the availability of the Swift Language Server Protocol (LSP) library, there are now more IDEs that you can use to develop server-side Swift applications, including VSCode on Linux. Undoubtedly though, most development is still done by using Xcode on macOS.
 
