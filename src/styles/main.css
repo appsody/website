@@ -1272,6 +1272,7 @@ input.checkbox-item {
 .blog-content p {
   font-size: 1.2rem;
   line-height: 1.8rem;
+  margin-bottom: 2.3rem;
 }
 
 .blog-content li > p {
@@ -1296,7 +1297,7 @@ input.checkbox-item {
 .blog-content ul li {
   list-style-position: outside;
   list-style-type: disc;
-
+  margin-bottom: 1.6rem;
 }
 
 .blog-content li {
