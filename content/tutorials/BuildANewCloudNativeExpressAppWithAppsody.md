@@ -101,7 +101,7 @@ module.exports = (/*options*/) => {
 };
 ```
 
-The code creates an instance of an Express.js app, and then registers a handler for `get()` requests on `/` that sends a response of `"Hello from Appsody!"`. It must export a function that returns an Express router or application. The function is called with an `options` argument, which can be ignored. For more information about the `options` argument, see the [`nodejs-express` Stack README](https://github.com/appsody/stacks/tree/master/incubator/nodejs-express). The app is then mounted at the application root.
+The code creates an instance of an Express.js app, and then registers a handler for `get()` requests on `/` that sends a response of `"Hello from Appsody!"`. It must export a function that returns an Express router or application. The function is called with an `options` argument, which can be ignored. For more information about the `options` argument, see the [`nodejs-express` Stack README](https://github.com/appsody/stacks/tree/master/incubator/nodejs-express). The app is mounted at the application root.
 
 The [express-pino-logger](https://registry.npmjs.org/express-pino-logger) is registered as middleware, so:
 
