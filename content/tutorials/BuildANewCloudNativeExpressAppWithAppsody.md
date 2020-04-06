@@ -154,7 +154,7 @@ Now that your application is running under `appsody run`, as you make and save c
 
 
 ```
-    req.log.info({message: 'Hello from Appsody!'});
+    res.send(“Hello from Appsody!”);
 ```
 
 
