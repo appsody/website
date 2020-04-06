@@ -57,7 +57,7 @@ This provides output similar to the following:
     Running command: docker run --rm --entrypoint /bin/bash docker.io/appsody/nodejs-express:0.4 -c "find /project -type f -name .appsody-init.sh"
     Successfully initialized Appsody project with the nodejs-express stack and the default template.
 
-The `init` command downloads the default `simple`project template that provides a basic project structure, along with the latest `nodejs-express Stack` which is a container image that contains:
+The `init` command downloads the default `simple` project template that provides a basic project structure, along with the latest `nodejs-express Stack` which is a container image that contains:
 
 * A continuous, containerized run, debug, and test environment for use during development.
 
