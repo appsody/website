@@ -218,7 +218,9 @@ An instance of Prometheus can easily be setup locally by running it in a contain
 
 The `scrape_configs` section tells Prometheus which applications to monitor, their location and port. By default, Prometheus will make `http` requests on `/metrics`.
 
-Note that for our `nodejs-app` app, the target has an address of `host.docker.internal`. This is a special address that tells Docker to connect to the localhost of the machine on which the docker container is running.
+For our `nodejs-app` app, the target has an address of `host.docker.internal`. This is a special address that tells Docker to connect to the localhost of the machine on which the Docker container is running.
+
+> The address `host.docker.internal` address is specific to Docker Desktop.
 
 2. Run Prometheus in a container using docker:
 
