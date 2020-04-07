@@ -1260,6 +1260,14 @@ input.checkbox-item {
   margin: 15px auto 0px auto;
 }
 
+.blog-content h2 {
+  font-size: 1.75rem
+}
+
+.blog-content h3 {
+  font-size: 1.25rem
+}
+
 .blog-content span + em {
   text-align: center;
   margin: auto;
@@ -1270,9 +1278,9 @@ input.checkbox-item {
 }
 
 .blog-content p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.8rem;
-  margin-bottom: 2.3rem;
+  margin-bottom: 1.6rem;
 }
 
 .blog-content li > p {
@@ -1302,7 +1310,7 @@ input.checkbox-item {
 
 .blog-content li {
   margin: 20px auto;
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 1.6em;
 }
 
@@ -1753,7 +1761,7 @@ input.checkbox-item {
   }
 
   .blog-content li {
-    font-size: 1.2em;
+    font-size: 1.0em;
     line-height: 1.6em;
   } 
 
@@ -1763,6 +1771,8 @@ input.checkbox-item {
 
   .blog-content ul li {
     list-style-position: inside;
+    margin-bottom: 1.0rem;
+
   }
 
   .blog-content li > p {
