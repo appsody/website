@@ -130,7 +130,7 @@ Now use the [Installing Knative](https://knative.dev/docs/install/any-kubernetes
 
 ## 11. Where are my application dependencies?
 
-Appsody stacks can specify where and how the dependencies of the user's application are managed. Typically, stacks use the [`APPSODY_DEPS`](/docs/stacks/environment-variables) environment variable to specify a list of locations where the application's dependencies are going to be stored within the Appsody container.
+Appsody stacks can specify where and how the dependencies of the user's application are managed. Typically, stacks use the [`APPSODY_DEPS`](/docs/reference/environment-variables) environment variable to specify a list of locations where the application's dependencies are going to be stored within the Appsody container.
 
 Appsody CLI creates Docker volumes for these locations and reuses the same volumes every time the user's project is executed by Appsody. This provides a caching mechanism and improves performance.
 

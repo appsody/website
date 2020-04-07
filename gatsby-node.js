@@ -60,6 +60,13 @@ exports.createPages = ({ actions, graphql }) => {
     isPermanent: true
   });
 
+    // The environment variables page has moved from the stacks section to reference
+    createRedirect({
+      fromPath: `/docs/stacks/environment-variables`,
+      toPath: `/docs/reference/environment-variables`,
+      isPermanent: true
+    });
+
   const docTemplate = path.resolve(`src/templates/docTemplate.js`);
   const blogTemplate = path.resolve(`src/templates/blogTemplate.js`);
   const tutorialTemplate = path.resolve(`src/templates/tutorialTemplate.js`);
