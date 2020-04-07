@@ -224,7 +224,7 @@ Appsody's `test` command makes it possible to run any tests that your applicatio
 
 The steps below show how that works for your application. As the sample application created from the Express Application Generate does not include any tests, you first need to add one.
 
-1. Replace your **package.json** file with the following code. This will add `devDependencies` for `chai`, `mocha` and `request`, and add a test script:
+1. Replace your `package.json` file with the following code. This will add `devDependencies` for `chai`, `mocha` and `request`, and add a test script:
 ```
     {
       "name": "test",
@@ -345,7 +345,7 @@ Note that the Performance Dashboard is not present, as it was injected as a deve
 
 4. Finally, stop the container by using **Ctrl-C** in the terminal window where `docker run` is executing.
 
-You now have a cloud packaged available in a container image that is ready to be deployed to any cloud that supports container images.
+You now have a cloud package available in a container image that is ready to be deployed to any cloud that supports container images.
 
 You can also use the `appsody deploy` command to [deploy the image to any Kubernetes cluster](https://appsody.dev/docs/using-appsody/building-and-deploying).
 
