@@ -3,8 +3,6 @@ title: Appsody Operator
 ---
 
 # How the Appsody operator works
-Before we delve into the details of `appsody deploy` and `appsody operator`, we need to spend a few words on how the Appsody operator works.
-
 An operator monitors certain resources - it can detect when resource definition instances are added, removed, or changed, and take the appropriate action.
 
 The Appsody operator monitors instances of the **AppsodyApplication** resource. It does so by "watching" a certain namespace, which is defined when the Appsody operator is installed. The operator can watch a single namespace, or all the namespaces in the cluster.
