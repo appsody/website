@@ -8,7 +8,7 @@ length: "30 mins"
 
 # Make your Express.js app Cloud-Native with Appsody
 
-This tutorial shows you how to take an existing Express.js application, and make it cloud-native, by enabling it to work with the nodejs-express Appsody Stack.
+This tutorial shows you how to take an existing Express.js application, and make it cloud-native, by enabling it to work with the `nodejs-express` Appsody Stack.
 
 ## Prerequisites
 
@@ -75,13 +75,13 @@ To enable an existing application with a stack, use the `appsody init` command, 
     Successfully initialized Appsody project with the nodejs-express stack and no template.
     ```
 
-    As well as downloading the latest version of the Appsody Stack (in this case version 0.4), this has added a **.appsody-config.yaml** file to the project, which configures the versions of the Stack that the project uses.
+    As well as downloading the latest version of the Appsody Stack (in this case version 0.4), this has added a `.appsody-config.yaml` file to the project, which configures the versions of the Stack that the project uses.
 
-    While your application is now enabled to use the nodejs-express stack, there are three additional steps that are required to ensure that the Express.js application works properly with the stack.
+    While your application is now enabled to use the `nodejs-express` stack, there are three additional steps that are required to ensure that the Express.js application works properly with the stack.
 
-2. Modify the **package.json** file so that it has a main entry that references the file that contains your Express.js application.
+2. Modify the `package.json` file so that it has a main entry that references the file that contains your Express.js application.
 
-    In the case of the application created by the Express Application Generator, the **package.json** becomes:
+    In the case of the application created by the Express Application Generator, the `package.json` becomes:
     ```
 
     {
@@ -105,7 +105,7 @@ To enable an existing application with a stack, use the `appsody init` command, 
 
     Here main references `app.js` as that is the file that contains the Express.js application. The next step is to export the function that returns the Express router or application from the file.
 
-3. The nodejs-express stack requires you to export a function that returns your Express router or application.
+3. The `nodejs-express` stack requires you to export a function that returns your Express router or application.
 
     To enable this, the last line of the `app.js` file becomes:
 
@@ -113,11 +113,11 @@ To enable an existing application with a stack, use the `appsody init` command, 
     module.exports = () => app;
     ```
 
-    This exports the function so that the nodejs-express Appsody stack can apply it onto its own pre-configured Express.js server that includes the cloud-native capabilities.
+    This exports the function so that the `nodejs-express` Appsody stack can apply it onto its own pre-configured Express.js server that includes the cloud-native capabilities.
 
 4. Remove any default routes (e.g. for 404: Not Found):
 
-    The nodejs-express stack contains default implementations of Health, Readiness, and Liveness endpoints. These endpoints are able to be overridden by your application. This means that any default route handlers override these routes.
+    The `nodejs-express` stack contains default implementations of Health, Readiness, and Liveness endpoints. These endpoints are able to be overridden by your application. This means that any default route handlers override these routes.
 
     In the application created by the Express Application Generator, this means removing the following statement:
 
@@ -136,7 +136,7 @@ At this point, your application has been fully enabled. This means that you can 
 * Metrics Endpoint: [http://localhost:3000/metrics](http://localhost:3000/metrics)
 * Performance Dashboard: [http://localhost:3000/appmetrics-dash](http://localhost:3000/appmetrics-dash)
 
-You can also use the appsody build command to build your app into a optimized container image, and the appsody deploy command to deploy it to Kubernetes.
+You can also use the `appsody build` command to build your app into a optimized container image, and the `appsody deploy` command to deploy it to Kubernetes.
 
 ## Next Steps
 
