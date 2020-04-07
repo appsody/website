@@ -56,7 +56,7 @@ Your sample application is now ready to use!
 
 ## Enabling your application with the `nodejs` Appsody Stack
 
-New Appsody based applications are created by using `appsody init <stack>`, where the stack is chosen by you from the stacks that are listed when you run `appsody list`. The init command downloads the most recent copy of the Appsody Stack, and populates the project directory with a template that provides a basic project structure.
+New Appsody based applications are created by using `appsody init <stack> <template>`, where the stack is chosen by you from the stacks that are listed when you run `appsody list`. The init command downloads the most recent copy of the Appsody Stack, and populates the project directory with a template that provides a basic project structure.
 
 In order to enable an existing application with a stack, the same steps can be followed, but passing the option `none` to `appsody init`, as a project structure is not required.
 
@@ -137,7 +137,7 @@ This provides a continuous, containerized development environment where you can 
 
 ### Carrying out Performance Analysis of your application
 
-As part of the development environment, both appsody run and appsody debug also provide a performance monitoring and profiling dashboard that uses the [appmetrics-dash](https://www.npmjs.com/package/appmetrics-dash) module. This feature is available during development only and it enables you to do analysis of your application.
+As part of the development environment, both `appsody run` and `appsody debug` also provide a performance monitoring and profiling dashboard that uses the [appmetrics-dash](https://www.npmjs.com/package/appmetrics-dash) module. This feature is available during development only and it enables you to do analysis of your application.
 
 1. Open the Performance dashboard: [http://localhost:3000/appmetrics-dash/](http://localhost:3000/appmetrics-dash/)
 
@@ -186,7 +186,7 @@ The following steps show you how that works for your application:
     apposody debug
 ```
 3. Open your browser to see the application running: [http://localhost:3000](http://localhost:3000)
- This will display:
+ This displays:
 
 ![Express: Welcome to Express!!!!!!!](./resources/nodecloud/welcomeCustomised.png)*Express: Welcome to Express!!!!!!!*
 
@@ -208,7 +208,7 @@ It displays a view similar to the following in the window:
 
 3. Select the **inspect** link for the application shown under **Remote Target**
 
-This will then open a new panel containing the debugger, attached to your application running inside the continues containerized debug environment.
+It opens a new panel containing the debugger, attached to your application running inside the continuous containerized debug environment.
 
 You can now debug as you would normally. Additionally, any code change that you make to the project through changes to its source code with automatically stop and restart your application (after which you will need to restart the debugger connection).
 
@@ -220,11 +220,11 @@ You can now debug as you would normally. Additionally, any code change that you 
 
 ### Testing your application
 
-Appsody's `test` command makes it possible to run any tests that your application has inside the containerized environment. To use this capability, your application needs to be provided with some tests, and your **package.json** file needs to include a **test** script that runs them.
+Appsody's `test` command makes it possible to run any tests that your application has inside the containerized environment. To use this capability, your application needs to be provided with some tests, and your `package.json` file needs to include a **test** script that runs them.
 
 The steps below show how that works for your application. As the sample application created from the Express Application Generate does not include any tests, you first need to add one.
 
-1. Replace your **package.json** file with the following code. This will add devDependencies for chai, mocha and request, and add a test script:
+1. Replace your **package.json** file with the following code. This will add `devDependencies` for `chai`, `mocha` and `request`, and add a test script:
 ```
     {
       "name": "test",
@@ -288,7 +288,7 @@ The steps below show how that works for your application. As the sample applicat
     npm install
     npm test
 ```
-This will respond with output similar to the following:
+This responds with output similar to the following:
 ```
     Node.js Stack
     / endpoint OK
@@ -301,7 +301,7 @@ This will respond with output similar to the following:
 ```
     appsody test
 ```
-This will respond with output that includes the following:
+It responds with output that includes the following:
 ```
     [Container] > test@0.0.0 test /project/user-app
     [Container] > mocha
@@ -321,7 +321,7 @@ Note that, unlike `run` and `debug`, `test` executes a single run of the tests r
 
 ## Building your application with Appsody
 
-Once you have reached a point that you would like to build a deployable container image for your application, you can do that using `appsody build`. This creates a production-optimized image that is built using the regular ["node" Official Docker image](https://hub.docker.com/_/node) from the Node.js community and then rebased on the communities "node-slim" image. The "node-slim" image is both significantly smaller that the regular "node" image, making it easier and faster to deploy to a cloud, and more secure because it does not include packages like compilers (which are required in the regular "node" image to allow you to use packages with native add-ons).
+Once you have reached a point that you would like to build a deployable container image for your application, you can do that using `appsody build`. This creates a production-optimized image that is built using the regular ["node" Official Docker image](https://hub.docker.com/_/node) from the Node.js community and then rebased on the communities "node-slim" image. The "node-slim" image is both significantly smaller than the regular "node" image, making it easier and faster to deploy to a cloud, and more secure because it does not include packages like compilers (which are required in the regular "node" image to allow you to use packages with native add-ons).
 
 The steps below show how to build the container image for your application, and then run it locally using Docker:
 
@@ -329,7 +329,7 @@ The steps below show how to build the container image for your application, and 
 ```
     appsody build
 ```
-This builds a container image for your application, using the name of your project as the "tag" (which is the name of the folder in which is resides). One of the final lines of the output gives the name of the image, usually just above the running command outputs:
+This builds a container image for your application, using the name of your project as the "tag" (which is the name of the folder in which it resides). One of the final lines of the output gives the name of the image, usually just above the running command outputs:
 ```
     Built docker image dev.local/nodejs-app
 ```
@@ -337,7 +337,7 @@ This builds a container image for your application, using the name of your proje
 ```
     docker run --rm -it -p 3000:3000 dev.local/nodejs-app
 ```
-This runs your container image, using the `-p` option to map port 3000 from the container to port 3000 on your machine, the `-i` option to run interactively (so you can use **Ctrl-C** to stop the container), the `--rm` option to remove the container when its stopped, and the `-t` option to run the container image with our "tag" of nodejs-app.
+This runs your container image, using the `-p` option to map port 3000 from the container to port 3000 on your machine, the `-i` option to run interactively (so you can use **Ctrl-C** to stop the container), the `--rm` option to remove the container when it's stopped, and the `-t` option to run the container image with our "tag" of `nodejs-app`.
 
 3. Open your browser to see the application running: [http://localhost:3000](http://localhost:3000)
 
@@ -351,6 +351,6 @@ You can also use the `appsody deploy` command to [deploy the image to any Kubern
 
 ## Next Steps
 
-This article covered how to take an existing Node.js application and make it "*Cloud Packaged*" using the `nodejs` Appsody Stack. Appsody also provides a higher level `nodejs-express` stack that additionally provides a pre-configured Express.js server that includes cloud-native capabilities such as liveness and readiness checks, along with metrics and observability.
+This article covered how to take an existing Node.js application and make it "*Cloud Packaged*" using the `nodejs` Appsody Stack. Appsody also provides a `nodejs-express` stack with a preconfigured Express.js server. The `nodejs-express` stack includes cloud-native capabilities, such as liveness and readiness checks, metrics, and observability.
 
 For more information on [Appsody](https://appsody.dev), join us on [Slack](http://appsody-slack.eu-gb.mybluemix.net), follow us on [Twitter](https://twitter.com/appsodydev) and star us on [GitHub](https://github.com/appsody).
