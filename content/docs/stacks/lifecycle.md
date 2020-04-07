@@ -99,7 +99,7 @@ Any environment variables required by the technology in the stack itself are typ
 
 ### Passing control to the Appsody controller to run the user application
 
-When an `appsody run` command is issued, the stack image is launched in the local Docker environment of the user machine and the appsody-controller is set as the entrypoint. The controller is also passed the Appsody command being executed (`run` in this case). The Appsody controller processes the Appsody specific Docker variables, which determine how the user application is run and managed. These Appsody specific variables are described in more detail in [Appsody Environment Variables](/content/docs/stacks/environment-variables.md), although the most important ones for the run case are as follows (with examples from the python-flask stack):
+When an `appsody run` command is issued, the stack image is launched in the local Docker environment of the user machine and the appsody-controller is set as the entrypoint. The controller is also passed the Appsody command being executed (`run` in this case). The Appsody controller processes the Appsody specific Docker variables, which determine how the user application is run and managed. These Appsody specific variables are described in more detail in [Appsody Environment Variables](/docs/reference/environment-variables), although the most important ones for the run case are as follows (with examples from the python-flask stack):
 
 ```bash
 ENV APPSODY_RUN="python -m flask run --host=0.0.0.0 --port=8080"
