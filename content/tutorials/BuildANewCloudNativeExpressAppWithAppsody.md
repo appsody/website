@@ -6,7 +6,7 @@ tutorial: "true"
 length: "30 mins"
 ---
 
-# Build a new Cloud Native Express.js app with Appsody'
+# Build a new Cloud Native Express.js app with Appsody
 
 The use of Appsody’s tools and provided Stacks simplifies the steps and knowledge required to build “_cloud packaged_”, “_cloud native_” and “_cloud functions_” based applications.
 
