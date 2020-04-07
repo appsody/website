@@ -321,7 +321,7 @@ Note that, unlike `run` and `debug`, `test` executes a single run of the tests r
 
 ## Building your application with Appsody
 
-Once you have reached a point that you would like to build a deployable container image for your application, you can do that using `appsody build`. This creates a production-optimized image that is built using the regular ["node" Official Docker image](https://hub.docker.com/_/node) from the Node.js community and then rebased on the communities "node-slim" image. The "node-slim" image is both significantly smaller than the regular "node" image, making it easier and faster to deploy to a cloud, and more secure because it does not include packages like compilers (which are required in the regular "node" image to allow you to use packages with native add-ons).
+When you are ready to build a deployable container image for your application, you can do that using `appsody build`. The build command creates a production-optimized image that is built using the regular [“node” Official Docker image](https://hub.docker.com/_/node) from the Node.js community and is then rebased on the communities “node-slim” image. The “node-slim” image is significantly smaller than the regular “node” image, making it easier and faster to deploy to a cloud. It is also more secure because it does not include packages such as compilers (which are required in the regular “node” image so that you can use packages with native add-ons).
 
 The steps below show how to build the container image for your application, and then run it locally using Docker:
 
