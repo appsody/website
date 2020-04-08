@@ -29,7 +29,7 @@ This tutorial will show you how existing applications can be built on top of a S
 
 ### Sample application
 
-This [guide](https://openliberty.io/guides/rest-intro.html) shows you how to develop a simple JAX-RS web service, which responds to a GET request with the JVM’s system properties. You can either follow the guide and build the app yourself, or skip to the end as the finished application is provided within a folder called `finish`.
+This [guide](https://openliberty.io/guides/rest-intro.html) shows you how to develop a simple JAX-RS web service, which responds to a GET request by returning the JVM’s system properties. You can either follow the guide and build the app yourself, or skip to the end as the finished application is provided within a folder called `finish`.
 
 To work with the finished application:
 
@@ -55,12 +55,12 @@ The output includes a statement similar to:
 
 ```
 [InitScript] [INFO] --------------------< dev.appsody:java-openliberty >--------------------
-[InitScript] [INFO] Building java-openliberty 0.2.2
+[InitScript] [INFO] Building java-openliberty 0.2.5
 ```
 
 There is one change that you need to make in order for the app to run.
 
-Both the application and the `java-openliberty` Stack include a `pom.xml` file. The Stack’s `pom.xml` file acts as the parent. Therefore, before you can run the app you need to update the `<parent>` field in the application's `pom.xml` to reference the Stack as follows:
+Both the application and the `java-openliberty` Stack include a `pom.xml` file. The Stack’s `pom.xml` file acts as the parent. Therefore, before you can run the app you need to update the `<parent>` field in the application's `pom.xml` to reference the Stack. The application's `pom.xml` is in the directory you are currently in, open the file and add the following code:
 
 > You can find the correct parent pom version in the output from the `appsody init` command.
 
@@ -68,7 +68,7 @@ Both the application and the `java-openliberty` Stack include a `pom.xml` file. 
     <parent>
       <groupId>dev.appsody</groupId>
       <artifactId>java-openliberty</artifactId>
-      <version>0.2.2</version>
+      <version>0.2.5</version>
     </parent>
 ```
 
@@ -83,26 +83,24 @@ You can test the app by going to:
 
 You now have a fully functional development environment, where you can make code changes in your IDE of choice, save, and refresh the above URL to see the changes take effect.
 
-For example, try adding the following code snippet within `src/main/java/io/openliberty/guides/rest/PropertiesResource.java`:
+For a very simple example, open `src/main/java/io/openliberty/guides/rest/PropertiesResource.java` and replace:
 
 ```
-    [@GET](http://twitter.com/GET)
-    [@Produces](http://twitter.com/Produces)(MediaType.APPLICATION_JSON)
-    public JsonObject getProperties() {
+    return System.getProperties();
+```
 
-      JsonObjectBuilder builder = Json.createObjectBuilder();
+with 
 
-    **  builder.add("General Kenobi","Hello there");**
+```
+    Properties prop = new Properties();
+    prop.setProperty("Hello", "World");
+    return prop;
+```
 
-      System.getProperties()
-            .entrySet()
-            .stream()
-            .forEach(entry -> builder.add((String)entry
-                                     .getKey(),(String)entry
-                                     .getValue()));
+You can see that the changes are picked up automatically by looking at the output from the `appsody run` command. If you then revisit: [http://localhost:9080/LibertyProject/System/properties](http://localhost:9080/LibertyProject/System/properties) you now see the output:
 
-      return builder.build();
-    }
+```
+{"Hello":"World"}
 ```
 
 ### Build and deploy
