@@ -9,16 +9,16 @@ The Appsody CLI provides the [appsody deploy](/docs/cli-commands/#appsody-deploy
 
 You can delegate the build and deployment steps to an external pipeline, such as a Tekton pipeline that consumes the source code of your Appsody project after you push it to a GitHub repository. Within the pipeline, you can run [appsody build](/docs/using-appsody/building), which builds the application image and generates a deployment manifest. You can use the manifest to deploy your application to a Kubernetes environment where the Appsody operator is installed.
 
-> Currently we only support a local Docker daemon. To workaround this, see the [FAQ](/docs/faq/#12-how-do-i-deploy-my-application-to-a-local-minikube-cluster).
+> Currently, Appsody supports you using a local Docker daemon only. To work around this, see the [FAQ](/docs/faq/#12-how-do-i-deploy-my-application-to-a-local-minikube-cluster).
 
 These deployment options are covered in more detail in the following sections.
 
 ## Deploying your application to a Kubernetes cluster
 There are many options to deploy your Appsody applications to a Kubernetes cluster. The best approach depends on the specific scenario:
-- If you intend to have your application deployed on a shared cluster for integration testing or production, you are probably going to rely on CI/CD pipelines, and have the application built and deployed from its source.
+- If you intend to deploy your application on a shared cluster for integration testing or production, you are probably going to rely on CI/CD pipelines. In this case, the application is built and deployed from its source.
 - If you are testing your application on a locally installed cluster, you would want to use [appsody deploy](/docs/cli-commands/#appsody-deploy).
 
-If you have installed a Kubernetes cluster on your development workstation and want to use your local Docker image cache instead of pushing the image to Docker Hub, make sure you set up your Kubernetes cluster to consume images from the local Docker cache.
+If your development workstation has a Kubernetes cluster installed, you can use your local Docker image cache instead of pushing the image to Docker Hub. To do this, you need to configure your Kubernetes cluster to use images from the local Docker [cache](https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images).
 
 To deploy your Appsody project locally, run:
 ```
@@ -39,7 +39,7 @@ If you issue `appsody deploy` without explicitly tagging the image, you end up w
 
 To ensure the latest version of your application is pushed to the cluster, use the `-t` flag to add a unique tag every time you redeploy your application. Kubernetes then detects a change in the deployment manifest, and pushes your application to the cluster again. For example: `appsody deploy -t dev.local/my-image:0.x`, where x is a number that you increment every time you redeploy.
 
-> If you are running multiple Appsody projects on your workstation, you can use the `appsody deploy` and `appsody operator` commands to get them deployed to a Kubernetes cluster. However, do not run these commands concurrently as they create temporary files that may lead to conflicts.
+> If you are running multiple Appsody projects on your workstation, you can use the [appsody deploy](/docs/cli-commands/#appsody-deploy) and [appsody operator](/docs/cli-commands/#appsody-operator) commands to deploy them to a Kubernetes cluster. However, do not run these commands concurrently as they create temporary files that might lead to conflicts.
 
 ### Deployment via the Appsody Operator
 Kubernetes operators offer a powerful way to provide full lifecycle maintenance of a wide range of resources on Kubernetes clusters. In particular, they can install, upgrade, remove, and monitor application deployments. The recently published [Appsody operator](https://operatorhub.io/operator/appsody-operator) automates the installation and maintenance of a special type of Custom Resource Definitions (CRDs), called **AppsodyApplication**.
@@ -95,7 +95,7 @@ appsody deploy -t <mynamespace/myrepository[:tag]> --push-url <external-registry
 
 > This deployment option is under development
 
-Most likely, the deployment of applications created with the Appsody CLI is going to occur through the invocation of a CI/CD build pipeline.
+Most likely, the deployment of applications that are created with the Appsody CLI is going to occur through the invocation of a CI/CD build pipeline.
 
 As a developer, you develop your application using the Appsody CLI, and when you are ready to deploy, you push your code to a repository or create a pull request on GitHub.
 

@@ -163,6 +163,11 @@ Their entry is removed from the `project.yaml` file and the associated volumes a
 
 ## 12. How do I deploy my application to a local Minikube cluster?
 
-Currently, Appsody only supports using a local Docker daemon. If you use the Minikube docker daemon, issuing `eval $(minikube docker-env)` , [appsody extract](docs/cli-commands/#appsody-extract) and [appsody build](docs/cli-commands/#appsody-build) commands will not work as expected.
+Currently, Appsody supports you using a local Docker daemon only. If you use the Minikube Docker daemon, the following commands do not work as expected:
+ - `eval $(minikube docker-env)`
+ - [appsody extract](docs/cli-commands/#appsody-extract)
+ - [appsody build](docs/cli-commands/#appsody-build)
 
-To workaround this issue, use your local Docker daemon. You can do this by unsetting the `DOCKER_HOST`, `DOCKER_CERT_PATH` and `DOCKER_TLS_VERIFY` environment variables. Then use [appsody deploy --push](docs/cli-commands/#appsody-deploy) to push your image to an external Docker registry, and configure Minikube to pull from this registry.
+ To work around this issue, you can use your local Docker daemon as follows:
+ 1. Unset the `DOCKER_HOST`, `DOCKER_CERT_PATH` and `DOCKER_TLS_VERIFY` environment variables.
+ 2. Use [appsody deploy --push](docs/cli-commands/#appsody-deploy) to push your image to an external Docker registry, and configure Minikube to pull from this registry.
