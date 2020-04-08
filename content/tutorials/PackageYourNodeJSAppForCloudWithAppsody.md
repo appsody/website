@@ -347,7 +347,7 @@ Note that the Performance Dashboard is not present, as it was injected as a deve
 
 You now have a cloud package available in a container image that is ready to be deployed to any cloud that supports container images.
 
-You can also use the `appsody deploy` command to [deploy the image to any Kubernetes cluster](https://appsody.dev/docs/using-appsody/building-and-deploying).
+You can also use the `appsody deploy` command to [deploy the image to any Kubernetes cluster](https://appsody.dev/docs/using-appsody/deploying).
 
 ## Next Steps
 
