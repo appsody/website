@@ -5,21 +5,19 @@ This tutorial shows you how to use [Appsody](https://appsody.dev) to take care o
 
 ### What is Appsody?
 
-![](https://cdn-images-1.medium.com/max/2000/1*5SXWG-TQiEaRNabFsTnnXQ.png)
-
-[Appsody](https://appsody.dev) is an open source project which simplifies developing apps for the cloud. It helps teams share common foundations on which to build applications; where they can embed their expertise and standards, and reduce the learning curve before new folks can start writing apps.
+Appsody simplifies developing apps for the cloud. It helps teams share common foundations on which to build applications; where they can embed their expertise and standards, and reduce the learning curve before new folks can start writing apps.
 
 At its core, Appsody provides:
 
-* **Stacks** which include language runtimes, frameworks, libraries and tools.
+* **Stacks** which include language runtimes, frameworks, libraries, and tools.
 
 * **Project Templates** which build upon these Stacks and provide an initial project structure, and just enough code to get started with your own “cloud native” application.
 
 * A **CLI** which allows you to manage the full development lifecycle.
 
-Applications can be iteratively developed whilst deployed in a locally running docker container, with code changes automatically detected and reflected in the app.
+Applications can be iteratively developed while they are deployed in a locally running Docker container, with code changes automatically detected and reflected in the app.
 
-This tutorial will show you how existing applications can be built on top of a Stack to take advantage of Appsody’s workflows for development and deployment.
+This tutorial shows you how existing applications can be built on top of a Stack to take advantage of Appsody’s workflows for development and deployment.
 
 ### Prerequisites
 
@@ -83,7 +81,7 @@ You can test the app by going to:
 
 You now have a fully functional development environment, where you can make code changes in your IDE of choice, save, and refresh the above URL to see the changes take effect.
 
-For a very simple example, open `src/main/java/io/openliberty/guides/rest/PropertiesResource.java` and replace:
+For a simple example, open `src/main/java/io/openliberty/guides/rest/PropertiesResource.java` and replace:
 
 ```
     return System.getProperties();
