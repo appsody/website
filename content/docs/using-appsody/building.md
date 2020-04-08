@@ -46,13 +46,13 @@ This command completes the following actions:
 - The `--push` flag pushes the image to Docker Hub.
 - Generates a deployment manifest file named `app-deploy.yaml` in the project directory, if one doesn’t exist already. If a deployment manifest file exists, this command updates the following entries within it: application image, labels, and annotations. 
 
-> If you don't specify `--push`, the image is available only on your local Docker registry. This flag is also available to the [appsody deploy](/docs/using-appsody/deploying) command.
+> If you don't specify the `--push` flag, the image is available only on your local Docker registry. The `--push` flag is also available to the [appsody deploy](/docs/using-appsody/deploying) command.
 
 ### Pushing your application to a custom registry
 If you would like to share your images to a custom registry, use the following command to push your application:
 ```
 appsody build -t <mynamespace/myrepository[:tag]> --push-url <registry-url:PORT>
 ```
-This command works similarly to the one above, the difference being the `--push-url` flag pushes the image to `<registry-url:PORT>`.
+The `--push-url` flag pushes the image to a registry URL at a port that you specify with `<registry-url:PORT>`.
 
-> This will also trigger a push if the --push flag is not specified. This flag is also available to the [appsody deploy](/docs/using-appsody/deploying) command.
+> A push is triggered when using the `--push-url` flag even if the `--push` flag is not specified. The `--push` and `--push-url` flags are also available to the [appsody deploy](/docs/using-appsody/deploying) command.
