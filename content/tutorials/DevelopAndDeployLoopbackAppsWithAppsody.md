@@ -1,8 +1,7 @@
 ---
 title: "Developing and Deploying LoopBack Applications with Appsody"
-date: ""
+date: "2019-12-03"
 author: "Dominique Emond"
-
 tutorial: "true"
 length: "20 mins"
 ---
