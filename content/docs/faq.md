@@ -160,3 +160,9 @@ The `project.yaml` file is validated when a new Appsody project is initialized. 
 * are being initialized into the same directory as a previous project
 
 Their entry is removed from the `project.yaml` file and the associated volumes are deleted. This validation ensures that volumes exist for current projects only and that volumes are not reused between different projects of the same name.
+
+## 12. How do I deploy my application to a local Minikube cluster?
+
+Currently, Appsody only supports using a local Docker daemon. If you use the Minikube docker daemon, issuing `eval $(minikube docker-env)` , [appsody extract](docs/cli-commands/#appsody-extract) and [appsody build](docs/cli-commands/#appsody-build) commands will not work as expected.
+
+To workaround this issue, use your local Docker daemon. You can do this by unsetting the `DOCKER_HOST`, `DOCKER_CERT_PATH` and `DOCKER_TLS_VERIFY` environment variables. Then use [appsody deploy --push](docs/cli-commands/#appsody-deploy) to push your image to an external Docker registry, and configure Minikube to pull from this registry.
