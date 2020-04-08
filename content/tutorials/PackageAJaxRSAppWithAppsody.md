@@ -1,7 +1,7 @@
 
 # REST on a cloud: easily package a JAX-RS application to deploy to Kubernetes with Appsody
 
-This tutorial shows you how to use [Appsody](https://appsody.dev) to take care of packaging applications for the cloud so that you can focus on writing code. The tutorial uses the application provided in the OpenLiberty guide for ‘[Creating a RESTful Web Service](https://openliberty.io/guides/rest-intro.html)’.
+This tutorial shows you how to use [Appsody](https://appsody.dev) to take care of packaging applications for the cloud so that you can focus on writing code. The tutorial uses the application provided in the Open Liberty guide for [Creating a RESTful Web Service](https://openliberty.io/guides/rest-intro.html).
 
 ### What is Appsody?
 
@@ -21,15 +21,15 @@ Applications can be iteratively developed whilst deployed in a locally running d
 
 This tutorial will show you how existing applications can be built on top of a Stack to take advantage of Appsody’s workflows for development and deployment.
 
-### Pre-requisites
+### Prerequisites
 
-* Install Appsody by following the information [here](https://appsody.dev/docs/installing/installing-appsody).
+* Install the Appsody CLI by following the [Installing Appsody](https://appsody.dev/docs/getting-started/installation) guide for your platform.
 
 * You also need to install Docker and Maven.
 
 ### Sample application
 
-This [guide](https://openliberty.io/guides/rest-intro.html) shows you how to develop a simple JAX-RS web service, which responds to a GET request with the JVM’s system properties. You can either follow the guide and build the app yourself, or skip to the end as the finished application is provided within a `finish` folder.
+This [guide](https://openliberty.io/guides/rest-intro.html) shows you how to develop a simple JAX-RS web service, which responds to a GET request with the JVM’s system properties. You can either follow the guide and build the app yourself, or skip to the end as the finished application is provided within a folder called `finish`.
 
 To work with the finished application:
 
@@ -39,19 +39,19 @@ To work with the finished application:
 git clone https://github.com/OpenLiberty/guide-rest-intro
 ```
 
-2. Navigate to `/guide-rest-intro/finish` where the completed application resides.
+2. Navigate to the folder: `/guide-rest-intro/finish` that contains the completed application.
 
 ### Setting up the local development environment
 
-As mentioned, Appsody provides both a Stack and Project Templates. If you already have your own application, and as such don’t require the template, you can initialize the development environment with just the Stack that is required by your application. To do this issue the `appsody init` command with none specified as a template.
+As mentioned, Appsody provides both a Stack and Project Templates. If you already have your own application, and therefore don’t require the project template, you can initialize the Appsody development environment with just the Stack that is required by your application. To do this issue the `appsody init` command with `none` specified for the template.
 
-The JAX-RS and JSON-P features used by the sample application are part of Eclipse Microprofile specification. We can use the java-openliberty stack which allows you to build MicroProfile compliant applications. You can initialize the development environment by issuing the following command within the `finish` directory:
+The JAX-RS and JSON-P features used by the sample application are part of Eclipse Microprofile specification. You can use the `java-openliberty` stack to build MicroProfile compliant applications. Initialize your Appsody development environment by issuing the following command within the `finish` directory:
 
 ```
 appsody init java-openliberty none
 ```
 
-You should see output including a statement similar to this:
+The output includes a statement similar to:
 
 ```
 [InitScript] [INFO] --------------------< dev.appsody:java-openliberty >--------------------
@@ -60,9 +60,9 @@ You should see output including a statement similar to this:
 
 There is one change that you need to make in order for the app to run.
 
-Both the application and the java-openliberty Stack include a `pom.xml` file. The Stack’s `pom.xml` file acts as the parent, so before you can run the app you need to update the `<parent>` field in the application's `pom.xml` to reference the Stack as follows:
+Both the application and the `java-openliberty` Stack include a `pom.xml` file. The Stack’s `pom.xml` file acts as the parent. Therefore, before you can run the app you need to update the `<parent>` field in the application's `pom.xml` to reference the Stack as follows:
 
-Note: You can find the correct parent pom version in the above output statement from `appsody init`.
+> You can find the correct parent pom version in the output from the `appsody init` command.
 
 ```
     <parent>
@@ -74,14 +74,14 @@ Note: You can find the correct parent pom version in the above output statement 
 
 ### Running the application
 
-Simply issue: `appsody run`.
+Issue: `appsody run`.
 
-This starts a docker container and mounts the workspace and the local maven repository (~/.m2/repository). Open Liberty's "dev mode" is enabled which will automatically detect changes to the application's configuration and source triggering a recompile and redeploy of the application.
+The `run` command starts a Docker container and mounts the workspace and the local maven repository (`~/.m2/repository`). Open Liberty's "dev mode" is enabled which automatically detects changes to the application's configuration and source, triggering a recompile and redeploy of the application.
 
-Once complete you can test the app by going to:
+You can test the app by going to:
 [http://localhost:9080/LibertyProject/System/properties](http://localhost:9080/LibertyProject/System/properties)
 
-You now have a fully functional development environment, where you can make changes in your IDE of choice, hit save, and refresh the above URL to see the changes take effect.
+You now have a fully functional development environment, where you can make code changes in your IDE of choice, save, and refresh the above URL to see the changes take effect.
 
 For example, try adding the following code snippet within `src/main/java/io/openliberty/guides/rest/PropertiesResource.java`:
 
@@ -107,12 +107,10 @@ For example, try adding the following code snippet within `src/main/java/io/open
 
 ### Build and deploy
 
-The Appsody CLI allows you to build a local dockerfile and deploy the application to a Kubernetes cluster. Full guidance on this can be found in our documentation under ‘[build and deploy](https://appsody.dev/docs/using-appsody/building-and-deploying)’.
+With the Appsody CLI, you can build a local Dockerfile and deploy the application to a Kubernetes cluster. More information about how to build and deploy your app can be found in the [deploying](https://appsody.dev/docs/using-appsody/building-and-deploying) documentation.
 
 ### Next Steps
 
-Find out more about Appsody with our other tutorials [here](https://medium.com/appsody).
+If you have any questions or would like to chat, come join us on [Slack](http://appsody-slack.eu-gb.mybluemix.net/)!
 
-Any questions or to chat, come join us on [Slack](http://appsody-slack.eu-gb.mybluemix.net/)!
-
-You can also find a bunch of other helpful guides for creating Java applications with OpenLiberty [here](https://openliberty.io/guides).
+You can also find other helpful guides for creating Java applications with Open Liberty [here](https://openliberty.io/guides).
