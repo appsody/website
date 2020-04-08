@@ -1,3 +1,10 @@
+---
+title: 'REST on a cloud: easily package a JAX-RS application to deploy to Kubernetes with Appsody'
+date: "2019-07-15"
+author: "David Harris"
+tutorial: "true"
+length: "15 mins"
+---
 
 # REST on a cloud: easily package a JAX-RS application to deploy to Kubernetes with Appsody
 
