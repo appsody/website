@@ -71,9 +71,9 @@ This command completes the following actions:
 - The `--push-url` pushes the image to `<external-registry-url:PORT>`.
 - Generates a deployment manifest file, "app-deploy.yaml", if one is not present, then applies it to your Kubernetes cluster.
 - The `--pull-url` injects `<internal-registry-url:PORT>` into the deployment manifest for Kubernetes to pull the correct image.
-- Deploys your image to your Kubernetes cluster via the Appsody operator, or as a Knative service if you specify the "--knative" flag. 
+- Deploys your image to your Kubernetes cluster via the [Appsody operator](/docs/reference/appsody-operator), or as a Knative service if you specify the "--knative" flag. 
 
-> If an Appsody operator cannot be found, one will be installed on your cluster.
+> If an [Appsody operator](/docs/reference/appsody-operator) cannot be found, one will be installed on your cluster.
 
 
 ### Deploying multiple projects
