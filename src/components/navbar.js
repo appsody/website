@@ -26,10 +26,11 @@ const NavBar = () => (
     </Nav>
         <Navbar.Collapse id="basic-navbar-nav">
       <Nav>
-        <Nav.Link href="/" className="d-none d-md-block">Home</Nav.Link>
+        {/* <Nav.Link href="/" className="d-none d-md-block">Home</Nav.Link> */}
         <Nav.Link href="/docs" className="d-none d-md-block">Docs</Nav.Link>
         <Nav.Link href="/stacks" className="d-none d-md-block">Stacks</Nav.Link>
         <Nav.Link href="/blogs" className="d-none d-md-block">Blogs</Nav.Link>
+        <Nav.Link href="/tutorials" className="d-none d-md-block">Tutorials</Nav.Link>
       </Nav>
       <Nav className="ml-auto">
         <Search/>

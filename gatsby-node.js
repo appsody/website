@@ -60,8 +60,17 @@ exports.createPages = ({ actions, graphql }) => {
     isPermanent: true
   });
 
+    // The environment variables page has moved from the stacks section to reference
+    createRedirect({
+      fromPath: `/docs/stacks/environment-variables`,
+      toPath: `/docs/reference/environment-variables`,
+      isPermanent: true
+    });
+
   const docTemplate = path.resolve(`src/templates/docTemplate.js`);
   const blogTemplate = path.resolve(`src/templates/blogTemplate.js`);
+  const tutorialTemplate = path.resolve(`src/templates/tutorialTemplate.js`);
+
 
   return graphql(`
     {
@@ -88,6 +97,18 @@ exports.createPages = ({ actions, graphql }) => {
             }
           }
         }
+      },
+      tutorials: allMarkdownRemark(
+        filter: {fileAbsolutePath: {regex: "//tutorials//"}}
+      ) {
+        edges {
+          node {
+            fileAbsolutePath
+            fields {
+              slug
+            }
+          }
+        }
       }
     }
   `).then(result => {
@@ -95,7 +116,7 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    const { docs, blogs } = result.data;
+    const { docs, blogs, tutorials } = result.data;
 
     docs.edges.forEach(({ node }) => {
       if (node.fields.slug == "/docs/overview/") {
@@ -119,6 +140,17 @@ exports.createPages = ({ actions, graphql }) => {
         }
       });
     });
+
+    tutorials.edges.forEach(({ node }) => {
+      createPage({
+        path: node.fields.slug,
+        component: tutorialTemplate,
+        context: {
+          pagePath: node.fields.slug
+        }
+      });
+    });
+
   });
 };
 
@@ -133,11 +165,17 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         name: `slug`,
         value: `/docs`
       });
-    } else if (node.frontmatter.author !== undefined) {
+    } else if ((node.frontmatter.author !== undefined) && (node.frontmatter.tutorial === undefined)) {
       createNodeField({
         node,
         name: `slug`,
         value: `/blogs${slug}`
+      });
+    } else if (node.frontmatter.tutorial === "true") {
+      createNodeField({
+        node,
+        name: `slug`,
+        value: `/tutorials${slug}`
       });
     } else {
       createNodeField({

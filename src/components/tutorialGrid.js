@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { StaticQuery, graphql } from "gatsby";
-import BlogPost from "../components/blogPost";
+import TutorialCard from "../components/tutorialCard";
 
-class BlogPostGrid extends Component {
+class TutorialGrid extends Component {
 
     generateBlogs() {
-        const allBlogs = this.props.blogs.map(blog => {
+        const allTutorials = this.props.tutorials.map(tutorial => {
 
-            return <BlogPost title={blog.frontmatter.title} subtext={blog.excerpt.replace(blog.frontmatter.title, "").replace("By " + blog.frontmatter.author, "").replace("Posted", "")} author={blog.frontmatter.author} date={blog.frontmatter.date} slug={blog.fields.slug}/>
+            return <TutorialCard title={tutorial.frontmatter.title} subtext={tutorial.excerpt.replace(tutorial.frontmatter.title, "")} length={tutorial.frontmatter.length} slug={tutorial.fields.slug}/>
 
         });
 
-        return allBlogs;
+        return allTutorials;
     }
 
 
@@ -33,7 +33,7 @@ export default () => (
       query={graphql`
       query {
         allMarkdownRemark(
-          filter: {fileAbsolutePath: {regex: "/blogs/"}}
+          filter: {fileAbsolutePath: {regex: "/tutorials/"}}
           sort: {
             fields: [frontmatter___date]
             order: DESC
@@ -47,20 +47,21 @@ export default () => (
               title
               date(fromNow: true)
               author
+              length
             }
-            excerpt(pruneLength: 260)
+            excerpt(pruneLength: 280)
           }
         }
       }
       `}
       render={data => {
-        let blogs = [];
+        let tutorials = [];
         data.allMarkdownRemark.nodes.forEach(node => {
-            blogs = blogs.concat(node);
+            tutorials = tutorials.concat(node);
         });
 
 
-        return <BlogPostGrid blogs={blogs}/>
+        return <TutorialGrid tutorials={tutorials}/>
       }}
     />
   )
