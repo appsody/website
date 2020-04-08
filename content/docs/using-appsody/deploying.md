@@ -58,34 +58,23 @@ This command completes the following actions:
 - If you specified the `--knative` flag, or if Knative is the only deployment option for your stack, the command tags the image with the special prefix `dev.local`, making it accessible to your Kubernetes cluster (assuming you followed [these directions](/docs/using-appsody/installing-knative-locally))
 - The deployment manifest, `app-deploy.yaml`, is used to issue a `kubectl apply -f` command against the target Kubernetes cluster so that the application can be deployed by the Appsody Operator.
 
-### Deploying your application through Docker Hub
-
-If your cluster is configured to pull images from Docker Hub, use the following command to deploy your application:
-```
-appsody deploy -t <mynamespace/myrepository[:tag]> --push --namespace mynamespace [--knative]
-```
-The command completes the following actions:
-
-- Calls `appsody build` and creates a deployment image, as described in the previous section.
-- The `-t mynamespace/myrepository[:tag]` flag tags the image.
-- The `--push` flag tells the Appsody CLI to push the image to Docker Hub.
-- Creates a deployment manifest file named `app-deploy.yaml` in the project directory, if one doesn’t exist already. If a deployment manifest file exists, this command updates the following entries within it: application image, labels, and annotations. In addition, the `createKnativeService` entry is set to true if you specified the `--knative` flag.
-- The Yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The Yaml file is set to use the Appsody operator.
-- The `--namespace mynamespace` option provisions the deployment under the specified Kubernetes namespace within your cluster.
-
-> If you don't specify `--push`, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry.
-
-### Deploying your application to a custom registry
-If your cluster is configured to pull images from a custom registry, use the following command to deploy your application:
-```
-appsody deploy -t <mynamespace/myrepository[:tag]> --push-url <registry-url:PORT>
-```
-
+### Deploying with different push and pull registries
 If you are specifying different push and pull registries, for example, you might want to push to an external registry and pull from an internal registry, use the following command:
 ```
 appsody deploy -t <mynamespace/myrepository[:tag]> --push-url <external-registry-url:PORT> --pull-url <internal-registry-url:PORT>
 ```
-> Note: The pull registry url gets injected into the deployment manifest for Kubernetes to pull the correct image.
+
+This command completes the following actions:
+
+- Calls `appsody build` and creates a deployment image.
+- The `-t mynamespace/myrepository[:tag]` flag tags the image.
+- The `--push-url` pushes the image to `<external-registry-url:PORT>`.
+- Generates a deployment manifest file, "app-deploy.yaml", if one is not present, then applies it to your Kubernetes cluster.
+- The `--pull-url` injects `<internal-registry-url:PORT>` into the deployment manifest for Kubernetes to pull the correct image.
+- Deploys your image to your Kubernetes cluster via the Appsody operator, or as a Knative service if you specify the "--knative" flag. 
+
+> If an Appsody operator cannot be found, one will be installed on your cluster.
+
 
 ### Deploying multiple projects
 If you are running multiple Appsody projects on your workstation, you can use `appsody deploy` and `appsody operator` commands to get them deployed to a Kubernetes cluster. However, make sure that you run these commands one at a time, because those commands create temporary files that might lead to conflicts if created concurrently.
