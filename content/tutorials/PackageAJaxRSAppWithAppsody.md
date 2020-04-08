@@ -79,7 +79,7 @@ Both the application and the `java-openliberty` Stack include a `pom.xml` file. 
 
 ### Running the application
 
-Issue: `appsody run`.
+Start your Appsody development environment by entering: `appsody run`.
 
 The `run` command starts a Docker container and mounts the workspace and the local maven repository (`~/.m2/repository`). Open Liberty's "dev mode" is enabled which automatically detects changes to the application's configuration and source, triggering a recompile and redeploy of the application.
 
