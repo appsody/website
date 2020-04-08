@@ -1,10 +1,12 @@
 ---
-title: 'Developing and Deploying LoopBack Applications with Appsody'
+title: "Developing and Deploying LoopBack Applications with Appsody"
 date: ""
 author: ""
 tutorial: "true"
 length: "20 mins"
 ---
+
+# Developing and Deploying LoopBack Applications with Appsody
 
 Appsody helps developers build containerized applications for the cloud that are ready to be deployed to Kubernetes without the user needing to be an expert on the underlying container technology.
 
@@ -108,7 +110,7 @@ Using the Appsody CLI, you can quickly scaffold a LoopBack 4 application.
 
 8. The basic structure of the application looks like this:
 
-   ![lb4appsody_template_files_1.png](./imgs/lb4appsody_template_files_1.png)
+   ![lb4appsody_template_files_1.png](./resources/loopback/lb4appsody_template_files_1.png)
 
    One important file is the Appsody configuration file for your project, which is named
    `.appsody-config.yaml`. It defines the `name` of your project, and the stack on
@@ -122,7 +124,7 @@ Using the Appsody CLI, you can quickly scaffold a LoopBack 4 application.
 9. The source code for the LoopBack 4 application is located in the `src`
    directory.
 
-   ![lb4appsody_template_files_2.png](./imgs/lb4appsody_template_files_2.png)
+   ![lb4appsody_template_files_2.png](./resources/loopback/lb4appsody_template_files_2.png)
 
 10. This basic application only defines one API endpoint `'/ping'` in the file
     `src/controllers/ping.controller.ts`
