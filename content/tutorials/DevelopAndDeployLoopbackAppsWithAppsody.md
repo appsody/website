@@ -16,7 +16,7 @@ This tutorial is going to show you how to scaffold, run, stop, debug, and test a
 
 ## Prerequisites
 
-In order to follow this tutorial, you need to install the Appsody CLI, which also requires you to have Docker installed, along with a Node.js application to cloud package.
+In order to follow this tutorial, you need to install the Appsody CLI, which also requires you to have Docker installed.
 
 ### Install the Appsody CLI
 
@@ -151,9 +151,9 @@ example.
 
 To add the Todo model you need the `'lb4'` application generator installed.
 
-#### Install the 'lb4' application generator
+#### Install the Loopback 4 CLI
 
-[Install the 'lb4' application generator](https://loopback.io/doc/en/lb4/Getting-started.html) by entering the following command:
+[Install the LoopBack 4 command line interface](https://loopback.io/doc/en/lb4/Getting-started.html) by entering the following command:
 
 ```
 npm i -g @loopback/cli
