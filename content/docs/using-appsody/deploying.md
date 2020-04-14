@@ -58,8 +58,11 @@ This command completes the following actions:
 - If you specified the `--knative` flag, or if Knative is the only deployment option for your stack, the command tags the image with the special prefix `dev.local`, making it accessible to your Kubernetes cluster (assuming you followed [these directions](/docs/using-appsody/installing-knative-locally))
 - The deployment manifest, `app-deploy.yaml`, is used to issue a `kubectl apply -f` command against the target Kubernetes cluster so that the application can be deployed by the Appsody Operator.
 
-### Deploying with different push and pull registries
-If you are specifying different push and pull registries, for example, you might want to push to an external registry and pull from an internal registry, use the following command:
+### Deploying to a private registry
+
+If you are pulling your image from a registry within your cluster, the registry may only be accessed by using a different name from outside your cluster, and a different name from within your cluster. For example, you might want to push to an external registry and pull from an internal registry.
+
+To specify different push and pull registries, use the following command:
 ```
 appsody deploy -t <mynamespace/myrepository[:tag]> --push-url <external-registry-url:PORT> --pull-url <internal-registry-url:PORT>
 ```
