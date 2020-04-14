@@ -9,8 +9,6 @@ The Appsody CLI provides the [appsody deploy](/docs/cli-commands/#appsody-deploy
 
 You can delegate the build and deployment steps to an external pipeline, such as a Tekton pipeline that consumes the source code of your Appsody project after you push it to a GitHub repository. Within the pipeline, you can run [appsody build](/docs/using-appsody/building), which builds the application image and generates a deployment manifest. You can use the manifest to deploy your application to a Kubernetes environment where the Appsody operator is installed.
 
-> Currently, Appsody supports you using a local Docker daemon only. To work around this, see the [FAQ](/docs/faq/#12-how-do-i-deploy-my-application-to-a-local-minikube-cluster).
-
 These deployment options are covered in more detail in the following sections.
 
 ## Deploying your application to a Kubernetes cluster
