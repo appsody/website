@@ -163,7 +163,4 @@ Their entry is removed from the `project.yaml` file and the associated volumes a
 
 ## 12. Can I use the Minikube docker daemon for development?
 
-Currently, Appsody supports using a local Docker daemon only. If you use the Minikube Docker daemon, the following commands do not work as expected:
- - [appsody extract](docs/cli-commands/#appsody-extract)
- - [appsody build](docs/cli-commands/#appsody-build)
- - [appsody deploy](docs/cli-commands/#appsody-deploy)
+Currently, Appsody supports using a local Docker daemon only. If you use the Minikube Docker daemon, Appsody commands will not work as expected.
