@@ -60,12 +60,20 @@ exports.createPages = ({ actions, graphql }) => {
     isPermanent: true
   });
 
-    // The environment variables page has moved from the stacks section to reference
-    createRedirect({
-      fromPath: `/docs/stacks/environment-variables`,
-      toPath: `/docs/reference/environment-variables`,
-      isPermanent: true
-    });
+  // The environment variables page has moved from the stacks section to reference
+  createRedirect({
+    fromPath: `/docs/stacks/environment-variables`,
+    toPath: `/docs/reference/environment-variables`,
+    isPermanent: true
+  });
+
+  // The building and deploying doc was split into multiple docs
+  createRedirect({
+    fromPath: `/docs/using-appsody/building-and-deploying`,
+    toPath: `/docs/using-appsody/deploying`,
+    isPermanent: true
+  });
+    
 
   const docTemplate = path.resolve(`src/templates/docTemplate.js`);
   const blogTemplate = path.resolve(`src/templates/blogTemplate.js`);
