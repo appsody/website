@@ -1,6 +1,12 @@
 ---
-title: Using the Open Liberty stack
+title: "Using the Open Liberty stack"
+date: "2020-04-15"
+author: "Adam Wisniewski"
+tutorial: "true"
+length: "30 mins"
 ---
+
+# Using the Open Liberty stack
 
 Open Liberty is a lightweight, open framework for building fast and efficient cloud-native microservices.
 Blazingly fast startup times and seamless "dev mode" integration means you can focus less on
