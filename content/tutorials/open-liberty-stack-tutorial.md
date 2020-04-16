@@ -6,6 +6,8 @@ tutorial: "true"
 length: "30 mins"
 ---
 
+# Using the Open Liberty stack
+
 Open Liberty is a lightweight, open framework for building fast and efficient cloud-native microservices.
 Blazingly fast startup times and seamless "dev mode" integration means you can focus less on
 administration and more on writing code.
