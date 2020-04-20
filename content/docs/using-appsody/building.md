@@ -63,10 +63,12 @@ The application image built by `appsody build` will be tagged with the name `myn
 ### Pushing to a custom registry
 To push the built application image to a custom registry, use the `--push-url <push-url>` flag along with the `build` command.
 
+> A push is triggered when using the `--push-url` flag even if the `--push` flag is not specified.
+
 For example:
 ```
 appsody build -t <mynamespace/myrepository[:tag]> --push-url <registry-url:PORT>
 ```
 The application image built by `appsody build` will be tagged with the name `mynamespace/myrepository[:tag]`, and pushed to the registry at the URL that you specify with `<registry-url:PORT>`.
 
-> If `--push-url` flag is not specified, the image is pushed to DockerHub. A push is triggered when using the `--push-url` flag even if the `--push` flag is not specified.
+> If the `--push-url` flag is not specified, the image is pushed to DockerHub. 
