@@ -10,6 +10,7 @@ The Appsody CLI provides the [appsody deploy](/docs/cli-commands/#appsody-deploy
 You can delegate the build and deployment steps to an external pipeline, such as a Tekton pipeline that consumes the source code of your Appsody project after you push it to a GitHub repository. Within the pipeline, you can run [appsody build](/docs/using-appsody/building), which builds the application image and generates a deployment manifest. You can use the manifest to deploy your application to a Kubernetes environment where the Appsody operator is installed.
 
 These deployment options are covered in more detail in the following sections.
+> Options available to the `build` command, such as tagging and pushing images, are also available to the `deploy` command. For more details, see [here](/docs/using-appsody/building/#tagging-your-application-image).
 
 ## Deploying your application to a Kubernetes cluster
 There are many options to deploy your Appsody applications to a Kubernetes cluster. The best approach depends on the specific scenario:
@@ -60,34 +61,20 @@ To deploy your application as a Knative service, the following **pre-requisites*
 
 Once the `appsody deploy --knative` command completes successfully, the Knative Service is operable at the URL specified in the command output.
 
-### Deploying your application through Docker Hub
+### Deploying to a private registry
 
-If your cluster is configured to pull images from Docker Hub, use the following command to deploy your application:
-```
-appsody deploy -t <mynamespace/myrepository[:tag]> --push --namespace mynamespace [--knative]
-```
-The command completes the following actions:
+If you are pulling your image from a registry within your cluster, the registry may only be accessed by using a different name from outside your cluster, and a different name from within your cluster. To specify different push and pull registries, use the `--push-url <push-url>` and `--pull-url <pull-url>` flags along with the `build` command.
 
-- Calls `appsody build` and creates a deployment image, as described in the previous section.
-- The `-t mynamespace/myrepository[:tag]` flag tags the image.
-- The `--push` flag tells the Appsody CLI to push the image to Docker Hub.
-- Creates a deployment manifest file named `app-deploy.yaml` in the project directory, if one doesn’t exist already. If a deployment manifest file exists, this command updates the following entries within it: application image, labels, and annotations. In addition, the `createKnativeService` entry is set to true if you specified the `--knative` flag.
-- The Yaml file is used to issue a `kubectl apply -f` command against the target Kubernetes cluster. The Yaml file is set to use the Appsody operator.
-- The `--namespace mynamespace` option provisions the deployment under the specified Kubernetes namespace within your cluster.
-
-> If you don't specify `--push`, the image is available only on your local Docker registry and the target Kubernetes cluster must be configured to have access to your local Docker registry.
-
-### Deploying your application to a custom registry
-If your cluster is configured to pull images from a custom registry, use the following command to deploy your application:
-```
-appsody deploy -t <mynamespace/myrepository[:tag]> --push-url <registry-url:PORT>
-```
-
-If you are specifying different push and pull registries, for example, you might want to push to an external registry and pull from an internal registry, use the following command:
+For example:
 ```
 appsody deploy -t <mynamespace/myrepository[:tag]> --push-url <external-registry-url:PORT> --pull-url <internal-registry-url:PORT>
 ```
-> Note: The pull registry url gets injected into the deployment manifest for Kubernetes to pull the correct image.
+
+This command completes the following actions:
+- The application image built by `appsody build` will be tagged with the name `mynamespace/myrepository[:tag]`, and pushed to the registry at the URL that you specify with `<external-registry-url:PORT>`. 
+- The `--pull-url` flag injects `<internal-registry-url:PORT>` into the deployment manifest for Kubernetes to pull the correct image and your image is deployed to your Kubernetes cluster via the [Appsody operator](/docs/reference/appsody-operator)
+
+> If an [Appsody operator](/docs/reference/appsody-operator) cannot be found, one will be installed on your cluster.
 
 ## Deploying your application through a Tekton pipeline
 
