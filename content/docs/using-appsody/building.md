@@ -50,7 +50,7 @@ The application image built by `appsody build` will be tagged with the name `myn
 
 ### Pushing to Docker Hub
 
-To share your images to the Docker Hub registry, use the `--push` flag along with the `build` command.
+To push the built application image to the Docker Hub registry, use the `--push` flag along with the `build` command.
 
 For example:
 ```
@@ -58,10 +58,10 @@ appsody build -t <mynamespace/myrepository[:tag]> --push
 ```
 The application image built by `appsody build` will be tagged with the name `mynamespace/myrepository[:tag]`, and pushed to the Docker Hub registry.
 
-> If you don't specify the `--push` flag, the image is available only on your local Docker registry. The `--push` flag is also available to the [appsody deploy](/docs/using-appsody/deploying) command.
+> If the `--push` flag is not specified, the image is available only on your local Docker registry.
 
 ### Pushing to a custom registry
-By default, the `--push` flag shares your images to the Docker Hub registry. To share your images to a custom registry, use the `--push-url <push-url>` flag along with the `build` command.
+To push the built application image to a custom registry, use the `--push-url <push-url>` flag along with the `build` command.
 
 For example:
 ```
@@ -69,4 +69,4 @@ appsody build -t <mynamespace/myrepository[:tag]> --push-url <registry-url:PORT>
 ```
 The application image built by `appsody build` will be tagged with the name `mynamespace/myrepository[:tag]`, and pushed to the registry at the URL that you specify with `<registry-url:PORT>`.
 
-> A push is triggered when using the `--push-url` flag even if the `--push` flag is not specified. The `--push` and `--push-url` flags are also available to the [appsody deploy](/docs/using-appsody/deploying) command.
+> If `--push-url` flag is not specified, the image is pushed to DockerHub. A push is triggered when using the `--push-url` flag even if the `--push` flag is not specified.
