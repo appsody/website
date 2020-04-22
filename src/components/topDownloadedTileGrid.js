@@ -30,7 +30,6 @@ class TopDownloadedTileGrid extends Component {
             });  
         });
 
-
         pullCounts = pullCounts.sort(function(a, b){return b-a}).slice(0, 4);
 
         this.setState({ biggestNumbers: pullCounts });
