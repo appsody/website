@@ -20,14 +20,17 @@ class TopDownloadedTileGrid extends Component {
     getBiggestNumbers() {
         var pullCounts = [];
 
+        let nonDeprecatedStacks = this.props.stacks.filter(stack =>  stack !== null && stack.deprecated === null);
+
         this.state.pulls.forEach((item) => {
-            if(item.name === 'application-operator' || item.name === 'appsody-buildah' || item.name === 'appsody-docker' || item.name === 'init-controller' || item.name === 'appsody-index' || item.name === 'debian-builder' || item.name === 'appsody-k8s' || item.name === 'appsody-controller') {
-                // Don't want to show these stacks as they are internal Appsody ones.
-            } else {
-                pullCounts.push(item.pull_count);
-            }
+            nonDeprecatedStacks.forEach((stack) => {
+                if (stack.id === item.name) {
+                    pullCounts.push(item.pull_count);
+                }
+            });  
         });
-        
+
+
         pullCounts = pullCounts.sort(function(a, b){return b-a}).slice(0, 4);
 
         this.setState({ biggestNumbers: pullCounts });
@@ -119,6 +122,7 @@ export default () => (
                         templates {
                             url
                         }
+                        deprecated
                     }
                 }
             }
