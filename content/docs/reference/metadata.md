@@ -95,7 +95,7 @@ Labels with the prefix: `dev.appsody.stack` are inherited from the stack image. 
 | `dev.appsody.stack.revision`      | Revision for the source code for the version of the stack | Github | `c27fffdbe7a9443081ef6abbac2cb2d8125aeb45` |
 | `dev.appsody.stack.source`        | URL for the source code for the image of the stack version | GitHub | `<GitHub Stack URL>/image` |
 | `dev.appsody.stack.url`           | URL for the source code for this version of the stack | GitHub | <GitHub Stack URL> |
-| `dev.appsody.stack.digest`        | Digest of the stack image | Dockerhub | `sha256:14828ecbd226c9869761a4991911c407465c754e54b5a988c4daa933b6adf4ae`
+| `dev.appsody.stack.digest`        | Digest of the stack image | Docker/Buildah | `sha256:14828ecbd226c9869761a4991911c407465c754e54b5a988c4daa933b6adf4ae`
 | `dev.appsody.stack.commit.author`        | GitHub name and email of code author | Git | `Joe Bloggs <joe.bloggs@email.com` |
 | `dev.appsody.stack.commit.committer`     | GitHub name and email of Git committer | Git | `GitHub <noreply@github.com`|
 | `dev.appsody.stack.commit.contextDir`    | Directory in GitHub repo that points to source code of the stack | Git | `incubator/starter` |
