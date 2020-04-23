@@ -49,14 +49,23 @@ These will be processed by the Appsody CLI. The primary use of this is to mount 
 
   > You can specify only directories in volume mounts, not single files.
 
-2. Dependency directory volume  
-This creates a volume used to cache, for efficiency, the combined dependencies of the stack components and the user application between sequential runs of the application during local development. It is not mounted into the user directory, since access to this is not required outside of the Docker environment. This is specified via the Docker variable `APPSODY_DEPS`. For example:
+2. Dependency directory volumes  
+Volumes are created that are used to cache, for efficiency, the combined dependencies of the stack components and the user application between sequential runs of the application during local development. The volumes are not mounted into the user directory, since access to that directory is not required outside of the Docker environment. The volumes to be created are specified by the Docker variable APPSODY_DEPS. For example:
 
    ```bash
    ENV APPSODY_DEPS=/project/deps
    ```
 
-   would cause the creation of a volume to be created and mounted into the container file systems at `/project/deps`.
+   would cause the creation of a volume that is mounted into the container file systems at `/project/deps`.
+
+   Multiple dependency directory volumes can be specified by separating the mount path with a semicolon.  For example: 
+
+   ```bash
+   ENV APPSODY_DEPS=/project/deps;/project/test/deps
+   ```
+
+   would cause the creation of two volumes that are mounted into the container file systems at `/project/deps` and `/project/test/deps`.   
+
 
 3. Appsody controller mount  
 The Appsody CLI automatically creates the Appsody controller mount, as it knows which version of the controller needs to be used.  When you run the `appsody run`, `appsody debug`, or `appsody test` commands, the Appsody CLI creates a Docker volume, if it doesn't exist, named `appsody-controller-<version>`, and installs appropriate Appsody controller, as indicated by `<version>`. The volume is then mounted at `/.appsody` in the container file system.
@@ -90,7 +99,7 @@ Any environment variables required by the technology in the stack itself are typ
 
 ### Passing control to the Appsody controller to run the user application
 
-When an `appsody run` command is issued, the stack image is launched in the local Docker environment of the user machine and the appsody-controller is set as the entrypoint. The controller is also passed the Appsody command being executed (`run` in this case). The Appsody controller processes the Appsody specific Docker variables, which determine how the user application is run and managed. These Appsody specific variables are described in more detail in [Appsody Environment Variables](/content/docs/stacks/environment-variables.md), although the most important ones for the run case are as follows (with examples from the python-flask stack):
+When an `appsody run` command is issued, the stack image is launched in the local Docker environment of the user machine and the appsody-controller is set as the entrypoint. The controller is also passed the Appsody command being executed (`run` in this case). The Appsody controller processes the Appsody specific Docker variables, which determine how the user application is run and managed. These Appsody specific variables are described in more detail in [Appsody Environment Variables](/docs/reference/environment-variables), although the most important ones for the run case are as follows (with examples from the python-flask stack):
 
 ```bash
 ENV APPSODY_RUN="python -m flask run --host=0.0.0.0 --port=8080"
