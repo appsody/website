@@ -1136,6 +1136,10 @@ input.checkbox-item {
   bottom: 3.5rem;
 }
 
+.deprecated-icon:hover {
+  cursor: help;
+}
+
 @media only screen and (max-width: 767px) {
   .sidebar {
     width: 15em;
