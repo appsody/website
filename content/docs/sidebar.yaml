@@ -20,8 +20,10 @@
       path: /docs/using-appsody/initializing-project
     - title: Local Development
       path: /docs/using-appsody/local-development
-    - title: Building and Deploying
-      path: /docs/using-appsody/building-and-deploying
+    - title: Building
+      path: /docs/using-appsody/building
+    - title: Deploying
+      path: /docs/using-appsody/deploying
 - title: Appsody Stacks
   items:
     - title: Stacks Overview
@@ -36,10 +38,16 @@
       path: /docs/stacks/publish
     - title: Stack lifecycle
       path: /docs/stacks/lifecycle
-    - title: Environment Variables
-      path: /docs/stacks/environment-variables
 - title: CLI Reference
   path: /docs/cli-commands
+- title: Reference
+  items:
+    - title: Traceability Metadata
+      path: /docs/reference/metadata
+    - title: Environment Variables
+      path: /docs/reference/environment-variables
+    - title: Appsody Operator
+      path: /docs/reference/appsody-operator
 - title: FAQ
   path: /docs/faq
 - title: Glossary
