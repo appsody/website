@@ -6,6 +6,7 @@ stacks:
     description: This sample stack
     license: Apache-2.0
     language: sample
+    deprecated: "[01/01/2020] - Test deprecation message for Sample Stack."
     maintainers:
       - name: appsody
         email: appsody@example.com
