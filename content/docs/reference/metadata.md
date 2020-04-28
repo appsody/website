@@ -34,6 +34,7 @@ Appsody adds labels described by OCI Image specification while building stack co
 
 | Labels                                   | Description  | Origin | Example |
 |------------------------------------------|-----------------------------------------------|--------------------------------|----------|
+| `org.opencontainers.image.authors`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| `maintainers` field in `stack.yaml`| `Joe BLoggs <joebloggs-githubID>` |
 | `org.opencontainers.image.created`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  Created by the `stack package` command| `2020-03-03T16:19:59Z`|
 | `org.opencontainers.image.description`   | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  `description` field in `stack.yaml`| `Runnable starter stack`|
 | `org.opencontainers.image.documentation` | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)|  GitHub | `<GitHub Stack URL>/README.md`
@@ -76,6 +77,7 @@ Labels with the prefix: `dev.appsody.stack` are inherited from the stack image. 
 
 | Labels                                   | Description  | Origin  | Example  |
 |------------------------------------------|-----------------------------------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| `dev.appsody.stack.authors`       | Stack maintainers' names and github IDs | `authors` field in `stack.yaml` | `Joe BLoggs <joebloggs-githubID>`            |
 | `dev.appsody.stack.configured`       | The version of the stack your application is configured to use |  `stack` field in `.appsody-config.yaml` | `docker.io/appsody/starter:0.1`                         |
 | `dev.appsody.stack.created`       | Timestamp of when stack was packaged |  Created by the `stack package` command | `2020-03-03T16:19:59Z`                         |
 | `dev.appsody.stack.deprecated`           | **OPTIONAL** - Stack deprecation message if stack is deprecated | `deprecated` field in `stack.yaml` | `[01/01/2020] Deprecated` |
@@ -99,6 +101,7 @@ Labels with the prefix: `org.opencontainers.image` are created every time that a
 
 | Labels                                   | Description  | Origin | Example |
 |------------------------------------------|-----------------------------------------------|--------------------------------|---------------------------------------------|
+| `org.opencontainers.image.authors`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| `authors` field in `.appsody-config.yaml` | `Joe BLoggs <joebloggs-githubID>` |
 | `org.opencontainers.image.created`       | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| Timestamp when application was built | `2020-03-03T16:19:59Z`|
 | `org.opencontainers.image.description`   | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| `description` field in `.appsody-config.yaml` | `Simple "Hello, World!" application` |
 | `org.opencontainers.image.documentation` | [Opencontainer Spec](https://github.com/opencontainers/image-spec/blob/master/annotations.md#pre-defined-annotation-keys)| GitHub | `<GitHub Project URL>/README.md` |
@@ -123,6 +126,7 @@ When the application is deployed, the traceability information is made available
 | `dev.appsody.image.commit.contextDir`    | `commit.image.appsody.dev/contextDir` |
 | `dev.appsody.image.commit.date`          | `commit.image.appsody.dev/date` |
 | `dev.appsody.image.commit.message`       | `commit.image.appsody.dev/message` |
+| `dev.appsody.stack.authors`              | `stack.appsody.dev/authors` |
 | `dev.appsody.stack.created`              | `stack.appsody.dev/created` |
 | `dev.appsody.stack.deprecated`           | `stack.appsody.dev/deprecated` |
 | `dev.appsody.stack.description`          | `stack.appsody.dev/description` |
@@ -138,6 +142,7 @@ When the application is deployed, the traceability information is made available
 | `dev.appsody.stack.commit.contextDir`    | `commit.stack.appsody.dev/contextDir` |
 | `dev.appsody.stack.commit.date`          | `commit.stack.appsody.dev/date` |
 | `dev.appsody.stack.commit.message`       | `commit.stack.appsody.dev/message` |
+| `org.opencontainers.image.authors`       | `image.opencontainers.org/authors` |
 | `org.opencontainers.image.created`       | `image.opencontainers.org/created` |
 | `org.opencontainers.image.description`   | `image.opencontainers.org/description` |
 | `org.opencontainers.image.documentation` | `image.opencontainers.org/documentation` |
