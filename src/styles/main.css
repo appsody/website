@@ -1127,6 +1127,19 @@ input.checkbox-item {
   padding-left: 3rem;
 }
 
+.deprecated-icon {
+  margin: auto;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  position: absolute;
+  left: 6rem;
+  bottom: 3.5rem;
+}
+
+.deprecated-icon:hover {
+  cursor: help;
+}
+
 @media only screen and (max-width: 767px) {
   .sidebar {
     width: 15em;
