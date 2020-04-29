@@ -163,6 +163,6 @@ The project entry is removed from the `project.yaml` file and the associated vol
 
 ### 12. Why is the Appsody Operator failing to install?
 
-The [Appsody Operator](/docs/reference/appsody-operator.md) is used to monitor resources of kind `AppsodyApplication` and can be installed using the `appsody operator install` command. However, there may be cases where this command fails due to permissions problems in the cluster. 
+The [Appsody Operator](/docs/reference/appsody-operator.md) is used to monitor resources of kind `AppsodyApplication` and can be installed using the `appsody operator install` command. However, there might be cases where this command fails due to permissions problems in the cluster. 
 
-If you are working within a shared cluster, certain commands may be restricted. For example, the Appsody CLI runs `kubectl get pods --all-namespaces` as part of the `appsody operator install` command. You can use the `--no-operator-check` flag and run `appsody operator install --no-operator-check` to bypass some of these restrictions. However, this may not be enough to install the operator in clusters with stricter permissions. In this case, contact your cluster administrator.
+If you are working within a shared cluster, certain commands might be restricted. For example, the Appsody CLI runs `kubectl get pods --all-namespaces` as part of the `appsody operator install` command. You can use the `--no-operator-check` flag and run `appsody operator install --no-operator-check` to bypass some of these restrictions. However, this might not be enough to install the operator in clusters with stricter permissions. In this case, contact your cluster administrator.
