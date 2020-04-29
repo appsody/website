@@ -159,12 +159,10 @@ The `project.yaml` file is validated when a new Appsody project is initialized. 
 * moved to a different directory
 * are being initialized into the same directory as a previous project
 
-Their entry is removed from the `project.yaml` file and the associated volumes are deleted. This validation ensures that volumes exist for current projects only and that volumes are not reused between different projects of the same name.
+The project entry is removed from the `project.yaml` file and the associated volumes are deleted. This validation ensures that volumes exist only for current projects and that volumes are not reused between different projects of the same name.
 
 ### 12. Why is the Appsody Operator failing to install?
 
-The Appsody Operator is used to monitor resources of kind `AppsodyApplication` and can be installed using the `appsody operator install` command. However, there may be cases where this command fails due to permissions problems in the cluster. 
+The [Appsody Operator](/docs/reference/appsody-operator.md) is used to monitor resources of kind `AppsodyApplication` and can be installed using the `appsody operator install` command. However, there may be cases where this command fails due to permissions problems in the cluster. 
 
-If you are working within a shared cluster, certain commands such as `kubectl get pods --all-namespaces` may be restricted which the Appsody CLI runs as part of the operator install. You can issue the `appsody operator install --no-operator-check` flag to bypass some of these restrictions but you may still not be allowed to install the operator in clusters with less lenient permissions.
-
-In this case, you will need to contact your cluster administrator to provide clarity on what permissions non admin users have when working in the cluster.
+If you are working within a shared cluster, certain commands may be restricted. For example, the Appsody CLI runs `kubectl get pods --all-namespaces` as part of the `appsody operator install` command. You can use the `--no-operator-check` flag and run `appsody operator install --no-operator-check` to bypass some of these restrictions. However, this may not be enough to install the operator in clusters with stricter permissions. In this case, contact your cluster administrator.
