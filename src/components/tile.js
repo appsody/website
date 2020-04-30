@@ -32,12 +32,27 @@ class Tile extends React.Component {
       isToggleOn: !state.isToggleOn
     }));
   }
+
+  isMobileBrowser() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+  };
+
+  showDeprecationMessageMobile(e) {
+    if (this.isMobileBrowser()) {
+      alert(e);
+    }
+  }
+
   render() {
     if (this.state.isToggleOn) {
       return (
         <div className="tile card text-center">
+          
           <h5 className="heading-tile">{this.props.heading}</h5>
+          { this.props.deprecated && <img title={this.props.deprecated} onClick={() => this.showDeprecationMessageMobile(this.props.deprecated)} role="button" className="deprecated-icon" src={require("../images/deprecation_warning.svg") } width="30px"/>}
+
           <p>{this.desc}</p>
+
           <a href="/" onClick={this.handleClick} className="btn btn-primary w-50 mx-auto" role="button">Select</a>
           { this.props.updated && <p className="updated-date">Updated: {Moment.unix(this.props.updated / 1000).format('MMM Do')}</p>}
         </div>
