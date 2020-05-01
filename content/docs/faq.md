@@ -116,7 +116,7 @@ appsody deploy
 
 For convenience, there is also a container image `appsody-buildah` that includes the current version of the Appsody CLI and the version of buildah that is used by Appsody. If you would like to modify this image to fit your own purposes, you can find the Dockerfile in the [appsody-buildah repo](https://github.com/appsody/appsody-buildah)
 
-## 10. How do I set up Knative Serving for Local Kubernetes Development?
+### 10. How do I set up Knative Serving for Local Kubernetes Development?
 
 To work with Kubernetes locally, it is recommended that you enable Kubernetes in Docker for Desktop. To do that, first run the Docker app that starts Docker and adds the Docker icon to the menu bar.
 
@@ -128,7 +128,7 @@ Next, ensure that Kubernetes has enough resources to run your apps by selecting 
 
 Now use the [Installing Knative](https://knative.dev/docs/install/any-kubernetes-cluster/) guide to install Knative Serving in your Docker for Desktop based Kubernetes cluster.
 
-## 11. Where are my application dependencies?
+### 11. Where are my application dependencies?
 
 Appsody stacks can specify where and how the dependencies of the user's application are managed. Typically, stacks use the [`APPSODY_DEPS`](/docs/reference/environment-variables) environment variable to specify a list of locations where the application's dependencies are going to be stored within the Appsody container.
 
@@ -159,4 +159,10 @@ The `project.yaml` file is validated when a new Appsody project is initialized. 
 * moved to a different directory
 * are being initialized into the same directory as a previous project
 
-Their entry is removed from the `project.yaml` file and the associated volumes are deleted. This validation ensures that volumes exist for current projects only and that volumes are not reused between different projects of the same name.
+The project entry is removed from the `project.yaml` file and the associated volumes are deleted. This validation ensures that volumes exist only for current projects and that volumes are not reused between different projects of the same name.
+
+### 12. Why is the Appsody Operator failing to install?
+
+The [Appsody Operator](/docs/reference/appsody-operator) is used to monitor resources of kind `AppsodyApplication` and can be installed using the `appsody operator install` [command](/docs/cli-commands/#appsody-operator-install). However, there might be cases where this command fails due to permissions problems in the cluster. 
+
+If you are working within a shared cluster, certain commands might be restricted. For example, the Appsody CLI runs `kubectl get pods --all-namespaces` as part of the `appsody operator install` command. You can use the `--no-operator-check` flag and run `appsody operator install --no-operator-check` to bypass some of these restrictions. However, this might not be enough to install the operator in clusters with stricter permissions. In this case, contact your cluster administrator.
