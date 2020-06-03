@@ -232,7 +232,7 @@ appsody deploy [flags]
       --docker-options string    Specify the docker build options to use. Value must be in "". The following Docker options are not supported: '--help','-t','--tag','-f','--file'.
   -f, --file string              The file name to use for the deployment manifest. (default "app-deploy.yaml")
       --force                    DEPRECATED - Force the reuse of the deployment manifest file if one exists.
-      --generate-only            DEPRECATED - Only generate the deployment manifest file. Do not deploy the project.
+      --generate-only            Only generate the deployment manifest file. Do not deploy the project.
   -h, --help                     help for deploy
       --knative                  Deploy as a Knative Service
   -n, --namespace string         Target namespace in your Kubernetes cluster.
@@ -301,7 +301,7 @@ appsody deploy delete [flags]
       --dryrun                   Shows the commands that are called by this command, without running them.
   -f, --file string              The file name to use for the deployment manifest. (default "app-deploy.yaml")
       --force                    DEPRECATED - Force the reuse of the deployment manifest file if one exists.
-      --generate-only            DEPRECATED - Only generate the deployment manifest file. Do not deploy the project.
+      --generate-only            Only generate the deployment manifest file. Do not deploy the project.
       --knative                  Deploy as a Knative Service
   -n, --namespace string         Target namespace in your Kubernetes cluster.
       --no-build                 Deploys the application without building a new image or modifying the deployment manifest file.
