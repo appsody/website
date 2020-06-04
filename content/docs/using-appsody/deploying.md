@@ -43,7 +43,7 @@ To ensure the latest version of your application is pushed to the cluster, use t
 ### Deployment via the Appsody Operator
 Kubernetes operators offer a powerful way to provide full lifecycle maintenance of a wide range of resources on Kubernetes clusters. In particular, they can install, upgrade, remove, and monitor application deployments. The recently published [Appsody operator](https://operatorhub.io/operator/appsody-operator) automates the installation and maintenance of a special type of Custom Resource Definitions (CRDs), called **AppsodyApplication**.
 
-The currently available Appsody stacks include a template of such a CRD manifest. When you run `appsody deploy` on a project created from one of the stacks enabled with those manifests, the CLI customizes the manifest with information that is specific to the deployment (e.g. namespace and project name), and submits the manifest to the Appsody operator on the Kubernetes cluster.
+The currently available Appsody stacks include a template of such a CRD manifest. When you run `appsody deploy` on a project created from one of the stacks enabled with those manifests, the CLI customizes the manifest with information that is specific to the deployment (e.g. namespace and project name), and submits the manifest to the Appsody operator on the Kubernetes cluster. If you would like to generate the deployment manifest without having to deploy your Appsody project, use the `--generate-only` flag.
 
 In fact, if your cluster does not already provide an operator, `appsody deploy` will install one for you. You can also use the Appsody CLI to install an instance of the Appsody operator, without installing any applications. This can be achieved by running the `appsody operator install` command.
 
