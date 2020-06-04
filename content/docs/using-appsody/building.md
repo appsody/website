@@ -14,10 +14,7 @@ The [appsody build](/docs/cli-commands/#appsody-build) command completes the fol
 
 - Extracts your code and other artifacts, including a new Dockerfile, which are required to build the *deployment* image from the *development* image. These files are saved to the `~/.appsody/extract` directory.
 - Runs a `docker build` against the Dockerfile that was extracted on the previous step to produce a *deployment* image in your local Docker registry. 
-  - If you want to give the image a name, specify the `-t <tag>` parameter. 
-  - If you want to push the built image to an image repository, specify the `--push` parameter. 
-  - If you run `appsody build` with no parameters, the image is given a name that matches the name of your project.
-- Generates a manifest called `app-deploy.yaml` that can be used to deploy your Appsody application.
+- Generates a deployment manifest file named `app-deploy.yaml` in the project directory, if one doesn’t exist already. If a deployment manifest file exists, this command updates the following entries within it: application image, labels, and annotations.
 
 > If your project includes uppercase characters, these are converted to lowercase characters in the image name because Docker does not accept uppercase characters in image tags. Also, if your project directory includes underscore characters, those will be converted to dashes (-), because certain areas of Kubernetes are not tolerant of underscore characters.
 
@@ -35,3 +32,43 @@ Running command: docker[build -t appsody-project -f /Users/mchilant/.appsody/ext
 Built docker image appsody-project
 Created deployment manifest: /Users/mchilant/appsody-project/app-deploy.yaml
 ```
+
+## Tagging your application image
+
+To tag the built application image, use the `-t <tag>` flag along with the `build` command. The tag can be specified in the format `mynamespace/myrepository[:tag]`.
+
+For example:
+```
+appsody build -t <mynamespace/myrepository[:tag]>
+```
+The application image built by `appsody build` will be tagged with the name `mynamespace/myrepository[:tag]`.
+
+> If the `-t` flag is not specified, the image is tagged with the project name.
+
+
+## Pushing your application image to an image registry
+
+### Pushing to Docker Hub
+
+To push the built application image to the Docker Hub registry, use the `--push` flag along with the `build` command.
+
+For example:
+```
+appsody build -t <mynamespace/myrepository[:tag]> --push 
+```
+The application image built by `appsody build` will be tagged with the name `mynamespace/myrepository[:tag]`, and pushed to the Docker Hub registry.
+
+> If the `--push` flag is not specified, the image is available only on your local Docker registry.
+
+### Pushing to a custom registry
+To push the built application image to a custom registry, use the `--push-url <push-url>` flag along with the `build` command.
+
+> A push is triggered when using the `--push-url` flag even if the `--push` flag is not specified.
+
+For example:
+```
+appsody build -t <mynamespace/myrepository[:tag]> --push-url <registry-url:PORT>
+```
+The application image built by `appsody build` will be tagged with the name `mynamespace/myrepository[:tag]`, and pushed to the registry at the URL that you specify with `<registry-url:PORT>`.
+
+> If the `--push-url` flag is not specified, the image is pushed to DockerHub. 
