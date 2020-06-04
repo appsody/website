@@ -21,7 +21,7 @@ To use all of Appsody's functions, you need to install [Docker](https://docs.doc
 
 > Currently, Appsody supports using a local Docker daemon only. See the [FAQ](/docs/faq/#13-can-i-use-the-minikube-docker-daemon-for-development).
 
-In environments where Docker is not available, a subset of Appsody commands can be used with Buildah as detailed in the [FAQ](/docs/faq#9-can-i-use-appsody-without-docker). Prerequisites specific to each operating system are provided within the links in the following section.
+In environments where Docker is not available, a subset of Appsody commands can be used with Buildah as detailed in the [FAQ](/docs/faq#9-can-i-use-appsody-without-docker). Prerequisites specific to each operating system are provided within the links of the following section.
 
 ## Using installers
 
