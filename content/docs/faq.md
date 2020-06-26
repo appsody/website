@@ -166,3 +166,7 @@ The project entry is removed from the `project.yaml` file and the associated vol
 The [Appsody Operator](/docs/reference/appsody-operator) is used to monitor resources of kind `AppsodyApplication` and can be installed using the `appsody operator install` [command](/docs/cli-commands/#appsody-operator-install). However, there might be cases where this command fails due to permissions problems in the cluster. 
 
 If you are working within a shared cluster, certain commands might be restricted. For example, the Appsody CLI runs `kubectl get pods --all-namespaces` as part of the `appsody operator install` command. You can use the `--no-operator-check` flag and run `appsody operator install --no-operator-check` to bypass some of these restrictions. However, this might not be enough to install the operator in clusters with stricter permissions. In this case, contact your cluster administrator.
+
+## 13. Can I use the Minikube docker daemon for development?
+
+Currently, Appsody supports using a local Docker daemon only. If you use the Minikube Docker daemon, Appsody commands will not work as expected.
