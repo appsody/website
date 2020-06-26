@@ -7,6 +7,8 @@ When you've finished the development work for your Appsody project, you will hav
 
 The Appsody CLI provides the [appsody deploy](/docs/cli-commands/#appsody-deploy) command to build and deploy a Docker image directly to a Kubernetes cluster that you are using for testing or staging.
 
+The deployment manifest for your project (`app-deploy.yaml`) is created or updated when you run `appsody build` or `appsody deploy`. The Appsody CLI uses deployment information from the stack and adds various [traceability metadata](/docs/reference/metadata) while generating this manifest.  You can edit this file to suit your application and store it under source control. If you want to quickly obtain the deployment manifest without having to build or deploy your application, run the `appsody deploy --generate-only` command.
+
 You can delegate the build and deployment steps to an external pipeline, such as a Tekton pipeline that consumes the source code of your Appsody project after you push it to a GitHub repository. Within the pipeline, you can run [appsody build](/docs/using-appsody/building), which builds the application image and generates a deployment manifest. You can use the manifest to deploy your application to a Kubernetes environment where the Appsody operator is installed.
 
 These deployment options are covered in more detail in the following sections.
