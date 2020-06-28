@@ -19,11 +19,13 @@ cover: "https://venshare.com/images/tide-appsody-kn.png"
 
 ## Introduction
 
-Following the feedback from an [Appsody on OpenShift](https://us02web.zoom.us/webinar/register/rec/WN__gBLTiqLQPiDRUkzdWWXZg?meetingId=2udFNa2s0HNOQ4nnz2LRW7A4A9jqX6a81nUe__Vcz0uAmF0Mz4Yqwn_obRPTpJuz&playId=usctfrr7_zw3GoGQ5gSDC_d6W9W5K_6s13RMrKdcnUa2AiVSN1ekbrREMOrwm00F71LWvXjt14jaBZaf&action=play&_x_zm_rtaid=5uZDfWV9RYy-J3EBnxrctQ.1590833520420.dc63c5dacd2e261a888c87d88a17324b&_x_zm_rhtaid=145) presentation that I did recently I thought I would continue on the theme and write a step by step tutorial on how to scaffold and build a serverless rust application with Appsody and deploy it into a knative environment.
+This tutorial was created following feedback from the [Appsody on OpenShift](https://us02web.zoom.us/webinar/register/rec/WN__gBLTiqLQPiDRUkzdWWXZg?meetingId=2udFNa2s0HNOQ4nnz2LRW7A4A9jqX6a81nUe__Vcz0uAmF0Mz4Yqwn_obRPTpJuz&playId=usctfrr7_zw3GoGQ5gSDC_d6W9W5K_6s13RMrKdcnUa2AiVSN1ekbrREMOrwm00F71LWvXjt14jaBZaf&action=play&_x_zm_rtaid=5uZDfWV9RYy-J3EBnxrctQ.1590833520420.dc63c5dacd2e261a888c87d88a17324b&_x_zm_rhtaid=145) presentation and will cover how to scaffold, then build a serverless rust application with Appsody and deploy it into a knative environment.
 
 ## Prerequisites
 
-In order to follow this tutorial, you need to install the Appsody CLI, which also requires you to have Docker installed. You will also need a Knative environment to deploy to.
+### Install Docker
+
+The instructions for installing docker on your OS are [available here](https://docs.docker.com/get-docker/).
 
 ### Install the Appsody CLI
 
@@ -31,31 +33,34 @@ Follow the [Installing Appsody](https://appsody.dev/docs/getting-started/install
 
 ### Create a Knative Environment
 
+Choose one of the options below to create a Knative environment. 
+The quickest way to get going if you don't have a Knative environment is to choose the IBM Cloud option. 
+
 - [Fast - Knative on IBM Cloud](https://cloud.ibm.com/docs/knative?topic=knative-kn-install-cli)
 
 - [Local - Minikube](https://knative.dev/v0.12-docs/install/knative-with-minikube/)
 
 - [Anywhere - OpenShift](https://docs.openshift.com/container-platform/4.3/serverless/installing_serverless/installing-knative-serving.html)
 
-You should also be able to use the appsody build in any Knative environment if you already have one with your favourite cloud provider.
+You can also use the appsody build in any Knative environment if you already have one with your favourite cloud provider.
 
 ## Create Your Application
 
 1. Open a terminal window.
 
-2. Create a directory named **appsodyRustTide**:
+2. Create a directory named **appsodyrusttide**:
 
    ```
-   mkdir appsodyRustTide
+   mkdir appsodyrusttide
    ```
 
 3. Navigate to that directory:
 
    ```
-   cd appsodyRustTide
+   cd appsodyrusttide
    ```
 
-4. List the available Appsody stacks (and templates) with:
+4. List the available Appsody stacks with:
 
    ```
    appsody list
@@ -84,7 +89,7 @@ You should also be able to use the appsody build in any Knative environment if y
    ```
     Running appsody init...
     Downloading rust-tide template project from experimental/rust-tide.v0.1.0.templates.default.tar.gz
-    Download complete. Extracting files from /home/anton/test/appsodyRustTide/rust-tide.tar.gz
+    Download complete. Extracting files from /home/anton/test/appsodyrusttide/rust-tide.tar.gz
     Setting up the development environment
     Your Appsody project name has been set to appsodyrusttide
     Using local cache for image experimental/appsody/rust-tide:0.1
@@ -101,29 +106,23 @@ You should also be able to use the appsody build in any Knative environment if y
    ``` 
    and
    ```
-   Successfully initialized Appsody project with the nodejs-loopback stack and the default template.
+   Successfully initialized Appsody project with the rust-tide stack and the default template.
    ```
 
 6. Now open this project in your favorite IDE.
 
-   This tutorial is going to use VS Code:
-
-   ```
-   code .
-   ```
 
 7. The basic structure of the application looks like this:
 
    ![rust_tide_appsody_template_files_1.png](./resources/rusttide/rust_tide_appsody_template_files_1.png)
   
-   One important file is the Appsody configuration file for your project, which is named
-   `.appsody-config.yaml`. It defines the `name` of your project, and the stack on
-   which it is based.
+   One important file is the Appsody configuration file for your project, .appsody-config.yaml:
 
    ```yaml
    project-name: appsodyrusttide
    stack: experimental/rust-tide:0.1
    ```
+   It defines the `name` of your project, and the stack on which it is based.
 
 8. The source code for the application is located in the `src` directory.
 
@@ -142,16 +141,14 @@ You should also be able to use the appsody build in any Knative environment if y
     The initial application is very similar to the [example application](https://github.com/http-rs/tide/blob/master/examples/hello.rs), but
     it's a library that is [loaded by a server](https://github.com/No9/rust-tide/blob/master/image/project/server/bin/src/main.rs#L5) at runtime to reduce the amount of developer noise.
 
-In the next section, you are going modify and build this service.
-
 ## Building Your Application
 
-The template application is only a starting point.
+The template application is only a starting point, you will now modify and build this service.
 
-Now you are going to modify the endpoint so it reads an environment variable and returns is as JSON. 
-This is based on the [tide json example](https://github.com/http-rs/tide/blob/master/examples/json.rs) but uses an environment variable rather than a post to demonstrate some of the Knative capabilities.
+Firstly, you are going to modify the endpoint so it reads an environment variable which is then returned as JSON. 
+This is based on the [tide json example](https://github.com/http-rs/tide/blob/master/examples/json.rs) but uses an environment variable rather than a **POST** to demonstrate some of the Knative capabilities.
 
-1. The first thing to do is update the `Cargo.toml` to reference `serde` libraries. This gives our project JSON capaibilities.
+1. Update the `Cargo.toml` to reference `serde` libraries. This gives our project JSON capaibilities.
     ```toml
     [dependencies]
     tide = { version = "0.9" }
@@ -159,7 +156,7 @@ This is based on the [tide json example](https://github.com/http-rs/tide/blob/ma
     serde_json = "1.0.41"
     ```
 
-2. Now we will update `lib.rs` to read the environment variable and return a Cat struct to the user.
+2. Now we will update `lib.rs` to read the environment variable and return a `Cat` struct to the user.
     ```rust
         use std::env;
         use serde::{Deserialize, Serialize};
@@ -184,42 +181,47 @@ This is based on the [tide json example](https://github.com/http-rs/tide/blob/ma
         }
     ```
 
-3. Once the code changes are complete you should be able to run the service with: 
+3. Once the code changes are complete you can run the service with: 
+    
     ```
     appsody run --docker-options "--env MY_NAME=tibbs"
     ```
-    where `--docker-options` passes the environment settings to the container
+    
+    > `--docker-options` passes the environment settings to the container
 
-4. The service should now be available on http://localhost:8000/ and if you open it in a browser it will now return.
+4. The service will be available at http://localhost:8000/ and accessing it in a browser will return:"
+    
     ```json
         {
             "name" : "tibbs"
         }
     ```
 
-5. Now we need to create a production build for the application. Make user you are logged into [docker hub](https://docs.docker.com/engine/reference/commandline/login/) before running it.
+5. Now we need to create a production build for the application. Make sure you are logged into [docker hub](https://docs.docker.com/engine/reference/commandline/login/) before running it.
 
     ```
     $ appsody build -t YOUR_DOCKER_USER/appsodyrusttide:v1.0.0 --publish --knative
     ```
 
-Now we are ready to deploy your application
-
 ## Deploy Your Application
 
-This section will be split into 3 sections. The first will cover deploying to Knative on IBM Cloud. The second will cover a plain Knative deploy and the final one will cover a preconfigured OpenShift deployment
+This section will be split into three sub-sections:
 
-### Deploy the image to IBM Cloud 
+    1. Deploy to Knative on IBM Cloud
+    2. Deploy to Minikube
+    3. Deploy to Openshift
 
-    Ensure that the you have created a project for the service following [these instructions](https://cloud.ibm.com/docs/knative?topic=knative-manage-project#create-project-cli). 
+### Deploy to Knative on IBM Cloud
+
+    Ensure that you have [created a project for the service](https://cloud.ibm.com/docs/knative?topic=knative-manage-project#create-project-cli), then run the following command:
 
     ```
     $ ibmcloud coligo application create --name appsodyrusttide --image YOUR_DOCKER_USER/appsodyrusttide:v1.0.0 --env MY_NAME=tibbs
     ```
 
-### Deploy the image to minikube 
+### Deploy to Minikube 
     
-1. Create a service definition in the application folder
+1. Create a service definition in the application folder:
     
     ```yaml
     apiVersion: serving.knative.dev/v1 # Current version of Knative
@@ -237,7 +239,7 @@ This section will be split into 3 sections. The first will cover deploying to Kn
                   value: "tibbs"
     ```
 
-2. Push the service 
+2. Push the service:
     ```
     $ kubectl apply --filename service.yaml
     ```
@@ -252,7 +254,7 @@ This section will be split into 3 sections. The first will cover deploying to Kn
 
 ## Validate Your Application
 
-1. Using the kn cli get the list of services
+1. Get the list of services using the kn cli:
 
     ```
     $ kn service list
@@ -272,4 +274,4 @@ This section will be split into 3 sections. The first will cover deploying to Kn
 
 ## Summary
 
-This tutorial was a starter to get a simple service up and running. In future there will be examples of debugging and connecting to backend systems such as databases. In the mean time checkout some of the other appsody [tutorials for other stacks](https://appsody.dev/tutorials/).
+This tutorial was a starter to get a simple service up and running. In the future there will be examples of debugging and connecting to backend systems such as databases.
