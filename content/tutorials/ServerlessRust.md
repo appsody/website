@@ -243,7 +243,7 @@ This section will be split into three sub-sections:
     ```
     $ kubectl apply --filename service.yaml
     ```
-
+:
 ### Deploy to OpenShift
 
 1. Deploying to OpenShift is very straight forward and just requires: 
