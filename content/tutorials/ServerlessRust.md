@@ -17,6 +17,8 @@ tags:
 cover: "https://venshare.com/images/tide-appsody-kn.png"
 ---
 
+# Serverless Rust with Tide, Appsody and Knative
+
 ## Introduction
 
 This tutorial was created following feedback from the [Appsody on OpenShift](https://us02web.zoom.us/webinar/register/rec/WN__gBLTiqLQPiDRUkzdWWXZg?meetingId=2udFNa2s0HNOQ4nnz2LRW7A4A9jqX6a81nUe__Vcz0uAmF0Mz4Yqwn_obRPTpJuz&playId=usctfrr7_zw3GoGQ5gSDC_d6W9W5K_6s13RMrKdcnUa2AiVSN1ekbrREMOrwm00F71LWvXjt14jaBZaf&action=play&_x_zm_rtaid=5uZDfWV9RYy-J3EBnxrctQ.1590833520420.dc63c5dacd2e261a888c87d88a17324b&_x_zm_rhtaid=145) presentation and will cover how to scaffold, then build a serverless rust application with Appsody and deploy it into a knative environment.
@@ -34,7 +36,7 @@ Follow the [Installing Appsody](https://appsody.dev/docs/getting-started/install
 ### Create a Knative Environment
 
 Choose one of the options below to create a Knative environment. 
-The quickest way to get going if you don't have a Knative environment is to choose the IBM Cloud option. 
+If you don't have a Knative environment the quickest way to get going is to choose the [IBM Cloud](https://cloud.ibm.com/docs/knative?topic=knative-kn-install-cli) option. 
 
 - [Fast - Knative on IBM Cloud](https://cloud.ibm.com/docs/knative?topic=knative-kn-install-cli)
 
@@ -138,8 +140,8 @@ You can also use the appsody build in any Knative environment if you already hav
     }
     ```
 
-    The initial application is very similar to the [example application](https://github.com/http-rs/tide/blob/master/examples/hello.rs), but
-    it's a library that is [loaded by a server](https://github.com/No9/rust-tide/blob/master/image/project/server/bin/src/main.rs#L5) at runtime to reduce the amount of developer noise.
+    > The initial application is very similar to the [example application](https://github.com/http-rs/tide/blob/master/examples/hello.rs), but
+    > it's a library that is [loaded by a server](https://github.com/No9/rust-tide/blob/master/image/project/server/bin/src/main.rs#L5) at runtime. This helps reduce the cognitive noise for the developer as well as ensuring that best practices are applied in a template format.
 
 ## Building Your Application
 
