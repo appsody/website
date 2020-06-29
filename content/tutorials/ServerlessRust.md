@@ -191,7 +191,7 @@ This is based on the [tide json example](https://github.com/http-rs/tide/blob/ma
     
     > `--docker-options` passes the environment settings to the container
 
-4. The service will be available at http://localhost:8000/ and accessing it in a browser will return:"
+4. The service will be available at http://localhost:8000/ and accessing it in a browser will return:
     
     ```json
         {
@@ -209,9 +209,9 @@ This is based on the [tide json example](https://github.com/http-rs/tide/blob/ma
 
 This section will be split into three sub-sections:
 
-    1. Deploy to Knative on IBM Cloud
-    2. Deploy to Minikube
-    3. Deploy to Openshift
+1. Deploy to Knative on IBM Cloud
+2. Deploy to Minikube
+3. Deploy to Openshift
 
 ### Deploy to Knative on IBM Cloud
 
