@@ -1,5 +1,5 @@
 ---
-title: CLI Reference
+title: CLI Commands
 ---
 
 # Appsody CLI

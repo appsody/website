@@ -38,7 +38,7 @@
       path: /docs/stacks/publish
     - title: Stack lifecycle
       path: /docs/stacks/lifecycle
-- title: CLI Reference
+- title: CLI Commands
   path: /docs/cli-commands
 - title: Reference
   items:
