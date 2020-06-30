@@ -215,11 +215,11 @@ This section will be split into three sub-sections:
 
 ### Deploy to Knative on IBM Cloud
 
-    Ensure that you have [created a project for the service](https://cloud.ibm.com/docs/knative?topic=knative-manage-project#create-project-cli), then run the following command:
+Ensure that you have [created a project for the service](https://cloud.ibm.com/docs/knative?topic=knative-manage-project#create-project-cli), then run the following command:
 
-    ```
-    $ ibmcloud coligo application create --name appsodyrusttide --image YOUR_DOCKER_USER/appsodyrusttide:v1.0.0 --env MY_NAME=tibbs
-    ```
+```
+$ ibmcloud coligo application create --name appsodyrusttide --image YOUR_DOCKER_USER/appsodyrusttide:v1.0.0 --env MY_NAME=tibbs
+```
 
 ### Deploy to Minikube 
     
