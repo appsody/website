@@ -10,8 +10,13 @@ const SidebarExtender = () => {
     window.onresize = resize;
   }
   function resize() {
-    document.getElementById("desktopHamburgerOpenbtnId").style.display = "none"; 
-    document.getElementById("appsody-sidebar-header").style.writingMode = "horizontal-tb"; 
+    if (document.getElementById("desktopHamburgerOpenbtnId")) {
+      document.getElementById("desktopHamburgerOpenbtnId").style.display = "none"; 
+    }
+    if (document.getElementById("appsody-sidebar-header")) {
+      document.getElementById("appsody-sidebar-header").style.writingMode = "horizontal-tb"; 
+    }
+    
     document.getElementById("appsody-sidebar-header").style.marginLeft = "1.5rem"; 
     document.getElementById("docs-sidebar-header").style.writingMode = "horizontal-tb";
     document.getElementById("docs-sidebar-header").style.marginLeft = "0.25em";
