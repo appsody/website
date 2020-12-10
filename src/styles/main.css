@@ -131,7 +131,7 @@ section.stacks-section {
 }
 
 section.landing-section:first-child {
-  padding: 14em 0 3em 0;
+  padding: 10em 0 3em 0;
 }
 
 section.landing-section:not(:last-child) {
@@ -258,6 +258,10 @@ section.landing-section h3 {
 
   .smallscreen-social {
     display: flex;
+  }
+
+  section.landing-section:first-child {
+    padding: 14em 0 3em 0;
   }
 
   section.landing-section .lead {
