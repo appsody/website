@@ -131,7 +131,7 @@ section.stacks-section {
 }
 
 section.landing-section:first-child {
-  padding: 12em 0 3em 0;
+  padding: 14em 0 3em 0;
 }
 
 section.landing-section:not(:last-child) {
@@ -911,7 +911,7 @@ hr {
 
 @media only screen and (max-width: 767px) {
   .doc-content {
-    margin-top: 12rem;
+    margin-top: 14rem;
     margin-bottom: 3em;
     padding: 2em;
     padding-bottom: 4em;
@@ -1651,7 +1651,7 @@ input.checkbox-item {
 
 @media only screen and (max-width: 767px) {
   .blog-card-section {
-    margin-top: 14rem;
+    margin-top: 16rem;
   }
 
   .blog-grid {

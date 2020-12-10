@@ -5,6 +5,8 @@ author: "Appsody Core Team"
 imagePath: "../../content/blogs/resources/autumn.jpeg"
 ---
 
+# Development Of Appsody as a standalone project has ended
+
 ![Appsody](./resources/autumn.jpeg)
 
 Appsody, Adieu
