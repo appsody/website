@@ -56,7 +56,27 @@ p > img {
   width: 100%;
 }
 
+.banner {
+  background-color: #963463;
+  backdrop-filter: blur(18px) saturate(140%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  z-index: 1000000;
+  padding: 10px 20px;
+}
 
+.banner-text {
+  margin-bottom: 0;
+}
+
+.banner-blog-link {
+  color: white;
+  text-decoration: underline;
+  font-weight: 600;
+}
 
 #main-nav {
   background-color: rgb(255, 255, 255, 0.93);
@@ -106,12 +126,12 @@ section.stacks-section {
   width: 100%;
   display: flex;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 5rem;
   justify-content: center;
 }
 
 section.landing-section:first-child {
-  padding: 6em 0 3em 0;
+  padding: 10em 0 3em 0;
 }
 
 section.landing-section:not(:last-child) {
@@ -238,6 +258,10 @@ section.landing-section h3 {
 
   .smallscreen-social {
     display: flex;
+  }
+
+  section.landing-section:first-child {
+    padding: 14em 0 3em 0;
   }
 
   section.landing-section .lead {
@@ -637,8 +661,8 @@ footer a:hover {
 }
 
 .accordion {
+  margin-top: 10rem;
   margin-left: 1.5em;
-  padding-bottom: 8rem;
 }
 
 .accordion-icon {
@@ -678,15 +702,15 @@ footer a:hover {
   padding: 20px 40px 20px 20px;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
-  transition: box-shadow 0.25s ease-in, background-color 0.20s ease-in;
+  transition: box-shadow 0.25s ease-in, background-color 0.2s ease-in;
   margin: 0 0 50px 0;
-  background-color: rgba(255,255,255,0.86);
+  background-color: rgba(255, 255, 255, 0.86);
   backdrop-filter: blur(20px) saturate(150%);
 }
 
 .tutorial-container:hover {
   box-shadow: 1px 2px 10px rgba(187, 65, 124, 0.6);
-  background-color: rgba(255,255,255,0.92);
+  background-color: rgba(255, 255, 255, 0.92);
 }
 
 .tutorial-container p {
@@ -708,7 +732,6 @@ footer a:hover {
   margin: auto;
   align-self: flex-end;
   justify-self: end;
-
 }
 
 .tutorial-length-icon {
@@ -732,7 +755,7 @@ hr {
 /* Docs Window Styling */
 .doc-content {
   padding-left: 23rem;
-  margin-top: 5rem;
+  margin-top: 8rem;
   padding-bottom: 4rem;
   padding-right: 2em;
   max-width: 2000px;
@@ -771,8 +794,14 @@ hr {
   width: 25%;
 }
 
-@media only screen and (max-width: 1040px), (min-device-width: 768px) and (max-device-width: 1024px) {
-  .doc-content table, .doc-content thead, .doc-content tbody, .doc-content th, .doc-content tr, .doc-content td {
+@media only screen and (max-width: 1040px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  .doc-content table,
+  .doc-content thead,
+  .doc-content tbody,
+  .doc-content th,
+  .doc-content tr,
+  .doc-content td {
     display: block;
   }
 
@@ -786,7 +815,7 @@ hr {
     left: -99999px;
   }
 
-  .doc-content tr { 
+  .doc-content tr {
     border-bottom: #bb417c 3px solid;
   }
 
@@ -817,9 +846,10 @@ hr {
   }
   .doc-content td:nth-of-type(3)::before {
     content: "Origin";
-
   }
-  .doc-content td:nth-of-type(4)::before {content : "Example"}
+  .doc-content td:nth-of-type(4)::before {
+    content: "Example";
+  }
 }
 
 .doc-content table tr:nth-child(even) {
@@ -885,6 +915,7 @@ hr {
 
 @media only screen and (max-width: 767px) {
   .doc-content {
+    margin-top: 14rem;
     margin-bottom: 3em;
     padding: 2em;
     padding-bottom: 4em;
@@ -893,6 +924,10 @@ hr {
 
   .homepage-sections {
     margin-bottom: 3em;
+  }
+
+  section.stacks-section {
+    margin-top: 12rem;
   }
 }
 
@@ -970,7 +1005,7 @@ blockquote p {
   .tutorial {
     width: 100%;
     margin: auto;
-    margin-top: 4rem;
+    margin-top: 12rem;
     padding: 2rem;
     padding-bottom: 5rem;
     margin-bottom: 3.3rem;
@@ -1063,7 +1098,6 @@ blockquote p {
 
 .sidebar {
   width: 15em;
-  margin-top: -1.5rem;
   padding-left: 5em;
   background-color: white;
   height: 120vh;
@@ -1143,7 +1177,7 @@ input.checkbox-item {
 @media only screen and (max-width: 767px) {
   .sidebar {
     width: 15em;
-    margin-top: -1.5rem;
+    margin-top: 6rem;
     padding-left: 5em;
     background-color: white;
     height: 120vh;
@@ -1223,14 +1257,6 @@ input.checkbox-item {
   margin-top: 5rem;
 }
 
-
-
-
-
-
-
-
-
 .blog-content {
   width: 100%;
   margin: auto;
@@ -1282,11 +1308,11 @@ input.checkbox-item {
 }
 
 .blog-content h2 {
-  font-size: 1.75rem
+  font-size: 1.75rem;
 }
 
 .blog-content h3 {
-  font-size: 1.25rem
+  font-size: 1.25rem;
 }
 
 .blog-content span + em {
@@ -1313,7 +1339,7 @@ input.checkbox-item {
 }
 
 .author-date {
-  margin-top: 100px;
+  margin-top: 180px;
   text-align: center;
   color: darkgray;
 }
@@ -1350,7 +1376,7 @@ input.checkbox-item {
 .blog-content blockquote {
   background-color: white;
   border: 0;
-  color: rgb(150,150,150);
+  color: rgb(150, 150, 150);
   text-align: center;
   margin: 10px auto 30px auto;
 }
@@ -1369,19 +1395,18 @@ input.checkbox-item {
   display: grid;
   grid-template-columns: 40% 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto auto;
-  transition: box-shadow 0.25s ease-in, background-color 0.20s ease-in;;
-  background-color: rgba(255,255,255,0.86);
+  transition: box-shadow 0.25s ease-in, background-color 0.2s ease-in;
+  background-color: rgba(255, 255, 255, 0.86);
   backdrop-filter: blur(20px) saturate(150%);
 }
 
 .wide-blog-container:hover {
   box-shadow: 1px 2px 10px rgba(187, 65, 124, 0.6);
-  background-color: rgba(255,255,255,0.92);
-
+  background-color: rgba(255, 255, 255, 0.92);
 }
 
 .blog-card-section {
-  margin-top: 100px;
+  margin-top: 150px;
   padding-bottom: 50px;
   border-bottom: 2px solid var(--dark-grey);
 }
@@ -1391,7 +1416,7 @@ input.checkbox-item {
 }
 
 .blog-card-section h2 {
-  font-size: 2.0em !important;
+  font-size: 2em !important;
   color: var(--colour-scheme-1);
   font-family: "Nunito", "Open Sans", sans-serif;
   padding-bottom: 1.2rem;
@@ -1438,8 +1463,8 @@ input.checkbox-item {
   justify-content: space-between;
 }
 
-.all-blogs-section h2{
-  font-size: 2.0em ;
+.all-blogs-section h2 {
+  font-size: 2em;
   color: var(--colour-scheme-1);
   font-family: "Nunito", "Open Sans", sans-serif;
   margin-top: 1.5em;
@@ -1453,10 +1478,10 @@ input.checkbox-item {
 }
 
 .all-tutorials-section h2 {
-  font-size: 1.65em ;
+  font-size: 1.65em;
   color: var(--colour-scheme-1);
   font-family: "Nunito", "Open Sans", sans-serif;
-  margin-top: 1.0em;
+  margin-top: 1em;
   width: 100%;
   font-weight: 600;
 }
@@ -1475,10 +1500,9 @@ input.checkbox-item {
 }
 
 .tutorials-section {
-  padding-top: 3em;
+  padding-top: 6em;
   height: 100%;
 }
-
 
 .tutorials-page.container {
   background-image: url(../images/tutorials_bg.svg) !important;
@@ -1531,7 +1555,7 @@ input.checkbox-item {
   color: darkgrey !important;
 }
 
-.wide-blog-date  {
+.wide-blog-date {
   grid-column-start: 4;
   grid-column-end: 6;
   grid-row-start: 3;
@@ -1568,16 +1592,15 @@ input.checkbox-item {
   padding: 20px 40px 20px 20px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto auto;
-  transition: box-shadow 0.25s ease-in, background-color 0.20s ease-in;;
+  transition: box-shadow 0.25s ease-in, background-color 0.2s ease-in;
   margin: 0 0 50px 0;
-  background-color: rgba(255,255,255,0.86);
+  background-color: rgba(255, 255, 255, 0.86);
   backdrop-filter: blur(20px) saturate(150%);
 }
 
 .blog-container:hover {
   box-shadow: 1px 2px 10px rgba(187, 65, 124, 0.6);
-  background-color: rgba(255,255,255,0.92);
-
+  background-color: rgba(255, 255, 255, 0.92);
 }
 
 .blog-container p {
@@ -1590,7 +1613,6 @@ input.checkbox-item {
   grid-row-start: 1;
   grid-row-end: 2;
   margin-top: 0 !important;
-
 }
 
 .blog-subtext {
@@ -1620,11 +1642,10 @@ input.checkbox-item {
   align-self: flex-end;
   justify-self: end;
   color: darkgrey !important;
-
 }
 
 .blog-container .blog-date p {
-  color: green
+  color: green;
 }
 
 .blog-link {
@@ -1633,9 +1654,8 @@ input.checkbox-item {
 }
 
 @media only screen and (max-width: 767px) {
-
   .blog-card-section {
-    margin-top: 5em;
+    margin-top: 16rem;
   }
 
   .blog-grid {
@@ -1686,9 +1706,8 @@ input.checkbox-item {
     grid-row-start: 4;
     grid-row-end: 5;
     margin-bottom: 0.5rem;
-    margin-top: 2.0rem;
+    margin-top: 2rem;
     color: darkgrey !important;
-
   }
 
   .wide-blog-date {
@@ -1710,7 +1729,6 @@ input.checkbox-item {
   .blog-title {
     font-size: 1.7em !important;
     padding-bottom: 15px;
-
   }
 
   .blog-subtext {
@@ -1745,7 +1763,7 @@ input.checkbox-item {
     width: 90%;
     text-align: center;
     margin: auto;
-    margin-top: 80px;
+    margin-top: 230px;
   }
 
   .blog-content h1 {
@@ -1775,16 +1793,16 @@ input.checkbox-item {
     display: none;
   }
 
-  .blog-content ul{
+  .blog-content ul {
     width: 90%;
     margin: auto;
     font-size: inherit;
   }
 
   .blog-content li {
-    font-size: 1.0em;
+    font-size: 1em;
     line-height: 1.6em;
-  } 
+  }
 
   .blog-content img:nth-child(2) {
     min-width: 100%;
@@ -1792,8 +1810,7 @@ input.checkbox-item {
 
   .blog-content ul li {
     list-style-position: inside;
-    margin-bottom: 1.0rem;
-
+    margin-bottom: 1rem;
   }
 
   .blog-content li > p {
@@ -1821,10 +1838,9 @@ input.checkbox-item {
   }
 
   .tutorials-section {
-    padding-top: 1.4em;
+    padding-top: 12rem;
   }
 }
-
 
 @media (prefers-color-scheme: dark) {
   body {
@@ -1988,28 +2004,29 @@ input.checkbox-item {
   }
 
   hr {
-    border-top: 1px solid rgba(255, 255, 255,.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .blog-container {
-    background-color: rgba(45,45,45,0.86);
+    background-color: rgba(45, 45, 45, 0.86);
     backdrop-filter: blur(20px) saturate(150%);
-    box-shadow:rgba(10, 10, 10, 0.55) 1px 4px 15px 0px;
+    box-shadow: rgba(10, 10, 10, 0.55) 1px 4px 15px 0px;
   }
 
   .wide-blog-container {
-    box-shadow:rgba(10, 10, 10, 0.55) 1px 4px 15px 0px;
-    background-color: rgba(45,45,45,0.86);
+    box-shadow: rgba(10, 10, 10, 0.55) 1px 4px 15px 0px;
+    background-color: rgba(45, 45, 45, 0.86);
     backdrop-filter: blur(20px) saturate(150%);
     color: white !important;
   }
 
   .wide-blog-container:hover {
-    background-color: rgba(35,35,35, 0.88);
+    background-color: rgba(35, 35, 35, 0.88);
   }
 
-  .latest-blog-section-title, .all-blog-section-title {
-    background-color: rgba(150,52,99, 1.0);
+  .latest-blog-section-title,
+  .all-blog-section-title {
+    background-color: rgba(150, 52, 99, 1);
     /* backdrop-filter: blur(8px) saturate(180%); */
   }
 
@@ -2030,8 +2047,7 @@ input.checkbox-item {
   }
 
   .blog-container:hover {
-    background-color: rgba(35,35,35, 0.92);
-
+    background-color: rgba(35, 35, 35, 0.92);
   }
 
   .blog-subtext {
@@ -2053,7 +2069,7 @@ input.checkbox-item {
   }
 
   .tutorial-container {
-    background-color: rgba(45,45,45,0.86);
+    background-color: rgba(45, 45, 45, 0.86);
     backdrop-filter: blur(20px) saturate(150%);
   }
 
@@ -2066,19 +2082,17 @@ input.checkbox-item {
   }
 
   .tutorials-header {
-    background-color: rgba(10,10,10,0.85);
+    background-color: rgba(10, 10, 10, 0.85);
     backdrop-filter: blur(8px) saturate(180%);
-
   }
 
   .tutorial-container:hover {
-    background-color: rgba(35,35,35, 0.92);
+    background-color: rgba(35, 35, 35, 0.92);
   }
 
   .tutorials-page.container {
-    background: rgba(30,30,30, 1.0);
+    background: rgba(30, 30, 30, 1);
     background-repeat: no-repeat;
     background-size: cover;
   }
-
 }
