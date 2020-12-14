@@ -5,7 +5,7 @@
 
 #### Compose a cloud native masterpiece.
 
-Infused with cloud native capabilities from the moment you start, Appsody provides everything you need to iteratively develop applications, ready for deployment to Kubernetes environments. Teams are empowered with sharable technology stacks, configurable and controllable through a central hub.
+Infused with cloud-native capabilities from the moment you start, Appsody provides everything you need to iteratively develop applications, ready for deployment to Kubernetes environments. Teams are empowered with sharable technology stacks, configurable, and controllable through a central hub.
 
 # Documentation and Website
 
