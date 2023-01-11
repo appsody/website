@@ -18,7 +18,7 @@
     "gatsby-remark-embed-youtube": "0.0.7",
     "gatsby-remark-images": "^3.1.28",
     "gatsby-source-filesystem": "^2.1.0",
-    "gatsby-transformer-remark": "^2.5.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-yaml": "^2.2.4",
     "jquery": "^3.4.1",
     "js-search": "^1.4.3",
